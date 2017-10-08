@@ -1,0 +1,108 @@
+<p><b><span style="font-size: 18pt;">Multiple Vendor IRDP Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/578/info">info</a><br><a href="http://www.securityfocus.com/bid/578/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/578/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/578/solution">solution</a><br><a href="http://www.securityfocus.com/bid/578/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				578
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Origin Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 11 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 11 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by L0pth Heavy Industries (LHI). It's public release was August 11, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Microsoft Windows 98SE  <br/>
+					
+				
+					Microsoft Windows 98  b<br/>
+					
+				
+					Microsoft Windows 98  a<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/578/rdp.tar.gz">#exploit</a><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 L0pht (LHI) has made available Proof-of-Concept code that will let individuals test their systems &amp; firewalls.<br/><br/>Usage is as follows:<br/><br/>Usage: rdp -v -l -s -d &lt;delay&gt; -p &lt;pref&gt; -t &lt;lifetime&gt; -i &lt;dev&gt;<br/>           -S &lt;src&gt; -D &lt;dst&gt; -R &lt;rtr&gt; -r &lt;optional 2nd rtr&gt;<br/><br/>        -v verbose<br/>        -l listen mode<br/>        -s send mode<br/>        -d &lt;delay time between sending packets&gt;<br/>        -n &lt;number of rdp packets to send&gt;<br/>        -I &lt;ID value to place in IP packet&gt;<br/>        -p &lt;preference level&gt;<br/>        -t &lt;lifetime&gt;<br/>        -i &lt;interface to use for sniffing&gt;<br/>        -S &lt;source address to put in outgoing rdp packet&gt;<br/>        -D &lt;destination address to put in outgoing rdp packet&gt;<br/>        -R &lt;router address to advertise in rdp packet&gt;<br/>        -r &lt;optional 2nd router address to advertise in rdp packet&gt;<br/><br/><br/>Misc software notes:<br/><br/>Listen Mode:     Software listens for ICMP Router Solicitations. If the '-s' flag is specified as well, the software will answer  the Solicitations with ICMP Router Advertisements.<br/><br/> Preference:     If the preference is not specified, it will use a default of 1000, which will give the default route a metric of 0 on affected Windows systems.<br/><br/>2nd Router Addr:  By using the '-r' flag and specifying a second router address entry, the packet can contain a bogus source address and still be processed for correct gateway entries by the end host.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/rdp.tar.gz">/data/vulnerabilities/exploits/rdp.tar.gz</a></li>
+</ul>
+</div>

