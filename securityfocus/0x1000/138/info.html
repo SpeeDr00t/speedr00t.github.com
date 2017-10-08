@@ -1,0 +1,117 @@
+#bid138<p><b><span style="font-size: 18pt;">ssh-agent Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/138/info">info</a><br><a href="http://www.securityfocus.com/bid/138/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/138/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/138/solution">solution</a><br><a href="http://www.securityfocus.com/bid/138/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				138
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 20 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 20 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by David Sacerdote, from Secure Networks Inc. This vulnerability was first published January 20, 1998, as a Secure Networks advisory.
+
+ An advisory which more or less summarized the SNI advisory was published by CERT on Ja
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Helsinki University of Technology ssh 1.2.21 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.19 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.18 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.17 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.16 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.15 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.14 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Helsinki University of Technology ssh 1.2.22 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 When communicating with the ssh-agent program, the SSH program issues a connect() system call as super-user to access the AF_UNIX socket. By utilizing symbolic links, an attacker can cause the SSH program to connect to an alternate user's AF_UNIX socket, and read their RSA credentials. After the credentials have been read, SSH will use these credentials to logon to the remote system as the victim.
+	
+		<ul>
+</ul>
+</div>

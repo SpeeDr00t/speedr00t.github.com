@@ -1,0 +1,713 @@
+#bid125<p><b><span style="font-size: 18pt;">Multiple Vendor Buffer Overflow in MIME-aware Mail and News Clients Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/125/info">info</a><br><a href="http://www.securityfocus.com/bid/125/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/125/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/125/solution">solution</a><br><a href="http://www.securityfocus.com/bid/125/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				125
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0004<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 03 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vulnerability was discovered by Marko Laakso and Ari Takanen of the Secure Programming Group of the University of Oulu.
+
+ It was first reported to the public July 3rd, 1998 on the Bugtraq and NT Bugtraq mailing lists.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					University of Washington Pine 4.0.2 <br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+					
+				
+					Netscape Communicator 4.5 BETA<br/>
+					
+				
+					Netscape Communicator 4.5 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Desktop 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux eBuilder 3.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3 <br/>
+</span>
+					
+				
+					Netnation Communications Secure Locate 4.5 <br/>
+					
+				
+					Mutt Mutt 0.93.1 (i)<br/>
+					
+				
+					MIT Kerberos 5 0.93.1 (i)<br/>
+					
+				
+					Microsoft Outlook Express 4.72.2106 <br/>
+					
+				
+					Microsoft Outlook Express 4.27.3110 <br/>
+					
+				
+					Microsoft Outlook 98  0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					HP dtmail 1.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Netscape Communicator 4.5 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Desktop 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux eBuilder 3.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3 <br/>
+</span>
+					
+				
+					Netscape Communicator  4.06<br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Desktop 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux eBuilder 3.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3 <br/>
+</span>
+					
+				
+					Mutt Mutt 0.93.2 (i)<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#no_exploit.
+	
+		<ul>
+</ul>
+</div>

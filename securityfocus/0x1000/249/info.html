@@ -1,0 +1,122 @@
+#bid249<p><b><span style="font-size: 18pt;">Solaris dtprintinfo Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/249/info">info</a><br><a href="http://www.securityfocus.com/bid/249/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/249/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/249/solution">solution</a><br><a href="http://www.securityfocus.com/bid/249/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				249
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 10 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 10 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was published in the BUGTRAQ mailing list by UNYUN@ShadowPenguin &lt;yuuzy@usa.net&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  7.0_x86<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					HP HP-UX 11.0 <br/>
+					
+				
+					Digital UNIX 4.0 D<br/>
+					
+				
+					Digital UNIX 4.0 C<br/>
+					
+				
+					Digital UNIX 4.0 B<br/>
+					
+				
+					Digital UNIX 4.0 A<br/>
+					
+				
+					Digital UNIX 4.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x1000/249/ex_dtprintinfo.c">#exploit_ex_dtprintinfo.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Before executing the ex_dtprintinfo exploit set your DISPLAY environment variable correctly, and make a dummy lpstat command like:<br/><br/>% cat &gt; lpstat   <br/>echo "system for lpprn: server.com"<br/>^D<br/>% chmod 755 lpstat<br/>% setenv PATH .:$PATH<br/>% gcc ex_dtprintinfo.c<br/>% a.out
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/ex_dtprintinfo.c">/data/vulnerabilities/exploits/ex_dtprintinfo.c</a></li>
+</ul>
+</div>

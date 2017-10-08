@@ -1,0 +1,104 @@
+#bid528<p><b><span style="font-size: 18pt;">Netware IPX Admin Session Spoof Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/528/info">info</a><br><a href="http://www.securityfocus.com/bid/528/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/528/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/528/solution">solution</a><br><a href="http://www.securityfocus.com/bid/528/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				528
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Configuration Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1086<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 15 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				NMRC advisory posted to Bugtraq on July 16, 1999 by Simple Nomad
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Novell Netware 5.0 <br/>
+					
+				
+					Novell Netware 4.11 SP5B<br/>
+					
+				
+					Novell Netware 4.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 The NMRC Pandora program includes the exploit for this. The following is a description of how the exploit works, quoted from the NMRC advisory: <br/><br/> 0. Admin client is Packet Signature Level 1, and server is Packet Signature Level 3. <br/> 1. Attack box gets Admin's MAC address, and inserts it into the Pandora Online tool. Attacker has the option to adjust other parameters as needed, but the main one is the MAC address. <br/> 2. Admin performs actions dealing with NDS that use fragmented packets (normal administrator activity will give us the needed packets quickly).   3. Attack box sends forged request to server, making us security equivalent to Admin. <br/> 4. Netware 5 server accepts forged packets. <br/> 5. Admin client loses connection from server as its packet sequence is now out of whack. <br/> 6. Attacker adjusts security settings for self so that the attacker has full access to entire tree, and removes "equal to Admin", so s/he will not show up on a basic "who's equiv to me" investigation by Admin.<br/><br/> Caveats:<br/><br/> 0. This attack will fail in a switched environment since sniffing is involved. <br/> 1. This is a race. If the Admin client beats the attacker, the attacker must try again. <br/> 2. Obviously the attacker being on the same Ethernet segment as the Admin will help considerably in an attack. In theory this should work if you are anywhere in between the Admin client and the server, although you will need to use the MAC address of the router interface the Admin's session is coming from. At best, this may not work at all, but is still theoretically possible. <br/> 3. In theory this could be adapted to a Netware/IP environment, as Novell's TCP/IP stack is vulnerable to sequence number prediction. We have not explored adapting Pandora exploit code over to a pure IP environment, but will explore this possibility in future Pandora releases.
+	
+		<ul>
+<li><a href="/templates/tools_search.html%3Fquery%3Dpandora%26index%3Dtools">/templates/tools_search.html%3Fquery%3Dpandora%26index%3Dtools</a></li>
+</ul>
+</div>

