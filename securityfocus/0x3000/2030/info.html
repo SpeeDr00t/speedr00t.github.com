@@ -1,0 +1,1397 @@
+#SpeeDr00t@Black Falcon<br>#bid2030<p><b><span style="font-size: 18pt;">Microsoft SQL Server / Data Engine xp_displayparamstmt Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2030/info">info</a><br><a href="http://www.securityfocus.com/bid/2030/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2030/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2030/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2030/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2030
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-1081<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 01 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 03:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by David Litchfield &lt;dlitchfield@atstake.com&gt; and publicized in Microsoft Security Bulletin (MS00-092) on December 1, 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft SQL Server 2000  <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Microsoft SQL Server  7.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft BackOffice  4.5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft BackOffice  4.5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Microsoft Data Engine 2000  <br/>
+<span class="related">
+						
+							+ 
+						
+						Akiva WebBoard 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Admin for Microsoft Exchange  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Admin for Windows 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Admin for Windows Migration  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-control for Active Directory 7.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Control for Internet Security 7.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Control for Microsoft Exchange 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Control for Microsoft SQL Server 7.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Control for Microsoft SQL Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						BindView bv-Control for Windows 7.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						CARI-RUSCO Secure Perfect 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						CCH Equity Compliance Insider Reporting Module  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Collins Medical Plus 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Computer Associates Unicenter  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Computer Associates Unicenter RC/Update 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Computer Associates Unicenter RC/Update 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						CSIRO BioLink Software 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						DATA.TXT Corporation Time Matters 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						DATA.TXT Corporation Time Matters 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Dell OpenManage IT Assistant 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Dell OpenManage IT Assistant 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Express Metrix Express Software Manager 6.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Express Metrix Express Software Manager 6.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Express Metrix Express Software Manager 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Express Metrix Express Software Manager 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Fluke Networks Optiview Network Inspector 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Internet Services 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Internet Services 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Operations for Windows 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Operations for Windows 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Operations for Windows 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Reporter 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Openview Reporter 2.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						ISI Infortel for Windows 5.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						ISI Infortel for Windows 5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						ISI Infortel for Windows 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						ISI Infortel for Windows 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Journyx Timesheet 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Journyx Timesheet 4.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Journyx Timesheet 4.5 m3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Journyx Timesheet 4.5 m2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Journyx Timesheet 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Journyx Timesheet 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft .NET Framework  1.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft .NET Framework  1.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft .NET Framework  1.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft .NET Framework SDK  1.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Application Center 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Biztalk Server 2002 Partner Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2000 Server Extensions  SR 1.3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2000 Server Extensions  SR 1.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2000 Server Extensions  SR 1.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2000 Server Extensions  SR 1.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Great Plains 5.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Great Plains  7.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Great Plains  5.5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Great Plains  5.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000 Chinese Version  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000 Japanese Version  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000 Korean Version  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office XP  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office XP  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office XP Developer Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Project Central Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Portal Server 2001   SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Portal Server 2001  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Team Services from Microsoft  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SQL Server 2000  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SQL Server 2000  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SQL Server 2000  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SQL Server 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visio 2000 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visio Enterprise Network Tools  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual FoxPro  7.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual FoxPro  7.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual FoxPro  6.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Academic Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Enterprise Architect Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Enterprise Developer Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Professional Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Trial Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MIP NonProfit Series Pro 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MIP NonProfit Series Pro 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MIP NonProfit Series Pro 4.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetSupport NetSupport TCO 4.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetSupport NetSupport TCO 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Network Associates SupportMagic SQL 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Okena StormWatch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 11.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Peachtree Software Timeslips 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						QiNetix CommVault Galaxy 4.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SalesLogix Corporation SalesLogix 2000.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SmartMax Software MailMax 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						TeleStream FlipFactory 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						TeleStream FlipFactory 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						TeleStream FlipFactory 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software Backup Exec for Windows Servers 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						VIGILANTe SecureScan NX 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Visionary Systems Firehouse Software 5.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Visionary Systems Firehouse Software 5.0.2 5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Visionary Systems Firehouse Software 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Visionary Systems Firehouse Software 3.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wonderware InTouch 7.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Xerox CentreWare Web 1.0 <br/>
+</span>
+					
+				
+					Microsoft Data Engine (MSDE)   1.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Affymetrix Microarray Suite Software 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Affymetrix Microarray Suite Software 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Affymetrix Microarray Suite Software 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Affymetrix Microarray Suite Software 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Affymetrix Microarray Suite Software 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Affymetrix Microarray Suite Software 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Altiris Deployment Server 5.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Altiris Deployment Server 5.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Altiris Deployment Server 5.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Altiris Deployment Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Altiris Deployment Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Altiris Deployment Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Centennial UK Ltd Centennial Discovery 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Centennial UK Ltd Centennial Discovery 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Centennial UK Ltd Centennial Discovery 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Insight Manager 7.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Insight Manager 7.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Insight Manager 7.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Insight Manager 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Insight Manager 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Insight Manager 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gerber Technology WebPDM 3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gerber Technology WebPDM 3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gerber Technology WebPDM 3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.5  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.5  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.5  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						McAfee ePolicy Orchestrator 1.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Access 2000  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Access 2000  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Access 2000  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Project Central Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Project Central Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Project Central Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Team Services from Microsoft  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Team Services from Microsoft  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Team Services from Microsoft  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Visual Studio  6.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Visual Studio  6.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Visual Studio  6.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						PowerQuest ControlCenter ST 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						PowerQuest ControlCenter ST 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						PowerQuest ControlCenter ST 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						PPM 2000 Incident Reporting and Investigation Management 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						PPM 2000 Incident Reporting and Investigation Management 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						PPM 2000 Incident Reporting and Investigation Management 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Rim Blackberry Enterprise Server 2.0 .0.65<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Rim Blackberry Enterprise Server 2.0 .0.65<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Rim Blackberry Enterprise Server 2.0 .0.65<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Control Manager 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Control Manager 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Control Manager 2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Damage Cleanup Server 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Damage Cleanup Server 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Damage Cleanup Server 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Vital Processing Services LLC POS-partner 2000 5.0.13 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Vital Processing Services LLC POS-partner 2000 5.0.13 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Vital Processing Services LLC POS-partner 2000 5.0.13 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Vital Processing Services LLC POS-partner 2000 4.1.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Vital Processing Services LLC POS-partner 2000 4.1.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Vital Processing Services LLC POS-partner 2000 4.1.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Websense Reporter 6.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Websense Reporter 6.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Websense Reporter 6.3.1 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2030/sqladv-poc.c">#exploit_sqladv-poc.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	@Stake &amp;lt;researchlabs@atstake.com&amp;gt; has released the following proof-of-concept code:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/sqladv-poc.c">/data/vulnerabilities/exploits/sqladv-poc.c</a></li>
+</ul>
+</div>

