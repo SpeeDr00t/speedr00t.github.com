@@ -1,0 +1,143 @@
+#bid624<p><b><span style="font-size: 18pt;">NT DCOM Server Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/624/info">info</a><br><a href="http://www.securityfocus.com/bid/624/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/624/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/624/solution">solution</a><br><a href="http://www.securityfocus.com/bid/624/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				624
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 08 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 08 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to Bugtraq on September 8, 1999 by Mnemonix &lt;mnemonix@GLOBALNET.CO.UK&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows NT  4.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<br/>This exploit will cause the System Event Notification service or SENS service to start when a VBScript calls for the creation of a new Wordpad Document. The SENS service is installed during an installation of IE5, but is not started. The default permissions allow Everybody write access to the EXE.<br/>Edit the<br/> HKCR\AppID\{73FDDC80-AEA9-101A-98A7-00AA00374959}<br/>registry key and add a new value, "LocalService", with data SENS<br/><br/>Create an HTML document, with the following VBScript in it:<br/> &lt;SCRIPT LANGUAGE="VBScript"&gt; CreateObject("Wordpad.Document.1") &lt;/SCRIPT&gt;<br/><br/>Open the html document in a browser. The browser will request that the COM Service Control Manager (RPCSS.EXE) start the service associated with Wordpad.
+	
+		<ul>
+</ul>
+</div>

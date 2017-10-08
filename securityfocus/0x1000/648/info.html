@@ -1,0 +1,97 @@
+#bid648<p><b><span style="font-size: 18pt;">FSF GNU glibc unsetenv Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/648/info">info</a><br><a href="http://www.securityfocus.com/bid/648/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/648/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/648/solution">solution</a><br><a href="http://www.securityfocus.com/bid/648/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				648
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 17 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 17 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was found by Tymm Twillman &lt;tymm@coe.missouri.edu&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					GNU glibc 2.1.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					GNU glibc 2.1.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#no_exploit.<br/><br/>To test whether your system is vulnerable use the following program:<br/><br/>#include &lt;stdlib.h&gt;<br/>#include &lt;stdio.h&gt;<br/><br/>extern char **environ;<br/><br/>int main()<br/>{<br/>  char *env = {<br/>   "bob=trash",<br/>   "bob=uh-oh",<br/>   NULL<br/>  };<br/><br/>  environ = env;<br/>  printf("bob = %s\n", env0);<br/>  unsetenv("bob");<br/>  printf("bob = %s\n", getenv("bob"));<br/>  return 0;<br/>}<br/><br/>If the output isn't "bob = (null)", unsetenv() isn't doing its job. (also note that not all libc's support unsetenv, or even the environ variable, so this may not compile/link on many non-glibc systems).
+	
+		<ul>
+</ul>
+</div>

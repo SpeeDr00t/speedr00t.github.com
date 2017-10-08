@@ -1,0 +1,175 @@
+#bid570<p><b><span style="font-size: 18pt;">Multiple Vendor profil(2) Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/570/info">info</a><br><a href="http://www.securityfocus.com/bid/570/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/570/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/570/solution">solution</a><br><a href="http://www.securityfocus.com/bid/570/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				570
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 09 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 09 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This problem was discovered and fixed by Ross Harvey &lt;ross@netbsd.org&gt;. The advisory describing this vulnerability (which the content of this vulnerability entry is based on) was forwarded to Bugtraq by Ross Harvey &lt;ross@ghs.com&gt; Sun, 8 Aug 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  7.0_x86<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+					
+				
+					Sun Solaris  2.4_x86<br/>
+					
+				
+					Sun Solaris  2.4<br/>
+					
+				
+					Sun Solaris  2.3<br/>
+					
+				
+					Sun Solaris  2.2<br/>
+					
+				
+					Sun Solaris  2.1<br/>
+					
+				
+					OpenBSD OpenBSD 2.5 <br/>
+					
+				
+					OpenBSD OpenBSD 2.4 <br/>
+					
+				
+					OpenBSD OpenBSD 2.3 <br/>
+					
+				
+					OpenBSD OpenBSD 2.2 <br/>
+					
+				
+					OpenBSD OpenBSD 2.1 <br/>
+					
+				
+					OpenBSD OpenBSD 2.0 <br/>
+					
+				
+					NetBSD NetBSD 1.4  x86<br/>
+					
+				
+					NetBSD NetBSD 1.3.3 <br/>
+					
+				
+					NetBSD NetBSD 1.3.2 <br/>
+					
+				
+					NetBSD NetBSD 1.3.1 <br/>
+					
+				
+					NetBSD NetBSD 1.3 <br/>
+					
+				
+					NetBSD NetBSD 1.2.1 <br/>
+					
+				
+					NetBSD NetBSD 1.2 <br/>
+					
+				
+					NetBSD NetBSD 1.1 <br/>
+					
+				
+					NetBSD NetBSD 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					NetBSD NetBSD 1.4.1  x86<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#no_exploit. The following program will test for the vulnerability although not exploit it:<br/><br/>/* This program will check to see if a given system has the profil(2) bug<br/>described in NetBSD Security Advisory 1999-011.  If it prints `Counting!'<br/>then you've got it...<br/><br/>At least one system (Solaris) appears to fix the security issue but<br/>doesn't turn off profiling unless the new image is owned by a different<br/>user. To check for this, you need to do something like:<br/><br/>        % cc profiltest.c<br/>        % su<br/>        # cp a.out prog.setuid<br/>        # chown (something) prog.setuid<br/>        # (possibly make it setuid)<br/>        # exit<br/>        % ./a.out<br/><br/>If the program doesn't find prog.setuid, it just exec's itself; this<br/>gets the same result on most systems.  (So: % cc profiltest.c; ./a.out)<br/><br/>So far, I've only found it in BSD systems. Linux hasn't had profiling<br/>in the kernel for a while, so current versions should not be vulnerable. */<br/><br/>#include &lt;sys/types.h&gt;<br/>#include &lt;stdio.h&gt;<br/>#include &lt;unistd.h&gt;<br/><br/>volatile unsigned short twobins2;<br/><br/>int<br/>main(int ac, char **av)<br/>{<br/><br/>        if (ac == 1) {<br/>                /* can't check the return value; on some systems it's void */<br/>                profil((char *)twobins, sizeof twobins, (u_long)&amp;main, 2);<br/>                /* try a different image for uid/setuid tests */<br/>                execl("prog.setuid", "tryroot", "-", 0);<br/>                /* otherwise, just chain to ourself */<br/>                execl(av0, av0, "-", 0);<br/>                fprintf(stderr, "problems\n");<br/>                exit(1);<br/>        }<br/>        for(;;) {<br/>                if (twobins0 | twobins1) {<br/>                        printf("Counting!\n");<br/>                        twobins0 = twobins1 = 0;<br/>                }<br/>        }<br/>}<br/><br/>        /* ross.harvey@computer.org */
+	
+		<ul>
+</ul>
+</div>
