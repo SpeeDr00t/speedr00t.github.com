@@ -1,0 +1,485 @@
+<p><b><span style="font-size: 18pt;">Multiple Vendor BIND iquery buffer overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/134/info">info</a><br><a href="http://www.securityfocus.com/bid/134/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/134/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/134/solution">solution</a><br><a href="http://www.securityfocus.com/bid/134/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				134
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 08 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 08 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was first reported to the general public April 8, 1998 in a CERT advisory. Knowledge of the vulnerability was well known for several months prior to that.
+
+ An exploit was posted by (gut@SHELL.CDC.NET) on May 31, 1998 to the Bugtraq mail
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 _x86<br/>
+					
+				
+					Sun Solaris 2.5.1 _ppc<br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+					
+				
+					Sun Solaris  2.4<br/>
+					
+				
+					Sun Solaris  2.3<br/>
+					
+				
+					SGI IRIX 6.3 <br/>
+					
+				
+					SGI IRIX 6.2 <br/>
+					
+				
+					SGI IRIX 6.1 <br/>
+					
+				
+					SGI IRIX 6.0.1 XFS<br/>
+					
+				
+					SGI IRIX 6.0.1 <br/>
+					
+				
+					SGI IRIX 6.0 <br/>
+					
+				
+					SGI IRIX 5.3 XFS<br/>
+					
+				
+					SGI IRIX 5.3 <br/>
+					
+				
+					SGI IRIX 5.2 <br/>
+					
+				
+					SGI IRIX 5.1.1 <br/>
+					
+				
+					SGI IRIX 5.1 <br/>
+					
+				
+					SGI IRIX 5.0.1 <br/>
+					
+				
+					SGI IRIX 5.0 <br/>
+					
+				
+					SGI IRIX 4.0.5 IPR<br/>
+					
+				
+					SGI IRIX 4.0.5 H<br/>
+					
+				
+					SGI IRIX 4.0.5 G<br/>
+					
+				
+					SGI IRIX 4.0.5 F<br/>
+					
+				
+					SGI IRIX 4.0.5 E<br/>
+					
+				
+					SGI IRIX 4.0.5 D<br/>
+					
+				
+					SGI IRIX 4.0.5 A<br/>
+					
+				
+					SGI IRIX 4.0.5 (IOP)<br/>
+					
+				
+					SGI IRIX 4.0.5 <br/>
+					
+				
+					SGI IRIX 4.0.4 T<br/>
+					
+				
+					SGI IRIX 4.0.4 B<br/>
+					
+				
+					SGI IRIX 4.0.4 <br/>
+					
+				
+					SGI IRIX 4.0.3 <br/>
+					
+				
+					SGI IRIX 4.0.2 <br/>
+					
+				
+					SGI IRIX 4.0.1 T<br/>
+					
+				
+					SGI IRIX 4.0.1 <br/>
+					
+				
+					SGI IRIX 4.0 <br/>
+					
+				
+					SGI IRIX 3.3.3 <br/>
+					
+				
+					SGI IRIX 3.3.2 <br/>
+					
+				
+					SGI IRIX 3.3.1 <br/>
+					
+				
+					SGI IRIX 3.3 <br/>
+					
+				
+					SGI IRIX 3.2 <br/>
+					
+				
+					SCO Unixware 7.0 <br/>
+					
+				
+					SCO Unixware 2.1 <br/>
+					
+				
+					SCO Open Server 5.0 <br/>
+					
+				
+					SCO Open Desktop 3.0 <br/>
+					
+				
+					Redhat Linux 5.0 <br/>
+					
+				
+					Redhat Linux 4.2 <br/>
+					
+				
+					Redhat Linux 4.1 <br/>
+					
+				
+					Redhat Linux 4.0 <br/>
+					
+				
+					NetBSD NetBSD 1.3.1 <br/>
+					
+				
+					NetBSD NetBSD 1.3 <br/>
+					
+				
+					NetBSD NetBSD 1.2.1 <br/>
+					
+				
+					NetBSD NetBSD 1.2 <br/>
+					
+				
+					NetBSD NetBSD 1.1 <br/>
+					
+				
+					NetBSD NetBSD 1.0 <br/>
+					
+				
+					NEC UX/4800  (64)<br/>
+					
+				
+					ISC BIND 8.1.1 <br/>
+					
+				
+					ISC BIND 8.1 <br/>
+					
+				
+					ISC BIND 4.9.6 <br/>
+					
+				
+					IBM AIX 4.3 <br/>
+					
+				
+					IBM AIX 4.2.1 <br/>
+					
+				
+					IBM AIX 4.2 <br/>
+					
+				
+					IBM AIX 4.1.5 <br/>
+					
+				
+					IBM AIX 4.1.4 <br/>
+					
+				
+					IBM AIX 4.1.3 <br/>
+					
+				
+					IBM AIX 4.1.2 <br/>
+					
+				
+					IBM AIX 4.1.1 <br/>
+					
+				
+					IBM AIX 4.1 <br/>
+					
+				
+					Data General DG/UX 5.4 4.11 <br/>
+					
+				
+					Data General DG/UX 5.4 4.1 <br/>
+					
+				
+					Data General DG/UX 5.4 3.1 <br/>
+					
+				
+					Data General DG/UX 5.4 3.0 <br/>
+					
+				
+					Caldera OpenLinux Standard 1.0 <br/>
+					
+				
+					BSDI BSD/OS 2.1 <br/>
+					
+				
+					BSDI BSD/OS 2.0.1 <br/>
+					
+				
+					BSDI BSD/OS 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					SSH Communications Security SSH 1.2.27 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+					
+				
+					SGI IRIX 6.5 <br/>
+					
+				
+					SGI IRIX 6.4 <br/>
+					
+				
+					SCO Unixware 7.1 <br/>
+					
+				
+					SCO Unixware 7.0.1 <br/>
+					
+				
+					SCO Open Server 5.0.5 <br/>
+					
+				
+					SCO Open Server 5.0.4 <br/>
+					
+				
+					SCO Open Server 5.0.3 <br/>
+					
+				
+					SCO Open Server 5.0.2 <br/>
+					
+				
+					SCO Open Server 5.0.1 <br/>
+					
+				
+					SCO Open Desktop 3.2 v4<br/>
+					
+				
+					Redhat Linux 5.2  i386<br/>
+					
+				
+					Redhat Linux 5.1 <br/>
+<span class="related">
+						
+							-
+						
+						Standard &amp; Poors ComStock 4.2.4 <br/>
+</span>
+					
+				
+					NetBSD NetBSD 1.4  x86<br/>
+					
+				
+					NetBSD NetBSD 1.3.3 <br/>
+					
+				
+					NetBSD NetBSD 1.3.2 <br/>
+					
+				
+					ISC BIND 8.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					ISC BIND 4.9.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 11.0 4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 10.24 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 10.10 <br/>
+</span>
+					
+				
+					FreeBSD FreeBSD 3.3 <br/>
+					
+				
+					Caldera OpenLinux Standard 1.2 <br/>
+					
+				
+					Caldera OpenLinux Standard 1.1 <br/>
+					
+				
+					BSDI BSD/OS 4.0 <br/>
+					
+				
+					BSDI BSD/OS 3.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/134/iquery.c">#exploit</a><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/134/bind4_9_5.c">#exploit</a><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/iquery.c">/data/vulnerabilities/exploits/iquery.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/bind4_9_5.c">/data/vulnerabilities/exploits/bind4_9_5.c</a></li>
+</ul>
+</div>

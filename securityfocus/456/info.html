@@ -1,0 +1,144 @@
+<p><b><span style="font-size: 18pt;">Multiple Vendor Unix Domain Socket Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/456/info">info</a><br><a href="http://www.securityfocus.com/bid/456/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/456/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/456/solution">solution</a><br><a href="http://www.securityfocus.com/bid/456/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				456
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 19 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 19 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Problem first posted to BugTraq by Thamer Al-Herbish &lt;shadows@whitefang.com&gt; on May 17, 1997.
+
+ Mentioned again in a post to BugTraq Wojciech Tryc &lt;wojtek@TRYC.ON.CA&gt; on October 3, 1997.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 _x86<br/>
+					
+				
+					Sun Solaris 2.5.1 _ppc<br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+					
+				
+					FreeBSD FreeBSD 3.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.0 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.8 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.4 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.3 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					FreeBSD FreeBSD 3.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	    Here is some sample code (by Nirva):<br/><br/>    #include &lt;stdio.h&gt;<br/>    #include &lt;stdlib.h&gt;<br/>    #include &lt;sys/un.h&gt;<br/>    #include &lt;sys/socket.h&gt;<br/><br/>    main(int argc, char *argv)<br/>    {<br/>        struct sockaddr_un addr;<br/>        int s;<br/><br/>        s = socket(AF_UNIX, SOCK_STREAM, 0);<br/><br/>        bzero(&amp;addr, sizeof(addr));<br/>        addr.sun_family = AF_UNIX;<br/>        strcpy(addr.sun_path, "/tmp/yoursocket");<br/>        if (bind(s, (struct sockaddr *)&amp;addr, sizeof(addr)) &lt; 0) {<br/>            perror("bind");<br/>            exit(1);<br/>        }<br/>        sleep(100);<br/><br/>        exit(0);<br/>    }
+	
+		<ul>
+</ul>
+</div>

