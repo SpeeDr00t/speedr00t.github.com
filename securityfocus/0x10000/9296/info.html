@@ -1,0 +1,514 @@
+#SpeeDr00t@Black Falcon<br>#bid9296<p><b><span style="font-size: 18pt;">Squirrelmail G/PGP Encryption Plugin Remote Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9296/info">info</a><br><a href="http://www.securityfocus.com/bid/9296/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9296/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9296/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9296/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9296
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0990<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 25 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 12:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery credited to research@bugtraq.org.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SquirrelMail G/PGP Encryption Plugin 1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2 .0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.4 <br/>
+</span>
+					
+				
+					SquirrelMail G/PGP Encryption Plugin 1.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2 .0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.4 <br/>
+</span>
+					
+				
+					SquirrelMail G/PGP Encryption Plugin 1.0.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2 .0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.4 <br/>
+</span>
+					
+				
+					SquirrelMail G/PGP Encryption Plugin 1.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.2 .0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SquirrelMail SquirrelMail 1.0.4 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required for this vulnerability.  This issue may be exploited by placing malicious commands in the form of ";command;" in the To: line.
+	
+		<ul>
+</ul>
+</div>

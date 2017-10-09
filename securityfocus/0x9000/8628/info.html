@@ -1,0 +1,1617 @@
+#SpeeDr00t@Black Falcon<br>#bid8628<p><b><span style="font-size: 18pt;">OpenSSH Buffer Mismanagement Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8628/info">info</a><br><a href="http://www.securityfocus.com/bid/8628/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8628/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8628/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8628/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8628
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0693<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 16 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 05 2009 11:47PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				These issues were reportedly discovered by Mark Dowd, the OpenSSH team and Solar Designer.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9<br/>
+					
+				
+					Sun Cobalt RaQ 550  <br/>
+					
+				
+					Stonesoft StoneGate 2.2.1 <br/>
+					
+				
+					Stonesoft StoneGate 2.2 <br/>
+					
+				
+					Stonesoft StoneGate 2.1 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.9 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.8 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.7 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.6 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.5 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.4 <br/>
+					
+				
+					Stonesoft StoneGate 2.0.1 <br/>
+					
+				
+					Stonesoft StoneGate 1.7.2 <br/>
+					
+				
+					Stonesoft StoneGate 1.7.1 <br/>
+					
+				
+					Stonesoft StoneGate 1.7 <br/>
+					
+				
+					Stonesoft StoneGate 1.6.3 <br/>
+					
+				
+					Stonesoft StoneGate 1.6.2 <br/>
+					
+				
+					Stonesoft StoneGate 1.5.18 <br/>
+					
+				
+					Stonesoft StoneGate 1.5.17 <br/>
+					
+				
+					Snapgear Snapgear OS 1.8.4 <br/>
+					
+				
+					SGI IRIX 6.5.22 <br/>
+					
+				
+					SGI IRIX 6.5.21 m<br/>
+					
+				
+					SGI IRIX 6.5.21 f<br/>
+					
+				
+					SGI IRIX 6.5.21 <br/>
+					
+				
+					SGI IRIX 6.5.20 m<br/>
+					
+				
+					SGI IRIX 6.5.20 f<br/>
+					
+				
+					SGI IRIX 6.5.20 <br/>
+					
+				
+					SGI IRIX 6.5.19 m<br/>
+					
+				
+					SGI IRIX 6.5.19 f<br/>
+					
+				
+					SGI IRIX 6.5.19 <br/>
+					
+				
+					SCO Open Server 5.0.7 <br/>
+					
+				
+					RedHat openssh-server-3.5p1-6.i386.rpm  <br/>
+					
+				
+					RedHat openssh-server-3.4p1-2.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 8.0  i386<br/>
+</span>
+					
+				
+					RedHat openssh-server-3.1p1-3.i386.rpm  <br/>
+					
+				
+					RedHat openssh-server-2.9p2-7.ia64.rpm  <br/>
+					
+				
+					RedHat openssh-server-2.9p2-7.i386.rpm  <br/>
+					
+				
+					RedHat openssh-server-2.5.2p2-5.i386.rpm  <br/>
+					
+				
+					RedHat openssh-clients-3.5p1-6.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 9.0  i386<br/>
+</span>
+					
+				
+					RedHat openssh-clients-3.4p1-2.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 8.0  i386<br/>
+</span>
+					
+				
+					RedHat openssh-clients-3.1p1-3.i386.rpm  <br/>
+					
+				
+					RedHat openssh-clients-2.9p2-7.ia64.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2  ia64<br/>
+</span>
+					
+				
+					RedHat openssh-clients-2.9p2-7.i386.rpm  <br/>
+					
+				
+					RedHat openssh-clients-2.5.2p2-5.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-gnome-3.5p1-6.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-gnome-3.4p1-2.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-gnome-3.1p1-3.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-gnome-2.9p2-7.ia64.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-gnome-2.9p2-7.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-gnome-2.5.2p2-5.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.1 <br/>
+</span>
+					
+				
+					RedHat openssh-askpass-3.5p1-6.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-3.4p1-2.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-3.1p1-3.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-2.9p2-7.ia64.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-2.9p2-7.i386.rpm  <br/>
+					
+				
+					RedHat openssh-askpass-2.5.2p2-5.i386.rpm  <br/>
+					
+				
+					RedHat openssh-3.5p1-6.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 9.0  i386<br/>
+</span>
+					
+				
+					RedHat openssh-3.4p1-2.i386.rpm  <br/>
+					
+				
+					RedHat openssh-3.1p1-3.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.3  i386<br/>
+</span>
+					
+				
+					RedHat openssh-2.9p2-7.ia64.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2  ia64<br/>
+</span>
+					
+				
+					RedHat openssh-2.9p2-7.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2 <br/>
+</span>
+					
+				
+					RedHat openssh-2.5.2p2-5.i386.rpm  <br/>
+					
+				
+					OpenSSH OpenSSH 3.7 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.7 <br/>
+					
+				
+					OpenSSH OpenSSH 3.6.1 p2<br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Multi Network Firewall 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.6.1 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.6.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.5 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.5 <br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-1<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 <br/>
+					
+				
+					OpenSSH OpenSSH 3.3 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.3 <br/>
+					
+				
+					OpenSSH OpenSSH 3.2.3 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.2.2 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.2 <br/>
+					
+				
+					OpenSSH OpenSSH 3.1 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0.2 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.0.2 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0.1 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.0.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.0 <br/>
+					
+				
+					OpenSSH OpenSSH 2.9.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					OpenBSD OpenBSD  3.3<br/>
+					
+				
+					OpenBSD OpenBSD  3.2<br/>
+					
+				
+					NetBSD NetBSD 1.6.1 <br/>
+					
+				
+					NetBSD NetBSD 1.6 <br/>
+					
+				
+					NetBSD NetBSD 1.5.3 <br/>
+					
+				
+					NetBSD NetBSD 1.5.2 <br/>
+					
+				
+					NetBSD NetBSD 1.5.1 <br/>
+					
+				
+					NetBSD NetBSD 1.5 <br/>
+					
+				
+					NetApp SecureAdmin for NetCache 5.5 <br/>
+					
+				
+					NetApp SecureAdmin 3.0 <br/>
+					
+				
+					Foundry Networks ServerIronXL/G  <br/>
+					
+				
+					Foundry Networks ServerIronXL  <br/>
+					
+				
+					Foundry Networks ServerIron800  <br/>
+					
+				
+					Foundry Networks ServerIron400  <br/>
+					
+				
+					Foundry Networks ServerIron 7.1 .09<br/>
+					
+				
+					Foundry Networks ServerIron 6.0 <br/>
+					
+				
+					Foundry Networks ServerIron 5.1.10 t12<br/>
+					
+				
+					Foundry Networks Ironview  <br/>
+					
+				
+					Foundry Networks FastIron 7.1 .09<br/>
+					
+				
+					Foundry Networks EdgeIron 4802F  0<br/>
+					
+				
+					Foundry Networks BigIron 7.1 .09<br/>
+					
+				
+					F-Secure SSH 1.3.14 <br/>
+					
+				
+					Cray Cray Open Software 3.0 <br/>
+					
+				
+					Cisco WebNS 7.2 0.0.03<br/>
+					
+				
+					Cisco WebNS 7.1 0.2.06<br/>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11000 Content Services Switch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11050 Content Services Switch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11150 Content Services Switch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11501 Content Services Switch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11503 Content Services Switch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11506 Content Services Switch  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco CSS11800 Content Services Switch  <br/>
+</span>
+					
+				
+					Cisco WebNS 7.1 0.1.02<br/>
+					
+				
+					Cisco WebNS 6.10  B4<br/>
+					
+				
+					Cisco WebNS 6.10 <br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.3.2-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.3.1-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.2.2-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.2.1-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-2.5.1-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-2-3.3.2-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-2-3.3.1-K9<br/>
+					
+				
+					Cisco Secure Intrusion Detection System (NetRanger)  0<br/>
+					
+				
+					Cisco PGW2200 Softswitch  <br/>
+					
+				
+					Cisco GSS 4480 Global Site Selector  <br/>
+					
+				
+					Cisco CSS11800 Content Services Switch  <br/>
+					
+				
+					Cisco CSS11506 Content Services Switch  <br/>
+					
+				
+					Cisco CSS11503 Content Services Switch  <br/>
+					
+				
+					Cisco CSS11501 Content Services Switch  <br/>
+					
+				
+					Cisco CSS11150 Content Services Switch  <br/>
+					
+				
+					Cisco CSS11050 Content Services Switch  <br/>
+					
+				
+					Cisco CSS11000 Content Services Switch  <br/>
+					
+				
+					Cisco CiscoWorks 1105 Wireless LAN Solution Engine  <br/>
+					
+				
+					Cisco CiscoWorks 1105 Hosting Solution Engine  <br/>
+					
+				
+					Cisco CatOS 7.6 (1)<br/>
+					
+				
+					Cisco CatOS 7.6 <br/>
+					
+				
+					Cisco CatOS 7.5 (1)<br/>
+					
+				
+					Cisco CatOS 7.5 <br/>
+					
+				
+					Cisco CatOS 7.4 (3)<br/>
+					
+				
+					Cisco CatOS 7.4 (2)<br/>
+					
+				
+					Cisco CatOS 7.4 (1)<br/>
+					
+				
+					Cisco CatOS 7.4 (0.63)<br/>
+					
+				
+					Cisco CatOS 7.4 (0.2)CLR<br/>
+					
+				
+					Cisco CatOS 7.4 <br/>
+					
+				
+					Cisco CatOS 7.3 (2)<br/>
+					
+				
+					Cisco CatOS 7.3 (1)<br/>
+					
+				
+					Cisco CatOS 7.3 <br/>
+					
+				
+					Cisco CatOS 7.2 (2)<br/>
+					
+				
+					Cisco CatOS 7.2 (1)<br/>
+					
+				
+					Cisco CatOS 7.2 (0.65)<br/>
+					
+				
+					Cisco CatOS 7.1 (2a)<br/>
+					
+				
+					Cisco CatOS 7.1 (2)<br/>
+					
+				
+					Cisco CatOS 7.1 (1a)<br/>
+					
+				
+					Cisco CatOS 7.1 (1)<br/>
+					
+				
+					Cisco CatOS 6.4 (3)<br/>
+					
+				
+					Cisco CatOS 6.4 (2)<br/>
+					
+				
+					Cisco CatOS 6.4 (1)<br/>
+					
+				
+					Cisco CatOS 6.3 (9)<br/>
+					
+				
+					Cisco CatOS 6.3 (8.3)<br/>
+					
+				
+					Cisco CatOS 6.3 (8)<br/>
+					
+				
+					Cisco CatOS 6.3 (7)<br/>
+					
+				
+					Cisco CatOS 6.3 (6)<br/>
+					
+				
+					Cisco CatOS 6.3 (5.10)<br/>
+					
+				
+					Cisco CatOS 6.3 (5)<br/>
+					
+				
+					Cisco CatOS 6.3 (4a)<br/>
+					
+				
+					Cisco CatOS 6.3 (4)<br/>
+					
+				
+					Cisco CatOS 6.3 (3a)<br/>
+					
+				
+					Cisco CatOS 6.3 (3)x1<br/>
+					
+				
+					Cisco CatOS 6.3 (3)x<br/>
+					
+				
+					Cisco CatOS 6.3 (3)<br/>
+					
+				
+					Cisco CatOS 6.3 (2a)<br/>
+					
+				
+					Cisco CatOS 6.3 (2)<br/>
+					
+				
+					Cisco CatOS 6.3 (1a)<br/>
+					
+				
+					Cisco CatOS 6.3 (10)<br/>
+					
+				
+					Cisco CatOS 6.3 (1)<br/>
+					
+				
+					Cisco CatOS 6.2 (3a)<br/>
+					
+				
+					Cisco CatOS 6.2 (3)<br/>
+					
+				
+					Cisco CatOS 6.2 (2a)<br/>
+					
+				
+					Cisco CatOS 6.2 (2)<br/>
+					
+				
+					Cisco CatOS 6.2 (1a)<br/>
+					
+				
+					Cisco CatOS 6.2 (1)<br/>
+					
+				
+					Cisco CatOS 6.1 (4b)<br/>
+					
+				
+					Cisco CatOS 6.1 (4)<br/>
+					
+				
+					Cisco CatOS 6.1 (3a)<br/>
+					
+				
+					Cisco CatOS 6.1 (3)<br/>
+					
+				
+					Cisco CatOS 6.1 (2a)<br/>
+					
+				
+					Cisco CatOS 6.1 (2)<br/>
+					
+				
+					Cisco CatOS 6.1 (1e)<br/>
+					
+				
+					Cisco CatOS 6.1 (1d)<br/>
+					
+				
+					Cisco CatOS 6.1 (1c)<br/>
+					
+				
+					Cisco CatOS 6.1 (1b)<br/>
+					
+				
+					Cisco CatOS 6.1 (1a)<br/>
+					
+				
+					Cisco CatOS 6.1 (1)<br/>
+					
+				
+					Cisco CatOS 6.1 <br/>
+					
+				
+					Cisco CatOS 5.5 (9)<br/>
+					
+				
+					Cisco CatOS 5.5 (8a)CV<br/>
+					
+				
+					Cisco CatOS 5.5 (8a)<br/>
+					
+				
+					Cisco CatOS 5.5 (8)<br/>
+					
+				
+					Cisco CatOS 5.5 (7a)<br/>
+					
+				
+					Cisco CatOS 5.5 (7)<br/>
+					
+				
+					Cisco CatOS 5.5 (6a)<br/>
+					
+				
+					Cisco CatOS 5.5 (6)<br/>
+					
+				
+					Cisco CatOS 5.5 (5)<br/>
+					
+				
+					Cisco CatOS 5.5 (4b)<br/>
+					
+				
+					Cisco CatOS 5.5 (4a)<br/>
+					
+				
+					Cisco CatOS 5.5 (4)<br/>
+					
+				
+					Cisco CatOS 5.5 (3)<br/>
+					
+				
+					Cisco CatOS 5.5 (2)<br/>
+					
+				
+					Cisco CatOS 5.5 (1a)<br/>
+					
+				
+					Cisco CatOS 5.5 (19)<br/>
+					
+				
+					Cisco CatOS 5.5 (18)<br/>
+					
+				
+					Cisco CatOS 5.5 (17)<br/>
+					
+				
+					Cisco CatOS 5.5 (16.2)<br/>
+					
+				
+					Cisco CatOS 5.5 (16)<br/>
+					
+				
+					Cisco CatOS 5.5 (15)<br/>
+					
+				
+					Cisco CatOS 5.5 (14)<br/>
+					
+				
+					Cisco CatOS 5.5 (13a)<br/>
+					
+				
+					Cisco CatOS 5.5 (13.5)<br/>
+					
+				
+					Cisco CatOS 5.5 (13)<br/>
+					
+				
+					Cisco CatOS 5.5 (12a)<br/>
+					
+				
+					Cisco CatOS 5.5 (12)<br/>
+					
+				
+					Cisco CatOS 5.5 (11a)<br/>
+					
+				
+					Cisco CatOS 5.5 (11)<br/>
+					
+				
+					Cisco CatOS 5.5 (10a)<br/>
+					
+				
+					Cisco CatOS 5.5 (10)<br/>
+					
+				
+					Cisco CatOS 5.5 (1)<br/>
+					
+				
+					Cisco CatOS 5.5 <br/>
+					
+				
+					Cisco CatOS 5.4 (4a)<br/>
+					
+				
+					Cisco CatOS 5.4 (4)<br/>
+					
+				
+					Cisco CatOS 5.4 (3)<br/>
+					
+				
+					Cisco CatOS 5.4 (2a)<br/>
+					
+				
+					Cisco CatOS 5.4 (2)<br/>
+					
+				
+					Cisco CatOS 5.4 (1)<br/>
+					
+				
+					Cisco CatOS 5.4 <br/>
+					
+				
+					Cisco CatOS 5.3 (6a)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (6)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (5a)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (5)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (4)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (3)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (2)CSX<br/>
+					
+				
+					Cisco CatOS 5.3 (1a)CSX<br/>
+					
+				
+					Cisco CatOS 5.2 (7a)<br/>
+					
+				
+					Cisco CatOS 5.2 (7)<br/>
+					
+				
+					Cisco CatOS 5.2 (6)<br/>
+					
+				
+					Cisco CatOS 5.2 (5)<br/>
+					
+				
+					Cisco CatOS 5.2 (4)<br/>
+					
+				
+					Cisco CatOS 5.2 (3a)CSX<br/>
+					
+				
+					Cisco CatOS 5.2 (3)CSX<br/>
+					
+				
+					Cisco CatOS 5.2 (3)<br/>
+					
+				
+					Cisco CatOS 5.2 (2)CSX<br/>
+					
+				
+					Cisco CatOS 5.2 (2)<br/>
+					
+				
+					Cisco CatOS 5.2 (1)CSX<br/>
+					
+				
+					Cisco CatOS 5.2 (1)<br/>
+					
+				
+					Cisco CatOS 5.1 (2b)<br/>
+					
+				
+					Cisco CatOS 5.1 (2a)<br/>
+					
+				
+					Cisco CatOS 5.1 (1a)CSX<br/>
+					
+				
+					Cisco CatOS 5.1 (1a)<br/>
+					
+				
+					Cisco CatOS 5.1 (1)CSX<br/>
+					
+				
+					Cisco CatOS 5.1 (1)<br/>
+					
+				
+					Cisco CatOS 4.5 (9)<br/>
+					
+				
+					Cisco CatOS 4.5 (8)<br/>
+					
+				
+					Cisco CatOS 4.5 (7)<br/>
+					
+				
+					Cisco CatOS 4.5 (6a)<br/>
+					
+				
+					Cisco CatOS 4.5 (6)<br/>
+					
+				
+					Cisco CatOS 4.5 (5)<br/>
+					
+				
+					Cisco CatOS 4.5 (4)<br/>
+					
+				
+					Cisco CatOS 4.5 (3)<br/>
+					
+				
+					Cisco CatOS 4.5 (2)<br/>
+					
+				
+					Cisco CatOS 4.5 (13a)<br/>
+					
+				
+					Cisco CatOS 4.5 (13)<br/>
+					
+				
+					Cisco CatOS 4.5 (12a)<br/>
+					
+				
+					Cisco CatOS 4.5 (12)<br/>
+					
+				
+					Cisco CatOS 4.5 (11)<br/>
+					
+				
+					Cisco CatOS 4.5 (10)<br/>
+					
+				
+					Cisco CatOS 4.5 (1)<br/>
+					
+				
+					Cisco CatOS 4.4 (1)<br/>
+					
+				
+					Cisco CatOS 4.3 (1a)<br/>
+					
+				
+					Cisco CatOS 4.2 (2)<br/>
+					
+				
+					Cisco CatOS 4.2 (1)<br/>
+					
+				
+					Cisco CatOS 4.1 (3)<br/>
+					
+				
+					Cisco CatOS 4.1 (2)<br/>
+					
+				
+					Cisco CatOS 4.1 (1)<br/>
+					
+				
+					Cisco Catalyst 7600 3.1 (1a)WS-X6380-NAM<br/>
+					
+				
+					Cisco Catalyst 7600 3.1 (1a)WS-SVC-NAM-2<br/>
+					
+				
+					Cisco Catalyst 7600 3.1 (1a)WS-SVC-NAM-1<br/>
+					
+				
+					Cisco Catalyst 7600 2.2 (1a)WS-SVC-NAM-2<br/>
+					
+				
+					Cisco Catalyst 7600 2.2 (1a)WS-SVC-NAM-1<br/>
+					
+				
+					Cisco Catalyst 7600 2.1 (2)WS-X6380-NAM<br/>
+					
+				
+					Cisco Catalyst 6500 3.1 (1a)WS-X6380-NAM<br/>
+					
+				
+					Cisco Catalyst 6500 3.1 (1a)WS-SVC-NAM-2<br/>
+					
+				
+					Cisco Catalyst 6500 3.1 (1a)WS-SVC-NAM-1<br/>
+					
+				
+					Cisco Catalyst 6500 2.2 (1a)WS-SVC-NAM-2<br/>
+					
+				
+					Cisco Catalyst 6500 2.2 (1a)WS-SVC-NAM-1<br/>
+					
+				
+					Cisco Catalyst 6500 2.1 (2)WS-X6380-NAM<br/>
+					
+				
+					Cisco Catalyst 6000 7.6 (1)<br/>
+					
+				
+					Cisco Catalyst 6000 7.5 (1)<br/>
+					
+				
+					Cisco Catalyst 6000 7.1 (2)<br/>
+					
+				
+					Cisco Catalyst 6000 7.1 <br/>
+					
+				
+					Cisco Catalyst 6000 6.3 (4)<br/>
+					
+				
+					Cisco Catalyst 6000 6.3 (0.7)PAN<br/>
+					
+				
+					Cisco Catalyst 6000 6.2 (0.111)<br/>
+					
+				
+					Cisco Catalyst 6000 6.2 (0.110)<br/>
+					
+				
+					Cisco Catalyst 6000 6.1 (2.13)<br/>
+					
+				
+					Cisco Catalyst 6000 6.1 (1c)<br/>
+					
+				
+					Cisco Catalyst 6000 6.1 (1b)<br/>
+					
+				
+					Cisco Catalyst 6000 6.1 (1a)<br/>
+					
+				
+					Cisco Catalyst 6000 6.1 (1)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (4b)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (4a)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (4)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (3)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (2)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (13)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 (1)<br/>
+					
+				
+					Cisco Catalyst 6000 5.5 <br/>
+					
+				
+					Cisco Catalyst 6000 5.4.1 <br/>
+					
+				
+					Cisco Catalyst 6000 5.4 (4)<br/>
+					
+				
+					Cisco Catalyst 6000 5.4 (3)<br/>
+					
+				
+					Cisco Catalyst 6000 5.4 (2)<br/>
+					
+				
+					Cisco Catalyst 6000 5.4 (1)<br/>
+					
+				
+					Cisco Catalyst 6000 5.4 <br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (6)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (5a)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (5)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (4)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (3)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (2)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (1a)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 5.3 (1)CSX<br/>
+					
+				
+					Cisco Catalyst 6000 3.1 (1a)WS-X6380-NAM<br/>
+					
+				
+					Cisco Catalyst 6000 3.1 (1a)WS-SVC-NAM-2<br/>
+					
+				
+					Cisco Catalyst 6000 3.1 (1a)WS-SVC-NAM-1<br/>
+					
+				
+					Cisco Catalyst 6000 2.2 (1a)WS-SVC-NAM-2<br/>
+					
+				
+					Cisco Catalyst 6000 2.2 (1a)WS-SVC-NAM-1<br/>
+					
+				
+					Cisco Catalyst 6000 2.1 (2)WS-X6380-NAM<br/>
+					
+				
+					Cisco Catalyst 5000 6.3 (4)<br/>
+					
+				
+					Cisco Catalyst 5000 6.1 (3)<br/>
+					
+				
+					Cisco Catalyst 5000 6.1 (2)<br/>
+					
+				
+					Cisco Catalyst 5000 6.1 (1c)<br/>
+					
+				
+					Cisco Catalyst 5000 6.1 (1b)<br/>
+					
+				
+					Cisco Catalyst 5000 6.1 (1a)<br/>
+					
+				
+					Cisco Catalyst 5000 6.1 (1)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (7)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (6)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (4b)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (4)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (3)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (2)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (13)<br/>
+					
+				
+					Cisco Catalyst 5000 5.5 (1)<br/>
+					
+				
+					Cisco Catalyst 5000 5.4.1 <br/>
+					
+				
+					Cisco Catalyst 5000 5.4 (4)<br/>
+					
+				
+					Cisco Catalyst 5000 5.4 (3)<br/>
+					
+				
+					Cisco Catalyst 5000 5.4 (2)<br/>
+					
+				
+					Cisco Catalyst 5000 5.4 (1)<br/>
+					
+				
+					Cisco Catalyst 5000 5.2 (4)<br/>
+					
+				
+					Cisco Catalyst 5000 5.2 (3)<br/>
+					
+				
+					Cisco Catalyst 5000 5.2 (2)<br/>
+					
+				
+					Cisco Catalyst 5000 5.2 (1)<br/>
+					
+				
+					Cisco Catalyst 5000 5.2 <br/>
+					
+				
+					Cisco Catalyst 5000 5.1 (2a)<br/>
+					
+				
+					Cisco Catalyst 5000 5.1 (1)<br/>
+					
+				
+					Cisco Catalyst 5000 5.1 <br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (9)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (8)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (7)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (6)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (5)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (4b)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (4)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (3)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (2)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (13a)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (12)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (11)<br/>
+					
+				
+					Cisco Catalyst 5000 4.5 (10)<br/>
+					
+				
+					Cisco Catalyst 5000  <br/>
+					
+				
+					Cisco Catalyst 4912G  <br/>
+					
+				
+					Cisco Catalyst 4000 7.6 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 7.5 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 7.1.2 <br/>
+					
+				
+					Cisco Catalyst 4000 7.1 (2)<br/>
+					
+				
+					Cisco Catalyst 4000 7.1 <br/>
+					
+				
+					Cisco Catalyst 4000 6.3.5 <br/>
+					
+				
+					Cisco Catalyst 4000 6.3 (4)<br/>
+					
+				
+					Cisco Catalyst 4000 6.1 (1c)<br/>
+					
+				
+					Cisco Catalyst 4000 6.1 (1b)<br/>
+					
+				
+					Cisco Catalyst 4000 6.1 (1a)<br/>
+					
+				
+					Cisco Catalyst 4000 6.1 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5.5 <br/>
+					
+				
+					Cisco Catalyst 4000 5.5 (4b)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5 (4)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5 (3)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5 (2)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5 (13)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 5.5 <br/>
+					
+				
+					Cisco Catalyst 4000 5.4.1 <br/>
+					
+				
+					Cisco Catalyst 4000 5.4 (3)<br/>
+					
+				
+					Cisco Catalyst 4000 5.4 (2)<br/>
+					
+				
+					Cisco Catalyst 4000 5.4 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 5.4 <br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (7)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (6)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (5)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (4)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (2)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (1a)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 5.2 <br/>
+					
+				
+					Cisco Catalyst 4000 5.1 (2a)<br/>
+					
+				
+					Cisco Catalyst 4000 5.1 (1a)<br/>
+					
+				
+					Cisco Catalyst 4000 5.1 (1)<br/>
+					
+				
+					Cisco Catalyst 4000 5.1 <br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (9)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (8)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (7)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (6)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (5)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (4b)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (4)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (3)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (2)<br/>
+					
+				
+					Cisco Catalyst 4000 4.5 (10)<br/>
+					
+				
+					Cisco Catalyst 4000  <br/>
+					
+				
+					Cisco Catalyst 2948G  <br/>
+					
+				
+					Cisco Catalyst 2900 5.5 (13)<br/>
+					
+				
+					Cisco Catalyst  2980G-A<br/>
+					
+				
+					Cisco Catalyst  2980G<br/>
+					
+				
+					Caldera OpenLinux Workstation 3.1.1 <br/>
+					
+				
+					Caldera OpenLinux Server 3.1.1 <br/>
+					
+				
+					Blue Coat Systems SGME 2.1.6 <br/>
+					
+				
+					Blue Coat Systems SG2 Secure Proxy  0<br/>
+					
+				
+					Blue Coat Systems Security Gateway OS 3.1 <br/>
+					
+				
+					Blue Coat Systems Security Gateway OS 2.1.5001 SP1<br/>
+					
+				
+					Blue Coat Systems Security Gateway OS 2.1.9 <br/>
+					
+				
+					Blue Coat Systems ProxySG  0<br/>
+					
+				
+					Blue Coat Systems CacheOS CA/SA 4.1.10 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Snapgear Snapgear OS 1.8.5 <br/>
+					
+				
+					SGI IRIX 6.5.22 <br/>
+					
+				
+					OpenSSH OpenSSH 3.7.1 p1<br/>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.7 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.7.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.7 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.7 <br/>
+					
+				
+					F-Secure SSH 1.3.15 <br/>
+					
+				
+					Cisco CatOS 8.1 (3)<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Although these issues are not believed to be exploitable to execute arbitrary code, there are rumors of exploits circulating in the wild.
+	
+		<ul>
+</ul>
+</div>
