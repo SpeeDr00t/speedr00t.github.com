@@ -1,0 +1,934 @@
+#SpeeDr00t@Black Falcon<br>#bid8537<p><b><span style="font-size: 18pt;">Stunnel Leaked File Descriptor Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8537/info">info</a><br><a href="http://www.securityfocus.com/bid/8537/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8537/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8537/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8537/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8537
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0740<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 03 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 11:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue has been credited to Steve Grubb &lt;linux_4ever@yahoo.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Stunnel Stunnel 4.0 0<br/>
+					
+				
+					Stunnel Stunnel 3.24 <br/>
+					
+				
+					Stunnel Stunnel 3.22 <br/>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Community 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Community 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Professional 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Professional 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Professional 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.7 <br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.21 c<br/>
+					
+				
+					Stunnel Stunnel 3.21 b<br/>
+					
+				
+					Stunnel Stunnel 3.21 a<br/>
+					
+				
+					Stunnel Stunnel 3.21 <br/>
+					
+				
+					Stunnel Stunnel 3.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.18 <br/>
+					
+				
+					Stunnel Stunnel 3.17 <br/>
+					
+				
+					Stunnel Stunnel 3.16 <br/>
+					
+				
+					Stunnel Stunnel 3.15 <br/>
+					
+				
+					Stunnel Stunnel 3.14 <br/>
+					
+				
+					Stunnel Stunnel 3.13 <br/>
+					
+				
+					Stunnel Stunnel 3.12 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.11 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.9 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 x<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.0 <br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.8 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 x<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.0 <br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.7 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 x<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.0 <br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.4 a<br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 x<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.0 <br/>
+</span>
+					
+				
+					Stunnel Stunnel 3.3 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 x<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Trustix Secure Linux 1.0 <br/>
+</span>
+					
+				
+					Stunnel Stunnel  3.20<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+					
+				
+					Stunnel Stunnel  3.10<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					SGI ProPack 2.3 <br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Mandriva Linux Mandrake 9.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Stunnel Stunnel 4.0 4<br/>
+					
+				
+					Stunnel Stunnel 4.0 3<br/>
+					
+				
+					Stunnel Stunnel 4.0 2<br/>
+					
+				
+					Stunnel Stunnel 4.0 1<br/>
+					
+				
+					Stunnel Stunnel 3.26 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of code has been supplied:<br/><br/>To compile:<br/>$(CC) $(CFLAGS) -o $@ leak-sploit.c -lssl<br/><br/>To run the POC code, you can execute it directly as the<br/>local program (-l argument) for Stunnel :<br/><br/>/usr/sbin/stunnel -s nobody -g nobody -D 7 -p<br/>/etc/ssl/certs/stunnel.pem -o /tmp/stunnel.log -P<br/>/tmp/stunnel.pid -d 2222 -l<br/>/opt/stunnel-sploit/leak-sploit -- leak-sploit<br/><br/>Then connect to stunnel like: lynx https://localhost:2222
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/leak-sploit.c">/data/vulnerabilities/exploits/leak-sploit.c</a></li>
+</ul>
+</div>
