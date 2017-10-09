@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid5822<p><b><span style="font-size: 18pt;">SafeTP Passive Mode Internal IP Address Revealing Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/5822/info">info</a><br><a href="http://www.securityfocus.com/bid/5822/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/5822/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/5822/solution">solution</a><br><a href="http://www.securityfocus.com/bid/5822/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				5822
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 28 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 28 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Vulnerability discovery credited to Jonathan G. Lampe &lt;jonathan@stdnet.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SafeTP SafeTP Server 1.46 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept was contributed by Jonathan G. Lampe &lt;jonathan@stdnet.com&gt;:<br/><br/>220-SafeTP: Negotiating FTP connection...<br/>220-safetp.nowhere.com X2 WS_FTP Server 3.1.0 (1506847632)<br/>220-Changed to Protect the Innocent<br/>220-safetp.nowhere.com X2 WS_FTP Server 3.1.0 (1506847632)<br/>220-*** This server can accept secure (encrypted) connections. ***<br/>220-*** See http://safetp.cs.berkeley.edu for info. ***<br/>220 SafeTP: Control channel secure: X-SafeTP1. Data channel secure. PBSZ=32801b<br/>Connected to safetp.nowhere.com.<br/>User: SomeUser<br/>331 Password required<br/>Password: *********<br/>230-user logged in<br/>230-Hello Some User.  Welcome to the SafeTP File Transfer System!<br/>230 user logged in<br/>ftp&gt; ls<br/>200 PORT command ok.<br/>Timed out waiting for connection from server.<br/>ftp&gt; passive<br/>Passive mode  On .<br/>ftp&gt; ls<br/>425 Failed to connect to 192.168.3.162, port 3303: connect: Connection timed out (code 10060)<br/>ftp&gt; passive<br/>Draining: 510 Assertion failed: ftpd reply: 150 Opening ASCII data connection for directory listing<br/>Draining: 227 Entering Passive Mode (10,7,34,85,5,133).<br/>Passive mode  Off .<br/>ftp&gt; put tendot.txt<br/>227 Entering passive mode (169,229,60,94,156,186).<br/>150 Opening ASCII data connection for tendot.txt<br/>226 transfer complete<br/>ftp: 1094 bytes sent in 0.98Seconds 1.09Kbytes/sec.<br/>ftp&gt; quit<br/>221-Good-Bye<br/>221-Goodbye Some User.  Thank you for visiting the SafeTP File Transfer System!<br/>221 Good-Bye
+	
+		<ul>
+</ul>
+</div>

