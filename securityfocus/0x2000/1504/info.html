@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid1504<p><b><span style="font-size: 18pt;">AnalogX Proxy DoS Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1504/info">info</a><br><a href="http://www.securityfocus.com/bid/1504/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1504/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1504/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1504/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1504
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-0656<br/>
+				
+					CVE-2000-0657<br/>
+				
+					CVE-2000-0658<br/>
+				
+					CVE-2000-0659<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 25 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 02:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was first reported in an advisory released by Foundstone Inc. on July 25, 2000 which credits Robin Keir (robin.keir@foundstone.com) and Stuart McClure (stuart.mcclure@foundstone.com) with the discovery.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					AnalogX Proxy 4.0 4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					AnalogX Proxy 4.0 6<br/>
+					
+				
+					AnalogX Proxy 4.0 5<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x2000/1504/analogXDoS.c">#exploit_analogXDoS.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The Foundstone, Inc. advisory which reported this issue included the following instructions for demonstrating the problem.  The full text of this advisory is available in the 'Credits' section of this vulnerability.<br/><br/>Proof of concept<br/><br/>        Sending an FTP "USER" command containing approximately 370 or <br/>        more characters to the proxy server FTP TCP port 21 will crash<br/>        it.<br/><br/>        Example #1: nc 192.168.1.2 21 &amp;lt; ftp.txt<br/> <br/>        Where ftp.txt contains:<br/>        "USER long string of ~370 chars@isp.com"<br/> <br/>        Sending an SMTP "HELO" command containing approximately 370 or<br/>        more characters to the proxy server SMTP TCP port 25 will <br/>        crash it.<br/><br/>        Example #2: nc 192.168.1.2 21 &amp;lt; smtp.txt<br/> <br/>        Where smtp.txt contains:<br/>        "HELO long string of ~370 chars@isp.com"<br/> <br/>        Sending a POP3 "USER" command containing approximately 370 or <br/>        more characters to the proxy server POP3 TCP port 110 will <br/>        crash it.<br/><br/>        Example #3: nc 192.168.1.2 21 &amp;lt; pop3.txt<br/> <br/>        Where pop3.txt contains:<br/>        "USER long string of ~370 chars@isp.com"<br/><br/>        Sending a SOCKS4 "CONNECT" request with an overly large user <br/>        ID field of roughly 1800 characters or more to the proxy <br/>        server SOCKS TCP port 1080 will crash it.<br/> <br/>        Example #4: nc 192.168.1.2 1080 &amp;lt; socks.dat<br/> <br/>        Where socks.dat contains binary data with a user ID field of <br/>        approx. 1800 bytes.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/">/data/vulnerabilities/exploits/</a></li>
+<li><a href="/data/vulnerabilities/exploits/analogXDoS.c">/data/vulnerabilities/exploits/analogXDoS.c</a></li>
+</ul>
+</div>
