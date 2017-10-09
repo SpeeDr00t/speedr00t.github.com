@@ -1,0 +1,684 @@
+#SpeeDr00t@Black Falcon<br>#bid7116<p><b><span style="font-size: 18pt;">Microsoft Windows ntdll.dll Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/7116/info">info</a><br><a href="http://www.securityfocus.com/bid/7116/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/7116/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/7116/solution">solution</a><br><a href="http://www.securityfocus.com/bid/7116/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				7116
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0109<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 17 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 09:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Announced by the vendor.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows XP Professional  SP1<br/>
+					
+				
+					Microsoft Windows XP Professional  <br/>
+					
+				
+					Microsoft Windows XP Home  SP1<br/>
+					
+				
+					Microsoft Windows XP Home  <br/>
+					
+				
+					Microsoft Windows XP 64-bit Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP 64-bit Edition  <br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6a<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0<br/>
+					
+				
+					Microsoft Windows 2000 Terminal Services  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Terminal Services  SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Terminal Services  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Terminal Services  <br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Professional  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Professional  <br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  <br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  <br/>
+					
+				
+					Cisco Wireless Lan Solution Engine  <br/>
+					
+				
+					Cisco VPN/Security Management Solution  <br/>
+					
+				
+					Cisco Voice Manager  <br/>
+					
+				
+					Cisco User Registration Tool  <br/>
+					
+				
+					Cisco uOne Enterprise Edition  <br/>
+					
+				
+					Cisco Unity Server 4.0 <br/>
+					
+				
+					Cisco Unity Server 3.3 <br/>
+					
+				
+					Cisco Unity Server 3.2 <br/>
+					
+				
+					Cisco Unity Server 3.1 <br/>
+					
+				
+					Cisco Unity Server 3.0 <br/>
+					
+				
+					Cisco Unity Server 2.46 <br/>
+					
+				
+					Cisco Unity Server 2.4 <br/>
+					
+				
+					Cisco Unity Server 2.3 <br/>
+					
+				
+					Cisco Unity Server 2.2 <br/>
+					
+				
+					Cisco Unity Server 2.1 <br/>
+					
+				
+					Cisco Unity Server 2.0 <br/>
+					
+				
+					Cisco Unity Server  <br/>
+					
+				
+					Cisco Transport Manager  <br/>
+					
+				
+					Cisco Trailhead  <br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.3.2-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.3.1-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.2.2-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-3.2.1-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-2.5.1-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-2-3.3.2-K9<br/>
+					
+				
+					Cisco SN 5428 Storage Router  SN5428-2-3.3.1-K9<br/>
+					
+				
+					Cisco SN 5420 Storage Router 1.1.3 <br/>
+					
+				
+					Cisco SN 5420 Storage Router 1.1 (7)<br/>
+					
+				
+					Cisco SN 5420 Storage Router 1.1 (5)<br/>
+					
+				
+					Cisco SN 5420 Storage Router 1.1 (4)<br/>
+					
+				
+					Cisco SN 5420 Storage Router 1.1 (3)<br/>
+					
+				
+					Cisco SN 5420 Storage Router 1.1 (2)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Cisco Small Network Management Solution  <br/>
+					
+				
+					Cisco Service Management  <br/>
+					
+				
+					Cisco Secure Scanner  <br/>
+					
+				
+					Cisco Secure Policy Manager 3.0.1 <br/>
+					
+				
+					Cisco Secure Access Control Server 3.2.1 <br/>
+					
+				
+					Cisco Routed Wan Management  <br/>
+					
+				
+					Cisco QoS Policy Manager  <br/>
+					
+				
+					Cisco Personal Assistant  <br/>
+					
+				
+					Cisco Networking Services for Active Directory  <br/>
+					
+				
+					Cisco Network Registar  <br/>
+					
+				
+					Cisco Media Blender  <br/>
+					
+				
+					Cisco Lan Management Solution  <br/>
+					
+				
+					Cisco IP/VC 3540 Video Rate Matching Module  <br/>
+					
+				
+					Cisco IP/VC 3540 Application Server  <br/>
+					
+				
+					Cisco IP Telephony Environment Monitor  <br/>
+					
+				
+					Cisco IP Contact Center Express  <br/>
+					
+				
+					Cisco IP Contact Center Enterprise  <br/>
+					
+				
+					Cisco Internet Service Node  <br/>
+					
+				
+					Cisco Intelligent Contact Manager 5.0 <br/>
+					
+				
+					Cisco Intelligent Contact Manager  <br/>
+					
+				
+					Cisco Emergency Responder  <br/>
+					
+				
+					Cisco E-Mail Manager  <br/>
+					
+				
+					Cisco Dynamic Content Adapter  <br/>
+					
+				
+					Cisco DOCSIS CPE Configurator  <br/>
+					
+				
+					Cisco Customer Response Application Server  <br/>
+					
+				
+					Cisco Conference Connection  <br/>
+					
+				
+					Cisco Collaboration Server  <br/>
+					
+				
+					Cisco CiscoWorks VPN/Security Management Solution  <br/>
+					
+				
+					Cisco Call Manager 3.3 (3)<br/>
+					
+				
+					Cisco Call Manager 3.3 <br/>
+					
+				
+					Cisco Call Manager 3.2 <br/>
+					
+				
+					Cisco Call Manager 3.1 (3a)<br/>
+					
+				
+					Cisco Call Manager 3.1 (2)<br/>
+					
+				
+					Cisco Call Manager 3.1 <br/>
+					
+				
+					Cisco Call Manager 3.0 <br/>
+					
+				
+					Cisco Call Manager 2.0 <br/>
+					
+				
+					Cisco Call Manager 1.0 <br/>
+					
+				
+					Cisco Call Manager  <br/>
+					
+				
+					Cisco Building BroadBand Service Manager Hotspot 1.0 <br/>
+					
+				
+					Cisco Building Broadband Service Manager (BBSM) 5.2 <br/>
+					
+				
+					Cisco Building Broadband Service Manager (BBSM) 5.1 <br/>
+					
+				
+					Cisco Broadband Troubleshooter  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cisco Secure Access Control Server 3.2.2 <br/>
+					
+				
+					Cisco Secure Access Control Server 3.2 (1.20)<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	CORE has developed a working commercial exploit for their IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.<br/><br/>A proof-of-concept worm for WebDAV has been released, but is not known to be circulating in the wild at this time.<br/><br/>An exploit has been released as part of the MetaSploit Framework 2.0.<br/><br/>The following exploits are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/wbr.c">/data/vulnerabilities/exploits/wbr.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/rs_iis.c">/data/vulnerabilities/exploits/rs_iis.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/wd.pl">/data/vulnerabilities/exploits/wd.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/webdavin-1.01.zip">/data/vulnerabilities/exploits/webdavin-1.01.zip</a></li>
+<li><a href="/data/vulnerabilities/exploits/regexploit.c">/data/vulnerabilities/exploits/regexploit.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/regexp.c">/data/vulnerabilities/exploits/regexp.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/regexploit.c">/data/vulnerabilities/exploits/regexploit.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/KaHT_public.tar.gz">/data/vulnerabilities/exploits/KaHT_public.tar.gz</a></li>
+<li><a href="/data/vulnerabilities/exploits/webdav-reloaded.c">/data/vulnerabilities/exploits/webdav-reloaded.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/linux-wb.c">/data/vulnerabilities/exploits/linux-wb.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/Xnuxer.c">/data/vulnerabilities/exploits/Xnuxer.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/iis50_webdav_ntdll.pm">/data/vulnerabilities/exploits/iis50_webdav_ntdll.pm</a></li>
+</ul>
+</div>

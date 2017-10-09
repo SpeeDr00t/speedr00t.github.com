@@ -1,0 +1,393 @@
+#SpeeDr00t@Black Falcon<br>#bid6575<p><b><span style="font-size: 18pt;">Half-Life StatsMe Plug-in CMD_ARGV Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6575/info">info</a><br><a href="http://www.securityfocus.com/bid/6575/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6575/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6575/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6575/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6575
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 10 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 10 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to "VOID.AT Security" &lt;crew@void.at&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					StatsMe StatsMe 2.6.19  Beta<br/>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1.1 .0 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.9 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.8 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.7 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.6 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.4 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.9 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.8 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.7 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.6 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.5 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.4 Linux<br/>
+</span>
+					
+				
+					StatsMe StatsMe 2.6.17  Beta UNSTABLE<br/>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1.1 .0 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.9 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.8 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.7 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.6 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.4 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.9 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.8 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.7 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.6 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.5 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.4 Linux<br/>
+</span>
+					
+				
+					StatsMe StatsMe 2.6.16  Beta<br/>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1.1 .0 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.9 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.8 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.7 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.6 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.4 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.9 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.8 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.7 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.6 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.5 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.4 Linux<br/>
+</span>
+					
+				
+					StatsMe StatsMe 2.6.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1.1 .0 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.9 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.8 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.7 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.6 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 4.1 .0.4 Win32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.9 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.8 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.7 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.6 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.5 Linux<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Valvesoftware Half-Life Dedicated Server 3.1 .0.4 Linux<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit was submitted:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/hoagie-statsme.c">/data/vulnerabilities/exploits/hoagie-statsme.c</a></li>
+</ul>
+</div>

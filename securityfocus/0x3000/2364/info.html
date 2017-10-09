@@ -1,0 +1,465 @@
+#SpeeDr00t@Black Falcon<br>#bid2364<p><b><span style="font-size: 18pt;">Linux sysctl() Kernel Memory Reading Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2364/info">info</a><br><a href="http://www.securityfocus.com/bid/2364/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2364/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2364/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2364/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2364
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 09 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 09 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by Chris Evans, and announced to Bugtraq in a Red Hat Security Advisory dated February 8, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat kernel-utils-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-source-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-smp-2.2.16-22.i686.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-smp-2.2.16-22.i586.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-smp-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-pcmcia-cs-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-ibcs-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-enterprise-2.2.16-22.i686.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-doc-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-BOOT-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-2.2.16-22.i686.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-2.2.16-22.i586.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Redhat kernel-2.2.16-22.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.2.18 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit contributed by Chris Evans.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/sysctl_exp.c">/data/vulnerabilities/exploits/sysctl_exp.c</a></li>
+</ul>
+</div>

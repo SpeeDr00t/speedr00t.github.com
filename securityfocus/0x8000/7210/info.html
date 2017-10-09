@@ -1,0 +1,167 @@
+#SpeeDr00t@Black Falcon<br>#bid7210<p><b><span style="font-size: 18pt;">PHP openlog() Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/7210/info">info</a><br><a href="http://www.securityfocus.com/bid/7210/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/7210/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/7210/solution">solution</a><br><a href="http://www.securityfocus.com/bid/7210/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				7210
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0172<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 27 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 09:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The discovery of this vulnerability has been credited to &lt;sir.mordred@hushmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP 5.0 candidate 1<br/>
+					
+				
+					PHP PHP 4.3.7 <br/>
+					
+				
+					PHP PHP 4.3.5 <br/>
+					
+				
+					PHP PHP 4.3.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux  10 F...<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+					
+				
+					PHP PHP 4.3.2 <br/>
+					
+				
+					PHP PHP 4.3.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 8.2 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept code has been released:<br/><br/>&amp;lt;?php<br/>    openlog(str_repeat("X", 1500), LOG_PID, LOG_DAEMON);<br/>?&amp;gt;<br/><br/>The following exploit is reported to exploit this vulnerability remotely.  It should be noted that the integrity of this exploit has not been verified by Symantec.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/php_exp.pl">/data/vulnerabilities/exploits/php_exp.pl</a></li>
+</ul>
+</div>

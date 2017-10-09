@@ -1,0 +1,742 @@
+#SpeeDr00t@Black Falcon<br>#bid2540<p><b><span style="font-size: 18pt;">Ntpd Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2540/info">info</a><br><a href="http://www.securityfocus.com/bid/2540/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2540/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2540/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2540/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2540
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0414<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 04 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 05 2007 05:05PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was published in an exploit written by Przemyslaw Frasunek &lt;venglin@freebsd.lublin.pl&gt; and posted to Bugtraq on April 4, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  8_x86<br/>
+					
+				
+					Sun Solaris  8_sparc<br/>
+					
+				
+					Sun Solaris  7.0_x86<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+					
+				
+					HP HP-UX (VVOS) 11.0.4 <br/>
+					
+				
+					HP HP-UX (VVOS) 10.24 <br/>
+					
+				
+					HP HP-UX 11.11 <br/>
+					
+				
+					HP HP-UX 11.0 <br/>
+					
+				
+					HP HP-UX 10.20 <br/>
+					
+				
+					HP HP-UX 10.10 <br/>
+					
+				
+					HP HP-UX 10.0 1<br/>
+					
+				
+					Dave Mills xntp3 5.93 e<br/>
+					
+				
+					Dave Mills xntp3 5.93 d<br/>
+					
+				
+					Dave Mills xntp3 5.93 c<br/>
+					
+				
+					Dave Mills xntp3 5.93 b<br/>
+					
+				
+					Dave Mills xntp3 5.93 a<br/>
+					
+				
+					Dave Mills xntp3 5.93 <br/>
+					
+				
+					Dave Mills ntpd 4.0.99 k<br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Slackware Linux 7.0 <br/>
+</span>
+					
+				
+					Dave Mills ntpd 4.0.99 j<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 i<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 h<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 g<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+					
+				
+					Dave Mills ntpd 4.0.99 f<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 e<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 d<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 c<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 b<br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.2 -RELEASE<br/>
+</span>
+					
+				
+					Dave Mills ntpd 4.0.99 a<br/>
+					
+				
+					Dave Mills ntpd 4.0.99 <br/>
+					
+				
+					Cisco Voice Services Provisioning Tool  <br/>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Cisco Virtual Switch Controller 3000  <br/>
+					
+				
+					Cisco SC2200  <br/>
+					
+				
+					Cisco PGW2200 PSTN Gateway  <br/>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Cisco IP Manager 2.0 <br/>
+					
+				
+					Cisco IP Manager 1.0 <br/>
+					
+				
+					Cisco IOS  12.2YC<br/>
+					
+				
+					Cisco IOS  12.2YA<br/>
+					
+				
+					Cisco IOS  12.2XQ<br/>
+					
+				
+					Cisco IOS  12.2XQ<br/>
+					
+				
+					Cisco IOS  12.2XH<br/>
+					
+				
+					Cisco IOS  12.2XE<br/>
+					
+				
+					Cisco IOS  12.2XD<br/>
+					
+				
+					Cisco IOS  12.2XB<br/>
+					
+				
+					Cisco IOS  12.2XA<br/>
+					
+				
+					Cisco IOS  12.2T<br/>
+					
+				
+					Cisco IOS  12.2S<br/>
+					
+				
+					Cisco IOS  12.2PI<br/>
+					
+				
+					Cisco IOS  12.2PB<br/>
+					
+				
+					Cisco IOS  12.2DA<br/>
+					
+				
+					Cisco IOS  12.2BX<br/>
+					
+				
+					Cisco IOS  12.2BW<br/>
+					
+				
+					Cisco IOS  12.2B<br/>
+					
+				
+					Cisco IOS  12.2<br/>
+					
+				
+					Cisco IOS  12.1YF<br/>
+					
+				
+					Cisco IOS  12.1YD<br/>
+					
+				
+					Cisco IOS  12.1YC<br/>
+					
+				
+					Cisco IOS  12.1YB<br/>
+					
+				
+					Cisco IOS  12.1YA<br/>
+					
+				
+					Cisco IOS  12.1XZ<br/>
+					
+				
+					Cisco IOS  12.1XY<br/>
+					
+				
+					Cisco IOS  12.1XX<br/>
+					
+				
+					Cisco IOS  12.1XW<br/>
+					
+				
+					Cisco IOS  12.1XV<br/>
+					
+				
+					Cisco IOS  12.1XU<br/>
+					
+				
+					Cisco IOS  12.1XT<br/>
+					
+				
+					Cisco IOS  12.1XS<br/>
+					
+				
+					Cisco IOS  12.1XR<br/>
+					
+				
+					Cisco IOS  12.1XQ<br/>
+					
+				
+					Cisco IOS  12.1XP<br/>
+					
+				
+					Cisco IOS  12.1XM<br/>
+					
+				
+					Cisco IOS  12.1XL<br/>
+					
+				
+					Cisco IOS  12.1XK<br/>
+					
+				
+					Cisco IOS  12.1XJ<br/>
+					
+				
+					Cisco IOS  12.1XI<br/>
+					
+				
+					Cisco IOS  12.1XH<br/>
+					
+				
+					Cisco IOS  12.1XG<br/>
+					
+				
+					Cisco IOS  12.1XF<br/>
+					
+				
+					Cisco IOS  12.1XE<br/>
+					
+				
+					Cisco IOS  12.1XD<br/>
+					
+				
+					Cisco IOS  12.1XC<br/>
+					
+				
+					Cisco IOS  12.1XB<br/>
+					
+				
+					Cisco IOS  12.1XA<br/>
+					
+				
+					Cisco IOS  12.1T<br/>
+					
+				
+					Cisco IOS  12.1EZ<br/>
+					
+				
+					Cisco IOS  12.1EY<br/>
+					
+				
+					Cisco IOS  12.1EX<br/>
+					
+				
+					Cisco IOS  12.1EC<br/>
+					
+				
+					Cisco IOS  12.1E<br/>
+					
+				
+					Cisco IOS  12.1DC<br/>
+					
+				
+					Cisco IOS  12.1DB<br/>
+					
+				
+					Cisco IOS  12.1DA<br/>
+					
+				
+					Cisco IOS  12.1CX<br/>
+					
+				
+					Cisco IOS  12.1AA<br/>
+					
+				
+					Cisco IOS  12.1<br/>
+					
+				
+					Cisco IOS  12.0XV<br/>
+					
+				
+					Cisco IOS  12.0XU<br/>
+					
+				
+					Cisco IOS  12.0XS<br/>
+					
+				
+					Cisco IOS  12.0XR<br/>
+					
+				
+					Cisco IOS  12.0XQ<br/>
+					
+				
+					Cisco IOS  12.0XP<br/>
+					
+				
+					Cisco IOS  12.0XN<br/>
+					
+				
+					Cisco IOS  12.0XM<br/>
+					
+				
+					Cisco IOS  12.0XL<br/>
+					
+				
+					Cisco IOS  12.0XJ<br/>
+					
+				
+					Cisco IOS  12.0XI<br/>
+					
+				
+					Cisco IOS  12.0XH<br/>
+					
+				
+					Cisco IOS  12.0XG<br/>
+					
+				
+					Cisco IOS  12.0XF<br/>
+					
+				
+					Cisco IOS  12.0XE<br/>
+					
+				
+					Cisco IOS  12.0XD<br/>
+					
+				
+					Cisco IOS  12.0XC<br/>
+					
+				
+					Cisco IOS  12.0XB<br/>
+					
+				
+					Cisco IOS  12.0XA<br/>
+					
+				
+					Cisco IOS  12.0WT<br/>
+					
+				
+					Cisco IOS  12.0WC<br/>
+					
+				
+					Cisco IOS  12.0T<br/>
+					
+				
+					Cisco IOS  12.0ST<br/>
+					
+				
+					Cisco IOS  12.0SL<br/>
+					
+				
+					Cisco IOS  12.0SC<br/>
+					
+				
+					Cisco IOS  12.0S<br/>
+					
+				
+					Cisco IOS  12.0DC<br/>
+					
+				
+					Cisco IOS  12.0DB<br/>
+					
+				
+					Cisco IOS  12.0DA<br/>
+					
+				
+					Cisco IOS  12.0(7)XK<br/>
+					
+				
+					Cisco IOS  12.0(5)XK<br/>
+					
+				
+					Cisco IOS  12.0(14)W5(20)<br/>
+					
+				
+					Cisco IOS  12.0(13)W5(19c)<br/>
+					
+				
+					Cisco IOS  12.0(10)W5(18g)<br/>
+					
+				
+					Cisco IOS  12.0<br/>
+					
+				
+					Cisco IOS  11.3XA<br/>
+					
+				
+					Cisco IOS  11.3WA4<br/>
+					
+				
+					Cisco IOS  11.3T<br/>
+					
+				
+					Cisco IOS  11.3NA<br/>
+					
+				
+					Cisco IOS  11.3MA<br/>
+					
+				
+					Cisco IOS  11.3HA<br/>
+					
+				
+					Cisco IOS  11.3DB<br/>
+					
+				
+					Cisco IOS  11.3DA<br/>
+					
+				
+					Cisco IOS  11.3AA<br/>
+					
+				
+					Cisco IOS  11.3<br/>
+					
+				
+					Cisco IOS  11.2XA<br/>
+					
+				
+					Cisco IOS  11.2WA4<br/>
+					
+				
+					Cisco IOS  11.2SA<br/>
+					
+				
+					Cisco IOS  11.2P<br/>
+					
+				
+					Cisco IOS  11.2GS<br/>
+					
+				
+					Cisco IOS  11.2F<br/>
+					
+				
+					Cisco IOS  11.2BC<br/>
+					
+				
+					Cisco IOS  11.2<br/>
+					
+				
+					Cisco IOS  11.1IA<br/>
+					
+				
+					Cisco IOS  11.1CT<br/>
+					
+				
+					Cisco IOS  11.1CC<br/>
+					
+				
+					Cisco IOS  11.1CA<br/>
+					
+				
+					Cisco IOS  11.1AA<br/>
+					
+				
+					Cisco IOS  11.1<br/>
+					
+				
+					Cisco IOS  11.0<br/>
+					
+				
+					Cisco IOS  10.3<br/>
+					
+				
+					Cisco BTS 10200  <br/>
+					
+				
+					Cisco Billing and Management Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Apple Mac OS X 10.0.1 <br/>
+					
+				
+					Apple Mac OS X 10.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cisco IOS  12.2DD<br/>
+					
+				
+					Cisco IOS  12.2(4)T<br/>
+					
+				
+					Cisco IOS  12.2(4)<br/>
+					
+				
+					Cisco IOS  12.2(3.4)BP<br/>
+					
+				
+					Cisco IOS  12.2(3)<br/>
+					
+				
+					Cisco IOS  12.2(2)XA1<br/>
+					
+				
+					Cisco IOS  12.2(2)XA<br/>
+					
+				
+					Cisco IOS  12.2(2)B<br/>
+					
+				
+					Cisco IOS  12.2(1b)<br/>
+					
+				
+					Cisco IOS  12.2(1.4)S<br/>
+					
+				
+					Cisco IOS  12.2(1.1)PI<br/>
+					
+				
+					Cisco IOS  12.2(1)XQ<br/>
+					
+				
+					Cisco IOS  12.2(1)XH<br/>
+					
+				
+					Cisco IOS  12.2(1)XE<br/>
+					
+				
+					Cisco IOS  12.2(1)XD1<br/>
+					
+				
+					Cisco IOS  12.1(9)AA<br/>
+					
+				
+					Cisco IOS  12.1(9)<br/>
+					
+				
+					Cisco IOS  12.1(8a)E<br/>
+					
+				
+					Cisco IOS  12.1(7)EC<br/>
+					
+				
+					Cisco IOS  12.1(7)CX<br/>
+					
+				
+					Cisco IOS  12.1(6)EZ2<br/>
+					
+				
+					Cisco IOS  12.1(6)EY<br/>
+					
+				
+					Cisco IOS  12.1(5)YF2<br/>
+					
+				
+					Cisco IOS  12.1(5)YD2<br/>
+					
+				
+					Cisco IOS  12.1(5)YC1<br/>
+					
+				
+					Cisco IOS  12.1(5)YB4<br/>
+					
+				
+					Cisco IOS  12.1(5)XV3<br/>
+					
+				
+					Cisco IOS  12.1(5)XS2<br/>
+					
+				
+					Cisco IOS  12.1(5)XM4<br/>
+					
+				
+					Cisco IOS  12.1(5)T9<br/>
+					
+				
+					Cisco IOS  12.1(2)XF4<br/>
+					
+				
+					Cisco IOS  12.0WC<br/>
+					
+				
+					Cisco IOS  12.0(5)YB4<br/>
+					
+				
+					Cisco IOS  12.0(5)WC2<br/>
+					
+				
+					Cisco IOS  12.0(17)ST1<br/>
+					
+				
+					Cisco IOS  12.0(17)SL2<br/>
+					
+				
+					Apple Mac OS X 10.0.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	UPDATE: Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.<br/><br/>Przemyslaw Frasunek &lt;venglin@freebsd.lublin.pl&gt; has written an exploit for this vulnerability.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/ntpd-exp.c">/data/vulnerabilities/exploits/ntpd-exp.c</a></li>
+</ul>
+</div>

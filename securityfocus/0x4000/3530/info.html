@@ -1,0 +1,603 @@
+#SpeeDr00t@Black Falcon<br>#bid3530<p><b><span style="font-size: 18pt;">Multiple Vendor RADIUS Digest Calculation Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3530/info">info</a><br><a href="http://www.securityfocus.com/bid/3530/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3530/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3530/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3530/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3530
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-1376<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 13 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 09:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This issue was initially reported by 3APA3A &lt;3APA3A@SECURITY.NNOV.RU&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Yard RADIUS Yard RADIUS 1.0.19 <br/>
+					
+				
+					Yard RADIUS Yard RADIUS 1.0.18 <br/>
+					
+				
+					Yard RADIUS Yard RADIUS 1.0.17 <br/>
+					
+				
+					Yard RADIUS Yard RADIUS 1.0.16 <br/>
+					
+				
+					Yard RADIUS Yard RADIUS 1.0 pre15<br/>
+					
+				
+					Yard RADIUS Yard RADIUS 1.0 pre14<br/>
+					
+				
+					Yard RADIUS Yard RADIUS 1.0 pre13<br/>
+					
+				
+					XTRadius XTRadius 1.1 -pre1<br/>
+					
+				
+					RADIUSClient RADIUSClient 0.3.1 <br/>
+					
+				
+					OpenRADIUS OpenRADIUS 0.9.3 <br/>
+					
+				
+					OpenRADIUS OpenRADIUS 0.9.2 <br/>
+					
+				
+					OpenRADIUS OpenRADIUS 0.9.1 <br/>
+					
+				
+					OpenRADIUS OpenRADIUS 0.9 <br/>
+					
+				
+					OpenRADIUS OpenRADIUS 0.8 <br/>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.5 <br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.1 <br/>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6 .0<br/>
+					
+				
+					Lucent RADIUS 2.1 <br/>
+					
+				
+					Lucent RADIUS 2.0 1<br/>
+					
+				
+					Lucent RADIUS 2.0 <br/>
+					
+				
+					Livingston RADIUS 2.1 <br/>
+					
+				
+					Livingston RADIUS 2.0.1 <br/>
+					
+				
+					Livingston RADIUS 2.0 <br/>
+					
+				
+					ICRadius ICRADIUS 0.18.1 <br/>
+					
+				
+					ICRadius ICRADIUS 0.18 <br/>
+					
+				
+					ICRadius ICRADIUS 0.17 b<br/>
+					
+				
+					ICRadius ICRADIUS 0.17 <br/>
+					
+				
+					ICRadius ICRADIUS 0.16 <br/>
+					
+				
+					ICRadius ICRADIUS 0.15 <br/>
+					
+				
+					ICRadius ICRADIUS 0.14 <br/>
+<span class="related">
+						
+							-
+						
+						Larry Wall Perl 5.0 05<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Larry Wall Perl 5.0 05<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Larry Wall Perl 5.0 05<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MySQL AB MySQL 3.23.10 <br/>
+</span>
+					
+				
+					GNU Radius 0.95 <br/>
+					
+				
+					GNU Radius 0.94 <br/>
+					
+				
+					GNU Radius 0.93 <br/>
+					
+				
+					GNU Radius 0.92.1 <br/>
+					
+				
+					FreeRADIUS FreeRADIUS 0.3 <br/>
+					
+				
+					FreeRADIUS FreeRADIUS 0.3 <br/>
+					
+				
+					FreeRADIUS FreeRADIUS 0.2 <br/>
+					
+				
+					Ascend RADIUS 1.16 <br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1.1 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Yard RADIUS Yard RADIUS 1.0.20 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					XTRadius XTRadius 1.2.1 beta<br/>
+					
+				
+					XTRadius XTRadius 1.1 -pre2<br/>
+					
+				
+					RADIUSClient RADIUSClient 0.3.2 <br/>
+					
+				
+					OpenRADIUS OpenRADIUS 0.9.4 <br/>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.6 <br/>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+					
+				
+					Miquel van Smoorenburg Cistron Radius 1.6.5 <br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+					
+				
+					GNU Radius 0.96 <br/>
+					
+				
+					FreeRADIUS FreeRADIUS 0.5 <br/>
+					
+				
+					FreeRADIUS FreeRADIUS 0.4 <br/>
+					
+				
+					Cisco Secure ACS for Windows NT 3.0 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#no_exploit &amp;lt;mailto:vuldb@#no_exploit&amp;gt;.
+	
+		<ul>
+</ul>
+</div>

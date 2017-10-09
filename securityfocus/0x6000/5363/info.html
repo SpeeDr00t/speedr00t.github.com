@@ -1,0 +1,5822 @@
+#SpeeDr00t@Black Falcon<br>#bid5363<p><b><span style="font-size: 18pt;">OpenSSL SSLv2 Malformed Client Key Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/5363/info">info</a><br><a href="http://www.securityfocus.com/bid/5363/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/5363/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/5363/solution">solution</a><br><a href="http://www.securityfocus.com/bid/5363/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				5363
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2002-0656<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 30 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 20 2007 05:11PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered independantly by John McDonald &lt;jm@neohapsis.com&gt; and A.L. Digital Ltd and The Bunker.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SonicWALL SSL-RX 4.0 .18<br/>
+					
+				
+					SonicWALL SSL-R6 4.0 .18<br/>
+					
+				
+					SonicWALL SSL-R3 4.0 .18<br/>
+					
+				
+					SonicWALL SSL-R 4.0 .18<br/>
+					
+				
+					Securecomputing SafeWord PremierAccess 3.1 <br/>
+					
+				
+					Rsa BSAFE SSL-C 2.3 <br/>
+					
+				
+					Rsa BSAFE SSL-C 2.2 <br/>
+					
+				
+					Rsa BSAFE SSL-C 2.1 <br/>
+					
+				
+					Redhat mgetty-sendfax-1.1.14-8.i386.rpm 2.2 <br/>
+					
+				
+					Oracle Oracle9i Application Server 1.0.2 .2<br/>
+					
+				
+					Oracle Oracle9i Application Server 1.0.2 .1s<br/>
+					
+				
+					Oracle Oracle9i Application Server 1.0.2 <br/>
+					
+				
+					Oracle Oracle9i Application Server  <br/>
+					
+				
+					Oracle Oracle HTTP Server 9.2 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+					
+				
+					Oracle Oracle HTTP Server 9.0.1 <br/>
+					
+				
+					Oracle CorporateTime Outlook Connector 3.3 <br/>
+					
+				
+					Oracle CorporateTime Outlook Connector 3.1.2 <br/>
+					
+				
+					Oracle CorporateTime Outlook Connector 3.1.1 <br/>
+					
+				
+					Oracle CorporateTime Outlook Connector 3.1 <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta2<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta1<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 d<br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 c<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 b<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 a<br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.6  beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.5 a<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.5 <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.3 <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.2 b<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.1 c<br/>
+					
+				
+					Novell NetMail 3.10 d<br/>
+					
+				
+					Novell NetMail 3.10 c<br/>
+					
+				
+					Novell NetMail 3.10 b<br/>
+					
+				
+					Novell NetMail 3.10 a<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows  3.11<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  SR2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Novell Netware 6.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Novell Netware 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.5<br/>
+</span>
+					
+				
+					Novell NetMail 3.10 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  SR2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.5<br/>
+</span>
+					
+				
+					Juniper SDX-300 3.1.1 <br/>
+					
+				
+					Juniper SDX-300 3.1 <br/>
+					
+				
+					Juniper JUNOS 5.6 <br/>
+					
+				
+					Juniper JUNOS 5.5 <br/>
+					
+				
+					Juniper JUNOS 5.4 <br/>
+					
+				
+					Juniper JUNOS 5.3 <br/>
+					
+				
+					Juniper JUNOS 5.2 <br/>
+					
+				
+					Juniper JUNOS 5.1 <br/>
+					
+				
+					Juniper JUNOS 5.0 <br/>
+					
+				
+					IBM Linux Affinity Toolkit  <br/>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX  5.1<br/>
+</span>
+					
+				
+					IBM HTTP Server 1.3.19 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					HP Webproxy 2.0 <br/>
+					
+				
+					HP Webproxy 1.0 <br/>
+					
+				
+					HP VirtualVault 4.6 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 4<br/>
+</span>
+					
+				
+					HP VirtualVault 4.5 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 4<br/>
+</span>
+					
+				
+					HP Tru64 UNIX INTERNET EXPRESS 5.9 <br/>
+					
+				
+					HP Tru64 UNIX Compaq Secure Web Server 5.8.1 <br/>
+					
+				
+					HP TCP/IP Services for OpenVMS 5.3 <br/>
+					
+				
+					HP Secure OS software for Linux 1.0 <br/>
+					
+				
+					HP OpenVMS Secure Web Server 1.2 <br/>
+					
+				
+					HP OpenVMS Secure Web Server 1.1 -1<br/>
+					
+				
+					HP OpenSSL for OpenVMS Alpha 1.0 <br/>
+					
+				
+					HP INTERNET EXPRESS EAK 2.0 <br/>
+					
+				
+					Gentoo Linux 1.4 _rc3<br/>
+					
+				
+					Gentoo Linux 1.4 _rc2<br/>
+					
+				
+					Gentoo Linux 1.4 _rc1<br/>
+					
+				
+					Gentoo Linux 1.2 <br/>
+					
+				
+					Gentoo Linux 1.1 a<br/>
+					
+				
+					Gentoo Linux 0.7 <br/>
+					
+				
+					Gentoo Linux 0.5 <br/>
+					
+				
+					Covalent Fast Start Server 3.1 <br/>
+					
+				
+					Covalent Enterprise Ready Server 2.2 <br/>
+					
+				
+					Covalent Enterprise Ready Server 2.1 <br/>
+					
+				
+					Cisco Secure Content Accelerator 10000  <br/>
+					
+				
+					Apple Mac OS X Server 10.0 <br/>
+					
+				
+					Apple Mac OS X 10.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.5 <br/>
+					
+				
+					Apple Mac OS X 10.1.4 <br/>
+					
+				
+					Apple Mac OS X 10.1.3 <br/>
+					
+				
+					Apple Mac OS X 10.1.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.0.4 <br/>
+					
+				
+					Apple Mac OS X 10.0.3 <br/>
+					
+				
+					Apple Mac OS X 10.0.2 <br/>
+					
+				
+					Apple Mac OS X 10.0.1 <br/>
+					
+				
+					Apple Mac OS X 10.0 <br/>
+					
+				
+					Apache Apache 2.0.40 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 9.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Terra Soft Solutions Yellow Dog Linux 3.0 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.39 <br/>
+					
+				
+					Apache Apache 2.0.38 <br/>
+					
+				
+					Apache Apache 2.0.37 <br/>
+					
+				
+					Apache Apache 2.0.36 <br/>
+					
+				
+					Apache Apache 2.0.35 <br/>
+					
+				
+					Apache Apache 2.0.34 -BETA<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Apache Apache 2.0.32 -BETA<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Apache Apache 2.0.32 <br/>
+					
+				
+					Apache Apache 2.0.28 -BETA<br/>
+					
+				
+					Apache Apache 2.0.28  Beta<br/>
+					
+				
+					Apache Apache 2.0.28 <br/>
+					
+				
+					Apache Apache 2.0 <br/>
+					
+				
+					Apache Apache 1.3.26 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					Apache Apache 1.3.26 <br/>
+					
+				
+					Apache Apache 1.3.25 <br/>
+					
+				
+					Apache Apache 1.3.25 <br/>
+					
+				
+					Apache Apache 1.3.24 <br/>
+					
+				
+					Apache Apache 1.3.24 <br/>
+					
+				
+					Apache Apache 1.3.23 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Apache Apache 1.3.23 <br/>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					Apache Apache 1.3.22 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Apache Apache 1.3.22 <br/>
+					
+				
+					Apache Apache 1.3.20 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.16 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.15 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Control Station 4100CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  9_x86 Update 2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  9_x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  9<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun SunOS 5.9 _x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun SunOS 5.9 <br/>
+</span>
+					
+				
+					Apache Apache 1.3.20 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Apache Apache 1.3.19 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Apache Apache 1.3.19 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital (Compaq) TRU64/DIGITAL UNIX 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital (Compaq) TRU64/DIGITAL UNIX 4.0 g<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital (Compaq) TRU64/DIGITAL UNIX 4.0 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP VirtualVault 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Apache 1.3.18 <br/>
+					
+				
+					Apache Apache 1.3.18 <br/>
+					
+				
+					Apache Apache 1.3.17 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					Apache Apache 1.3.17 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Apache Apache 1.3.16 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Apache Apache 1.3.15 <br/>
+					
+				
+					Apache Apache 1.3.14 Mac<br/>
+					
+				
+					Apache Apache 1.3.14 <br/>
+					
+				
+					Apache Apache 1.3.14 <br/>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5 <br/>
+</span>
+					
+				
+					Apache Apache 1.3.13 <br/>
+					
+				
+					Apache Apache 1.3.12 <br/>
+					
+				
+					Apache Apache 1.3.12 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetScreen NetScreen-Global PRO Express Policy Manager Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetScreen NetScreen-Global PRO Policy Manager Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt ManageRaQ v2 3599BD  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 4000WG  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR 3500R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ4 3001R  <br/>
+</span>
+					
+				
+					Apache Apache 1.3.11 <br/>
+					
+				
+					Apache Apache 1.3.11 <br/>
+					
+				
+					Apache Apache 1.3.9 <br/>
+					
+				
+					Apache Apache 1.3.9 <br/>
+					
+				
+					Apache Apache 1.3.7 -dev<br/>
+					
+				
+					Apache Apache 1.3.6 <br/>
+					
+				
+					Apache Apache 1.3.6 <br/>
+					
+				
+					Apache Apache 1.3.4 <br/>
+					
+				
+					Apache Apache 1.3.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+					
+				
+					Apache Apache 1.3.1 <br/>
+					
+				
+					Apache Apache 1.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Apache Apache 1.2.5 <br/>
+					
+				
+					Apache Apache 1.2 <br/>
+					
+				
+					Apache Apache 1.1.1 <br/>
+					
+				
+					Apache Apache 1.1 <br/>
+					
+				
+					Apache Apache 1.0.5 <br/>
+					
+				
+					Apache Apache 1.0.3 <br/>
+					
+				
+					Apache Apache 1.0.2 <br/>
+					
+				
+					Apache Apache 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Rsa BSAFE SSL-J SDK 3.1 <br/>
+					
+				
+					Rsa BSAFE SSL-J SDK 3.0.1 <br/>
+					
+				
+					Rsa BSAFE SSL-J SDK 3.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Cisco iCDN 2.0 <br/>
+</span>
+					
+				
+					Rsa BSAFE SSL-C ME  <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta3<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 g<br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux Enterprise Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.7 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 2.0.43 .04<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 2.0.43 .00<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Webmin-Based Admin 1.0 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 e<br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 <br/>
+</span>
+					
+				
+					Novell NetMail 3.10 e<br/>
+					
+				
+					HP Tru64 UNIX Compaq Secure Web Server 5.9.2 <br/>
+					
+				
+					HP Tru64 UNIX Compaq Secure Web Server 5.9.1 <br/>
+					
+				
+					HP Tru64 UNIX Compaq Secure Web Server 5.8.2 <br/>
+					
+				
+					HP OpenSSL for OpenVMS Alpha 1.0 -A<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit code that appears to be function has been discovered in the wild. Also, this code may be part of an "auto-hacking" utility or worm with peer-to-peer and distributed denial-of-service capabilities.  There are two reported intrusions in Europe. <br/> <br/>Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.<br/><br/> The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/OpenFuck.c">/data/vulnerabilities/exploits/OpenFuck.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/OpenFuckV2.c">/data/vulnerabilities/exploits/OpenFuckV2.c</a></li>
+</ul>
+</div>

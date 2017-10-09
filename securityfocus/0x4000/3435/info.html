@@ -1,0 +1,136 @@
+#SpeeDr00t@Black Falcon<br>#bid3435<p><b><span style="font-size: 18pt;">PostNuke Unauthenticated User Login Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3435/info">info</a><br><a href="http://www.securityfocus.com/bid/3435/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3435/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3435/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3435/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3435
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 13 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 13 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					PostNuke Development Team PostNuke 0.64 <br/>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+					
+				
+					PostNuke Development Team PostNuke 0.63 <br/>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+					
+				
+					PostNuke Development Team PostNuke 0.62 <br/>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The attacker must base64 encode the string containing the malformed<br/>User ID, Username and Password combination.  The unencoded string would be in the following format (with USERID and USERNAME appropriately replaced):<br/><br/>USERID:USERNAME:'  or uname='USERNAME<br/><br/>This encoded string would then be passsed to the article.php script by requesting a URL of the following form (this could be trivially accomplished from a web browser):<br/><br/>http://targethost/article.php?save=1&amp;sid=20&amp;cookieusrtime=160000&amp;user=USERID:encodedstring<br/><br/>Where encodedstring is the previously described base64 encoded string.  Base64 encoding can be trivially accomplished with the use of any of a number of simple utilities.
+	
+		<ul>
+</ul>
+</div>

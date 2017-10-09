@@ -1,0 +1,4591 @@
+#SpeeDr00t@Black Falcon<br>#bid4131<p><b><span style="font-size: 18pt;">Multiple Vendor HTTP CONNECT TCP Tunnel Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/4131/info">info</a><br><a href="http://www.securityfocus.com/bid/4131/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/4131/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/4131/solution">solution</a><br><a href="http://www.securityfocus.com/bid/4131/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				4131
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Configuration Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Published by Volker Tanger &lt;volker.tanger@discon.de&gt;. Additional vulnerable packages contributed by Ronald F. Guilmette &lt;rfg@monkeys.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					W3C httpd 3.0 <br/>
+					
+				
+					Unitech Networks Netplicator  <br/>
+					
+				
+					Trend Micro InterScan WebManager 1.2 <br/>
+					
+				
+					Trend Micro InterScan WebManager 1.2 <br/>
+					
+				
+					Trend Micro Interscan Viruswall (Linux) 3.6 <br/>
+					
+				
+					tinyproxy tinyproxy 1.4.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					tinyproxy tinyproxy 1.3.3 <br/>
+					
+				
+					tinyproxy tinyproxy 1.3.2 <br/>
+					
+				
+					Symantec I-Gear MS Proxy 3.5 <br/>
+					
+				
+					SonicWALL TELE3  <br/>
+					
+				
+					SonicWALL SOHO 5.1.5 .0<br/>
+					
+				
+					SonicWALL SOHO 5.0 .0<br/>
+					
+				
+					SonicWALL SOHO 4.0 .0<br/>
+					
+				
+					SonicWALL PRO300  <br/>
+					
+				
+					SonicWALL PRO200  <br/>
+					
+				
+					SonicWALL PRO100  <br/>
+					
+				
+					SonicWALL GX 6500  <br/>
+					
+				
+					SonicWALL GX 2500  <br/>
+					
+				
+					Sambar Server 5.1 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+					
+				
+					Sambar Server 5.0  beta6<br/>
+					
+				
+					Sambar Server 5.0  beta5<br/>
+					
+				
+					Sambar Server 5.0  beta4<br/>
+					
+				
+					Sambar Server 5.0  beta3<br/>
+					
+				
+					Sambar Server 5.0  beta2<br/>
+					
+				
+					Sambar Server 5.0  beta1<br/>
+					
+				
+					Sambar Server 4.4 Beta 3<br/>
+					
+				
+					Sambar Server 4.4  production<br/>
+					
+				
+					Sambar Server 4.3 beta 9<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Sambar Server 4.3  production<br/>
+					
+				
+					Sambar Server 4.3 <br/>
+					
+				
+					Sambar Server 4.2.1  production<br/>
+					
+				
+					Sambar Server 4.2 beta 8<br/>
+					
+				
+					Sambar Server 4.2 beta 7<br/>
+					
+				
+					Sambar Server 4.1 beta<br/>
+					
+				
+					Sambar Server 4.1  production<br/>
+					
+				
+					proNETIX Ltd. TopProxy  <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.6 .6<br/>
+					
+				
+					Pi-Soft SpoonProxy 2.6 .5<br/>
+					
+				
+					Pi-Soft SpoonProxy 2.6 .14<br/>
+					
+				
+					Pi-Soft SpoonProxy 2.6 .13<br/>
+					
+				
+					Pi-Soft SpoonProxy 2.6 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.5 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.4.50 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.3 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.2 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.1.1 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.1 <br/>
+					
+				
+					Pi-Soft SpoonProxy 2.0 <br/>
+					
+				
+					Pi-Soft SpoonProxy 1.61 <br/>
+					
+				
+					Pi-Soft SpoonProxy 1.60 <br/>
+					
+				
+					Omnicron OmniHTTPD 2.4 Pro<br/>
+					
+				
+					Omnicron OmniHTTPD 2.0.8 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Omnicron OmniHTTPD 2.0.7 <br/>
+					
+				
+					Omnicron OmniHTTPD 2.0.6 <br/>
+					
+				
+					Omnicron OmniHTTPD 2.0.5 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Omnicron OmniHTTPD 2.0.4 <br/>
+					
+				
+					Omnicron OmniHTTPD 2.0 Alpha 2<br/>
+					
+				
+					Omnicron OmniHTTPD 2.0 Alpha 1<br/>
+					
+				
+					Omnicron OmniHTTPD 1.1 <br/>
+					
+				
+					Novell BorderManager Enterprise Edition 3.5 <br/>
+					
+				
+					Novell BorderManager 3.6 <br/>
+					
+				
+					Novell BorderManager 3.5 <br/>
+<span class="related">
+						
+							-
+						
+						Novell Netware 5.0 <br/>
+</span>
+					
+				
+					Novell BorderManager 3.4 <br/>
+<span class="related">
+						
+							-
+						
+						Novell Netware 5.0 <br/>
+</span>
+					
+				
+					Novell BorderManager 3.3 <br/>
+					
+				
+					Novell BorderManager 3.2 <br/>
+					
+				
+					Novell BorderManager 3.1 <br/>
+<span class="related">
+						
+							-
+						
+						Novell Netware 5.0 <br/>
+</span>
+					
+				
+					Novell BorderManager 3.0 <br/>
+					
+				
+					Network Associates WebShield for Solaris 4.1 <br/>
+					
+				
+					Network Associates WebShield for Solaris 4.0 <br/>
+					
+				
+					Network Associates WebShield e500  <br/>
+					
+				
+					Network Associates WebShield e250  <br/>
+					
+				
+					Network Associates Gauntlet Firewall 5.5 <br/>
+					
+				
+					Network Associates Gauntlet Firewall 5.0 <br/>
+					
+				
+					Netscape FastTrack Server 4.0.1 <br/>
+					
+				
+					Netscape FastTrack Server 3.0.1 B<br/>
+					
+				
+					Netscape FastTrack Server 3.0.1 <br/>
+					
+				
+					Netscape FastTrack Server 2.0.1 C<br/>
+					
+				
+					Netscape FastTrack Server 2.0.1 a<br/>
+<span class="related">
+						
+							+ 
+						
+						SCO Unixware 7.1 <br/>
+</span>
+					
+				
+					Netscape FastTrack Server 2.0.1 <br/>
+					
+				
+					NetcPlus BrowseGate 2.80.2 <br/>
+					
+				
+					NetcPlus BrowseGate 2.80 <br/>
+					
+				
+					NetApp NetCacheC700 Series  <br/>
+					
+				
+					NetApp NetCacheC6100 Series  <br/>
+					
+				
+					NetApp NetCacheC3100 Series  <br/>
+					
+				
+					NetApp NetCacheC1100 Series  <br/>
+					
+				
+					NEC Express5800/SURFNAVI  <br/>
+					
+				
+					NCSA httpd 1.5.2 a<br/>
+					
+				
+					NCSA httpd 1.5.2 <br/>
+					
+				
+					NCSA httpd 1.5.1 <br/>
+					
+				
+					NCSA httpd 1.5 a-export<br/>
+					
+				
+					NCSA httpd 1.4.2 <br/>
+					
+				
+					NCSA httpd 1.4.1 <br/>
+					
+				
+					NCSA httpd 1.4 <br/>
+					
+				
+					NCSA httpd 1.3 <br/>
+					
+				
+					NCSA httpd 1.2 <br/>
+					
+				
+					NCSA httpd 1.1 <br/>
+					
+				
+					NCSA httpd 1.0 <br/>
+					
+				
+					MyWebServer MyWebServer 1.0.1 <br/>
+					
+				
+					Microsoft IIS  5.1<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP 64-bit Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP 64-bit Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP 64-bit Edition  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft IIS  5.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					Microsoft IIS  4.0 alpha<br/>
+					
+				
+					Microsoft IIS  4.0<br/>
+					
+				
+					Microsoft IIS  3.0<br/>
+					
+				
+					Microsoft IIS  2.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Microsoft IIS  1.0<br/>
+					
+				
+					Medusa Medusa  20010416<br/>
+					
+				
+					Lotus Domino Server 5.0 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Lotus Domino Server 4.6.6 <br/>
+					
+				
+					Lotus Domino Server 4.6 .x<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Lotus Domino Server 4.6 <br/>
+					
+				
+					Lotus Domino Enterprise Server 5.0.4 <br/>
+					
+				
+					Lotus Domino Enterprise Server 5.0.3 <br/>
+					
+				
+					Lotus Domino Enterprise Server 5.0.2 b<br/>
+					
+				
+					Lotus Domino Enterprise Server 5.0.2 <br/>
+					
+				
+					Lotus Domino Enterprise Server 5.0.1 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.2 .x<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Lotus Domino 5.0.9 a<br/>
+					
+				
+					Lotus Domino 5.0.9 <br/>
+					
+				
+					Lotus Domino 5.0.8 -french<br/>
+					
+				
+					Lotus Domino 5.0.8 <br/>
+					
+				
+					Lotus Domino 5.0.7 a<br/>
+					
+				
+					Lotus Domino 5.0.7 <br/>
+					
+				
+					Lotus Domino 5.0.6 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2 4.5 Warp<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2 4.5 Warp<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/390  V2R9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/390  V2R9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+					
+				
+					Lotus Domino 5.0.5 -french<br/>
+					
+				
+					Lotus Domino 5.0.5 <br/>
+					
+				
+					Lotus Domino 5.0.4 <br/>
+					
+				
+					Lotus Domino 5.0.3 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2 4.5 Warp<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2 4.5 Warp<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/390  V2R9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/390  V2R9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+					
+				
+					Lotus Domino 5.0.2 <br/>
+					
+				
+					Lotus Domino 5.0.1 <br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2 4.5 Warp<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2 4.5 Warp<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/390  V2R9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/390  V2R9<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+					
+				
+					Lotus Domino 5.0 <br/>
+					
+				
+					Lotus Domino 4.6.4 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Lotus Domino 4.6.3 <br/>
+					
+				
+					Lotus Domino 4.6.1 <br/>
+					
+				
+					LiteServe LiteServe 1.36 <br/>
+					
+				
+					LiteServe LiteServe 1.31 <br/>
+					
+				
+					LiteServe LiteServe 1.4 <br/>
+					
+				
+					LiteServe LiteServe 1.3 <br/>
+					
+				
+					Korea Network Intelligence CatchWeb 2000-e plus  <br/>
+					
+				
+					Korea Network Intelligence CatchWeb 2000-e  <br/>
+					
+				
+					Jana Server Jana Server 2.0 <br/>
+					
+				
+					Ipswitch WS_FTP Server 1.0.2 EVAL<br/>
+					
+				
+					Ipswitch WS_FTP Server 1.0.1 EVAL<br/>
+					
+				
+					Ipswitch WS FTP Server 2.0.4 <br/>
+					
+				
+					Ipswitch WS FTP Server 2.0.3 <br/>
+					
+				
+					Ipswitch WS FTP Server 2.0.2 <br/>
+					
+				
+					Ipswitch WS FTP Server 2.0.1 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Ipswitch WS FTP Server 2.0 <br/>
+					
+				
+					Ipswitch WS FTP Server 1.0.5 <br/>
+					
+				
+					Ipswitch WS FTP Server 1.0.4 <br/>
+					
+				
+					Ipswitch WS FTP Server 1.0.3 <br/>
+					
+				
+					Ipswitch WS FTP Server 1.0.2 <br/>
+					
+				
+					Ipswitch WS FTP Server 1.0.1 <br/>
+					
+				
+					Ipswitch IMail 7.0.4 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Ipswitch IMail 7.0.3 <br/>
+					
+				
+					Ipswitch IMail 7.0.2 <br/>
+					
+				
+					Ipswitch IMail 7.0.1 <br/>
+					
+				
+					Ipswitch IMail 6.4 <br/>
+					
+				
+					Ipswitch IMail 6.3 <br/>
+					
+				
+					Ipswitch IMail 6.2 <br/>
+					
+				
+					Ipswitch IMail 6.1 <br/>
+					
+				
+					Ipswitch IMail 6.0.6 <br/>
+					
+				
+					Ipswitch IMail 6.0.5 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Ipswitch IMail 6.0.4 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Ipswitch IMail 6.0.3 <br/>
+					
+				
+					Ipswitch IMail 6.0.2 <br/>
+					
+				
+					Ipswitch IMail 6.0.1 <br/>
+					
+				
+					Ipswitch IMail 6.0 <br/>
+					
+				
+					Ipswitch IMail 5.0.8 <br/>
+					
+				
+					Ipswitch IMail 5.0.7 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Ipswitch IMail 5.0.6 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Ipswitch IMail 5.0.5 <br/>
+					
+				
+					Ipswitch IMail 5.0 <br/>
+					
+				
+					Internet Factory Proxy Builder  <br/>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall 3.32 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall 3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall 3.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall 3.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Interscan Viruswall (Linux) 3.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro Interscan Viruswall (Linux) 3.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall for Unix 3.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall for Windows NT 3.51 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall for Windows NT 3.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall for Windows NT 3.4 <br/>
+</span>
+					
+				
+					InterGate Proxy/Cache Server 2.9 <br/>
+					
+				
+					Inmon Traffic Server 2.1.6 <br/>
+					
+				
+					Inmon Traffic Server 2.0 .21<br/>
+					
+				
+					Inmon Traffic Server 2.0 .16<br/>
+					
+				
+					Inmon Traffic Server 2.0 .15<br/>
+					
+				
+					Imatix Xitami for Windows 2.5 b5<br/>
+					
+				
+					Imatix Xitami for Windows 2.5 b4<br/>
+					
+				
+					Imatix Xitami for Windows 2.4 d9<br/>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.3  VAX<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.3  Alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2  Warp Server 4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Imatix Xitami for Windows 2.4 d7<br/>
+					
+				
+					Imatix Xitami for Windows 2.4 d2<br/>
+					
+				
+					Imatix Xitami 2.5 b5<br/>
+					
+				
+					Imatix Xitami 2.5 <br/>
+					
+				
+					Imatix Xitami 2.4 d9<br/>
+					
+				
+					Imatix Xitami 2.4 b1<br/>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.3  VAX<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2  Warp Server 4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Imatix Xitami 2.4 b<br/>
+					
+				
+					Imatix Xitami 2.4 a1<br/>
+					
+				
+					Imatix Xitami 2.4 <br/>
+					
+				
+					IBM HTTP Server 1.3.19 <br/>
+					
+				
+					IBM HTTP Server 1.3.12 .4<br/>
+					
+				
+					IBM HTTP Server 1.3.12 .3<br/>
+					
+				
+					IBM HTTP Server 1.3.12 .2<br/>
+					
+				
+					IBM HTTP Server 1.3.6 win32<br/>
+					
+				
+					IBM HTTP Server 1.3.6 .4 win32<br/>
+					
+				
+					IBM HTTP Server 1.3.6 .3<br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Turbolinux Turbolinux 3.0.1 <br/>
+</span>
+					
+				
+					IBM HTTP Server 1.3.6 .2 win32<br/>
+					
+				
+					IBM HTTP Server 1.3.6 .2 unix<br/>
+					
+				
+					IBM HTTP Server 1.3.3  win32<br/>
+					
+				
+					httptunnel client httptunnel client  win32<br/>
+					
+				
+					Grok Developments NetProxy 4.1 <br/>
+					
+				
+					Grok Developments NetProxy 4.0 <br/>
+					
+				
+					Finjan Software SurfinGate 6.0 1<br/>
+					
+				
+					Finjan Software SurfinGate 4.0 <br/>
+					
+				
+					FileMaker FileMaker Pro 5.5 <br/>
+					
+				
+					FileMaker FileMaker Pro 5.0 <br/>
+					
+				
+					Etype Eserv 2.98 <br/>
+					
+				
+					Etype Eserv 2.97 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Etype Eserv 2.96 <br/>
+					
+				
+					Etype Eserv 2.95  BETA2<br/>
+					
+				
+					Etype Eserv 2.95 <br/>
+					
+				
+					Etype Eserv 2.94 <br/>
+					
+				
+					Etype Eserv 2.93 <br/>
+					
+				
+					Etype Eserv 2.92 <br/>
+					
+				
+					Etype Eserv 2.50 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Etype Eserv 2.9.2 <br/>
+					
+				
+					DeleGate DeleGate 7.8.2 <br/>
+					
+				
+					DeleGate DeleGate 7.8.1 <br/>
+					
+				
+					DeleGate DeleGate 7.8 .0<br/>
+					
+				
+					DeleGate DeleGate 7.7.1 <br/>
+					
+				
+					DeleGate DeleGate 7.7 .0<br/>
+					
+				
+					Deerfield.com WinGate 4.5 <br/>
+					
+				
+					Deerfield.com WebSite 3.1.11 .0<br/>
+					
+				
+					CSM Proxy 5.0 <br/>
+					
+				
+					CSM Proxy 4.2 <br/>
+					
+				
+					CSM Proxy 4.1 <br/>
+					
+				
+					CompuSource (Pty) Ltd Power Web Server++ 4.1 <br/>
+					
+				
+					Check Point Software Firewall-1 4.1 SP5<br/>
+					
+				
+					Check Point Software Firewall-1 4.1 SP4<br/>
+					
+				
+					Check Point Software Firewall-1 4.1 SP3<br/>
+					
+				
+					Check Point Software Firewall-1 4.1 SP2<br/>
+					
+				
+					Check Point Software Firewall-1 4.1 SP1<br/>
+					
+				
+					Check Point Software Firewall-1 4.1 <br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP8<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP7<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP6<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP5<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP4<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP3<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP2<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 SP1<br/>
+					
+				
+					Check Point Software Firewall-1 4.0 <br/>
+					
+				
+					CacheFlow CacheOS 4.0.14 <br/>
+					
+				
+					CacheFlow CacheOS 4.0.13 <br/>
+					
+				
+					CacheFlow CacheOS 4.0.12 <br/>
+					
+				
+					CacheFlow CacheOS 4.0.11 <br/>
+					
+				
+					CacheFlow CacheOS 4.0 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.21 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.19 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.18 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.17 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.16 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.15 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.14 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.13 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.12 <br/>
+					
+				
+					CacheFlow CacheOS 3.1.11 <br/>
+					
+				
+					CacheFlow CacheOS 3.1 .20<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .10<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .09<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .08<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .07<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .06<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .05<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .04<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .03<br/>
+					
+				
+					CacheFlow CacheOS 3.1 .02<br/>
+					
+				
+					CacheFlow CacheOS 3.1 <br/>
+					
+				
+					CacheFlow CacheOS  <br/>
+					
+				
+					Boramae Boramae Cache Server 3.5.1 <br/>
+					
+				
+					Avirt Gateway Suite 4.2 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  SR2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+					
+				
+					Avirt Gateway Suite 3.5 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Avirt Gateway Suite 3.3 a<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Avirt Gateway Suite 3.3 <br/>
+					
+				
+					Avirt Gateway 4.2 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  SR2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+					
+				
+					Astaro Security Linux 3.2 12<br/>
+					
+				
+					Astaro Security Linux 3.2 11<br/>
+					
+				
+					Astaro Security Linux 3.2 10<br/>
+					
+				
+					Astaro Security Linux 3.2 00<br/>
+					
+				
+					AscenVision AscenCache  Model 7060<br/>
+					
+				
+					AscenVision AscenCache  Model 5030<br/>
+					
+				
+					AscenVision AscenCache  Model 3020<br/>
+					
+				
+					AscenVision AscenCache  Model 1010<br/>
+					
+				
+					ArGoSoft Mail Server 1.8 .0.3<br/>
+					
+				
+					ArGoSoft Mail Server 1.8 .0.1<br/>
+					
+				
+					ArGoSoft Mail Server 1.8 .0.0<br/>
+					
+				
+					ArGoSoft Mail Server 1.7 .0.4<br/>
+					
+				
+					ArGoSoft Mail Server 1.7 .0.3<br/>
+					
+				
+					ArGoSoft Mail Server 1.7 .0.2<br/>
+					
+				
+					ArGoSoft Mail Server 1.7 .0.1<br/>
+					
+				
+					ArGoSoft Mail Server 1.7 .0.0<br/>
+					
+				
+					Apache Tomcat 4.0.2 <br/>
+					
+				
+					Apache Tomcat 4.0.1 <br/>
+					
+				
+					Apache Tomcat 4.0 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat 3.3 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat 3.2.1 <br/>
+					
+				
+					Apache Tomcat 3.2 <br/>
+					
+				
+					Apache Tomcat 3.1 <br/>
+					
+				
+					Apache Tomcat 3.0 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.16 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.15 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.13 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.8 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.8 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.7 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.6 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.5 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.4 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.3 <br/>
+					
+				
+					AnalogX SimpleServer:WWW 1.0.1 <br/>
+					
+				
+					AllegroSurf AllegroSurf 4.3 <br/>
+					
+				
+					AllegroSurf AllegroSurf 4.2 .0.2<br/>
+					
+				
+					AllegroSurf AllegroSurf 4.2 .0.1<br/>
+					
+				
+					AllegroSurf AllegroSurf 4.2 .0.0<br/>
+					
+				
+					AllegroSurf AllegroSurf 4.1 .0.2<br/>
+					
+				
+					AllegroSurf AllegroSurf 4.1 .0.1<br/>
+					
+				
+					AllegroSurf AllegroSurf 4.0 .0.1<br/>
+					
+				
+					AllegroSurf AllegroSurf 4.0 <br/>
+					
+				
+					AllegroSurf AllegroSurf 3.0 .1.3<br/>
+					
+				
+					AllegroSurf AllegroSurf 3.0 .1.2<br/>
+					
+				
+					AllegroSurf AllegroSurf 3.0 .1.0<br/>
+					
+				
+					AllegroSurf AllegroSurf 3.0 <br/>
+					
+				
+					AdTran Express 6120 IDSL Remote Access Router  <br/>
+					
+				
+					Acme thttpd 2.22 <br/>
+					
+				
+					Acme thttpd 2.21 <br/>
+					
+				
+					Acme thttpd 2.20 <br/>
+					
+				
+					Acme thttpd 2.19 <br/>
+					
+				
+					Acme thttpd 2.18 <br/>
+					
+				
+					Acme thttpd 2.17 <br/>
+					
+				
+					Acme thttpd 2.16 <br/>
+					
+				
+					Acme thttpd 2.15 <br/>
+					
+				
+					Acme thttpd 2.14 <br/>
+					
+				
+					Acme thttpd 2.13 <br/>
+					
+				
+					Acme thttpd 2.12 <br/>
+					
+				
+					Acme thttpd 2.11 <br/>
+					
+				
+					Acme thttpd 2.10 <br/>
+					
+				
+					Acme thttpd 2.0.9 <br/>
+					
+				
+					Acme thttpd 2.0.8 <br/>
+					
+				
+					Acme thttpd 2.0.7 <br/>
+					
+				
+					Acme thttpd 2.0.6 <br/>
+					
+				
+					Acme thttpd 2.0.5 <br/>
+					
+				
+					Acme thttpd 2.0.4 <br/>
+					
+				
+					Acme thttpd 2.0.3 <br/>
+					
+				
+					Acme thttpd 2.0.2 <br/>
+					
+				
+					Acme thttpd 2.0.1 <br/>
+					
+				
+					Acme thttpd 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					tinyproxy tinyproxy 1.5 .0<br/>
+					
+				
+					National Science Foundation Squid Web Proxy 2.4 STABLE4<br/>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.4 STABLE3<br/>
+					
+				
+					National Science Foundation Squid Web Proxy 2.4 STABLE2<br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenServer 5.0.6 <br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.4 STABLE1<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.3 STABLE5<br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.3 STABLE4<br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Immunix Immunix OS 7.0 beta<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Immunix Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Immunix Immunix OS 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.0 1<br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.3 STABLE3<br/>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.0 1<br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.3 STABLE2<br/>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.0 1<br/>
+</span>
+					
+				
+					National Science Foundation Squid Web Proxy 2.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.6 a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0 <br/>
+</span>
+					
+				
+					Astaro Security Linux 3.2 16<br/>
+					
+				
+					Astaro Security Linux 3.2 15<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.37 d<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.34 d<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.32 f<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.31 c<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.29 c<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.27 c<br/>
+					
+				
+					AnWeb AnWeb Proxy 1.25 <br/>
+					
+				
+					AnWeb AnWeb Proxy 1.17 <br/>
+					
+				
+					AnWeb AnWeb Proxy 1.16 b<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.
+	
+		<ul>
+</ul>
+</div>

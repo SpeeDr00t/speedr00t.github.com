@@ -1,0 +1,1531 @@
+#SpeeDr00t@Black Falcon<br>#bid6884<p><b><span style="font-size: 18pt;">OpenSSL CBC Error Information Leakage Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6884/info">info</a><br><a href="http://www.securityfocus.com/bid/6884/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6884/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6884/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6884/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6884
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0078<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 19 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 08:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery credited to Brice Canvel, Alain Hiltgen, Serge Vaudenay, and Martin Vuagnoux.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun SDK (Windows Production Release) 1.4.1 _02<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.1 _01<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.1 <br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.1 _02<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.1 _01<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.1 <br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.1 _02<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.1 _01<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.1 <br/>
+					
+				
+					Sun ONE Web Server 6.0 SP5<br/>
+					
+				
+					Sun ONE Web Server 6.0 SP4<br/>
+					
+				
+					Sun ONE Web Server 6.0 SP3<br/>
+					
+				
+					Sun ONE Web Server 6.0 SP2<br/>
+					
+				
+					Sun ONE Web Server 6.0 SP1<br/>
+					
+				
+					Sun ONE Web Server 6.0 <br/>
+					
+				
+					Sun ONE Application Server 7.0  Standard Edition<br/>
+					
+				
+					Sun ONE Application Server 7.0  Platform Edition<br/>
+					
+				
+					Sun JSSE 1.0.3 _01<br/>
+					
+				
+					Sun JSSE 1.0.3 <br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.1 _02<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.1 _01<br/>
+<span class="related">
+						
+							+ 
+						
+						Opera Software Opera Web Browser 7.11 j<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Opera Software Opera Web Browser 7.11 <br/>
+</span>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.1 <br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.1 _02<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.1 _01<br/>
+<span class="related">
+						
+							+ 
+						
+						Opera Software Opera Web Browser 7.11 <br/>
+</span>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.1 <br/>
+					
+				
+					Sun Cobalt RaQ XTR  <br/>
+					
+				
+					Sun Cobalt RaQ 550  <br/>
+					
+				
+					Sun Cobalt RaQ 4  <br/>
+					
+				
+					Sun Cobalt Qube 3  <br/>
+					
+				
+					Oracle Oracle9i Standard Edition 9.2 <br/>
+					
+				
+					Oracle Oracle9i Standard Edition 9.0.1 <br/>
+					
+				
+					Oracle Oracle9i Standard Edition 8.1.7 <br/>
+					
+				
+					Oracle Oracle9i Personal Edition 9.2 <br/>
+					
+				
+					Oracle Oracle9i Personal Edition 9.0.1 <br/>
+					
+				
+					Oracle Oracle9i Personal Edition 8.1.7 <br/>
+					
+				
+					Oracle Oracle9i Enterprise Edition 9.2 .0<br/>
+					
+				
+					Oracle Oracle9i Enterprise Edition 9.0.1 <br/>
+					
+				
+					Oracle Oracle9i Enterprise Edition 8.1.7 <br/>
+					
+				
+					Oracle Oracle9i Application Server 9.0.3 <br/>
+					
+				
+					Oracle Oracle9i Application Server 9.0.2 <br/>
+					
+				
+					Oracle Oracle9i Application Server 1.0.2 .2<br/>
+					
+				
+					Oracle Oracle9i Application Server 1.0.2 .1s<br/>
+					
+				
+					Oracle Oracle HTTP Server 9.2 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+					
+				
+					Oracle Oracle HTTP Server 9.0.1 <br/>
+					
+				
+					Oracle Oracle HTTP Server 8.1.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Oracle Oracle8 8.1.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Oracle Oracle8i Enterprise Edition 8.1.7 .0.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Oracle Oracle8i Standard Edition 8.1.7 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta3<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta2<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta1<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera UnixWare 7.1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera UnixWare 7.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.2 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 h<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 g<br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux Enterprise Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.7 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 2.0.43 .04<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 2.0.43 .00<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Webmin-Based Admin 1.0 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 e<br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 d<br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 c<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 b<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux Advanced Work Station 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Connectivity Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Database Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Firewall on CD  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Office Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. SuSE eMail Server III  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  7<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 a<br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.6  beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.5 a<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.3 <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.2 b<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.1 c<br/>
+					
+				
+					OpenBSD OpenBSD  3.2<br/>
+					
+				
+					OpenBSD OpenBSD  3.1<br/>
+					
+				
+					HP Webmin-Based Admin 1.0 .01<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP HP-UX Apache-Based Web Server 1.0 .01<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP Apache-Based Web Server 2.0.43 .00<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP Apache-Based Web Server 1.3.27 .00<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					Computer Associates eTrust Security Command Center 1.0 <br/>
+					
+				
+					Apple Mac OS X 10.2.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun SDK (Windows Production Release) 1.4.1 _03<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.1 _03<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.1 _03<br/>
+					
+				
+					Sun ONE Web Server 6.0 SP6<br/>
+					
+				
+					Sun ONE Application Server 7.0 UR1 Standard Edition<br/>
+					
+				
+					Sun ONE Application Server 7.0 UR1 Platform Edition<br/>
+					
+				
+					Sun JSSE 1.0.3 _02<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.1 _03<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.1 _03<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.1 _03<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 a<br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.6 i<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 1.3.27 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 1.3.27 .00<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0.1 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .07.01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .06.02<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .06.01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .05.01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .04.01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .03.01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .02.01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX Apache-Based Web Server 1.0 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 8.2 <br/>
+</span>
+					
+				
+					HP Webmin-Based Admin 1.0.1 .01<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP HP-UX Apache-Based Web Server 1.0.1 .01<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP HP-UX Apache-Based Web Server 1.0 .07.01<br/>
+					
+				
+					HP Apache-Based Web Server 1.3.27 .01<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit was provided by Martin Vuagnoux:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/omen-1.1.tar.gz">/data/vulnerabilities/exploits/omen-1.1.tar.gz</a></li>
+</ul>
+</div>

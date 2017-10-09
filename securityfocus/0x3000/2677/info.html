@@ -1,0 +1,867 @@
+#SpeeDr00t@Black Falcon<br>#bid2677<p><b><span style="font-size: 18pt;">Windows Media Player .ASX Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2677/info">info</a><br><a href="http://www.securityfocus.com/bid/2677/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2677/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2677/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2677/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2677
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0242<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 02 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 06:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by Pauli Ojanpera &lt;pauli_ojanpera@hotmail.com&gt; and postd to Bugtraq on May 2, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows Media Player  7.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Microsoft Windows Media Player  6.4<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 Datacenter x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 Datacenter x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 Enterprise x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 Enterprise x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 Standard x64 Edition  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 Standard x64 Edition  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 x64  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows Server 2003 x64  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional x64 Edition  SP2<br/>
+</span>
+					
+				
+					Microsoft Windows Media Player  6.3<br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.5.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.5.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 7 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 8 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 8 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Pauli Ojanpera &amp;lt;pauli_ojanpera@hotmail.com&amp;gt; has provided the following exploits. It should be noted that the 'duh.asx' demonstration will not work on machines with WMP7 unless the asx-file is linked to from a html page using ActiveX tag.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/MoneyisWrong.asx">/data/vulnerabilities/exploits/MoneyisWrong.asx</a></li>
+<li><a href="/data/vulnerabilities/exploits/duh.asx">/data/vulnerabilities/exploits/duh.asx</a></li>
+</ul>
+</div>

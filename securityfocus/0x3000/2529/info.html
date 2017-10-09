@@ -1,0 +1,513 @@
+#SpeeDr00t@Black Falcon<br>#bid2529<p><b><span style="font-size: 18pt;">Linux ptrace/execve Race Condition Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2529/info">info</a><br><a href="http://www.securityfocus.com/bid/2529/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2529/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2529/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2529/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2529
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Race Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 27 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 27 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was announced to Bugtraq by Wojciech Purczynski &lt;wp@elzabsoft.pl&gt; on March 27, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Openwall patches 2.2.18 ow4<br/>
+					
+				
+					Linux kernel 2.2.18 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					Linux kernel 2.2.17 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+					
+				
+					Linux kernel 2.2.16 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube 3  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					Linux kernel 2.2.15 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+					
+				
+					Linux kernel 2.2.14 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 4  <br/>
+</span>
+					
+				
+					Linux kernel 2.2.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.2.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	x
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/epcs.c">/data/vulnerabilities/exploits/epcs.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/epcs2.c">/data/vulnerabilities/exploits/epcs2.c</a></li>
+</ul>
+</div>

