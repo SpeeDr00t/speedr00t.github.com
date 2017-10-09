@@ -1,0 +1,642 @@
+#SpeeDr00t@Black Falcon<br>#bid2708<p><b><span style="font-size: 18pt;">MS IIS/PWS Escaped Characters Decoding Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2708/info">info</a><br><a href="http://www.securityfocus.com/bid/2708/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2708/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2708/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2708/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2708
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0333<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 15 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 29 2007 08:18PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered and posted to Bugtraq by Nsfocus Security Team &lt;security@nsfocus.com&gt; on May 15, 2001. Posted in a Microsoft Security Bulletin MS01-026. 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows NT  4.0 SP6a<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+					
+				
+					Microsoft Personal Web Server  3.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft NT Option Pack for NT 4.0  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft NT Option Pack for NT 4.0  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 98  <br/>
+</span>
+					
+				
+					Microsoft Personal Web Server  1.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+					
+				
+					Microsoft IIS  5.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					Microsoft IIS  4.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Cisco Building Broadband Service Manager (BBSM) 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Building Broadband Service Manager (BBSM) 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Call Manager 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Call Manager 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Call Manager 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Call Manager 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Call Manager 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Call Manager 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco ICS 7750  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco ICS 7750  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco IP/VC 3540 Video Rate Matching Module  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco IP/VC 3540 Video Rate Matching Module  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco Unity Server 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cisco uOne 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Hancom Hancom Office 2007  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Hancom Hancom Office 2007  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BackOffice  4.5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BackOffice  4.5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT 4.0 Option Pack  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT 4.0 Option Pack  <br/>
+</span>
+					
+				
+					Microsoft IIS  3.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/execiis.c">#exploit_execiis.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/iisex.c">#exploit_iisex.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/IIS_CGI_decode_hole.pl">#exploit_IIS_CGI_decode_hole.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/IIS_escape_test.sh">#exploit_IIS_escape_test.sh</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/iisrules.tgz">#exploit_iisrules.tgz</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/Iisenc.zip">#exploit_Iisenc.zip</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/sensedecode.tgz">#exploit_sensedecode.tgz</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2708/lala.c">#exploit_lala.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	CORE has developed a working commercial exploit for their IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild. <br/> <br/>The 'execiis.c' exploit has been provided by Filip Maertens &lt;filip@securax.be&gt;. <br/> <br/>Hux Flux &lt;huxflux2001@hotmail.com&gt; has provided the 'iisex.c' exploit. <br/> <br/>Cyrus The Great &lt;cyrusarmy@yahoo.com&gt; has provided the 'IIS_CGI_decode_hole.pl' exploit. <br/> <br/>Leif Jakob &lt;bugtraq@jakob.weite-welt.com&gt; has provided the 'IIS_escape_test.sh' exploit. <br/> <br/>A.Ramos &lt;aramos@lander.es&gt; has provided the 'iisrules.tgz' exploit. <br/> <br/>Gary O'leary-Steele &lt;dilbert96@hushmail.com&gt; has provided the 'Iisenc.zip' exploit. <br/> <br/>Roelof &lt;roelof@sensepost.com&gt; has provided the following  'sensedecode.tgz' exploit. <br/> <br/>MovAX &lt;movax@softhome.net&gt; has provided the following 'lala.c' exploit.<br/><br/>An exploit is available to members of the Immunity Partner's program. This exploit is not otherwise publicly available or known to be circulating in the wild. It may be obtained from the following URI:<br/>https://www.immunityinc.com/downloads/immpartners/iis_doubledecode.tar
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/execiis.c">/data/vulnerabilities/exploits/execiis.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/iisex.c">/data/vulnerabilities/exploits/iisex.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/IIS_CGI_decode_hole.pl">/data/vulnerabilities/exploits/IIS_CGI_decode_hole.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/IIS_escape_test.sh">/data/vulnerabilities/exploits/IIS_escape_test.sh</a></li>
+<li><a href="/data/vulnerabilities/exploits/iisrules.tgz">/data/vulnerabilities/exploits/iisrules.tgz</a></li>
+<li><a href="/data/vulnerabilities/exploits/Iisenc.zip">/data/vulnerabilities/exploits/Iisenc.zip</a></li>
+<li><a href="/data/vulnerabilities/exploits/sensedecode.tgz">/data/vulnerabilities/exploits/sensedecode.tgz</a></li>
+<li><a href="/data/vulnerabilities/exploits/lala.c">/data/vulnerabilities/exploits/lala.c</a></li>
+</ul>
+</div>

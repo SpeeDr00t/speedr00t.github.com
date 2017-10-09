@@ -1,0 +1,113 @@
+#SpeeDr00t@Black Falcon<br>#bid3228<p><b><span style="font-size: 18pt;">Respondus for WebCT Weak Password Encryption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3228/info">info</a><br><a href="http://www.securityfocus.com/bid/3228/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3228/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3228/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3228/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3228
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 23 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 23 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was submitted to BugTraq on August 23rd, 2001 by Desmond Irvine &lt;desmond.irvine@sheridanc.on.ca&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Respondus Respondus for WebCT 1.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						WebCT WebCT 3.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						WebCT WebCT 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						WebCT WebCT 2.2 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This example was submitted by Desmond Irvine &lt;desmond.irvine@sheridanc.on.ca&gt; in his BugTraq posting:<br/><br/>C8-EF = userid<br/>F0-117 = password<br/><br/>To see the password in plain text subtract the value shown in the WEBCT.SVR<br/>file with no info saved from the value in the same position in the file<br/>with the info saved.  Stop when you reach the point where the values are<br/>equal and the result is therefore 0.<br/><br/>i.e.<br/><br/>(the values after username is remembered:)<br/>C8-EF 8B 88 7C 88 7A 7B 12 0D 13 0E 14 0F 15 10 16 11 17 12 11 13 12 14 13 15 14 16 15 17 16 0D 17 0E 11 0F 12 10 13 11 14 12<br/>(the constants:)<br/>C8-EF 16 15 17 16 11 17 12 0D 13 0E 14 0F 15 10 16 11 17 12 11 13 12 14 13 15 14 16 15 17 16 0D 17 0E 11 0F 12 10 13 11 14 12<br/>      75 73 65 72 69 64  0 &lt;- stop<br/>      u  s  e  r  i  d<br/><br/>(the values after the password is saved:)<br/>F0-117 85 74 89 87 8E 84 83 7A 12 17 13 0D 14 0E 15 0F 16 10 17 11 11 12 12 13 13 14 14 15 15 16 16 17 17 0D 11 0E 12 0F 13 10<br/>(the constants:)<br/>F0-117 15 13 16 14 17 15 11 16 12 17 13 0D 14 0E 15 0F 16 10 17 11 11 12 12 13 13 14 14 15 15 16 16 17 17 0D 11 0E 12 0F 13 10<br/>       70 61 73 73 77 6F 72 64  0 &lt;- stop<br/>       p  a  s  s  w  o  r  d
+	
+		<ul>
+</ul>
+</div>

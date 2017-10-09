@@ -1,0 +1,931 @@
+#SpeeDr00t@Black Falcon<br>#bid2997<p><b><span style="font-size: 18pt;">Multiple Vendor Small TCP MSS Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2997/info">info</a><br><a href="http://www.securityfocus.com/bid/2997/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2997/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2997/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2997/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2997
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-1244<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 07 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 06:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported by Darren Reed &lt;avalon@coombs.anu.edu.au&gt; on July 7, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  8_sparc<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					SGI IRIX 6.5.18 m<br/>
+					
+				
+					SGI IRIX 6.5.18 f<br/>
+					
+				
+					SGI IRIX 6.5.17 m<br/>
+					
+				
+					SGI IRIX 6.5.17 f<br/>
+					
+				
+					SGI IRIX 6.5.16 m<br/>
+					
+				
+					SGI IRIX 6.5.16 f<br/>
+					
+				
+					SGI IRIX 6.5.15 m<br/>
+					
+				
+					SGI IRIX 6.5.15 f<br/>
+					
+				
+					SGI IRIX 6.5.14 m<br/>
+					
+				
+					SGI IRIX 6.5.14 f<br/>
+					
+				
+					SGI IRIX 6.5.13 <br/>
+					
+				
+					SGI IRIX 6.5.12 <br/>
+					
+				
+					SGI IRIX 6.5.11 <br/>
+					
+				
+					SGI IRIX 6.5.10 <br/>
+					
+				
+					SGI IRIX 6.5.9 <br/>
+					
+				
+					SGI IRIX 6.5.8 <br/>
+					
+				
+					SGI IRIX 6.5.7 <br/>
+					
+				
+					SGI IRIX 6.5.6 <br/>
+					
+				
+					SGI IRIX 6.5.5 <br/>
+					
+				
+					SGI IRIX 6.5.4 <br/>
+					
+				
+					SGI IRIX 6.5.3 <br/>
+					
+				
+					SGI IRIX 6.5.2 <br/>
+					
+				
+					SGI IRIX 6.5.1 <br/>
+					
+				
+					SGI IRIX 6.5 <br/>
+					
+				
+					OpenBSD OpenBSD 2.9 <br/>
+					
+				
+					OpenBSD OpenBSD 2.8 <br/>
+					
+				
+					NetBSD NetBSD 1.5.1 <br/>
+					
+				
+					NetBSD NetBSD 1.5 <br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6a<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0<br/>
+					
+				
+					Microsoft Windows NT  4.0 SP6a<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP6<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP5<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP4<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Terminal Services  SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Terminal Services  SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Terminal Services  <br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Professional  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Professional  <br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  <br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  <br/>
+					
+				
+					Linux kernel 2.4.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+					
+				
+					Linux kernel 2.4.1 <br/>
+					
+				
+					Linux kernel 2.4 <br/>
+					
+				
+					HP HP-UX (VVOS) 11.0.4 <br/>
+					
+				
+					HP HP-UX 11.11 <br/>
+					
+				
+					HP HP-UX 11.0 4<br/>
+					
+				
+					HP HP-UX 11.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.5.19 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x3000/2997/maxseg.c">#exploit_maxseg.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An example exploit has been provided by Darren Reed &amp;lt;avalon@coombs.anu.edu.au&amp;gt;:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/maxseg.c">/data/vulnerabilities/exploits/maxseg.c</a></li>
+</ul>
+</div>

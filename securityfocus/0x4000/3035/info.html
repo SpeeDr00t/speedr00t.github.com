@@ -1,0 +1,112 @@
+#SpeeDr00t@Black Falcon<br>#bid3035<p><b><span style="font-size: 18pt;">Cognos Powerplay Web Edition Weak Temp File Name Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3035/info">info</a><br><a href="http://www.securityfocus.com/bid/3035/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3035/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3035/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3035/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3035
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 28 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 28 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by Darin White &lt;d.w@IBM.NET&gt; and submitted to BugTraq on June 28th, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Cognos Powerplay Web Edition 6.5 <br/>
+					
+				
+					Cognos Powerplay Web Edition 6.0 <br/>
+					
+				
+					Cognos Powerplay Web Edition 5.21 <br/>
+					
+				
+					Cognos Powerplay Web Edition 5.0 1<br/>
+					
+				
+					Cognos Powerplay Web Edition 4.1 <br/>
+					
+				
+					Cognos Powerplay Web Edition 4.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cognos Powerplay Web Edition 6.61 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Darin White &lt;d.w@IBM.NET&gt; included this example in his June 28th, 1999 BugTraq posting:<br/><br/>Using the guest account or viewing an unprotected cube a user may right-click the content area and select View Frame Info which will display the temporary filename. By repeatedly reloading the initial cube view and viewing frame info a list of temporary filenames may be generated in order to analyze the filename algorithm. e.g. http://www.example.com/ppwb/Temp/1eeex.htm http://www.example.com/ppwb/Temp/1f77x.htm http://www.example.com/ppwb/Temp/1fcfx.htm http://www.example.com/ppwb/Temp/1ff6x.htm http://www.example.com/ppwb/Temp/2014x.htm Analysis of the filename progression shows: * the last char is 'x' for the data and 't' for the toolbar * first n-1 chars are hexadecimal chars only * the hexadecimal "numbers" comprising the filename are ascending only * the first char is never 0. e.g. fffx.htm =&gt; 1000x.htm * simple hexadecimal subtraction on the first n-1 chars of consecutive filenames shows a very predictable pattern.
+	
+		<ul>
+</ul>
+</div>
