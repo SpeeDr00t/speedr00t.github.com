@@ -1,0 +1,790 @@
+#SpeeDr00t@Black Falcon<br>#bid10243<p><b><span style="font-size: 18pt;">Multiple LHA Buffer Overflow/Directory Traversal Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10243/info">info</a><br><a href="http://www.securityfocus.com/bid/10243/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10243/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10243/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10243/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10243
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2004-0234<br/>
+				
+					CVE-2004-0235<br/>
+				
+					CVE-2005-0644<br/>
+				
+					CVE-2005-0643<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 30 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 04:07AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these vulnerabilities has been credited to Ulf Harnhammar.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WinZip WinZip 9.0 <br/>
+					
+				
+					Stalker CGPMcAfee 3.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						McAfee Antivirus Engine 4.3.20 <br/>
+</span>
+					
+				
+					SGI ProPack 3.0 <br/>
+					
+				
+					SGI ProPack 2.4 <br/>
+					
+				
+					RedHat Linux 7.3 i686<br/>
+					
+				
+					RedHat Linux 7.3  i386<br/>
+					
+				
+					RedHat Linux 7.3 <br/>
+					
+				
+					RedHat lha-1.14i-9.i386.rpm  <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 9.0  i386<br/>
+</span>
+					
+				
+					Red Hat Fedora  Core1<br/>
+					
+				
+					RARLAB WinRar 3.20 <br/>
+					
+				
+					Mr. S.K. LHA 1.17 <br/>
+					
+				
+					Mr. S.K. LHA 1.15 <br/>
+					
+				
+					Mr. S.K. LHA 1.14 <br/>
+					
+				
+					McAfee WebShield SMTP  4.5<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					McAfee Webshield Appliances  <br/>
+					
+				
+					McAfee VirusScan Professional  <br/>
+					
+				
+					McAfee VirusScan for NetApp  <br/>
+					
+				
+					McAfee VirusScan Enterprise 8.0 i<br/>
+					
+				
+					McAfee VirusScan Command Line  <br/>
+					
+				
+					McAfee VirusScan 9.0 <br/>
+					
+				
+					McAfee VirusScan 8.0 <br/>
+					
+				
+					McAfee VirusScan 7.1 <br/>
+					
+				
+					McAfee VirusScan 7.0 <br/>
+					
+				
+					McAfee VirusScan 6.0 <br/>
+					
+				
+					McAfee VirusScan 5.0 <br/>
+					
+				
+					McAfee VirusScan 4.5.1 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  SR2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					McAfee VirusScan 4.5 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					McAfee VirusScan 4.0.3 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					McAfee VirusScan 4.0 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					McAfee VirusScan 3.0 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					McAfee VirusScan 2.0 <br/>
+					
+				
+					McAfee VirusScan 1.0 <br/>
+					
+				
+					McAfee Virex  <br/>
+					
+				
+					McAfee SecurityShield for Microsoft ISA Server  <br/>
+					
+				
+					McAfee PortalShield for Microsoft SharePoint  <br/>
+					
+				
+					McAfee NetShield for Netware  <br/>
+					
+				
+					McAfee Managed VirusScan  <br/>
+					
+				
+					McAfee LinuxShield  <br/>
+					
+				
+					McAfee Internet Security Suite  <br/>
+					
+				
+					McAfee GroupShield for Mail Servers with ePO  <br/>
+					
+				
+					McAfee GroupShield for Lotus Domino  <br/>
+					
+				
+					McAfee GroupShield for Exchange 5.5 <br/>
+					
+				
+					McAfee ASaP VirusScan  0<br/>
+					
+				
+					McAfee Active Virus Defense SMB Edition  <br/>
+					
+				
+					McAfee Active Threat Protection  <br/>
+					
+				
+					McAfee Active Mail Protection  <br/>
+					
+				
+					F-Secure Personal Express 4.7 <br/>
+					
+				
+					F-Secure Personal Express 4.6 <br/>
+					
+				
+					F-Secure Personal Express 4.5 <br/>
+					
+				
+					F-Secure Internet Security 2004  <br/>
+					
+				
+					F-Secure Internet Security 2003  <br/>
+					
+				
+					F-Secure Internet Gatekeeper 6.32 <br/>
+					
+				
+					F-Secure Internet Gatekeeper 6.31 <br/>
+					
+				
+					F-Secure F-Secure for Firewalls 6.20 <br/>
+					
+				
+					F-Secure Anti-Virus for Workstations 5.42 <br/>
+					
+				
+					F-Secure Anti-Virus for Workstations 5.41 <br/>
+					
+				
+					F-Secure Anti-Virus for Windows Servers 5.42 <br/>
+					
+				
+					F-Secure Anti-Virus for Windows Servers 5.41 <br/>
+					
+				
+					F-Secure Anti-Virus for Samba Servers 4.60 <br/>
+					
+				
+					F-Secure Anti-Virus for MS Exchange 6.21 <br/>
+					
+				
+					F-Secure Anti-Virus for MIMEsweeper 5.42 <br/>
+					
+				
+					F-Secure Anti-Virus for MIMEsweeper 5.41 <br/>
+					
+				
+					F-Secure Anti-Virus for Linux Workstations 4.52 <br/>
+					
+				
+					F-Secure Anti-Virus for Linux Workstations 4.51 <br/>
+					
+				
+					F-Secure Anti-Virus for Linux Servers 4.52 <br/>
+					
+				
+					F-Secure Anti-Virus for Linux Servers 4.51 <br/>
+					
+				
+					F-Secure Anti-Virus for Linux Gateways 4.52 <br/>
+					
+				
+					F-Secure Anti-Virus for Linux Gateways 4.51 <br/>
+					
+				
+					F-Secure Anti-Virus Client Security 5.52 <br/>
+					
+				
+					F-Secure Anti-Virus Client Security 5.50 <br/>
+					
+				
+					F-Secure Anti-Virus 2004   <br/>
+					
+				
+					F-Secure Anti-Virus 2003  <br/>
+					
+				
+					Clearswift MailSweeper 4.3.13 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.11 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.10 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.8 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.7 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.6  SP1<br/>
+					
+				
+					Clearswift MailSweeper 4.3.6 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.5 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.4 <br/>
+					
+				
+					Clearswift MailSweeper 4.3.3 <br/>
+					
+				
+					Clearswift MailSweeper 4.3 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+					
+				
+					Clearswift MailSweeper 4.2 <br/>
+					
+				
+					Clearswift MailSweeper 4.1 <br/>
+					
+				
+					Clearswift MailSweeper 4.0 <br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall 3.1.18  firmware<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall 3.1.17  firmware<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Barracuda Networks Barracuda Spam Firewall  3.3.03.022 firmware<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10243/overflow.hla.uuc.gz">#exploit_overflow.hla.uuc.gz</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10243/overflow.lha.uuc.gz">#exploit_overflow.lha.uuc.gz</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10243/overflow.lha">#exploit_overflow.lha</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10243/lha.c">#exploit_lha.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept exploit has been supplied by "narko tix" &amp;lt;narkotix@linuxmail.org&amp;gt;. This proof of concept was observed to also cause an access violation in WinZip and WinRAR products. <br/><br/>This vulnerability can be tested using the PIRANA exploitation framework available at the following location:<br/><br/>http://www.guay-leroux.com/projects/pirana-0.2.1.tar.gz
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/overflow.hla.uuc.gz">/data/vulnerabilities/exploits/overflow.hla.uuc.gz</a></li>
+<li><a href="/data/vulnerabilities/exploits/overflow.lha.uuc.gz">/data/vulnerabilities/exploits/overflow.lha.uuc.gz</a></li>
+<li><a href="/data/vulnerabilities/exploits/overflow.lha">/data/vulnerabilities/exploits/overflow.lha</a></li>
+<li><a href="/data/vulnerabilities/exploits/lha.c">/data/vulnerabilities/exploits/lha.c</a></li>
+</ul>
+</div>

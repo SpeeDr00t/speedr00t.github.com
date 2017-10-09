@@ -1,0 +1,241 @@
+#SpeeDr00t@Black Falcon<br>#bid12295<p><b><span style="font-size: 18pt;">Apple Mac OS X Kernel SearchFS Integer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12295/info">info</a><br><a href="http://www.securityfocus.com/bid/12295/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12295/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12295/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12295/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12295
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-0972<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 18 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 10:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Immunity Inc.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Darwin Kernel 7.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3 <br/>
+</span>
+					
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.7 <br/>
+					
+				
+					Apple Mac OS X 10.3.6 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.2 <br/>
+					
+				
+					Apple Mac OS X 10.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X 10.3.9 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x13000/12295/macosx_kernel.c">#exploit_macosx_kernel.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept example is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/macosx_kernel.c">/data/vulnerabilities/exploits/macosx_kernel.c</a></li>
+</ul>
+</div>

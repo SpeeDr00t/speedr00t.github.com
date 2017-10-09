@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid10281<p><b><span style="font-size: 18pt;">Simple Machines Forum Size Tag HTML Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10281/info">info</a><br><a href="http://www.securityfocus.com/bid/10281/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10281/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10281/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10281/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10281
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 05 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 05 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability is credited to Cheng Peng Su &lt;apple_soup@msn.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Simple Machines SMF 1.0 -beta5p<br/>
+					
+				
+					Simple Machines SMF 1.0 -beta4p<br/>
+					
+				
+					Simple Machines SMF 1.0 -beta4.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required for this issue, however Cheng Peng Su &lt;apple_soup@msn.com&gt; provided some proof-of-concept code.<br/><br/>An attacker could reportedly post content to the forums containing:<br/><br/>size=expression(alert(document.cookie))Content/size<br/><br/>With the limit that the forum software filters out quotes, apostrophes and semicolons.<br/><br/>Another method that circumvents the software filtering would be to post content such as:<br/><br/>size=expression(eval(unescape(document.URL.substring(document.URL.length-34,document.URL.length))))Content/size<br/><br/>then get the victim to follow:<br/><br/>http://www.example.com/index.php?topic=12345.0&amp;alert('cookie:\n'+document.cookie)<br/><br/>Where the '12345.0' is the topic containing the previously posted content. The victim's browser would execute the last 34 characters (as specified in the previously posted 'length-34' content).
+	
+		<ul>
+</ul>
+</div>
