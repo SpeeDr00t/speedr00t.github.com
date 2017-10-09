@@ -1,0 +1,113 @@
+#SpeeDr00t@Black Falcon<br>#bid10497<p><b><span style="font-size: 18pt;">GNU Aspell Stack Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10497/info">info</a><br><a href="http://www.securityfocus.com/bid/10497/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10497/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10497/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10497/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10497
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2004-0548<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 08 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 05 2016 09:27PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Shaun Colley &lt;shaunige@yahoo.co.uk&gt; disclosed this vulnerability to Bugtraq.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Mandriva Linux Mandrake 10.1  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.1 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.0  AMD64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.0 <br/>
+					
+				
+					GNU Aspell 0.50.5 <br/>
+					
+				
+					Gentoo Linux 1.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Some proof of concept examples were provided by Shaun Colley &amp;lt;shaunige@yahoo.co.uk&amp;gt;.<br/><br/>echo `perl -e 'print "a"x1000'` | word-list-compress c<br/>echo `perl -e 'print "a"x1000'` | word-list-compress d<br/><br/>These commands should produce a segmentation fault, with the resulting core dumps showing the ability of the attacker to influence the execution of the utility.<br/><br/>c0d3r / root . razavi1366@yahoo.com provided a proof of concept exploit:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/word-list-compress.c">/data/vulnerabilities/exploits/word-list-compress.c</a></li>
+</ul>
+</div>

