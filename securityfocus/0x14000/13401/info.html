@@ -1,0 +1,565 @@
+#SpeeDr00t@Black Falcon<br>#bid13401<p><b><span style="font-size: 18pt;">Convert-UUlib Perl Module Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13401/info">info</a><br><a href="http://www.securityfocus.com/bid/13401/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13401/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13401/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13401/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13401
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1349<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 26 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:29AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This issue was announced in a vendor advisory.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  7<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SuSE eMail Server III  <br/>
+					
+				
+					S.u.S.E. SuSE eMail Server 3.1 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 7.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Openexchange Server  <br/>
+					
+				
+					S.u.S.E. Linux Office Server  <br/>
+					
+				
+					S.u.S.E. Linux IMAP Server 1.0 <br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390  <br/>
+					
+				
+					S.u.S.E. Linux Desktop 1.0 <br/>
+					
+				
+					S.u.S.E. Linux Database Server  0<br/>
+					
+				
+					S.u.S.E. Linux Connectivity Server  <br/>
+					
+				
+					S.u.S.E. Linux 8.1 <br/>
+					
+				
+					S.u.S.E. Linux 8.0 i386<br/>
+					
+				
+					S.u.S.E. Linux 8.0 <br/>
+					
+				
+					S.u.S.E. Linux 7.3 sparc<br/>
+					
+				
+					S.u.S.E. Linux 7.3 ppc<br/>
+					
+				
+					S.u.S.E. Linux 7.3 i386<br/>
+					
+				
+					S.u.S.E. Linux 7.3 <br/>
+					
+				
+					S.u.S.E. Linux 7.2 i386<br/>
+					
+				
+					S.u.S.E. Linux 7.2 <br/>
+					
+				
+					S.u.S.E. Linux 7.1 x86<br/>
+					
+				
+					S.u.S.E. Linux 7.1 sparc<br/>
+					
+				
+					S.u.S.E. Linux 7.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux 7.1 alpha<br/>
+					
+				
+					S.u.S.E. Linux 7.1 <br/>
+					
+				
+					S.u.S.E. Linux 7.0 sparc<br/>
+					
+				
+					S.u.S.E. Linux 7.0 ppc<br/>
+					
+				
+					S.u.S.E. Linux 7.0 i386<br/>
+					
+				
+					S.u.S.E. Linux 7.0 alpha<br/>
+					
+				
+					S.u.S.E. Linux 7.0 <br/>
+					
+				
+					S.u.S.E. Linux 6.4 ppc<br/>
+					
+				
+					S.u.S.E. Linux 6.4 i386<br/>
+					
+				
+					S.u.S.E. Linux 6.4 alpha<br/>
+					
+				
+					S.u.S.E. Linux 6.4 <br/>
+					
+				
+					S.u.S.E. Linux 6.3 ppc<br/>
+					
+				
+					S.u.S.E. Linux 6.3 alpha<br/>
+					
+				
+					S.u.S.E. Linux 6.3 <br/>
+					
+				
+					S.u.S.E. Linux 6.2 <br/>
+					
+				
+					S.u.S.E. Linux 6.1 alpha<br/>
+					
+				
+					S.u.S.E. Linux 6.1 <br/>
+					
+				
+					S.u.S.E. Linux 6.0 <br/>
+					
+				
+					S.u.S.E. Linux 5.3 <br/>
+					
+				
+					S.u.S.E. Linux 5.2 <br/>
+					
+				
+					S.u.S.E. Linux 5.1 <br/>
+					
+				
+					S.u.S.E. Linux 5.0 <br/>
+					
+				
+					S.u.S.E. Linux 4.4.1 <br/>
+					
+				
+					S.u.S.E. Linux 4.4 <br/>
+					
+				
+					S.u.S.E. Linux 4.3 <br/>
+					
+				
+					S.u.S.E. Linux 4.2 <br/>
+					
+				
+					S.u.S.E. Linux 4.0 <br/>
+					
+				
+					S.u.S.E. Linux 3.0 <br/>
+					
+				
+					S.u.S.E. Linux 2.0 <br/>
+					
+				
+					S.u.S.E. Linux 1.0 <br/>
+					
+				
+					Marc Lehmann Convert-UUlib 1.50 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.116 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.115 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.114 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.113 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.112 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.111 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.110 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.109 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.108 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.107 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.106 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.105 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.104 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.103 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.102 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.101 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.54 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.53 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.52 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.51 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.19 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.18 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.17 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.16 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.15 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.14 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.13 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.12 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.5 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.2 a<br/>
+					
+				
+					MailEnable MailEnable Professional 1.2 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.1 <br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 017<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 016<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 015<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 014<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 013<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 012<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 011<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 010<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 009<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 008<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 007<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 006<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 005<br/>
+					
+				
+					MailEnable MailEnable Professional 1.0 004<br/>
+					
+				
+					MailEnable MailEnable Enterprise Edition 1.0 4<br/>
+					
+				
+					MailEnable MailEnable Enterprise Edition 1.0 3<br/>
+					
+				
+					MailEnable MailEnable Enterprise Edition 1.0 2<br/>
+					
+				
+					MailEnable MailEnable Enterprise Edition 1.0 1<br/>
+					
+				
+					MailEnable MailEnable Enterprise Edition 1.0 <br/>
+					
+				
+					Debian Linux 3.0  sparc<br/>
+					
+				
+					Debian Linux 3.0  s/390<br/>
+					
+				
+					Debian Linux 3.0  ppc<br/>
+					
+				
+					Debian Linux 3.0  mipsel<br/>
+					
+				
+					Debian Linux 3.0  mips<br/>
+					
+				
+					Debian Linux 3.0  m68k<br/>
+					
+				
+					Debian Linux 3.0  ia-64<br/>
+					
+				
+					Debian Linux 3.0  ia-32<br/>
+					
+				
+					Debian Linux 3.0  hppa<br/>
+					
+				
+					Debian Linux 3.0  arm<br/>
+					
+				
+					Debian Linux 3.0  alpha<br/>
+					
+				
+					Debian Linux 3.0 <br/>
+					
+				
+					Convert-UUlib Convert-UUlib  1.05<br/>
+<span class="related">
+						
+							+ 
+						
+						UUDeview UUDeview 0.5.20 <br/>
+</span>
+					
+				
+					Convert-UUlib Convert-UUlib  1.04<br/>
+<span class="related">
+						
+							+ 
+						
+						UUDeview UUDeview 0.5.20 <br/>
+</span>
+					
+				
+					Conectiva Linux 10.0 <br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall 3.1.18  firmware<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall 3.1.17  firmware<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall  3.3.03.055<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall  3.3.03.053<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall  3.3.03.022 firmware<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall  3.3.01.001<br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall  3.3.0.54<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Marc Lehmann Convert-UUlib 1.51 <br/>
+					
+				
+					Barracuda Networks Barracuda Spam Firewall 3.3.15 026<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x14000/13401/x0n3-h4ck_mailenable_https.pl">#exploit_x0n3-h4ck_mailenable_https.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue.#no_exploit
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/x0n3-h4ck_mailenable_https.pl">/data/vulnerabilities/exploits/x0n3-h4ck_mailenable_https.pl</a></li>
+</ul>
+</div>

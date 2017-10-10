@@ -1,0 +1,304 @@
+#SpeeDr00t@Black Falcon<br>#bid12993<p><b><span style="font-size: 18pt;">FreeBSD Kernel SendFile System Call Local Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12993/info">info</a><br><a href="http://www.securityfocus.com/bid/12993/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12993/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12993/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12993/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12993
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-0708<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 05 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 01 2011 07:05PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Sven Berkvens and Marc Olzheim are responsible for the discovery of this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FreeBSD FreeBSD 5.4 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 <br/>
+					
+				
+					FreeBSD FreeBSD 5.2.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 <br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE/Alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD 5.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 <br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 <br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 <br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLEpre2002-03-07<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE-p32<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELEASE-p42<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE-p38<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					DragonFlyBSD DragonFlyBSD 1.1 <br/>
+					
+				
+					DragonFlyBSD DragonFlyBSD 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x13000/12993/freebsd_sendfile.c">#exploit_freebsd_sendfile.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x13000/12993/12993.c">#exploit_12993.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x13000/12993/12993-1.c">#exploit_12993-1.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit codes are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/freebsd_sendfile.c">/data/vulnerabilities/exploits/freebsd_sendfile.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/12993.c">/data/vulnerabilities/exploits/12993.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/12993-1.c">/data/vulnerabilities/exploits/12993-1.c</a></li>
+</ul>
+</div>
