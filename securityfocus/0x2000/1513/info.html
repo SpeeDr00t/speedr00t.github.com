@@ -1,0 +1,130 @@
+#SpeeDr00t@Black Falcon<br>#bid1513<p><b><span style="font-size: 18pt;">Multiple Linux Vendor pam_console Remote User Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/1513/info">info</a><br><a href="http://www.securityfocus.com/bid/1513/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/1513/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/1513/solution">solution</a><br><a href="http://www.securityfocus.com/bid/1513/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				1513
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 27 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 27 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was first reported in a Redhat security advisory on July 21, 2000.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Linux 6.2  sparc<br/>
+					
+				
+					Redhat Linux 6.2  i386<br/>
+					
+				
+					Redhat Linux 6.2  alpha<br/>
+					
+				
+					Redhat Linux 6.1  sparc<br/>
+					
+				
+					Redhat Linux 6.1  i386<br/>
+					
+				
+					Redhat Linux 6.1  alpha<br/>
+					
+				
+					Redhat Linux 6.0  sparc<br/>
+					
+				
+					Redhat Linux 6.0  alpha<br/>
+					
+				
+					Redhat Linux 6.0 <br/>
+					
+				
+					Michael K. Johnson pam_console 0.72 unpatched<br/>
+					
+				
+					Michael K. Johnson pam_console 0.66 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					S.u.S.E. Linux 7.0 <br/>
+					
+				
+					Michael K. Johnson pam_console 0.72 patched<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This description of how to replicate the problem was posted to RedHat's Bugzilla bug-tracking system by bkw1a@virginia.edu:<br/> 1. ssh into the server, allowing ssh to establish a secure forwarded X connection. If no one else is using display number 0, you'll end up with a DISPLAY value of "host:0.0".<br/> 2. Invoke "Xnest -query localhost" on the remote machine.<br/> 3. Log in, starting a Gnome session.<br/> 4. From the Gnome panel, select "logout". You'll be presented with the option of shutting down or rebooting the server.<br/><br/>Another description, this one from Andreas Hasenack &lt;andreas@conectiva.com.br&gt;:<br/> 1. login remotely (X -broadcast) (have gdm, kdm, whatever running with XDMCP enabled somewhere)<br/> 2. after login, start Xnest with -broadcast again, for example<br/> 3. login again, now you will be using display :1<br/> 4. this is treated as a console user, and commands only available to console users can be run, such as reboot.
+	
+		<ul>
+</ul>
+</div>
