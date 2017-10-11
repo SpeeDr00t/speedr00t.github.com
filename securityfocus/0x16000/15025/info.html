@@ -1,0 +1,1504 @@
+#SpeeDr00t@Black Falcon<br>#bid15025<p><b><span style="font-size: 18pt;">Computer Associates Multiple Product HTTP Request Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15025/info">info</a><br><a href="http://www.securityfocus.com/bid/15025/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15025/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15025/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15025/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15025
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3190<br/>
+				
+					CVE-2005-3190<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 06 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:16AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Erika Mendoza &lt;erikam@gmail.com&gt; disclosed this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Computer Associates Vet Antivirus 11.9.1 <br/>
+					
+				
+					Computer Associates Vet Antivirus 10.67 <br/>
+					
+				
+					Computer Associates Vet Antivirus 10.66 <br/>
+					
+				
+					Computer Associates Unicenter Web Server Management 11.0 <br/>
+					
+				
+					Computer Associates Unicenter TNG JPN 2.2 <br/>
+					
+				
+					Computer Associates Unicenter TNG 2.5 <br/>
+					
+				
+					Computer Associates Unicenter TNG 2.4.2 <br/>
+					
+				
+					Computer Associates Unicenter TNG 2.4 <br/>
+					
+				
+					Computer Associates Unicenter TNG 2.2 <br/>
+					
+				
+					Computer Associates Unicenter TNG 2.1 <br/>
+					
+				
+					Computer Associates Unicenter Software Delivery 4.0 SP1<br/>
+					
+				
+					Computer Associates Unicenter Software Delivery 4.0 <br/>
+					
+				
+					Computer Associates Unicenter Software Delivery 3.1 SP2<br/>
+					
+				
+					Computer Associates Unicenter Software Delivery 3.1 SP1<br/>
+					
+				
+					Computer Associates Unicenter Software Delivery 3.1 <br/>
+					
+				
+					Computer Associates Unicenter Software Delivery 3.0 <br/>
+					
+				
+					Computer Associates Unicenter ServicePlus Service Desk 6.0 <br/>
+					
+				
+					Computer Associates Unicenter ServicePlus Service Desk 5.5.1 <br/>
+					
+				
+					Computer Associates Unicenter ServicePlus Service Desk 5.5 <br/>
+					
+				
+					Computer Associates Unicenter Service Matrix Analysis 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Level Management 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Level Management 3.5 <br/>
+					
+				
+					Computer Associates Unicenter Service Level Management 3.0.2 <br/>
+					
+				
+					Computer Associates Unicenter Service Level Management 3.0.1 <br/>
+					
+				
+					Computer Associates Unicenter Service Level Management 3.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Fulfillment 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Fulfillment 2.2 <br/>
+					
+				
+					Computer Associates Unicenter Service Desk Knowledge Tools 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Desk 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Delivery 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Service Catalog/Fulfillment/Accounting 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Remote Control Option German Version 5.1 <br/>
+					
+				
+					Computer Associates Unicenter Remote Control Option 5.1 <br/>
+					
+				
+					Computer Associates Unicenter Remote Control Option 5.0 <br/>
+					
+				
+					Computer Associates Unicenter Remote Control Host 6.0 <br/>
+					
+				
+					Computer Associates Unicenter Remote Control German GA 6.0 (Build 6.0.74)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control German 6.0 SP1 (Build 6.0.77)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control French GA 6.0 (Build 6.0.74)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control French 6.0 SP1 (Build 6.0.77)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control English QO48974 6.0 (Build 6.0.74)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control English GA 6.0 (6.0.56.3)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control English 6.0 SP1 (Build 6.0.77)<br/>
+					
+				
+					Computer Associates Unicenter Remote Control 6.0 SP1<br/>
+					
+				
+					Computer Associates Unicenter Remote Control 6.0 <br/>
+					
+				
+					Computer Associates Unicenter Remote Control 5.2 <br/>
+					
+				
+					Computer Associates Unicenter RC/Update 6.1 <br/>
+					
+				
+					Computer Associates Unicenter RC/Update 6.0 <br/>
+					
+				
+					Computer Associates Unicenter Performance Management for OpenVMS 2.4 SP3<br/>
+					
+				
+					Computer Associates Unicenter NSM Wireless Network Management Option 3.0 <br/>
+					
+				
+					Computer Associates Unicenter Network and Systems Management 3.1 <br/>
+					
+				
+					Computer Associates Unicenter Network and Systems Management 3.0 <br/>
+					
+				
+					Computer Associates Unicenter MQ Management 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Management Portal 3.1 <br/>
+					
+				
+					Computer Associates Unicenter Management Portal 2.0 <br/>
+					
+				
+					Computer Associates Unicenter Management for WebSphere MQ 3.5 <br/>
+					
+				
+					Computer Associates Unicenter Management for WebSphere 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Management for WebLogic 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Management for Web Servers 5.0.1 <br/>
+					
+				
+					Computer Associates Unicenter Management for Web Servers 5.0 <br/>
+					
+				
+					Computer Associates Unicenter Management for Microsoft Exchange 4.1 <br/>
+					
+				
+					Computer Associates Unicenter Management for Microsoft Exchange 4.0 <br/>
+					
+				
+					Computer Associates Unicenter Management for Lotus Notes/Domino 4.0 <br/>
+					
+				
+					Computer Associates Unicenter Jasmine 3.0 <br/>
+					
+				
+					Computer Associates Unicenter Exchange Management 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Enterprise Job Manager 1.0 SP2<br/>
+					
+				
+					Computer Associates Unicenter Enterprise Job Manager 1.0 SP1<br/>
+					
+				
+					Computer Associates Unicenter Data Transport Option 2.0 <br/>
+					
+				
+					Computer Associates Unicenter CA-11 Restart and Tracking 3.0 <br/>
+					
+				
+					Computer Associates Unicenter CA Web Services Distributed Management 11.0 <br/>
+					
+				
+					Computer Associates Unicenter AutoSys JM 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Asset Portfolio Management 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Asset Manager  <br/>
+					
+				
+					Computer Associates Unicenter Asset Management 4.0 SP1<br/>
+					
+				
+					Computer Associates Unicenter Asset Management 4.0 <br/>
+					
+				
+					Computer Associates Unicenter Asset Management 3.2 SP2<br/>
+					
+				
+					Computer Associates Unicenter Asset Management 3.2 SP1<br/>
+					
+				
+					Computer Associates Unicenter Asset Management 3.2 <br/>
+					
+				
+					Computer Associates Unicenter Asset Management 3.1 <br/>
+					
+				
+					Computer Associates Unicenter Application Server Managment 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Application Performance Monitor 11.0 <br/>
+					
+				
+					Computer Associates Unicenter Application Performance Monitor 3.5 <br/>
+					
+				
+					Computer Associates Unicenter Application Performance Monitor 3.0 <br/>
+					
+				
+					Computer Associates Unicenter  <br/>
+					
+				
+					Computer Associates Telon 4.0 <br/>
+					
+				
+					Computer Associates SymDump for CICS 6.0 <br/>
+					
+				
+					Computer Associates License 1.61.9 <br/>
+					
+				
+					Computer Associates License 1.61.8 <br/>
+					
+				
+					Computer Associates License 1.61.2 <br/>
+					
+				
+					Computer Associates License 1.61.1 <br/>
+					
+				
+					Computer Associates License 1.61 <br/>
+					
+				
+					Computer Associates License 1.60.3 <br/>
+					
+				
+					Computer Associates License 1.60.2 <br/>
+					
+				
+					Computer Associates License 1.60 <br/>
+					
+				
+					Computer Associates License 1.57 <br/>
+					
+				
+					Computer Associates License 1.56 <br/>
+					
+				
+					Computer Associates License 1.55 <br/>
+					
+				
+					Computer Associates License 1.54 <br/>
+					
+				
+					Computer Associates License 1.53 <br/>
+					
+				
+					Computer Associates License 1.0.15 <br/>
+					
+				
+					Computer Associates InterTest 6.0  For CICS<br/>
+					
+				
+					Computer Associates InterTest 3.0 Batch<br/>
+					
+				
+					Computer Associates InoculateIT 6.0 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Computer Associates InoculateIT 4.53 <br/>
+					
+				
+					Computer Associates Harvest Change Manager 7.1 <br/>
+					
+				
+					Computer Associates eTrust Web Service Security 8.0 <br/>
+					
+				
+					Computer Associates eTrust SiteMinder 6.0 sp2<br/>
+					
+				
+					Computer Associates eTrust SiteMinder 5.5 <br/>
+					
+				
+					Computer Associates eTrust Security Command Center 1.0 <br/>
+					
+				
+					Computer Associates eTrust Secure Content Manager 8.0 <br/>
+					
+				
+					Computer Associates eTrust Secure Content Manager 1.1 <br/>
+					
+				
+					Computer Associates eTrust Secure Content Manager 1.0 SP1<br/>
+					
+				
+					Computer Associates eTrust Secure Content Manager 1.0 <br/>
+					
+				
+					Computer Associates eTrust Policy Compliance 7.4 <br/>
+					
+				
+					Computer Associates eTrust Intrusion Detection 3.0 SP 1<br/>
+					
+				
+					Computer Associates eTrust Intrusion Detection 3.0 <br/>
+					
+				
+					Computer Associates eTrust Intrusion Detection 1.5 <br/>
+					
+				
+					Computer Associates eTrust Intrusion Detection 1.4.5 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Computer Associates eTrust Intrusion Detection 1.4.1 .13<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Computer Associates eTrust Integrated Threat Management 8.0 <br/>
+					
+				
+					Computer Associates eTrust InoculateIT 6.0 <br/>
+					
+				
+					Computer Associates eTrust Identity Minder 8.0 <br/>
+					
+				
+					Computer Associates eTrust Identity Minder 6.0 sp1<br/>
+					
+				
+					Computer Associates eTrust EZ Armor LE 3.0 .0.14<br/>
+					
+				
+					Computer Associates eTrust EZ Armor LE 2.0 <br/>
+					
+				
+					Computer Associates eTrust EZ Armor 3.1 <br/>
+					
+				
+					Computer Associates eTrust EZ Armor 2.4.4 <br/>
+					
+				
+					Computer Associates eTrust EZ Armor 2.4 <br/>
+					
+				
+					Computer Associates eTrust EZ Armor 2.3 <br/>
+					
+				
+					Computer Associates eTrust EZ Armor 2.0 <br/>
+					
+				
+					Computer Associates eTrust EZ Armor 1.0 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.5 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.4 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.3 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.2 .1<br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.2 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.1 .4<br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.1 .3<br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.1 .2<br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.1 .1<br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0.1 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 7.0 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 6.3 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 6.2 <br/>
+					
+				
+					Computer Associates eTrust EZ Antivirus 6.1 <br/>
+					
+				
+					Computer Associates eTrust CA-Top Secret Security for z/OS and OS/390 5.3 <br/>
+					
+				
+					Computer Associates eTrust Audit iRecorders 8.0 <br/>
+					
+				
+					Computer Associates eTrust Audit iRecorders 1.5  SP3<br/>
+					
+				
+					Computer Associates eTrust Audit iRecorders 1.5  SP2<br/>
+					
+				
+					Computer Associates eTrust Audit ARIES 8.0 <br/>
+					
+				
+					Computer Associates eTrust Audit ARIES 1.5 SP3<br/>
+					
+				
+					Computer Associates eTrust Audit ARIES 1.5 SP2<br/>
+					
+				
+					Computer Associates eTrust Antivirus for the Gateway 7.1 <br/>
+					
+				
+					Computer Associates eTrust Antivirus for the Gateway 7.0 <br/>
+					
+				
+					Computer Associates eTrust Antivirus EE 7.0 <br/>
+					
+				
+					Computer Associates eTrust Antivirus EE 6.0 <br/>
+					
+				
+					Computer Associates eTrust Antivirus 7.1 <br/>
+					
+				
+					Computer Associates eTrust Antivirus 7.0 SP2<br/>
+					
+				
+					Computer Associates eTrust Antivirus 7.0 <br/>
+					
+				
+					Computer Associates eTrust Antivirus 6.0 <br/>
+					
+				
+					Computer Associates eTrust Admin 8.1 <br/>
+					
+				
+					Computer Associates eTrust Admin 8.0 <br/>
+					
+				
+					Computer Associates eTrust Admin 2.9 <br/>
+					
+				
+					Computer Associates eTrust Admin 2.7 <br/>
+					
+				
+					Computer Associates eTrust Admin 2.4 <br/>
+					
+				
+					Computer Associates eTrust Admin 2.1 <br/>
+					
+				
+					Computer Associates eTrust Access Control 5.0 -SP1<br/>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.10 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.0 1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Unixware 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Unixware 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 _x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.5_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.5<br/>
+</span>
+					
+				
+					Computer Associates eTrust Access Control 5.0 <br/>
+					
+				
+					Computer Associates eTrust Access Control 4.1 -SP1<br/>
+					
+				
+					Computer Associates eTrust Access Control 4.1 <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Computer Associates Control IT Enterprise Edition 5.1 <br/>
+					
+				
+					Computer Associates Control IT Enterprise Edition 5.0 <br/>
+					
+				
+					Computer Associates Control IT Advanced Edition 5.0 <br/>
+					
+				
+					Computer Associates Common Services 3.0 <br/>
+					
+				
+					Computer Associates Common Services 2.2 <br/>
+					
+				
+					Computer Associates Common Services 2.1 <br/>
+					
+				
+					Computer Associates Common Services 2.0 <br/>
+					
+				
+					Computer Associates Common Services 1.1 <br/>
+					
+				
+					Computer Associates Common Services 1.0 <br/>
+					
+				
+					Computer Associates CleverPath Predictive Analysis Server 3.0 <br/>
+					
+				
+					Computer Associates CleverPath Predictive Analysis Server 2.0 <br/>
+					
+				
+					Computer Associates CleverPath OLAP 5.1 <br/>
+					
+				
+					Computer Associates CleverPath ECM 3.5 <br/>
+					
+				
+					Computer Associates CleverPath Aion 10.0 <br/>
+					
+				
+					Computer Associates CAM  1.11 Build 29_13<br/>
+					
+				
+					Computer Associates CAM  1.11<br/>
+					
+				
+					Computer Associates CAM  1.07 Build 220_13<br/>
+					
+				
+					Computer Associates CAM  1.07<br/>
+					
+				
+					Computer Associates CAM  1.05<br/>
+					
+				
+					Computer Associates CA-MLINK  <br/>
+<span class="related">
+						
+							-
+						
+						AT&amp;T; SVR4 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM OS/2  Warp Server 4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.6 a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun SunOS 4.1.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun SunOS 4.1.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun SunOS 4.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun SunOS 4.1.1 <br/>
+</span>
+					
+				
+					Computer Associates BrightStor SRM 11.5 <br/>
+					
+				
+					Computer Associates BrightStor SRM 11.1 <br/>
+					
+				
+					Computer Associates BrightStor SRM 7.3  (Windows)<br/>
+					
+				
+					Computer Associates BrightStor SRM 7.2  (Windows)<br/>
+					
+				
+					Computer Associates BrightStor SRM 6.4 <br/>
+					
+				
+					Computer Associates BrightStor SRM 6.3 <br/>
+					
+				
+					Computer Associates BrightStor SAN Manager 11.5 <br/>
+					
+				
+					Computer Associates BrightStor SAN Manager 11.1 <br/>
+					
+				
+					Computer Associates BrightStor SAN Manager 1.1 SP2<br/>
+					
+				
+					Computer Associates BrightStor SAN Manager 1.1 SP1<br/>
+					
+				
+					Computer Associates BrightStor SAN Manager 1.1 <br/>
+					
+				
+					Computer Associates BrightStor Process Automation Manager 11.1 <br/>
+					
+				
+					Computer Associates BrightStor Portal 11.1 <br/>
+					
+				
+					Computer Associates BrightStor Portal 1.1 <br/>
+					
+				
+					Computer Associates BrightStor Portal 1.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Serverless Backup 11.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Serverless Backup 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Serverless Backup 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for Windows 64 bit 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for Tru64 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for Solaris 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for Solaris 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for Mainframe Linux 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for HPUX 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for HP 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for AIX 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup for AIX 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Agent for SQL 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Agent for SQL 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Agent for SAP R/3 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Agent for SAP R/3 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Agent for Oracle 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup Agent for Oracle 10.0 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup 10.5 <br/>
+					
+				
+					Computer Associates BrightStor Enterprise Backup 10.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 64 bit 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 64 bit 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 64 bit 11.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 64 bit 9.0.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (NoEng-Cli) 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (NoEng-Cli)  9.01<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (NoEng-All) 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (NoEng-All)  9.01<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (Eng-Cli) 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (Eng-Cli)  9.01<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (Eng-All) 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (Eng-All)  9.01<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (Client) 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (Client)  11.1<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (All) 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Windows (All)  11.1<br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 11.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Windows 9.0 .0.1<br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Tru64 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Solaris 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Oracle 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Oracle 11.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup for Oracle 9.0 1<br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for NetWare 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for NetWare 9.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Mainframe Linux 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Macintosh 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Linux Japanese 9.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Linux 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Linux 9.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for Linux 7.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for HP 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup for AIX 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SQL 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SQL 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SQL 11.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SQL 9.0 .0.1<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SQL 9.0 .0<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SAP R/3 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SAP R/3 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SAP R/3 11.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for SAP R/3 9.0 1<br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for Exchange 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for Exchange 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for Exchange 11.0 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve Backup Agent for Exchange 9.0 1<br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup 11.5 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup 11.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCServe Backup 9.1 <br/>
+					
+				
+					Computer Associates BrightStor ARCserve 2000 Backup Windows Japanese  <br/>
+					
+				
+					Computer Associates ARCServeIT Linux 6.6 <br/>
+					
+				
+					Computer Associates ARCServeIT 6.63 <br/>
+					
+				
+					Computer Associates ARCServeIT 6.61  Linux<br/>
+					
+				
+					Computer Associates ARCServeIT 6.61 <br/>
+					
+				
+					Computer Associates ARCserve Backup for Laptops and Desktops  11.1<br/>
+					
+				
+					Computer Associates ARCserve Backup for Laptops and Desktops  11.0<br/>
+					
+				
+					Computer Associates ARCServe 2000 Advanced Edition 7.0 <br/>
+					
+				
+					Computer Associates ARCServe 2000  <br/>
+					
+				
+					Computer Associates ARCServe 6.61 <br/>
+					
+				
+					Computer Associates AllFusion ERwin Data Modeler 4.1 <br/>
+					
+				
+					Computer Associates AllFusion ERwin Data Modeler 3.9 <br/>
+					
+				
+					Computer Associates AllFusion ERwin Data Modeler 3.5.2 <br/>
+					
+				
+					Computer Associates AllFusion ERwin Data Modeler 3.0.2 <br/>
+					
+				
+					Computer Associates AdviseIT 2.4 <br/>
+					
+				
+					Computer Associates Advantage Ingress Enterprise Relational Database 2.6 <br/>
+					
+				
+					Computer Associates Advantage Data Transport 3.0 <br/>
+					
+				
+					Computer Associates Advantage Data Transformer 2.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15025/caigw-win32.c">#exploit_caigw-win32.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit by EMendoza &amp;lt;erikam@gmail.com&amp;gt; is available. This exploit has not been verified by Symantec.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/caigw-win32.c">/data/vulnerabilities/exploits/caigw-win32.c</a></li>
+</ul>
+</div>

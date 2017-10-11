@@ -1,0 +1,925 @@
+#SpeeDr00t@Black Falcon<br>#bid15250<p><b><span style="font-size: 18pt;">PHP File Upload GLOBAL Variable Overwrite Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15250/info">info</a><br><a href="http://www.securityfocus.com/bid/15250/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15250/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15250/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15250/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15250
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3390<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 31 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 08:08AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Stefan Esser &lt;sesser@hardened-php.net&gt; of the Hardened-PHP Project discovered this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Turbolinux Turbolinux Workstation 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Workstation 7.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 7.0 <br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Trustix Secure Linux 3.0 <br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Secure Enterprise Linux 2.0 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Standard Server 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Openexchange Server  <br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Desktop 1.0 <br/>
+					
+				
+					RedHat Stronghold 4.0 <br/>
+					
+				
+					RedHat Linux 9.0  i386<br/>
+					
+				
+					RedHat Linux 7.3  i386<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux WS  3<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  3<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1<br/>
+					
+				
+					RedHat Desktop 4.0 <br/>
+					
+				
+					RedHat Desktop 3.0 <br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Red Hat Fedora  Core4<br/>
+					
+				
+					Red Hat Fedora  Core3<br/>
+					
+				
+					Red Hat Fedora  Core2<br/>
+					
+				
+					Red Hat Fedora  Core1<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux AS  3<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1<br/>
+					
+				
+					PHP PHP 5.0.5 <br/>
+					
+				
+					PHP PHP 5.0.4 <br/>
+					
+				
+					PHP PHP 5.0.3 <br/>
+					
+				
+					PHP PHP 5.0.2 <br/>
+					
+				
+					PHP PHP 5.0.1 <br/>
+					
+				
+					PHP PHP 5.0 candidate 3<br/>
+					
+				
+					PHP PHP 5.0 candidate 2<br/>
+					
+				
+					PHP PHP 5.0 candidate 1<br/>
+					
+				
+					PHP PHP 5.0 .0<br/>
+					
+				
+					PHP PHP 4.4 .0<br/>
+					
+				
+					PHP PHP 4.3.11 <br/>
+					
+				
+					PHP PHP 4.3.10 <br/>
+					
+				
+					PHP PHP 4.3.9 <br/>
+					
+				
+					PHP PHP 4.3.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					PHP PHP 4.3.7 <br/>
+					
+				
+					PHP PHP 4.3.6 <br/>
+					
+				
+					PHP PHP 4.3.5 <br/>
+					
+				
+					PHP PHP 4.3.4 <br/>
+					
+				
+					PHP PHP 4.3.3 <br/>
+					
+				
+					PHP PHP 4.3.2 <br/>
+					
+				
+					PHP PHP 4.3.1 <br/>
+					
+				
+					PHP PHP 4.3 <br/>
+					
+				
+					PHP PHP 4.2.3 <br/>
+					
+				
+					PHP PHP 4.2.2 <br/>
+					
+				
+					PHP PHP 4.2.1 <br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+					
+				
+					PHP PHP 4.2 .0<br/>
+					
+				
+					PHP PHP 4.2 -dev<br/>
+					
+				
+					PHP PHP 4.1.2 <br/>
+					
+				
+					PHP PHP 4.1.1 <br/>
+					
+				
+					PHP PHP 4.1 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+					
+				
+					PHP PHP 4.0.7 RC3<br/>
+					
+				
+					PHP PHP 4.0.7 RC2<br/>
+					
+				
+					PHP PHP 4.0.7 RC1<br/>
+					
+				
+					PHP PHP 4.0.7 <br/>
+					
+				
+					PHP PHP 4.0.6 <br/>
+					
+				
+					PHP PHP 4.0.5 <br/>
+					
+				
+					PHP PHP 4.0.4 <br/>
+					
+				
+					PHP PHP 4.0.3 pl1<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+					
+				
+					PHP PHP 4.0.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Control Station 4100CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 Japanese 4000WGJ  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 Japanese w/ Caching and RAID 4100WGJ  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 Japanese w/Caching 4010WGJ  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR 3500R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR Japanese 3500R-ja  <br/>
+</span>
+					
+				
+					PHP PHP 4.0.2 <br/>
+					
+				
+					PHP PHP 4.0.1 pl2<br/>
+					
+				
+					PHP PHP 4.0.1 pl1<br/>
+					
+				
+					PHP PHP 4.0.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 4000WG  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 w/ Caching and RAID 4100WG  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube3 w/Caching 4010WG  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ4 3001R  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ4 Japanese RAID 3100R-ja  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ4 RAID 3100R  <br/>
+</span>
+					
+				
+					PHP PHP 4.0 0<br/>
+					
+				
+					PHP PHP 3.0.18 <br/>
+					
+				
+					PHP PHP 3.0.17 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					PHP PHP 3.0.16 <br/>
+					
+				
+					PHP PHP 3.0.15 <br/>
+					
+				
+					PHP PHP 3.0.14 <br/>
+					
+				
+					PHP PHP 3.0.13 <br/>
+					
+				
+					PHP PHP 3.0.12 <br/>
+					
+				
+					PHP PHP 3.0.11 <br/>
+					
+				
+					PHP PHP 3.0.10 <br/>
+					
+				
+					PHP PHP 3.0.9 <br/>
+					
+				
+					PHP PHP 3.0.8 <br/>
+					
+				
+					PHP PHP 3.0.7 <br/>
+					
+				
+					PHP PHP 3.0.6 <br/>
+					
+				
+					PHP PHP 3.0.5 <br/>
+					
+				
+					PHP PHP 3.0.4 <br/>
+					
+				
+					PHP PHP 3.0.3 <br/>
+					
+				
+					PHP PHP 3.0.2 <br/>
+					
+				
+					PHP PHP 3.0.1 <br/>
+					
+				
+					PHP PHP 3.0 0<br/>
+					
+				
+					PHP PHP 3.0 .16<br/>
+					
+				
+					PHP PHP 3.0 .13<br/>
+					
+				
+					PHP PHP 3.0 .12<br/>
+					
+				
+					PHP PHP 3.0 .11<br/>
+					
+				
+					PHP PHP 3.0 .10<br/>
+					
+				
+					OpenPKG OpenPKG 2.5 <br/>
+					
+				
+					OpenPKG OpenPKG 2.4 <br/>
+					
+				
+					OpenPKG OpenPKG 2.3 <br/>
+					
+				
+					OpenPKG OpenPKG  Current<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.1  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.1 <br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1 <br/>
+					
+				
+					HP System Management Homepage 2.1.4 <br/>
+					
+				
+					HP System Management Homepage 2.1.3 .132<br/>
+					
+				
+					HP System Management Homepage 2.1.3 <br/>
+					
+				
+					HP System Management Homepage 2.1.2 <br/>
+					
+				
+					HP System Management Homepage 2.1.1 <br/>
+					
+				
+					HP System Management Homepage 2.1 <br/>
+					
+				
+					HP System Management Homepage 2.0.2 <br/>
+					
+				
+					HP System Management Homepage 2.0.1 <br/>
+					
+				
+					HP System Management Homepage 2.0 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					e107 e107 website system 0.7.5 <br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Intuity  LX<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP 5.1 <br/>
+					
+				
+					PHP PHP 4.4.1 <br/>
+					
+				
+					HP System Management Homepage 2.1.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15250/e107_globals_overwrite_and_zendhashdel_poc.txt">#exploit_e107_globals_overwrite_and_zendhashdel_poc.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit released for the e107 PHP CMS demonstrates this vulnerability.<br/><br/>Note, however, that an exploit is not required to take advantage of this vulnerability.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/e107_globals_overwrite_and_zendhashdel_poc.txt">/data/vulnerabilities/exploits/e107_globals_overwrite_and_zendhashdel_poc.txt</a></li>
+</ul>
+</div>

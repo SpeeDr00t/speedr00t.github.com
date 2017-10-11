@@ -1,0 +1,849 @@
+#SpeeDr00t@Black Falcon<br>#bid14648<p><b><span style="font-size: 18pt;">CVS Cvsbug.In Script Insecure Temporary File Creation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14648/info">info</a><br><a href="http://www.securityfocus.com/bid/14648/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14648/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14648/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14648/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14648
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-2693<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 19 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 05:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Josh Bressers.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Trustix Secure Linux 3.0 <br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Secure Enterprise Linux 2.0 <br/>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					NetBSD NetBSD 2.0.2 <br/>
+					
+				
+					NetBSD NetBSD 2.0.1 <br/>
+					
+				
+					NetBSD NetBSD 2.0 <br/>
+					
+				
+					NetBSD NetBSD 1.6.2 <br/>
+					
+				
+					NetBSD NetBSD 1.6.1 <br/>
+					
+				
+					NetBSD NetBSD 1.6  beta<br/>
+					
+				
+					NetBSD NetBSD 1.6 <br/>
+					
+				
+					NetBSD NetBSD 1.5.3 <br/>
+					
+				
+					NetBSD NetBSD 1.5.2 <br/>
+					
+				
+					NetBSD NetBSD 1.5.1 <br/>
+					
+				
+					NetBSD NetBSD 1.5  x86<br/>
+					
+				
+					NetBSD NetBSD 1.5  sh3<br/>
+					
+				
+					NetBSD NetBSD 1.5 <br/>
+					
+				
+					NetBSD NetBSD 1.4.3 <br/>
+					
+				
+					NetBSD NetBSD 1.4.2  x86<br/>
+					
+				
+					NetBSD NetBSD 1.4.2  SPARC<br/>
+					
+				
+					NetBSD NetBSD 1.4.2  arm32<br/>
+					
+				
+					NetBSD NetBSD 1.4.2  Alpha<br/>
+					
+				
+					NetBSD NetBSD 1.4.2 <br/>
+					
+				
+					NetBSD NetBSD 1.4.1  x86<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  SPARC<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  sh3<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  arm32<br/>
+					
+				
+					NetBSD NetBSD 1.4.1  Alpha<br/>
+					
+				
+					NetBSD NetBSD 1.4.1 <br/>
+					
+				
+					NetBSD NetBSD 1.4  x86<br/>
+					
+				
+					NetBSD NetBSD 1.4  SPARC<br/>
+					
+				
+					NetBSD NetBSD 1.4  arm32<br/>
+					
+				
+					NetBSD NetBSD 1.4  Alpha<br/>
+					
+				
+					NetBSD NetBSD 1.4 <br/>
+					
+				
+					NetBSD NetBSD 1.3.3 <br/>
+					
+				
+					NetBSD NetBSD 1.3.2 <br/>
+					
+				
+					NetBSD NetBSD 1.3.1 <br/>
+					
+				
+					NetBSD NetBSD 1.3 <br/>
+					
+				
+					NetBSD NetBSD 1.2.1 <br/>
+					
+				
+					NetBSD NetBSD 1.2 <br/>
+					
+				
+					NetBSD NetBSD 1.1 <br/>
+					
+				
+					NetBSD NetBSD 1.0 <br/>
+					
+				
+					gcvs gcvs 1.0 final<br/>
+					
+				
+					gcvs gcvs 1.0 a7<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 <br/>
+					
+				
+					FreeBSD FreeBSD 5.2.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 <br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE/Alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD 5.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 <br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 <br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 <br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLEpre2002-03-07<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE-p32<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELEASE-p42<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE-p38<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -STABLEpre2001-07-20<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 <br/>
+					
+				
+					FreeBSD FreeBSD 3.4 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.4 <br/>
+					
+				
+					FreeBSD FreeBSD 3.3 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.3 <br/>
+					
+				
+					FreeBSD FreeBSD 3.2 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.2 <br/>
+					
+				
+					FreeBSD FreeBSD 3.1 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 3.0 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.8 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.4 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.3 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2 x<br/>
+					
+				
+					FreeBSD FreeBSD 2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.7 .1<br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 .1<br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1 x<br/>
+					
+				
+					FreeBSD FreeBSD 2.1 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0 <br/>
+					
+				
+					FreeBSD FreeBSD 1.1.5 .1<br/>
+					
+				
+					FreeBSD FreeBSD  4.10-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  3.x<br/>
+					
+				
+					FreeBSD FreeBSD  2.x<br/>
+					
+				
+					FreeBSD FreeBSD  -current<br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					CVS CVS 1.12.12 <br/>
+					
+				
+					CVS CVS 1.12.11 <br/>
+					
+				
+					CVS CVS 1.12.10 <br/>
+					
+				
+					CVS CVS 1.12.9 <br/>
+					
+				
+					CVS CVS 1.12.8 <br/>
+					
+				
+					CVS CVS 1.12.7 <br/>
+					
+				
+					CVS CVS 1.12.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 2.0 <br/>
+</span>
+					
+				
+					CVS CVS 1.12.2 <br/>
+					
+				
+					CVS CVS 1.12.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.3 <br/>
+</span>
+					
+				
+					CVS CVS 1.11.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core4<br/>
+</span>
+					
+				
+					CVS CVS 1.11.17 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+					
+				
+					CVS CVS 1.11.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					NetBSD NetBSD 2.0.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	There is no exploit required. 
+	
+		<ul>
+</ul>
+</div>

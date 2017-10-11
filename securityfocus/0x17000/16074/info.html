@@ -1,0 +1,607 @@
+#SpeeDr00t@Black Falcon<br>#bid16074<p><b><span style="font-size: 18pt;">Microsoft Windows Graphics Rendering Engine WMF SetAbortProc Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16074/info">info</a><br><a href="http://www.securityfocus.com/bid/16074/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16074/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16074/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16074/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16074
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-4560<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 28 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 02 2007 06:36PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The individual responsible for discovering this issue not currently known.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XnView XnView Standard 1.80.3 <br/>
+					
+				
+					XnView XnView Minimal 1.80.3 <br/>
+					
+				
+					XnView XnView Complete 1.80.3 <br/>
+					
+				
+					Wine Windows API Emulator 0.9.4 <br/>
+					
+				
+					Wine Windows API Emulator 0.9.3 <br/>
+					
+				
+					Wine Windows API Emulator 0.9.2 <br/>
+					
+				
+					Wine Windows API Emulator 0.9.1 <br/>
+					
+				
+					Wine Windows API Emulator 0.9 <br/>
+					
+				
+					Nortel Networks Symposium TAPI Service Provider  <br/>
+					
+				
+					Nortel Networks Symposium Agent  <br/>
+					
+				
+					Nortel Networks Passport Multiservice Data Manager (MDM)  <br/>
+					
+				
+					Nortel Networks Optivity Telephony Manager (OTM)  <br/>
+					
+				
+					Nortel Networks Multimedia Communication Platform  <br/>
+					
+				
+					Nortel Networks MCS 5200 3.0 <br/>
+					
+				
+					Nortel Networks MCS 5100 3.0 <br/>
+					
+				
+					Nortel Networks IP Address Domain Manager  <br/>
+					
+				
+					Nortel Networks Enterprise Network Management System  <br/>
+					
+				
+					Nortel Networks Contact Center Web Client  <br/>
+					
+				
+					Nortel Networks Contact Center Multimedia  <br/>
+					
+				
+					Nortel Networks Contact Center Manager  <br/>
+					
+				
+					Nortel Networks Contact Center Express  <br/>
+					
+				
+					Nortel Networks Contact Center  <br/>
+					
+				
+					Nortel Networks Communication Control Toolkit  0<br/>
+					
+				
+					Nortel Networks Centrex IP Client Manager  <br/>
+					
+				
+					Nortel Networks CallPilot 4.0 <br/>
+					
+				
+					Nortel Networks CallPilot 3.0 <br/>
+					
+				
+					Nortel Networks CallPilot 2.0 <br/>
+					
+				
+					Nortel Networks CallPilot 1.0.7 <br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  <br/>
+					
+				
+					Microsoft Windows XP Professional x64 Edition  <br/>
+					
+				
+					Microsoft Windows XP Professional  SP2<br/>
+					
+				
+					Microsoft Windows XP Professional  SP1<br/>
+					
+				
+					Microsoft Windows XP Professional  <br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  <br/>
+					
+				
+					Microsoft Windows XP Home  SP2<br/>
+					
+				
+					Microsoft Windows XP Home  SP1<br/>
+					
+				
+					Microsoft Windows XP Home  <br/>
+					
+				
+					Microsoft Windows Vista December CTP  <br/>
+					
+				
+					Microsoft Windows Vista  Beta 1<br/>
+					
+				
+					Microsoft Windows Vista  Beta<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Standard x64 Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise x64 Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition Itanium  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter x64 Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition Itanium  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition Itanium  0<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  <br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Terminal Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0<br/>
+					
+				
+					Microsoft Windows ME  <br/>
+					
+				
+					Microsoft Windows 98SE  <br/>
+					
+				
+					Microsoft Windows 98  <br/>
+					
+				
+					Microsoft Windows 2000 Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Professional  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Professional  <br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  <br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  <br/>
+					
+				
+					IrfanView IrfanView 3.98 <br/>
+					
+				
+					IrfanView IrfanView 3.97 <br/>
+					
+				
+					IrfanView IrfanView  3.95<br/>
+					
+				
+					IBM Lotus Notes 6.5.4 <br/>
+					
+				
+					IBM Lotus Notes 6.5.3 <br/>
+					
+				
+					IBM Lotus Notes 6.5.2 <br/>
+					
+				
+					IBM Lotus Notes 6.5.1 <br/>
+					
+				
+					IBM Lotus Notes 6.5 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Avaya Unified Communications Center S3400  <br/>
+					
+				
+					Avaya S8100 Media Servers  R9<br/>
+					
+				
+					Avaya S8100 Media Servers  R8<br/>
+					
+				
+					Avaya S8100 Media Servers  R7<br/>
+					
+				
+					Avaya S8100 Media Servers  R6<br/>
+					
+				
+					Avaya S8100 Media Servers  R12<br/>
+					
+				
+					Avaya S8100 Media Servers  R11<br/>
+					
+				
+					Avaya S8100 Media Servers  R10<br/>
+					
+				
+					Avaya S8100 Media Servers  0<br/>
+					
+				
+					Avaya Modular Messaging (MAS)  <br/>
+					
+				
+					Avaya IP600 Media Servers  R9<br/>
+					
+				
+					Avaya IP600 Media Servers  R8<br/>
+					
+				
+					Avaya IP600 Media Servers  R7<br/>
+					
+				
+					Avaya IP600 Media Servers  R6<br/>
+					
+				
+					Avaya IP600 Media Servers  R12<br/>
+					
+				
+					Avaya IP600 Media Servers  R11<br/>
+					
+				
+					Avaya IP600 Media Servers  R10<br/>
+					
+				
+					Avaya IP600 Media Servers  <br/>
+					
+				
+					Avaya DefinityOne Media Servers  R9<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R8<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R7<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R6<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R12<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R11<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R10<br/>
+					
+				
+					Avaya DefinityOne Media Servers  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16074/ie_xp_pfv_metafile-19.pm">#exploit_ie_xp_pfv_metafile-19.pm</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16074/ie_xp_pfv_metafile.pm">#exploit_ie_xp_pfv_metafile.pm</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16074/wmf_exp.c">#exploit_wmf_exp.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	A remote code-execution exploit that triggers this issue is currently circulating in the wild. <br/> <br/>An exploit (ie_xp_pfv_metafile.pm revision 1.6) has been released for the Metasploit Framework. <br/> <br/>A new exploit (ie_xp_pfv_metafile-19.pm revision 1.9) has been released for the Metasploit Framework. Reports indicate that this exploit can bypass current antivirus and snort signatures.<br/><br/>UPDATE: There are a reports of a worm that is exploiting this vulnerability over MSN.  The worm is allegedly enticing users to download a file entitled "xmas-2006 FUNNY.jpg" through links distributed in instant messages.  Symantec is currently investigating this.  This BID will be updated as more information emerges. <br/> <br/>Exploit code wmf_exp.c has been supplied by Unl0ck Research Team.  Symantec has not verified the integrity of this exploit. <br/><br/> UPDATE: Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/ie_xp_pfv_metafile-19.pm">/data/vulnerabilities/exploits/ie_xp_pfv_metafile-19.pm</a></li>
+<li><a href="/data/vulnerabilities/exploits/ie_xp_pfv_metafile.pm">/data/vulnerabilities/exploits/ie_xp_pfv_metafile.pm</a></li>
+<li><a href="/data/vulnerabilities/exploits/wmf_exp.c">/data/vulnerabilities/exploits/wmf_exp.c</a></li>
+</ul>
+</div>

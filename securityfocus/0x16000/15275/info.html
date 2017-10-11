@@ -1,0 +1,1182 @@
+#SpeeDr00t@Black Falcon<br>#bid15275<p><b><span style="font-size: 18pt;">Cisco IOS System Timers Heap Buffer Overflow Exploitation</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15275/info">info</a><br><a href="http://www.securityfocus.com/bid/15275/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15275/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15275/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15275/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15275
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3481<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 02 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 28 2007 10:58PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was disclosed in the referenced vendor advisory.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Cisco IOS 11.3.1 ED<br/>
+					
+				
+					Cisco IOS 11.3.1 <br/>
+					
+				
+					Cisco IOS 11.2.10 BC<br/>
+					
+				
+					Cisco IOS 11.2.9 XA<br/>
+					
+				
+					Cisco IOS 11.2.8 SA3<br/>
+					
+				
+					Cisco IOS 11.1.16 IA<br/>
+					
+				
+					Cisco IOS 11.1.16 <br/>
+					
+				
+					Cisco IOS 11.1.15 CA<br/>
+					
+				
+					Cisco IOS 11.1.13 CA<br/>
+					
+				
+					Cisco IOS 11.1.13 AA<br/>
+					
+				
+					Cisco IOS 11.1.13 <br/>
+					
+				
+					Cisco IOS 11.0.20 .3<br/>
+					
+				
+					Cisco IOS 11.0.17 BT<br/>
+					
+				
+					Cisco IOS  12.4XB<br/>
+					
+				
+					Cisco IOS  12.4XA<br/>
+					
+				
+					Cisco IOS  12.4T<br/>
+					
+				
+					Cisco IOS  12.4MR<br/>
+					
+				
+					Cisco IOS  12.4<br/>
+					
+				
+					Cisco IOS  12.3YU<br/>
+					
+				
+					Cisco IOS  12.3YT<br/>
+					
+				
+					Cisco IOS  12.3YS<br/>
+					
+				
+					Cisco IOS  12.3YQ<br/>
+					
+				
+					Cisco IOS  12.3YK<br/>
+					
+				
+					Cisco IOS  12.3YJ<br/>
+					
+				
+					Cisco IOS  12.3YI<br/>
+					
+				
+					Cisco IOS  12.3YH<br/>
+					
+				
+					Cisco IOS  12.3YG<br/>
+					
+				
+					Cisco IOS  12.3YF<br/>
+					
+				
+					Cisco IOS  12.3YD<br/>
+					
+				
+					Cisco IOS  12.3YA<br/>
+					
+				
+					Cisco IOS  12.3XY<br/>
+					
+				
+					Cisco IOS  12.3XX<br/>
+					
+				
+					Cisco IOS  12.3XW<br/>
+					
+				
+					Cisco IOS  12.3XU<br/>
+					
+				
+					Cisco IOS  12.3XS<br/>
+					
+				
+					Cisco IOS  12.3XR<br/>
+					
+				
+					Cisco IOS  12.3XQ<br/>
+					
+				
+					Cisco IOS  12.3XM<br/>
+					
+				
+					Cisco IOS  12.3XK<br/>
+					
+				
+					Cisco IOS  12.3XJ<br/>
+					
+				
+					Cisco IOS  12.3XI<br/>
+					
+				
+					Cisco IOS  12.3XH<br/>
+					
+				
+					Cisco IOS  12.3XG<br/>
+					
+				
+					Cisco IOS  12.3XF<br/>
+					
+				
+					Cisco IOS  12.3XE<br/>
+					
+				
+					Cisco IOS  12.3XD<br/>
+					
+				
+					Cisco IOS  12.3XC<br/>
+					
+				
+					Cisco IOS  12.3XB<br/>
+					
+				
+					Cisco IOS  12.3XA<br/>
+					
+				
+					Cisco IOS  12.3TPC<br/>
+					
+				
+					Cisco IOS  12.3T<br/>
+					
+				
+					Cisco IOS  12.3JX<br/>
+					
+				
+					Cisco IOS  12.3JK<br/>
+					
+				
+					Cisco IOS  12.3JA<br/>
+					
+				
+					Cisco IOS  12.3BW<br/>
+					
+				
+					Cisco IOS  12.3BC<br/>
+					
+				
+					Cisco IOS  12.3B<br/>
+					
+				
+					Cisco IOS  12.3<br/>
+					
+				
+					Cisco IOS  12.2ZP<br/>
+					
+				
+					Cisco IOS  12.2ZN<br/>
+					
+				
+					Cisco IOS  12.2ZL<br/>
+					
+				
+					Cisco IOS  12.2ZJ<br/>
+					
+				
+					Cisco IOS  12.2ZH<br/>
+					
+				
+					Cisco IOS  12.2ZG<br/>
+					
+				
+					Cisco IOS  12.2ZF<br/>
+					
+				
+					Cisco IOS  12.2ZE<br/>
+					
+				
+					Cisco IOS  12.2ZD<br/>
+					
+				
+					Cisco IOS  12.2ZC<br/>
+					
+				
+					Cisco IOS  12.2ZB<br/>
+					
+				
+					Cisco IOS  12.2ZA<br/>
+					
+				
+					Cisco IOS  12.2YZ<br/>
+					
+				
+					Cisco IOS  12.2YY<br/>
+					
+				
+					Cisco IOS  12.2YX<br/>
+					
+				
+					Cisco IOS  12.2YW<br/>
+					
+				
+					Cisco IOS  12.2YV<br/>
+					
+				
+					Cisco IOS  12.2YU<br/>
+					
+				
+					Cisco IOS  12.2YT<br/>
+					
+				
+					Cisco IOS  12.2YS<br/>
+					
+				
+					Cisco IOS  12.2YR<br/>
+					
+				
+					Cisco IOS  12.2YQ<br/>
+					
+				
+					Cisco IOS  12.2YP<br/>
+					
+				
+					Cisco IOS  12.2YO<br/>
+					
+				
+					Cisco IOS  12.2YN<br/>
+					
+				
+					Cisco IOS  12.2YM<br/>
+					
+				
+					Cisco IOS  12.2YL<br/>
+					
+				
+					Cisco IOS  12.2YK<br/>
+					
+				
+					Cisco IOS  12.2YJ<br/>
+					
+				
+					Cisco IOS  12.2YH<br/>
+					
+				
+					Cisco IOS  12.2YG<br/>
+					
+				
+					Cisco IOS  12.2YF<br/>
+					
+				
+					Cisco IOS  12.2YE<br/>
+					
+				
+					Cisco IOS  12.2YD<br/>
+					
+				
+					Cisco IOS  12.2YC<br/>
+					
+				
+					Cisco IOS  12.2YB<br/>
+					
+				
+					Cisco IOS  12.2YA<br/>
+					
+				
+					Cisco IOS  12.2XW<br/>
+					
+				
+					Cisco IOS  12.2XV<br/>
+					
+				
+					Cisco IOS  12.2XU<br/>
+					
+				
+					Cisco IOS  12.2XT<br/>
+					
+				
+					Cisco IOS  12.2XS<br/>
+					
+				
+					Cisco IOS  12.2XR<br/>
+					
+				
+					Cisco IOS  12.2XQ<br/>
+					
+				
+					Cisco IOS  12.2XN<br/>
+					
+				
+					Cisco IOS  12.2XM<br/>
+					
+				
+					Cisco IOS  12.2XL<br/>
+					
+				
+					Cisco IOS  12.2XK<br/>
+					
+				
+					Cisco IOS  12.2XJ<br/>
+					
+				
+					Cisco IOS  12.2XI<br/>
+					
+				
+					Cisco IOS  12.2XH<br/>
+					
+				
+					Cisco IOS  12.2XG<br/>
+					
+				
+					Cisco IOS  12.2XF<br/>
+					
+				
+					Cisco IOS  12.2XE<br/>
+					
+				
+					Cisco IOS  12.2XD<br/>
+					
+				
+					Cisco IOS  12.2XC<br/>
+					
+				
+					Cisco IOS  12.2XB<br/>
+					
+				
+					Cisco IOS  12.2XA<br/>
+					
+				
+					Cisco IOS  12.2TPC<br/>
+					
+				
+					Cisco IOS  12.2T<br/>
+					
+				
+					Cisco IOS  12.2SZ<br/>
+					
+				
+					Cisco IOS  12.2SY<br/>
+					
+				
+					Cisco IOS  12.2SXF<br/>
+					
+				
+					Cisco IOS  12.2SXE<br/>
+					
+				
+					Cisco IOS  12.2SXD<br/>
+					
+				
+					Cisco IOS  12.2SXB<br/>
+					
+				
+					Cisco IOS  12.2SXA<br/>
+					
+				
+					Cisco IOS  12.2SX<br/>
+					
+				
+					Cisco IOS  12.2SW<br/>
+					
+				
+					Cisco IOS  12.2SV<br/>
+					
+				
+					Cisco IOS  12.2SU<br/>
+					
+				
+					Cisco IOS  12.2SO<br/>
+					
+				
+					Cisco IOS  12.2SG<br/>
+					
+				
+					Cisco IOS  12.2SE<br/>
+					
+				
+					Cisco IOS  12.2SBC<br/>
+					
+				
+					Cisco IOS  12.2S<br/>
+					
+				
+					Cisco IOS  12.2MC<br/>
+					
+				
+					Cisco IOS  12.2MB<br/>
+					
+				
+					Cisco IOS  12.2JK<br/>
+					
+				
+					Cisco IOS  12.2JA<br/>
+					
+				
+					Cisco IOS  12.2FY<br/>
+					
+				
+					Cisco IOS  12.2FX<br/>
+					
+				
+					Cisco IOS  12.2EZ<br/>
+					
+				
+					Cisco IOS  12.2EY<br/>
+					
+				
+					Cisco IOS  12.2EX<br/>
+					
+				
+					Cisco IOS  12.2EWA<br/>
+					
+				
+					Cisco IOS  12.2EW<br/>
+					
+				
+					Cisco IOS  12.2EU<br/>
+					
+				
+					Cisco IOS  12.2DX<br/>
+					
+				
+					Cisco IOS  12.2DD<br/>
+					
+				
+					Cisco IOS  12.2DA<br/>
+					
+				
+					Cisco IOS  12.2CZ<br/>
+					
+				
+					Cisco IOS  12.2CY<br/>
+					
+				
+					Cisco IOS  12.2CX<br/>
+					
+				
+					Cisco IOS  12.2BZ<br/>
+					
+				
+					Cisco IOS  12.2BY<br/>
+					
+				
+					Cisco IOS  12.2BX<br/>
+					
+				
+					Cisco IOS  12.2BC<br/>
+					
+				
+					Cisco IOS  12.2B<br/>
+					
+				
+					Cisco IOS  12.2(4)XR<br/>
+					
+				
+					Cisco IOS  12.2(2)XR<br/>
+					
+				
+					Cisco IOS  12.2(15)XR<br/>
+					
+				
+					Cisco IOS  12.2<br/>
+					
+				
+					Cisco IOS  12.1YJ<br/>
+					
+				
+					Cisco IOS  12.1YI<br/>
+					
+				
+					Cisco IOS  12.1YH<br/>
+					
+				
+					Cisco IOS  12.1YF<br/>
+					
+				
+					Cisco IOS  12.1YE<br/>
+					
+				
+					Cisco IOS  12.1YD<br/>
+					
+				
+					Cisco IOS  12.1YC<br/>
+					
+				
+					Cisco IOS  12.1YB<br/>
+					
+				
+					Cisco IOS  12.1YA<br/>
+					
+				
+					Cisco IOS  12.1XY<br/>
+					
+				
+					Cisco IOS  12.1XX<br/>
+					
+				
+					Cisco IOS  12.1XW<br/>
+					
+				
+					Cisco IOS  12.1XV<br/>
+					
+				
+					Cisco IOS  12.1XU<br/>
+					
+				
+					Cisco IOS  12.1XT<br/>
+					
+				
+					Cisco IOS  12.1XS<br/>
+					
+				
+					Cisco IOS  12.1XR<br/>
+					
+				
+					Cisco IOS  12.1XQ<br/>
+					
+				
+					Cisco IOS  12.1XP<br/>
+					
+				
+					Cisco IOS  12.1XM<br/>
+					
+				
+					Cisco IOS  12.1XL<br/>
+					
+				
+					Cisco IOS  12.1XJ<br/>
+					
+				
+					Cisco IOS  12.1XI<br/>
+					
+				
+					Cisco IOS  12.1XH<br/>
+					
+				
+					Cisco IOS  12.1XG<br/>
+					
+				
+					Cisco IOS  12.1XF<br/>
+					
+				
+					Cisco IOS  12.1XE<br/>
+					
+				
+					Cisco IOS  12.1XD<br/>
+					
+				
+					Cisco IOS  12.1XC<br/>
+					
+				
+					Cisco IOS  12.1XB<br/>
+					
+				
+					Cisco IOS  12.1XA<br/>
+					
+				
+					Cisco IOS  12.1T<br/>
+					
+				
+					Cisco IOS  12.1EZ<br/>
+					
+				
+					Cisco IOS  12.1EY<br/>
+					
+				
+					Cisco IOS  12.1EX<br/>
+					
+				
+					Cisco IOS  12.1EW<br/>
+					
+				
+					Cisco IOS  12.1EV<br/>
+					
+				
+					Cisco IOS  12.1EU<br/>
+					
+				
+					Cisco IOS  12.1EO<br/>
+					
+				
+					Cisco IOS  12.1EC<br/>
+					
+				
+					Cisco IOS  12.1EB<br/>
+					
+				
+					Cisco IOS  12.1EA<br/>
+					
+				
+					Cisco IOS  12.1E<br/>
+					
+				
+					Cisco IOS  12.1DC<br/>
+					
+				
+					Cisco IOS  12.1DB<br/>
+					
+				
+					Cisco IOS  12.1DA<br/>
+					
+				
+					Cisco IOS  12.1CX<br/>
+					
+				
+					Cisco IOS  12.1AZ<br/>
+					
+				
+					Cisco IOS  12.1AY<br/>
+					
+				
+					Cisco IOS  12.1AX<br/>
+					
+				
+					Cisco IOS  12.1AA<br/>
+					
+				
+					Cisco IOS  12.1<br/>
+					
+				
+					Cisco IOS  12.0XV<br/>
+					
+				
+					Cisco IOS  12.0XS<br/>
+					
+				
+					Cisco IOS  12.0XR<br/>
+					
+				
+					Cisco IOS  12.0XQ<br/>
+					
+				
+					Cisco IOS  12.0XN<br/>
+					
+				
+					Cisco IOS  12.0XM<br/>
+					
+				
+					Cisco IOS  12.0XL<br/>
+					
+				
+					Cisco IOS  12.0XK<br/>
+					
+				
+					Cisco IOS  12.0XJ<br/>
+					
+				
+					Cisco IOS  12.0XI<br/>
+					
+				
+					Cisco IOS  12.0XH<br/>
+					
+				
+					Cisco IOS  12.0XG<br/>
+					
+				
+					Cisco IOS  12.0XF<br/>
+					
+				
+					Cisco IOS  12.0XE<br/>
+					
+				
+					Cisco IOS  12.0XD<br/>
+					
+				
+					Cisco IOS  12.0XC<br/>
+					
+				
+					Cisco IOS  12.0XB<br/>
+					
+				
+					Cisco IOS  12.0XA<br/>
+					
+				
+					Cisco IOS  12.0WC<br/>
+					
+				
+					Cisco IOS  12.0W5<br/>
+					
+				
+					Cisco IOS  12.0T<br/>
+					
+				
+					Cisco IOS  12.0SZ<br/>
+					
+				
+					Cisco IOS  12.0SX<br/>
+					
+				
+					Cisco IOS  12.0ST<br/>
+					
+				
+					Cisco IOS  12.0SP<br/>
+					
+				
+					Cisco IOS  12.0SL<br/>
+					
+				
+					Cisco IOS  12.0SC<br/>
+					
+				
+					Cisco IOS  12.0S<br/>
+					
+				
+					Cisco IOS  12.0DC<br/>
+					
+				
+					Cisco IOS  12.0DB<br/>
+					
+				
+					Cisco IOS  12.0DA<br/>
+					
+				
+					Cisco IOS  12.0<br/>
+					
+				
+					Cisco IOS  11.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cisco IOS  12.4(5)<br/>
+					
+				
+					Cisco IOS  12.4(4)T<br/>
+					
+				
+					Cisco IOS  12.4(3a)<br/>
+					
+				
+					Cisco IOS  12.4(2)XB<br/>
+					
+				
+					Cisco IOS  12.4(2)XA<br/>
+					
+				
+					Cisco IOS  12.4(2)T1<br/>
+					
+				
+					Cisco IOS  12.4(2)MR1<br/>
+					
+				
+					Cisco IOS  12.4(1b)<br/>
+					
+				
+					Cisco IOS  12.3(9e)<br/>
+					
+				
+					Cisco IOS  12.3(9a)BC7<br/>
+					
+				
+					Cisco IOS  12.3(8)YI3<br/>
+					
+				
+					Cisco IOS  12.3(8)YG3<br/>
+					
+				
+					Cisco IOS  12.3(8)T11<br/>
+					
+				
+					Cisco IOS  12.3(7)XR6<br/>
+					
+				
+					Cisco IOS  12.3(7)XI7<br/>
+					
+				
+					Cisco IOS  12.3(7)T12<br/>
+					
+				
+					Cisco IOS  12.3(7)JX<br/>
+					
+				
+					Cisco IOS  12.3(7)JA1<br/>
+					
+				
+					Cisco IOS  12.3(6f)<br/>
+					
+				
+					Cisco IOS  12.3(5f)<br/>
+					
+				
+					Cisco IOS  12.3(4)XK4<br/>
+					
+				
+					Cisco IOS  12.3(4)XG5<br/>
+					
+				
+					Cisco IOS  12.3(4)XE4<br/>
+					
+				
+					Cisco IOS  12.3(4)TPC11a<br/>
+					
+				
+					Cisco IOS  12.3(4)JA1<br/>
+					
+				
+					Cisco IOS  12.3(3i)<br/>
+					
+				
+					Cisco IOS  12.3(2)XC4<br/>
+					
+				
+					Cisco IOS  12.3(2)XA5<br/>
+					
+				
+					Cisco IOS  12.3(2)JK1<br/>
+					
+				
+					Cisco IOS  12.3(2)JA5<br/>
+					
+				
+					Cisco IOS  12.3(16)<br/>
+					
+				
+					Cisco IOS  12.3(15b)<br/>
+					
+				
+					Cisco IOS  12.3(14)YU1<br/>
+					
+				
+					Cisco IOS  12.3(14)YT1<br/>
+					
+				
+					Cisco IOS  12.3(14)YQ3<br/>
+					
+				
+					Cisco IOS  12.3(14)T4<br/>
+					
+				
+					Cisco IOS  12.3(13b)<br/>
+					
+				
+					Cisco IOS  12.3(13a)BC1<br/>
+					
+				
+					Cisco IOS  12.3(12e)<br/>
+					
+				
+					Cisco IOS  12.3(11)YS1<br/>
+					
+				
+					Cisco IOS  12.3(11)YK2<br/>
+					
+				
+					Cisco IOS  12.3(11)YF4<br/>
+					
+				
+					Cisco IOS  12.3(11)T8<br/>
+					
+				
+					Cisco IOS  12.3(10e)<br/>
+					
+				
+					Cisco IOS  12.2(8)TPC10a<br/>
+					
+				
+					Cisco IOS  12.2(4)YA11<br/>
+					
+				
+					Cisco IOS  12.2(4)MB13c<br/>
+					
+				
+					Cisco IOS  12.2(31)<br/>
+					
+				
+					Cisco IOS  12.2(30)S1<br/>
+					
+				
+					Cisco IOS  12.2(29a)<br/>
+					
+				
+					Cisco IOS  12.2(28c)<br/>
+					
+				
+					Cisco IOS  12.2(27b)<br/>
+					
+				
+					Cisco IOS  12.2(27)SV1<br/>
+					
+				
+					Cisco IOS  12.2(27)SBC<br/>
+					
+				
+					Cisco IOS  12.2(26b)<br/>
+					
+				
+					Cisco IOS  12.2(26)SV1<br/>
+					
+				
+					Cisco IOS  12.2(25)SW4a<br/>
+					
+				
+					Cisco IOS  12.2(25)SW4<br/>
+					
+				
+					Cisco IOS  12.2(25)SG<br/>
+					
+				
+					Cisco IOS  12.2(25)SED<br/>
+					
+				
+					Cisco IOS  12.2(25)SEC2<br/>
+					
+				
+					Cisco IOS  12.2(25)SEB4<br/>
+					
+				
+					Cisco IOS  12.2(25)S6<br/>
+					
+				
+					Cisco IOS  12.2(25)FY<br/>
+					
+				
+					Cisco IOS  12.2(25)FX<br/>
+					
+				
+					Cisco IOS  12.2(25)EY3<br/>
+					
+				
+					Cisco IOS  12.2(25)EX<br/>
+					
+				
+					Cisco IOS  12.2(25)EWA4<br/>
+					
+				
+					Cisco IOS  12.2(25)EWA3<br/>
+					
+				
+					Cisco IOS  12.2(23f)<br/>
+					
+				
+					Cisco IOS  12.2(22)EA6<br/>
+					
+				
+					Cisco IOS  12.2(20)S9<br/>
+					
+				
+					Cisco IOS  12.2(20)EWA3<br/>
+					
+				
+					Cisco IOS  12.2(20)EW3<br/>
+					
+				
+					Cisco IOS  12.2(20)EU2<br/>
+					
+				
+					Cisco IOS  12.2(18)SXF<br/>
+					
+				
+					Cisco IOS  12.2(18)SXE3<br/>
+					
+				
+					Cisco IOS  12.2(18)SXD6<br/>
+					
+				
+					Cisco IOS  12.2(18)SO4<br/>
+					
+				
+					Cisco IOS  12.2(18)S10<br/>
+					
+				
+					Cisco IOS  12.2(18)EW5<br/>
+					
+				
+					Cisco IOS  12.2(17f)<br/>
+					
+				
+					Cisco IOS  12.2(17d)SXB10<br/>
+					
+				
+					Cisco IOS  12.2(15)YS<br/>
+					
+				
+					Cisco IOS  12.2(15)T17<br/>
+					
+				
+					Cisco IOS  12.2(15)MC2e<br/>
+					
+				
+					Cisco IOS  12.2(15)JK5<br/>
+					
+				
+					Cisco IOS  12.2(15)CZ3<br/>
+					
+				
+					Cisco IOS  12.2(15)BC2i<br/>
+					
+				
+					Cisco IOS  12.2(14)S15<br/>
+					
+				
+					Cisco IOS  12.2(13)ZH8<br/>
+					
+				
+					Cisco IOS  12.2(13)ZD4<br/>
+					
+				
+					Cisco IOS  12.2(12m)<br/>
+					
+				
+					Cisco IOS  12.2(12)DA9<br/>
+					
+				
+					Cisco IOS  12.2(10)DA4<br/>
+					
+				
+					Cisco IOS  12.1(8b)E20<br/>
+					
+				
+					Cisco IOS  12.1(27b)<br/>
+					
+				
+					Cisco IOS  12.1(26)EB1<br/>
+					
+				
+					Cisco IOS  12.1(26)E3<br/>
+					
+				
+					Cisco IOS  12.1(23)E4<br/>
+					
+				
+					Cisco IOS  12.1(22)EA6<br/>
+					
+				
+					Cisco IOS  12.1(22)EA5a<br/>
+					
+				
+					Cisco IOS  12.1(22)EA4a<br/>
+					
+				
+					Cisco IOS  12.1(20)EW4<br/>
+					
+				
+					Cisco IOS  12.1(20)EO3<br/>
+					
+				
+					Cisco IOS  12.1(19)EW3<br/>
+					
+				
+					Cisco IOS  12.1(13)EW4<br/>
+					
+				
+					Cisco IOS  12.1(13)E17<br/>
+					
+				
+					Cisco IOS  12.1(12c)EW4<br/>
+					
+				
+					Cisco IOS  12.0(5)WC13<br/>
+					
+				
+					Cisco IOS  12.0(31)S1<br/>
+					
+				
+					Cisco IOS  12.0(30)S4<br/>
+					
+				
+					Cisco IOS  12.0(28d)<br/>
+					
+				
+					Cisco IOS  12.0(28)W5-32a<br/>
+					
+				
+					Cisco IOS  12.0(28)W5-30b<br/>
+					
+				
+					Cisco IOS  12.0(28)S5<br/>
+					
+				
+					Cisco IOS  12.0(25)W5-27d<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, please mail us at:  mailto:vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

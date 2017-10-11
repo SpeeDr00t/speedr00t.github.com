@@ -1,0 +1,426 @@
+#SpeeDr00t@Black Falcon<br>#bid15158<p><b><span style="font-size: 18pt;">Ethereal Service Location Protocol Dissection Stack Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15158/info">info</a><br><a href="http://www.securityfocus.com/bid/15158/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15158/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15158/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15158/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15158
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3184<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 20 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:19AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The original discoverer of this issue wishes to remain anonymous. iDEFENSE reported this issue to the vendor.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					S.u.S.E. SuSE Linux Standard Server 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Desktop 1.0 <br/>
+					
+				
+					RedHat Linux 9.0  i386<br/>
+					
+				
+					RedHat Linux 7.3 i686<br/>
+					
+				
+					RedHat Linux 7.3  i386<br/>
+					
+				
+					RedHat Linux 7.3 <br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux WS  3<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  3<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1<br/>
+					
+				
+					RedHat Desktop 4.0 <br/>
+					
+				
+					RedHat Desktop 3.0 <br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Red Hat Fedora  Core4<br/>
+					
+				
+					Red Hat Fedora  Core3<br/>
+					
+				
+					Red Hat Fedora  Core2<br/>
+					
+				
+					Red Hat Fedora  Core1<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux AS  3<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Ethereal Group Ethereal 0.10.12 <br/>
+					
+				
+					Ethereal Group Ethereal 0.10.11 <br/>
+					
+				
+					Ethereal Group Ethereal 0.10 .10<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+					
+				
+					Avaya S8710  R2.0.1<br/>
+					
+				
+					Avaya S8710  R2.0.0<br/>
+					
+				
+					Avaya S8700  R2.0.1<br/>
+					
+				
+					Avaya S8700  R2.0.0<br/>
+					
+				
+					Avaya S8500  R2.0.1<br/>
+					
+				
+					Avaya S8500  R2.0.0<br/>
+					
+				
+					Avaya S8300  R2.0.1<br/>
+					
+				
+					Avaya S8300  R2.0.0<br/>
+					
+				
+					Avaya Converged Communications Server 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Ethereal Group Ethereal 0.10.13 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, #no_exploit &amp;lt;mailto:vuldb@#no_exploit&amp;gt;.
+	
+		<ul>
+</ul>
+</div>

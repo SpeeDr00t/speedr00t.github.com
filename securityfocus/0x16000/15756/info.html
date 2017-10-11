@@ -1,0 +1,609 @@
+#SpeeDr00t@Black Falcon<br>#bid15756<p><b><span style="font-size: 18pt;">cURL / libcURL URL Parser Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15756/info">info</a><br><a href="http://www.securityfocus.com/bid/15756/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15756/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15756/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15756/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15756
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-4077<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 07 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2008 02:40PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Stefan Esser of the Hardened-PHP Project is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ppc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia32<br/>
+					
+				
+					Trustix Secure Linux 3.0 <br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Secure Enterprise Linux 2.0 <br/>
+					
+				
+					SCO Unixware 7.1.4 <br/>
+					
+				
+					Redhat Fedora  Core4<br/>
+					
+				
+					Redhat Fedora  Core3<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					OpenPKG OpenPKG 2.5 <br/>
+					
+				
+					OpenPKG OpenPKG 2.4 <br/>
+					
+				
+					OpenPKG OpenPKG 2.3 <br/>
+					
+				
+					OpenPKG OpenPKG  Current<br/>
+					
+				
+					OpenOffice OpenOffice 2.0.1 <br/>
+					
+				
+					OpenOffice OpenOffice 2.0 Beta<br/>
+					
+				
+					OpenOffice OpenOffice 1.9.79 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1.52 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1.51 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1.4 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1.3 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1.2 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1.1 <br/>
+					
+				
+					OpenOffice OpenOffice 1.1 .0<br/>
+					
+				
+					OpenOffice OpenOffice 1.0.3 <br/>
+					
+				
+					OpenOffice OpenOffice 1.0.2 <br/>
+					
+				
+					OpenOffice OpenOffice 1.0.1 <br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.1  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.1 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Electric Sheep Electric Sheep 2.6.3 <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux 3.0  sparc<br/>
+					
+				
+					Debian Linux 3.0  s/390<br/>
+					
+				
+					Debian Linux 3.0  ppc<br/>
+					
+				
+					Debian Linux 3.0  mipsel<br/>
+					
+				
+					Debian Linux 3.0  mips<br/>
+					
+				
+					Debian Linux 3.0  m68k<br/>
+					
+				
+					Debian Linux 3.0  ia-64<br/>
+					
+				
+					Debian Linux 3.0  ia-32<br/>
+					
+				
+					Debian Linux 3.0  hppa<br/>
+					
+				
+					Debian Linux 3.0  arm<br/>
+					
+				
+					Debian Linux 3.0  alpha<br/>
+					
+				
+					Debian Linux 3.0 <br/>
+					
+				
+					Daniel Stenberg curl 7.15 <br/>
+					
+				
+					Daniel Stenberg curl 7.14.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.14 <br/>
+					
+				
+					Daniel Stenberg curl 7.13.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.13.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.13 <br/>
+					
+				
+					Daniel Stenberg curl 7.13 <br/>
+					
+				
+					Daniel Stenberg curl 7.12.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.12.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.12.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.12 <br/>
+					
+				
+					Daniel Stenberg curl 7.11.2 <br/>
+					
+				
+					Cosmicperl Directory Pro 10.0.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.10 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.0 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X 10.4.10 <br/>
+					
+				
+					Apple Mac OS X 10.4.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X 10.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.9 <br/>
+					
+				
+					Apple Mac OS X 10.3.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.7 <br/>
+					
+				
+					Apple Mac OS X 10.3.6 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.2 <br/>
+					
+				
+					Apple Mac OS X 10.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.3 <br/>
+					
+				
+					Apple Mac OS X 10.2.8 <br/>
+					
+				
+					Apple Mac OS X 10.2.7 <br/>
+					
+				
+					Apple Mac OS X 10.2.6 <br/>
+					
+				
+					Apple Mac OS X 10.2.5 <br/>
+					
+				
+					Apple Mac OS X 10.2.4 <br/>
+					
+				
+					Apple Mac OS X 10.2.3 <br/>
+					
+				
+					Apple Mac OS X 10.2.2 <br/>
+					
+				
+					Apple Mac OS X 10.2.1 <br/>
+					
+				
+					Apple Mac OS X 10.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.5 <br/>
+					
+				
+					Apple Mac OS X 10.1.4 <br/>
+					
+				
+					Apple Mac OS X 10.1.3 <br/>
+					
+				
+					Apple Mac OS X 10.1.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.0.4 <br/>
+					
+				
+					Apple Mac OS X 10.0.3 <br/>
+					
+				
+					Apple Mac OS X 10.0.2 <br/>
+					
+				
+					Apple Mac OS X 10.0.1 <br/>
+					
+				
+					Apple Mac OS X 10.0 3<br/>
+					
+				
+					Apple Mac OS X 10.0 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenOffice OpenOffice 2.0.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.15.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue.#no_exploit
+	
+		<ul>
+</ul>
+</div>

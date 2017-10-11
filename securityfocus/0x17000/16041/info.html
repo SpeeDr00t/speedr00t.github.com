@@ -1,0 +1,937 @@
+#SpeeDr00t@Black Falcon<br>#bid16041<p><b><span style="font-size: 18pt;">Linux Kernel Local Socket Buffer Memory Exhaustion Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16041/info">info</a><br><a href="http://www.securityfocus.com/bid/16041/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16041/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16041/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16041/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16041
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3660<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 22 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 05:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The initial discoverer of this issue wishes to remain anonymous.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.6.15 -rc3<br/>
+					
+				
+					Linux kernel 2.6.15 -rc2<br/>
+					
+				
+					Linux kernel 2.6.15 -rc1<br/>
+					
+				
+					Linux kernel 2.6.14 .3<br/>
+					
+				
+					Linux kernel 2.6.14 .2<br/>
+					
+				
+					Linux kernel 2.6.14 .1<br/>
+					
+				
+					Linux kernel 2.6.14 -rc4<br/>
+					
+				
+					Linux kernel 2.6.14 -rc3<br/>
+					
+				
+					Linux kernel 2.6.14 -rc2<br/>
+					
+				
+					Linux kernel 2.6.14 -rc1<br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.13 .4<br/>
+					
+				
+					Linux kernel 2.6.13 .3<br/>
+					
+				
+					Linux kernel 2.6.13 .2<br/>
+					
+				
+					Linux kernel 2.6.13 .1<br/>
+					
+				
+					Linux kernel 2.6.13 -rc7<br/>
+					
+				
+					Linux kernel 2.6.13 -rc6<br/>
+					
+				
+					Linux kernel 2.6.13 -rc4<br/>
+					
+				
+					Linux kernel 2.6.13 -rc1<br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+					
+				
+					Linux kernel 2.6.12 .5<br/>
+					
+				
+					Linux kernel 2.6.12 .4<br/>
+					
+				
+					Linux kernel 2.6.12 .3<br/>
+					
+				
+					Linux kernel 2.6.12 .2<br/>
+					
+				
+					Linux kernel 2.6.12 .1<br/>
+					
+				
+					Linux kernel 2.6.12 -rc5<br/>
+					
+				
+					Linux kernel 2.6.12 -rc4<br/>
+					
+				
+					Linux kernel 2.6.12 -rc1<br/>
+					
+				
+					Linux kernel 2.6.11 .8<br/>
+					
+				
+					Linux kernel 2.6.11 .7<br/>
+					
+				
+					Linux kernel 2.6.11 .6<br/>
+					
+				
+					Linux kernel 2.6.11 .5<br/>
+					
+				
+					Linux kernel 2.6.11 .12<br/>
+					
+				
+					Linux kernel 2.6.11 .11<br/>
+					
+				
+					Linux kernel 2.6.11 -rc4<br/>
+					
+				
+					Linux kernel 2.6.11 -rc3<br/>
+					
+				
+					Linux kernel 2.6.11 -rc2<br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.10 rc2<br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+</span>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.8 rc3<br/>
+					
+				
+					Linux kernel 2.6.8 rc2<br/>
+					
+				
+					Linux kernel 2.6.8 rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.7 rc1<br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 rc1<br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.2 <br/>
+					
+				
+					Linux kernel 2.6.1 -rc2<br/>
+					
+				
+					Linux kernel 2.6.1 -rc1<br/>
+					
+				
+					Linux kernel 2.6.1 <br/>
+					
+				
+					Linux kernel 2.6 .10<br/>
+					
+				
+					Linux kernel 2.6 -test9-CVS<br/>
+					
+				
+					Linux kernel 2.6 -test9<br/>
+					
+				
+					Linux kernel 2.6 -test8<br/>
+					
+				
+					Linux kernel 2.6 -test7<br/>
+					
+				
+					Linux kernel 2.6 -test6<br/>
+					
+				
+					Linux kernel 2.6 -test5<br/>
+					
+				
+					Linux kernel 2.6 -test4<br/>
+					
+				
+					Linux kernel 2.6 -test3<br/>
+					
+				
+					Linux kernel 2.6 -test2<br/>
+					
+				
+					Linux kernel 2.6 -test11<br/>
+					
+				
+					Linux kernel 2.6 -test10<br/>
+					
+				
+					Linux kernel 2.6 -test1<br/>
+					
+				
+					Linux kernel 2.6 <br/>
+					
+				
+					Linux kernel 2.5.69 <br/>
+					
+				
+					Linux kernel 2.5.68 <br/>
+					
+				
+					Linux kernel 2.5.67 <br/>
+					
+				
+					Linux kernel 2.5.66 <br/>
+					
+				
+					Linux kernel 2.5.65 <br/>
+					
+				
+					Linux kernel 2.5.64 <br/>
+					
+				
+					Linux kernel 2.5.63 <br/>
+					
+				
+					Linux kernel 2.5.62 <br/>
+					
+				
+					Linux kernel 2.5.61 <br/>
+					
+				
+					Linux kernel 2.5.60 <br/>
+					
+				
+					Linux kernel 2.5.59 <br/>
+					
+				
+					Linux kernel 2.5.58 <br/>
+					
+				
+					Linux kernel 2.5.57 <br/>
+					
+				
+					Linux kernel 2.5.56 <br/>
+					
+				
+					Linux kernel 2.5.55 <br/>
+					
+				
+					Linux kernel 2.5.54 <br/>
+					
+				
+					Linux kernel 2.5.53 <br/>
+					
+				
+					Linux kernel 2.5.52 <br/>
+					
+				
+					Linux kernel 2.5.51 <br/>
+					
+				
+					Linux kernel 2.5.50 <br/>
+					
+				
+					Linux kernel 2.5.49 <br/>
+					
+				
+					Linux kernel 2.5.48 <br/>
+					
+				
+					Linux kernel 2.5.47 <br/>
+					
+				
+					Linux kernel 2.5.46 <br/>
+					
+				
+					Linux kernel 2.5.45 <br/>
+					
+				
+					Linux kernel 2.5.44 <br/>
+					
+				
+					Linux kernel 2.5.43 <br/>
+					
+				
+					Linux kernel 2.5.42 <br/>
+					
+				
+					Linux kernel 2.5.41 <br/>
+					
+				
+					Linux kernel 2.5.40 <br/>
+					
+				
+					Linux kernel 2.5.39 <br/>
+					
+				
+					Linux kernel 2.5.38 <br/>
+					
+				
+					Linux kernel 2.5.37 <br/>
+					
+				
+					Linux kernel 2.5.36 <br/>
+					
+				
+					Linux kernel 2.5.35 <br/>
+					
+				
+					Linux kernel 2.5.34 <br/>
+					
+				
+					Linux kernel 2.5.33 <br/>
+					
+				
+					Linux kernel 2.5.32 <br/>
+					
+				
+					Linux kernel 2.5.31 <br/>
+					
+				
+					Linux kernel 2.5.30 <br/>
+					
+				
+					Linux kernel 2.5.29 <br/>
+					
+				
+					Linux kernel 2.5.28 <br/>
+					
+				
+					Linux kernel 2.5.27 <br/>
+					
+				
+					Linux kernel 2.5.26 <br/>
+					
+				
+					Linux kernel 2.5.25 <br/>
+					
+				
+					Linux kernel 2.5.24 <br/>
+					
+				
+					Linux kernel 2.5.23 <br/>
+					
+				
+					Linux kernel 2.5.22 <br/>
+					
+				
+					Linux kernel 2.5.21 <br/>
+					
+				
+					Linux kernel 2.5.20 <br/>
+					
+				
+					Linux kernel 2.5.19 <br/>
+					
+				
+					Linux kernel 2.5.18 <br/>
+					
+				
+					Linux kernel 2.5.17 <br/>
+					
+				
+					Linux kernel 2.5.16 <br/>
+					
+				
+					Linux kernel 2.5.15 <br/>
+					
+				
+					Linux kernel 2.5.14 <br/>
+					
+				
+					Linux kernel 2.5.13 <br/>
+					
+				
+					Linux kernel 2.5.12 <br/>
+					
+				
+					Linux kernel 2.5.11 <br/>
+					
+				
+					Linux kernel 2.5.10 <br/>
+					
+				
+					Linux kernel 2.5.9 <br/>
+					
+				
+					Linux kernel 2.5.8 <br/>
+					
+				
+					Linux kernel 2.5.7 <br/>
+					
+				
+					Linux kernel 2.5.6 <br/>
+					
+				
+					Linux kernel 2.5.5 <br/>
+					
+				
+					Linux kernel 2.5.4 <br/>
+					
+				
+					Linux kernel 2.5.3 <br/>
+					
+				
+					Linux kernel 2.5.2 <br/>
+					
+				
+					Linux kernel 2.5.1 <br/>
+					
+				
+					Linux kernel 2.5 .0<br/>
+					
+				
+					Linux kernel 2.4.32 -pre2<br/>
+					
+				
+					Linux kernel 2.4.32 -pre1<br/>
+					
+				
+					Linux kernel 2.4.31 -pre1<br/>
+					
+				
+					Linux kernel 2.4.31 <br/>
+					
+				
+					Linux kernel 2.4.30 rc3<br/>
+					
+				
+					Linux kernel 2.4.30 rc2<br/>
+					
+				
+					Linux kernel 2.4.30 <br/>
+					
+				
+					Linux kernel 2.4.29 -rc2<br/>
+					
+				
+					Linux kernel 2.4.29 -rc1<br/>
+					
+				
+					Linux kernel 2.4.29 <br/>
+					
+				
+					Linux kernel 2.4.28 <br/>
+					
+				
+					Linux kernel 2.4.27 -pre5<br/>
+					
+				
+					Linux kernel 2.4.27 -pre4<br/>
+					
+				
+					Linux kernel 2.4.27 -pre3<br/>
+					
+				
+					Linux kernel 2.4.27 -pre2<br/>
+					
+				
+					Linux kernel 2.4.27 -pre1<br/>
+					
+				
+					Linux kernel 2.4.27 <br/>
+					
+				
+					Linux kernel 2.4.26 <br/>
+					
+				
+					Linux kernel 2.4.25 <br/>
+					
+				
+					Linux kernel 2.4.24 -ow1<br/>
+					
+				
+					Linux kernel 2.4.24 <br/>
+					
+				
+					Linux kernel 2.4.23 -pre9<br/>
+					
+				
+					Linux kernel 2.4.23 -ow2<br/>
+					
+				
+					Linux kernel 2.4.23 <br/>
+					
+				
+					Linux kernel 2.4.22 <br/>
+<span class="related">
+						
+							+ 
+						
+						Devil-Linux Devil-Linux 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Devil-Linux Devil-Linux 1.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.1 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.21 pre7<br/>
+					
+				
+					Linux kernel 2.4.21 pre4<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.21 pre1<br/>
+					
+				
+					Linux kernel 2.4.21 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  8<br/>
+</span>
+					
+				
+					Linux kernel 2.4.20 <br/>
+					
+				
+					Linux kernel 2.4.19 -pre6<br/>
+					
+				
+					Linux kernel 2.4.19 -pre5<br/>
+					
+				
+					Linux kernel 2.4.19 -pre4<br/>
+					
+				
+					Linux kernel 2.4.19 -pre3<br/>
+					
+				
+					Linux kernel 2.4.19 -pre2<br/>
+					
+				
+					Linux kernel 2.4.19 -pre1<br/>
+					
+				
+					Linux kernel 2.4.19 <br/>
+					
+				
+					Linux kernel 2.4.18 pre-8<br/>
+					
+				
+					Linux kernel 2.4.18 pre-7<br/>
+					
+				
+					Linux kernel 2.4.18 pre-6<br/>
+					
+				
+					Linux kernel 2.4.18 pre-5<br/>
+					
+				
+					Linux kernel 2.4.18 pre-4<br/>
+					
+				
+					Linux kernel 2.4.18 pre-3<br/>
+					
+				
+					Linux kernel 2.4.18 pre-2<br/>
+					
+				
+					Linux kernel 2.4.18 pre-1<br/>
+					
+				
+					Linux kernel 2.4.18  x86<br/>
+					
+				
+					Linux kernel 2.4.18 <br/>
+					
+				
+					Linux kernel 2.4.17 <br/>
+					
+				
+					Linux kernel 2.4.16 <br/>
+					
+				
+					Linux kernel 2.4.15 <br/>
+					
+				
+					Linux kernel 2.4.14 <br/>
+					
+				
+					Linux kernel 2.4.13 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.12 <br/>
+					
+				
+					Linux kernel 2.4.11 <br/>
+					
+				
+					Linux kernel 2.4.10 <br/>
+					
+				
+					Linux kernel 2.4.9 <br/>
+					
+				
+					Linux kernel 2.4.8 <br/>
+					
+				
+					Linux kernel 2.4.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.6 <br/>
+					
+				
+					Linux kernel 2.4.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.4 <br/>
+					
+				
+					Linux kernel 2.4.3 <br/>
+					
+				
+					Linux kernel 2.4.2 <br/>
+					
+				
+					Linux kernel 2.4.1 <br/>
+					
+				
+					Linux kernel 2.4 .0-test9<br/>
+					
+				
+					Linux kernel 2.4 .0-test8<br/>
+					
+				
+					Linux kernel 2.4 .0-test7<br/>
+					
+				
+					Linux kernel 2.4 .0-test6<br/>
+					
+				
+					Linux kernel 2.4 .0-test5<br/>
+					
+				
+					Linux kernel 2.4 .0-test4<br/>
+					
+				
+					Linux kernel 2.4 .0-test3<br/>
+					
+				
+					Linux kernel 2.4 .0-test2<br/>
+					
+				
+					Linux kernel 2.4 .0-test12<br/>
+					
+				
+					Linux kernel 2.4 .0-test11<br/>
+					
+				
+					Linux kernel 2.4 .0-test10<br/>
+					
+				
+					Linux kernel 2.4 .0-test1<br/>
+					
+				
+					Linux kernel 2.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue.#no_exploit &amp;lt;mailto:vuldb@#no_exploit&amp;gt;.
+	
+		<ul>
+</ul>
+</div>

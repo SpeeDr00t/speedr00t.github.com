@@ -1,0 +1,1292 @@
+#SpeeDr00t@Black Falcon<br>#bid15629<p><b><span style="font-size: 18pt;">Perl Perl_sv_vcatpvfn Format String Integer Wrap Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/15629/info">info</a><br><a href="http://www.securityfocus.com/bid/15629/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/15629/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/15629/solution">solution</a><br><a href="http://www.securityfocus.com/bid/15629/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				15629
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-3912<br/>
+				
+					CVE-2005-3962<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 29 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 24 2008 11:18PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jack Louis of Dyad Security discovered this vulnerability. Previous research into Perl format string vulnerabilities is credited to Steven M. Christey, Jean-loup Gailly, and Arjan de Vet.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Webmin Webmin 1.240 <br/>
+					
+				
+					Webmin Webmin 1.230 <br/>
+					
+				
+					Webmin Webmin 1.220 <br/>
+					
+				
+					Webmin Webmin 1.210 <br/>
+					
+				
+					Webmin Webmin 1.200 <br/>
+					
+				
+					Webmin Webmin 1.190 <br/>
+					
+				
+					Webmin Webmin 1.180 <br/>
+					
+				
+					Webmin Webmin 1.170 <br/>
+					
+				
+					Webmin Webmin 1.160 <br/>
+					
+				
+					Webmin Webmin 1.150 <br/>
+					
+				
+					Webmin Webmin 1.140 <br/>
+					
+				
+					Webmin Webmin 1.130 <br/>
+					
+				
+					Webmin Webmin 1.121 <br/>
+					
+				
+					Webmin Webmin 1.110 <br/>
+					
+				
+					Webmin Webmin 1.100 <br/>
+					
+				
+					Webmin Webmin 1.0 90<br/>
+					
+				
+					Webmin Webmin 1.0 80<br/>
+					
+				
+					Webmin Webmin 1.0 70<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 1.3.27 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Apache-Based Web Server 1.3.27 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Webmin-Based Admin 1.0.1 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Webmin-Based Admin 1.0.1 .01<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+					
+				
+					Webmin Webmin 1.0 60<br/>
+					
+				
+					Webmin Webmin 1.0 50<br/>
+					
+				
+					Webmin Webmin 1.0 20<br/>
+					
+				
+					Webmin Webmin 1.0 00<br/>
+					
+				
+					Webmin Webmin 0.990 <br/>
+					
+				
+					Webmin Webmin 0.980 <br/>
+					
+				
+					Webmin Webmin 0.970 <br/>
+					
+				
+					Webmin Webmin 0.960 <br/>
+					
+				
+					Webmin Webmin 0.950 <br/>
+					
+				
+					Webmin Webmin 0.94 <br/>
+					
+				
+					Webmin Webmin 0.93 <br/>
+					
+				
+					Webmin Webmin 0.92 -1<br/>
+					
+				
+					Webmin Webmin 0.92 <br/>
+					
+				
+					Webmin Webmin 0.91 <br/>
+					
+				
+					Webmin Webmin 0.89 <br/>
+					
+				
+					Webmin Webmin 0.88 <br/>
+					
+				
+					Webmin Webmin 0.85 <br/>
+					
+				
+					Webmin Webmin 0.80 <br/>
+					
+				
+					Webmin Webmin 0.79 <br/>
+					
+				
+					Webmin Webmin 0.78 <br/>
+					
+				
+					Webmin Webmin 0.77 <br/>
+					
+				
+					Webmin Webmin 0.76 <br/>
+					
+				
+					Webmin Webmin 0.51 <br/>
+					
+				
+					Webmin Webmin 0.42 <br/>
+					
+				
+					Webmin Webmin 0.41 <br/>
+					
+				
+					Webmin Webmin 0.31 <br/>
+					
+				
+					Webmin Webmin 0.22 <br/>
+					
+				
+					Webmin Webmin 0.21 <br/>
+					
+				
+					Webmin Webmin 0.8.5 Red Hat<br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					Webmin Webmin 0.8.4 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Desktop 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Desktop 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+					
+				
+					Webmin Webmin 0.8.3 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+					
+				
+					Webmin Webmin 0.7 <br/>
+					
+				
+					Webmin Webmin 0.6 <br/>
+					
+				
+					Webmin Webmin 0.5 x<br/>
+					
+				
+					Webmin Webmin 0.5 <br/>
+					
+				
+					Webmin Webmin 0.4 <br/>
+					
+				
+					Webmin Webmin 0.3 <br/>
+					
+				
+					Webmin Webmin 0.2 <br/>
+					
+				
+					Webmin Webmin 0.1 <br/>
+					
+				
+					Webmin Usermin 1.170 <br/>
+					
+				
+					Webmin Usermin 1.160 <br/>
+					
+				
+					Webmin Usermin 1.150 <br/>
+					
+				
+					Webmin Usermin 1.140 <br/>
+					
+				
+					Webmin Usermin 1.130 <br/>
+					
+				
+					Webmin Usermin 1.120 <br/>
+					
+				
+					Webmin Usermin 1.110 <br/>
+					
+				
+					Webmin Usermin 1.0 <br/>
+					
+				
+					Webmin Usermin 1.0 <br/>
+					
+				
+					Webmin Usermin 0.99 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+					
+				
+					Webmin Usermin 0.98 <br/>
+					
+				
+					Webmin Usermin 0.97 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+					
+				
+					Webmin Usermin 0.96 <br/>
+					
+				
+					Webmin Usermin 0.95 <br/>
+					
+				
+					Webmin Usermin 0.94 <br/>
+					
+				
+					Webmin Usermin 0.93 <br/>
+					
+				
+					Webmin Usermin 0.92 <br/>
+					
+				
+					Webmin Usermin 0.91 <br/>
+					
+				
+					Webmin Usermin 0.9 <br/>
+					
+				
+					Webmin Usermin 0.8 <br/>
+					
+				
+					Webmin Usermin 0.7 <br/>
+					
+				
+					Webmin Usermin 0.6 <br/>
+					
+				
+					Webmin Usermin 0.5 <br/>
+					
+				
+					Webmin Usermin 0.4 <br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ppc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia32<br/>
+					
+				
+					Trustix Secure Linux 3.0 <br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Secure Enterprise Linux 2.0 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE Linux Desktop 1.0 <br/>
+					
+				
+					Sun Solaris  10.0_x86<br/>
+					
+				
+					Sun Solaris  10<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 8.2 <br/>
+					
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Fedora  Core4<br/>
+					
+				
+					Redhat Fedora  Core3<br/>
+					
+				
+					Redhat Fedora  Core2<br/>
+					
+				
+					Redhat Fedora  Core1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					OpenPKG OpenPKG 2.5 <br/>
+					
+				
+					OpenPKG OpenPKG 2.4 <br/>
+					
+				
+					OpenPKG OpenPKG 2.3 <br/>
+					
+				
+					OpenPKG OpenPKG  Current<br/>
+					
+				
+					OpenBSD OpenBSD  3.8<br/>
+					
+				
+					OpenBSD OpenBSD  3.7<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.1  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.1 <br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1 <br/>
+					
+				
+					Larry Wall Perl 5.9.2 <br/>
+					
+				
+					Larry Wall Perl 5.8.7 <br/>
+					
+				
+					Larry Wall Perl 5.8.6 <br/>
+					
+				
+					Larry Wall Perl 5.8.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.8.4 -5<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -4<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -3<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -2.3<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -2<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -1<br/>
+					
+				
+					Larry Wall Perl 5.8.4 <br/>
+					
+				
+					Larry Wall Perl 5.8.3 <br/>
+					
+				
+					Larry Wall Perl 5.8.1 <br/>
+					
+				
+					Larry Wall Perl 5.8 .0-88.3<br/>
+					
+				
+					Larry Wall Perl 5.8 <br/>
+					
+				
+					Larry Wall Perl 5.6.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 7.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.6 <br/>
+					
+				
+					Larry Wall Perl 5.0 05_003<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2 E alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.0 05<br/>
+					
+				
+					Larry Wall Perl 5.0 04_05<br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.0 04_04<br/>
+					
+				
+					Larry Wall Perl 5.0 04<br/>
+					
+				
+					Larry Wall Perl 5.0 03<br/>
+					
+				
+					IPCop IPCop 1.4.20 <br/>
+					
+				
+					HP Tru64 5.1 B-3<br/>
+					
+				
+					HP Tru64 5.1 B-2 PK4 (BL25)<br/>
+					
+				
+					HP Tru64 5.1 B-2 PK4<br/>
+					
+				
+					HP Tru64 5.1 A PK6 (BL24)<br/>
+					
+				
+					HP Tru64 5.1 A PK6<br/>
+					
+				
+					HP Internet Express  6.4<br/>
+					
+				
+					HP Internet Express  6.3<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Curtis Hawthorne TN3270RG 1.1 .0<br/>
+					
+				
+					Curtis Hawthorne TN3270RG 1.0.1 <br/>
+					
+				
+					Curtis Hawthorne TN3270RG 1.0 .0<br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.9 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Webmin Webmin 1.250 <br/>
+					
+				
+					Webmin Usermin 1.180 <br/>
+					
+				
+					IPCop IPCop 1.4.21 <br/>
+					
+				
+					Curtis Hawthorne TN3270RG 1.1.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit against Webmin is available to members of the Immunity Partner's program.<br/><br/>Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.
+	
+		<ul>
+</ul>
+</div>
