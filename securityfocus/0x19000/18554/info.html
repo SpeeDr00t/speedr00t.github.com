@@ -1,0 +1,495 @@
+#SpeeDr00t@Black Falcon<br>#bid18554<p><b><span style="font-size: 18pt;">GnuPG Parse_User_ID Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/18554/info">info</a><br><a href="http://www.securityfocus.com/bid/18554/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/18554/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/18554/solution">solution</a><br><a href="http://www.securityfocus.com/bid/18554/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				18554
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2006-3082<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 20 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:08AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Evgeny Legerov discovered this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Trustix Secure Linux 3.0 <br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Secure Enterprise Linux 2.0 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  10<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Standard Server 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Open-Xchange 4.1 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  1<br/>
+					
+				
+					S.u.S.E. Office Server  <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 1.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux Openexchange Server  <br/>
+					
+				
+					S.u.S.E. Linux Office Server  <br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390  <br/>
+					
+				
+					S.u.S.E. Linux Desktop 1.0 <br/>
+					
+				
+					S.u.S.E. Linux Database Server  0<br/>
+					
+				
+					S.u.S.E. Linux Connectivity Server  <br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux WS  3<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  3<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1<br/>
+					
+				
+					RedHat Desktop 4.0 <br/>
+					
+				
+					RedHat Desktop 3.0 <br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Red Hat Fedora  Core6<br/>
+					
+				
+					Red Hat Fedora  Core5<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux AS  3<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1<br/>
+					
+				
+					OpenPKG OpenPKG 2.5 <br/>
+					
+				
+					OpenPKG OpenPKG 2.2 <br/>
+					
+				
+					OpenPKG OpenPKG  Current<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					GNU GNU Privacy Guard 1.9.20 <br/>
+					
+				
+					GNU GNU Privacy Guard 1.9.15 <br/>
+					
+				
+					GNU GNU Privacy Guard 1.4.3 <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux 3.0  sparc<br/>
+					
+				
+					Debian Linux 3.0  s/390<br/>
+					
+				
+					Debian Linux 3.0  ppc<br/>
+					
+				
+					Debian Linux 3.0  mipsel<br/>
+					
+				
+					Debian Linux 3.0  mips<br/>
+					
+				
+					Debian Linux 3.0  m68k<br/>
+					
+				
+					Debian Linux 3.0  ia-64<br/>
+					
+				
+					Debian Linux 3.0  ia-32<br/>
+					
+				
+					Debian Linux 3.0  hppa<br/>
+					
+				
+					Debian Linux 3.0  arm<br/>
+					
+				
+					Debian Linux 3.0  alpha<br/>
+					
+				
+					Debian Linux 3.0 <br/>
+					
+				
+					Avaya S8710  R2.0.1<br/>
+					
+				
+					Avaya S8710  R2.0.0<br/>
+					
+				
+					Avaya S8700  R2.0.1<br/>
+					
+				
+					Avaya S8700  R2.0.0<br/>
+					
+				
+					Avaya S8500  R2.0.1<br/>
+					
+				
+					Avaya S8500  R2.0.0<br/>
+					
+				
+					Avaya S8300  R2.0.1<br/>
+					
+				
+					Avaya S8300  R2.0.0<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Intuity  LX<br/>
+					
+				
+					Avaya Converged Communications Server 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					GNU GNU Privacy Guard 1.4.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following Perl command demonstrates this issue by crashing the affected application:<br/><br/>perl -e 'print "\xcd\xff\xff\xff\xff\xfe"'| /var/gnupg/bin/gpg --no-armor<br/><br/>Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,955 @@
+#SpeeDr00t@Black Falcon<br>#bid19030<p><b><span style="font-size: 18pt;">Microsoft WebViewFolderIcon ActiveX Control Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/19030/info">info</a><br><a href="http://www.securityfocus.com/bid/19030/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/19030/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/19030/solution">solution</a><br><a href="http://www.securityfocus.com/bid/19030/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				19030
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2006-3730<br/>
+				
+					CVE-2006-4690<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 17 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 02 2007 10:26PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This issue has been discovered by hdm.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows XP Tablet PC Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  <br/>
+					
+				
+					Microsoft Windows XP Professional x64 Edition  <br/>
+					
+				
+					Microsoft Windows XP Professional  SP2<br/>
+					
+				
+					Microsoft Windows XP Professional  SP1<br/>
+					
+				
+					Microsoft Windows XP Professional  <br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  <br/>
+					
+				
+					Microsoft Windows XP Home  SP2<br/>
+					
+				
+					Microsoft Windows XP Home  SP1<br/>
+					
+				
+					Microsoft Windows XP Home  <br/>
+					
+				
+					Microsoft Windows XP Gold  0<br/>
+					
+				
+					Microsoft Windows XP 64-bit Edition Version 2003  SP1<br/>
+					
+				
+					Microsoft Windows XP 64-bit Edition Version 2003  <br/>
+					
+				
+					Microsoft Windows XP 64-bit Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP 64-bit Edition  <br/>
+					
+				
+					Microsoft Windows XP  0<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  SP1 Beta 1<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Standard x64 Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  SP1 Beta 1<br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise x64 Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition Itanium  SP1 Beta 1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition Itanium  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  SP1 Beta 1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter x64 Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition Itanium  SP1 Beta 1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition Itanium  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition Itanium  0<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  SP1 Beta 1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  <br/>
+					
+				
+					Microsoft Windows 2000 Server Japanese Edition  <br/>
+					
+				
+					Microsoft Windows 2000 Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Professional  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Professional  <br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  <br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  <br/>
+					
+				
+					Microsoft Internet Explorer  6.0 SP1<br/>
+					
+				
+					Microsoft Internet Explorer  6.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Web Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Web Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Web Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Internet Security Systems RealSecure Desktop  7.0<br/>
+					
+				
+					Internet  Security Systems Server Sensor  7.0<br/>
+					
+				
+					Internet  Security Systems Proventia Server  0<br/>
+					
+				
+					Internet  Security Systems Proventia M  0<br/>
+					
+				
+					Internet  Security Systems Proventia G400  0<br/>
+					
+				
+					Internet  Security Systems Proventia G2000  0<br/>
+					
+				
+					Internet  Security Systems Proventia G200  0<br/>
+					
+				
+					Internet  Security Systems Proventia G1200  0<br/>
+					
+				
+					Internet  Security Systems Proventia G1000  0<br/>
+					
+				
+					Internet  Security Systems Proventia G100  0<br/>
+					
+				
+					Internet  Security Systems Proventia Desktop  0<br/>
+					
+				
+					Internet  Security Systems Proventia A  0<br/>
+					
+				
+					Internet  Security Systems Network Sensor  7.0<br/>
+					
+				
+					Internet  Security Systems BlackICE PC Protection  3.6<br/>
+					
+				
+					HP Storage Management Appliance  2.1<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  III<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  II<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  I<br/>
+</span>
+					
+				
+					Avaya Unified Communication Center  <br/>
+					
+				
+					Avaya S8100 Media Servers  R12<br/>
+					
+				
+					Avaya S8100 Media Servers  R11<br/>
+					
+				
+					Avaya S8100 Media Servers  R10<br/>
+					
+				
+					Avaya Modular Messaging (MSS) 2.0 <br/>
+					
+				
+					Avaya Modular Messaging (MAS) 3.0 <br/>
+					
+				
+					Avaya IP600 Media Servers  R12<br/>
+					
+				
+					Avaya IP600 Media Servers  R11<br/>
+					
+				
+					Avaya IP600 Media Servers  R10<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R12<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R11<br/>
+					
+				
+					Avaya DefinityOne Media Servers  R10<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/MoBB18_poc.txt">#exploit_MoBB18_poc.txt</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/webview_setslice.rb">#exploit_webview_setslice.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/19030_invoke_calc_pof.html">#exploit_19030_invoke_calc_pof.html</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/19030.pl">#exploit_19030.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/pociewvf.c">#exploit_pociewvf.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/ieWebViewFolderIcon_exp.pl">#exploit_ieWebViewFolderIcon_exp.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x20000/19030/ie_webview_setslice.pm">#exploit_ie_webview_setslice.pm</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploits are available:<br/><br/>UPDATE - Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/MoBB18_poc.txt">/data/vulnerabilities/exploits/MoBB18_poc.txt</a></li>
+<li><a href="/data/vulnerabilities/exploits/webview_setslice.rb">/data/vulnerabilities/exploits/webview_setslice.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/19030_invoke_calc_pof.html">/data/vulnerabilities/exploits/19030_invoke_calc_pof.html</a></li>
+<li><a href="/data/vulnerabilities/exploits/19030.pl">/data/vulnerabilities/exploits/19030.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/pociewvf.c">/data/vulnerabilities/exploits/pociewvf.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/ieWebViewFolderIcon_exp.pl">/data/vulnerabilities/exploits/ieWebViewFolderIcon_exp.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/ie_webview_setslice.pm">/data/vulnerabilities/exploits/ie_webview_setslice.pm</a></li>
+</ul>
+</div>

