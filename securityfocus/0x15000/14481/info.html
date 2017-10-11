@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid14481<p><b><span style="font-size: 18pt;">Jax PHP Scripts Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14481/info">info</a><br><a href="http://www.securityfocus.com/bid/14481/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14481/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14481/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14481/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14481
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 05 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 05 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lostmon &lt;lostmon@gmail.com&gt; is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Jax Scripts Jax Petitionbook 3.31 <br/>
+					
+				
+					Jax Scripts Jax Newsletter 2.14 <br/>
+					
+				
+					Jax Scripts Jax LinkLists 1.0 <br/>
+					
+				
+					Jax Scripts Jax Guestbook 3.31 <br/>
+					
+				
+					Jax Scripts Jax DWT Editor 1.0 <br/>
+					
+				
+					Jax Scripts Jax Calendar 1.34 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URI are available:<br/>http://www.example.com/guestbook/jax_guestbook.php?page=2&amp;language=english&amp;guestbook_id=0&amp;gmt_ofs=0XSS-CODE<br/>http://www.example.com/guestbook/jax_guestbook.php?page=2&amp;language=englishXSS-CODE&amp;guestbook_id=0&amp;gmt_ofs=0<br/>http://www.example.com/guestbook/jax_guestbook.php?page=2XSS-CODE&amp;language=english&amp;guestbook_id=0&amp;gmt_ofs=0<br/>http://www.example.com/guestbook/jax_guestbook.php?mailto=9aa43a5efc2585681c97993d777bcd41&amp;language=englishXSS-CODE<br/>http://www.example.com/petitionbook/shrimp_petition.php?page=3&amp;language=English&amp;guestbook_id=0&amp;gmt_ofs=0XSS-CODE<br/>http://www.example.com/petitionbook/shrimp_petition.php?page=3&amp;language=EnglishXSS-CODE&amp;guestbook_id=0&amp;gmt_ofs=0<br/>http://www.example.com/petitionbook/shrimp_petition.php?page=3XSS-CODE&amp;language=English&amp;guestbook_id=0&amp;gmt_ofs=0<br/>http://www.example.com/newsletter/jax_newsletter.php?language=GermanXSS-CODE&amp;ml_id=1<br/>http://www.example.com/newsletter/sign_in.php?do=sign_in&amp;language=germanXSS-CODE&amp;ml_id=1&amp;ml_id=1<br/>http://www.example.com/newsletter/archive.php?language=spanishXSS-CODE<br/>http://www.example.com/linklists/jax_linklists.php?language=EnglishXSS-CODE<br/>http://www.example.com/linklists/jax_linklists.php?do=list&amp;list_id=0&amp;language=english&amp;cat=ReligionXSS-CODE<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005XSS-CODE&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8XSS-CODE&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2XSS-CODE&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+KF6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0XSS-CODE&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+KF6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanishXSS-CODE&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0XSS-CODE&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30XSS-CODE&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00XSS-CODE&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+Feld<br/>http://www.example.com/calendar/jax_calendar.php?Y=2005&amp;m=8&amp;d=2&amp;do=show_event&amp;key=db6165c8fd09437c00badaf419eb0db5&amp;cal_id=0&amp;language=spanish&amp;gmt_ofs=0&amp;view=d30&amp;evt_date=29.07.2005+10%3A00+-%3Cbr%3E09.10.2005+18%3A00&amp;evt_title=Karlsruhe+-+Ausstellung%3A+K%F6rper+im+elektromagnetischen+FeldXSS-CODE<br/>http://www.example.com/dwt_editor/dwt_editor.php?language=englishXSS-CODE&amp;cur_dir=%2Fscripting%2Fphp%2Fdwteditor%2Fdwt_editor<br/>http://www.example.com/dwt_editor/dwt_editor.php?language=english&amp;cur_dir=XSS-CODE%2Fscripting%2Fphp%2Fdwteditor%2Fdwt_editor<br/>http://www.example.com/dwt_editor/dwt_editor.php?do=editarea&amp;cur_dir=%2Fscripting%2Fphp%2Fdwteditor%2Fdwt_editor%2Ffiles%2Fzweit+ebene&amp;file=5db14c3963eff6b87ce20155708fd867&amp;language=german&amp;area=textbereich2XSS-CODE
+	
+		<ul>
+</ul>
+</div>

