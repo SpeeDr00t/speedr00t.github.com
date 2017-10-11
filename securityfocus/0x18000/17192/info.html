@@ -1,0 +1,1430 @@
+#SpeeDr00t@Black Falcon<br>#bid17192<p><b><span style="font-size: 18pt;">Sendmail Asynchronous Signal Handling Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/17192/info">info</a><br><a href="http://www.securityfocus.com/bid/17192/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/17192/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/17192/solution">solution</a><br><a href="http://www.securityfocus.com/bid/17192/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				17192
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Race Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2006-0058<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 22 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 22 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by Mark Dowd.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Turbolinux Turbolinux Workstation 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Workstation 7.0 <br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					Trend Micro InterScan VirusWall 8.0 <br/>
+					
+				
+					Trend Micro InterScan VirusWall 7.0 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+					
+				
+					SuSE Linux Enterprise Server  9<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9<br/>
+					
+				
+					Sun Solaris  10.0_x86<br/>
+					
+				
+					Sun Solaris  10<br/>
+					
+				
+					Sun Cobalt RaQ XTR  <br/>
+					
+				
+					Sun Cobalt RaQ 550  <br/>
+					
+				
+					Sun Cobalt RaQ 4  <br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux 8.1 <br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					SGI IRIX 6.5.29 <br/>
+					
+				
+					SGI IRIX 6.5.28 <br/>
+					
+				
+					SGI IRIX 6.5.27 <br/>
+					
+				
+					SGI IRIX 6.5.26 <br/>
+					
+				
+					SGI IRIX 6.5.25 <br/>
+					
+				
+					SGI IRIX 6.5.24 m<br/>
+					
+				
+					SGI IRIX 6.5.24 <br/>
+					
+				
+					SGI IRIX 6.5.23 m<br/>
+					
+				
+					SGI IRIX 6.5.23 <br/>
+					
+				
+					SGI IRIX 6.5.22 m<br/>
+					
+				
+					SGI IRIX 6.5.22 <br/>
+					
+				
+					SGI IRIX 6.5.21 m<br/>
+					
+				
+					SGI IRIX 6.5.21 f<br/>
+					
+				
+					SGI IRIX 6.5.21 <br/>
+					
+				
+					SGI IRIX 6.5.20 m<br/>
+					
+				
+					SGI IRIX 6.5.20 f<br/>
+					
+				
+					SGI IRIX 6.5.20 <br/>
+					
+				
+					SGI IRIX 6.5.19 m<br/>
+					
+				
+					SGI IRIX 6.5.19 f<br/>
+					
+				
+					SGI IRIX 6.5.19 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.13.5 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.13.4 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.13.3 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.11 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.10 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.9 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 9.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Yellow Dog Linux 3.0 <br/>
+</span>
+					
+				
+					Sendmail Consortium Sendmail 8.12.7 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.6 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.5 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.4 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.3 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.2 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						HP MPE/iX 7.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP MPE/iX 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+					
+				
+					Sendmail Consortium Sendmail 8.12 beta7<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12 beta5<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12 beta16<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12 beta12<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12 beta10<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.12 .0<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11.7 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11.6 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11.5 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11.4 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11.3 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					Sendmail Consortium Sendmail 8.11.1 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.11 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.10.2 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.10.1 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.10 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.9.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1  PK5 (BL19)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0 a PK3 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.18 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.18 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.17 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.17 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.16 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.16 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.15 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.15 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.14 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.13 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.12 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.11 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.11 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.10 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.10 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.9 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.9 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.8 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.8 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.7 m<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SGI IRIX 6.5.7 f<br/>
+</span>
+					
+				
+					Sendmail Consortium Sendmail 8.9.2 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.9.1 <br/>
+					
+				
+					Sendmail Consortium Sendmail 8.9 .0<br/>
+					
+				
+					Sendmail Consortium Sendmail 8.8.8 <br/>
+					
+				
+					SCO Unixware 7.1.4 <br/>
+					
+				
+					SCO Unixware 7.1.3 <br/>
+					
+				
+					SCO Open Server 6.0 <br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Linux 7.3  i386<br/>
+					
+				
+					Redhat Fedora  Core5<br/>
+					
+				
+					Redhat Fedora  Core4<br/>
+					
+				
+					Redhat Fedora  Core3<br/>
+					
+				
+					Redhat Fedora  Core2<br/>
+					
+				
+					Redhat Fedora  Core1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					OpenPKG OpenPKG 2.5 <br/>
+					
+				
+					OpenPKG OpenPKG 2.4 <br/>
+					
+				
+					OpenPKG OpenPKG 2.3 <br/>
+					
+				
+					OpenBSD OpenBSD 2.9 <br/>
+					
+				
+					OpenBSD OpenBSD 2.8 <br/>
+					
+				
+					OpenBSD OpenBSD 2.7 <br/>
+					
+				
+					OpenBSD OpenBSD 2.6 <br/>
+					
+				
+					OpenBSD OpenBSD 2.5 <br/>
+					
+				
+					OpenBSD OpenBSD 2.4 <br/>
+					
+				
+					OpenBSD OpenBSD 2.3 <br/>
+					
+				
+					OpenBSD OpenBSD 2.2 <br/>
+					
+				
+					OpenBSD OpenBSD 2.1 <br/>
+					
+				
+					OpenBSD OpenBSD 2.0 <br/>
+					
+				
+					OpenBSD OpenBSD  3.8<br/>
+					
+				
+					OpenBSD OpenBSD  3.7<br/>
+					
+				
+					OpenBSD OpenBSD  3.6<br/>
+					
+				
+					OpenBSD OpenBSD  3.5<br/>
+					
+				
+					OpenBSD OpenBSD  3.4<br/>
+					
+				
+					OpenBSD OpenBSD  3.3<br/>
+					
+				
+					OpenBSD OpenBSD  3.2<br/>
+					
+				
+					OpenBSD OpenBSD  3.1<br/>
+					
+				
+					OpenBSD OpenBSD  3.0<br/>
+					
+				
+					Nortel Networks W-NMS-UMTS  4.2<br/>
+					
+				
+					Nortel Networks W-NMS-GPRS  4.2<br/>
+					
+				
+					Nortel Networks W-NMS-CNM  1.0<br/>
+					
+				
+					NetBSD NetBSD 2.1 <br/>
+					
+				
+					NetBSD NetBSD 2.0.3 <br/>
+					
+				
+					NetBSD NetBSD 2.0.2 <br/>
+					
+				
+					NetBSD NetBSD 2.0.1 <br/>
+					
+				
+					NetBSD NetBSD 2.0 <br/>
+					
+				
+					NetBSD NetBSD 1.6.2 <br/>
+					
+				
+					NetBSD NetBSD 1.6.1 <br/>
+					
+				
+					NetBSD NetBSD 1.6  beta<br/>
+					
+				
+					NetBSD NetBSD 1.6 <br/>
+					
+				
+					Navision Financials Server 3.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 10.2 <br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					IBM Hardware Management Console (HMC) 5.2.1 <br/>
+					
+				
+					IBM AIX 5.3 L<br/>
+					
+				
+					IBM AIX 5.2 L<br/>
+					
+				
+					IBM AIX 5.1 L<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					IBM AIX  5.2<br/>
+					
+				
+					IBM AIX  5.1<br/>
+					
+				
+					HP Tru64 5.1 B-3<br/>
+					
+				
+					HP Tru64 5.1 B-2 PK4<br/>
+					
+				
+					HP Tru64 5.1 A PK6<br/>
+					
+				
+					HP Tru64 4.0 G PK4<br/>
+					
+				
+					HP Tru64 4.0 F PK8<br/>
+					
+				
+					HP Internet Express  6.5<br/>
+					
+				
+					HP Internet Express  6.4<br/>
+					
+				
+					HP Internet Express  6.3<br/>
+					
+				
+					HP HP-UX 11.23 <br/>
+					
+				
+					HP HP-UX 11.11 <br/>
+					
+				
+					HP HP-UX 11.0 <br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP HP-UX  B.11.04<br/>
+					
+				
+					HP HP-UX  B.11.00<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 <br/>
+					
+				
+					FreeBSD FreeBSD 5.2.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 <br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE/Alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD 5.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 <br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 <br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 <br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLEpre2002-03-07<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE-p32<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELEASE-p42<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE-p38<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -STABLEpre2001-07-20<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 <br/>
+					
+				
+					FreeBSD FreeBSD 3.4 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.4 <br/>
+					
+				
+					FreeBSD FreeBSD 3.3 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.3 <br/>
+					
+				
+					FreeBSD FreeBSD 3.2 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.2 <br/>
+					
+				
+					FreeBSD FreeBSD 3.1 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 3.0 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.8 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.4 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.3 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2 x<br/>
+					
+				
+					FreeBSD FreeBSD 2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.7 .1<br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 .1<br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1 x<br/>
+					
+				
+					FreeBSD FreeBSD 2.1 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0 <br/>
+					
+				
+					FreeBSD FreeBSD 1.1.5 .1<br/>
+					
+				
+					FreeBSD FreeBSD  5.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  4.10-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  3.x<br/>
+					
+				
+					FreeBSD FreeBSD  2.x<br/>
+					
+				
+					F-Secure Messaging Security Gateway X200 3.1 <br/>
+					
+				
+					F-Secure Messaging Security Gateway P800 3.2.4 <br/>
+					
+				
+					F-Secure Messaging Security Gateway P600 3.2.4 <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux 3.0  sparc<br/>
+					
+				
+					Debian Linux 3.0  s/390<br/>
+					
+				
+					Debian Linux 3.0  ppc<br/>
+					
+				
+					Debian Linux 3.0  mipsel<br/>
+					
+				
+					Debian Linux 3.0  mips<br/>
+					
+				
+					Debian Linux 3.0  m68k<br/>
+					
+				
+					Debian Linux 3.0  ia-64<br/>
+					
+				
+					Debian Linux 3.0  ia-32<br/>
+					
+				
+					Debian Linux 3.0  hppa<br/>
+					
+				
+					Debian Linux 3.0  arm<br/>
+					
+				
+					Debian Linux 3.0  alpha<br/>
+					
+				
+					Debian Linux 3.0 <br/>
+					
+				
+					Avaya Interactive Response 1.3 <br/>
+					
+				
+					Avaya Interactive Response 1.2.1 <br/>
+					
+				
+					Avaya Interactive Response  <br/>
+					
+				
+					Avaya Communication Manager Server S8700  <br/>
+					
+				
+					Avaya Communication Manager Server S8500  <br/>
+					
+				
+					Avaya Communication Manager Server S8300  <br/>
+					
+				
+					Avaya CMS Server 13.0 <br/>
+					
+				
+					Avaya CMS Server 12.0 <br/>
+					
+				
+					Avaya CMS Server 11.0 <br/>
+					
+				
+					Avaya CMS Server 9.0 <br/>
+					
+				
+					Avaya CMS Server  13.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sendmail Consortium Sendmail 8.13.6 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x18000/17192/sendtest.c">#exploit_sendtest.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x18000/17192/rbl4ck-sendmail.py">#exploit_rbl4ck-sendmail.py</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, #no_exploit<br/><br/>Proof-of-concept exploits are available.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/sendtest.c">/data/vulnerabilities/exploits/sendtest.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/rbl4ck-sendmail.py">/data/vulnerabilities/exploits/rbl4ck-sendmail.py</a></li>
+</ul>
+</div>

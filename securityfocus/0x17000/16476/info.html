@@ -1,0 +1,2806 @@
+#SpeeDr00t@Black Falcon<br>#bid16476<p><b><span style="font-size: 18pt;">Multiple Mozilla Products Memory Corruption/Code Injection/Access Restriction Bypass Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16476/info">info</a><br><a href="http://www.securityfocus.com/bid/16476/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16476/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16476/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16476/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16476
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2006-0298<br/>
+				
+					CVE-2006-0297<br/>
+				
+					CVE-2006-0296<br/>
+				
+					CVE-2006-0295<br/>
+				
+					CVE-2006-0294<br/>
+				
+					CVE-2006-0293<br/>
+				
+					CVE-2006-0292<br/>
+				
+					CVE-2006-0299<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 02 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 10 2008 08:20PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				These issues were disclosed by the vendor. Credit goes to Igor Bukanov, Martijn Wargers, ZIPLOCK, Georgi Guninski, moz_bug_r_a4, Johnny Stenback and Brendan Eich for the discovery of these issues.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ppc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia32<br/>
+					
+				
+					Sun Solaris  9_x86 Update 2<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9<br/>
+					
+				
+					Sun Solaris  8_x86<br/>
+					
+				
+					Sun Solaris  8_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10.0_x86<br/>
+					
+				
+					Sun Solaris  10.0<br/>
+					
+				
+					Sun Solaris  10<br/>
+					
+				
+					Sun Java Desktop System (JDS) 2.0 <br/>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Linux 7.3 i686<br/>
+					
+				
+					Redhat Linux 7.3  i386<br/>
+					
+				
+					Redhat Linux 7.3 <br/>
+					
+				
+					Redhat Fedora  Core4<br/>
+					
+				
+					Redhat Fedora  Core3<br/>
+					
+				
+					Redhat Fedora  Core2<br/>
+					
+				
+					Redhat Fedora  Core1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Mozilla Thunderbird 1.5 beta 2<br/>
+					
+				
+					Mozilla Thunderbird 1.5 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.7 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.6 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.5 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.2 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.1 <br/>
+					
+				
+					Mozilla Thunderbird 1.0 <br/>
+					
+				
+					Mozilla Thunderbird 0.9 <br/>
+					
+				
+					Mozilla Thunderbird 0.8 <br/>
+					
+				
+					Mozilla Thunderbird 0.7.3 <br/>
+					
+				
+					Mozilla Thunderbird 0.7.2 <br/>
+					
+				
+					Mozilla Thunderbird 0.7.1 <br/>
+					
+				
+					Mozilla Thunderbird 0.7 <br/>
+					
+				
+					Mozilla Thunderbird 0.6 <br/>
+					
+				
+					Mozilla SeaMonkey  1.0 dev<br/>
+					
+				
+					Mozilla Firefox 1.5 beta 2<br/>
+					
+				
+					Mozilla Firefox 1.5 beta 1<br/>
+					
+				
+					Mozilla Firefox 1.5 <br/>
+					
+				
+					Mozilla Firefox 1.0.7 <br/>
+					
+				
+					Mozilla Firefox 1.0.6 <br/>
+					
+				
+					Mozilla Firefox 1.0.5 <br/>
+					
+				
+					Mozilla Firefox 1.0.5 <br/>
+					
+				
+					Mozilla Firefox 1.0.4 <br/>
+					
+				
+					Mozilla Firefox 1.0.3 <br/>
+					
+				
+					Mozilla Firefox 1.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  4<br/>
+</span>
+					
+				
+					Mozilla Firefox 1.0.1 <br/>
+					
+				
+					Mozilla Firefox 1.0 <br/>
+					
+				
+					Mozilla Firefox 0.10.1 <br/>
+					
+				
+					Mozilla Firefox 0.10 <br/>
+					
+				
+					Mozilla Firefox 0.9.3 <br/>
+					
+				
+					Mozilla Firefox 0.9.2 <br/>
+					
+				
+					Mozilla Firefox 0.9.1 <br/>
+					
+				
+					Mozilla Firefox 0.9 rc<br/>
+					
+				
+					Mozilla Firefox 0.9 <br/>
+					
+				
+					Mozilla Firefox 0.8 <br/>
+					
+				
+					Mozilla Firefox  Preview Release<br/>
+					
+				
+					Mozilla Browser 1.7.12 <br/>
+					
+				
+					Mozilla Browser 1.7.11 <br/>
+					
+				
+					Mozilla Browser 1.7.10 <br/>
+					
+				
+					Mozilla Browser 1.7.9 <br/>
+					
+				
+					Mozilla Browser 1.7.8 <br/>
+					
+				
+					Mozilla Browser 1.7.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux  10 F...<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux  10 F...<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+					
+				
+					Mozilla Browser 1.7.6 <br/>
+					
+				
+					Mozilla Browser 1.7.5 <br/>
+					
+				
+					Mozilla Browser 1.7.4 <br/>
+					
+				
+					Mozilla Browser 1.7.3 <br/>
+					
+				
+					Mozilla Browser 1.7.2 <br/>
+					
+				
+					Mozilla Browser 1.7.1 <br/>
+					
+				
+					Mozilla Browser 1.7 rc3<br/>
+					
+				
+					Mozilla Browser 1.7 rc2<br/>
+					
+				
+					Mozilla Browser 1.7 rc1<br/>
+					
+				
+					Mozilla Browser 1.7 beta<br/>
+					
+				
+					Mozilla Browser 1.7 alpha<br/>
+					
+				
+					Mozilla Browser 1.7 <br/>
+					
+				
+					Mozilla Browser 1.6 <br/>
+					
+				
+					Mozilla Browser 1.5.1 <br/>
+					
+				
+					Mozilla Browser 1.5 <br/>
+					
+				
+					Mozilla Browser 1.4.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux Advanced Work Station 2.1 <br/>
+</span>
+					
+				
+					Mozilla Browser 1.4.2 <br/>
+					
+				
+					Mozilla Browser 1.4.1 <br/>
+					
+				
+					Mozilla Browser 1.4 b<br/>
+					
+				
+					Mozilla Browser 1.4 a<br/>
+					
+				
+					Mozilla Browser 1.4 <br/>
+					
+				
+					Mozilla Browser 1.3.1 <br/>
+					
+				
+					Mozilla Browser 1.3 <br/>
+					
+				
+					Mozilla Browser 1.2.1 <br/>
+					
+				
+					Mozilla Browser 1.2 Beta<br/>
+					
+				
+					Mozilla Browser 1.2 Alpha<br/>
+					
+				
+					Mozilla Browser 1.2 <br/>
+					
+				
+					Mozilla Browser 1.1 Beta<br/>
+					
+				
+					Mozilla Browser 1.1 Alpha<br/>
+					
+				
+					Mozilla Browser 1.1 <br/>
+					
+				
+					Mozilla Browser 1.0.2 <br/>
+					
+				
+					Mozilla Browser 1.0.1 <br/>
+					
+				
+					Mozilla Browser 1.0 RC2<br/>
+					
+				
+					Mozilla Browser 1.0 RC1<br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1.1 <br/>
+</span>
+					
+				
+					Mozilla Browser 1.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+					
+				
+					Mozilla Browser 0.9.48 <br/>
+					
+				
+					Mozilla Browser 0.9.35 <br/>
+					
+				
+					Mozilla Browser 0.9.9 <br/>
+					
+				
+					Mozilla Browser 0.9.8 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP  0<br/>
+</span>
+					
+				
+					Mozilla Browser 0.9.7 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP  0<br/>
+</span>
+					
+				
+					Mozilla Browser 0.9.6 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Be BeOS 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Be BeOS 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.3  Alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.3  Alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.2 -2 Alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.2 -2 Alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Compaq OpenVMS 7.1 -2 Alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.8<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.8<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.7<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.7<br/>
+</span>
+					
+				
+					Mozilla Browser 0.9.5 <br/>
+					
+				
+					Mozilla Browser 0.9.4 .1<br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP  0<br/>
+</span>
+					
+				
+					Mozilla Browser 0.9.4 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP  0<br/>
+</span>
+					
+				
+					Mozilla Browser 0.9.3 <br/>
+					
+				
+					Mozilla Browser 0.9.2 .1<br/>
+					
+				
+					Mozilla Browser 0.9.2 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS 9 9.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP  0<br/>
+</span>
+					
+				
+					Mozilla Browser 0.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP HP-UX  B.11.00<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Mozilla SeaMonkey  1.0<br/>
+					
+				
+					Mozilla Firefox  1.5.0.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16476/firefox_queryinterface_linux.pm">#exploit_firefox_queryinterface_linux.pm</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x17000/16476/firefox_queryinterface_osx.pm">#exploit_firefox_queryinterface_osx.pm</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required for some of these issues.<br/><br/>Metasploit has released modules that target the Firefox 'QueryInterface()' function to execute code. These modules target Firefox 1.5.0 for Linux and Apple Mac OS X.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/firefox_queryinterface_linux.pm">/data/vulnerabilities/exploits/firefox_queryinterface_linux.pm</a></li>
+<li><a href="/data/vulnerabilities/exploits/firefox_queryinterface_osx.pm">/data/vulnerabilities/exploits/firefox_queryinterface_osx.pm</a></li>
+</ul>
+</div>

