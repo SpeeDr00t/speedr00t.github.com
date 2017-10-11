@@ -1,0 +1,820 @@
+#SpeeDr00t@Black Falcon<br>#bid4535<p><b><span style="font-size: 18pt;">AOLServer Developer API Ns_PdLog() Format String Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/4535/info">info</a><br><a href="http://www.securityfocus.com/bid/4535/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/4535/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/4535/solution">solution</a><br><a href="http://www.securityfocus.com/bid/4535/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				4535
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2002-0586<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 17 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 12:46PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by Guillaume Pelat.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					AOL AOLserver 4.0 .beta1<br/>
+					
+				
+					AOL AOLserver 3.4.2  Win32<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					AOL AOLserver 3.4.2 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera UnixWare 7.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera UnixWare 7.1 .0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera UnixWare  7<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.8 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.7 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD 2.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						OpenBSD OpenBSD  3.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.2  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.14 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.13 m<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.13 f<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.13 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.12 m<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.12 f<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.12 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.11 m<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.11 f<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.10 m<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.10 f<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5.10 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 _x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris 2.5.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6_x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					AOL AOLserver 3.4  Win32<br/>
+					
+				
+					AOL AOLserver 3.4 <br/>
+					
+				
+					AOL AOLserver 3.3.1 <br/>
+					
+				
+					AOL AOLserver 3.3  Win32<br/>
+					
+				
+					AOL AOLserver 3.2  Win32<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					AOL AOLserver 3.2  UNIX<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Linux kernel 2.2.14 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					AOL AOLserver 3.0 <br/>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apple Mac OS X Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera UnixWare  7<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital OSF/1 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 10.20 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#no_exploit &amp;lt;mailto:vuldb@#no_exploit&amp;gt;.
+	
+		<ul>
+</ul>
+</div>

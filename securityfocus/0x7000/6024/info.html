@@ -1,0 +1,684 @@
+#SpeeDr00t@Black Falcon<br>#bid6024<p><b><span style="font-size: 18pt;">Multiple Vendor kadmind Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6024/info">info</a><br><a href="http://www.securityfocus.com/bid/6024/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6024/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6024/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6024/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6024
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2002-1235<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 21 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 06:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of vulnerability credited to Johan Danielsson and Love Hornquist-Astrand.  Discovery is also credited to Tom Yu and Sam Hartman of MIT.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBSD OpenBSD  3.2<br/>
+					
+				
+					OpenBSD OpenBSD  3.1<br/>
+					
+				
+					OpenBSD OpenBSD  3.0<br/>
+					
+				
+					NetBSD NetBSD 1.6 <br/>
+					
+				
+					NetBSD NetBSD 1.5.3 <br/>
+					
+				
+					NetBSD NetBSD 1.5.2 <br/>
+					
+				
+					NetBSD NetBSD 1.5.1 <br/>
+					
+				
+					NetBSD NetBSD 1.5 <br/>
+					
+				
+					MIT Kerberos 5 1.2.6 <br/>
+					
+				
+					MIT Kerberos 5 1.2.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux  10 F...<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS  7+<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.3 <br/>
+					
+				
+					MIT Kerberos 5 1.2.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Multi Network Firewall 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.1 <br/>
+					
+				
+					MIT Kerberos 5 1.2 <br/>
+					
+				
+					MIT Kerberos 5 1.1.1 <br/>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.1 <br/>
+					
+				
+					MIT Kerberos 5 1.0.6 <br/>
+					
+				
+					MIT Kerberos 5 1.0 <br/>
+					
+				
+					MIT Kerberos 4 4.0 <br/>
+					
+				
+					MIT Kerberos 4 1.1 <br/>
+					
+				
+					MIT Kerberos 4 1.0 <br/>
+					
+				
+					KTH Heimdal 0.21 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+					
+				
+					KTH Heimdal 0.5 <br/>
+<span class="related">
+						
+							-
+						
+						Gentoo Linux 1.4 _rc1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Gentoo Linux 1.2 <br/>
+</span>
+					
+				
+					KTH Heimdal 0.4 e<br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+					
+				
+					KTH Heimdal 0.4 d<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+					
+				
+					KTH Heimdal 0.4 c<br/>
+					
+				
+					KTH Heimdal 0.4 b<br/>
+					
+				
+					KTH Heimdal 0.4 a<br/>
+					
+				
+					KTH Heimdal 0.3 e<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					KTH eBones 1.2 <br/>
+					
+				
+					Keware Technologies HomeSeer 0.4 e<br/>
+					
+				
+					IBM PSSP 3.5 <br/>
+					
+				
+					IBM PSSP 3.4 <br/>
+					
+				
+					IBM PSSP 3.2 <br/>
+					
+				
+					IBM PSSP 3.1.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					KTH Heimdal 0.5.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+					
+				
+					KTH eBones 1.2.1 <br/>
+					
+				
+					IBM AIX 4.3.3 <br/>
+					
+				
+					IBM AIX 4.3.2 <br/>
+					
+				
+					IBM AIX 4.3.1 <br/>
+					
+				
+					IBM AIX 4.3 <br/>
+					
+				
+					IBM AIX 4.2 <br/>
+					
+				
+					IBM AIX 4.1 <br/>
+					
+				
+					IBM AIX 4.0 <br/>
+					
+				
+					IBM AIX  5.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	There are rumors of an exploit for this vulnerability circulating in the wild.
+	
+		<ul>
+</ul>
+</div>

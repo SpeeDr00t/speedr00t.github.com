@@ -1,0 +1,110 @@
+#SpeeDr00t@Black Falcon<br>#bid8561<p><b><span style="font-size: 18pt;">Apache::Gallery Insecure Local File Storage Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8561/info">info</a><br><a href="http://www.securityfocus.com/bid/8561/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8561/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8561/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8561/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8561
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 08 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 08 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The discovery of this vulnerability has been credited to Jon Hart &lt;warchild@spoofed.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Apache::Gallery Apache::Gallery 0.6 <br/>
+					
+				
+					Apache::Gallery Apache::Gallery 0.5.1 <br/>
+					
+				
+					Apache::Gallery Apache::Gallery 0.5 <br/>
+					
+				
+					Apache::Gallery Apache::Gallery 0.4.1 <br/>
+					
+				
+					Apache::Gallery Apache::Gallery 0.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apache::Gallery Apache::Gallery 0.7 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x9000/8561/Gallery_4033.c">#exploit_Gallery_4033.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit has been developed by Jon Hart &lt;warchild@spoofed.org&gt; to demonstrate this issue.<br/><br/>Also, the following small example demonstrates how the target .so files can be deleted during a reboot, allowing for the attacker-supplied shared objects to successfully replace them before Apache is invoked.<br/><br/>The following crontab entry will result in the execution of the exploit script as soon as cron is started:<br/><br/>   @reboot  /path/to/exploit/exploit.sh<br/><br/>exploit.sh will contain something similar to:<br/><br/>   #!/bin/sh<br/>   mkdir -p /tmp/lib/auto/Apache/Gallery_4033<br/>   cp ~/exploits/Gallery* /tmp/lib/auto/Apache/Gallery_4033
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/Gallery_4033.c">/data/vulnerabilities/exploits/Gallery_4033.c</a></li>
+</ul>
+</div>

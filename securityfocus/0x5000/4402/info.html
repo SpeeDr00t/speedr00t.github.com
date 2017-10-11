@@ -1,0 +1,335 @@
+#SpeeDr00t@Black Falcon<br>#bid4402<p><b><span style="font-size: 18pt;">Progress sqlcpp Local Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/4402/info">info</a><br><a href="http://www.securityfocus.com/bid/4402/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/4402/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/4402/solution">solution</a><br><a href="http://www.securityfocus.com/bid/4402/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				4402
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 22 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 22 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovered by KF &lt;dotslash@snosoft.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Progress Database 9.1 C<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+					
+				
+					Progress Database 9.1 B<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Progress Database 9.1 D<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  2.6<br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x5000/4402/sqlcppx.c">#exploit_sqlcppx.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit has been provided by The Itch / Promisc (http://www.promisc.org):
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/sqlcppx.c">/data/vulnerabilities/exploits/sqlcppx.c</a></li>
+</ul>
+</div>

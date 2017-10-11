@@ -1,0 +1,936 @@
+#SpeeDr00t@Black Falcon<br>#bid3251<p><b><span style="font-size: 18pt;">Apache mod_auth_pgsql Remote SQL Query Manipulation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/3251/info">info</a><br><a href="http://www.securityfocus.com/bid/3251/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/3251/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/3251/solution">solution</a><br><a href="http://www.securityfocus.com/bid/3251/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				3251
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-1379<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 29 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 07:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was submitted to BugTraq in a RUS-CERT Advisory on August 29th, 2001.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Guiseppe Tanzilli and Matthias Eckermann mod_auth_pgsql 0.9.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.3.2 <br/>
+</span>
+					
+				
+					Guiseppe Tanzilli and Matthias Eckermann mod_auth_pgsql 0.9.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.3.2 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Guiseppe Tanzilli and Matthias Eckermann mod_auth_pgsql 0.9.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apache Apache 0.8.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.5.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						PostgreSQL PostgreSQL 6.3.2 <br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	#no_exploit &amp;lt;mailto:vuldb@#no_exploit&amp;gt;.
+	
+		<ul>
+</ul>
+</div>

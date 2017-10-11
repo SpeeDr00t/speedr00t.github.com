@@ -1,0 +1,495 @@
+#SpeeDr00t@Black Falcon<br>#bid7025<p><b><span style="font-size: 18pt;">Multiple Vendor LPRM Local Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/7025/info">info</a><br><a href="http://www.securityfocus.com/bid/7025/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/7025/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/7025/solution">solution</a><br><a href="http://www.securityfocus.com/bid/7025/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				7025
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2003-0144<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 22 1998 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 11 2009 08:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery credited to Niall Smart &lt;rotel@indigo.ie&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.5.19 <br/>
+					
+				
+					SGI IRIX 6.5.18 <br/>
+					
+				
+					SGI IRIX 6.5.17 <br/>
+					
+				
+					SGI IRIX 6.5.16 <br/>
+					
+				
+					SGI IRIX 6.5.15 <br/>
+					
+				
+					SGI IRIX 6.5.14 <br/>
+					
+				
+					SGI IRIX 6.5.13 <br/>
+					
+				
+					SGI IRIX 6.5.12 <br/>
+					
+				
+					SGI IRIX 6.5.11 <br/>
+					
+				
+					SGI IRIX 6.5.10 <br/>
+					
+				
+					SGI IRIX 6.5.9 <br/>
+					
+				
+					SGI IRIX 6.5.8 <br/>
+					
+				
+					SGI IRIX 6.5.7 <br/>
+					
+				
+					SGI IRIX 6.5.6 <br/>
+					
+				
+					SGI IRIX 6.5.5 <br/>
+					
+				
+					SGI IRIX 6.5.4 <br/>
+					
+				
+					SGI IRIX 6.5.3 <br/>
+					
+				
+					SGI IRIX 6.5.2 <br/>
+					
+				
+					SGI IRIX 6.5.1 <br/>
+					
+				
+					SGI IRIX 6.5 <br/>
+					
+				
+					OpenBSD OpenBSD 2.9 <br/>
+					
+				
+					OpenBSD OpenBSD 2.8 <br/>
+					
+				
+					OpenBSD OpenBSD 2.7 <br/>
+					
+				
+					OpenBSD OpenBSD 2.6 <br/>
+					
+				
+					OpenBSD OpenBSD 2.5 <br/>
+					
+				
+					OpenBSD OpenBSD 2.4 <br/>
+					
+				
+					OpenBSD OpenBSD 2.3 <br/>
+					
+				
+					OpenBSD OpenBSD 2.2 <br/>
+					
+				
+					OpenBSD OpenBSD 2.1 <br/>
+					
+				
+					OpenBSD OpenBSD 2.0 <br/>
+					
+				
+					OpenBSD OpenBSD  3.2<br/>
+					
+				
+					OpenBSD OpenBSD  3.1<br/>
+					
+				
+					OpenBSD OpenBSD  3.0<br/>
+					
+				
+					lprold lprold 3.0.48 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					lpr-ppd lpr-ppd 0.72 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					FreeBSD FreeBSD 2.2.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.4 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.3 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2 <br/>
+					
+				
+					BSD lpr 0.72 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+					
+				
+					BSD lpr 0.48 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+					
+				
+					BSD lpr  2000.05.07<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					SGI IRIX 6.5.20 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x8000/7025/lprm-bsd.c">#exploit_lprm-bsd.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x8000/7025/lprm.c">#exploit_lprm.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x8000/7025/lprmexp.c">#exploit_lprmexp.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploit contributed by Niall Smart &amp;lt;rotel@indigo.ie&amp;gt;.<br/><br/>Another exploit was contributed by By CMN &amp;lt;cmn@darklab.org&amp;gt;/&amp;lt;md0claes@mdstud.chalmers.se&amp;gt; and was tested on OpenBSD 3.0 and 3.1 systems.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/lprm-bsd.c">/data/vulnerabilities/exploits/lprm-bsd.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/lprm.c">/data/vulnerabilities/exploits/lprm.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/lprmexp.c">/data/vulnerabilities/exploits/lprmexp.c</a></li>
+</ul>
+</div>

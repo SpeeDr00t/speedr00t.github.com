@@ -1,0 +1,735 @@
+#SpeeDr00t@Black Falcon<br>#bid6431<p><b><span style="font-size: 18pt;">LibPNG Incorrect Offset Calculation Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/6431/info">info</a><br><a href="http://www.securityfocus.com/bid/6431/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/6431/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/6431/solution">solution</a><br><a href="http://www.securityfocus.com/bid/6431/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				6431
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2002-1363<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 19 2002 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 11 2007 09:50PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability credited to Glenn Randers-Pehrson.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Linux 7.3  i386<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					libpng libpng3 1.2.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 _rc1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 _rc1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0  AMD64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0  AMD64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux  -current<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux  -current<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					libpng libpng3 1.2.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Multi Network Firewall 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.1 <br/>
+</span>
+					
+				
+					libpng libpng3 1.2.3 <br/>
+					
+				
+					libpng libpng3 1.2.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+					
+				
+					libpng libpng3 1.2.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+					
+				
+					libpng libpng3 1.2 .0<br/>
+					
+				
+					libpng libpng 1.0.14 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+					
+				
+					libpng libpng 1.0.13 <br/>
+					
+				
+					libpng libpng 1.0.12 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+					
+				
+					libpng libpng 1.0.11 <br/>
+					
+				
+					libpng libpng 1.0.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					libpng libpng 1.0.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+					
+				
+					libpng libpng 1.0.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Ximian GNOME 1.4 <br/>
+</span>
+					
+				
+					libpng libpng 1.0.7 <br/>
+					
+				
+					libpng libpng 1.0.6 <br/>
+					
+				
+					libpng libpng 1.0.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+					
+				
+					libpng libpng 1.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+					
+				
+					Avaya S8700  R2.0.1<br/>
+					
+				
+					Avaya S8700  R2.0.0<br/>
+					
+				
+					Avaya S8500  R2.0.1<br/>
+					
+				
+					Avaya S8500  R2.0.0<br/>
+					
+				
+					Avaya S8300  R2.0.1<br/>
+					
+				
+					Avaya S8300  R2.0.0<br/>
+					
+				
+					Avaya Converged Communications Server 2.0 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.2.8 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, #no_exploitmailto:vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

