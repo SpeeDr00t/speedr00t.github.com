@@ -1,0 +1,714 @@
+#SpeeDr00t@Black Falcon<br>#bid13217<p><b><span style="font-size: 18pt;">CVS Unspecified Buffer Overflow And Memory Access Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/13217/info">info</a><br><a href="http://www.securityfocus.com/bid/13217/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/13217/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/13217/solution">solution</a><br><a href="http://www.securityfocus.com/bid/13217/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				13217
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-0753<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 18 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 05:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these issues is credited to Alen Zukich.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ppc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia64<br/>
+					
+				
+					Ubuntu Ubuntu Linux 4.1 ia32<br/>
+					
+				
+					Turbolinux Turbolinux Workstation 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Workstation 7.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 7.0 <br/>
+					
+				
+					Turbolinux Turbolinux Desktop 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux  10 F...<br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE Linux Enterprise Server  9<br/>
+					
+				
+					SGI ProPack 3.0 <br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE CORE 9 for x86  <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.2 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.1 <br/>
+					
+				
+					S.u.S.E. Linux Personal 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Personal 8.2 <br/>
+					
+				
+					Redhat Linux 9.0  i386<br/>
+					
+				
+					Redhat Linux 7.3 i686<br/>
+					
+				
+					Redhat Linux 7.3  i386<br/>
+					
+				
+					Redhat Linux 7.3 <br/>
+					
+				
+					Redhat Fedora  Core2<br/>
+					
+				
+					Redhat Fedora  Core1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Peachtree Linux  release 1<br/>
+					
+				
+					OpenBSD OpenBSD  3.7<br/>
+					
+				
+					OpenBSD OpenBSD  3.6<br/>
+					
+				
+					OpenBSD OpenBSD  3.5<br/>
+					
+				
+					NetBSD NetBSD 2.0.2 <br/>
+					
+				
+					NetBSD NetBSD 2.0.1 <br/>
+					
+				
+					NetBSD NetBSD 2.0 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 <br/>
+					
+				
+					FreeBSD FreeBSD 5.2.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 <br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE/Alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD 5.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 <br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 <br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 <br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLEpre2002-03-07<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE-p32<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELEASE-p42<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE-p38<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					FreeBSD FreeBSD  4.10-PRERELEASE<br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					CVS CVS 1.12.11 <br/>
+					
+				
+					CVS CVS 1.12.10 <br/>
+					
+				
+					CVS CVS 1.12.9 <br/>
+					
+				
+					CVS CVS 1.12.8 <br/>
+					
+				
+					CVS CVS 1.12.7 <br/>
+					
+				
+					CVS CVS 1.12.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 2.0 <br/>
+</span>
+					
+				
+					CVS CVS 1.12.2 <br/>
+					
+				
+					CVS CVS 1.12.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 1.3 <br/>
+</span>
+					
+				
+					CVS CVS 1.11.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core4<br/>
+</span>
+					
+				
+					CVS CVS 1.11.17 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+					
+				
+					CVS CVS 1.11.16 <br/>
+					
+				
+					CVS CVS 1.11.15 <br/>
+					
+				
+					CVS CVS 1.11.14 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+					
+				
+					CVS CVS 1.11.11 <br/>
+					
+				
+					CVS CVS 1.11.10 <br/>
+					
+				
+					CVS CVS 1.11.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 <br/>
+</span>
+					
+				
+					CVS CVS 1.11.5 <br/>
+					
+				
+					CVS CVS 1.11.1 p1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					NetBSD NetBSD 2.0.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue.#no_exploit &amp;lt;mailto:vuldb@#no_exploit&amp;gt;.
+	
+		<ul>
+</ul>
+</div>

