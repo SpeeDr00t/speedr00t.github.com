@@ -1,0 +1,985 @@
+#SpeeDr00t@Black Falcon<br>#bid26445<p><b><span style="font-size: 18pt;">GNU TAR and CPIO safer_name_suffix Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26445/info">info</a><br><a href="http://www.securityfocus.com/bid/26445/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26445/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26445/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26445/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26445
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-4476<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 14 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 15 2010 03:39PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Dmitry V. Levin discovered this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  7.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					SuSE Linux Professional  10.2 x86_64<br/>
+					
+				
+					SuSE Linux Personal  10.2 x86_64<br/>
+					
+				
+					SuSE Linux Desktop  1.0<br/>
+					
+				
+					SuSE Linux  9.3<br/>
+					
+				
+					SuSE Linux  9.2<br/>
+					
+				
+					SuSE Linux  9.1<br/>
+					
+				
+					SuSE Linux  10.3<br/>
+					
+				
+					SuSE Linux  10.2<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_98<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_94<br/>
+					
+				
+					Sun OpenSolaris  build snv_93<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_86<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_81<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_58<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_54<br/>
+					
+				
+					Sun OpenSolaris  build snv_51<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_49<br/>
+					
+				
+					Sun OpenSolaris  build snv_48<br/>
+					
+				
+					Sun OpenSolaris  build snv_47<br/>
+					
+				
+					Sun OpenSolaris  build snv_45<br/>
+					
+				
+					Sun OpenSolaris  build snv_41<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_38<br/>
+					
+				
+					Sun OpenSolaris  build snv_37<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_28<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_13<br/>
+					
+				
+					Sun OpenSolaris  build snv_115<br/>
+					
+				
+					Sun OpenSolaris  build snv_114<br/>
+					
+				
+					Sun OpenSolaris  build snv_113<br/>
+					
+				
+					Sun OpenSolaris  build snv_112<br/>
+					
+				
+					Sun OpenSolaris  build snv_111a<br/>
+					
+				
+					Sun OpenSolaris  build snv_111<br/>
+					
+				
+					Sun OpenSolaris  build snv_110<br/>
+					
+				
+					Sun OpenSolaris  build snv_109<br/>
+					
+				
+					Sun OpenSolaris  build snv_108<br/>
+					
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101a<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Sun OpenSolaris  build snv_02<br/>
+					
+				
+					Sun OpenSolaris  build snv_01<br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Server  9<br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Server  10<br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Desktop  10.SP1<br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Desktop  10<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 1.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux Openexchange Server  <br/>
+					
+				
+					S.u.S.E. Linux Desktop  10<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.1<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.0<br/>
+					
+				
+					RedHat Enterprise Linux WS  5<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					RedHat Enterprise Linux AS  4<br/>
+					
+				
+					RedHat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					RedHat Enterprise Linux  5.4<br/>
+					
+				
+					RedHat Enterprise Linux  5.3.z server<br/>
+					
+				
+					RedHat Enterprise Linux  5.2.z server<br/>
+					
+				
+					RedHat Enterprise Linux  5.1<br/>
+					
+				
+					RedHat Enterprise Linux  5 server<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					MandrakeSoft Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					MandrakeSoft Linux Mandrake  2007.1<br/>
+					
+				
+					MandrakeSoft Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					MandrakeSoft Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					GNU tar 1.15.91 <br/>
+					
+				
+					GNU tar 1.15.90 <br/>
+					
+				
+					GNU tar 1.15.1 <br/>
+					
+				
+					GNU tar 1.14.90 <br/>
+					
+				
+					GNU tar 1.13.25 <br/>
+					
+				
+					GNU tar 1.13.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt Qube 3  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 3  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 4  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ XTR  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0 <br/>
+</span>
+					
+				
+					GNU tar 1.13.18 <br/>
+					
+				
+					GNU tar 1.13.17 <br/>
+					
+				
+					GNU tar 1.13.16 <br/>
+					
+				
+					GNU tar 1.13.14 <br/>
+					
+				
+					GNU tar 1.13.11 <br/>
+					
+				
+					GNU tar 1.13.5 <br/>
+					
+				
+					GNU tar 1.13 <br/>
+					
+				
+					GNU tar  1.16<br/>
+					
+				
+					GNU tar  1.15<br/>
+					
+				
+					GNU tar  1.14<br/>
+					
+				
+					GNU cpio 2.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 2006.0  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 2006.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 10.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 10.2 <br/>
+</span>
+					
+				
+					GNU cpio 2.5.90 <br/>
+					
+				
+					GNU cpio 2.5 <br/>
+					
+				
+					GNU cpio 2.4.2 <br/>
+					
+				
+					GNU cpio 1.3 <br/>
+					
+				
+					GNU cpio 1.2 <br/>
+					
+				
+					GNU cpio 1.1 <br/>
+					
+				
+					GNU cpio 1.0 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP3<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Voice Portal  3.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ 4.1 <br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya Intuity AUDIX LX  R1.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya Aura System Platform  SP1.1<br/>
+					
+				
+					Avaya Aura System Platform  1.1<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.6 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.5 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.4 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun OpenSolaris  build snv_116<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x27000/26445/26445.c">#exploit_26445.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept exploit demonstrates this issue:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/26445.c">/data/vulnerabilities/exploits/26445.c</a></li>
+</ul>
+</div>

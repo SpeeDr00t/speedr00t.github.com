@@ -1,0 +1,601 @@
+#SpeeDr00t@Black Falcon<br>#bid26462<p><b><span style="font-size: 18pt;">PCRE Regular Expression Library Multiple Integer and Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26462/info">info</a><br><a href="http://www.securityfocus.com/bid/26462/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26462/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26462/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26462/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26462
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2006-7228<br/>
+				
+					CVE-2006-7227<br/>
+				
+					CVE-2005-4872<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 15 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 15 2008 01:41PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Chris Evans is credited with the discovery of these issues.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESX Server 3.0.2 <br/>
+					
+				
+					VMWare ESX Server 3.0.1 <br/>
+					
+				
+					VMWare ESX Server 2.5.5 patch 4<br/>
+					
+				
+					VMWare ESX Server 2.5.4 patch 15<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10.SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE Linux Openexchange Server  <br/>
+					
+				
+					SuSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE Linux Enterprise Server  10.SP1<br/>
+					
+				
+					SuSE Linux Desktop 1.0 <br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop SDK 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4.6.z<br/>
+					
+				
+					Redhat Enterprise Linux ES  4.5.z<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4.6.z<br/>
+					
+				
+					Redhat Enterprise Linux AS  4.5.z<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					R Foundation R 2.2.1 <br/>
+					
+				
+					PCRE PCRE 6.2 <br/>
+					
+				
+					PCRE PCRE 6.1 <br/>
+					
+				
+					PCRE PCRE 6.0 <br/>
+					
+				
+					PCRE PCRE 5.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core4<br/>
+</span>
+					
+				
+					PCRE PCRE 4.5 <br/>
+					
+				
+					PCRE PCRE 4.4 <br/>
+					
+				
+					PCRE PCRE 3.9 <br/>
+					
+				
+					PCRE PCRE 3.7 <br/>
+					
+				
+					PCRE PCRE 3.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					Kazehakase Kazehakase 0.4.2 <br/>
+					
+				
+					Gentoo x11-libs/goffice 0.6 <br/>
+					
+				
+					Gentoo www-client/kazehakase 0.4.9 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					CHICKEN CHICKEN 3.0 <br/>
+					
+				
+					Avaya SES 3.1.2 <br/>
+					
+				
+					Avaya SES 3.1.1 <br/>
+					
+				
+					Avaya SES  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  MSS 3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  MM3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Communication Manager  4.0<br/>
+					
+				
+					Avaya Communication Manager  3.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager  3.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya CCS 3.1.2 <br/>
+					
+				
+					Avaya CCS 3.1.1 <br/>
+					
+				
+					Avaya CCS  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.0.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya AES  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					R Foundation R  2.2.1-r1<br/>
+					
+				
+					PCRE PCRE  7.3<br/>
+					
+				
+					PCRE PCRE  6.7<br/>
+					
+				
+					Gentoo x11-libs/goffice 0.6.1 <br/>
+					
+				
+					Gentoo www-client/kazehakase 0.5 <br/>
+					
+				
+					CHICKEN CHICKEN 3.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits for this issue. If you feel we are in error or if you are aware of more recent information, please mail us at:   vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

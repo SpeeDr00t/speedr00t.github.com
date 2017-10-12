@@ -1,0 +1,859 @@
+#SpeeDr00t@Black Falcon<br>#bid23021<p><b><span style="font-size: 18pt;">File(1) Command File_PrintF Integer Underflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/23021/info">info</a><br><a href="http://www.securityfocus.com/bid/23021/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/23021/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/23021/solution">solution</a><br><a href="http://www.securityfocus.com/bid/23021/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				23021
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-1536 <br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 19 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 08:14AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jean-Sebastien Guay-Leroux discovered this vulnerability. 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux wizpy  0<br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					Turbolinux Turbolinux Desktop 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux  FUJI<br/>
+					
+				
+					Turbolinux Turbolinux  10 F...<br/>
+					
+				
+					TurboLinux Personal  <br/>
+					
+				
+					TurboLinux Multimedia  <br/>
+					
+				
+					Turbolinux Home  <br/>
+					
+				
+					Turbolinux FUJI  0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  10<br/>
+					
+				
+					SuSE Linux Professional  10.2 x86_64<br/>
+					
+				
+					SuSE Linux Personal  10.2 x86_64<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux 8.1 <br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Standard Server 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server 9.0 <br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux Desktop  10<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Desktop 4.0 <br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					Pardus Linux  2007.1<br/>
+					
+				
+					OpenBSD OpenBSD  4.0<br/>
+					
+				
+					NetBSD NetBSD 3.0.2 <br/>
+					
+				
+					NetBSD NetBSD 3.0.1 <br/>
+					
+				
+					NetBSD NetBSD 2.1 <br/>
+					
+				
+					NetBSD NetBSD 2.0 <br/>
+					
+				
+					NetBSD NetBSD  Current<br/>
+					
+				
+					NetBSD NetBSD  3.1<br/>
+					
+				
+					Navision Financials Server 3.0 <br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0  x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake 2006.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD 6.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.2<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.0 -RELEASE-p5<br/>
+					
+				
+					file file 4.13 <br/>
+					
+				
+					file file 4.12 <br/>
+					
+				
+					file file 4.11 <br/>
+					
+				
+					file file 4.10 <br/>
+					
+				
+					file file 4.9 <br/>
+					
+				
+					file file 4.8 <br/>
+					
+				
+					file file 4.7 <br/>
+					
+				
+					file file 4.6 <br/>
+					
+				
+					file file 4.5 <br/>
+					
+				
+					file file 4.4 <br/>
+					
+				
+					file file 4.3 <br/>
+					
+				
+					file file 4.2 <br/>
+					
+				
+					file file 4.1 <br/>
+					
+				
+					file file 4.0 <br/>
+					
+				
+					file file 3.41 <br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					file file 3.40 <br/>
+					
+				
+					file file 3.39 <br/>
+					
+				
+					file file 3.37 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.3 <br/>
+</span>
+					
+				
+					file file 3.36 <br/>
+					
+				
+					file file 3.35 <br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2  i586<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+					
+				
+					file file 3.34 <br/>
+					
+				
+					file file 3.33 <br/>
+					
+				
+					file file 3.32 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					file file 3.30 <br/>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.0  i686<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.0 <br/>
+</span>
+					
+				
+					file file 3.28 <br/>
+					
+				
+					file file  4.19<br/>
+					
+				
+					file file  4.18<br/>
+					
+				
+					file file  4.17<br/>
+					
+				
+					file file  4.16<br/>
+					
+				
+					file file  4.15<br/>
+					
+				
+					file file  4.14<br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Avaya Messaging Storage Server  MM3.0<br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Intuity  LX 2.0<br/>
+					
+				
+					Avaya Intuity  LX<br/>
+					
+				
+					Avaya Integrated Management 2.1 <br/>
+					
+				
+					Avaya Integrated Management  <br/>
+					
+				
+					Avaya EMMC  0<br/>
+					
+				
+					Avaya Communication Manager  4.0<br/>
+					
+				
+					Avaya Communication Manager  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.0<br/>
+					
+				
+					Apple Mac OS X Server 10.4.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X 10.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.9 <br/>
+					
+				
+					Apple Mac OS X 10.3.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.7 <br/>
+					
+				
+					Apple Mac OS X 10.3.6 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.2 <br/>
+					
+				
+					Apple Mac OS X 10.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					file file  4.20<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x24000/23021/23021.c">#exploit_23021.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, an attacker must entice an unsuspecting user to run the command on a maliciously crafted file.<br/><br/>The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/23021.c">/data/vulnerabilities/exploits/23021.c</a></li>
+</ul>
+</div>

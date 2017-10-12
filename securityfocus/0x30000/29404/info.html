@@ -1,0 +1,619 @@
+#SpeeDr00t@Black Falcon<br>#bid29404<p><b><span style="font-size: 18pt;">Samba 'receive_smb_raw()' Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/29404/info">info</a><br><a href="http://www.securityfocus.com/bid/29404/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/29404/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/29404/solution">solution</a><br><a href="http://www.securityfocus.com/bid/29404/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				29404
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-1105<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 28 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 12 2015 07:48PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Alin Rad Pop, Secunia Research
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xerox WorkCentre Pro  275<br/>
+					
+				
+					Xerox WorkCentre Pro  265<br/>
+					
+				
+					Xerox WorkCentre Pro  255<br/>
+					
+				
+					Xerox WorkCentre Pro  245<br/>
+					
+				
+					Xerox WorkCentre Pro  238<br/>
+					
+				
+					Xerox WorkCentre Pro  232<br/>
+					
+				
+					Xerox WorkCentre 7675  0<br/>
+					
+				
+					Xerox WorkCentre 7665  0<br/>
+					
+				
+					Xerox WorkCentre 7655  0<br/>
+					
+				
+					Xerox WorkCentre  5687<br/>
+					
+				
+					Xerox WorkCentre  5675<br/>
+					
+				
+					Xerox WorkCentre  5665<br/>
+					
+				
+					Xerox WorkCentre  5655<br/>
+					
+				
+					Xerox WorkCentre  5645<br/>
+					
+				
+					Xerox WorkCentre  5635<br/>
+					
+				
+					Xerox WorkCentre  5623<br/>
+					
+				
+					Xerox WorkCentre  275<br/>
+					
+				
+					Xerox WorkCentre  265<br/>
+					
+				
+					Xerox WorkCentre  255<br/>
+					
+				
+					Xerox WorkCentre  245<br/>
+					
+				
+					Xerox WorkCentre  238<br/>
+					
+				
+					Xerox WorkCentre  232<br/>
+					
+				
+					VMWare ESX Server 3.0.2 <br/>
+					
+				
+					VMWare ESX Server 3.0.1 <br/>
+					
+				
+					VMWare ESX Server 2.5.5 <br/>
+					
+				
+					VMWare ESX Server 2.5.4 <br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  11 x64<br/>
+					
+				
+					Turbolinux Turbolinux Server  11<br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					Turbolinux FUJI  0<br/>
+					
+				
+					Turbolinux Appliance Server  3.0 x64<br/>
+					
+				
+					Turbolinux Appliance Server  3.0<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10.SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Samba Samba 3.0.29 <br/>
+					
+				
+					Samba Samba 3.0.28 a<br/>
+					
+				
+					Samba Samba 3.0.28 <br/>
+					
+				
+					Samba Samba  3.0.26a<br/>
+					
+				
+					Samba Samba  3.0.23d<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0<br/>
+</span>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					rPath Appliance Platform Linux Service  1<br/>
+					
+				
+					Redhat Fedora  7<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4.5.z<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4.5.z<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Nortel Networks Self-Service Peri Workstation  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Application  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 1000  0<br/>
+					
+				
+					Nortel Networks Self-Service - CCSS7  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP CIFS Server  A.2.03<br/>
+					
+				
+					HP CIFS Server  A.02.02<br/>
+					
+				
+					HP CIFS Server  A.02.01<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Samba Samba 3.0.30 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 amd64<br/>
+</span>
+					
+				
+					HP CIFS Server  A.02.03.04<br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x30000/29404/29404.pl">#exploit_29404.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/29404.pl">/data/vulnerabilities/exploits/29404.pl</a></li>
+</ul>
+</div>

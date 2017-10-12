@@ -1,0 +1,117 @@
+#SpeeDr00t@Black Falcon<br>#bid25803<p><b><span style="font-size: 18pt;">JSPWiki Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/25803/info">info</a><br><a href="http://www.securityfocus.com/bid/25803/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/25803/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/25803/solution">solution</a><br><a href="http://www.securityfocus.com/bid/25803/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				25803
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-5120<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 25 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:35PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jason Kratzer is credited with the discovery of these issues.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					JSPWiki JSPWiki 2.5.139 Beta<br/>
+					
+				
+					JSPWiki JSPWiki 2.4.103 <br/>
+					
+				
+					JSPWiki JSPWiki 2.1.123 <br/>
+					
+				
+					JSPWiki JSPWiki 2.1.122 <br/>
+					
+				
+					JSPWiki JSPWiki 2.1.121 <br/>
+					
+				
+					JSPWiki JSPWiki 2.1.120 <br/>
+					
+				
+					JSPWiki JSPWiki  2.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					JSPWiki JSPWiki 2.4.104 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers may exploit these issues through a browser. To exploit a cross-site scripting issue, an attacker must entice an unsuspecting victim into following a malicious URI.<br/><br/>The following  URIs demonstrate the cross-site scripting issues:<br/><br/>http://www.example.com/wiki/NewGroup.jsp?group=XSS<br/>http://www.example.com/wiki/Edit.jsp?page=Main&amp;amp;action=save&amp;amp;edittime=1186698299838&amp;amp;addr=127.0.0.1&amp;amp;_editedtext=XSS&amp;amp;changenote=XSS&amp;amp;ok=Save<br/>http://www.example.com/wiki/Comment.jsp?page=Main&amp;amp;action=save&amp;amp;edittime=1186698386737&amp;amp;addr=127.0.0.1&amp;amp;_editedtext=XSS&amp;amp;author=AnonymousCoward&amp;amp;link=&amp;amp;ok=Save<br/>http://www.example.com/wiki/UserPreferences.jsp?tab=profile&amp;amp;loginname=XSS&amp;amp;password=test&amp;amp;password2=test&amp;amp;wikiname=XSS&amp;amp;fullname=XSS&amp;amp;email=XSS&amp;amp;ok=Save+profile&amp;amp;action=saveProfile<br/>http://www.example.com/wiki/Login.jsp?tab=profile&amp;amp;loginname=XSS&amp;amp;password=Test&amp;amp;password2=Test&amp;amp;wikiname=XSS&amp;amp;fullname=XSS&amp;amp;email=XSS&amp;amp;ok=Save+profile&amp;amp;action=saveProfile<br/>http://www.example.com/wiki/Diff.jsp?page=Administrator&amp;amp;r1=XSS&amp;amp;r2=XSS
+	
+		<ul>
+</ul>
+</div>

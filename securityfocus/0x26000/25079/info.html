@@ -1,0 +1,371 @@
+#SpeeDr00t@Black Falcon<br>#bid25079<p><b><span style="font-size: 18pt;">T1lib intT1_Env_GetCompletePath Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/25079/info">info</a><br><a href="http://www.securityfocus.com/bid/25079/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/25079/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/25079/solution">solution</a><br><a href="http://www.securityfocus.com/bid/25079/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				25079
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-4033<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 26 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 08:09AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				r0ut3r &lt;writ3r@gmail.com&gt; is credited with the discovery of this vulnerability in PHP. Hamid Ebadi &lt;ebadi@bugtraq.ir&gt; discovered the underlying issue in T1lib. Kaveh Razavi &lt;razavi@bugtraq.ir&gt; provided further vulnerability research. 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  7.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					T1lib T1lib  0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10.SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10<br/>
+					
+				
+					SuSE Linux Desktop  10<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2 X86 64<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2 X86 64<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					Redhat Fedora  Core7<br/>
+					
+				
+					Redhat Fedora  7<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					pTeX pTeX 3.1.10 <br/>
+					
+				
+					PHP PHP 5.2.3 <br/>
+					
+				
+					PHP PHP 5.2.2 <br/>
+					
+				
+					PHP PHP 4.4.7 <br/>
+<span class="related">
+						
+							-
+						
+						Slackware Linux 10.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Slackware Linux  11.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Slackware Linux  -current<br/>
+</span>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Foresight Linux Foresight Linux  1.1<br/>
+					
+				
+					CSTeX cstetex 2.0.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x26000/25079/25079.php">#exploit_25079.php</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept exploit for PHP is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/25079.php">/data/vulnerabilities/exploits/25079.php</a></li>
+</ul>
+</div>

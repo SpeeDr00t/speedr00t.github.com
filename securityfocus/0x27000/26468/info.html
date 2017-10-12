@@ -1,0 +1,928 @@
+#SpeeDr00t@Black Falcon<br>#bid26468<p><b><span style="font-size: 18pt;">Microsoft Jet Database Engine MDB File Parsing Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26468/info">info</a><br><a href="http://www.securityfocus.com/bid/26468/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26468/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26468/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26468/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26468
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-6026<br/>
+				
+					CVE-2008-1092<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 16 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 06:19PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				cocoruder is credited with the discovery of this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Nortel Networks Self-Service WVADS  0<br/>
+					
+				
+					Nortel Networks Self-Service Speech Server  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Workstation  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Application  0<br/>
+					
+				
+					Nortel Networks Self-Service CCXML  0<br/>
+					
+				
+					Nortel Networks Self-Service - CCSS7  0<br/>
+					
+				
+					Nortel Networks Self Service VoiceXML  0<br/>
+					
+				
+					Nortel Networks Media Processing Svr 500 Rel  3.0<br/>
+					
+				
+					Nortel Networks Media Processing Svr 1000 Rel  3.0<br/>
+					
+				
+					Nortel Networks Media Processing Svr 100  0<br/>
+					
+				
+					Nortel Networks Centrex IP Client Manager  9.0<br/>
+					
+				
+					Nortel Networks Centrex IP Client Manager  10.0<br/>
+					
+				
+					Microsoft Word 2007  SP1<br/>
+					
+				
+					Microsoft Word 2007  0<br/>
+					
+				
+					Microsoft Word 2003  SP3<br/>
+					
+				
+					Microsoft Word 2003  SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2003  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2003  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2003  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2003  0<br/>
+</span>
+					
+				
+					Microsoft Word 2002  SP3<br/>
+					
+				
+					Microsoft Word 2000  SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft JET  4.0 SP7<br/>
+					
+				
+					Microsoft JET  4.0 SP6<br/>
+					
+				
+					Microsoft JET  4.0 SP5<br/>
+					
+				
+					Microsoft JET  4.0 SP4<br/>
+					
+				
+					Microsoft JET  4.0 SP3<br/>
+					
+				
+					Microsoft JET  4.0 SP2<br/>
+					
+				
+					Microsoft JET  4.0 SP1<br/>
+					
+				
+					Microsoft JET  4.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2000  <br/>
+</span>
+					
+				
+					Microsoft JET  3.51 SP3<br/>
+					
+				
+					Microsoft JET  3.51<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 97  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 97  <br/>
+</span>
+					
+				
+					Microsoft JET  3.5<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 97  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 97  <br/>
+</span>
+					
+				
+					Microsoft JET  3.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 95  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 95  <br/>
+</span>
+					
+				
+					Microsoft JET  2.5<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2.0  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2.0  SP1<br/>
+</span>
+					
+				
+					Microsoft JET  2.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2.0  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2.0  <br/>
+</span>
+					
+				
+					Microsoft Access 2003  <br/>
+					
+				
+					Microsoft Access 2002  SP2<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft Access 2002  SP1<br/>
+					
+				
+					Microsoft Access 2002  <br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office XP  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft Access 2000  SR1<br/>
+					
+				
+					Microsoft Access 2000  SP3<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft Access 2000  SP2<br/>
+					
+				
+					Microsoft Access 2000  <br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 95  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+					
+				
+					HP Storage Management Appliance  III<br/>
+					
+				
+					HP Storage Management Appliance  II<br/>
+					
+				
+					HP Storage Management Appliance  I<br/>
+					
+				
+					HP Storage Management Appliance  2.1<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  III<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  II<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  I<br/>
+</span>
+					
+				
+					Avaya Messaging Application Server  MM 3.1<br/>
+					
+				
+					Avaya Messaging Application Server  MM 3.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 2.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 1.1<br/>
+					
+				
+					Avaya Messaging Application Server  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x27000/26468/26468.mdb">#exploit_26468.mdb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, an attacker must entice a user into opening a malicious file.<br/><br/>UPDATE: Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. <br/><br/>There are reports that this vulnerability is being actively exploited in the wild. These attacks are using malicious Word files to load Jet database files.<br/><br/>The following exploit is available. Symantec has not verified this exploit.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/26468.mdb">/data/vulnerabilities/exploits/26468.mdb</a></li>
+</ul>
+</div>

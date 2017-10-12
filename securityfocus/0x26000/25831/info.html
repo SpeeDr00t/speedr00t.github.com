@@ -1,0 +1,1062 @@
+#SpeeDr00t@Black Falcon<br>#bid25831<p><b><span style="font-size: 18pt;">OpenSSL SSL_Get_Shared_Ciphers Off-by-One Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/25831/info">info</a><br><a href="http://www.securityfocus.com/bid/25831/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/25831/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/25831/solution">solution</a><br><a href="http://www.securityfocus.com/bid/25831/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				25831
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-5135<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 27 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:19AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Moritz Jodeit &lt;moritz@jodeit.org&gt; discovered this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare Workstation for Linux  0<br/>
+					
+				
+					VMWare Workstation 6.0.4 build 93057<br/>
+					
+				
+					VMWare Workstation 6.0.4 <br/>
+					
+				
+					VMWare Workstation 6.0.3 Build 80004<br/>
+					
+				
+					VMWare Workstation 6.0.3 <br/>
+					
+				
+					VMWare Workstation 6.0.2 <br/>
+					
+				
+					VMWare Workstation 6.0.1 <br/>
+					
+				
+					VMWare Workstation 6.0 <br/>
+					
+				
+					VMWare Workstation 5.5.7 build 91707<br/>
+					
+				
+					VMWare Workstation 5.5.7 <br/>
+					
+				
+					VMWare Workstation 5.5.6 Build 80404<br/>
+					
+				
+					VMWare Workstation 5.5.6 <br/>
+					
+				
+					VMWare Workstation 5.5.5 <br/>
+					
+				
+					VMWare Workstation 5.5.4 build 44386<br/>
+					
+				
+					VMWare Workstation 5.5.4 <br/>
+					
+				
+					VMWare Workstation 5.5.3 build 42958<br/>
+					
+				
+					VMWare Workstation 5.5.3 build 34685<br/>
+					
+				
+					VMWare Workstation 5.5.1 Build 19175<br/>
+					
+				
+					VMWare Workstation 5.5.1 <br/>
+					
+				
+					VMWare Workstation 5.5 <br/>
+					
+				
+					VMWare Workstation 5.0 .0 build-13124<br/>
+					
+				
+					VMWare Workstation 4.5.2 <br/>
+					
+				
+					VMWare Workstation 4.0.2 <br/>
+					
+				
+					VMWare Workstation 4.0.1 <br/>
+					
+				
+					VMWare Workstation 4.0 <br/>
+					
+				
+					VMWare Workstation 3.4 <br/>
+					
+				
+					VMWare Workstation 3.2.1 patch 1<br/>
+					
+				
+					VMWare Workstation  0<br/>
+					
+				
+					VMWare VirtualCenter client   2.0.1 Patch 1<br/>
+					
+				
+					VMWare Server for Linux  0<br/>
+					
+				
+					VMWare Server Console 1.0.5 build 80187<br/>
+					
+				
+					VMWare Server 1.0.6 build 91891<br/>
+					
+				
+					VMWare Server 1.0.6 <br/>
+					
+				
+					VMWare Server 1.0.5 Build 80187<br/>
+					
+				
+					VMWare Server 1.0.5 <br/>
+					
+				
+					VMWare Server 1.0.4 <br/>
+					
+				
+					VMWare Server 1.0.3 <br/>
+					
+				
+					VMWare Server 1.0.2 <br/>
+					
+				
+					VMWare Server  RC-1<br/>
+					
+				
+					VMWare Server  Beta<br/>
+					
+				
+					VMWare Player for Linux   0<br/>
+					
+				
+					VMWare Player 2.0.4 build 93057<br/>
+					
+				
+					VMWare Player 2.0.4 <br/>
+					
+				
+					VMWare Player 2.0.3 Build 80004<br/>
+					
+				
+					VMWare Player 2.0.2 <br/>
+					
+				
+					VMWare Player 2.0.1 <br/>
+					
+				
+					VMWare Player 2.0 <br/>
+					
+				
+					VMWare Player 1.0.7 build 91707<br/>
+					
+				
+					VMWare Player 1.0.6 Build 80404<br/>
+					
+				
+					VMWare Player 1.0.6 <br/>
+					
+				
+					VMWare Player 1.0.5 <br/>
+					
+				
+					VMWare Player 1.0.4 <br/>
+					
+				
+					VMWare Player 1.0.3 <br/>
+					
+				
+					VMWare Player 1.0.2 <br/>
+					
+				
+					VMWare Player 1.0.1  Build 19317<br/>
+					
+				
+					VMWare Player  <br/>
+					
+				
+					VMWare Fusion 1.1.2 <br/>
+					
+				
+					VMWare Fusion 1.1.1 <br/>
+					
+				
+					VMWare Fusion 1.1 <br/>
+					
+				
+					VMWare Fusion  1.1.2 build 87978<br/>
+					
+				
+					VMWare Fusion  1.0<br/>
+					
+				
+					VMWare ESXi Server  3.5<br/>
+					
+				
+					VMWare ESX Server 3.0.2 <br/>
+					
+				
+					VMWare ESX Server 3.0.1 <br/>
+					
+				
+					VMWare ESX Server 2.5.5 patch 2<br/>
+					
+				
+					VMWare ESX Server 2.5.5 <br/>
+					
+				
+					VMWare ESX Server 2.5.4 patch 13<br/>
+					
+				
+					VMWare ESX Server 2.5.4 <br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					VMWare ACE 2.0.3 <br/>
+					
+				
+					VMWare ACE 2.0.2 build 93057<br/>
+					
+				
+					VMWare ACE 2.0.2 <br/>
+					
+				
+					VMWare ACE 2.0.1 <br/>
+					
+				
+					VMWare ACE 2.0 <br/>
+					
+				
+					VMWare ACE 1.0.5 <br/>
+					
+				
+					VMWare ACE 1.0.4 <br/>
+					
+				
+					VMWare ACE 1.0.3 <br/>
+					
+				
+					VMWare ACE 1.0.2  Build 19206<br/>
+					
+				
+					VMWare ACE 1.0.2 <br/>
+					
+				
+					VMWare ACE 1.0 <br/>
+					
+				
+					VMWare ACE  1.0.5 build 79846<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					TurboLinux Personal  <br/>
+					
+				
+					TurboLinux Multimedia  <br/>
+					
+				
+					Turbolinux FUJI  0<br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10.SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  10<br/>
+					
+				
+					SuSE openSUSE  10.3<br/>
+					
+				
+					SuSE Linux Professional  10.2 x86_64<br/>
+					
+				
+					SuSE Linux Personal  10.2 x86_64<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Standard Server 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux Desktop  10<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux WS  3<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  3<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1<br/>
+					
+				
+					RedHat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					RedHat Desktop 4.0 <br/>
+					
+				
+					RedHat Desktop 3.0 <br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Red Hat Fedora  Core7<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux AS  3<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Red Hat Enterprise Linux AS  2.1<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 e<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 d<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 c<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 b<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 a<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 m<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 l<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 k<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 j<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 i<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 h<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 g<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 f<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 e<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 d<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 c<br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux  -current<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta3<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta2<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 beta1<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 b<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 a<br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL 0.9.7 <br/>
+					
+				
+					OpenBSD OpenBSD  4.0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Workstation  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Application  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 1000  0<br/>
+					
+				
+					Nortel Networks Self-Service Media Processing Server  0<br/>
+					
+				
+					Nortel Networks Self-Service - Peri Application Rel  3.0<br/>
+					
+				
+					Nortel Networks Self-Service - CCSS7  0<br/>
+					
+				
+					Nortel Networks Self-Service  0<br/>
+					
+				
+					NetBSD NetBSD 3.0.2 <br/>
+					
+				
+					NetBSD NetBSD 3.0.1 <br/>
+					
+				
+					NetBSD NetBSD  3.1<br/>
+					
+				
+					Navision Financials Server 3.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD 6.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.2<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.0 -RELEASE-p5<br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Avaya Interactive Response  3.0<br/>
+					
+				
+					Avaya Interactive Response  2.0<br/>
+					
+				
+					Avaya EMMC  1.021<br/>
+					
+				
+					Avaya EMMC  1.017<br/>
+					
+				
+					Avaya Communication Manager  3.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya CCS  3.1<br/>
+					
+				
+					Avaya CCS  3.0<br/>
+					
+				
+					Avaya CCS  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.4 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.0<br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.10 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X 10.4.10 <br/>
+					
+				
+					Apple Mac OS X 10.4.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X 10.4 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSL Project OpenSSL  0.9.8 f<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits for this issue. If you feel we are in error or if you are aware of more recent information, please mail us at:   vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

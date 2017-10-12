@@ -1,0 +1,841 @@
+#SpeeDr00t@Black Falcon<br>#bid26861<p><b><span style="font-size: 18pt;">Hitachi Web Server 'imagemap' Cross-Site Scripting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26861/info">info</a><br><a href="http://www.securityfocus.com/bid/26861/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26861/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26861/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26861/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26861
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 13 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2010 07:17PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor disclosed this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Hitachi Web Server  03-10-01 (Windows)<br/>
+					
+				
+					Hitachi Web Server  03-10 (Windows)<br/>
+					
+				
+					Hitachi Web Server  03-10 (Linux)<br/>
+					
+				
+					Hitachi Web Server  03-10 (AIX)<br/>
+					
+				
+					Hitachi Web Server  03-00-03 (Windows)<br/>
+					
+				
+					Hitachi Web Server  03-00-01 (Linux)<br/>
+					
+				
+					Hitachi Web Server  03-00-01 (Linux IPF)<br/>
+					
+				
+					Hitachi Web Server  03-00-01 (AIX)<br/>
+					
+				
+					Hitachi Web Server  03-00 (Windows)<br/>
+					
+				
+					Hitachi Web Server  03-00 (Solaris)<br/>
+					
+				
+					Hitachi Web Server  03-00 (Linux)<br/>
+					
+				
+					Hitachi Web Server  03-00 (Linux IPF)<br/>
+					
+				
+					Hitachi Web Server  03-00 (HP-UX)<br/>
+					
+				
+					Hitachi Web Server  03-00 (HP-UX IPF)<br/>
+					
+				
+					Hitachi Web Server  03-00 (AIX)<br/>
+					
+				
+					Hitachi Web Server  02-06-/A (Linux)<br/>
+					
+				
+					Hitachi Web Server  02-04-/D (Windows)<br/>
+					
+				
+					Hitachi Web Server  02-04-/C (Linux IPF)<br/>
+					
+				
+					Hitachi Web Server  02-04-/B (Solaris)<br/>
+					
+				
+					Hitachi Web Server  02-04-/B (HP-UX)<br/>
+					
+				
+					Hitachi Web Server  02-04-/B (HP-UX IPF)<br/>
+					
+				
+					Hitachi Web Server  02-04-/B (AIX)<br/>
+					
+				
+					Hitachi Web Server  02-04-/A (Windows IP<br/>
+					
+				
+					Hitachi Web Server  02-03 (Windows IPF)<br/>
+					
+				
+					Hitachi Web Server  02-02 (Linux)<br/>
+					
+				
+					Hitachi Web Server  02-02 (Linux IPF)<br/>
+					
+				
+					Hitachi Web Server  02-02 (HP-UX IPF)<br/>
+					
+				
+					Hitachi Web Server  02-00-/A (Linux)<br/>
+					
+				
+					Hitachi Web Server  02-00 (Windows)<br/>
+					
+				
+					Hitachi Web Server  02-00 (Solaris)<br/>
+					
+				
+					Hitachi Web Server  02-00 (Linux)<br/>
+					
+				
+					Hitachi Web Server  02-00 (Linux AP8000)<br/>
+					
+				
+					Hitachi Web Server  02-00 (HP-UX)<br/>
+					
+				
+					Hitachi Web Server  02-00 (AIX)<br/>
+					
+				
+					Hitachi Web Server  01-02-/E (AIX)<br/>
+					
+				
+					Hitachi Web Server  01-02-/D (Solaris)<br/>
+					
+				
+					Hitachi Web Server  01-02-/D (HP-UX)<br/>
+					
+				
+					Hitachi Web Server  01-02 (AIX)<br/>
+					
+				
+					Hitachi Web Server  01-01-/D (Linux)<br/>
+					
+				
+					Hitachi Web Server  01-01 (Linux)<br/>
+					
+				
+					Hitachi Web Server  01-01 (Linux MP)<br/>
+					
+				
+					Hitachi Web Server  01-00 (Solaris)<br/>
+					
+				
+					Hitachi Web Server  01-00 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  7<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-20-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-20 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10-06 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10-06 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10-01 (Linux(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00-12 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00-03 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00-03 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  0<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  7<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-20-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-20 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-10-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-10 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-00-03 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-00-03 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  0<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  7<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  6.7<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  0<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  7<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  6.7<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  0<br/>
+					
+				
+					Hitachi uCosminexus Developer Light  6.7<br/>
+					
+				
+					Hitachi uCosminexus Developer Light  0<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-20-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-20 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-10-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-10 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-00-03 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-00-03 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Developer  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  Version 6<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  7<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  6.7<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-50-01 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-50-01 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10-01 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00-03 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00-02 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00-01 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72-/G(HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72-/D (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72-/C (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72-/B(*1) (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72(*1) (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-71-/B (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-71 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/D (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/C (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/B(Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/B(*1) (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/B (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/B (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/B (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/A (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/A (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  02-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  0<br/>
+					
+				
+					Hitachi uCosminexus Application Server Smart Edition  0<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  Version 6<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  7<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  6.7<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  09-80 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-50-01 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-50-01 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10-1 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10-08 (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10-06 (Linux(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10-01 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00-12 (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00-03 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00-02 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00-01 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-72-/G(HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-72-/B(Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-72-/B (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-72(*1) (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71-/C (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71-/B (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71-/B (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/G(HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/D (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/B(Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/B(HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/B(*1) (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/B (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/B (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/A (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/A (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  02-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  02-00<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-50-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-50 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-20-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-20 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-08 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-08 (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-06 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-06 (Linux(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-06 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-01 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-01 (Linux(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10-01 (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-10 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-12 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-12 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-12 (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-12 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-03 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-03 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-01 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00-01 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server  07-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-71-/D (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-71-/D (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-71-/C (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/J (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/I (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/E (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/D (Windows<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/D (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/D (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/C (Linux(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  06-70-/C (HP-UX)<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Hitachi Web Server  03-10-03 (Windows)<br/>
+					
+				
+					Hitachi Web Server  03-10-01 (Linux)<br/>
+					
+				
+					Hitachi Web Server  03-10-01 (AIX)<br/>
+					
+				
+					Hitachi Web Server  03-00-05 (AIX)<br/>
+					
+				
+					Hitachi Web Server  03-00-04 (Windows)<br/>
+					
+				
+					Hitachi Web Server  03-00-02 (Linux)<br/>
+					
+				
+					Hitachi Web Server  03-00-02 (Linux IPF)<br/>
+					
+				
+					Hitachi Web Server  03-00-02 (AIX)<br/>
+					
+				
+					Hitachi Web Server  02-06-/B (Linux)<br/>
+					
+				
+					Hitachi Web Server  02-04-/E (Windows)<br/>
+					
+				
+					Hitachi Web Server  02-04-/C (Solaris)<br/>
+					
+				
+					Hitachi Web Server  02-04-/C (HP-UX)<br/>
+					
+				
+					Hitachi Web Server  02-04-/C (HP-UX IPF)<br/>
+					
+				
+					Hitachi Web Server  02-04-/C (AIX)<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An  attacker can exploit this issue by enticing an unsuspecting user to  follow a malicious URI.
+	
+		<ul>
+</ul>
+</div>

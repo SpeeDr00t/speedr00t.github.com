@@ -1,0 +1,906 @@
+#SpeeDr00t@Black Falcon<br>#bid25628<p><b><span style="font-size: 18pt;">OpenSSH X11 Cookie Local Authentication Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/25628/info">info</a><br><a href="http://www.securityfocus.com/bid/25628/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/25628/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/25628/solution">solution</a><br><a href="http://www.securityfocus.com/bid/25628/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				25628
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-4752 <br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 04 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 14 2008 05:37PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jan Pechanec is credited with the discovery and correction of this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  7.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.4.19 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10.SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10<br/>
+					
+				
+					SuSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE Linux Enterprise Server  10.SP1<br/>
+					
+				
+					SuSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE Linux Desktop  10<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux 8.1 <br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. UnitedLinux 1.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux School Server for i386  <br/>
+					
+				
+					S.u.S.E. SUSE LINUX Retail Solution 8.0 <br/>
+					
+				
+					S.u.S.E. SuSE Linux Openexchange Server 4.0 <br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop  9<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2 X86 64<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.2<br/>
+					
+				
+					S.u.S.E. Linux Professional  10.1<br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2 X86 64<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.2<br/>
+					
+				
+					S.u.S.E. Linux Personal  10.1<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  4.5.z<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4.5.z<br/>
+					
+				
+					Redhat Enterprise Linux  5 server<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					OpenSSH OpenSSH  4.6<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					IBM AIX  5.2<br/>
+					
+				
+					HP HP-UX Secure Shell A.04.70.005  0<br/>
+					
+				
+					HP HP-UX Secure Shell A.04.70.004  0<br/>
+					
+				
+					HP HP-UX Secure Shell A.04.70.003  0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					GNOME gnome-ssh-askpass  0<br/>
+					
+				
+					Gentoo Linux  2007.0 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Foresight Linux Foresight Linux  1.1<br/>
+					
+				
+					Cosmicperl Directory Pro 10.0.3 <br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Voice Portal  3.0<br/>
+					
+				
+					Avaya SIP Enablement Services 3.1.2 <br/>
+					
+				
+					Avaya SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Proactive Contact  3.0<br/>
+					
+				
+					Avaya Proactive Contact  0<br/>
+					
+				
+					Avaya Predictive Dialer (PDS)  APC 3.0<br/>
+					
+				
+					Avaya Predictive Dialer  0<br/>
+					
+				
+					Avaya Messaging Storage Server  MSS 3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  MM3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1<br/>
+					
+				
+					Avaya Messaging Storage Server  2.0<br/>
+					
+				
+					Avaya Messaging Storage Server  1.0<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Meeting Exchange - Enterprise Edition  <br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity  AUDIX<br/>
+					
+				
+					Avaya EMMC  1.021<br/>
+					
+				
+					Avaya EMMC  1.017<br/>
+					
+				
+					Avaya EMMC  0<br/>
+					
+				
+					Avaya Communication Manager 4.0.3 SP1<br/>
+					
+				
+					Avaya Communication Manager 3.1.4 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager 2.0.1 <br/>
+					
+				
+					Avaya Communication Manager 2.0 <br/>
+					
+				
+					Avaya Communication Manager 1.3.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server R10  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server R10  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server R11  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server R9  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server R9  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager 1.1 <br/>
+					
+				
+					Avaya Communication Manager  5.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager  5.0 SP3<br/>
+					
+				
+					Avaya Communication Manager  5.0<br/>
+					
+				
+					Avaya Communication Manager  4.0<br/>
+					
+				
+					Avaya Communication Manager  3.1<br/>
+					
+				
+					Avaya Communication Manager  3.0<br/>
+					
+				
+					Avaya Communication Manager  2.2<br/>
+					
+				
+					Avaya Communication Manager  2.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya AES 3.1.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.10 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.0 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X 10.4.10 <br/>
+					
+				
+					Apple Mac OS X 10.4.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X 10.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.9 <br/>
+					
+				
+					Apple Mac OS X 10.3.8 <br/>
+					
+				
+					Apple Mac OS X 10.3.7 <br/>
+					
+				
+					Apple Mac OS X 10.3.6 <br/>
+					
+				
+					Apple Mac OS X 10.3.5 <br/>
+					
+				
+					Apple Mac OS X 10.3.4 <br/>
+					
+				
+					Apple Mac OS X 10.3.3 <br/>
+					
+				
+					Apple Mac OS X 10.3.2 <br/>
+					
+				
+					Apple Mac OS X 10.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.3 <br/>
+					
+				
+					Apple Mac OS X 10.2.8 <br/>
+					
+				
+					Apple Mac OS X 10.2.7 <br/>
+					
+				
+					Apple Mac OS X 10.2.6 <br/>
+					
+				
+					Apple Mac OS X 10.2.5 <br/>
+					
+				
+					Apple Mac OS X 10.2.4 <br/>
+					
+				
+					Apple Mac OS X 10.2.3 <br/>
+					
+				
+					Apple Mac OS X 10.2.2 <br/>
+					
+				
+					Apple Mac OS X 10.2.1 <br/>
+					
+				
+					Apple Mac OS X 10.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.5 <br/>
+					
+				
+					Apple Mac OS X 10.1.4 <br/>
+					
+				
+					Apple Mac OS X 10.1.3 <br/>
+					
+				
+					Apple Mac OS X 10.1.2 <br/>
+					
+				
+					Apple Mac OS X 10.1.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.1 <br/>
+					
+				
+					Apple Mac OS X 10.0.4 <br/>
+					
+				
+					Apple Mac OS X 10.0.3 <br/>
+					
+				
+					Apple Mac OS X 10.0.2 <br/>
+					
+				
+					Apple Mac OS X 10.0.1 <br/>
+					
+				
+					Apple Mac OS X 10.0 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSH OpenSSH  4.7<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Reportedly, by filling the '/tmp' partition, a local attacker may trigger this issue by causing the cookie-creation step in OpenSSH to fail and fall back to using trusted cookies. Symantec has not tested or confirmed this.
+	
+		<ul>
+</ul>
+</div>

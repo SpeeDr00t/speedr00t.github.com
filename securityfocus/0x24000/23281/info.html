@@ -1,0 +1,804 @@
+#SpeeDr00t@Black Falcon<br>#bid23281<p><b><span style="font-size: 18pt;">MIT Kerberos 5 Telnet Daemon Authentication Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/23281/info">info</a><br><a href="http://www.securityfocus.com/bid/23281/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/23281/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/23281/solution">solution</a><br><a href="http://www.securityfocus.com/bid/23281/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				23281
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-0956<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 03 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:38AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux 5.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server 8.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					Turbolinux Turbolinux Desktop 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux  10 F...<br/>
+					
+				
+					TurboLinux Personal  <br/>
+					
+				
+					TurboLinux Multimedia  <br/>
+					
+				
+					Turbolinux Home  <br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					Trustix Secure Linux 3.0.5 <br/>
+					
+				
+					Trustix Secure Linux 3.0 <br/>
+					
+				
+					Trustix Secure Linux 2.2 <br/>
+					
+				
+					Trustix Operating System Enterprise Server  2.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  10<br/>
+					
+				
+					Sun SEAM 1.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  9_x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  9<br/>
+</span>
+					
+				
+					Sun SEAM 1.0.1 <br/>
+					
+				
+					Sun SEAM 1.0 <br/>
+					
+				
+					SGI ProPack 3.0  SP6<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Linux  9.3 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  9.3 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.1 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.1 ppc<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					Pardus Linux  2007.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.4.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.4<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.6<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.5<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.4<br/>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Enterprise Linux AS  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Desktop 4.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Enterprise Linux ES  4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Enterprise Linux WS  4<br/>
+</span>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.3<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.2beta2<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.2beta1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.1.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.0.x<br/>
+					
+				
+					MIT Kerberos 5 1.6 <br/>
+					
+				
+					MIT Kerberos 5 1.5.1 <br/>
+					
+				
+					MIT Kerberos 5 1.5 <br/>
+					
+				
+					MIT Kerberos 5 1.4.3 <br/>
+					
+				
+					MIT Kerberos 5 1.4.2 <br/>
+					
+				
+					MIT Kerberos 5 1.4.1 <br/>
+					
+				
+					MIT Kerberos 5 1.4 <br/>
+					
+				
+					MIT Kerberos 5 1.3.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Fedora  Core2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Fedora  Core1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.3.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.3.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.3.3 <br/>
+					
+				
+					MIT Kerberos 5 1.3.2 <br/>
+					
+				
+					MIT Kerberos 5 1.3.1 <br/>
+					
+				
+					MIT Kerberos 5 1.3 -alpha1<br/>
+					
+				
+					MIT Kerberos 5 1.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0  AMD64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2  amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.8 <br/>
+					
+				
+					MIT Kerberos 5 1.2.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 9.0  i386<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.6 <br/>
+					
+				
+					MIT Kerberos 5 1.2.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux  10 F...<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS  7+<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.3  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.3 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.3 <br/>
+					
+				
+					MIT Kerberos 5 1.2.2 -beta1<br/>
+					
+				
+					MIT Kerberos 5 1.2.2 <br/>
+					
+				
+					MIT Kerberos 5 1.2.1 <br/>
+					
+				
+					MIT Kerberos 5 1.2 <br/>
+					
+				
+					MIT Kerberos 5 1.1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						RedHat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  alpha<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.1 <br/>
+					
+				
+					MIT Kerberos 5 1.0.8 <br/>
+					
+				
+					MIT Kerberos 5 1.0.6 <br/>
+					
+				
+					MIT Kerberos 5 1.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					MIT Kerberos 5 1.6.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#

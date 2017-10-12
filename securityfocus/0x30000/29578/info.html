@@ -1,0 +1,508 @@
+#SpeeDr00t@Black Falcon<br>#bid29578<p><b><span style="font-size: 18pt;">Microsoft DirectX SAMI File Parsing Stack Based Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/29578/info">info</a><br><a href="http://www.securityfocus.com/bid/29578/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/29578/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/29578/solution">solution</a><br><a href="http://www.securityfocus.com/bid/29578/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				29578
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-1444<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 10 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 30 2008 03:47PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				An Anonymous Researcher working with Tipping Point and the Zero Day Initiative
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Nortel Networks Self-Service WVADS  0<br/>
+					
+				
+					Nortel Networks Self-Service Speech Server  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Workstation  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Application  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 500  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 1000  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 100  0<br/>
+					
+				
+					Nortel Networks Self-Service CCXML  0<br/>
+					
+				
+					Nortel Networks Self-Service - CCSS7  0<br/>
+					
+				
+					Nortel Networks Self Service VoiceXML  0<br/>
+					
+				
+					Nortel Networks Multimedia Comm  MCS5100<br/>
+					
+				
+					Nortel Networks Media Processing Server  <br/>
+					
+				
+					Nortel Networks ENSM - Enterprise NMS  10.5<br/>
+					
+				
+					Nortel Networks ENSM - Enterprise NMS  10.4<br/>
+					
+				
+					Nortel Networks Contact Center NCC  0<br/>
+					
+				
+					Nortel Networks Contact Center Manager Server  0<br/>
+					
+				
+					Nortel Networks Contact Center Express  <br/>
+					
+				
+					Nortel Networks Contact Center - TAPI Server  0<br/>
+					
+				
+					Nortel Networks Contact Center - Symposium Agent  0<br/>
+					
+				
+					Nortel Networks Contact Center  <br/>
+					
+				
+					Nortel Networks Centrex IP Client Manager  9.0<br/>
+					
+				
+					Nortel Networks Centrex IP Client Manager  11.0<br/>
+					
+				
+					Nortel Networks Centrex IP Client Manager  10.0<br/>
+					
+				
+					Nortel Networks CallPilot  703t<br/>
+					
+				
+					Nortel Networks CallPilot  702t<br/>
+					
+				
+					Nortel Networks CallPilot  201i<br/>
+					
+				
+					Nortel Networks CallPilot  200i<br/>
+					
+				
+					Nortel Networks CallPilot  1002rp<br/>
+					
+				
+					Nortel Networks CallPilot  1002rp<br/>
+					
+				
+					Microsoft DirectX  8.1<br/>
+					
+				
+					Microsoft DirectX  7.0 a<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows ME  <br/>
+</span>
+					
+				
+					Microsoft DirectX  7.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					HP Storage Management Appliance  III<br/>
+					
+				
+					HP Storage Management Appliance  II<br/>
+					
+				
+					HP Storage Management Appliance  I<br/>
+					
+				
+					HP Storage Management Appliance  2.1<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  III<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  II<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  I<br/>
+</span>
+					
+				
+					HP Storage Management Appliance  2.1<br/>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  III<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  II<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Storage Management Appliance  I<br/>
+</span>
+					
+				
+					Avaya Messaging Application Server  MM 3.1<br/>
+					
+				
+					Avaya Messaging Application Server  MM 3.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 2.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 1.1<br/>
+					
+				
+					Avaya Messaging Application Server  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, please mail us at:   vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

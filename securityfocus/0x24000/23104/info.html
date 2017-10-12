@@ -1,0 +1,925 @@
+#SpeeDr00t@Black Falcon<br>#bid23104<p><b><span style="font-size: 18pt;">Linux Kernel IPv6 TCP Sockets Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/23104/info">info</a><br><a href="http://www.securityfocus.com/bid/23104/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/23104/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/23104/solution">solution</a><br><a href="http://www.securityfocus.com/bid/23104/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				23104
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-1592<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 22 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 21 2011 03:26PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  7.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  9<br/>
+					
+				
+					S.u.S.E. openSUSE  10.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Professional 10.0 <br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Professional 9.3 <br/>
+					
+				
+					S.u.S.E. Linux Personal 10.0  OSS<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 x86_64<br/>
+					
+				
+					S.u.S.E. Linux Personal 9.3 <br/>
+					
+				
+					S.u.S.E. Linux  9.3 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  9.3 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86-64<br/>
+					
+				
+					S.u.S.E. Linux  10.0 x86<br/>
+					
+				
+					S.u.S.E. Linux  10.0 ppc<br/>
+					
+				
+					RedHat Enterprise Linux WS  3<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux WS  2.1<br/>
+					
+				
+					RedHat Enterprise Linux ES  3<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux ES  2.1<br/>
+					
+				
+					RedHat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					RedHat Enterprise Linux AS  3<br/>
+					
+				
+					RedHat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					RedHat Enterprise Linux AS  2.1<br/>
+					
+				
+					RedHat Enterprise Linux  5 server<br/>
+					
+				
+					RedHat Desktop 3.0 <br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+					
+				
+					RedHat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Pardus Linux  2007.1<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Linux kernel 2.6.20 <br/>
+					
+				
+					Linux kernel 2.6.19 .2<br/>
+					
+				
+					Linux kernel 2.6.19 .1<br/>
+					
+				
+					Linux kernel 2.6.19 -rc4<br/>
+					
+				
+					Linux kernel 2.6.19 -rc3<br/>
+					
+				
+					Linux kernel 2.6.19 -rc2<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.19 -rc1<br/>
+					
+				
+					Linux kernel 2.6.18 .4<br/>
+					
+				
+					Linux kernel 2.6.18 .3<br/>
+					
+				
+					Linux kernel 2.6.18 .1<br/>
+					
+				
+					Linux kernel 2.6.17 .9<br/>
+					
+				
+					Linux kernel 2.6.17 .8<br/>
+					
+				
+					Linux kernel 2.6.17 .7<br/>
+					
+				
+					Linux kernel 2.6.17 .6<br/>
+					
+				
+					Linux kernel 2.6.17 .5<br/>
+					
+				
+					Linux kernel 2.6.17 .4<br/>
+					
+				
+					Linux kernel 2.6.17 .3<br/>
+					
+				
+					Linux kernel 2.6.17 .14<br/>
+					
+				
+					Linux kernel 2.6.17 .13<br/>
+					
+				
+					Linux kernel 2.6.17 .12<br/>
+					
+				
+					Linux kernel 2.6.17 .11<br/>
+					
+				
+					Linux kernel 2.6.17 .10<br/>
+					
+				
+					Linux kernel 2.6.17 .1<br/>
+					
+				
+					Linux kernel 2.6.17 -rc5<br/>
+					
+				
+					Linux kernel 2.6.17 <br/>
+					
+				
+					Linux kernel 2.6.16 27<br/>
+					
+				
+					Linux kernel 2.6.16 13<br/>
+					
+				
+					Linux kernel 2.6.16 .9<br/>
+					
+				
+					Linux kernel 2.6.16 .8<br/>
+					
+				
+					Linux kernel 2.6.16 .7<br/>
+					
+				
+					Linux kernel 2.6.16 .5<br/>
+					
+				
+					Linux kernel 2.6.16 .4<br/>
+					
+				
+					Linux kernel 2.6.16 .3<br/>
+					
+				
+					Linux kernel 2.6.16 .23<br/>
+					
+				
+					Linux kernel 2.6.16 .21<br/>
+					
+				
+					Linux kernel 2.6.16 .2<br/>
+					
+				
+					Linux kernel 2.6.16 .19<br/>
+					
+				
+					Linux kernel 2.6.16 .18<br/>
+					
+				
+					Linux kernel 2.6.16 .17<br/>
+					
+				
+					Linux kernel 2.6.16 .16<br/>
+					
+				
+					Linux kernel 2.6.16 .12<br/>
+					
+				
+					Linux kernel 2.6.16 .11<br/>
+					
+				
+					Linux kernel 2.6.16 .1<br/>
+					
+				
+					Linux kernel 2.6.16 -rc1<br/>
+					
+				
+					Linux kernel 2.6.16 <br/>
+					
+				
+					Linux kernel 2.6.15 .6<br/>
+					
+				
+					Linux kernel 2.6.15 .4<br/>
+					
+				
+					Linux kernel 2.6.15 .3<br/>
+					
+				
+					Linux kernel 2.6.15 .2<br/>
+					
+				
+					Linux kernel 2.6.15 .1<br/>
+					
+				
+					Linux kernel 2.6.15 -rc6<br/>
+					
+				
+					Linux kernel 2.6.15 -rc5<br/>
+					
+				
+					Linux kernel 2.6.15 -rc4<br/>
+					
+				
+					Linux kernel 2.6.15 -rc3<br/>
+					
+				
+					Linux kernel 2.6.15 -rc2<br/>
+					
+				
+					Linux kernel 2.6.15 -rc1<br/>
+					
+				
+					Linux kernel 2.6.15 <br/>
+					
+				
+					Linux kernel 2.6.14 .5<br/>
+					
+				
+					Linux kernel 2.6.14 .4<br/>
+					
+				
+					Linux kernel 2.6.14 .3<br/>
+					
+				
+					Linux kernel 2.6.14 .2<br/>
+					
+				
+					Linux kernel 2.6.14 .1<br/>
+					
+				
+					Linux kernel 2.6.14 -rc4<br/>
+					
+				
+					Linux kernel 2.6.14 -rc3<br/>
+					
+				
+					Linux kernel 2.6.14 -rc2<br/>
+					
+				
+					Linux kernel 2.6.14 -rc1<br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.13 .4<br/>
+					
+				
+					Linux kernel 2.6.13 .3<br/>
+					
+				
+					Linux kernel 2.6.13 .2<br/>
+					
+				
+					Linux kernel 2.6.13 .1<br/>
+					
+				
+					Linux kernel 2.6.13 -rc7<br/>
+					
+				
+					Linux kernel 2.6.13 -rc6<br/>
+					
+				
+					Linux kernel 2.6.13 -rc4<br/>
+					
+				
+					Linux kernel 2.6.13 -rc1<br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+					
+				
+					Linux kernel 2.6.12 .6<br/>
+					
+				
+					Linux kernel 2.6.12 .5<br/>
+					
+				
+					Linux kernel 2.6.12 .4<br/>
+					
+				
+					Linux kernel 2.6.12 .3<br/>
+					
+				
+					Linux kernel 2.6.12 .22<br/>
+					
+				
+					Linux kernel 2.6.12 .2<br/>
+					
+				
+					Linux kernel 2.6.12 .12<br/>
+					
+				
+					Linux kernel 2.6.12 .1<br/>
+					
+				
+					Linux kernel 2.6.12 -rc5<br/>
+					
+				
+					Linux kernel 2.6.12 -rc4<br/>
+					
+				
+					Linux kernel 2.6.12 -rc1<br/>
+					
+				
+					Linux kernel 2.6.12 <br/>
+					
+				
+					Linux kernel 2.6.11 .8<br/>
+					
+				
+					Linux kernel 2.6.11 .7<br/>
+					
+				
+					Linux kernel 2.6.11 .6<br/>
+					
+				
+					Linux kernel 2.6.11 .5<br/>
+					
+				
+					Linux kernel 2.6.11 .4<br/>
+					
+				
+					Linux kernel 2.6.11 .12<br/>
+					
+				
+					Linux kernel 2.6.11 .11<br/>
+					
+				
+					Linux kernel 2.6.11 -rc4<br/>
+					
+				
+					Linux kernel 2.6.11 -rc3<br/>
+					
+				
+					Linux kernel 2.6.11 -rc2<br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.10 rc2<br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Red Hat Fedora  Core2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+</span>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.8 rc3<br/>
+					
+				
+					Linux kernel 2.6.8 rc2<br/>
+					
+				
+					Linux kernel 2.6.8 rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.7 rc1<br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 rc1<br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.2 <br/>
+					
+				
+					Linux kernel 2.6.1 -rc2<br/>
+					
+				
+					Linux kernel 2.6.1 -rc1<br/>
+					
+				
+					Linux kernel 2.6.1 <br/>
+					
+				
+					Linux kernel 2.6 .10<br/>
+					
+				
+					Linux kernel 2.6 -test9-CVS<br/>
+					
+				
+					Linux kernel 2.6 -test9<br/>
+					
+				
+					Linux kernel 2.6 -test8<br/>
+					
+				
+					Linux kernel 2.6 -test7<br/>
+					
+				
+					Linux kernel 2.6 -test6<br/>
+					
+				
+					Linux kernel 2.6 -test5<br/>
+					
+				
+					Linux kernel 2.6 -test4<br/>
+					
+				
+					Linux kernel 2.6 -test3<br/>
+					
+				
+					Linux kernel 2.6 -test2<br/>
+					
+				
+					Linux kernel 2.6 -test11<br/>
+					
+				
+					Linux kernel 2.6 -test10<br/>
+					
+				
+					Linux kernel 2.6 -test1<br/>
+					
+				
+					Linux kernel 2.6 <br/>
+					
+				
+					Linux kernel  2.6.8.1<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel  2.6.20-rc2<br/>
+					
+				
+					Linux kernel  2.6.18<br/>
+					
+				
+					Linux kernel  2.6.15.5<br/>
+					
+				
+					Linux kernel  2.6.15.11<br/>
+					
+				
+					Linux kernel  2.6.11.4<br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Avaya SES  2.0<br/>
+					
+				
+					Avaya EMMC  1.017<br/>
+					
+				
+					Avaya Communication Manager 2.0.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager 2.0 <br/>
+					
+				
+					Avaya Communication Manager  3.0<br/>
+					
+				
+					Avaya CCS  3.1<br/>
+					
+				
+					Avaya CCS  3.0<br/>
+					
+				
+					Avaya CCS  2.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

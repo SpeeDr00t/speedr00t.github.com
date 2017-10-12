@@ -1,0 +1,478 @@
+#SpeeDr00t@Black Falcon<br>#bid22933<p><b><span style="font-size: 18pt;">Xine DirectShow Loader Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/22933/info">info</a><br><a href="http://www.securityfocus.com/bid/22933/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/22933/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/22933/solution">solution</a><br><a href="http://www.securityfocus.com/bid/22933/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				22933
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-1387<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 12 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 01 2008 05:29PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Moritz Jodeit is credited with the discovery of this vulnerability. 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					xine xine-lib 1.1.2 <br/>
+					
+				
+					xine xine-lib 1.1.1 <br/>
+					
+				
+					xine xine-lib 1.1 <br/>
+					
+				
+					xine xine-lib 1.0.2 <br/>
+					
+				
+					xine xine-lib 1.0.1 <br/>
+					
+				
+					xine xine-lib 1.0 <br/>
+					
+				
+					xine xine 1.0.1 <br/>
+					
+				
+					xine xine 1.0 <br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux 5.10  amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux wizpy  0<br/>
+					
+				
+					Turbolinux Turbolinux Desktop 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux  FUJI<br/>
+					
+				
+					Turbolinux Turbolinux  10 F...<br/>
+					
+				
+					Turbolinux Home  <br/>
+					
+				
+					Turbolinux FUJI  0<br/>
+					
+				
+					Pardus Linux  2007.1<br/>
+					
+				
+					MPlayer MPlayer 0.92.1 <br/>
+					
+				
+					MPlayer MPlayer 0.92 <br/>
+					
+				
+					MPlayer MPlayer 0.91 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.2 <br/>
+</span>
+					
+				
+					MPlayer MPlayer 0.90 rc series<br/>
+					
+				
+					MPlayer MPlayer 0.90 pre series<br/>
+					
+				
+					MPlayer MPlayer 0.90 <br/>
+					
+				
+					MPlayer MPlayer 0.9 0rc4<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+					
+				
+					MPlayer MPlayer  1.0 -rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0<br/>
+</span>
+					
+				
+					MPlayer MPlayer  1.0<br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0<br/>
+</span>
+					
+				
+					MPlayer MPlayer  0_92 CVS<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, an attacker must entice a victim user to open a malicious media file.<br/> <br/>Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, please mail us at:  vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

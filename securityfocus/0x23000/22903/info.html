@@ -1,0 +1,1413 @@
+#SpeeDr00t@Black Falcon<br>#bid22903<p><b><span style="font-size: 18pt;">Linux Kernel BINFMT_ELF PT_INTERP Local Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/22903/info">info</a><br><a href="http://www.securityfocus.com/bid/22903/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/22903/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/22903/solution">solution</a><br><a href="http://www.securityfocus.com/bid/22903/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				22903
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2007-0958<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 09 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 31 2007 07:15PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Discovery is credited to Paul Starzetz &lt;ihaquer@isec.pl&gt;.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  6.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Pardus Linux  2007.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2007.0<br/>
+					
+				
+					Linux kernel 2.6.19 .2<br/>
+					
+				
+					Linux kernel 2.6.19 .1<br/>
+					
+				
+					Linux kernel 2.6.19 -rc4<br/>
+					
+				
+					Linux kernel 2.6.19 -rc3<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.19 -rc2<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.19 -rc1<br/>
+					
+				
+					Linux kernel 2.6.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.18 .4<br/>
+					
+				
+					Linux kernel 2.6.18 .3<br/>
+					
+				
+					Linux kernel 2.6.18 .1<br/>
+					
+				
+					Linux kernel 2.6.17 .9<br/>
+					
+				
+					Linux kernel 2.6.17 .8<br/>
+					
+				
+					Linux kernel 2.6.17 .7<br/>
+					
+				
+					Linux kernel 2.6.17 .6<br/>
+					
+				
+					Linux kernel 2.6.17 .5<br/>
+					
+				
+					Linux kernel 2.6.17 .4<br/>
+					
+				
+					Linux kernel 2.6.17 .3<br/>
+					
+				
+					Linux kernel 2.6.17 .2<br/>
+					
+				
+					Linux kernel 2.6.17 .14<br/>
+					
+				
+					Linux kernel 2.6.17 .13<br/>
+					
+				
+					Linux kernel 2.6.17 .12<br/>
+					
+				
+					Linux kernel 2.6.17 .11<br/>
+					
+				
+					Linux kernel 2.6.17 .10<br/>
+					
+				
+					Linux kernel 2.6.17 .1<br/>
+					
+				
+					Linux kernel 2.6.17 -rc5<br/>
+					
+				
+					Linux kernel 2.6.17 <br/>
+					
+				
+					Linux kernel 2.6.16 27<br/>
+					
+				
+					Linux kernel 2.6.16 13<br/>
+					
+				
+					Linux kernel 2.6.16 .9<br/>
+					
+				
+					Linux kernel 2.6.16 .8<br/>
+					
+				
+					Linux kernel 2.6.16 .7<br/>
+					
+				
+					Linux kernel 2.6.16 .5<br/>
+					
+				
+					Linux kernel 2.6.16 .4<br/>
+					
+				
+					Linux kernel 2.6.16 .3<br/>
+					
+				
+					Linux kernel 2.6.16 .23<br/>
+					
+				
+					Linux kernel 2.6.16 .21<br/>
+					
+				
+					Linux kernel 2.6.16 .2<br/>
+					
+				
+					Linux kernel 2.6.16 .19<br/>
+					
+				
+					Linux kernel 2.6.16 .18<br/>
+					
+				
+					Linux kernel 2.6.16 .17<br/>
+					
+				
+					Linux kernel 2.6.16 .16<br/>
+					
+				
+					Linux kernel 2.6.16 .12<br/>
+					
+				
+					Linux kernel 2.6.16 .11<br/>
+					
+				
+					Linux kernel 2.6.16 .1<br/>
+					
+				
+					Linux kernel 2.6.16 -rc1<br/>
+					
+				
+					Linux kernel 2.6.16 <br/>
+					
+				
+					Linux kernel 2.6.15 .6<br/>
+					
+				
+					Linux kernel 2.6.15 .4<br/>
+					
+				
+					Linux kernel 2.6.15 .3<br/>
+					
+				
+					Linux kernel 2.6.15 .2<br/>
+					
+				
+					Linux kernel 2.6.15 .1<br/>
+					
+				
+					Linux kernel 2.6.15 -rc6<br/>
+					
+				
+					Linux kernel 2.6.15 -rc5<br/>
+					
+				
+					Linux kernel 2.6.15 -rc4<br/>
+					
+				
+					Linux kernel 2.6.15 -rc3<br/>
+					
+				
+					Linux kernel 2.6.15 -rc2<br/>
+					
+				
+					Linux kernel 2.6.15 -rc1<br/>
+					
+				
+					Linux kernel 2.6.15 <br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.14 .5<br/>
+					
+				
+					Linux kernel 2.6.14 .4<br/>
+					
+				
+					Linux kernel 2.6.14 .3<br/>
+					
+				
+					Linux kernel 2.6.14 .2<br/>
+					
+				
+					Linux kernel 2.6.14 .1<br/>
+					
+				
+					Linux kernel 2.6.14 -rc4<br/>
+					
+				
+					Linux kernel 2.6.14 -rc3<br/>
+					
+				
+					Linux kernel 2.6.14 -rc2<br/>
+					
+				
+					Linux kernel 2.6.14 -rc1<br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.13 .4<br/>
+					
+				
+					Linux kernel 2.6.13 .3<br/>
+					
+				
+					Linux kernel 2.6.13 .2<br/>
+					
+				
+					Linux kernel 2.6.13 .1<br/>
+					
+				
+					Linux kernel 2.6.13 -rc7<br/>
+					
+				
+					Linux kernel 2.6.13 -rc6<br/>
+					
+				
+					Linux kernel 2.6.13 -rc4<br/>
+					
+				
+					Linux kernel 2.6.13 -rc1<br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.12 .6<br/>
+					
+				
+					Linux kernel 2.6.12 .5<br/>
+					
+				
+					Linux kernel 2.6.12 .4<br/>
+					
+				
+					Linux kernel 2.6.12 .3<br/>
+					
+				
+					Linux kernel 2.6.12 .22<br/>
+					
+				
+					Linux kernel 2.6.12 .2<br/>
+					
+				
+					Linux kernel 2.6.12 .12<br/>
+					
+				
+					Linux kernel 2.6.12 .1<br/>
+					
+				
+					Linux kernel 2.6.12 -rc5<br/>
+					
+				
+					Linux kernel 2.6.12 -rc4<br/>
+					
+				
+					Linux kernel 2.6.12 -rc1<br/>
+					
+				
+					Linux kernel 2.6.12 <br/>
+					
+				
+					Linux kernel 2.6.11 .8<br/>
+					
+				
+					Linux kernel 2.6.11 .7<br/>
+					
+				
+					Linux kernel 2.6.11 .6<br/>
+					
+				
+					Linux kernel 2.6.11 .5<br/>
+					
+				
+					Linux kernel 2.6.11 .4<br/>
+					
+				
+					Linux kernel 2.6.11 .12<br/>
+					
+				
+					Linux kernel 2.6.11 .11<br/>
+					
+				
+					Linux kernel 2.6.11 -rc4<br/>
+					
+				
+					Linux kernel 2.6.11 -rc3<br/>
+					
+				
+					Linux kernel 2.6.11 -rc2<br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.10 rc2<br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.8 rc3<br/>
+					
+				
+					Linux kernel 2.6.8 rc2<br/>
+					
+				
+					Linux kernel 2.6.8 rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.7 rc1<br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 rc1<br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.2 <br/>
+					
+				
+					Linux kernel 2.6.1 -rc2<br/>
+					
+				
+					Linux kernel 2.6.1 -rc1<br/>
+					
+				
+					Linux kernel 2.6.1 <br/>
+					
+				
+					Linux kernel 2.6 .10<br/>
+					
+				
+					Linux kernel 2.6 -test9-CVS<br/>
+					
+				
+					Linux kernel 2.6 -test9<br/>
+					
+				
+					Linux kernel 2.6 -test8<br/>
+					
+				
+					Linux kernel 2.6 -test7<br/>
+					
+				
+					Linux kernel 2.6 -test6<br/>
+					
+				
+					Linux kernel 2.6 -test5<br/>
+					
+				
+					Linux kernel 2.6 -test4<br/>
+					
+				
+					Linux kernel 2.6 -test3<br/>
+					
+				
+					Linux kernel 2.6 -test2<br/>
+					
+				
+					Linux kernel 2.6 -test11<br/>
+					
+				
+					Linux kernel 2.6 -test10<br/>
+					
+				
+					Linux kernel 2.6 -test1<br/>
+					
+				
+					Linux kernel 2.6 <br/>
+					
+				
+					Linux kernel 2.4.34 <br/>
+					
+				
+					Linux kernel 2.4.34 <br/>
+					
+				
+					Linux kernel 2.4.34 <br/>
+					
+				
+					Linux kernel 2.4.33 2<br/>
+					
+				
+					Linux kernel 2.4.33 .7<br/>
+					
+				
+					Linux kernel 2.4.33 .6<br/>
+					
+				
+					Linux kernel 2.4.33 .6<br/>
+					
+				
+					Linux kernel 2.4.33 .5<br/>
+					
+				
+					Linux kernel 2.4.33 .4<br/>
+					
+				
+					Linux kernel 2.4.33 .3<br/>
+					
+				
+					Linux kernel 2.4.33 .3<br/>
+					
+				
+					Linux kernel 2.4.33 .1<br/>
+					
+				
+					Linux kernel 2.4.33 -pre1<br/>
+					
+				
+					Linux kernel 2.4.33 <br/>
+					
+				
+					Linux kernel 2.4.32 -pre2<br/>
+					
+				
+					Linux kernel 2.4.32 -pre1<br/>
+					
+				
+					Linux kernel 2.4.32 <br/>
+					
+				
+					Linux kernel 2.4.31 -pre1<br/>
+					
+				
+					Linux kernel 2.4.31 <br/>
+					
+				
+					Linux kernel 2.4.30 rc3<br/>
+					
+				
+					Linux kernel 2.4.30 rc2<br/>
+					
+				
+					Linux kernel 2.4.30 <br/>
+					
+				
+					Linux kernel 2.4.29 -rc2<br/>
+					
+				
+					Linux kernel 2.4.29 -rc1<br/>
+					
+				
+					Linux kernel 2.4.29 <br/>
+					
+				
+					Linux kernel 2.4.28 <br/>
+					
+				
+					Linux kernel 2.4.27 -pre5<br/>
+					
+				
+					Linux kernel 2.4.27 -pre4<br/>
+					
+				
+					Linux kernel 2.4.27 -pre3<br/>
+					
+				
+					Linux kernel 2.4.27 -pre2<br/>
+					
+				
+					Linux kernel 2.4.27 -pre1<br/>
+					
+				
+					Linux kernel 2.4.27 <br/>
+					
+				
+					Linux kernel 2.4.26 <br/>
+					
+				
+					Linux kernel 2.4.25 <br/>
+					
+				
+					Linux kernel 2.4.24 -ow1<br/>
+					
+				
+					Linux kernel 2.4.24 <br/>
+					
+				
+					Linux kernel 2.4.23 -pre9<br/>
+					
+				
+					Linux kernel 2.4.23 -ow2<br/>
+					
+				
+					Linux kernel 2.4.23 <br/>
+					
+				
+					Linux kernel 2.4.22 <br/>
+					
+				
+					Linux kernel 2.4.21 pre7<br/>
+					
+				
+					Linux kernel 2.4.21 pre4<br/>
+					
+				
+					Linux kernel 2.4.21 pre1<br/>
+					
+				
+					Linux kernel 2.4.21 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  8<br/>
+</span>
+					
+				
+					Linux kernel 2.4.20 <br/>
+					
+				
+					Linux kernel 2.4.19 -pre6<br/>
+					
+				
+					Linux kernel 2.4.19 -pre5<br/>
+					
+				
+					Linux kernel 2.4.19 -pre4<br/>
+					
+				
+					Linux kernel 2.4.19 -pre3<br/>
+					
+				
+					Linux kernel 2.4.19 -pre2<br/>
+					
+				
+					Linux kernel 2.4.19 -pre1<br/>
+					
+				
+					Linux kernel 2.4.19 <br/>
+					
+				
+					Linux kernel 2.4.18 pre-8<br/>
+					
+				
+					Linux kernel 2.4.18 pre-7<br/>
+					
+				
+					Linux kernel 2.4.18 pre-6<br/>
+					
+				
+					Linux kernel 2.4.18 pre-5<br/>
+					
+				
+					Linux kernel 2.4.18 pre-4<br/>
+					
+				
+					Linux kernel 2.4.18 pre-3<br/>
+					
+				
+					Linux kernel 2.4.18 pre-2<br/>
+					
+				
+					Linux kernel 2.4.18 pre-1<br/>
+					
+				
+					Linux kernel 2.4.18  x86<br/>
+					
+				
+					Linux kernel 2.4.18 <br/>
+<span class="related">
+						
+							+ 
+						
+						Astaro Security Linux 2.0 23<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Astaro Security Linux 2.0 16<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Advanced Workstation for the Itanium Processor 2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Connectivity Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Database Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Firewall on CD  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Office Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. SuSE eMail Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. SuSE eMail Server III  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE Linux Openexchange Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  8<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  7<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 7.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.17 <br/>
+					
+				
+					Linux kernel 2.4.16 <br/>
+					
+				
+					Linux kernel 2.4.15 <br/>
+					
+				
+					Linux kernel 2.4.14 <br/>
+					
+				
+					Linux kernel 2.4.13 <br/>
+					
+				
+					Linux kernel 2.4.12 <br/>
+					
+				
+					Linux kernel 2.4.11 <br/>
+					
+				
+					Linux kernel 2.4.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.9 <br/>
+					
+				
+					Linux kernel 2.4.8 <br/>
+					
+				
+					Linux kernel 2.4.7 <br/>
+					
+				
+					Linux kernel 2.4.6 <br/>
+					
+				
+					Linux kernel 2.4.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.4 <br/>
+					
+				
+					Linux kernel 2.4.3 <br/>
+					
+				
+					Linux kernel 2.4.2 <br/>
+					
+				
+					Linux kernel 2.4.1 <br/>
+					
+				
+					Linux kernel 2.4 .0-test9<br/>
+					
+				
+					Linux kernel 2.4 .0-test8<br/>
+					
+				
+					Linux kernel 2.4 .0-test7<br/>
+					
+				
+					Linux kernel 2.4 .0-test6<br/>
+					
+				
+					Linux kernel 2.4 .0-test5<br/>
+					
+				
+					Linux kernel 2.4 .0-test4<br/>
+					
+				
+					Linux kernel 2.4 .0-test3<br/>
+					
+				
+					Linux kernel 2.4 .0-test2<br/>
+					
+				
+					Linux kernel 2.4 .0-test12<br/>
+					
+				
+					Linux kernel 2.4 .0-test11<br/>
+					
+				
+					Linux kernel 2.4 .0-test10<br/>
+					
+				
+					Linux kernel 2.4 .0-test1<br/>
+					
+				
+					Linux kernel 2.4 <br/>
+					
+				
+					Linux kernel  2.6.8.1<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel  2.6.18<br/>
+					
+				
+					Linux kernel  2.6.15.5<br/>
+					
+				
+					Linux kernel  2.6.15.11<br/>
+					
+				
+					Linux kernel  2.6.11.4<br/>
+					
+				
+					Linux kernel  2.4.33.5<br/>
+					
+				
+					Linux kernel  2.4.33.4<br/>
+					
+				
+					Debian Linux 3.1  sparc<br/>
+					
+				
+					Debian Linux 3.1  s/390<br/>
+					
+				
+					Debian Linux 3.1  ppc<br/>
+					
+				
+					Debian Linux 3.1  mipsel<br/>
+					
+				
+					Debian Linux 3.1  mips<br/>
+					
+				
+					Debian Linux 3.1  m68k<br/>
+					
+				
+					Debian Linux 3.1  ia-64<br/>
+					
+				
+					Debian Linux 3.1  ia-32<br/>
+					
+				
+					Debian Linux 3.1  hppa<br/>
+					
+				
+					Debian Linux 3.1  arm<br/>
+					
+				
+					Debian Linux 3.1  amd64<br/>
+					
+				
+					Debian Linux 3.1  alpha<br/>
+					
+				
+					Debian Linux 3.1 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  MSS 3.0<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Communication Manager  4.0<br/>
+					
+				
+					Avaya Communication Manager  3.1<br/>
+					
+				
+					Avaya CCS 3.1.1 <br/>
+					
+				
+					Avaya AES  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 2.6.20 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits for this issue. If you feel we are in error or if you are aware of more recent information, please mail us at: mailto:vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

