@@ -1,0 +1,1089 @@
+#SpeeDr00t@Black Falcon<br>#bid36254<p><b><span style="font-size: 18pt;">Apache mod_proxy_ftp Remote Command Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/36254/info">info</a><br><a href="http://www.securityfocus.com/bid/36254/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/36254/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/36254/solution">solution</a><br><a href="http://www.securityfocus.com/bid/36254/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				36254
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-3095<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 03 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:01PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Intevydis
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  11 x64<br/>
+					
+				
+					Turbolinux Turbolinux Server  11<br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					Turbolinux Turbolinux  FUJI<br/>
+					
+				
+					Turbolinux FUJI  0<br/>
+					
+				
+					Turbolinux Client  2008<br/>
+					
+				
+					Turbolinux Appliance Server  3.0 x64<br/>
+					
+				
+					Turbolinux Appliance Server  3.0<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 DEBUGINFO<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP3<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3 DEBUGINFO<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP2 DEBUGINFO<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_98<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_94<br/>
+					
+				
+					Sun OpenSolaris  build snv_93<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_86<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_81<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_74<br/>
+					
+				
+					Sun OpenSolaris  build snv_71<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_58<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_56<br/>
+					
+				
+					Sun OpenSolaris  build snv_54<br/>
+					
+				
+					Sun OpenSolaris  build snv_51<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_49<br/>
+					
+				
+					Sun OpenSolaris  build snv_48<br/>
+					
+				
+					Sun OpenSolaris  build snv_47<br/>
+					
+				
+					Sun OpenSolaris  build snv_45<br/>
+					
+				
+					Sun OpenSolaris  build snv_41<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_38<br/>
+					
+				
+					Sun OpenSolaris  build snv_37<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_35<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_28<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_13<br/>
+					
+				
+					Sun OpenSolaris  build snv_111a<br/>
+					
+				
+					Sun OpenSolaris  build snv_111<br/>
+					
+				
+					Sun OpenSolaris  build snv_110<br/>
+					
+				
+					Sun OpenSolaris  build snv_109<br/>
+					
+				
+					Sun OpenSolaris  build snv_108<br/>
+					
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101a<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Sun OpenSolaris  build snv_02<br/>
+					
+				
+					Sun OpenSolaris  build snv_01<br/>
+					
+				
+					Sun OpenSolaris  Build Snv 111B<br/>
+					
+				
+					Sun OpenSolaris  0<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					rPath Appliance Platform Linux Service  2<br/>
+					
+				
+					rPath Appliance Platform Linux Service  1<br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 5 Server 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 4 ES 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 4 AS 1.0 <br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Certificate Server  7.3<br/>
+					
+				
+					Redhat Application Stack v2  0<br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					IBM HTTP Server 6.1 .25<br/>
+					
+				
+					IBM HTTP Server 6.1 .19<br/>
+					
+				
+					IBM HTTP Server 6.1 .17<br/>
+					
+				
+					IBM HTTP Server 6.1 .15<br/>
+					
+				
+					IBM HTTP Server 6.0.2 .35<br/>
+					
+				
+					IBM HTTP Server 6.0.2 .33<br/>
+					
+				
+					IBM HTTP Server 6.0.2 .27<br/>
+					
+				
+					IBM HTTP Server 6.0.2 .13<br/>
+					
+				
+					IBM HTTP Server 6.0.2 <br/>
+					
+				
+					IBM HTTP Server 2.0.47 .1<br/>
+					
+				
+					IBM HTTP Server 2.0.47 <br/>
+					
+				
+					IBM HTTP Server  7.0.0.5<br/>
+					
+				
+					IBM HTTP Server  7.0<br/>
+					
+				
+					IBM HTTP Server  6.2<br/>
+					
+				
+					IBM HTTP Server  6.1.0.13<br/>
+					
+				
+					IBM HTTP Server  6.1.0.1<br/>
+					
+				
+					IBM HTTP Server  6.1.0<br/>
+					
+				
+					IBM HTTP Server  6.0.2.23<br/>
+					
+				
+					IBM HTTP Server  6.0.2.19<br/>
+					
+				
+					IBM HTTP Server  6.0.2.12<br/>
+					
+				
+					HP OpenVMS Secure Web Server 1.2 <br/>
+					
+				
+					HP OpenVMS Secure Web Server 1.1 -1<br/>
+					
+				
+					HP OpenVMS Secure Web Server  2.1-1<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP Compaq Secure Web Server for OpenVMS 2.0 <br/>
+					
+				
+					HP Business Availability Center  8.06<br/>
+					
+				
+					HP Business Availability Center  8.05<br/>
+					
+				
+					HP Business Availability Center  8.01<br/>
+					
+				
+					HP Business Availability Center  7.55<br/>
+					
+				
+					HP Business Availability Center  6<br/>
+					
+				
+					HP Business Availability Center  0<br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Standard-J Edition 9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Standard-J Edition 9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Standard-J Edition 9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Standard-J Edition  9.1.0 B<br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition  9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition  9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition  9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition   9.1.0 B<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.0 B<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.0 A<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition  9.1.0B<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.0 A<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition  9.1.0B<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 armel<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Blue Coat Systems Director 5.2.2 .5<br/>
+					
+				
+					Blue Coat Systems Director 4.2.2 .4<br/>
+					
+				
+					Blue Coat Systems Director  5.5<br/>
+					
+				
+					Blue Coat Systems Director  5.4<br/>
+					
+				
+					Blue Coat Systems Director  0<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.6 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.5 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.4 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.0<br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+					
+				
+					Apache mod_proxy_ftp  0<br/>
+					
+				
+					Apache Apache 2.2.13 <br/>
+					
+				
+					Apache Apache 2.2.12 <br/>
+					
+				
+					Apache Apache 2.2.11 <br/>
+					
+				
+					Apache Apache 2.2.10 <br/>
+					
+				
+					Apache Apache 2.2.9 <br/>
+					
+				
+					Apache Apache 2.2.8 <br/>
+					
+				
+					Apache Apache 2.2.6 <br/>
+					
+				
+					Apache Apache 2.2.5 <br/>
+					
+				
+					Apache Apache 2.2.4 <br/>
+					
+				
+					Apache Apache 2.2.3 <br/>
+					
+				
+					Apache Apache 2.2.2 <br/>
+					
+				
+					Apache Apache 2.2 <br/>
+					
+				
+					Apache Apache  2.2.7-dev<br/>
+					
+				
+					Apache Apache  2.2.6-dev<br/>
+					
+				
+					Apache Apache  2.2.5-dev<br/>
+					
+				
+					Apache Apache  2.2.1<br/>
+					
+				
+					Apache Apache  2.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					HP OpenVMS Secure Web Server  2.2<br/>
+					
+				
+					HP Business Availability Center  8.07<br/>
+					
+				
+					Blue Coat Systems Director  5.5.2.3<br/>
+					
+				
+					Apache Apache 2.2.14 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	A working commercial exploit is available through Intevydis. This exploit is not otherwise publicly available or known to be circulating in the wild.
+	
+		<ul>
+</ul>
+</div>

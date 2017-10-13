@@ -1,0 +1,238 @@
+#SpeeDr00t@Black Falcon<br>#bid34666<p><b><span style="font-size: 18pt;">FreeBSD libc Berkley DB Interface Uninitialized Memory Local Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34666/info">info</a><br><a href="http://www.securityfocus.com/bid/34666/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34666/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34666/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34666/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34666
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1436<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 15 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 14 2016 10:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jaakko Heinonen and Xin LI
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper Junos  8.5<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -PRE-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 BETA4<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  6.3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper Junos  15.1X49-D20<br/>
+					
+				
+					Juniper Junos  15.1X49-D10<br/>
+					
+				
+					Juniper Junos  15.1R2<br/>
+					
+				
+					Juniper Junos  15.1F3<br/>
+					
+				
+					Juniper Junos  14.2R4<br/>
+					
+				
+					Juniper Junos  14.1X53-D30<br/>
+					
+				
+					Juniper Junos  14.1R6<br/>
+					
+				
+					Juniper Junos  13.3R7<br/>
+					
+				
+					Juniper Junos  13.2X52-D30<br/>
+					
+				
+					Juniper Junos  13.2X51-D40<br/>
+					
+				
+					Juniper Junos  13.2R8<br/>
+					
+				
+					Juniper Junos  12.3X50-D50<br/>
+					
+				
+					Juniper Junos  12.3X48-D20<br/>
+					
+				
+					Juniper Junos  12.3R11<br/>
+					
+				
+					Juniper Junos  12.1X47-D25<br/>
+					
+				
+					Juniper Junos  12.1X46-D40<br/>
+					
+				
+					Juniper Junos  12.1X44-D55<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.3-RELEASE-p10<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x35000/34666/34666.c">#exploit_34666.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker may exploit this issue using readily available tools.<br/><br/>The following proof of concept is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/34666.c">/data/vulnerabilities/exploits/34666.c</a></li>
+</ul>
+</div>

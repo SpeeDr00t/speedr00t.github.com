@@ -1,0 +1,498 @@
+#SpeeDr00t@Black Falcon<br>#bid32710<p><b><span style="font-size: 18pt;">Microsoft SQL Server 'sp_replwritetovarbin' Remote Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/32710/info">info</a><br><a href="http://www.securityfocus.com/bid/32710/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/32710/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/32710/solution">solution</a><br><a href="http://www.securityfocus.com/bid/32710/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				32710
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-4270<br/>
+				
+					CVE-2008-5416<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 09 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 11 2011 03:09PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Bernhard Mueller
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare VirtualCenter  2.5.Update 3 build 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 6<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 5<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 4<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 2<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5<br/>
+					
+				
+					VMWare Vcenter Update Manager  4.1<br/>
+					
+				
+					VMWare Vcenter Update Manager  4.0<br/>
+					
+				
+					VMWare Vcenter Update Manager  1.0<br/>
+					
+				
+					VMWare vCenter  4.1<br/>
+					
+				
+					VMWare vCenter  4.0<br/>
+					
+				
+					Microsoft Windows Internal Database (WYukon) x64  SP2<br/>
+					
+				
+					Microsoft Windows Internal Database (WYukon) x64  SP1<br/>
+					
+				
+					Microsoft Windows Internal Database (WYukon) x64  0<br/>
+					
+				
+					Microsoft Windows Internal Database (WYukon)  SP2<br/>
+					
+				
+					Microsoft Windows Internal Database (WYukon)  SP1<br/>
+					
+				
+					Microsoft Windows Internal Database (WYukon)  0<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP4<br/>
+					
+				
+					Microsoft SQL Server 2005 x64 Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 x64 Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Upgrade Advisor 9.0.2407 .00<br/>
+					
+				
+					Microsoft SQL Server 2005 Tools 9.0.1399 .06<br/>
+					
+				
+					Microsoft SQL Server 2005 Reporting Services 9.0.1399 .06<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  0<br/>
+					
+				
+					Microsoft SQL Server 2005 Integration Services 9.1.2047 .00<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition with Advanced Serv  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition with Advanced Serv  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition  0<br/>
+					
+				
+					Microsoft SQL Server 2005 Books Online 9.0.1399 .06<br/>
+					
+				
+					Microsoft SQL Server 2005 Backward Compatibility 8.5.1054 <br/>
+					
+				
+					Microsoft SQL Server 2005  Yukon<br/>
+					
+				
+					Microsoft SQL Server 2005  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005  0<br/>
+					
+				
+					Microsoft SQL Server 2000 Itanium Edition  SP4<br/>
+					
+				
+					Microsoft SQL Server 2000 Itanium Edition  SP3<br/>
+					
+				
+					Microsoft SQL Server 2000 Itanium Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2000 Itanium Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2000 Itanium Edition  0<br/>
+					
+				
+					Microsoft SQL Server 2000 Desktop Engine  SP4<br/>
+					
+				
+					Microsoft SQL Server 2000 Desktop Engine  SP3<br/>
+					
+				
+					Microsoft SQL Server 2000 Desktop Engine  SP2<br/>
+					
+				
+					Microsoft SQL Server 2000 Desktop Engine  SP1<br/>
+					
+				
+					Microsoft SQL Server 2000 Desktop Engine  0<br/>
+					
+				
+					Microsoft SQL Server 2000 Desktop Engine  <br/>
+<span class="related">
+						
+							+ 
+						
+						Akiva WebBoard 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Access 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Application Center 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BizTalk Server 2000 Developer Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BizTalk Server 2000 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BizTalk Server 2000 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BizTalk Server 2002 Developer Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft BizTalk Server 2002 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Office 2000  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Project Central Server  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft SharePoint Team Services from Microsoft  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visio 2000 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visio Enterprise Network Tools  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual FoxPro  6.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio  6.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Academic Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Enterprise Architect Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Enterprise Developer Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Studio .NET Professional Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SmartMax Software MailMax 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Veritas Software Backup Exec for Windows Servers 9.0 <br/>
+</span>
+					
+				
+					Microsoft SQL Server 2000 8.0.194 <br/>
+					
+				
+					Microsoft SQL Server 2000  SP4<br/>
+					
+				
+					Microsoft SQL Server 2000  SP3a<br/>
+					
+				
+					Microsoft SQL Server 2000  SP3<br/>
+					
+				
+					Microsoft SQL Server 2000  SP2<br/>
+					
+				
+					Microsoft SQL Server 2000  SP1<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+					
+				
+					Microsoft SQL Server 2000  <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare Vcenter Update Manager  4.1 Update 1<br/>
+					
+				
+					VMWare vCenter  4.1 Update 1<br/>
+					
+				
+					Microsoft SQL Server 2005 x64 Edition  SP3<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  SP3<br/>
+					
+				
+					Microsoft SQL Server 2005  SP3<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x33000/32710/32710.sql">#exploit_32710.sql</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x33000/32710/32710.html">#exploit_32710.html</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x33000/32710/32710.rb">#exploit_32710.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x33000/32710/32710-1.rb">#exploit_32710-1.rb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit code is available to members of the Immunity Partners Program:<br/><br/>https://www.immunityinc.com/downloads/immpartners/mssql_replwritetovarbin_ceu.tar.gz<br/><br/>The following proof of concept and exploits are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/32710.sql">/data/vulnerabilities/exploits/32710.sql</a></li>
+<li><a href="/data/vulnerabilities/exploits/32710.html">/data/vulnerabilities/exploits/32710.html</a></li>
+<li><a href="/data/vulnerabilities/exploits/32710.rb">/data/vulnerabilities/exploits/32710.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/32710-1.rb">/data/vulnerabilities/exploits/32710-1.rb</a></li>
+</ul>
+</div>

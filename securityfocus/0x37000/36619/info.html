@@ -1,0 +1,1330 @@
+#SpeeDr00t@Black Falcon<br>#bid36619<p><b><span style="font-size: 18pt;">Microsoft GDI+ WMF File Processing Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/36619/info">info</a><br><a href="http://www.securityfocus.com/bid/36619/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/36619/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/36619/solution">solution</a><br><a href="http://www.securityfocus.com/bid/36619/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				36619
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-2500<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 13 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 28 2009 09:27PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Yamata Li of Palo Alto Networks
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Nortel Networks Self-Service WVADS  0<br/>
+					
+				
+					Nortel Networks Self-Service Speech Server  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Workstation  0<br/>
+					
+				
+					Nortel Networks Self-Service Peri Application  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 500  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 1000  0<br/>
+					
+				
+					Nortel Networks Self-Service MPS 100  0<br/>
+					
+				
+					Nortel Networks Self-Service Media Processing Server  0<br/>
+					
+				
+					Nortel Networks Self-Service CCXML  0<br/>
+					
+				
+					Nortel Networks Self-Service - CCSS7  0<br/>
+					
+				
+					Nortel Networks Self Service VoiceXML  0<br/>
+					
+				
+					Nortel Networks Multimedia Comm Mas  0<br/>
+					
+				
+					Nortel Networks Media Processing Svr 500 Rel  3.0<br/>
+					
+				
+					Nortel Networks Media Processing Svr 1000 Rel  3.0<br/>
+					
+				
+					Nortel Networks Contact Center NCC  0<br/>
+					
+				
+					Nortel Networks Contact Center Express  <br/>
+					
+				
+					Nortel Networks Contact Center Administration CCMA  7.0<br/>
+					
+				
+					Nortel Networks Contact Center Administration CCMA  6.0<br/>
+					
+				
+					Nortel Networks Contact Center - TAPI Server  0<br/>
+					
+				
+					Nortel Networks Contact Center - Symposium Agent  0<br/>
+					
+				
+					Nortel Networks CallPilot  703t<br/>
+					
+				
+					Nortel Networks CallPilot  702t<br/>
+					
+				
+					Nortel Networks CallPilot  702t<br/>
+					
+				
+					Nortel Networks CallPilot  201i<br/>
+					
+				
+					Nortel Networks CallPilot  200i<br/>
+					
+				
+					Nortel Networks CallPilot  1002rp<br/>
+					
+				
+					Nortel Networks CallPilot  1002rp<br/>
+					
+				
+					Microsoft Works  8.5<br/>
+					
+				
+					Microsoft Word Viewer 2003  SP3<br/>
+					
+				
+					Microsoft Word Viewer 2003  0<br/>
+					
+				
+					Microsoft Word Viewer   0<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP3<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  <br/>
+					
+				
+					Microsoft Windows XP Professional  SP3<br/>
+					
+				
+					Microsoft Windows XP Professional  SP2<br/>
+					
+				
+					Microsoft Windows XP Professional  SP1<br/>
+					
+				
+					Microsoft Windows XP Professional  <br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP3<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  <br/>
+					
+				
+					Microsoft Windows XP Home  SP3<br/>
+					
+				
+					Microsoft Windows XP Home  SP2<br/>
+					
+				
+					Microsoft Windows XP Home  SP1<br/>
+					
+				
+					Microsoft Windows XP Home  <br/>
+					
+				
+					Microsoft Windows XP Gold  0<br/>
+					
+				
+					Microsoft Windows XP Embedded  SP3<br/>
+					
+				
+					Microsoft Windows XP Embedded  SP2<br/>
+					
+				
+					Microsoft Windows XP Embedded  SP1<br/>
+					
+				
+					Microsoft Windows XP Embedded  <br/>
+					
+				
+					Microsoft Windows XP  0<br/>
+					
+				
+					Microsoft Visual Studio 2008  SP1<br/>
+					
+				
+					Microsoft Visual Studio 2008  0<br/>
+					
+				
+					Microsoft Visual Studio 2005 Team Edition for Testers  0<br/>
+					
+				
+					Microsoft Visual Studio 2005 Team Edition for Developers  0<br/>
+					
+				
+					Microsoft Visual Studio 2005 Team Edition for Architects  0<br/>
+					
+				
+					Microsoft Visual Studio 2005 Team Edition  0<br/>
+					
+				
+					Microsoft Visual Studio 2005 Standard Edition  0<br/>
+					
+				
+					Microsoft Visual Studio 2005 Professional Edition  0<br/>
+					
+				
+					Microsoft Visual Studio 2005  SP1<br/>
+					
+				
+					Microsoft Visual Studio 2005  <br/>
+					
+				
+					Microsoft Visual Studio .NET 2003  SP1<br/>
+					
+				
+					Microsoft Visual Studio .NET 2003  0<br/>
+					
+				
+					Microsoft Visual Studio .NET 2003  <br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual Basic .NET Standard 2003  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual C# .NET Standard 2003  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual C++ .NET Standard 2003  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Visual J# .NET Standard 2003  <br/>
+</span>
+					
+				
+					Microsoft Visual FoxPro  9.0 SP2<br/>
+					
+				
+					Microsoft Visual FoxPro  9.0 SP1<br/>
+					
+				
+					Microsoft Visual FoxPro  8.0 SP1<br/>
+					
+				
+					Microsoft Visual FoxPro  8.0<br/>
+					
+				
+					Microsoft Visio Viewer 2007  SP2<br/>
+					
+				
+					Microsoft Visio Viewer 2007  SP1<br/>
+					
+				
+					Microsoft Visio Viewer 2007  SP1<br/>
+					
+				
+					Microsoft Visio Viewer 2007  0<br/>
+					
+				
+					Microsoft Visio Viewer 2007  0<br/>
+					
+				
+					Microsoft Visio 2002 Professional  SP2<br/>
+					
+				
+					Microsoft Visio 2002  SP2<br/>
+					
+				
+					Microsoft Visio 2002  SP1<br/>
+					
+				
+					Microsoft Visio 2002  <br/>
+					
+				
+					Microsoft SQL Server 2005 x64 Edition  SP3<br/>
+					
+				
+					Microsoft SQL Server 2005 x64 Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 x64 Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  SP3<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Itanium Edition  0<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005 Express Edition  0<br/>
+					
+				
+					Microsoft SQL Server 2005  SP3<br/>
+					
+				
+					Microsoft SQL Server 2005  SP2<br/>
+					
+				
+					Microsoft SQL Server 2005  SP1<br/>
+					
+				
+					Microsoft SQL Server 2005  0<br/>
+					
+				
+					Microsoft SQL Server 2000 Reporting Services  SP2<br/>
+					
+				
+					Microsoft Report Viewer 2008  SP1<br/>
+					
+				
+					Microsoft Report Viewer 2008  0<br/>
+					
+				
+					Microsoft Report Viewer 2005  SP1<br/>
+					
+				
+					Microsoft Project 2002  SP1<br/>
+					
+				
+					Microsoft Project 2002  0<br/>
+					
+				
+					Microsoft Project 2002  <br/>
+					
+				
+					Microsoft PowerPoint Viewer 2007  SP2<br/>
+					
+				
+					Microsoft PowerPoint Viewer 2007  SP1<br/>
+					
+				
+					Microsoft PowerPoint Viewer 2007  0<br/>
+					
+				
+					Microsoft Platform SDK Redistributable: GDI+  <br/>
+					
+				
+					Microsoft Office XP  SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Outlook 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Outlook 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft PowerPoint 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft PowerPoint 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Publisher 2002  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Publisher 2002  SP3<br/>
+</span>
+					
+				
+					Microsoft Office XP  SP2<br/>
+					
+				
+					Microsoft Office XP  SP1<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft Office XP  <br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft Office Word 2003 Viewer  SP3<br/>
+					
+				
+					Microsoft Office Word 2003 Viewer  0<br/>
+					
+				
+					Microsoft Office Excel Viewer 2003  0<br/>
+					
+				
+					Microsoft Office Excel Viewer  2003 SP3<br/>
+					
+				
+					Microsoft Office Excel Viewer  0<br/>
+					
+				
+					Microsoft Office Compatibility Pack 2007  SP2<br/>
+					
+				
+					Microsoft Office Compatibility Pack 2007  SP1<br/>
+					
+				
+					Microsoft Office Compatibility Pack 2007  0<br/>
+					
+				
+					Microsoft Office 2007  SP2<br/>
+					
+				
+					Microsoft Office 2007  SP1<br/>
+					
+				
+					Microsoft Office 2007  0<br/>
+					
+				
+					Microsoft Office 2003  SP3<br/>
+					
+				
+					Microsoft Office 2003  SP2<br/>
+					
+				
+					Microsoft Office 2003  SP1<br/>
+					
+				
+					Microsoft Office 2003  0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Excel 2003  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft FrontPage 2003  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft InfoPath 2003  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft OneNote 2003  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Outlook 2003  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft PowerPoint 2003  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Publisher 2003  <br/>
+</span>
+					
+				
+					Microsoft Internet Explorer  6.0 SP1<br/>
+					
+				
+					Microsoft Internet Explorer  6.0<br/>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Advanced Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Datacenter Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Professional  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP2<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  SP1<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 2000 Terminal Services  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows 98SE  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows ME  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Microsoft Windows NT Workstation  4.0 SP6a<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Datacenter Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Enterprise Edition Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Standard Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Web Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Web Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Web Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+					
+				
+					Microsoft Groove 2007  SP1<br/>
+					
+				
+					Microsoft Groove 2007  0<br/>
+					
+				
+					Microsoft Forefront Client Security  1.0<br/>
+					
+				
+					Microsoft Expression Web  2<br/>
+					
+				
+					Microsoft Expression Web  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

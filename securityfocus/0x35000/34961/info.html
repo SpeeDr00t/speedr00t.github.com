@@ -1,0 +1,678 @@
+#SpeeDr00t@Black Falcon<br>#bid34961<p><b><span style="font-size: 18pt;">Cyrus SASL 'sasl_encode64()' Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34961/info">info</a><br><a href="http://www.securityfocus.com/bid/34961/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34961/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34961/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34961/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34961
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-0688<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 14 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2010 10:44PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				James Ralston
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_94<br/>
+					
+				
+					Sun OpenSolaris  build snv_93<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_86<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_81<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_58<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_54<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_49<br/>
+					
+				
+					Sun OpenSolaris  build snv_47<br/>
+					
+				
+					Sun OpenSolaris  build snv_45<br/>
+					
+				
+					Sun OpenSolaris  build snv_41<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_13<br/>
+					
+				
+					Sun OpenSolaris  build snv_117<br/>
+					
+				
+					Sun OpenSolaris  build snv_116<br/>
+					
+				
+					Sun OpenSolaris  build snv_115<br/>
+					
+				
+					Sun OpenSolaris  build snv_114<br/>
+					
+				
+					Sun OpenSolaris  build snv_113<br/>
+					
+				
+					Sun OpenSolaris  build snv_112<br/>
+					
+				
+					Sun OpenSolaris  build snv_111a<br/>
+					
+				
+					Sun OpenSolaris  build snv_111<br/>
+					
+				
+					Sun OpenSolaris  build snv_110<br/>
+					
+				
+					Sun OpenSolaris  build snv_109<br/>
+					
+				
+					Sun OpenSolaris  build snv_108<br/>
+					
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101a<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Sun OpenSolaris  build snv_02<br/>
+					
+				
+					Sun OpenSolaris  build snv_01<br/>
+					
+				
+					Sun ONE Directory Server 5.2 <br/>
+					
+				
+					Sun Java System Directory Server Enterprise Edition 6.3.1 <br/>
+					
+				
+					Sun Java System Directory Server Enterprise Edition  6.3<br/>
+					
+				
+					Sun Java System Directory Server Enterprise Edition  6.2<br/>
+					
+				
+					Sun Java System Directory Server Enterprise Edition  6.1<br/>
+					
+				
+					Sun Java System Directory Server Enterprise Edition  6.0<br/>
+					
+				
+					Sun Java System Directory Server  5.2 Patch6<br/>
+					
+				
+					Sun Java System Directory Server  5.2 Patch4<br/>
+					
+				
+					Sun Java System Directory Server  5.2 Patch3<br/>
+					
+				
+					Sun Java System Directory Server  5.2 Patch2<br/>
+					
+				
+					Sun Java System Directory Server  5.2 2005Q4<br/>
+					
+				
+					Sun Java System Directory Server  5.2 2005Q1<br/>
+					
+				
+					Sun Java System Directory Server  5.2 2004Q2<br/>
+					
+				
+					Sun Java System Directory Server  5.2 2003Q4<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath rPath Linux  1<br/>
+					
+				
+					rPath Appliance Platform Linux Service  2<br/>
+					
+				
+					rPath Appliance Platform Linux Service  1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Pardus Linux 2008  0<br/>
+					
+				
+					Nortel Networks Self-Service CCXML  0<br/>
+					
+				
+					Nortel Networks Self Service VoiceXML  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0  x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server 3.0 <br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Cyrus-Utils SASL 2.1.21 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.20 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.19 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.18 -r2<br/>
+					
+				
+					Cyrus-Utils SASL 2.1.18 -r1<br/>
+					
+				
+					Cyrus-Utils SASL 2.1.18 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.17 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.16 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.15 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.14 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.13 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.12 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.11 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.10 <br/>
+					
+				
+					Cyrus-Utils SASL 2.1.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Interactive Response  4.0<br/>
+					
+				
+					Avaya CMS Server  15.0<br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cyrus-Utils SASL 2.1.23 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

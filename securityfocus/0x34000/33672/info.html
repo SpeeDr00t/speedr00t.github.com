@@ -1,0 +1,691 @@
+#SpeeDr00t@Black Falcon<br>#bid33672<p><b><span style="font-size: 18pt;">Linux Kernel Console Selection Local Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33672/info">info</a><br><a href="http://www.securityfocus.com/bid/33672/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33672/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33672/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33672/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33672
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1046<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 06 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 21 2009 10:13PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Greg Kroah-Hartman
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  8.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  7.10 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server Unsupported Extras  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 DEBUGINFO<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise High Availability Extension  11<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP2 DEBUGINFO<br/>
+					
+				
+					SuSE Linux Enterprise Server  10.SP2 SP<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop 9.0 <br/>
+					
+				
+					S.u.S.E. Novell Linux Desktop  9<br/>
+					
+				
+					S.u.S.E. Linux Enterprise Desktop   10 SP2<br/>
+					
+				
+					S.u.S.E. Linux Enterprise Desktop   10 SP2<br/>
+					
+				
+					Redhat Enterprise MRG v1 for Red Hat Enterprise Linux  version 5<br/>
+					
+				
+					Linux kernel 2.6.28 .3<br/>
+					
+				
+					Linux kernel 2.6.28 .2<br/>
+					
+				
+					Linux kernel 2.6.28 .1<br/>
+					
+				
+					Linux kernel 2.6.28 -rc7<br/>
+					
+				
+					Linux kernel 2.6.28 -rc5<br/>
+					
+				
+					Linux kernel 2.6.28 -rc1<br/>
+					
+				
+					Linux kernel 2.6.28 -git7<br/>
+					
+				
+					Linux kernel 2.6.28 <br/>
+					
+				
+					Linux kernel 2.6.27 6<br/>
+					
+				
+					Linux kernel 2.6.27 3<br/>
+					
+				
+					Linux kernel 2.6.27 12<br/>
+					
+				
+					Linux kernel 2.6.27 .8<br/>
+					
+				
+					Linux kernel 2.6.27 .5<br/>
+					
+				
+					Linux kernel 2.6.27 .5<br/>
+					
+				
+					Linux kernel 2.6.27 .14<br/>
+					
+				
+					Linux kernel 2.6.27 .13<br/>
+					
+				
+					Linux kernel 2.6.27 .12<br/>
+					
+				
+					Linux kernel 2.6.27 -rc8-git5<br/>
+					
+				
+					Linux kernel 2.6.27 -rc8<br/>
+					
+				
+					Linux kernel 2.6.27 -rc6-git6<br/>
+					
+				
+					Linux kernel 2.6.27 -rc6<br/>
+					
+				
+					Linux kernel 2.6.27 -rc5<br/>
+					
+				
+					Linux kernel 2.6.27 -rc2<br/>
+					
+				
+					Linux kernel 2.6.27 -rc1<br/>
+					
+				
+					Linux kernel 2.6.27 <br/>
+					
+				
+					Linux kernel 2.6.26 7<br/>
+					
+				
+					Linux kernel 2.6.26 .6<br/>
+					
+				
+					Linux kernel 2.6.26 .4<br/>
+					
+				
+					Linux kernel 2.6.26 .3<br/>
+					
+				
+					Linux kernel 2.6.26 -rc6<br/>
+					
+				
+					Linux kernel 2.6.26 <br/>
+					
+				
+					Linux kernel 2.6.25 19<br/>
+					
+				
+					Linux kernel 2.6.25 .9<br/>
+					
+				
+					Linux kernel 2.6.25 .8<br/>
+					
+				
+					Linux kernel 2.6.25 .7<br/>
+					
+				
+					Linux kernel 2.6.25 .6<br/>
+					
+				
+					Linux kernel 2.6.25 .5<br/>
+					
+				
+					Linux kernel 2.6.25 .15<br/>
+					
+				
+					Linux kernel 2.6.25 .13<br/>
+					
+				
+					Linux kernel 2.6.25 .12<br/>
+					
+				
+					Linux kernel 2.6.25 .11<br/>
+					
+				
+					Linux kernel 2.6.25 .10<br/>
+					
+				
+					Linux kernel 2.6.25 <br/>
+					
+				
+					Linux kernel 2.6.25 <br/>
+					
+				
+					Linux kernel 2.6.24 .2<br/>
+					
+				
+					Linux kernel 2.6.24 .1<br/>
+					
+				
+					Linux kernel 2.6.24 -rc5<br/>
+					
+				
+					Linux kernel 2.6.24 -rc4<br/>
+					
+				
+					Linux kernel 2.6.24 -rc3<br/>
+					
+				
+					Linux kernel 2.6.24 -git13<br/>
+					
+				
+					Linux kernel 2.6.24 <br/>
+					
+				
+					Linux kernel 2.6.23 .7<br/>
+					
+				
+					Linux kernel 2.6.23 .6<br/>
+					
+				
+					Linux kernel 2.6.23 .5<br/>
+					
+				
+					Linux kernel 2.6.23 .4<br/>
+					
+				
+					Linux kernel 2.6.23 .3<br/>
+					
+				
+					Linux kernel 2.6.23 .2<br/>
+					
+				
+					Linux kernel 2.6.23 -rc2<br/>
+					
+				
+					Linux kernel 2.6.23 -rc1<br/>
+					
+				
+					Linux kernel 2.6.23 <br/>
+					
+				
+					Linux kernel 2.6.22 .8<br/>
+					
+				
+					Linux kernel 2.6.22 .7<br/>
+					
+				
+					Linux kernel 2.6.22 .6<br/>
+					
+				
+					Linux kernel 2.6.22 .5<br/>
+					
+				
+					Linux kernel 2.6.22 .4<br/>
+					
+				
+					Linux kernel 2.6.22 .3<br/>
+					
+				
+					Linux kernel 2.6.22 .2<br/>
+					
+				
+					Linux kernel 2.6.22 .17<br/>
+					
+				
+					Linux kernel 2.6.22 .16<br/>
+					
+				
+					Linux kernel 2.6.22 .15<br/>
+					
+				
+					Linux kernel 2.6.22 .14<br/>
+					
+				
+					Linux kernel 2.6.22 .13<br/>
+					
+				
+					Linux kernel 2.6.22 .12<br/>
+					
+				
+					Linux kernel 2.6.22 .11<br/>
+					
+				
+					Linux kernel 2.6.22 .1<br/>
+					
+				
+					Linux kernel 2.6.22 <br/>
+					
+				
+					Linux kernel 2.6.21 4<br/>
+					
+				
+					Linux kernel 2.6.21 .7<br/>
+					
+				
+					Linux kernel 2.6.21 .6<br/>
+					
+				
+					Linux kernel 2.6.21 .3<br/>
+					
+				
+					Linux kernel 2.6.21 .2<br/>
+					
+				
+					Linux kernel 2.6.21 .1<br/>
+					
+				
+					Linux kernel 2.6.21 -git8<br/>
+					
+				
+					Linux kernel 2.6.21 <br/>
+					
+				
+					Linux kernel 2.6.20 .9<br/>
+					
+				
+					Linux kernel 2.6.20 .8<br/>
+					
+				
+					Linux kernel 2.6.20 .5<br/>
+					
+				
+					Linux kernel 2.6.20 .4<br/>
+					
+				
+					Linux kernel 2.6.20 .15<br/>
+					
+				
+					Linux kernel 2.6.20 .1<br/>
+					
+				
+					Linux kernel 2.6.20 -git5<br/>
+					
+				
+					Linux kernel 2.6.20 <br/>
+					
+				
+					Linux kernel 2.6.20 <br/>
+					
+				
+					Linux kernel 2.6.19 .2<br/>
+					
+				
+					Linux kernel 2.6.19 .1<br/>
+					
+				
+					Linux kernel 2.6.19 .1<br/>
+					
+				
+					Linux kernel 2.6.19 -rc4<br/>
+					
+				
+					Linux kernel 2.6.19 -rc3<br/>
+					
+				
+					Linux kernel 2.6.19 -rc2<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.19 -rc1<br/>
+					
+				
+					Linux kernel 2.6.19 <br/>
+					
+				
+					Linux kernel  2.6.26.1<br/>
+					
+				
+					Linux kernel  2.6.26-rc5-git1<br/>
+					
+				
+					Linux kernel  2.6.25.4<br/>
+					
+				
+					Linux kernel  2.6.25.3<br/>
+					
+				
+					Linux kernel  2.6.25.2<br/>
+					
+				
+					Linux kernel  2.6.25.1<br/>
+					
+				
+					Linux kernel  2.6.24.6<br/>
+					
+				
+					Linux kernel  2.6.24-rc2<br/>
+					
+				
+					Linux kernel  2.6.24-rc1<br/>
+					
+				
+					Linux kernel  2.6.23.14<br/>
+					
+				
+					Linux kernel  2.6.23.10<br/>
+					
+				
+					Linux kernel  2.6.23.1<br/>
+					
+				
+					Linux kernel  2.6.23.09<br/>
+					
+				
+					Linux kernel  2.6.22-rc7<br/>
+					
+				
+					Linux kernel  2.6.22-rc1<br/>
+					
+				
+					Linux kernel  2.6.21-RC6<br/>
+					
+				
+					Linux kernel  2.6.21-RC5<br/>
+					
+				
+					Linux kernel  2.6.21-RC4<br/>
+					
+				
+					Linux kernel  2.6.21-RC3<br/>
+					
+				
+					Linux kernel  2.6.21-RC3<br/>
+					
+				
+					Linux kernel  2.6.20.3<br/>
+					
+				
+					Linux kernel  2.6.20.2<br/>
+					
+				
+					Linux kernel  2.6.20.13<br/>
+					
+				
+					Linux kernel  2.6.20.11<br/>
+					
+				
+					Linux kernel  2.6.20-rc2<br/>
+					
+				
+					Linux kernel  2.6.20-2<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 armel<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel  2.6.28.4<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x34000/33672/33672.c">#exploit_33672.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/33672.c">/data/vulnerabilities/exploits/33672.c</a></li>
+</ul>
+</div>

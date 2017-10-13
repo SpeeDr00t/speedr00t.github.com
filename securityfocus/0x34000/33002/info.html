@@ -1,0 +1,551 @@
+#SpeeDr00t@Black Falcon<br>#bid33002<p><b><span style="font-size: 18pt;">PHP 'imageRotate()' Uninitialized Memory Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33002/info">info</a><br><a href="http://www.securityfocus.com/bid/33002/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33002/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33002/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33002/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33002
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2008-5498<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 24 2008 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:09PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Hamid Ebadi
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Turbolinux Turbolinux Server 10.0 <br/>
+					
+				
+					Turbolinux Turbolinux Server  11 x64<br/>
+					
+				
+					Turbolinux Turbolinux Server  11<br/>
+					
+				
+					Turbolinux Turbolinux Server  10.0.0 x64<br/>
+					
+				
+					TurboLinux Personal  <br/>
+					
+				
+					TurboLinux Multimedia  <br/>
+					
+				
+					Turbolinux Client  2008<br/>
+					
+				
+					Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+					
+				
+					Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+					
+				
+					Turbolinux Appliance Server  3.0 x64<br/>
+					
+				
+					Turbolinux Appliance Server  3.0<br/>
+					
+				
+					Turbolinux Appliance Server  2.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. openSUSE  10.3<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Redhat Application Stack v2  0<br/>
+					
+				
+					PHP PHP 5.2.8 <br/>
+					
+				
+					PHP PHP 5.2.7 <br/>
+					
+				
+					PHP PHP 5.2.6 <br/>
+					
+				
+					PHP PHP 5.2.5 <br/>
+					
+				
+					PHP PHP 5.2.4 <br/>
+					
+				
+					PHP PHP 5.2.3 <br/>
+					
+				
+					PHP PHP 5.2.2 <br/>
+					
+				
+					PHP PHP 5.2.1 <br/>
+					
+				
+					PHP PHP 5.1.6 <br/>
+					
+				
+					PHP PHP 5.1.5 <br/>
+					
+				
+					PHP PHP 5.1.4 <br/>
+					
+				
+					PHP PHP 5.1.3 -RC1<br/>
+					
+				
+					PHP PHP 5.1.3 <br/>
+					
+				
+					PHP PHP 5.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+</span>
+					
+				
+					PHP PHP 5.1.1 <br/>
+					
+				
+					PHP PHP 5.1 <br/>
+					
+				
+					PHP PHP 5.0.5 <br/>
+					
+				
+					PHP PHP 5.0.4 <br/>
+					
+				
+					PHP PHP 5.0.3 <br/>
+					
+				
+					PHP PHP 5.0.2 <br/>
+					
+				
+					PHP PHP 5.0.1 <br/>
+					
+				
+					PHP PHP 5.0 candidate 3<br/>
+					
+				
+					PHP PHP 5.0 candidate 2<br/>
+					
+				
+					PHP PHP 5.0 candidate 1<br/>
+					
+				
+					PHP PHP 5.0 .0<br/>
+					
+				
+					PHP PHP  5.2<br/>
+					
+				
+					Pardus Linux 2008  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya Communication Manager 4.0.3 SP1<br/>
+					
+				
+					Avaya Communication Manager  5.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager  5.0 SP3<br/>
+					
+				
+					Avaya Communication Manager  5.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.0.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.6 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.5 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.4 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 3.1.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  3.0<br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP 5.2.9 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x34000/33002/33002.php">#exploit_33002.php</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x34000/33002/33002-2.php">#exploit_33002-2.php</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example exploits are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/33002.php">/data/vulnerabilities/exploits/33002.php</a></li>
+<li><a href="/data/vulnerabilities/exploits/33002-2.php">/data/vulnerabilities/exploits/33002-2.php</a></li>
+</ul>
+</div>

