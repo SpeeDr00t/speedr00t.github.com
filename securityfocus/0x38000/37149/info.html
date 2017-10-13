@@ -1,0 +1,752 @@
+#SpeeDr00t@Black Falcon<br>#bid37149<p><b><span style="font-size: 18pt;">Apache Tomcat 404 Error Page Cross Site Scripting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/37149/info">info</a><br><a href="http://www.securityfocus.com/bid/37149/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/37149/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/37149/solution">solution</a><br><a href="http://www.securityfocus.com/bid/37149/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				37149
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 02 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 30 2009 10:25PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				MustLive
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Apache Tomcat 3.2.1 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat 3.2 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat 3.1.1 <br/>
+					
+				
+					Apache Tomcat 3.1 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat 3.0 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apache Tomcat 6.0 <br/>
+					
+				
+					Apache Tomcat 5.5 <br/>
+					
+				
+					Apache Tomcat 4.1 <br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+					
+				
+					Apache Tomcat 3.2.3 <br/>
+					
+				
+					Apache Tomcat 3.2.2 beta2<br/>
+<span class="related">
+						
+							-
+						
+						BSDI BSD/OS 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Digital UNIX 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.2  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						NetBSD NetBSD 1.4.1  x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SGI IRIX 6.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  8_sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Sun Solaris  7.0<br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x38000/37149/37149.txt">#exploit_37149.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue by enticing an unsuspecting user to follow a malicious URI.<br/><br/>The following example URIs are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/37149.txt">/data/vulnerabilities/exploits/37149.txt</a></li>
+</ul>
+</div>
