@@ -1,0 +1,600 @@
+#SpeeDr00t@Black Falcon<br>#bid40106<p><b><span style="font-size: 18pt;">Oracle MySQL 'COM_FIELD_LIST' Command Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/40106/info">info</a><br><a href="http://www.securityfocus.com/bid/40106/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/40106/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/40106/solution">solution</a><br><a href="http://www.securityfocus.com/bid/40106/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				40106
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1850<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 12 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:07PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				&amp;lt;br&amp;gt;Reported by the vendor
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					MySQL AB MySQL 5.1.46 <br/>
+					
+				
+					MySQL AB MySQL 5.1.45 <br/>
+					
+				
+					MySQL AB MySQL 5.1.44 <br/>
+					
+				
+					MySQL AB MySQL 5.1.43 <br/>
+					
+				
+					MySQL AB MySQL 5.1.42 <br/>
+					
+				
+					MySQL AB MySQL 5.1.42 <br/>
+					
+				
+					MySQL AB MySQL 5.1.41 <br/>
+					
+				
+					MySQL AB MySQL 5.1.39 <br/>
+					
+				
+					MySQL AB MySQL 5.1.38 <br/>
+					
+				
+					MySQL AB MySQL 5.1.37 <br/>
+					
+				
+					MySQL AB MySQL 5.1.36 <br/>
+					
+				
+					MySQL AB MySQL 5.1.35 <br/>
+					
+				
+					MySQL AB MySQL 5.1.34 <br/>
+					
+				
+					MySQL AB MySQL 5.1.33 <br/>
+					
+				
+					MySQL AB MySQL 5.1.32 <br/>
+					
+				
+					MySQL AB MySQL 5.1.31 <br/>
+					
+				
+					MySQL AB MySQL 5.1.30 <br/>
+					
+				
+					MySQL AB MySQL 5.1.26 <br/>
+					
+				
+					MySQL AB MySQL 5.1.23 <br/>
+					
+				
+					MySQL AB MySQL 5.1.22 <br/>
+					
+				
+					MySQL AB MySQL 5.1.18 <br/>
+					
+				
+					MySQL AB MySQL 5.1.17 <br/>
+					
+				
+					MySQL AB MySQL 5.1.16 <br/>
+					
+				
+					MySQL AB MySQL 5.1.15 <br/>
+					
+				
+					MySQL AB MySQL 5.1.14 <br/>
+					
+				
+					MySQL AB MySQL 5.1.13 <br/>
+					
+				
+					MySQL AB MySQL 5.1.12 <br/>
+					
+				
+					MySQL AB MySQL 5.1.11 <br/>
+					
+				
+					MySQL AB MySQL 5.1.10 <br/>
+					
+				
+					MySQL AB MySQL 5.1.9 <br/>
+					
+				
+					MySQL AB MySQL 5.1.6 <br/>
+					
+				
+					MySQL AB MySQL 5.1.5 <br/>
+					
+				
+					MySQL AB MySQL 5.0.88 <br/>
+					
+				
+					MySQL AB MySQL 5.0.75 <br/>
+					
+				
+					MySQL AB MySQL 5.0.66 <br/>
+					
+				
+					MySQL AB MySQL 5.0.60 <br/>
+					
+				
+					MySQL AB MySQL 5.0.52 <br/>
+					
+				
+					MySQL AB MySQL 5.0.51 <br/>
+					
+				
+					MySQL AB MySQL 5.0.50 <br/>
+					
+				
+					MySQL AB MySQL 5.0.49 <br/>
+					
+				
+					MySQL AB MySQL 5.0.48 <br/>
+					
+				
+					MySQL AB MySQL 5.0.47 <br/>
+					
+				
+					MySQL AB MySQL 5.0.46 <br/>
+					
+				
+					MySQL AB MySQL 5.0.45 <br/>
+					
+				
+					MySQL AB MySQL 5.0.44 <br/>
+					
+				
+					MySQL AB MySQL 5.0.42 <br/>
+					
+				
+					MySQL AB MySQL 5.0.40 <br/>
+					
+				
+					MySQL AB MySQL 5.0.39 <br/>
+					
+				
+					MySQL AB MySQL 5.0.38 <br/>
+					
+				
+					MySQL AB MySQL 5.0.37 <br/>
+					
+				
+					MySQL AB MySQL 5.0.36 <br/>
+					
+				
+					MySQL AB MySQL 5.0.33 <br/>
+					
+				
+					MySQL AB MySQL 5.0.32 <br/>
+					
+				
+					MySQL AB MySQL 5.0.27 <br/>
+					
+				
+					MySQL AB MySQL 5.0.26 <br/>
+					
+				
+					MySQL AB MySQL 5.0.24 <br/>
+					
+				
+					MySQL AB MySQL 5.0.22 -1-0.1<br/>
+					
+				
+					MySQL AB MySQL 5.0.22 <br/>
+					
+				
+					MySQL AB MySQL 5.0.21 <br/>
+					
+				
+					MySQL AB MySQL 5.0.20 <br/>
+					
+				
+					MySQL AB MySQL 5.0.19 <br/>
+					
+				
+					MySQL AB MySQL 5.0.18 <br/>
+					
+				
+					MySQL AB MySQL 5.0.4 <br/>
+					
+				
+					MySQL AB MySQL 5.0.3 <br/>
+					
+				
+					MySQL AB MySQL 5.0.2 <br/>
+					
+				
+					MySQL AB MySQL 5.0.1 <br/>
+					
+				
+					MySQL AB MySQL 5.0 .0-0<br/>
+					
+				
+					MySQL AB MySQL  5.0.51a<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5 <br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.5 <br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					MySQL AB MySQL 5.1.47 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.5 <br/>
+					
+				
+					Apple Mac OS X 10.6.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

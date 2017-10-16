@@ -1,0 +1,950 @@
+#SpeeDr00t@Black Falcon<br>#bid40302<p><b><span style="font-size: 18pt;">Perl Safe Module 'reval()' and 'rdo()' Restriction-Bypass Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/40302/info">info</a><br><a href="http://www.securityfocus.com/bid/40302/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/40302/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/40302/solution">solution</a><br><a href="http://www.securityfocus.com/bid/40302/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				40302
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1168<br/>
+				
+					CVE-2010-1974<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 08 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 06 2016 02:27PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Rafael Garcia-Suarez
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESX Server 3.0.3 <br/>
+					
+				
+					VMWare ESX Server  4.1<br/>
+					
+				
+					VMWare ESX Server  4.0<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath Appliance Platform Linux Service  2<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux WS  3<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  3<br/>
+					
+				
+					RedHat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					RedHat Desktop 3.0 <br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux AS  3<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Larry Wall Perl 5.10.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.9.3 <br/>
+					
+				
+					Larry Wall Perl 5.9.2 <br/>
+					
+				
+					Larry Wall Perl 5.8.8 <br/>
+					
+				
+					Larry Wall Perl 5.8.7 <br/>
+					
+				
+					Larry Wall Perl 5.8.6 <br/>
+					
+				
+					Larry Wall Perl 5.8.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.8.4 -5<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -4<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -3<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -2.3<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -2<br/>
+					
+				
+					Larry Wall Perl 5.8.4 -1<br/>
+					
+				
+					Larry Wall Perl 5.8.4 <br/>
+					
+				
+					Larry Wall Perl 5.8.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Larry Wall Perl 5.8.1 <br/>
+					
+				
+					Larry Wall Perl 5.8 .0-88.3<br/>
+					
+				
+					Larry Wall Perl 5.8 <br/>
+					
+				
+					Larry Wall Perl 5.6.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 7.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.0 05_003<br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2 E sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2 E i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2 E alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Trustix Secure Linux 1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux 4.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.0 05<br/>
+					
+				
+					Larry Wall Perl 5.0 04_05<br/>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 5.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 5.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 5.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 5.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.0 04_04<br/>
+					
+				
+					Larry Wall Perl 5.0 04<br/>
+					
+				
+					Larry Wall Perl 5.0 03<br/>
+					
+				
+					Larry Wall Perl  5.12<br/>
+					
+				
+					Larry Wall Perl  5.10<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					F5 Enterprise Manager 2.2 <br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  MM3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1<br/>
+					
+				
+					Avaya Messaging Storage Server  2.0<br/>
+					
+				
+					Avaya Messaging Storage Server  1.0<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  R1.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.0<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.0.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Larry Wall Perl 5.12.1 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, an attacker can use readily available tools.
+	
+		<ul>
+</ul>
+</div>

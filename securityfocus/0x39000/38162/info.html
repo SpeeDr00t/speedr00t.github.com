@@ -1,0 +1,852 @@
+#SpeeDr00t@Black Falcon<br>#bid38162<p><b><span style="font-size: 18pt;">cURL/libcURL CURLOPT_ENCODING Option Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/38162/info">info</a><br><a href="http://www.securityfocus.com/bid/38162/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/38162/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/38162/solution">solution</a><br><a href="http://www.securityfocus.com/bid/38162/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				38162
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-0734<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 09 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:13PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Wesley Miaw
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESXi Server  4.1<br/>
+					
+				
+					VMWare ESXi Server  4.0<br/>
+					
+				
+					VMWare ESXi Server  3.5<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath Appliance Platform Linux Service  2<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Multi Network Firewall 2.0 <br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					HP System Management Homepage 6.2.2 7<br/>
+					
+				
+					HP System Management Homepage 6.0 .96<br/>
+					
+				
+					HP System Management Homepage 3.0.2 .77<br/>
+					
+				
+					HP System Management Homepage 3.0.1 .73<br/>
+					
+				
+					HP System Management Homepage 3.0 .68<br/>
+					
+				
+					HP System Management Homepage 3.0 .64<br/>
+					
+				
+					HP System Management Homepage  6.3<br/>
+					
+				
+					HP System Management Homepage  6.2.0-12<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.1.0.103<br/>
+					
+				
+					HP System Management Homepage  6.1.0.102<br/>
+					
+				
+					HP System Management Homepage  6.1.0-103<br/>
+					
+				
+					HP System Management Homepage  6.1<br/>
+					
+				
+					HP System Management Homepage  6.0.0.95<br/>
+					
+				
+					HP System Management Homepage  6.0.0-95<br/>
+					
+				
+					HP System Management Homepage  6.0<br/>
+					
+				
+					HP System Management Homepage  3.0.2.77 B<br/>
+					
+				
+					HP System Management Homepage  3.0.2-77<br/>
+					
+				
+					HP System Management Homepage  3.0.1-73<br/>
+					
+				
+					HP System Management Homepage  3.0.0-68<br/>
+					
+				
+					HP System Management Homepage  0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 armel<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+					
+				
+					Daniel Stenberg curl 7.19.6 <br/>
+					
+				
+					Daniel Stenberg curl 7.19.5 <br/>
+					
+				
+					Daniel Stenberg curl 7.19.4 <br/>
+					
+				
+					Daniel Stenberg curl 7.19.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.19 <br/>
+					
+				
+					Daniel Stenberg curl 7.18.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.18 <br/>
+					
+				
+					Daniel Stenberg curl 7.17 <br/>
+					
+				
+					Daniel Stenberg curl 7.16.4 <br/>
+					
+				
+					Daniel Stenberg curl 7.15.5 <br/>
+					
+				
+					Daniel Stenberg curl 7.15.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.15.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.15.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.15 <br/>
+					
+				
+					Daniel Stenberg curl 7.14.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.14 <br/>
+					
+				
+					Daniel Stenberg curl 7.13.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.13.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.13 <br/>
+					
+				
+					Daniel Stenberg curl 7.12.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.12.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.12.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.12 <br/>
+					
+				
+					Daniel Stenberg curl 7.11.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.11.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.11 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.8 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.7 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.6 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.5 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.4 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.10.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.10 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.8 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.7 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.6 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.5 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.4 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.9.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.9 <br/>
+					
+				
+					Daniel Stenberg curl 7.8.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Advanced Workstation for the Itanium Processor 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1<br/>
+</span>
+					
+				
+					Daniel Stenberg curl 7.8.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.8 <br/>
+					
+				
+					Daniel Stenberg curl 7.7.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.7.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.7.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.7 <br/>
+					
+				
+					Daniel Stenberg curl 7.6.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.6 <br/>
+					
+				
+					Daniel Stenberg curl 7.5.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.5.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.5 <br/>
+					
+				
+					Daniel Stenberg curl 7.4.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.4.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.4 <br/>
+					
+				
+					Daniel Stenberg curl 7.3 <br/>
+					
+				
+					Daniel Stenberg curl 7.2.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.2 <br/>
+					
+				
+					Daniel Stenberg curl 7.1.1 <br/>
+					
+				
+					Daniel Stenberg curl 7.1 <br/>
+					
+				
+					Daniel Stenberg curl  7.16.3<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1<br/>
+					
+				
+					Avaya Messaging Storage Server  2.0<br/>
+					
+				
+					Avaya Messaging Storage Server  1.0<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya Intuity AUDIX LX  R1.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESXi Server  4.1 ESXi410-20110120<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

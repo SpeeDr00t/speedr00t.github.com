@@ -1,0 +1,1974 @@
+#SpeeDr00t@Black Falcon<br>#bid40235<p><b><span style="font-size: 18pt;">MIT Kerberos GSS-API Checksum NULL Pointer Dereference Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/40235/info">info</a><br><a href="http://www.securityfocus.com/bid/40235/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/40235/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/40235/solution">solution</a><br><a href="http://www.securityfocus.com/bid/40235/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				40235
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1321<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 18 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:22PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Shawn Emery from Oracle
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare VirtualCenter  2.5.Update 3 build 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 6<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 5<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 4<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 2<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5<br/>
+					
+				
+					VMWare Vcenter Update Manager  4.1<br/>
+					
+				
+					VMWare Vcenter Update Manager  4.0<br/>
+					
+				
+					VMWare Vcenter Update Manager  1.0<br/>
+					
+				
+					VMWare vCenter  4.1 Update 1<br/>
+					
+				
+					VMWare vCenter  4.1<br/>
+					
+				
+					VMWare vCenter  4.0<br/>
+					
+				
+					VMWare ESXi Server  4.1<br/>
+					
+				
+					VMWare ESX Server 3.0.3 <br/>
+					
+				
+					VMWare ESX Server  4.1<br/>
+					
+				
+					VMWare ESX Server  4.0<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					VMWare ESX  4.1 Update 1<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Java  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Java  10 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					SuSE Moblin  2.1<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9_sparc<br/>
+					
+				
+					Sun Solaris  8_x86<br/>
+					
+				
+					Sun Solaris  8_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_98<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_94<br/>
+					
+				
+					Sun OpenSolaris  build snv_93<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_86<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_81<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_74<br/>
+					
+				
+					Sun OpenSolaris  build snv_71<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_58<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_56<br/>
+					
+				
+					Sun OpenSolaris  build snv_54<br/>
+					
+				
+					Sun OpenSolaris  build snv_51<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_49<br/>
+					
+				
+					Sun OpenSolaris  build snv_48<br/>
+					
+				
+					Sun OpenSolaris  build snv_47<br/>
+					
+				
+					Sun OpenSolaris  build snv_45<br/>
+					
+				
+					Sun OpenSolaris  build snv_41<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_38<br/>
+					
+				
+					Sun OpenSolaris  build snv_37<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_35<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_28<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_13<br/>
+					
+				
+					Sun OpenSolaris  build snv_111a<br/>
+					
+				
+					Sun OpenSolaris  build snv_111<br/>
+					
+				
+					Sun OpenSolaris  build snv_110<br/>
+					
+				
+					Sun OpenSolaris  build snv_109<br/>
+					
+				
+					Sun OpenSolaris  build snv_108<br/>
+					
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101a<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Sun OpenSolaris  build snv_02<br/>
+					
+				
+					Sun OpenSolaris  build snv_01<br/>
+					
+				
+					Sun OpenSolaris  0<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _17<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _13<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _12<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _10<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _07<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _06<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _05<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _04<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 <br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _27<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _02<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _01<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 <br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_2<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_14<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_11<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_25<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_22<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_20<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_19<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_18<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_17<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_16<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_15<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_14<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_13<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_12<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_11<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 0_10<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _22<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _18<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _17<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _15<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _14<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _02<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _01<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 .0_05<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 .0_04<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 .0_03<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 _14<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 _02<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.4.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apache Xalan-java 2.5.1 <br/>
+</span>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_24<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_16<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_11-b03<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_07-b03<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_12<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_11<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_09<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_08<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_06<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.4.2_11<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.4.2_10<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _17<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _14<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _13<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _11<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _10<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _07<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _05<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _04<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _01-b06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 <br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 0_10<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 0_09<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 0_03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _22<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _18<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _17<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _15<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _14<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _11-b03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _07-b03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _02<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _01<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 .0_05<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 .0_04<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 .0_03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _14<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _11<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.4.2 <br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_24<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_16<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_11<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _17<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _14<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _13<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _11<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _10<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _07<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _05<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _04<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _01-b06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _01<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 <br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 0_10<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _22<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _18<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _17<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _15<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _14<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _11-b03<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _07-b03<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _07<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _02<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _01<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 .0_05<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 <br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _14<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _11<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_24<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_16<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_12<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_11<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_09<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_08<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_04<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_03<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.0<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					rPath rPath Linux  2<br/>
+					
+				
+					rPath Appliance Platform Linux Service  2<br/>
+					
+				
+					Redhat Enterprise Linux WS Extras  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Supplementary  5 server<br/>
+					
+				
+					Redhat Enterprise Linux Server Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Extras   4.8.z<br/>
+					
+				
+					Redhat Enterprise Linux Extras   4<br/>
+					
+				
+					Redhat Enterprise Linux ES Extras  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Supplementary  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS Extras  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop Extras  4<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					Oracle JRockit  R28.0.1<br/>
+					
+				
+					Oracle JRockit  R28.0.0<br/>
+					
+				
+					Oracle JRockit  R27.6.7<br/>
+					
+				
+					Oracle JRockit  R27.6.6<br/>
+					
+				
+					Oracle JRockit  R27.6.5<br/>
+					
+				
+					Oracle JRockit  R27.6.4<br/>
+					
+				
+					Oracle JRockit  R27.6.3<br/>
+					
+				
+					Oracle JRockit  R27.6.2<br/>
+					
+				
+					Oracle JRockit  R27.6.0-50 1.5.0 15<br/>
+					
+				
+					Oracle JRockit  R27.6.0<br/>
+					
+				
+					Oracle JRockit  R27.1.0<br/>
+					
+				
+					Oracle Fusion Middleware  11.1.1.5.0<br/>
+					
+				
+					Oracle Fusion Middleware  11.1.1.4.0<br/>
+					
+				
+					Oracle Fusion Middleware  11.1.1.3.0<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.4.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.4<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.6<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.5<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.4<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.3.3<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.2beta2<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.2beta1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.1.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.1<br/>
+					
+				
+					MIT Kerberos 5 5.0 -1.0.x<br/>
+					
+				
+					MIT Kerberos 5 1.8.1 <br/>
+					
+				
+					MIT Kerberos 5 1.7.2 <br/>
+					
+				
+					MIT Kerberos 5 1.7.1 <br/>
+					
+				
+					MIT Kerberos 5 1.6.4 <br/>
+					
+				
+					MIT Kerberos 5 1.6.3 <br/>
+					
+				
+					MIT Kerberos 5 1.6.2 <br/>
+					
+				
+					MIT Kerberos 5 1.6.1 <br/>
+					
+				
+					MIT Kerberos 5 1.6 <br/>
+					
+				
+					MIT Kerberos 5 1.5.5 <br/>
+					
+				
+					MIT Kerberos 5 1.5.4 <br/>
+					
+				
+					MIT Kerberos 5 1.5.3 <br/>
+					
+				
+					MIT Kerberos 5 1.5.2 <br/>
+					
+				
+					MIT Kerberos 5 1.5.1 <br/>
+					
+				
+					MIT Kerberos 5 1.5 <br/>
+					
+				
+					MIT Kerberos 5 1.4.3 <br/>
+					
+				
+					MIT Kerberos 5 1.4.2 <br/>
+					
+				
+					MIT Kerberos 5 1.4.1 <br/>
+					
+				
+					MIT Kerberos 5 1.4 <br/>
+					
+				
+					MIT Kerberos 5 1.3.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.3.5 <br/>
+					
+				
+					MIT Kerberos 5 1.3.4 <br/>
+					
+				
+					MIT Kerberos 5 1.3.3 <br/>
+					
+				
+					MIT Kerberos 5 1.3.2 <br/>
+					
+				
+					MIT Kerberos 5 1.3.1 <br/>
+					
+				
+					MIT Kerberos 5 1.3 -alpha1<br/>
+					
+				
+					MIT Kerberos 5 1.3 <br/>
+					
+				
+					MIT Kerberos 5 1.2.8 <br/>
+					
+				
+					MIT Kerberos 5 1.2.7 <br/>
+					
+				
+					MIT Kerberos 5 1.2.6 <br/>
+					
+				
+					MIT Kerberos 5 1.2.5 <br/>
+					
+				
+					MIT Kerberos 5 1.2.4 <br/>
+					
+				
+					MIT Kerberos 5 1.2.3 <br/>
+					
+				
+					MIT Kerberos 5 1.2.2 -beta1<br/>
+					
+				
+					MIT Kerberos 5 1.2.2 <br/>
+					
+				
+					MIT Kerberos 5 1.2.1 <br/>
+					
+				
+					MIT Kerberos 5 1.2 <br/>
+					
+				
+					MIT Kerberos 5 1.1.1 <br/>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.1 <br/>
+					
+				
+					MIT Kerberos 5 1.0.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.1<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.0.6 <br/>
+					
+				
+					MIT Kerberos 5 1.0 <br/>
+					
+				
+					MIT Kerberos 5  5-1.8.1<br/>
+					
+				
+					MIT Kerberos 5  5-1.8<br/>
+					
+				
+					MIT Kerberos 5  5-1.7.1<br/>
+					
+				
+					MIT Kerberos 5  5-1.7<br/>
+					
+				
+					MIT Kerberos 5  1.8<br/>
+					
+				
+					MIT Kerberos 5  1.7<br/>
+					
+				
+					MIT Kerberos 4  5-1.4.4<br/>
+					
+				
+					MIT Kerberos 4  5 1.3.3<br/>
+					
+				
+					MIT Kerberos 4  5 1.2 Beta2<br/>
+					
+				
+					MIT Kerberos 4  5 1.2 Beta1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Heimdal Heimdal 1.3.2 <br/>
+					
+				
+					Heimdal Heimdal 1.3.1 <br/>
+					
+				
+					Heimdal Heimdal 1.3 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					F5 Enterprise Manager 2.2 <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Voice Portal  3.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Proactive Contact  0<br/>
+					
+				
+					Avaya Messaging Storage Server  MM3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1<br/>
+					
+				
+					Avaya Messaging Storage Server  2.0<br/>
+					
+				
+					Avaya Messaging Storage Server  1.0<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ 4.1 <br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya Intuity AUDIX LX  R1.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya CMS Server  16.2<br/>
+					
+				
+					Avaya CMS Server  16.1<br/>
+					
+				
+					Avaya CMS Server  16.0<br/>
+					
+				
+					Avaya CMS Server  15.0<br/>
+					
+				
+					Avaya Aura System Platform  SP1.1<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura System Manager  1.1<br/>
+					
+				
+					Avaya Aura System Manager  1.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services 3.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.0<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.0.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.0<br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5 <br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.5 <br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare Vcenter Update Manager  4.1 Update 1<br/>
+					
+				
+					VMWare vCenter  4.1 Update 2<br/>
+					
+				
+					Sun OpenSolaris  Build Snv 111B<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _28<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_26<br/>
+					
+				
+					Oracle JRE (Windows Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JDK (Windows Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JDK (Solaris Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JDK (Linux Production Release)  1.6.0_22<br/>
+					
+				
+					MIT Kerberos 5 1.8.2 <br/>
+					
+				
+					Heimdal Heimdal 1.3.3 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can use readily available tools to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

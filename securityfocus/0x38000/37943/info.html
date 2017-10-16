@@ -1,0 +1,791 @@
+#SpeeDr00t@Black Falcon<br>#bid37943<p><b><span style="font-size: 18pt;">MySQL with yaSSL SSL Certificate Handling Remote Stack Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/37943/info">info</a><br><a href="http://www.securityfocus.com/bid/37943/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/37943/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/37943/solution">solution</a><br><a href="http://www.securityfocus.com/bid/37943/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				37943
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-4484<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 25 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 12 2012 05:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				&amp;lt;br&amp;gt;Evgeny Legerov
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					yaSSL yaSSL 1.9.6 <br/>
+					
+				
+					yaSSL yaSSL 1.7.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 6.0.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 6.0.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 6.0.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 6.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.23 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.22 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.18 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.17 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.16 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.15 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.14 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.13 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.12 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.11 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.10 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.9 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.52 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.51 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.50 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.49 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.48 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.47 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.46 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.45 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.45 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.44 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.42 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.40 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.39 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.38 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.37 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.36 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.33 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.32 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.27 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.24 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.22 -1-0.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.22 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.21 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.20 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.19 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MySQL AB MySQL 5.0.18 <br/>
+</span>
+					
+				
+					yaSSL yaSSL 1.0.6 <br/>
+					
+				
+					yaSSL yaSSL 1.0.5 <br/>
+					
+				
+					yaSSL yaSSL 1.0.4 <br/>
+					
+				
+					yaSSL yaSSL 1.0.3 <br/>
+					
+				
+					yaSSL yaSSL 1.0.2 <br/>
+					
+				
+					yaSSL yaSSL 1.0.1 <br/>
+					
+				
+					yaSSL yaSSL 1.0 <br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP2<br/>
+					
+				
+					MySQL AB MySQL 5.5 -ms2<br/>
+					
+				
+					MySQL AB MySQL 5.1.41 <br/>
+					
+				
+					MySQL AB MySQL 5.1.39 <br/>
+					
+				
+					MySQL AB MySQL 5.1.38 <br/>
+					
+				
+					MySQL AB MySQL 5.1.37 <br/>
+					
+				
+					MySQL AB MySQL 5.1.36 <br/>
+					
+				
+					MySQL AB MySQL 5.1.35 <br/>
+					
+				
+					MySQL AB MySQL 5.1.34 <br/>
+					
+				
+					MySQL AB MySQL 5.1.33 <br/>
+					
+				
+					MySQL AB MySQL 5.1.32 <br/>
+					
+				
+					MySQL AB MySQL 5.1.31 <br/>
+					
+				
+					MySQL AB MySQL 5.1.30 <br/>
+					
+				
+					MySQL AB MySQL 5.1.26 <br/>
+					
+				
+					MySQL AB MySQL 5.1.23 <br/>
+					
+				
+					MySQL AB MySQL 5.1.22 <br/>
+					
+				
+					MySQL AB MySQL 5.1.18 <br/>
+					
+				
+					MySQL AB MySQL 5.1.17 <br/>
+					
+				
+					MySQL AB MySQL 5.1.16 <br/>
+					
+				
+					MySQL AB MySQL 5.1.15 <br/>
+					
+				
+					MySQL AB MySQL 5.1.14 <br/>
+					
+				
+					MySQL AB MySQL 5.1.13 <br/>
+					
+				
+					MySQL AB MySQL 5.1.12 <br/>
+					
+				
+					MySQL AB MySQL 5.1.11 <br/>
+					
+				
+					MySQL AB MySQL 5.1.10 <br/>
+					
+				
+					MySQL AB MySQL 5.1.9 <br/>
+					
+				
+					MySQL AB MySQL 5.1.6 <br/>
+					
+				
+					MySQL AB MySQL 5.1.5 <br/>
+					
+				
+					MySQL AB MySQL 5.0.88 <br/>
+					
+				
+					MySQL AB MySQL 5.0.75 <br/>
+					
+				
+					MySQL AB MySQL 5.0.66 <br/>
+					
+				
+					MySQL AB MySQL 5.0.60 <br/>
+					
+				
+					MySQL AB MySQL 5.0.52 <br/>
+					
+				
+					MySQL AB MySQL 5.0.51 <br/>
+					
+				
+					MySQL AB MySQL 5.0.50 <br/>
+					
+				
+					MySQL AB MySQL 5.0.49 <br/>
+					
+				
+					MySQL AB MySQL 5.0.48 <br/>
+					
+				
+					MySQL AB MySQL 5.0.47 <br/>
+					
+				
+					MySQL AB MySQL 5.0.46 <br/>
+					
+				
+					MySQL AB MySQL 5.0.45 <br/>
+					
+				
+					MySQL AB MySQL 5.0.44 <br/>
+					
+				
+					MySQL AB MySQL 5.0.42 <br/>
+					
+				
+					MySQL AB MySQL 5.0.40 <br/>
+					
+				
+					MySQL AB MySQL 5.0.39 <br/>
+					
+				
+					MySQL AB MySQL 5.0.38 <br/>
+					
+				
+					MySQL AB MySQL 5.0.37 <br/>
+					
+				
+					MySQL AB MySQL 5.0.36 <br/>
+					
+				
+					MySQL AB MySQL 5.0.33 <br/>
+					
+				
+					MySQL AB MySQL 5.0.32 <br/>
+					
+				
+					MySQL AB MySQL 5.0.27 <br/>
+					
+				
+					MySQL AB MySQL 5.0.26 <br/>
+					
+				
+					MySQL AB MySQL 5.0.24 <br/>
+					
+				
+					MySQL AB MySQL 5.0.22 <br/>
+					
+				
+					MySQL AB MySQL 5.0.21 <br/>
+					
+				
+					MySQL AB MySQL 5.0.20 <br/>
+					
+				
+					MySQL AB MySQL 5.0.19 <br/>
+					
+				
+					MySQL AB MySQL 5.0.18 <br/>
+					
+				
+					MySQL AB MySQL 5.0.4 <br/>
+					
+				
+					MySQL AB MySQL 5.0.3 <br/>
+					
+				
+					MySQL AB MySQL 5.0.2 <br/>
+					
+				
+					MySQL AB MySQL 5.0.1 <br/>
+					
+				
+					MySQL AB MySQL  5.0.51a<br/>
+					
+				
+					MySQL AB MySQL  5.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Debian Linux  4.0 sparc<br/>
+					
+				
+					Debian Linux  4.0 s/390<br/>
+					
+				
+					Debian Linux  4.0 powerpc<br/>
+					
+				
+					Debian Linux  4.0 mipsel<br/>
+					
+				
+					Debian Linux  4.0 mips<br/>
+					
+				
+					Debian Linux  4.0 m68k<br/>
+					
+				
+					Debian Linux  4.0 ia-64<br/>
+					
+				
+					Debian Linux  4.0 ia-32<br/>
+					
+				
+					Debian Linux  4.0 hppa<br/>
+					
+				
+					Debian Linux  4.0 armel<br/>
+					
+				
+					Debian Linux  4.0 arm<br/>
+					
+				
+					Debian Linux  4.0 amd64<br/>
+					
+				
+					Debian Linux  4.0 alpha<br/>
+					
+				
+					Debian Linux  4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					yaSSL yaSSL 1.9.9 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x38000/37943/37943.py">#exploit_37943.py</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x38000/37943/37943_mysql_yassl_getname.rb">#exploit_37943_mysql_yassl_getname.rb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following examples are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/37943.py">/data/vulnerabilities/exploits/37943.py</a></li>
+<li><a href="/data/vulnerabilities/exploits/37943_mysql_yassl_getname.rb">/data/vulnerabilities/exploits/37943_mysql_yassl_getname.rb</a></li>
+</ul>
+</div>

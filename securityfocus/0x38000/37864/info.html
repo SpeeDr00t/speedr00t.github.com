@@ -1,0 +1,829 @@
+#SpeeDr00t@Black Falcon<br>#bid37864<p><b><span style="font-size: 18pt;">Microsoft Windows #GP Trap Handler Local Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/37864/info">info</a><br><a href="http://www.securityfocus.com/bid/37864/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/37864/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/37864/solution">solution</a><br><a href="http://www.securityfocus.com/bid/37864/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				37864
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-0232<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 19 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 15 2013 08:14AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Tavis Ormandy
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Windows XP Tablet PC Edition  SP3<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Tablet PC Edition  <br/>
+					
+				
+					Microsoft Windows XP Professional  SP3<br/>
+					
+				
+					Microsoft Windows XP Professional  SP2<br/>
+					
+				
+					Microsoft Windows XP Professional  SP1<br/>
+					
+				
+					Microsoft Windows XP Professional  <br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP3<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP2<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  SP1<br/>
+					
+				
+					Microsoft Windows XP Media Center Edition  <br/>
+					
+				
+					Microsoft Windows XP Home  SP3<br/>
+					
+				
+					Microsoft Windows XP Home  SP2<br/>
+					
+				
+					Microsoft Windows XP Home  SP1<br/>
+					
+				
+					Microsoft Windows XP  0<br/>
+					
+				
+					Microsoft Windows Vista  Ultimate SP2<br/>
+					
+				
+					Microsoft Windows Vista  Ultimate SP1<br/>
+					
+				
+					Microsoft Windows Vista  Ultimate<br/>
+					
+				
+					Microsoft Windows Vista  SP2<br/>
+					
+				
+					Microsoft Windows Vista  SP1<br/>
+					
+				
+					Microsoft Windows Vista  Home Premium SP2<br/>
+					
+				
+					Microsoft Windows Vista  Home Premium SP1<br/>
+					
+				
+					Microsoft Windows Vista  Home Premium<br/>
+					
+				
+					Microsoft Windows Vista  Home Basic SP2<br/>
+					
+				
+					Microsoft Windows Vista  Home Basic SP1<br/>
+					
+				
+					Microsoft Windows Vista  Home Basic<br/>
+					
+				
+					Microsoft Windows Vista  Enterprise SP2<br/>
+					
+				
+					Microsoft Windows Vista  Enterprise SP1<br/>
+					
+				
+					Microsoft Windows Vista  Business SP2<br/>
+					
+				
+					Microsoft Windows Vista  Business SP1<br/>
+					
+				
+					Microsoft Windows Vista  Business<br/>
+					
+				
+					Microsoft Windows Vista  0<br/>
+					
+				
+					Microsoft Windows Server Administration Tools 2003  0<br/>
+					
+				
+					Microsoft Windows Server 2008 Standard Edition  0<br/>
+					
+				
+					Microsoft Windows Server 2008 for 32-bit Systems  0<br/>
+					
+				
+					Microsoft Windows Server 2008 Enterprise Edition  0<br/>
+					
+				
+					Microsoft Windows Server 2008 Datacenter Edition  0<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  SP2<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Web Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  SP2<br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Standard Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Enterprise Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  SP1<br/>
+					
+				
+					Microsoft Windows Server 2003 Datacenter Edition  <br/>
+					
+				
+					Microsoft Windows Server 2003  SP2<br/>
+					
+				
+					Microsoft Windows Server 2003  SP1<br/>
+					
+				
+					Microsoft Windows Server  2008 R2<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Workstation  4.0<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6a<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows NT Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Server  4.0<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+					
+				
+					Microsoft Windows NT Enterprise Server  4.0<br/>
+					
+				
+					Microsoft Windows NT 3.5.1 SP5<br/>
+					
+				
+					Microsoft Windows NT 3.5.1 SP4<br/>
+					
+				
+					Microsoft Windows NT 3.5.1 SP3<br/>
+					
+				
+					Microsoft Windows NT 3.5.1 SP2<br/>
+					
+				
+					Microsoft Windows NT 3.5.1 SP1<br/>
+					
+				
+					Microsoft Windows NT 3.5.1 <br/>
+					
+				
+					Microsoft Windows NT  4.0 SP6<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP6<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP5<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP5<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP4<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP4<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP3<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0 SP2<br/>
+					
+				
+					Microsoft Windows NT  4.0 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0 SP1<br/>
+</span>
+					
+				
+					Microsoft Windows NT  4.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Enterprise Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Terminal Server  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows NT Workstation  4.0<br/>
+</span>
+					
+				
+					Microsoft Windows NT  3.5<br/>
+					
+				
+					Microsoft Windows 7 Ultimate  0<br/>
+					
+				
+					Microsoft Windows 7 Starter  0<br/>
+					
+				
+					Microsoft Windows 7 Professional  0<br/>
+					
+				
+					Microsoft Windows 7 Home Premium  0<br/>
+					
+				
+					Microsoft Windows 7 for 32-bit Systems  0<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Server  <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya DefinityOne Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya IP600 Media Servers  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S3400 Message Application Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya S8100 Media Servers  0<br/>
+</span>
+					
+				
+					Microsoft Windows 2000 Professional  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Professional  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Professional  <br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Datacenter Server  <br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP4<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP3<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP2<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  SP1<br/>
+					
+				
+					Microsoft Windows 2000 Advanced Server  <br/>
+					
+				
+					Microsoft Windows  7<br/>
+					
+				
+					Avaya S3400 Message Application Server  0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 2000 Server  <br/>
+</span>
+					
+				
+					Avaya Messaging Application Server  MM 3.1<br/>
+					
+				
+					Avaya Messaging Application Server  MM 3.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 2.0<br/>
+					
+				
+					Avaya Messaging Application Server  MM 1.1<br/>
+					
+				
+					Avaya Messaging Application Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Webportal  0<br/>
+					
+				
+					Avaya Meeting Exchange - Web Conferencing Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Streaming Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Recording Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Client Registration Server  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x38000/37864/37864.zip">#exploit_37864.zip</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x38000/37864/37864.rb">#exploit_37864.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x38000/37864/37864-1.rb">#exploit_37864-1.rb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following metasploit exploit codes are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/37864.zip">/data/vulnerabilities/exploits/37864.zip</a></li>
+<li><a href="/data/vulnerabilities/exploits/37864.rb">/data/vulnerabilities/exploits/37864.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/37864-1.rb">/data/vulnerabilities/exploits/37864-1.rb</a></li>
+</ul>
+</div>

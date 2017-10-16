@@ -1,0 +1,678 @@
+#SpeeDr00t@Black Falcon<br>#bid39967<p><b><span style="font-size: 18pt;">Multiple Lexmark Laser Printers HTTP 'Authorization' Header Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/39967/info">info</a><br><a href="http://www.securityfocus.com/bid/39967/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/39967/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/39967/solution">solution</a><br><a href="http://www.securityfocus.com/bid/39967/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				39967
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-0101<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 26 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 26 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Lexmark
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Lexmark X94x  NC.NPS.N129<br/>
+					
+				
+					Lexmark X94x  LC.BR.P049<br/>
+					
+				
+					Lexmark X86x  NR.APS.N332<br/>
+					
+				
+					Lexmark X86x  LP.SP.P112<br/>
+					
+				
+					Lexmark X85x  NC2.NPS.N222<br/>
+					
+				
+					Lexmark X85x  LC4.BE.P457<br/>
+					
+				
+					Lexmark X782e  NC2.NPS.N222<br/>
+					
+				
+					Lexmark X782e  LC2.TO.P305c<br/>
+					
+				
+					Lexmark X772e  NC2.NPS.N222<br/>
+					
+				
+					Lexmark X772e  LC.TR.P275<br/>
+					
+				
+					Lexmark X73x  NR.APS.N447a<br/>
+					
+				
+					Lexmark X73x  LR.FL.P224b<br/>
+					
+				
+					Lexmark X65x  NR.APS.N447a<br/>
+					
+				
+					Lexmark X65x  LR.MN.P224a<br/>
+					
+				
+					Lexmark X64xef  NC2.NPS.N222<br/>
+					
+				
+					Lexmark X64xef  LC2.TI.P305a<br/>
+					
+				
+					Lexmark X646  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X646  LC2.MC.P307a<br/>
+					
+				
+					Lexmark X644  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X644  LC2.MC.P307a<br/>
+					
+				
+					Lexmark X642  NC2.NPS.N222<br/>
+					
+				
+					Lexmark X642  LC2.MB.P307b<br/>
+					
+				
+					Lexmark X546  NR.APS.N448<br/>
+					
+				
+					Lexmark X546  LL.EL.P424<br/>
+					
+				
+					Lexmark X544  NR.APS.N448<br/>
+					
+				
+					Lexmark X544  LL.EL.P424<br/>
+					
+				
+					Lexmark X543  NR.APS.N448<br/>
+					
+				
+					Lexmark X543  LL.EL.P424<br/>
+					
+				
+					Lexmark X46x  NR.APS.N447a<br/>
+					
+				
+					Lexmark X46x  LR.BS.P224a<br/>
+					
+				
+					Lexmark X422  GN.AQ.P202<br/>
+					
+				
+					Lexmark X36x  NR.APS.N448<br/>
+					
+				
+					Lexmark X36x  LL.BZ.P424<br/>
+					
+				
+					Lexmark X34x  401.ec4<br/>
+					
+				
+					Lexmark X26x  NR.APS.N448<br/>
+					
+				
+					Lexmark X26x  LL.BZ.P424<br/>
+					
+				
+					Lexmark X20x  NM.APS.N048<br/>
+					
+				
+					Lexmark X20x  LM1.MT.P110h<br/>
+					
+				
+					Lexmark W850  NR.APS.N332<br/>
+					
+				
+					Lexmark W850  LP.JB.P108WS<br/>
+					
+				
+					Lexmark W840  NS.NP.N118<br/>
+					
+				
+					Lexmark W840  LS.HA.P121<br/>
+					
+				
+					Lexmark T656  NR.APS.N402<br/>
+					
+				
+					Lexmark T656  LSJ.SJ.P019<br/>
+					
+				
+					Lexmark T654  NR.APS.N447a<br/>
+					
+				
+					Lexmark T654  LR.JP.P224a<br/>
+					
+				
+					Lexmark T652  NR.APS.N447a<br/>
+					
+				
+					Lexmark T652  LR.JP.P224a<br/>
+					
+				
+					Lexmark T650  NR.APS.N447a<br/>
+					
+				
+					Lexmark T650  LR.JP.P224a<br/>
+					
+				
+					Lexmark T64x  NS.NP.N219<br/>
+					
+				
+					Lexmark T64x  LS.ST.P240<br/>
+					
+				
+					Lexmark T430  JX.JU.P101<br/>
+					
+				
+					Lexmark N8130  NR.APS.N368<br/>
+					
+				
+					Lexmark N8120  NR.APS.N368<br/>
+					
+				
+					Lexmark N70xxe  LC.CO.N054<br/>
+					
+				
+					Lexmark N4050e  GO.GO.N106<br/>
+					
+				
+					Lexmark N4000  PH2.ME.N134<br/>
+					
+				
+					Lexmark E462  NR.APS.N447a<br/>
+					
+				
+					Lexmark E462  LR.LBH.P224cWS<br/>
+					
+				
+					Lexmark E460  NR.APS.N447a<br/>
+					
+				
+					Lexmark E460  LR.LBH.P224a<br/>
+					
+				
+					Lexmark E450  NM.NA.N098a<br/>
+					
+				
+					Lexmark E450  LM.SZ.P113vcREF<br/>
+					
+				
+					Lexmark E360dn  NR.APS.N448<br/>
+					
+				
+					Lexmark E360dn  LL.LBM.P424<br/>
+					
+				
+					Lexmark E360d  NR.APS.N448<br/>
+					
+				
+					Lexmark E360d  LL.LBL.P424<br/>
+					
+				
+					Lexmark E350  LE.PH.P121<br/>
+					
+				
+					Lexmark E34x  BR.H.P204<br/>
+					
+				
+					Lexmark E33x  141.C09<br/>
+					
+				
+					Lexmark E260  NR.APS.N448<br/>
+					
+				
+					Lexmark E260  LL.LBL.P424<br/>
+					
+				
+					Lexmark E250  LE.PM.P121<br/>
+					
+				
+					Lexmark E240n  BR.Q.P204<br/>
+					
+				
+					Lexmark E240  BR.M.P204<br/>
+					
+				
+					Lexmark E23x  141.C09<br/>
+					
+				
+					Lexmark E238  BR.M.P204<br/>
+					
+				
+					Lexmark E120  LE.UL.P040<br/>
+					
+				
+					Lexmark C935dn  NC.NPS.N129<br/>
+					
+				
+					Lexmark C935dn  LC.JO.P051<br/>
+					
+				
+					Lexmark C920  NS.NP.N219<br/>
+					
+				
+					Lexmark C920  LS.TA.P127<br/>
+					
+				
+					Lexmark C78x  NC2.NPS.N222<br/>
+					
+				
+					Lexmark C78x  LC.IO.P165a<br/>
+					
+				
+					Lexmark C77x  NCC.NPS.N107<br/>
+					
+				
+					Lexmark C77x  LC.CM.P027b<br/>
+					
+				
+					Lexmark C73x  NR.APS.N447a<br/>
+					
+				
+					Lexmark C73x  LR.SK.P224a<br/>
+					
+				
+					Lexmark C546  NR.APS.N448<br/>
+					
+				
+					Lexmark C546  LU.AS.P424<br/>
+					
+				
+					Lexmark C544  NR.APS.N448<br/>
+					
+				
+					Lexmark C544  LL.AS.P424<br/>
+					
+				
+					Lexmark C543  NR.APS.N448<br/>
+					
+				
+					Lexmark C543  LL.AS.P424<br/>
+					
+				
+					Lexmark C540  NR.APS.N448<br/>
+					
+				
+					Lexmark C540  LL.AS.P424<br/>
+					
+				
+					Lexmark C53x  NSF.NP.N026<br/>
+					
+				
+					Lexmark C53x  LS.SW.P026avc<br/>
+					
+				
+					Lexmark C52x  NS.NP.N219<br/>
+					
+				
+					Lexmark C52x  LS.FA.P129<br/>
+					
+				
+					Lexmark C510  891.004<br/>
+					
+				
+					Lexmark 25xxN  NCL.NA.N104<br/>
+					
+				
+					Lexmark 25xxN  LCL.CU.P105<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Lexmark X94x  NC.NPS.N129S<br/>
+					
+				
+					Lexmark X94x  LC.BR.P051HDs<br/>
+					
+				
+					Lexmark X86x  NP.APS.N332a<br/>
+					
+				
+					Lexmark X86x  LP.SP.P311e<br/>
+					
+				
+					Lexmark X85x  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X85x  LC4.BE.P457S<br/>
+					
+				
+					Lexmark X782e  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X782e  LC2.TO.P305cS<br/>
+					
+				
+					Lexmark X772e  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X772e  LC2.TR.P275S<br/>
+					
+				
+					Lexmark X73x  NR.APS.N447b<br/>
+					
+				
+					Lexmark X73x  LR.FL.P311e<br/>
+					
+				
+					Lexmark X65x  NR.APS.N447b<br/>
+					
+				
+					Lexmark X65x  LR.MN.P311e<br/>
+					
+				
+					Lexmark X64xef  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X64xef  LC2.TI.P305aS<br/>
+					
+				
+					Lexmark X646  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X646  LC2.MC.P307aS<br/>
+					
+				
+					Lexmark X644  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X644  LC2.MC.P307aS<br/>
+					
+				
+					Lexmark X642  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark X642  LC2.MB.P307bS<br/>
+					
+				
+					Lexmark X546  NR.APS.N449<br/>
+					
+				
+					Lexmark X546  LL.EL.P429a<br/>
+					
+				
+					Lexmark X544  NR.APS.N449<br/>
+					
+				
+					Lexmark X544  LL.EL.P429a<br/>
+					
+				
+					Lexmark X543  NR.APS.N449<br/>
+					
+				
+					Lexmark X543  LL.EL.P429a<br/>
+					
+				
+					Lexmark X46x  NR.APS.N447b<br/>
+					
+				
+					Lexmark X46x  LR.BS.P311e<br/>
+					
+				
+					Lexmark X36x  NR.APS.N449<br/>
+					
+				
+					Lexmark X36x  LL.BZ.P429a<br/>
+					
+				
+					Lexmark X26x  NR.APS.N449<br/>
+					
+				
+					Lexmark X26x  LL.BZ.P429a<br/>
+					
+				
+					Lexmark X20x  NM.APS.N049<br/>
+					
+				
+					Lexmark X20x  LM1.MT.P214<br/>
+					
+				
+					Lexmark W850  NP.APS.N332a<br/>
+					
+				
+					Lexmark W850  LP.JB.P311e<br/>
+					
+				
+					Lexmark W840  NS.NP.N118S<br/>
+					
+				
+					Lexmark W840  LS.HA.P121S<br/>
+					
+				
+					Lexmark T656  NR.APS.N402S<br/>
+					
+				
+					Lexmark T656  LSJ.SJ.P019S1<br/>
+					
+				
+					Lexmark T654  NR.APS.N447b<br/>
+					
+				
+					Lexmark T654  LR.JP.P311e<br/>
+					
+				
+					Lexmark T652  NR.APS.N447b<br/>
+					
+				
+					Lexmark T652  LR.JP.P311e<br/>
+					
+				
+					Lexmark T650  NR.APS.N447b<br/>
+					
+				
+					Lexmark T650  LR.JP.P311e<br/>
+					
+				
+					Lexmark T64x  NS.NP.N219S<br/>
+					
+				
+					Lexmark T64x  LS.ST.P240S<br/>
+					
+				
+					Lexmark N8130  NR.APS.447c<br/>
+					
+				
+					Lexmark N8120  NR.APS.447c<br/>
+					
+				
+					Lexmark N70xxe  LC.CO.N069<br/>
+					
+				
+					Lexmark N4050e  GO.GO.N206<br/>
+					
+				
+					Lexmark N4000  LC.MD.P012d<br/>
+					
+				
+					Lexmark E462  NR.APS.N447b<br/>
+					
+				
+					Lexmark E462  LR.LBH.P311e<br/>
+					
+				
+					Lexmark E460  NR.APS.N447b<br/>
+					
+				
+					Lexmark E460  LR.LBH.P311e<br/>
+					
+				
+					Lexmark E450  NM.NA.N098aS<br/>
+					
+				
+					Lexmark E450  LM.SZ.P113vcREs<br/>
+					
+				
+					Lexmark E360dn  NR.APS.N449<br/>
+					
+				
+					Lexmark E360dn  LL.LBM.P429a<br/>
+					
+				
+					Lexmark E360d  NR.APS.N449<br/>
+					
+				
+					Lexmark E360d  LL.LBL.P429a<br/>
+					
+				
+					Lexmark E260  NR.APS.N449<br/>
+					
+				
+					Lexmark E260  LL.LBL.P429a<br/>
+					
+				
+					Lexmark C935dn  NC.NPS.N129S<br/>
+					
+				
+					Lexmark C935dn  LC.JO.P051S<br/>
+					
+				
+					Lexmark C920  NS.NP.N219S<br/>
+					
+				
+					Lexmark C920  LS.TA.P127S<br/>
+					
+				
+					Lexmark C78x  NC2.NPS.N222S<br/>
+					
+				
+					Lexmark C78x  LC.IO.P165aS<br/>
+					
+				
+					Lexmark C77x  NCC.NPS.N107S<br/>
+					
+				
+					Lexmark C77x  LC.CM.P027bS<br/>
+					
+				
+					Lexmark C73x  NR.APS.N447b<br/>
+					
+				
+					Lexmark C73x  LR.SK.P311e<br/>
+					
+				
+					Lexmark C546  NR.APS.N449<br/>
+					
+				
+					Lexmark C546  LU.AS.P429a<br/>
+					
+				
+					Lexmark C544  NR.APS.N449<br/>
+					
+				
+					Lexmark C544  LL.AS.P429a<br/>
+					
+				
+					Lexmark C543  NR.APS.N449<br/>
+					
+				
+					Lexmark C543  LL.AS.P429a<br/>
+					
+				
+					Lexmark C540  NR.APS.N449<br/>
+					
+				
+					Lexmark C540  LL.AS.P429a<br/>
+					
+				
+					Lexmark C53x  NSF.NP.N026S<br/>
+					
+				
+					Lexmark C53x  LS.SW.P026avcS<br/>
+					
+				
+					Lexmark C52x  NS.NP.N219S<br/>
+					
+				
+					Lexmark C52x  LS.FA.P129S<br/>
+					
+				
+					Lexmark 25xxN  NCL.NA.N105<br/>
+					
+				
+					Lexmark 25xxN  LC.CU.P106<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue with readily available tools.
+	
+		<ul>
+</ul>
+</div>

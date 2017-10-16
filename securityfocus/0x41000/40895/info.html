@@ -1,0 +1,531 @@
+#SpeeDr00t@Black Falcon<br>#bid40895<p><b><span style="font-size: 18pt;">Ruby WEBrick UTF-7 Encoding Cross Site Scripting Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/40895/info">info</a><br><a href="http://www.securityfocus.com/bid/40895/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/40895/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/40895/solution">solution</a><br><a href="http://www.securityfocus.com/bid/40895/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				40895
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-0541<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 15 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:38PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Apple
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Yukihiro Matsumoto Ruby 1.9.3 dev<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 RC2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 -rc1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 -p429<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 -p376<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9 -2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9 -1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p72<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p71<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p22<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p21<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p287<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p286<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p230<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p229<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p114<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p231<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p230<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p115<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.4 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.3 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2 pre4<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre3<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.1 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.6.8 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.6.7 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.6 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.1-p378<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.0-3<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p299<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p249<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p248<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p173<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p160<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p399<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p388<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p383<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p369<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p368<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux Long Life  5.6 server<br/>
+					
+				
+					Redhat Enterprise Linux EUS  5.6.z server<br/>
+					
+				
+					Redhat Enterprise Linux ES  4.8.z<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4.8.z<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop Workstation  5<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Avaya Aura System Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura System Manager  6.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.5<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Yukihiro Matsumoto Ruby  1.9.1-p430<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p302<br/>
+					
+				
+					Avaya Aura System Manager 6.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue by enticing an unsuspecting user to follow a malicious URI.
+	
+		<ul>
+</ul>
+</div>

