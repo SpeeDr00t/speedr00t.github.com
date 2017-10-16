@@ -1,0 +1,1263 @@
+#SpeeDr00t@Black Falcon<br>#bid43673<p><b><span style="font-size: 18pt;">Apache APR-util 'apr_brigade_split_line()' Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/43673/info">info</a><br><a href="http://www.securityfocus.com/bid/43673/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/43673/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/43673/solution">solution</a><br><a href="http://www.securityfocus.com/bid/43673/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				43673
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-1623<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 01 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:16PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Stefan Fritsch
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_98<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_94<br/>
+					
+				
+					Sun OpenSolaris  build snv_93<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_86<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_81<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_74<br/>
+					
+				
+					Sun OpenSolaris  build snv_71<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_58<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_56<br/>
+					
+				
+					Sun OpenSolaris  build snv_54<br/>
+					
+				
+					Sun OpenSolaris  build snv_51<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_49<br/>
+					
+				
+					Sun OpenSolaris  build snv_48<br/>
+					
+				
+					Sun OpenSolaris  build snv_47<br/>
+					
+				
+					Sun OpenSolaris  build snv_45<br/>
+					
+				
+					Sun OpenSolaris  build snv_41<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_38<br/>
+					
+				
+					Sun OpenSolaris  build snv_37<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_35<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_28<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_110<br/>
+					
+				
+					Sun OpenSolaris  build snv_109<br/>
+					
+				
+					Sun OpenSolaris  build snv_108<br/>
+					
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101a<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for Windows 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for Solaris 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 6 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 5 Server 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 4 ES 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 4 AS 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server EL4  0<br/>
+					
+				
+					Redhat JBoss Enterprise Web Server 5.0 <br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4.8.z<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4.8.z<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop Workstation  5<br/>
+					
+				
+					Redhat Desktop 4.0 <br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2008.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					IBM WebSphere Application Server for z/OS  6.1<br/>
+					
+				
+					IBM Websphere Application Server 7.0 3<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .9<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .8<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .2<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .13<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .12<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .11<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.7<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.6<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.5<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.4<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.13<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.1<br/>
+					
+				
+					IBM OS/400  V5R4M0<br/>
+					
+				
+					IBM i5/OS  0<br/>
+					
+				
+					HP System Management Homepage 6.2.2 7<br/>
+					
+				
+					HP System Management Homepage 6.0 .96<br/>
+					
+				
+					HP System Management Homepage 3.0.2 .77<br/>
+					
+				
+					HP System Management Homepage 3.0.1 .73<br/>
+					
+				
+					HP System Management Homepage 3.0 .68<br/>
+					
+				
+					HP System Management Homepage 3.0 .64<br/>
+					
+				
+					HP System Management Homepage  6.3<br/>
+					
+				
+					HP System Management Homepage  6.2.0-12<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.1.0.103<br/>
+					
+				
+					HP System Management Homepage  6.1.0.102<br/>
+					
+				
+					HP System Management Homepage  6.1.0-103<br/>
+					
+				
+					HP System Management Homepage  6.1<br/>
+					
+				
+					HP System Management Homepage  6.0.0.95<br/>
+					
+				
+					HP System Management Homepage  6.0.0-95<br/>
+					
+				
+					HP System Management Homepage  6.0<br/>
+					
+				
+					HP System Management Homepage  3.0.2.77 B<br/>
+					
+				
+					HP System Management Homepage  3.0.2-77<br/>
+					
+				
+					HP System Management Homepage  3.0.1-73<br/>
+					
+				
+					HP System Management Homepage  3.0.0-68<br/>
+					
+				
+					HP System Management Homepage  0<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.13<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.12<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.10<br/>
+					
+				
+					HP HP-UX Web Server Suite  2.32<br/>
+					
+				
+					HP HP-UX Web Server Suite  2.31<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  0<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  0<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-10-03 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-10-02 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-10-01 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-10 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00-05 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00-04 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00-01 Solaris<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00 Linux (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00 Linux<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  04-00 AIX<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-10-10 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-10-09 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-10 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00-05 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00-02 (Windows)<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00-01 HP-UX <br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00-01 (HP-UX(IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 Windows<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 Solaris<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 Linux (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 Linux<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 HP-UX (IPF)<br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 HP-UX <br/>
+					
+				
+					Hitachi Hitachi Web Server  03-00 AIX<br/>
+					
+				
+					Hitachi Cosminexus Developer no version  0<br/>
+					
+				
+					Hitachi Cosminexus Application Server no version  0<br/>
+					
+				
+					Hitachi Cosminexus  9.0<br/>
+					
+				
+					Hitachi Cosminexus  8.0<br/>
+					
+				
+					Hitachi Cosminexus  7.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition  9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition  9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition  9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Studio Enterprise Edition   9.1.0 B<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.3.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.0 B<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.0 A<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition 9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Standard-J Edition  9.1.0B<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.2 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.1 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.0 A<br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition 9.0 <br/>
+					
+				
+					Fujitsu INTERSTAGE Application Server Enterprise Edition  9.1.0B<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Blue Coat Systems Director 5.2.2 .5<br/>
+					
+				
+					Blue Coat Systems Director 4.2.2 .4<br/>
+					
+				
+					Blue Coat Systems Director  5.5<br/>
+					
+				
+					Blue Coat Systems Director  5.4<br/>
+					
+				
+					Blue Coat Systems Director  0<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Voice Portal  3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  MSS 5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  MSS 4.1<br/>
+					
+				
+					Avaya Messaging Storage Server  MM3.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP3<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  3.1<br/>
+					
+				
+					Avaya Messaging Storage Server  2.0<br/>
+					
+				
+					Avaya Messaging Storage Server  1.0<br/>
+					
+				
+					Avaya Messaging Storage Server  <br/>
+					
+				
+					Avaya Message Networking 5.2.1 <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  5.2 SP1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IP Office Application Server  6.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  R1.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya Interactive Response  4.0<br/>
+					
+				
+					Avaya Interactive Response  3.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  3.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.3 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.2 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services 4.0.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  4.0<br/>
+					
+				
+					Apache APR-util 1.3.9 <br/>
+					
+				
+					Apache APR-util 1.3.8 <br/>
+					
+				
+					Apache APR-util 1.3.7 <br/>
+					
+				
+					Apache APR-util 1.3.6 <br/>
+					
+				
+					Apache APR-util 1.3.5 <br/>
+					
+				
+					Apache APR-util 1.3.4 <br/>
+					
+				
+					Apache Apache 2.2.15 <br/>
+					
+				
+					Apache Apache 2.2.14 <br/>
+					
+				
+					Apache Apache 2.2.13 <br/>
+					
+				
+					Apache Apache 2.2.12 <br/>
+					
+				
+					Apache Apache 2.2.11 <br/>
+					
+				
+					Apache Apache 2.2.10 <br/>
+					
+				
+					Apache Apache 2.2.9 <br/>
+					
+				
+					Apache Apache 2.2.8 <br/>
+					
+				
+					Apache Apache 2.2.6 <br/>
+					
+				
+					Apache Apache 2.2.5 <br/>
+					
+				
+					Apache Apache 2.2.4 <br/>
+					
+				
+					Apache Apache 2.2.3 <br/>
+					
+				
+					Apache Apache 2.2.2 <br/>
+					
+				
+					Apache Apache 2.2 <br/>
+					
+				
+					Apache Apache  2.2.7-dev<br/>
+					
+				
+					Apache Apache  2.2.6-dev<br/>
+					
+				
+					Apache Apache  2.2.5-dev<br/>
+					
+				
+					Apache Apache  2.2.16<br/>
+					
+				
+					Apache Apache  2.2.15-dev<br/>
+					
+				
+					Apache Apache  2.2.1<br/>
+					
+				
+					Apache Apache  2.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat JBoss Enterprise Web Server for Windows 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for Solaris 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 6 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 5 Server 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 4 ES 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 4 AS 1.0.2 <br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.15<br/>
+					
+				
+					IBM HTTP Server  6.1.0.35<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.14<br/>
+					
+				
+					HP HP-UX Web Server Suite  2.33<br/>
+					
+				
+					Blue Coat Systems Director  5.5.2.3<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP3<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP9<br/>
+					
+				
+					Avaya Message Networking  5.2 SP4<br/>
+					
+				
+					Avaya Meeting Exchange  6.2<br/>
+					
+				
+					Avaya IP Office Application Server  7.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  5.2.1 SP4<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Apache APR-util 1.3.10 <br/>
+					
+				
+					Apache Apache  2.2.17<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

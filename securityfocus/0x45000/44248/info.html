@@ -1,0 +1,1398 @@
+#SpeeDr00t@Black Falcon<br>#bid44248<p><b><span style="font-size: 18pt;">Mozilla Firefox SeaMonkey and Thunderbird 'nsBarProp' Use-After-Free Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/44248/info">info</a><br><a href="http://www.securityfocus.com/bid/44248/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/44248/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/44248/solution">solution</a><br><a href="http://www.securityfocus.com/bid/44248/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				44248
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-3180<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 19 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:49PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Sergey Glazunov
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP3<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP3<br/>
+					
+				
+					Sun Solaris  11 Express<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Sun OpenSolaris  svn_126<br/>
+					
+				
+					Sun OpenSolaris  snv_151a<br/>
+					
+				
+					Sun OpenSolaris  snv_111b<br/>
+					
+				
+					Sun OpenSolaris  build snv_99<br/>
+					
+				
+					Sun OpenSolaris  build snv_98<br/>
+					
+				
+					Sun OpenSolaris  build snv_96<br/>
+					
+				
+					Sun OpenSolaris  build snv_95<br/>
+					
+				
+					Sun OpenSolaris  build snv_94<br/>
+					
+				
+					Sun OpenSolaris  build snv_93<br/>
+					
+				
+					Sun OpenSolaris  build snv_92 <br/>
+					
+				
+					Sun OpenSolaris  build snv_91<br/>
+					
+				
+					Sun OpenSolaris  build snv_90<br/>
+					
+				
+					Sun OpenSolaris  build snv_89<br/>
+					
+				
+					Sun OpenSolaris  build snv_88<br/>
+					
+				
+					Sun OpenSolaris  build snv_87<br/>
+					
+				
+					Sun OpenSolaris  build snv_86<br/>
+					
+				
+					Sun OpenSolaris  build snv_85<br/>
+					
+				
+					Sun OpenSolaris  build snv_84<br/>
+					
+				
+					Sun OpenSolaris  build snv_83<br/>
+					
+				
+					Sun OpenSolaris  build snv_82<br/>
+					
+				
+					Sun OpenSolaris  build snv_81<br/>
+					
+				
+					Sun OpenSolaris  build snv_80<br/>
+					
+				
+					Sun OpenSolaris  build snv_78<br/>
+					
+				
+					Sun OpenSolaris  build snv_77<br/>
+					
+				
+					Sun OpenSolaris  build snv_76<br/>
+					
+				
+					Sun OpenSolaris  build snv_74<br/>
+					
+				
+					Sun OpenSolaris  build snv_71<br/>
+					
+				
+					Sun OpenSolaris  build snv_68<br/>
+					
+				
+					Sun OpenSolaris  build snv_67<br/>
+					
+				
+					Sun OpenSolaris  build snv_64<br/>
+					
+				
+					Sun OpenSolaris  build snv_61<br/>
+					
+				
+					Sun OpenSolaris  build snv_59<br/>
+					
+				
+					Sun OpenSolaris  build snv_58<br/>
+					
+				
+					Sun OpenSolaris  build snv_57<br/>
+					
+				
+					Sun OpenSolaris  build snv_56<br/>
+					
+				
+					Sun OpenSolaris  build snv_54<br/>
+					
+				
+					Sun OpenSolaris  build snv_51<br/>
+					
+				
+					Sun OpenSolaris  build snv_50<br/>
+					
+				
+					Sun OpenSolaris  build snv_49<br/>
+					
+				
+					Sun OpenSolaris  build snv_48<br/>
+					
+				
+					Sun OpenSolaris  build snv_47<br/>
+					
+				
+					Sun OpenSolaris  build snv_45<br/>
+					
+				
+					Sun OpenSolaris  build snv_41<br/>
+					
+				
+					Sun OpenSolaris  build snv_39<br/>
+					
+				
+					Sun OpenSolaris  build snv_38<br/>
+					
+				
+					Sun OpenSolaris  build snv_37<br/>
+					
+				
+					Sun OpenSolaris  build snv_36<br/>
+					
+				
+					Sun OpenSolaris  build snv_35<br/>
+					
+				
+					Sun OpenSolaris  build snv_29<br/>
+					
+				
+					Sun OpenSolaris  build snv_28<br/>
+					
+				
+					Sun OpenSolaris  build snv_22<br/>
+					
+				
+					Sun OpenSolaris  build snv_19<br/>
+					
+				
+					Sun OpenSolaris  build snv_151a<br/>
+					
+				
+					Sun OpenSolaris  build snv_151<br/>
+					
+				
+					Sun OpenSolaris  build snv_137<br/>
+					
+				
+					Sun OpenSolaris  build snv_136<br/>
+					
+				
+					Sun OpenSolaris  build snv_135<br/>
+					
+				
+					Sun OpenSolaris  build snv_134a<br/>
+					
+				
+					Sun OpenSolaris  build snv_134<br/>
+					
+				
+					Sun OpenSolaris  build snv_133<br/>
+					
+				
+					Sun OpenSolaris  build snv_132<br/>
+					
+				
+					Sun OpenSolaris  build snv_131<br/>
+					
+				
+					Sun OpenSolaris  build snv_130<br/>
+					
+				
+					Sun OpenSolaris  build snv_13<br/>
+					
+				
+					Sun OpenSolaris  build snv_129<br/>
+					
+				
+					Sun OpenSolaris  build snv_128<br/>
+					
+				
+					Sun OpenSolaris  build snv_127<br/>
+					
+				
+					Sun OpenSolaris  build snv_126<br/>
+					
+				
+					Sun OpenSolaris  build snv_125<br/>
+					
+				
+					Sun OpenSolaris  build snv_124<br/>
+					
+				
+					Sun OpenSolaris  build snv_123<br/>
+					
+				
+					Sun OpenSolaris  build snv_122<br/>
+					
+				
+					Sun OpenSolaris  build snv_121<br/>
+					
+				
+					Sun OpenSolaris  build snv_120<br/>
+					
+				
+					Sun OpenSolaris  build snv_119<br/>
+					
+				
+					Sun OpenSolaris  build snv_118<br/>
+					
+				
+					Sun OpenSolaris  build snv_117<br/>
+					
+				
+					Sun OpenSolaris  build snv_116<br/>
+					
+				
+					Sun OpenSolaris  build snv_115<br/>
+					
+				
+					Sun OpenSolaris  build snv_114<br/>
+					
+				
+					Sun OpenSolaris  build snv_113<br/>
+					
+				
+					Sun OpenSolaris  build snv_112<br/>
+					
+				
+					Sun OpenSolaris  build snv_111a<br/>
+					
+				
+					Sun OpenSolaris  build snv_111<br/>
+					
+				
+					Sun OpenSolaris  build snv_110<br/>
+					
+				
+					Sun OpenSolaris  build snv_109<br/>
+					
+				
+					Sun OpenSolaris  build snv_108<br/>
+					
+				
+					Sun OpenSolaris  build snv_107<br/>
+					
+				
+					Sun OpenSolaris  build snv_106<br/>
+					
+				
+					Sun OpenSolaris  build snv_105<br/>
+					
+				
+					Sun OpenSolaris  build snv_104<br/>
+					
+				
+					Sun OpenSolaris  build snv_103<br/>
+					
+				
+					Sun OpenSolaris  build snv_102<br/>
+					
+				
+					Sun OpenSolaris  build snv_101a<br/>
+					
+				
+					Sun OpenSolaris  build snv_101<br/>
+					
+				
+					Sun OpenSolaris  build snv_100<br/>
+					
+				
+					Sun OpenSolaris  build snv_02<br/>
+					
+				
+					Sun OpenSolaris  build snv_01<br/>
+					
+				
+					Sun OpenSolaris  Build Snv 111B<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux WS  3<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux Optional Productivity Application  5 server<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop 3.0 <br/>
+					
+				
+					Mozilla Thunderbird 3.1.4 <br/>
+					
+				
+					Mozilla Thunderbird 3.0.8 <br/>
+					
+				
+					Mozilla Thunderbird 3.0.5 <br/>
+					
+				
+					Mozilla Thunderbird 3.0.4 <br/>
+					
+				
+					Mozilla Thunderbird 3.0.2 <br/>
+					
+				
+					Mozilla Thunderbird 3.0.1 <br/>
+					
+				
+					Mozilla Thunderbird 2.0 .9<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .8<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .6<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .5<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .4<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .19<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .17<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .16<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .14<br/>
+					
+				
+					Mozilla Thunderbird 2.0 .12<br/>
+					
+				
+					Mozilla Thunderbird 1.5 beta 2<br/>
+					
+				
+					Mozilla Thunderbird 1.5 .9<br/>
+					
+				
+					Mozilla Thunderbird 1.5 .13<br/>
+					
+				
+					Mozilla Thunderbird 1.5 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.8 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.7 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.6 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.5 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.2 <br/>
+					
+				
+					Mozilla Thunderbird 1.0.1 <br/>
+					
+				
+					Mozilla Thunderbird 1.0 <br/>
+					
+				
+					Mozilla Thunderbird 0.9 <br/>
+					
+				
+					Mozilla Thunderbird 0.8 <br/>
+					
+				
+					Mozilla Thunderbird 0.7.3 <br/>
+					
+				
+					Mozilla Thunderbird 0.7.2 <br/>
+					
+				
+					Mozilla Thunderbird 0.7.1 <br/>
+					
+				
+					Mozilla Thunderbird 0.7 <br/>
+					
+				
+					Mozilla Thunderbird 0.6 <br/>
+					
+				
+					Mozilla Thunderbird  3.1.3<br/>
+					
+				
+					Mozilla Thunderbird  3.1.2<br/>
+					
+				
+					Mozilla Thunderbird  3.1.1<br/>
+					
+				
+					Mozilla Thunderbird  3.1<br/>
+					
+				
+					Mozilla Thunderbird  3.0.7<br/>
+					
+				
+					Mozilla Thunderbird  3.0.6<br/>
+					
+				
+					Mozilla Thunderbird  3.0.4<br/>
+					
+				
+					Mozilla Thunderbird  3.0.3<br/>
+					
+				
+					Mozilla Thunderbird  3.0<br/>
+					
+				
+					Mozilla Thunderbird  2.0.0.23<br/>
+					
+				
+					Mozilla Thunderbird  2.0.0.22<br/>
+					
+				
+					Mozilla Thunderbird  2.0.0.21<br/>
+					
+				
+					Mozilla Thunderbird  2.0.0.18<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.8<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.7<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.5<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.4<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.2<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.14<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.12<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.10<br/>
+					
+				
+					Mozilla Thunderbird  1.5.0.1<br/>
+					
+				
+					Mozilla SeaMonkey 2.0.8 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.5 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.4 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.3 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.2 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.1 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.19 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.18 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.17 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.16 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.15 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.14 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.13 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.12 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.11 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.10 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.9 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.8 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.7 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.6 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.5 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.4 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.3 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.2 <br/>
+					
+				
+					Mozilla SeaMonkey 1.1.1 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.9 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.8 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.7 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.6 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.5 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.3 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.2 <br/>
+					
+				
+					Mozilla SeaMonkey 1.0.1 <br/>
+					
+				
+					Mozilla SeaMonkey  2.0.7<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.6<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.5<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.4<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Rc2<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Rc1<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Beta 2<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Beta 1<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Alpha 3<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Alpha 2<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Alpha 1<br/>
+					
+				
+					Mozilla SeaMonkey  2.0<br/>
+					
+				
+					Mozilla SeaMonkey  1.5.0.9<br/>
+					
+				
+					Mozilla SeaMonkey  1.5.0.8<br/>
+					
+				
+					Mozilla SeaMonkey  1.5.0.10<br/>
+					
+				
+					Mozilla SeaMonkey  1.0<br/>
+					
+				
+					Mozilla Firefox 3.6.10 <br/>
+					
+				
+					Mozilla Firefox 3.6.9 <br/>
+					
+				
+					Mozilla Firefox 3.6.8 <br/>
+					
+				
+					Mozilla Firefox 3.6.6 <br/>
+					
+				
+					Mozilla Firefox 3.6.4 <br/>
+					
+				
+					Mozilla Firefox 3.6.3 <br/>
+					
+				
+					Mozilla Firefox 3.6.2 <br/>
+					
+				
+					Mozilla Firefox 3.5.13 <br/>
+					
+				
+					Mozilla Firefox 3.5.10 <br/>
+					
+				
+					Mozilla Firefox 3.5.9 <br/>
+					
+				
+					Mozilla Firefox 3.5.8 <br/>
+					
+				
+					Mozilla Firefox 3.5.7 <br/>
+					
+				
+					Mozilla Firefox 3.5.6 <br/>
+					
+				
+					Mozilla Firefox 3.5.5 <br/>
+					
+				
+					Mozilla Firefox 3.5.4 <br/>
+					
+				
+					Mozilla Firefox 3.5.3 <br/>
+					
+				
+					Mozilla Firefox 3.5.2 <br/>
+					
+				
+					Mozilla Firefox 3.5.1 <br/>
+					
+				
+					Mozilla Firefox 3.5 <br/>
+					
+				
+					Mozilla Firefox 3.0.17 <br/>
+					
+				
+					Mozilla Firefox 3.0.16 <br/>
+					
+				
+					Mozilla Firefox 3.0.15 <br/>
+					
+				
+					Mozilla Firefox 3.0.14 <br/>
+					
+				
+					Mozilla Firefox 3.0.13 <br/>
+					
+				
+					Mozilla Firefox 3.0.12 <br/>
+					
+				
+					Mozilla Firefox 3.0.11 <br/>
+					
+				
+					Mozilla Firefox 3.0.10 <br/>
+					
+				
+					Mozilla Firefox 3.0.9 <br/>
+					
+				
+					Mozilla Firefox 3.0.8 <br/>
+					
+				
+					Mozilla Firefox 3.0.7 <br/>
+					
+				
+					Mozilla Firefox 3.0.6 <br/>
+					
+				
+					Mozilla Firefox 3.0.5 <br/>
+					
+				
+					Mozilla Firefox 3.0.4 <br/>
+					
+				
+					Mozilla Firefox 3.0.3 <br/>
+					
+				
+					Mozilla Firefox 3.0.2 <br/>
+					
+				
+					Mozilla Firefox 3.0.1 <br/>
+					
+				
+					Mozilla Firefox 2.0 20<br/>
+					
+				
+					Mozilla Firefox 2.0 .9<br/>
+					
+				
+					Mozilla Firefox 2.0 .8<br/>
+					
+				
+					Mozilla Firefox 2.0 .7<br/>
+					
+				
+					Mozilla Firefox 2.0 .6<br/>
+					
+				
+					Mozilla Firefox 2.0 .5<br/>
+					
+				
+					Mozilla Firefox 2.0 .4<br/>
+					
+				
+					Mozilla Firefox 2.0 .3<br/>
+					
+				
+					Mozilla Firefox 2.0 .19<br/>
+					
+				
+					Mozilla Firefox 2.0 .17<br/>
+					
+				
+					Mozilla Firefox 2.0 .16<br/>
+					
+				
+					Mozilla Firefox 2.0 .10<br/>
+					
+				
+					Mozilla Firefox 2.0 .1<br/>
+					
+				
+					Mozilla Firefox 1.5.8 <br/>
+					
+				
+					Mozilla Firefox 1.5.7 <br/>
+					
+				
+					Mozilla Firefox 1.5.6 <br/>
+					
+				
+					Mozilla Firefox 1.5.5 <br/>
+					
+				
+					Mozilla Firefox 1.5.4 <br/>
+					
+				
+					Mozilla Firefox 1.5.2 <br/>
+					
+				
+					Mozilla Firefox 1.5.1 <br/>
+					
+				
+					Mozilla Firefox 1.5 beta 2<br/>
+					
+				
+					Mozilla Firefox 1.5 beta 1<br/>
+					
+				
+					Mozilla Firefox 1.5 12<br/>
+					
+				
+					Mozilla Firefox 1.5 .8<br/>
+					
+				
+					Mozilla Firefox 1.5 <br/>
+					
+				
+					Mozilla Firefox 1.0.8 <br/>
+					
+				
+					Mozilla Firefox 1.0.7 <br/>
+					
+				
+					Mozilla Firefox 1.0.6 <br/>
+					
+				
+					Mozilla Firefox 1.0.5 <br/>
+					
+				
+					Mozilla Firefox 1.0.4 <br/>
+					
+				
+					Mozilla Firefox 1.0.3 <br/>
+					
+				
+					Mozilla Firefox 1.0.2 <br/>
+					
+				
+					Mozilla Firefox 1.0.1 <br/>
+					
+				
+					Mozilla Firefox 1.0 <br/>
+					
+				
+					Mozilla Firefox  4.0 Beta1<br/>
+					
+				
+					Mozilla Firefox  3.6.7<br/>
+					
+				
+					Mozilla Firefox  3.6.6<br/>
+					
+				
+					Mozilla Firefox  3.6<br/>
+					
+				
+					Mozilla Firefox  3.5.12<br/>
+					
+				
+					Mozilla Firefox  3.5.11<br/>
+					
+				
+					Mozilla Firefox  3.0<br/>
+					
+				
+					Mozilla Firefox  2.0.0.2<br/>
+					
+				
+					Mozilla Firefox  2.0.0.18<br/>
+					
+				
+					Mozilla Firefox  2.0.0.15<br/>
+					
+				
+					Mozilla Firefox  2.0.0.14<br/>
+					
+				
+					Mozilla Firefox  2.0.0.13<br/>
+					
+				
+					Mozilla Firefox  2.0.0.12<br/>
+					
+				
+					Mozilla Firefox  2.0.0.11<br/>
+					
+				
+					Mozilla Firefox  2.0<br/>
+					
+				
+					Mozilla Firefox  1.5.3<br/>
+					
+				
+					Mozilla Firefox  1.5.0.9<br/>
+					
+				
+					Mozilla Firefox  1.5.0.7<br/>
+					
+				
+					Mozilla Firefox  1.5.0.6<br/>
+					
+				
+					Mozilla Firefox  1.5.0.5<br/>
+					
+				
+					Mozilla Firefox  1.5.0.4<br/>
+					
+				
+					Mozilla Firefox  1.5.0.3<br/>
+					
+				
+					Mozilla Firefox  1.5.0.2<br/>
+					
+				
+					Mozilla Firefox  1.5.0.11<br/>
+					
+				
+					Mozilla Firefox  1.5.0.10<br/>
+					
+				
+					Mozilla Firefox  1.5.0.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Message Networking 5.2.1 <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya Intuity AUDIX LX  R1.1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP2<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0 SP1<br/>
+					
+				
+					Avaya Intuity AUDIX LX  2.0<br/>
+					
+				
+					Avaya Intuity AUDIX LX  1.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Mozilla Thunderbird 3.1.5 <br/>
+					
+				
+					Mozilla Thunderbird 3.0.9 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.9 <br/>
+					
+				
+					Mozilla Firefox 3.5.14 <br/>
+					
+				
+					Mozilla Firefox  3.6.11<br/>
+					
+				
+					Avaya Conferencing Standard Edition  7.0<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

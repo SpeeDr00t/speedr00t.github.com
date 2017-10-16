@@ -1,0 +1,1737 @@
+#SpeeDr00t@Black Falcon<br>#bid44016<p><b><span style="font-size: 18pt;">Oracle Java SE and Java for Business 'defaultReadObject' Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/44016/info">info</a><br><a href="http://www.securityfocus.com/bid/44016/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/44016/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/44016/solution">solution</a><br><a href="http://www.securityfocus.com/bid/44016/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				44016
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-3569<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 12 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:28PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Oracle
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare VirtualCenter  2.5.Update 3 build 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 6<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 5<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 4<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 2<br/>
+					
+				
+					VMWare VirtualCenter  2.5 Update 1<br/>
+					
+				
+					VMWare VirtualCenter  2.5<br/>
+					
+				
+					VMWare Vcenter Update Manager  4.1<br/>
+					
+				
+					VMWare Vcenter Update Manager  4.0<br/>
+					
+				
+					VMWare Vcenter Update Manager  1.0<br/>
+					
+				
+					VMWare vCenter  4.1 Update 1<br/>
+					
+				
+					VMWare vCenter  4.1<br/>
+					
+				
+					VMWare vCenter  4.0<br/>
+					
+				
+					VMWare ESX Server 3.0.3 <br/>
+					
+				
+					VMWare ESX Server  4.0<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					VMWare ESX  4.1 Update 1<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Java  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Java  10 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _15<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun SDK (Windows Production Release) 1.4.2 <br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_27<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_26<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_25<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_22<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_20<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_19<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_18<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_17<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_16<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_14<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_13<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_12<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_11<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _15<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun SDK (Solaris Production Release) 1.4.2 <br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_27<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_26<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_25<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_22<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_20<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_19<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_18<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_17<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_16<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_14<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_13<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_12<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_11<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _15<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _02<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 _01<br/>
+					
+				
+					Sun SDK (Linux Production Release) 1.4.2 <br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_27<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_26<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_25<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_22<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_20<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_19<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_18<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_17<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_16<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_14<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_13<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_12<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_11<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _17<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _13<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _12<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _10<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _07<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _06<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _05<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 _04<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.6 <br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _22<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _18<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _16<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _15<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _06<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _05<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _04<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _03<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _02<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 _01<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.5 <br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _27<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _02<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _01<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 <br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_2<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_14<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_11<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_17<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_14<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_11<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_10<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0.0_09<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0.0_08<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0.0_07<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_25<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_22<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_20<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_19<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_18<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_17<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_16<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_15<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_14<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_13<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_12<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.4.2_11<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _17<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _13<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _12<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _10<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _07<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _06<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _05<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 _04<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.6 <br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _22<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _18<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _16<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _15<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _06<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _05<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _04<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _03<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _02<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 _01<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.5 <br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _02<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 _01<br/>
+					
+				
+					Sun JRE (Solaris Production Release) 1.4.2 <br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_2<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_14<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_11<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_17<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_14<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_11<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_10<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0.0_09<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0.0_08<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0.0_07<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_27<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_25<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_22<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_20<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_19<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_18<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_17<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_16<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_15<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_14<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_13<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_12<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_11<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _17<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _13<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _12<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _10<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _07<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _06<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _05<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 _04<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.6 <br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _22<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _18<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _16<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _15<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _07<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _06<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _05<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _04<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _03<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _02<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 _01<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 .0 beta<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.5 <br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _24<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _10-b03<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _10<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _09<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _08<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _07<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _06<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _05<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _04<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _03<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _02<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 _01<br/>
+					
+				
+					Sun JRE (Linux Production Release) 1.4.2 <br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_14<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_11<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_17<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_14<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_11<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_10<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_09<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_08<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_27<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_25<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_22<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_20<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_19<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_18<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_17<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_16<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_15<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_14<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_13<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_12<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_11<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _17<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _14<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _13<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _11<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _10<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _07<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _06<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _05<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 _04<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.6 <br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 0_10<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _22<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _18<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _17<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _15<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _14<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _02<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 _01<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 .0_05<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 .0_04<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.5 .0_03<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_01-b06<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_24<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_16<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_11-b03<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_07-b03<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_12<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_11<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_09<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_08<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0.0_06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _17<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _14<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _13<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _11<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _10<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _07<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _05<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _04<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 _01-b06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.6 <br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 0_10<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 0_09<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 0_03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _22<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _18<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _17<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _15<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _14<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _11-b03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _07-b03<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _06<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _02<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 _01<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 .0_05<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 .0_04<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.5 .0_03<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.6.0_01<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_24<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_16<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_12<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_11<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _17<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _14<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _13<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _11<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _10<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _07<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _05<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _04<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _01-b06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 _01<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.6 <br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 0_10<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _22<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _18<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _17<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _15<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _14<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _11-b03<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _07-b03<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _07<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _06<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _02<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 _01<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 .0_05<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.5 <br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_21<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_20<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_19<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_18<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_15<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_03<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.6.0_02<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_25<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_24<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_23<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_20<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_16<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_13<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_12<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_11<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_09<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_08<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_04<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0.0_03<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. openSUSE  11.1<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					Redhat Network Satellite Server (for RHEL 5)   5.4<br/>
+					
+				
+					Redhat Enterprise Linux WS Extras  4<br/>
+					
+				
+					Redhat Enterprise Linux WS Extras  3<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Supplementary  5 server<br/>
+					
+				
+					Redhat Enterprise Linux Server Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux SAP  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux for SAP  5 server<br/>
+					
+				
+					Redhat Enterprise Linux Extras   4.8.z<br/>
+					
+				
+					Redhat Enterprise Linux Extras   4<br/>
+					
+				
+					Redhat Enterprise Linux Extras   3<br/>
+					
+				
+					Redhat Enterprise Linux ES Extras  4<br/>
+					
+				
+					Redhat Enterprise Linux ES Extras  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Supplementary  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS for SAP  4<br/>
+					
+				
+					Redhat Enterprise Linux AS Extras  4<br/>
+					
+				
+					Redhat Enterprise Linux AS Extras  3<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Redhat Desktop Extras  4<br/>
+					
+				
+					Redhat Desktop Extras  3<br/>
+					
+				
+					Oracle JRockit  R28.0.1<br/>
+					
+				
+					Oracle JRockit  R28.0.0<br/>
+					
+				
+					Oracle JRockit  R27.6.7<br/>
+					
+				
+					Oracle JRockit  R27.6.6<br/>
+					
+				
+					Oracle JRockit  R27.6.5<br/>
+					
+				
+					Oracle JRockit  R27.6.4<br/>
+					
+				
+					Oracle JRockit  R27.6.3<br/>
+					
+				
+					Oracle JRockit  R27.6.2<br/>
+					
+				
+					Oracle JRockit  R27.6.0-50 1.5.0 15<br/>
+					
+				
+					Oracle JRockit  R27.6.0<br/>
+					
+				
+					Oracle JRockit  R27.1.0<br/>
+					
+				
+					IBM Runtimes for Java Technology 1.4.2 <br/>
+					
+				
+					IBM Runtimes for Java Technology  6.0<br/>
+					
+				
+					IBM Runtimes for Java Technology  5.0<br/>
+					
+				
+					IBM Java SE 1.4.2 <br/>
+					
+				
+					IBM Java SE  6.0<br/>
+					
+				
+					IBM Java SE  5.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Avaya Proactive Contact 3.0.3 <br/>
+					
+				
+					Avaya Proactive Contact 3.0.2 <br/>
+					
+				
+					Avaya Proactive Contact  3.0<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare Vcenter Update Manager  4.1 Update 1<br/>
+					
+				
+					VMWare vCenter  4.1 Update 2<br/>
+					
+				
+					Sun SDK (Windows Production Release)  1.4.2_28<br/>
+					
+				
+					Sun SDK (Solaris Production Release)  1.4.2_28<br/>
+					
+				
+					Sun SDK (Linux Production Release)  1.4.2_28<br/>
+					
+				
+					Sun JRE (Windows Production Release) 1.4.2 _28<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.4.2_28<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.4.2_28<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.5.0_26<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.5.0_26<br/>
+					
+				
+					Oracle JRE (Windows Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JRE (Solaris Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JRE (Linux Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JDK (Windows Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JDK (Solaris Production Release)  1.6.0_22<br/>
+					
+				
+					Oracle JDK (Linux Production Release)  1.6.0_22<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>
