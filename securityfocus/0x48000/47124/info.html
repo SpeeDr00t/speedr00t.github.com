@@ -1,0 +1,309 @@
+#SpeeDr00t@Black Falcon<br>#bid47124<p><b><span style="font-size: 18pt;">Perl 'lc()' and 'uc()' Functions TAINT Mode Protection Security Bypass Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/47124/info">info</a><br><a href="http://www.securityfocus.com/bid/47124/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/47124/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/47124/solution">solution</a><br><a href="http://www.securityfocus.com/bid/47124/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				47124
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-1487<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 30 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:10PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				mmartinec 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Larry Wall Perl 5.12.1 <br/>
+					
+				
+					Larry Wall Perl 5.10.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl 5.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+					
+				
+					Larry Wall Perl  5.13.10<br/>
+					
+				
+					Larry Wall Perl  5.12.3<br/>
+					
+				
+					Larry Wall Perl  5.12<br/>
+					
+				
+					Larry Wall Perl  5.10.1<br/>
+					
+				
+					Gentoo dev-lang/perl  5.12.2-r1<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Avaya 96x1 IP Deskphone  6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Larry Wall Perl  5.14<br/>
+					
+				
+					Gentoo dev-lang/perl  5.12.3-r1  <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue via readily available tools.<br/><br/>The following example input is available:<br/><br/>&amp;gt; perl -Te 'use Scalar::Util qw(tainted); $t=$0; $u=lc($t); printf("%d,%d\n",tainted($t),tainted($u))'<br/><br/>&amp;gt; perl -Te 'use Scalar::Util qw(tainted); $t=$0; $u=lc($t); printf("%d,%d\n",tainted($t),tainted($u))'
+	
+		<ul>
+</ul>
+</div>

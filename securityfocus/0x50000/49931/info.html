@@ -1,0 +1,107 @@
+#SpeeDr00t@Black Falcon<br>#bid49931<p><b><span style="font-size: 18pt;">Concrete5 SQL Injection and Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/49931/info">info</a><br><a href="http://www.securityfocus.com/bid/49931/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/49931/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/49931/solution">solution</a><br><a href="http://www.securityfocus.com/bid/49931/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				49931
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 04 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 04 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Ryan Dewhurst
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					concrete5 concrete5 5.4.2 <br/>
+					
+				
+					concrete5 concrete5 5.4.1 1<br/>
+					
+				
+					concrete5 concrete5  5.4.2.2<br/>
+					
+				
+					concrete5 concrete5  5.4.2.1<br/>
+					
+				
+					concrete5 concrete5  5.0.0b2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit the SQL-injection issue. The attacker must trick an unsuspecting victim into following a malicious URI to exploit the cross-site scripting issue.<br/><br/>The following example input is available for the SQL-injection issue:<br/><br/>http://www.example.com/index.php/dashboard/reports/surveys/?ccm_order_by=numberOfResponses&amp;amp;ccm_order_dir=,(SELECT BENCHMARK(1000000,MD5(1)) FROM btSurveyResults where CURRENT_USER() like 'root@localhost' limit 1) --
+	
+		<ul>
+</ul>
+</div>

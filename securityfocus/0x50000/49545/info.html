@@ -1,0 +1,280 @@
+#SpeeDr00t@Black Falcon<br>#bid49545<p><b><span style="font-size: 18pt;">QEMU 'scsi_disk_emulate_command()' Function Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/49545/info">info</a><br><a href="http://www.securityfocus.com/bid/49545/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/49545/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/49545/solution">solution</a><br><a href="http://www.securityfocus.com/bid/49545/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				49545
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-3346<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 09 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 20 2011 07:09PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Paolo Bonzini
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					RedHat Enterprise Linux Virtualization  5 server<br/>
+					
+				
+					RedHat Enterprise Linux Desktop Multi OS  5 client<br/>
+					
+				
+					RedHat Enterprise Linux  5.0<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					QEMU QEMU 0.10.6 <br/>
+					
+				
+					QEMU QEMU 0.9.1 <br/>
+					
+				
+					QEMU QEMU 0.9 <br/>
+					
+				
+					QEMU QEMU 0.8.2 <br/>
+					
+				
+					QEMU QEMU 0.6.1 <br/>
+					
+				
+					QEMU QEMU  0.10<br/>
+					
+				
+					QEMU QEMU  0<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

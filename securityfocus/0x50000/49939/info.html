@@ -1,0 +1,964 @@
+#SpeeDr00t@Black Falcon<br>#bid49939<p><b><span style="font-size: 18pt;">Samba 'etc/mtab' File Appending Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/49939/info">info</a><br><a href="http://www.securityfocus.com/bid/49939/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/49939/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/49939/solution">solution</a><br><a href="http://www.securityfocus.com/bid/49939/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				49939
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-1678<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 04 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:18AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Dan Rosenberg
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESXi  5.0<br/>
+					
+				
+					VMWare ESXi  4.1<br/>
+					
+				
+					VMWare ESXi  4.0<br/>
+					
+				
+					VMWare ESXi  3.5<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Samba Samba 3.6 <br/>
+					
+				
+					Samba Samba 3.5.9 <br/>
+					
+				
+					Samba Samba 3.5.9 <br/>
+					
+				
+					Samba Samba 3.5.8 <br/>
+					
+				
+					Samba Samba 3.5.2 <br/>
+					
+				
+					Samba Samba 3.5.1 <br/>
+					
+				
+					Samba Samba 3.5 <br/>
+					
+				
+					Samba Samba 3.4.14 <br/>
+					
+				
+					Samba Samba 3.4.13 <br/>
+					
+				
+					Samba Samba 3.4.12 <br/>
+					
+				
+					Samba Samba 3.4.11 <br/>
+					
+				
+					Samba Samba 3.4.10 <br/>
+					
+				
+					Samba Samba 3.4.8 <br/>
+					
+				
+					Samba Samba 3.4.7 <br/>
+					
+				
+					Samba Samba 3.4.6 <br/>
+					
+				
+					Samba Samba 3.4.5 <br/>
+					
+				
+					Samba Samba 3.4.2 <br/>
+					
+				
+					Samba Samba 3.4.1 <br/>
+					
+				
+					Samba Samba 3.4 <br/>
+					
+				
+					Samba Samba 3.3.16 <br/>
+					
+				
+					Samba Samba 3.3.15 <br/>
+					
+				
+					Samba Samba 3.3.14 <br/>
+					
+				
+					Samba Samba 3.3.13 <br/>
+					
+				
+					Samba Samba 3.3.12 <br/>
+					
+				
+					Samba Samba 3.3.11 <br/>
+					
+				
+					Samba Samba 3.3.10 <br/>
+					
+				
+					Samba Samba 3.3.9 <br/>
+					
+				
+					Samba Samba 3.3.8 <br/>
+					
+				
+					Samba Samba 3.3.7 <br/>
+					
+				
+					Samba Samba 3.3.6 <br/>
+					
+				
+					Samba Samba 3.3.5 <br/>
+					
+				
+					Samba Samba 3.3.4 <br/>
+					
+				
+					Samba Samba 3.3.3 <br/>
+					
+				
+					Samba Samba 3.3.1 <br/>
+					
+				
+					Samba Samba 3.3 <br/>
+					
+				
+					Samba Samba 3.2.15 <br/>
+					
+				
+					Samba Samba 3.2.14 <br/>
+					
+				
+					Samba Samba 3.2.13 <br/>
+					
+				
+					Samba Samba 3.2.12 <br/>
+					
+				
+					Samba Samba 3.2.11 <br/>
+					
+				
+					Samba Samba 3.2.10 <br/>
+					
+				
+					Samba Samba 3.2.7 <br/>
+					
+				
+					Samba Samba 3.2.6 <br/>
+					
+				
+					Samba Samba 3.2.5 <br/>
+					
+				
+					Samba Samba 3.2.4 <br/>
+					
+				
+					Samba Samba 3.2.3 <br/>
+					
+				
+					Samba Samba 3.2.2 <br/>
+					
+				
+					Samba Samba 3.2.1 <br/>
+					
+				
+					Samba Samba 3.2 <br/>
+					
+				
+					Samba Samba 3.0.37 <br/>
+					
+				
+					Samba Samba 3.0.36 <br/>
+					
+				
+					Samba Samba 3.0.35 <br/>
+					
+				
+					Samba Samba 3.0.34 <br/>
+					
+				
+					Samba Samba 3.0.33 <br/>
+					
+				
+					Samba Samba 3.0.32 <br/>
+					
+				
+					Samba Samba 3.0.31 <br/>
+					
+				
+					Samba Samba 3.0.30 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 amd64<br/>
+</span>
+					
+				
+					Samba Samba 3.0.29 <br/>
+					
+				
+					Samba Samba 3.0.28 a<br/>
+					
+				
+					Samba Samba 3.0.28 a<br/>
+					
+				
+					Samba Samba 3.0.28 <br/>
+					
+				
+					Samba Samba 3.0.27 <br/>
+					
+				
+					Samba Samba 3.0.26 <br/>
+					
+				
+					Samba Samba 3.0.25 rc3<br/>
+					
+				
+					Samba Samba 3.0.25 rc2<br/>
+					
+				
+					Samba Samba 3.0.25 rc1<br/>
+					
+				
+					Samba Samba 3.0.25 pre2<br/>
+					
+				
+					Samba Samba 3.0.25 pre1<br/>
+					
+				
+					Samba Samba 3.0.25 c<br/>
+					
+				
+					Samba Samba 3.0.25 b<br/>
+					
+				
+					Samba Samba 3.0.25 a<br/>
+					
+				
+					Samba Samba 3.0.25 <br/>
+					
+				
+					Samba Samba 3.0.24 <br/>
+					
+				
+					Samba Samba 3.0.23 <br/>
+					
+				
+					Samba Samba 3.0.22 <br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+</span>
+					
+				
+					Samba Samba 3.0.21 <br/>
+					
+				
+					Samba Samba 3.0.20 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.2 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.19 <br/>
+					
+				
+					Samba Samba 3.0.18 <br/>
+					
+				
+					Samba Samba 3.0.17 <br/>
+					
+				
+					Samba Samba 3.0.16 <br/>
+					
+				
+					Samba Samba 3.0.15 <br/>
+					
+				
+					Samba Samba 3.0.14 <br/>
+					
+				
+					Samba Samba 3.0.13 <br/>
+					
+				
+					Samba Samba 3.0.12 <br/>
+					
+				
+					Samba Samba 3.0.11 <br/>
+					
+				
+					Samba Samba 3.0.10 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.9 <br/>
+					
+				
+					Samba Samba 3.0.8 <br/>
+					
+				
+					Samba Samba 3.0.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Samba Samba 3.0.6 <br/>
+					
+				
+					Samba Samba 3.0.5 <br/>
+					
+				
+					Samba Samba 3.0.4 -r1<br/>
+					
+				
+					Samba Samba 3.0.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.0 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.3 <br/>
+					
+				
+					Samba Samba 3.0.2 a<br/>
+					
+				
+					Samba Samba 3.0.2 <br/>
+					
+				
+					Samba Samba 3.0.1 <br/>
+					
+				
+					Samba Samba 3.0 alpha<br/>
+					
+				
+					Samba Samba 3.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.3 <br/>
+</span>
+					
+				
+					Samba Samba  3.5.7<br/>
+					
+				
+					Samba Samba  3.5.6<br/>
+					
+				
+					Samba Samba  3.5.5<br/>
+					
+				
+					Samba Samba  3.5.4<br/>
+					
+				
+					Samba Samba  3.5.3<br/>
+					
+				
+					Samba Samba  3.5.11<br/>
+					
+				
+					Samba Samba  3.5.10<br/>
+					
+				
+					Samba Samba  3.5<br/>
+					
+				
+					Samba Samba  3.4.9<br/>
+					
+				
+					Samba Samba  3.4.4<br/>
+					
+				
+					Samba Samba  3.4.3<br/>
+					
+				
+					Samba Samba  3.3.2<br/>
+					
+				
+					Samba Samba  3.2.9<br/>
+					
+				
+					Samba Samba  3.2.8<br/>
+					
+				
+					Samba Samba  3.1<br/>
+					
+				
+					Samba Samba  3.0.4 Rc1<br/>
+					
+				
+					Samba Samba  3.0.27a<br/>
+					
+				
+					Samba Samba  3.0.27 A<br/>
+					
+				
+					Samba Samba  3.0.26a<br/>
+					
+				
+					Samba Samba  3.0.26 A<br/>
+					
+				
+					Samba Samba  3.0.25 C<br/>
+					
+				
+					Samba Samba  3.0.25 B<br/>
+					
+				
+					Samba Samba  3.0.25 A<br/>
+					
+				
+					Samba Samba  3.0.23d<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0<br/>
+</span>
+					
+				
+					Samba Samba  3.0.23c<br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux  11.0<br/>
+</span>
+					
+				
+					Samba Samba  3.0.23b<br/>
+					
+				
+					Samba Samba  3.0.23a<br/>
+					
+				
+					Samba Samba  3.0.23 D<br/>
+					
+				
+					Samba Samba  3.0.23 C<br/>
+					
+				
+					Samba Samba  3.0.23 B<br/>
+					
+				
+					Samba Samba  3.0.23 A<br/>
+					
+				
+					Samba Samba  3.0.21c<br/>
+					
+				
+					Samba Samba  3.0.21b<br/>
+					
+				
+					Samba Samba  3.0.21a<br/>
+					
+				
+					Samba Samba  3.0.21 C<br/>
+					
+				
+					Samba Samba  3.0.21 B<br/>
+					
+				
+					Samba Samba  3.0.21 A<br/>
+					
+				
+					Samba Samba  3.0.20b<br/>
+					
+				
+					Samba Samba  3.0.20a<br/>
+					
+				
+					Samba Samba  3.0.20 B<br/>
+					
+				
+					Samba Samba  3.0.20 A<br/>
+					
+				
+					Samba Samba  3.0.14a<br/>
+					
+				
+					Samba Samba  3.0.14 A<br/>
+					
+				
+					Samba Samba  3.0.0<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Gentoo Linux  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can use readily available command line utilities to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

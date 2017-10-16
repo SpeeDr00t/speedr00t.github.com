@@ -1,0 +1,651 @@
+#SpeeDr00t@Black Falcon<br>#bid46084<p><b><span style="font-size: 18pt;">PostgreSQL 'intarray' Module 'gettoken()' Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46084/info">info</a><br><a href="http://www.securityfocus.com/bid/46084/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46084/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46084/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46084/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46084
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-4015<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 01 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:17PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The security team of Apple.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Turbolinux Turbolinux Server  11 x64<br/>
+					
+				
+					Turbolinux Turbolinux Server  11<br/>
+					
+				
+					Turbolinux Client  2008<br/>
+					
+				
+					Turbolinux Appliance Server  3.0 x64<br/>
+					
+				
+					Turbolinux Appliance Server  3.0<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					PostgreSQL PostgreSQL 9.0.1 <br/>
+					
+				
+					PostgreSQL PostgreSQL 9.0 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.4.5 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.4.4 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.4.3 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.4.2 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.4.1 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.3.11 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.3.9 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.3.8 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.3.6 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.17 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.15 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.14 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.6 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.4 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.3 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.2 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2 <br/>
+					
+				
+					PostgreSQL PostgreSQL  9.0.1<br/>
+					
+				
+					PostgreSQL PostgreSQL  9.0<br/>
+					
+				
+					PostgreSQL PostgreSQL  8.4<br/>
+					
+				
+					PostgreSQL PostgreSQL  8.3.12<br/>
+					
+				
+					PostgreSQL PostgreSQL  8.3.10<br/>
+					
+				
+					PostgreSQL PostgreSQL  8.3<br/>
+					
+				
+					PostgreSQL PostgreSQL  8.2.18<br/>
+					
+				
+					PostgreSQL PostgreSQL  8.2.16<br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					HP Network Node Manager i  9.10<br/>
+					
+				
+					HP Network Node Manager i  9.03<br/>
+					
+				
+					HP Network Node Manager i  9.02<br/>
+					
+				
+					HP Network Node Manager i  9.01<br/>
+					
+				
+					HP Network Node Manager i  8.1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Blue Coat Systems Intelligence Center 3.2.1 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 3.1.2 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 3.1.1 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 2.1.2 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 2.1.1 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 2.1 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 2.0.1 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center 2.0 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center  3.2<br/>
+					
+				
+					Blue Coat Systems Intelligence Center  3.1<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Message Networking 5.2.1 <br/>
+					
+				
+					Avaya Message Networking  MN 3.1<br/>
+					
+				
+					Avaya Message Networking  5.2.2<br/>
+					
+				
+					Avaya Message Networking  5.2 SP1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya Message Networking  <br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  6.0<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IP Office Application Server  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.0<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  4.0<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Conferencing 6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 SP1 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.3<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PostgreSQL PostgreSQL 9.0.3 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.4.7 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.3.14 <br/>
+					
+				
+					PostgreSQL PostgreSQL 8.2.20 <br/>
+					
+				
+					Blue Coat Systems Intelligence Center  3.2.2.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

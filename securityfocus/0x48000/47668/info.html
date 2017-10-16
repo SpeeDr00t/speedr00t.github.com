@@ -1,0 +1,1838 @@
+#SpeeDr00t@Black Falcon<br>#bid47668<p><b><span style="font-size: 18pt;">libxslt 'generate-id()' Function Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/47668/info">info</a><br><a href="http://www.securityfocus.com/bid/47668/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/47668/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/47668/solution">solution</a><br><a href="http://www.securityfocus.com/bid/47668/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				47668
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0195<br/>
+				
+					CVE-2011-1202<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 08 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:25PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Chris Evans
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XMLSoft libxslt 1.1.24 <br/>
+					
+				
+					XMLSoft libxslt 1.1.23 <br/>
+					
+				
+					XMLSoft libxslt 1.1.22 <br/>
+					
+				
+					XMLSoft libxslt 1.1.21 <br/>
+					
+				
+					XMLSoft libxslt 1.1.20 <br/>
+					
+				
+					XMLSoft libxslt 1.1.19 <br/>
+					
+				
+					XMLSoft libxslt 1.1.18 <br/>
+					
+				
+					XMLSoft libxslt 1.1.17 <br/>
+					
+				
+					XMLSoft libxslt 1.1.16 <br/>
+					
+				
+					XMLSoft libxslt 1.1.15 <br/>
+					
+				
+					XMLSoft libxslt 1.1.14 <br/>
+					
+				
+					XMLSoft libxslt 1.1.13 <br/>
+					
+				
+					XMLSoft libxslt 1.1.12 <br/>
+					
+				
+					XMLSoft libxslt 1.1.11 <br/>
+					
+				
+					XMLSoft libxslt 1.1.10 <br/>
+					
+				
+					XMLSoft libxslt 1.1.9 <br/>
+					
+				
+					XMLSoft libxslt 1.1.8 <br/>
+					
+				
+					XMLSoft libxslt 1.0.33 <br/>
+					
+				
+					XMLSoft libxslt 1.0.15 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					XMLSoft libxslt  1.1.26<br/>
+					
+				
+					XMLSoft libxslt  1.1.25<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  93.E0.21C<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  93.C4.93<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  90.D3.06<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  82.D1.44<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  81.D0.73<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  73.D2.33<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  73.C5.11<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP4<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP4<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mozilla SeaMonkey 2.0.11 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.9 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.8 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.5 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.4 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.3 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.2 <br/>
+					
+				
+					Mozilla SeaMonkey 2.0.1 <br/>
+					
+				
+					Mozilla SeaMonkey  2.0.9<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.7<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.6<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.5<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.4<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.13<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.12<br/>
+					
+				
+					Mozilla SeaMonkey  2.0.10<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Rc2<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Rc1<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Beta 2<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Beta 1<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Alpha 3<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Alpha 2<br/>
+					
+				
+					Mozilla SeaMonkey  2.0 Alpha 1<br/>
+					
+				
+					Mozilla SeaMonkey  2.0<br/>
+					
+				
+					Mozilla Firefox 3.6.13 <br/>
+					
+				
+					Mozilla Firefox 3.6.10 <br/>
+					
+				
+					Mozilla Firefox 3.5.17 <br/>
+					
+				
+					Mozilla Firefox 3.5.16 <br/>
+					
+				
+					Mozilla Firefox 3.5.14 <br/>
+					
+				
+					Mozilla Firefox 3.5.13 <br/>
+					
+				
+					Mozilla Firefox 3.5.10 <br/>
+					
+				
+					Mozilla Firefox 3.5.1 <br/>
+					
+				
+					Mozilla Firefox 3.5 <br/>
+					
+				
+					Mozilla Firefox  3.6.16<br/>
+					
+				
+					Mozilla Firefox  3.6.15<br/>
+					
+				
+					Mozilla Firefox  3.6.14<br/>
+					
+				
+					Mozilla Firefox  3.6.12<br/>
+					
+				
+					Mozilla Firefox  3.6.11<br/>
+					
+				
+					Mozilla Firefox  3.6 Beta 3<br/>
+					
+				
+					Mozilla Firefox  3.6 Beta 2<br/>
+					
+				
+					Mozilla Firefox  3.6<br/>
+					
+				
+					Mozilla Firefox  3.5.18<br/>
+					
+				
+					Mozilla Firefox  3.5.17<br/>
+					
+				
+					Mozilla Firefox  3.5.15<br/>
+					
+				
+					Mozilla Firefox  3.5.12<br/>
+					
+				
+					Mozilla Firefox  3.5.11<br/>
+					
+				
+					Microsoft Internet Explorer  8<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					HP System Management Homepage 6.2.2 7<br/>
+					
+				
+					HP System Management Homepage 6.0 .96<br/>
+					
+				
+					HP System Management Homepage 3.0.2 .77<br/>
+					
+				
+					HP System Management Homepage 3.0.1 .73<br/>
+					
+				
+					HP System Management Homepage 3.0 .68<br/>
+					
+				
+					HP System Management Homepage 3.0 .64<br/>
+					
+				
+					HP System Management Homepage  6.3<br/>
+					
+				
+					HP System Management Homepage  6.2.0-12<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.1.0.103<br/>
+					
+				
+					HP System Management Homepage  6.1.0.102<br/>
+					
+				
+					HP System Management Homepage  6.1.0-103<br/>
+					
+				
+					HP System Management Homepage  6.1<br/>
+					
+				
+					HP System Management Homepage  6.0.0.95<br/>
+					
+				
+					HP System Management Homepage  6.0.0-95<br/>
+					
+				
+					HP System Management Homepage  6.0<br/>
+					
+				
+					HP System Management Homepage  3.0.2.77 B<br/>
+					
+				
+					HP System Management Homepage  3.0.2-77<br/>
+					
+				
+					HP System Management Homepage  3.0.1-73<br/>
+					
+				
+					HP System Management Homepage  3.0.0-68<br/>
+					
+				
+					HP System Management Homepage  0<br/>
+					
+				
+					Google Chrome  9.0.597.94<br/>
+					
+				
+					Google Chrome  9.0.597.84<br/>
+					
+				
+					Google Chrome  9.0.597.107<br/>
+					
+				
+					Google Chrome  8.0.552.344<br/>
+					
+				
+					Google Chrome  8.0.552.310<br/>
+					
+				
+					Google Chrome  8.0.552.309<br/>
+					
+				
+					Google Chrome  8.0.552.308<br/>
+					
+				
+					Google Chrome  8.0.552.307<br/>
+					
+				
+					Google Chrome  8.0.552.306<br/>
+					
+				
+					Google Chrome  8.0.552.305<br/>
+					
+				
+					Google Chrome  8.0.552.304<br/>
+					
+				
+					Google Chrome  8.0.552.303<br/>
+					
+				
+					Google Chrome  8.0.552.302<br/>
+					
+				
+					Google Chrome  8.0.552.301<br/>
+					
+				
+					Google Chrome  8.0.552.300<br/>
+					
+				
+					Google Chrome  8.0.552.237<br/>
+					
+				
+					Google Chrome  8.0.552.226<br/>
+					
+				
+					Google Chrome  8.0.552.225<br/>
+					
+				
+					Google Chrome  8.0.552.224<br/>
+					
+				
+					Google Chrome  8.0.552.223<br/>
+					
+				
+					Google Chrome  8.0.552.222<br/>
+					
+				
+					Google Chrome  8.0.552.221<br/>
+					
+				
+					Google Chrome  8.0.552.220<br/>
+					
+				
+					Google Chrome  8.0.552.219<br/>
+					
+				
+					Google Chrome  8.0.552.218<br/>
+					
+				
+					Google Chrome  8.0.552.217<br/>
+					
+				
+					Google Chrome  8.0.552.216<br/>
+					
+				
+					Google Chrome  8.0.552.215<br/>
+					
+				
+					Google Chrome  8.0.552.214<br/>
+					
+				
+					Google Chrome  8.0.552.213<br/>
+					
+				
+					Google Chrome  8.0.552.212<br/>
+					
+				
+					Google Chrome  8.0.552.211<br/>
+					
+				
+					Google Chrome  8.0.552.210<br/>
+					
+				
+					Google Chrome  8.0.552.21<br/>
+					
+				
+					Google Chrome  8.0.552.209<br/>
+					
+				
+					Google Chrome  8.0.552.208<br/>
+					
+				
+					Google Chrome  8.0.552.207<br/>
+					
+				
+					Google Chrome  8.0.552.206<br/>
+					
+				
+					Google Chrome  8.0.552.205<br/>
+					
+				
+					Google Chrome  8.0.552.204<br/>
+					
+				
+					Google Chrome  8.0.552.203<br/>
+					
+				
+					Google Chrome  8.0.552.202<br/>
+					
+				
+					Google Chrome  8.0.552.201<br/>
+					
+				
+					Google Chrome  8.0.552.200<br/>
+					
+				
+					Google Chrome  8.0.552.20<br/>
+					
+				
+					Google Chrome  8.0.552.2<br/>
+					
+				
+					Google Chrome  8.0.552.19<br/>
+					
+				
+					Google Chrome  8.0.552.18<br/>
+					
+				
+					Google Chrome  8.0.552.17<br/>
+					
+				
+					Google Chrome  8.0.552.16<br/>
+					
+				
+					Google Chrome  8.0.552.15<br/>
+					
+				
+					Google Chrome  8.0.552.14<br/>
+					
+				
+					Google Chrome  8.0.552.13<br/>
+					
+				
+					Google Chrome  8.0.552.12<br/>
+					
+				
+					Google Chrome  8.0.552.11<br/>
+					
+				
+					Google Chrome  8.0.552.105<br/>
+					
+				
+					Google Chrome  8.0.552.104<br/>
+					
+				
+					Google Chrome  8.0.552.103<br/>
+					
+				
+					Google Chrome  8.0.552.102<br/>
+					
+				
+					Google Chrome  8.0.552.101<br/>
+					
+				
+					Google Chrome  8.0.552.100<br/>
+					
+				
+					Google Chrome  8.0.552.10<br/>
+					
+				
+					Google Chrome  8.0.552.1<br/>
+					
+				
+					Google Chrome  8.0.552.0<br/>
+					
+				
+					Google Chrome  8.0.551.1<br/>
+					
+				
+					Google Chrome  8.0.551.0<br/>
+					
+				
+					Google Chrome  8.0.550.0<br/>
+					
+				
+					Google Chrome  8.0.549.0<br/>
+					
+				
+					Google Chrome  7.0.548.0<br/>
+					
+				
+					Google Chrome  7.0.547.1<br/>
+					
+				
+					Google Chrome  7.0.547.0<br/>
+					
+				
+					Google Chrome  7.0.544.0<br/>
+					
+				
+					Google Chrome  7.0.542.0<br/>
+					
+				
+					Google Chrome  7.0.541.0<br/>
+					
+				
+					Google Chrome  7.0.540.0<br/>
+					
+				
+					Google Chrome  7.0.539.0<br/>
+					
+				
+					Google Chrome  7.0.538.0<br/>
+					
+				
+					Google Chrome  7.0.537.0<br/>
+					
+				
+					Google Chrome  7.0.536.4<br/>
+					
+				
+					Google Chrome  7.0.536.3<br/>
+					
+				
+					Google Chrome  7.0.536.2<br/>
+					
+				
+					Google Chrome  7.0.536.1<br/>
+					
+				
+					Google Chrome  7.0.536.0<br/>
+					
+				
+					Google Chrome  7.0.535.2<br/>
+					
+				
+					Google Chrome  7.0.535.1<br/>
+					
+				
+					Google Chrome  7.0.531.2<br/>
+					
+				
+					Google Chrome  7.0.531.1<br/>
+					
+				
+					Google Chrome  7.0.531.0<br/>
+					
+				
+					Google Chrome  7.0.530.0<br/>
+					
+				
+					Google Chrome  7.0.529.2<br/>
+					
+				
+					Google Chrome  7.0.529.1<br/>
+					
+				
+					Google Chrome  7.0.529.0<br/>
+					
+				
+					Google Chrome  7.0.528.0<br/>
+					
+				
+					Google Chrome  7.0.526.0<br/>
+					
+				
+					Google Chrome  7.0.525.0<br/>
+					
+				
+					Google Chrome  7.0.524.0<br/>
+					
+				
+					Google Chrome  7.0.522.0<br/>
+					
+				
+					Google Chrome  7.0.521.0<br/>
+					
+				
+					Google Chrome  7.0.520.0<br/>
+					
+				
+					Google Chrome  7.0.519.0<br/>
+					
+				
+					Google Chrome  7.0.518.0<br/>
+					
+				
+					Google Chrome  7.0.517.9<br/>
+					
+				
+					Google Chrome  7.0.517.8<br/>
+					
+				
+					Google Chrome  7.0.517.7<br/>
+					
+				
+					Google Chrome  7.0.517.6<br/>
+					
+				
+					Google Chrome  7.0.517.5<br/>
+					
+				
+					Google Chrome  7.0.517.44<br/>
+					
+				
+					Google Chrome  7.0.517.43<br/>
+					
+				
+					Google Chrome  7.0.517.42<br/>
+					
+				
+					Google Chrome  7.0.517.41<br/>
+					
+				
+					Google Chrome  7.0.517.40<br/>
+					
+				
+					Google Chrome  7.0.517.4<br/>
+					
+				
+					Google Chrome  7.0.517.39<br/>
+					
+				
+					Google Chrome  7.0.517.38<br/>
+					
+				
+					Google Chrome  7.0.517.37<br/>
+					
+				
+					Google Chrome  7.0.517.36<br/>
+					
+				
+					Google Chrome  7.0.517.35<br/>
+					
+				
+					Google Chrome  7.0.517.34<br/>
+					
+				
+					Google Chrome  7.0.517.33<br/>
+					
+				
+					Google Chrome  7.0.517.32<br/>
+					
+				
+					Google Chrome  7.0.517.31<br/>
+					
+				
+					Google Chrome  7.0.517.30<br/>
+					
+				
+					Google Chrome  7.0.517.29<br/>
+					
+				
+					Google Chrome  7.0.517.28<br/>
+					
+				
+					Google Chrome  7.0.517.27<br/>
+					
+				
+					Google Chrome  7.0.517.26<br/>
+					
+				
+					Google Chrome  7.0.517.25<br/>
+					
+				
+					Google Chrome  7.0.517.24<br/>
+					
+				
+					Google Chrome  7.0.517.23<br/>
+					
+				
+					Google Chrome  7.0.517.22<br/>
+					
+				
+					Google Chrome  7.0.517.21<br/>
+					
+				
+					Google Chrome  7.0.517.20<br/>
+					
+				
+					Google Chrome  7.0.517.2<br/>
+					
+				
+					Google Chrome  7.0.517.19<br/>
+					
+				
+					Google Chrome  7.0.517.18<br/>
+					
+				
+					Google Chrome  7.0.517.17<br/>
+					
+				
+					Google Chrome  7.0.517.16<br/>
+					
+				
+					Google Chrome  7.0.517.14<br/>
+					
+				
+					Google Chrome  7.0.517.13<br/>
+					
+				
+					Google Chrome  7.0.517.12<br/>
+					
+				
+					Google Chrome  7.0.517.11<br/>
+					
+				
+					Google Chrome  7.0.517.10<br/>
+					
+				
+					Google Chrome  7.0.517.0<br/>
+					
+				
+					Google Chrome  7.0.516.0<br/>
+					
+				
+					Google Chrome  7.0.515.0<br/>
+					
+				
+					Google Chrome  7.0.514.1<br/>
+					
+				
+					Google Chrome  7.0.514.0<br/>
+					
+				
+					Google Chrome  7.0.513.0<br/>
+					
+				
+					Google Chrome  7.0.512.0<br/>
+					
+				
+					Google Chrome  7.0.511.4<br/>
+					
+				
+					Google Chrome  7.0.511.2<br/>
+					
+				
+					Google Chrome  7.0.511.1<br/>
+					
+				
+					Google Chrome  7.0.510.0<br/>
+					
+				
+					Google Chrome  7.0.509.0<br/>
+					
+				
+					Google Chrome  7.0.507.3<br/>
+					
+				
+					Google Chrome  7.0.507.2<br/>
+					
+				
+					Google Chrome  7.0.507.1<br/>
+					
+				
+					Google Chrome  7.0.507.0<br/>
+					
+				
+					Google Chrome  7.0.506.0<br/>
+					
+				
+					Google Chrome  7.0.505.0<br/>
+					
+				
+					Google Chrome  7.0.504.0<br/>
+					
+				
+					Google Chrome  7.0.503.1<br/>
+					
+				
+					Google Chrome  7.0.503.0<br/>
+					
+				
+					Google Chrome  7.0.500.1<br/>
+					
+				
+					Google Chrome  7.0.500.0<br/>
+					
+				
+					Google Chrome  7.0.499.1<br/>
+					
+				
+					Google Chrome  7.0.499.0<br/>
+					
+				
+					Google Chrome  7.0.498.0<br/>
+					
+				
+					Google Chrome  7.0.497.0<br/>
+					
+				
+					Google Chrome  10<br/>
+					
+				
+					Avaya Voice Portal  5.1.3<br/>
+					
+				
+					Avaya Voice Portal  5.1.2<br/>
+					
+				
+					Avaya Voice Portal  5.1.1<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP3<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya one-X Client Enablement Service  6.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2.9<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2.8<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP3<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Message Networking 5.2.1 <br/>
+					
+				
+					Avaya Message Networking  5.2.3<br/>
+					
+				
+					Avaya Message Networking  5.2.2<br/>
+					
+				
+					Avaya Message Networking  5.2 SP1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IQ  5.1.1<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Server Edition  8.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  6.0<br/>
+					
+				
+					Avaya Aura System Platform 6.2.1 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.2 SP1<br/>
+					
+				
+					Avaya Aura System Platform  6.2<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.9.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.0.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  6.2.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.5<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.5 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.0.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP2<br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP1<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Messaging 6.1.1 <br/>
+					
+				
+					Avaya Aura Messaging  6.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.4<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.3<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Apple Safari 4.1.2 for Windows<br/>
+					
+				
+					Apple Safari 4.0.5 for Windows<br/>
+					
+				
+					Apple Safari 4.0.5 <br/>
+					
+				
+					Apple Safari 4.0.4 for Windows<br/>
+					
+				
+					Apple Safari 4.0.4 <br/>
+					
+				
+					Apple Safari 4.0.3 for Windows<br/>
+					
+				
+					Apple Safari 4.0.3 <br/>
+					
+				
+					Apple Safari 4.0.2 for Windows<br/>
+					
+				
+					Apple Safari 4.0.2 <br/>
+					
+				
+					Apple Safari 4.0.1 <br/>
+					
+				
+					Apple Safari  5.0.5 for Windows<br/>
+					
+				
+					Apple Safari  5.0.5<br/>
+					
+				
+					Apple Safari  5.0.4 for Windows<br/>
+					
+				
+					Apple Safari  5.0.4<br/>
+					
+				
+					Apple Safari  5.0.3 for Windows<br/>
+					
+				
+					Apple Safari  5.0.3<br/>
+					
+				
+					Apple Safari  5.0.2 for Windows<br/>
+					
+				
+					Apple Safari  5.0.2<br/>
+					
+				
+					Apple Safari  5.0.1 for Windows<br/>
+					
+				
+					Apple Safari  5.0.1<br/>
+					
+				
+					Apple Safari  5.0 for Windows<br/>
+					
+				
+					Apple Safari  5.0<br/>
+					
+				
+					Apple Safari  4.1.3 for Windows<br/>
+					
+				
+					Apple Safari  4.1.3<br/>
+					
+				
+					Apple Safari  4.1.2<br/>
+					
+				
+					Apple Safari  4.1.1<br/>
+					
+				
+					Apple Safari  4.1<br/>
+					
+				
+					Apple Safari  4.0 Beta<br/>
+					
+				
+					Apple Safari  4.0<br/>
+					
+				
+					Apple Mac OS X Server 10.6.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5 <br/>
+					
+				
+					Apple Mac OS X Server  10.6.7<br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.6 <br/>
+					
+				
+					Apple Mac OS X 10.6.5 <br/>
+					
+				
+					Apple Mac OS X 10.6.5 <br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.5 <br/>
+					
+				
+					Apple Mac OS X  10.6.7<br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+					
+				
+					Apple iPod Touch  0<br/>
+					
+				
+					Apple iPhone  0<br/>
+					
+				
+					Apple iPad  0<br/>
+					
+				
+					Apple iOS 4.2.1 <br/>
+					
+				
+					Apple iOS 4.0.2 <br/>
+					
+				
+					Apple iOS 4.0.1 <br/>
+					
+				
+					Apple iOS 3.2.2 <br/>
+					
+				
+					Apple iOS 3.2.1 <br/>
+					
+				
+					Apple iOS  4.3.1<br/>
+					
+				
+					Apple iOS  4.3<br/>
+					
+				
+					Apple iOS  4.2.7<br/>
+					
+				
+					Apple iOS  4.2.6<br/>
+					
+				
+					Apple iOS  4.2.5<br/>
+					
+				
+					Apple iOS  4.2 beta<br/>
+					
+				
+					Apple iOS  4.2<br/>
+					
+				
+					Apple iOS  4.1<br/>
+					
+				
+					Apple iOS  4<br/>
+					
+				
+					Apple iOS  3.2<br/>
+					
+				
+					Apple iOS  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Mozilla SeaMonkey  2.0.14<br/>
+					
+				
+					Mozilla Firefox  4.0.1<br/>
+					
+				
+					Mozilla Firefox  4.0<br/>
+					
+				
+					Mozilla Firefox  3.6.17<br/>
+					
+				
+					Mozilla Firefox  3.5.19<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					Google Chrome  10.0.648.127<br/>
+					
+				
+					Apple Safari 5.0.6 <br/>
+					
+				
+					Apple Safari  5.1 for Windows<br/>
+					
+				
+					Apple Safari  5.1<br/>
+					
+				
+					Apple Safari  5.0.6 for windows<br/>
+					
+				
+					Apple Mac OS X Server  10.6.8<br/>
+					
+				
+					Apple Mac OS X  10.6.8<br/>
+					
+				
+					Apple iOS  4.3.2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue by enticing an unsuspecting user into visiting a specially crafted webpage.
+	
+		<ul>
+</ul>
+</div>

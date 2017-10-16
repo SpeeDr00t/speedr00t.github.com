@@ -1,0 +1,564 @@
+#SpeeDr00t@Black Falcon<br>#bid49473<p><b><span style="font-size: 18pt;">OpenSSH Ciphersuite Specification Information Disclosure Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/49473/info">info</a><br><a href="http://www.securityfocus.com/bid/49473/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/49473/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/49473/solution">solution</a><br><a href="http://www.securityfocus.com/bid/49473/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				49473
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2001-0572<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 03 2001 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 09 2011 05:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Solar Designer and Dug Song of The Openwall Project and Dawn Xiaodong Song, David Wagner, and Xuqing Tian of the University of California
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSH OpenSSH 2.9 p1<br/>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.6 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.5 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.5.2 <br/>
+<span class="related">
+						
+							-
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Caldera UnixWare 7.1.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Wirex Immunix OS 6.2 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.5.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Database Server  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Firewall on CD  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. SuSE eMail Server III  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.6 a<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.6 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.5 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SCO Open Server 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  7<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.5 <br/>
+					
+				
+					OpenSSH OpenSSH 2.3 <br/>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.2 .0p1<br/>
+					
+				
+					OpenSSH OpenSSH 2.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSH OpenSSH 2.9 p2<br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 6.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Conectiva Linux 5.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Conectiva Linux  graficas<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Conectiva Linux  ecommerce<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.4 -RELENG<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 1.0.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 8.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						RedHat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Cobalt RaQ 550  <br/>
+</span>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

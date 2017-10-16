@@ -1,0 +1,543 @@
+#SpeeDr00t@Black Falcon<br>#bid46323<p><b><span style="font-size: 18pt;">Linux Kernel 'security_filter_rule_init()' Local Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46323/info">info</a><br><a href="http://www.securityfocus.com/bid/46323/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46323/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46323/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46323/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46323
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0006<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 10 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:06PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Mimi Zohar
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise High Availability Extension  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.32 .9<br/>
+					
+				
+					Linux kernel 2.6.32 <br/>
+					
+				
+					Linux kernel 2.6.31 5<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.31 13<br/>
+					
+				
+					Linux kernel 2.6.31 .2<br/>
+					
+				
+					Linux kernel 2.6.31 .11<br/>
+					
+				
+					Linux kernel 2.6.31 -rc7<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.31 -rc6<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.31 -rc3<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.31 -rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.6.31 <br/>
+					
+				
+					Linux kernel 2.6.30 .10<br/>
+					
+				
+					Linux kernel 2.6.30 .1<br/>
+					
+				
+					Linux kernel 2.6.30 -rc6<br/>
+					
+				
+					Linux kernel 2.6.30 -rc5<br/>
+					
+				
+					Linux kernel 2.6.30 -rc3<br/>
+					
+				
+					Linux kernel 2.6.30 -rc2<br/>
+					
+				
+					Linux kernel 2.6.30 -rc1<br/>
+					
+				
+					Linux kernel 2.6.30 <br/>
+					
+				
+					Linux kernel  2.6.32.8<br/>
+					
+				
+					Linux kernel  2.6.32.7<br/>
+					
+				
+					Linux kernel  2.6.32.6<br/>
+					
+				
+					Linux kernel  2.6.32.5<br/>
+					
+				
+					Linux kernel  2.6.32.4<br/>
+					
+				
+					Linux kernel  2.6.32.3<br/>
+					
+				
+					Linux kernel  2.6.32.22<br/>
+					
+				
+					Linux kernel  2.6.32.2<br/>
+					
+				
+					Linux kernel  2.6.32.18<br/>
+					
+				
+					Linux kernel  2.6.32.17<br/>
+					
+				
+					Linux kernel  2.6.32.16<br/>
+					
+				
+					Linux kernel  2.6.32.15<br/>
+					
+				
+					Linux kernel  2.6.32.14<br/>
+					
+				
+					Linux kernel  2.6.32.13<br/>
+					
+				
+					Linux kernel  2.6.32.12<br/>
+					
+				
+					Linux kernel  2.6.32.11<br/>
+					
+				
+					Linux kernel  2.6.32.10<br/>
+					
+				
+					Linux kernel  2.6.32.1<br/>
+					
+				
+					Linux kernel  2.6.32-rc8<br/>
+					
+				
+					Linux kernel  2.6.32-rc7<br/>
+					
+				
+					Linux kernel  2.6.32-rc5<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.32-rc4<br/>
+					
+				
+					Linux kernel  2.6.32-rc3<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.32-rc2<br/>
+					
+				
+					Linux kernel  2.6.32-rc1<br/>
+					
+				
+					Linux kernel  2.6.31.6<br/>
+					
+				
+					Linux kernel  2.6.31.4<br/>
+					
+				
+					Linux kernel  2.6.31.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.31-rc9<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.31-rc8<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.31-rc5-git3<br/>
+					
+				
+					Linux kernel  2.6.31-rc4<br/>
+					
+				
+					Linux kernel  2.6.31-rc2<br/>
+					
+				
+					Linux kernel  2.6.31-git11<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.30.5<br/>
+					
+				
+					Linux kernel  2.6.30.4<br/>
+					
+				
+					Linux kernel  2.6.30.3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel  2.6.32.28<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The 'tcb selinux=0' boot parameter along with 'dont_measure obj_type=var_log_t' rule in the default IMA TCB measurement policy is sufficient to trigger the issue:
+	
+		<ul>
+</ul>
+</div>

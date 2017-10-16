@@ -1,0 +1,2406 @@
+#SpeeDr00t@Black Falcon<br>#bid49289<p><b><span style="font-size: 18pt;">Linux Kernel TCP Sequence Number Generation Security Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/49289/info">info</a><br><a href="http://www.securityfocus.com/bid/49289/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/49289/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/49289/solution">solution</a><br><a href="http://www.securityfocus.com/bid/49289/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				49289
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-3188<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 23 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 12 2015 07:52PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Dan Kaminsky
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise High Availability Extension  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+					
+				
+					Redhat MRG Realtime for RHEL 6 Server  2<br/>
+					
+				
+					Redhat Enterprise Virtualization Hypervisor for RHEL 5  0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5.6.Z server<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					OpenVZ Project OpenVZ  2.6.32-feoktistov.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  2.6.32<br/>
+					
+				
+					OpenVZ Project OpenVZ  042stab039.10<br/>
+					
+				
+					OpenVZ Project OpenVZ  042stab037.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab095.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab092.2<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab091.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab089.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab085.2<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab081.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  023stab054.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  023stab053.2<br/>
+					
+				
+					Linux kernel 2.6.39 rc4<br/>
+					
+				
+					Linux kernel 2.6.39 <br/>
+					
+				
+					Linux kernel 2.6.38 <br/>
+					
+				
+					Linux kernel 2.6.37 <br/>
+					
+				
+					Linux kernel 2.6.36 <br/>
+					
+				
+					Linux kernel 2.6.33 .1<br/>
+					
+				
+					Linux kernel 2.6.33 <br/>
+					
+				
+					Linux kernel 2.6.32 .9<br/>
+					
+				
+					Linux kernel 2.6.32 <br/>
+					
+				
+					Linux kernel 2.6.31 5<br/>
+					
+				
+					Linux kernel 2.6.31 13<br/>
+					
+				
+					Linux kernel 2.6.31 .2<br/>
+					
+				
+					Linux kernel 2.6.31 .11<br/>
+					
+				
+					Linux kernel 2.6.31 -rc7<br/>
+					
+				
+					Linux kernel 2.6.31 -rc6<br/>
+					
+				
+					Linux kernel 2.6.31 -rc3<br/>
+					
+				
+					Linux kernel 2.6.31 -rc1<br/>
+					
+				
+					Linux kernel 2.6.31 <br/>
+					
+				
+					Linux kernel 2.6.30 .10<br/>
+					
+				
+					Linux kernel 2.6.30 .1<br/>
+					
+				
+					Linux kernel 2.6.30 -rc6<br/>
+					
+				
+					Linux kernel 2.6.30 -rc5<br/>
+					
+				
+					Linux kernel 2.6.30 -rc3<br/>
+					
+				
+					Linux kernel 2.6.30 -rc2<br/>
+					
+				
+					Linux kernel 2.6.30 -rc1<br/>
+					
+				
+					Linux kernel 2.6.30 <br/>
+					
+				
+					Linux kernel 2.6.29 .4<br/>
+					
+				
+					Linux kernel 2.6.29 .1<br/>
+					
+				
+					Linux kernel 2.6.29 -git8<br/>
+					
+				
+					Linux kernel 2.6.29 -git14<br/>
+					
+				
+					Linux kernel 2.6.29 -git1<br/>
+					
+				
+					Linux kernel 2.6.29 <br/>
+					
+				
+					Linux kernel 2.6.28 .9<br/>
+					
+				
+					Linux kernel 2.6.28 .8<br/>
+					
+				
+					Linux kernel 2.6.28 .6<br/>
+					
+				
+					Linux kernel 2.6.28 .5<br/>
+					
+				
+					Linux kernel 2.6.28 .3<br/>
+					
+				
+					Linux kernel 2.6.28 .2<br/>
+					
+				
+					Linux kernel 2.6.28 .1<br/>
+					
+				
+					Linux kernel 2.6.28 -rc7<br/>
+					
+				
+					Linux kernel 2.6.28 -rc5<br/>
+					
+				
+					Linux kernel 2.6.28 -rc1<br/>
+					
+				
+					Linux kernel 2.6.28 -git7<br/>
+					
+				
+					Linux kernel 2.6.28 <br/>
+					
+				
+					Linux kernel 2.6.27 6<br/>
+					
+				
+					Linux kernel 2.6.27 3<br/>
+					
+				
+					Linux kernel 2.6.27 12<br/>
+					
+				
+					Linux kernel 2.6.27 .8<br/>
+					
+				
+					Linux kernel 2.6.27 .5<br/>
+					
+				
+					Linux kernel 2.6.27 .5<br/>
+					
+				
+					Linux kernel 2.6.27 .46<br/>
+					
+				
+					Linux kernel 2.6.27 .24<br/>
+					
+				
+					Linux kernel 2.6.27 .14<br/>
+					
+				
+					Linux kernel 2.6.27 .13<br/>
+					
+				
+					Linux kernel 2.6.27 .12<br/>
+					
+				
+					Linux kernel 2.6.27 -rc8-git5<br/>
+					
+				
+					Linux kernel 2.6.27 -rc8<br/>
+					
+				
+					Linux kernel 2.6.27 -rc6-git6<br/>
+					
+				
+					Linux kernel 2.6.27 -rc6<br/>
+					
+				
+					Linux kernel 2.6.27 -rc5<br/>
+					
+				
+					Linux kernel 2.6.27 -rc4<br/>
+					
+				
+					Linux kernel 2.6.27 -rc2<br/>
+					
+				
+					Linux kernel 2.6.27 -rc1<br/>
+					
+				
+					Linux kernel 2.6.27 <br/>
+					
+				
+					Linux kernel 2.6.26 7<br/>
+					
+				
+					Linux kernel 2.6.26 .6<br/>
+					
+				
+					Linux kernel 2.6.26 .4<br/>
+					
+				
+					Linux kernel 2.6.26 .3<br/>
+					
+				
+					Linux kernel 2.6.26 -rc6<br/>
+					
+				
+					Linux kernel 2.6.26 <br/>
+					
+				
+					Linux kernel 2.6.25 19<br/>
+					
+				
+					Linux kernel 2.6.25 .9<br/>
+					
+				
+					Linux kernel 2.6.25 .8<br/>
+					
+				
+					Linux kernel 2.6.25 .7<br/>
+					
+				
+					Linux kernel 2.6.25 .6<br/>
+					
+				
+					Linux kernel 2.6.25 .5<br/>
+					
+				
+					Linux kernel 2.6.25 .15<br/>
+					
+				
+					Linux kernel 2.6.25 .13<br/>
+					
+				
+					Linux kernel 2.6.25 .12<br/>
+					
+				
+					Linux kernel 2.6.25 .11<br/>
+					
+				
+					Linux kernel 2.6.25 .10<br/>
+					
+				
+					Linux kernel 2.6.25 <br/>
+					
+				
+					Linux kernel 2.6.24 .2<br/>
+					
+				
+					Linux kernel 2.6.24 .1<br/>
+					
+				
+					Linux kernel 2.6.24 -rc5<br/>
+					
+				
+					Linux kernel 2.6.24 -rc4<br/>
+					
+				
+					Linux kernel 2.6.24 -rc3<br/>
+					
+				
+					Linux kernel 2.6.24 -git13<br/>
+					
+				
+					Linux kernel 2.6.24 <br/>
+					
+				
+					Linux kernel 2.6.23 -rc2<br/>
+					
+				
+					Linux kernel 2.6.23 -rc1<br/>
+					
+				
+					Linux kernel 2.6.23 <br/>
+					
+				
+					Linux kernel 2.6.23 <br/>
+					
+				
+					Linux kernel 2.6.22 rc6<br/>
+					
+				
+					Linux kernel 2.6.22 .8<br/>
+					
+				
+					Linux kernel 2.6.22 .2<br/>
+					
+				
+					Linux kernel 2.6.22 .17<br/>
+					
+				
+					Linux kernel 2.6.22 .16<br/>
+					
+				
+					Linux kernel 2.6.22 .15<br/>
+					
+				
+					Linux kernel 2.6.22 .14<br/>
+					
+				
+					Linux kernel 2.6.22 .13<br/>
+					
+				
+					Linux kernel 2.6.22 .12<br/>
+					
+				
+					Linux kernel 2.6.22 .11<br/>
+					
+				
+					Linux kernel 2.6.22 .1<br/>
+					
+				
+					Linux kernel 2.6.22 <br/>
+					
+				
+					Linux kernel 2.6.22 <br/>
+					
+				
+					Linux kernel 2.6.21 rc7<br/>
+					
+				
+					Linux kernel 2.6.21 git5<br/>
+					
+				
+					Linux kernel 2.6.21 git4<br/>
+					
+				
+					Linux kernel 2.6.21 git3<br/>
+					
+				
+					Linux kernel 2.6.21 git2<br/>
+					
+				
+					Linux kernel 2.6.21 git1<br/>
+					
+				
+					Linux kernel 2.6.21 git 7<br/>
+					
+				
+					Linux kernel 2.6.21 git 6<br/>
+					
+				
+					Linux kernel 2.6.21 4<br/>
+					
+				
+					Linux kernel 2.6.21 .7<br/>
+					
+				
+					Linux kernel 2.6.21 .6<br/>
+					
+				
+					Linux kernel 2.6.21 .3<br/>
+					
+				
+					Linux kernel 2.6.21 .2<br/>
+					
+				
+					Linux kernel 2.6.21 .1<br/>
+					
+				
+					Linux kernel 2.6.21 -git8<br/>
+					
+				
+					Linux kernel 2.6.21 <br/>
+					
+				
+					Linux kernel 2.6.20 .9<br/>
+					
+				
+					Linux kernel 2.6.20 .8<br/>
+					
+				
+					Linux kernel 2.6.20 .7<br/>
+					
+				
+					Linux kernel 2.6.20 .6<br/>
+					
+				
+					Linux kernel 2.6.20 .5<br/>
+					
+				
+					Linux kernel 2.6.20 .4<br/>
+					
+				
+					Linux kernel 2.6.20 .15<br/>
+					
+				
+					Linux kernel 2.6.20 .14<br/>
+					
+				
+					Linux kernel 2.6.20 .12<br/>
+					
+				
+					Linux kernel 2.6.20 .10<br/>
+					
+				
+					Linux kernel 2.6.20 .1<br/>
+					
+				
+					Linux kernel 2.6.20 -git5<br/>
+					
+				
+					Linux kernel 2.6.20 <br/>
+					
+				
+					Linux kernel 2.6.19 .4<br/>
+					
+				
+					Linux kernel 2.6.19 .3<br/>
+					
+				
+					Linux kernel 2.6.19 .2<br/>
+					
+				
+					Linux kernel 2.6.19 .1<br/>
+					
+				
+					Linux kernel 2.6.19 -rc4<br/>
+					
+				
+					Linux kernel 2.6.19 -rc3<br/>
+					
+				
+					Linux kernel 2.6.19 -rc2<br/>
+					
+				
+					Linux kernel 2.6.19 -rc1<br/>
+					
+				
+					Linux kernel 2.6.19 <br/>
+					
+				
+					Linux kernel 2.6.18 rc7<br/>
+					
+				
+					Linux kernel 2.6.18 rc6<br/>
+					
+				
+					Linux kernel 2.6.18 rc5<br/>
+					
+				
+					Linux kernel 2.6.18 rc4<br/>
+					
+				
+					Linux kernel 2.6.18 rc3<br/>
+					
+				
+					Linux kernel 2.6.18 rc2<br/>
+					
+				
+					Linux kernel 2.6.18 rc1<br/>
+					
+				
+					Linux kernel 2.6.18 .8<br/>
+					
+				
+					Linux kernel 2.6.18 .7<br/>
+					
+				
+					Linux kernel 2.6.18 .6<br/>
+					
+				
+					Linux kernel 2.6.18 .5<br/>
+					
+				
+					Linux kernel 2.6.18 .2<br/>
+					
+				
+					Linux kernel 2.6.18 .1<br/>
+					
+				
+					Linux kernel 2.6.17 rc6<br/>
+					
+				
+					Linux kernel 2.6.17 rc4<br/>
+					
+				
+					Linux kernel 2.6.17 rc3<br/>
+					
+				
+					Linux kernel 2.6.17 rc2<br/>
+					
+				
+					Linux kernel 2.6.17 rc1<br/>
+					
+				
+					Linux kernel 2.6.17 .8<br/>
+					
+				
+					Linux kernel 2.6.17 .8<br/>
+					
+				
+					Linux kernel 2.6.17 -rc5<br/>
+					
+				
+					Linux kernel 2.6.17 <br/>
+					
+				
+					Linux kernel 2.6.17 <br/>
+					
+				
+					Linux kernel 2.6.16 rc6<br/>
+					
+				
+					Linux kernel 2.6.16 rc5<br/>
+					
+				
+					Linux kernel 2.6.16 rc4<br/>
+					
+				
+					Linux kernel 2.6.16 rc3<br/>
+					
+				
+					Linux kernel 2.6.16 rc2<br/>
+					
+				
+					Linux kernel 2.6.16 27<br/>
+					
+				
+					Linux kernel 2.6.16 13<br/>
+					
+				
+					Linux kernel 2.6.16 .9<br/>
+					
+				
+					Linux kernel 2.6.16 .7<br/>
+					
+				
+					Linux kernel 2.6.16 .6<br/>
+					
+				
+					Linux kernel 2.6.16 .53<br/>
+					
+				
+					Linux kernel 2.6.16 .52<br/>
+					
+				
+					Linux kernel 2.6.16 .51<br/>
+					
+				
+					Linux kernel 2.6.16 .50<br/>
+					
+				
+					Linux kernel 2.6.16 .49<br/>
+					
+				
+					Linux kernel 2.6.16 .48<br/>
+					
+				
+					Linux kernel 2.6.16 .47<br/>
+					
+				
+					Linux kernel 2.6.16 .46<br/>
+					
+				
+					Linux kernel 2.6.16 .45<br/>
+					
+				
+					Linux kernel 2.6.16 .44<br/>
+					
+				
+					Linux kernel 2.6.16 .43<br/>
+					
+				
+					Linux kernel 2.6.16 .41<br/>
+					
+				
+					Linux kernel 2.6.16 .40<br/>
+					
+				
+					Linux kernel 2.6.16 .39<br/>
+					
+				
+					Linux kernel 2.6.16 .38<br/>
+					
+				
+					Linux kernel 2.6.16 .37<br/>
+					
+				
+					Linux kernel 2.6.16 .36<br/>
+					
+				
+					Linux kernel 2.6.16 .35<br/>
+					
+				
+					Linux kernel 2.6.16 .34<br/>
+					
+				
+					Linux kernel 2.6.16 .33<br/>
+					
+				
+					Linux kernel 2.6.16 .32<br/>
+					
+				
+					Linux kernel 2.6.16 .31<br/>
+					
+				
+					Linux kernel 2.6.16 .30<br/>
+					
+				
+					Linux kernel 2.6.16 .29<br/>
+					
+				
+					Linux kernel 2.6.16 .28<br/>
+					
+				
+					Linux kernel 2.6.16 .27<br/>
+					
+				
+					Linux kernel 2.6.16 .26<br/>
+					
+				
+					Linux kernel 2.6.16 .25<br/>
+					
+				
+					Linux kernel 2.6.16 .24<br/>
+					
+				
+					Linux kernel 2.6.16 .23<br/>
+					
+				
+					Linux kernel 2.6.16 .22<br/>
+					
+				
+					Linux kernel 2.6.16 .20<br/>
+					
+				
+					Linux kernel 2.6.16 .19<br/>
+					
+				
+					Linux kernel 2.6.16 .15<br/>
+					
+				
+					Linux kernel 2.6.16 .14<br/>
+					
+				
+					Linux kernel 2.6.16 .12<br/>
+					
+				
+					Linux kernel 2.6.16 .11<br/>
+					
+				
+					Linux kernel 2.6.16 .10<br/>
+					
+				
+					Linux kernel 2.6.16 .1<br/>
+					
+				
+					Linux kernel 2.6.16 -rc1<br/>
+					
+				
+					Linux kernel 2.6.16 <br/>
+					
+				
+					Linux kernel 2.6.16 <br/>
+					
+				
+					Linux kernel 2.6.15 rc7<br/>
+					
+				
+					Linux kernel 2.6.15 .7<br/>
+					
+				
+					Linux kernel 2.6.15 .4<br/>
+					
+				
+					Linux kernel 2.6.15 .2<br/>
+					
+				
+					Linux kernel 2.6.15 -rc6<br/>
+					
+				
+					Linux kernel 2.6.15 -rc5<br/>
+					
+				
+					Linux kernel 2.6.15 -rc4<br/>
+					
+				
+					Linux kernel 2.6.15 -rc3<br/>
+					
+				
+					Linux kernel 2.6.15 -rc2<br/>
+					
+				
+					Linux kernel 2.6.15 -rc1<br/>
+					
+				
+					Linux kernel 2.6.15 <br/>
+					
+				
+					Linux kernel 2.6.15 <br/>
+					
+				
+					Linux kernel 2.6.14 .7<br/>
+					
+				
+					Linux kernel 2.6.14 .6<br/>
+					
+				
+					Linux kernel 2.6.14 .3<br/>
+					
+				
+					Linux kernel 2.6.14 .2<br/>
+					
+				
+					Linux kernel 2.6.14 .1<br/>
+					
+				
+					Linux kernel 2.6.14 -rc5<br/>
+					
+				
+					Linux kernel 2.6.14 -rc4<br/>
+					
+				
+					Linux kernel 2.6.14 -rc3<br/>
+					
+				
+					Linux kernel 2.6.14 -rc2<br/>
+					
+				
+					Linux kernel 2.6.14 -rc1<br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.13 rc5<br/>
+					
+				
+					Linux kernel 2.6.13 rc3<br/>
+					
+				
+					Linux kernel 2.6.13 rc2<br/>
+					
+				
+					Linux kernel 2.6.13 .5<br/>
+					
+				
+					Linux kernel 2.6.13 .4<br/>
+					
+				
+					Linux kernel 2.6.13 .3<br/>
+					
+				
+					Linux kernel 2.6.13 .2<br/>
+					
+				
+					Linux kernel 2.6.13 .1<br/>
+					
+				
+					Linux kernel 2.6.13 -rc7<br/>
+					
+				
+					Linux kernel 2.6.13 -rc6<br/>
+					
+				
+					Linux kernel 2.6.13 -rc4<br/>
+					
+				
+					Linux kernel 2.6.13 -rc1<br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+					
+				
+					Linux kernel 2.6.12 rc6<br/>
+					
+				
+					Linux kernel 2.6.12 rc3<br/>
+					
+				
+					Linux kernel 2.6.12 rc2<br/>
+					
+				
+					Linux kernel 2.6.12 .6<br/>
+					
+				
+					Linux kernel 2.6.12 .5<br/>
+					
+				
+					Linux kernel 2.6.12 .4<br/>
+					
+				
+					Linux kernel 2.6.12 .3<br/>
+					
+				
+					Linux kernel 2.6.12 .22<br/>
+					
+				
+					Linux kernel 2.6.12 .2<br/>
+					
+				
+					Linux kernel 2.6.12 .12<br/>
+					
+				
+					Linux kernel 2.6.12 .1<br/>
+					
+				
+					Linux kernel 2.6.12 -rc5<br/>
+					
+				
+					Linux kernel 2.6.12 -rc4<br/>
+					
+				
+					Linux kernel 2.6.12 -rc1<br/>
+					
+				
+					Linux kernel 2.6.12 <br/>
+					
+				
+					Linux kernel 2.6.12 <br/>
+					
+				
+					Linux kernel 2.6.11 rc5<br/>
+					
+				
+					Linux kernel 2.6.11 rc1<br/>
+					
+				
+					Linux kernel 2.6.11 .9<br/>
+					
+				
+					Linux kernel 2.6.11 .8<br/>
+					
+				
+					Linux kernel 2.6.11 .7<br/>
+					
+				
+					Linux kernel 2.6.11 .6<br/>
+					
+				
+					Linux kernel 2.6.11 .5<br/>
+					
+				
+					Linux kernel 2.6.11 .4<br/>
+					
+				
+					Linux kernel 2.6.11 .3<br/>
+					
+				
+					Linux kernel 2.6.11 .2<br/>
+					
+				
+					Linux kernel 2.6.11 .12<br/>
+					
+				
+					Linux kernel 2.6.11 .11<br/>
+					
+				
+					Linux kernel 2.6.11 .10<br/>
+					
+				
+					Linux kernel 2.6.11 .1<br/>
+					
+				
+					Linux kernel 2.6.11 -rc4<br/>
+					
+				
+					Linux kernel 2.6.11 -rc3<br/>
+					
+				
+					Linux kernel 2.6.11 -rc2<br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.10 rc3<br/>
+					
+				
+					Linux kernel 2.6.10 rc2<br/>
+					
+				
+					Linux kernel 2.6.10 rc1<br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+					
+				
+					Linux kernel 2.6.9 rc4<br/>
+					
+				
+					Linux kernel 2.6.9 rc3<br/>
+					
+				
+					Linux kernel 2.6.9 rc2<br/>
+					
+				
+					Linux kernel 2.6.9 rc1<br/>
+					
+				
+					Linux kernel 2.6.9 final<br/>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.8 rc4<br/>
+					
+				
+					Linux kernel 2.6.8 rc3<br/>
+					
+				
+					Linux kernel 2.6.8 rc2<br/>
+					
+				
+					Linux kernel 2.6.8 rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.7 rc3<br/>
+					
+				
+					Linux kernel 2.6.7 rc2<br/>
+					
+				
+					Linux kernel 2.6.7 rc1<br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 rc3<br/>
+					
+				
+					Linux kernel 2.6.6 rc2<br/>
+					
+				
+					Linux kernel 2.6.6 rc1<br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 rc3<br/>
+					
+				
+					Linux kernel 2.6.5 rc2<br/>
+					
+				
+					Linux kernel 2.6.5 rc1<br/>
+					
+				
+					Linux kernel 2.6.4 rc3<br/>
+					
+				
+					Linux kernel 2.6.4 rc2<br/>
+					
+				
+					Linux kernel 2.6.4 rc1<br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.3 rc4<br/>
+					
+				
+					Linux kernel 2.6.3 rc3<br/>
+					
+				
+					Linux kernel 2.6.3 rc2<br/>
+					
+				
+					Linux kernel 2.6.3 rc1<br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.2 rc3<br/>
+					
+				
+					Linux kernel 2.6.2 rc2<br/>
+					
+				
+					Linux kernel 2.6.2 rc1<br/>
+					
+				
+					Linux kernel 2.6.2 <br/>
+					
+				
+					Linux kernel 2.6.2 <br/>
+					
+				
+					Linux kernel 2.6.1 rc3<br/>
+					
+				
+					Linux kernel 2.6.1 0<br/>
+					
+				
+					Linux kernel 2.6.1 -rc2<br/>
+					
+				
+					Linux kernel 2.6.1 -rc1<br/>
+					
+				
+					Linux kernel 2.6.1 <br/>
+					
+				
+					Linux kernel  2.6.39-rc6<br/>
+					
+				
+					Linux kernel  2.6.39-rc3<br/>
+					
+				
+					Linux kernel  2.6.38.6<br/>
+					
+				
+					Linux kernel  2.6.38.4<br/>
+					
+				
+					Linux kernel  2.6.38.3<br/>
+					
+				
+					Linux kernel  2.6.38.2<br/>
+					
+				
+					Linux kernel  2.6.38-rc7<br/>
+					
+				
+					Linux kernel  2.6.38-rc4<br/>
+					
+				
+					Linux kernel  2.6.38-rc2<br/>
+					
+				
+					Linux kernel  2.6.38-git18<br/>
+					
+				
+					Linux kernel  2.6.37rc<br/>
+					
+				
+					Linux kernel  2.6.37.2<br/>
+					
+				
+					Linux kernel  2.6.37-rc7<br/>
+					
+				
+					Linux kernel  2.6.37-rc2<br/>
+					
+				
+					Linux kernel  2.6.37-rc1<br/>
+					
+				
+					Linux kernel  2.6.36.2 (stable)<br/>
+					
+				
+					Linux kernel  2.6.36-rc8<br/>
+					
+				
+					Linux kernel  2.6.36-rc6<br/>
+					
+				
+					Linux kernel  2.6.36-rc5<br/>
+					
+				
+					Linux kernel  2.6.36-rc4<br/>
+					
+				
+					Linux kernel  2.6.36-rc1<br/>
+					
+				
+					Linux kernel  2.6.35.5<br/>
+					
+				
+					Linux kernel  2.6.35.4<br/>
+					
+				
+					Linux kernel  2.6.35-rc6<br/>
+					
+				
+					Linux kernel  2.6.35-rc5-git5<br/>
+					
+				
+					Linux kernel  2.6.35-rc5<br/>
+					
+				
+					Linux kernel  2.6.35-rc4<br/>
+					
+				
+					Linux kernel  2.6.35-rc1<br/>
+					
+				
+					Linux kernel  2.6.34.3<br/>
+					
+				
+					Linux kernel  2.6.34.2<br/>
+					
+				
+					Linux kernel  2.6.34.1<br/>
+					
+				
+					Linux kernel  2.6.34-rc6<br/>
+					
+				
+					Linux kernel  2.6.34-rc5<br/>
+					
+				
+					Linux kernel  2.6.34-rc4<br/>
+					
+				
+					Linux kernel  2.6.34-rc2-git1<br/>
+					
+				
+					Linux kernel  2.6.34-rc2<br/>
+					
+				
+					Linux kernel  2.6.34-rc1<br/>
+					
+				
+					Linux kernel  2.6.33.7<br/>
+					
+				
+					Linux kernel  2.6.33-rc8<br/>
+					
+				
+					Linux kernel  2.6.33-rc7<br/>
+					
+				
+					Linux kernel  2.6.33-rc7<br/>
+					
+				
+					Linux kernel  2.6.33-rc6-git5<br/>
+					
+				
+					Linux kernel  2.6.33-rc6<br/>
+					
+				
+					Linux kernel  2.6.33-rc5<br/>
+					
+				
+					Linux kernel  2.6.33-rc4<br/>
+					
+				
+					Linux kernel  2.6.32.8<br/>
+					
+				
+					Linux kernel  2.6.32.7<br/>
+					
+				
+					Linux kernel  2.6.32.6<br/>
+					
+				
+					Linux kernel  2.6.32.5<br/>
+					
+				
+					Linux kernel  2.6.32.4<br/>
+					
+				
+					Linux kernel  2.6.32.3<br/>
+					
+				
+					Linux kernel  2.6.32.28<br/>
+					
+				
+					Linux kernel  2.6.32.22<br/>
+					
+				
+					Linux kernel  2.6.32.2<br/>
+					
+				
+					Linux kernel  2.6.32.18<br/>
+					
+				
+					Linux kernel  2.6.32.17<br/>
+					
+				
+					Linux kernel  2.6.32.16<br/>
+					
+				
+					Linux kernel  2.6.32.15<br/>
+					
+				
+					Linux kernel  2.6.32.14<br/>
+					
+				
+					Linux kernel  2.6.32.13<br/>
+					
+				
+					Linux kernel  2.6.32.12<br/>
+					
+				
+					Linux kernel  2.6.32.11<br/>
+					
+				
+					Linux kernel  2.6.32.10<br/>
+					
+				
+					Linux kernel  2.6.32.1<br/>
+					
+				
+					Linux kernel  2.6.32-rc8<br/>
+					
+				
+					Linux kernel  2.6.32-rc7<br/>
+					
+				
+					Linux kernel  2.6.32-rc5<br/>
+					
+				
+					Linux kernel  2.6.32-rc4<br/>
+					
+				
+					Linux kernel  2.6.32-rc3<br/>
+					
+				
+					Linux kernel  2.6.32-rc2<br/>
+					
+				
+					Linux kernel  2.6.32-rc1<br/>
+					
+				
+					Linux kernel  2.6.31.6<br/>
+					
+				
+					Linux kernel  2.6.31.4<br/>
+					
+				
+					Linux kernel  2.6.31.1<br/>
+					
+				
+					Linux kernel  2.6.31-rc9<br/>
+					
+				
+					Linux kernel  2.6.31-rc8<br/>
+					
+				
+					Linux kernel  2.6.31-rc5-git3<br/>
+					
+				
+					Linux kernel  2.6.31-rc4<br/>
+					
+				
+					Linux kernel  2.6.31-rc2<br/>
+					
+				
+					Linux kernel  2.6.31-git11<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.30.5<br/>
+					
+				
+					Linux kernel  2.6.30.4<br/>
+					
+				
+					Linux kernel  2.6.30.3<br/>
+					
+				
+					Linux kernel  2.6.29-rc2-git1<br/>
+					
+				
+					Linux kernel  2.6.29-rc2<br/>
+					
+				
+					Linux kernel  2.6.29-rc1<br/>
+					
+				
+					Linux kernel  2.6.28.4<br/>
+					
+				
+					Linux kernel  2.6.28.10<br/>
+					
+				
+					Linux kernel  2.6.28-rc7<br/>
+					
+				
+					Linux kernel  2.6.28-rc6<br/>
+					
+				
+					Linux kernel  2.6.28-rc4<br/>
+					
+				
+					Linux kernel  2.6.27.54<br/>
+					
+				
+					Linux kernel  2.6.27.51<br/>
+					
+				
+					Linux kernel  2.6.27.49<br/>
+					
+				
+					Linux kernel  2.6.27.26<br/>
+					
+				
+					Linux kernel  2.6.27-git3<br/>
+					
+				
+					Linux kernel  2.6.26.1<br/>
+					
+				
+					Linux kernel  2.6.26-rc5-git1<br/>
+					
+				
+					Linux kernel  2.6.25.4<br/>
+					
+				
+					Linux kernel  2.6.25.3<br/>
+					
+				
+					Linux kernel  2.6.25.2<br/>
+					
+				
+					Linux kernel  2.6.25.1<br/>
+					
+				
+					Linux kernel  2.6.25-rc1<br/>
+					
+				
+					Linux kernel  2.6.24.6<br/>
+					
+				
+					Linux kernel  2.6.24.4<br/>
+					
+				
+					Linux kernel  2.6.24.3<br/>
+					
+				
+					Linux kernel  2.6.24-rc2<br/>
+					
+				
+					Linux kernel  2.6.24-rc1<br/>
+					
+				
+					Linux kernel  2.6.24 Rc3<br/>
+					
+				
+					Linux kernel  2.6.24 Rc2<br/>
+					
+				
+					Linux kernel  2.6.23.14<br/>
+					
+				
+					Linux kernel  2.6.23.10<br/>
+					
+				
+					Linux kernel  2.6.23.1<br/>
+					
+				
+					Linux kernel  2.6.23.1<br/>
+					
+				
+					Linux kernel  2.6.23.09<br/>
+					
+				
+					Linux kernel  2.6.23 Rc2<br/>
+					
+				
+					Linux kernel  2.6.22-rc7<br/>
+					
+				
+					Linux kernel  2.6.22-rc1<br/>
+					
+				
+					Linux kernel  2.6.21-RC6<br/>
+					
+				
+					Linux kernel  2.6.21-RC5<br/>
+					
+				
+					Linux kernel  2.6.21-RC4<br/>
+					
+				
+					Linux kernel  2.6.21-RC3<br/>
+					
+				
+					Linux kernel  2.6.20.3<br/>
+					
+				
+					Linux kernel  2.6.20.2<br/>
+					
+				
+					Linux kernel  2.6.20.13<br/>
+					
+				
+					Linux kernel  2.6.20.11<br/>
+					
+				
+					Linux kernel  2.6.20-rc2<br/>
+					
+				
+					Linux kernel  2.6.20-2<br/>
+					
+				
+					Linux kernel  2.6.19 -rc6<br/>
+					
+				
+					Linux kernel  2.6.18.1<br/>
+					
+				
+					Linux kernel  2.6.18-8.1.8.el5<br/>
+					
+				
+					Linux kernel  2.6.18-53<br/>
+					
+				
+					Linux kernel  2.6.18<br/>
+					
+				
+					Linux kernel  2.6.16.9<br/>
+					
+				
+					Linux kernel  2.6.16.7<br/>
+					
+				
+					Linux kernel  2.6.16.19<br/>
+					
+				
+					Linux kernel  2.6.16.13<br/>
+					
+				
+					Linux kernel  2.6.16.12<br/>
+					
+				
+					Linux kernel  2.6.16.11<br/>
+					
+				
+					Linux kernel  2.6.15.4<br/>
+					
+				
+					Linux kernel  2.6.15.11<br/>
+					
+				
+					Linux kernel  2.6.15-27.48<br/>
+					
+				
+					Linux kernel  2.6.14.3<br/>
+					
+				
+					Linux kernel  2.6.14.2<br/>
+					
+				
+					Linux kernel  2.6.14.1<br/>
+					
+				
+					Linux kernel  2.6.13.4<br/>
+					
+				
+					Linux kernel  2.6.13.3<br/>
+					
+				
+					Linux kernel  2.6.13.2<br/>
+					
+				
+					Linux kernel  2.6.13.1<br/>
+					
+				
+					Linux kernel  2.6.12.6<br/>
+					
+				
+					Linux kernel  2.6.12.5<br/>
+					
+				
+					Linux kernel  2.6.12.4<br/>
+					
+				
+					Linux kernel  2.6.12.3<br/>
+					
+				
+					Linux kernel  2.6.12.2<br/>
+					
+				
+					Linux kernel  2.6.12.1<br/>
+					
+				
+					Linux kernel  2.6.11.8<br/>
+					
+				
+					Linux kernel  2.6.11.7<br/>
+					
+				
+					Linux kernel  2.6.11.6<br/>
+					
+				
+					Linux kernel  2.6.11.5<br/>
+					
+				
+					Linux kernel  2.6.11.4<br/>
+					
+				
+					Linux kernel  2.6.11.12<br/>
+					
+				
+					Linux kernel  2.6.11.11<br/>
+					
+				
+					Linux kernel  2.6.0<br/>
+					
+				
+					IBM System X3750 M4  8752<br/>
+					
+				
+					IBM System X3750 M4  8733<br/>
+					
+				
+					IBM System x3650 M4 HD  5460<br/>
+					
+				
+					IBM System X3650 M4  7915<br/>
+					
+				
+					IBM System x3630 M4 HD  5466<br/>
+					
+				
+					IBM System X3630 M4  7158<br/>
+					
+				
+					IBM System X3550 M4  7914<br/>
+					
+				
+					IBM System X3530 M4  7160<br/>
+					
+				
+					IBM System X3500 M4  7383<br/>
+					
+				
+					IBM System x3300 M4  7382<br/>
+					
+				
+					IBM System X3250 M4  2583<br/>
+					
+				
+					IBM System X3100 M4  2582<br/>
+					
+				
+					IBM System x iDataPlex Direct Water Cooled dx360 M4 server  7919<br/>
+					
+				
+					IBM System x iDataPlex Direct Water Cooled dx360 M4 server  7918<br/>
+					
+				
+					IBM Power Systems  780.01<br/>
+					
+				
+					IBM Power Systems  780.00<br/>
+					
+				
+					IBM Power Systems  770.31<br/>
+					
+				
+					IBM Power Systems  770.22<br/>
+					
+				
+					IBM Power Systems  770.21<br/>
+					
+				
+					IBM Power Systems  770.20<br/>
+					
+				
+					IBM Power Systems  770.10<br/>
+					
+				
+					IBM Power Systems  770.00<br/>
+					
+				
+					IBM Power Systems  760.41<br/>
+					
+				
+					IBM Power Systems  760.40<br/>
+					
+				
+					IBM Power Systems  760.31<br/>
+					
+				
+					IBM Power Systems  760.30<br/>
+					
+				
+					IBM Power Systems  760.20<br/>
+					
+				
+					IBM Power Systems  760.11<br/>
+					
+				
+					IBM Power Systems  760.10<br/>
+					
+				
+					IBM Power Systems  760.00<br/>
+					
+				
+					IBM Power Systems  740.81<br/>
+					
+				
+					IBM Power Systems  740.80<br/>
+					
+				
+					IBM Power Systems  740.70<br/>
+					
+				
+					IBM Power Systems  740.61<br/>
+					
+				
+					IBM Power Systems  740.60<br/>
+					
+				
+					IBM Power Systems  740.52<br/>
+					
+				
+					IBM Power Systems  740.51<br/>
+					
+				
+					IBM Power Systems  740.50<br/>
+					
+				
+					IBM Power Systems  740.40<br/>
+					
+				
+					IBM Power Systems  740.21<br/>
+					
+				
+					IBM Power Systems  740.20<br/>
+					
+				
+					IBM Power Systems  740.16<br/>
+					
+				
+					IBM Power Systems  740.15<br/>
+					
+				
+					IBM Power Systems  740.10<br/>
+					
+				
+					IBM Power Systems  740.00<br/>
+					
+				
+					IBM Power Systems  730.91<br/>
+					
+				
+					IBM Power Systems  730.90<br/>
+					
+				
+					IBM Power Systems  730.80<br/>
+					
+				
+					IBM Power Systems  730.72<br/>
+					
+				
+					IBM Power Systems  730.71<br/>
+					
+				
+					IBM Power Systems  730.70<br/>
+					
+				
+					IBM Power Systems  730.61<br/>
+					
+				
+					IBM Power Systems  730.60<br/>
+					
+				
+					IBM Power Systems  730.51<br/>
+					
+				
+					IBM Power Systems  730.50<br/>
+					
+				
+					IBM Power Systems  730.46<br/>
+					
+				
+					IBM Power Systems  730.45<br/>
+					
+				
+					IBM Power Systems  730.40<br/>
+					
+				
+					IBM Power Systems  730.30<br/>
+					
+				
+					IBM Power Systems  730.20<br/>
+					
+				
+					IBM Power Systems  730.00<br/>
+					
+				
+					IBM Power Systems  350.D0<br/>
+					
+				
+					IBM Power Systems  350.C0<br/>
+					
+				
+					IBM Power Systems  350.B1<br/>
+					
+				
+					IBM Power Systems  350.B0<br/>
+					
+				
+					IBM Power Systems  350.A0<br/>
+					
+				
+					IBM Power Systems  350.90<br/>
+					
+				
+					IBM Power Systems  350.80<br/>
+					
+				
+					IBM Power Systems  350.70<br/>
+					
+				
+					IBM Power Systems  350.60<br/>
+					
+				
+					IBM Power Systems  350.50<br/>
+					
+				
+					IBM Power Systems  350.40<br/>
+					
+				
+					IBM Power Systems  350.30<br/>
+					
+				
+					IBM Power Systems  350.20<br/>
+					
+				
+					IBM Power Systems  350.10<br/>
+					
+				
+					IBM Power Systems  350.00<br/>
+					
+				
+					IBM iDataPlex dx360 M4  7913<br/>
+					
+				
+					IBM iDataPlex dx360 M4  7912<br/>
+					
+				
+					IBM Flex System X440 Compute Node  7917<br/>
+					
+				
+					IBM Flex System X240 Compute Node  8738<br/>
+					
+				
+					IBM Flex System X240 Compute Node  8737<br/>
+					
+				
+					IBM Flex System X240 Compute Node  7863<br/>
+					
+				
+					IBM Flex System X220 Compute Node  7906<br/>
+					
+				
+					IBM Flex System X220 Compute Node  2585<br/>
+					
+				
+					IBM Flex System V7000 Dual Controller Storage Node  4939<br/>
+					
+				
+					IBM Flex System Manager Types 8734 1.3 <br/>
+					
+				
+					IBM Flex System Manager Types 8734  1.1.0<br/>
+					
+				
+					IBM Flex System Manager Types 8731 1.3 <br/>
+					
+				
+					IBM Flex System Manager Types 8731  1.1.0<br/>
+					
+				
+					IBM Flex System Manager Types 7955 1.3 <br/>
+					
+				
+					IBM Flex System Manager Types 7955  1.1.0<br/>
+					
+				
+					IBM Flex System Manager Node  8734<br/>
+					
+				
+					IBM Flex System Manager Node  8731<br/>
+					
+				
+					IBM Flex System Manager Node  7955<br/>
+					
+				
+					IBM Flex System Enterprise Chassis  8724<br/>
+					
+				
+					IBM Flex System Enterprise Chassis  8721<br/>
+					
+				
+					IBM Flex System Enterprise Chassis  7893<br/>
+					
+				
+					IBM BladeCenter(TM)-T  8730<br/>
+					
+				
+					IBM BladeCenter(TM)-T  8720<br/>
+					
+				
+					IBM BladeCenter(TM)-S  8886<br/>
+					
+				
+					IBM BladeCenter(TM)-S  7779<br/>
+					
+				
+					IBM BladeCenter(TM)-HT  8750<br/>
+					
+				
+					IBM BladeCenter(TM)-HT  8740<br/>
+					
+				
+					IBM BladeCenter(TM)-H  8852<br/>
+					
+				
+					IBM BladeCenter(TM)-H  7989<br/>
+					
+				
+					IBM BladeCenter(TM)-H  1886<br/>
+					
+				
+					IBM BladeCenter(TM)-E  8677<br/>
+					
+				
+					IBM BladeCenter(TM)-E  7967<br/>
+					
+				
+					IBM BladeCenter(TM)-E  1881<br/>
+					
+				
+					IBM BladeCenter T Advanced Management Module  32R0835<br/>
+					
+				
+					IBM BladeCenter HS23E  8039<br/>
+					
+				
+					IBM BladeCenter HS23E  8038<br/>
+					
+				
+					IBM BladeCenter HS23  7875<br/>
+					
+				
+					IBM BladeCenter HS23  1929<br/>
+					
+				
+					IBM BladeCenter Advanced Management Module  25R5778<br/>
+					
+				
+					HP Rapid Deployment Pack (RDP)  0<br/>
+					
+				
+					HP Insight Control Server Deployment  0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Avaya Voice Portal  5.1.1<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IQ  5.1.1<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya IP Office Application Server  7.0<br/>
+					
+				
+					Avaya IP Office Application Server  6.1<br/>
+					
+				
+					Avaya IP Office Application Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  6.0<br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.1<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.3<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenVZ Project OpenVZ  042stab044.11<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab095.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use readily available tools to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

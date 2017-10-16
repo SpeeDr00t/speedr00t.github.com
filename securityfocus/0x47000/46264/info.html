@@ -1,0 +1,828 @@
+#SpeeDr00t@Black Falcon<br>#bid46264<p><b><span style="font-size: 18pt;">OpenSSL OCSP Stapling 'ClientHello' Handshake Message Parsing Security Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46264/info">info</a><br><a href="http://www.securityfocus.com/bid/46264/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46264/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46264/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46264/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46264
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0014<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 08 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:10PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Neel Mehta from Google
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESXi  5.0<br/>
+					
+				
+					VMWare ESXi  4.1<br/>
+					
+				
+					VMWare ESXi  4.0<br/>
+					
+				
+					VMWare ESXi  3.5<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					VMWare ESX  3.5<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.2 <br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 k<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 j<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 i<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0A<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0a<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8Q<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8p<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8p<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8O<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8o<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8N<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8n<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8m<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8M<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8l<br/>
+					
+				
+					NetBSD NetBSD 5.0.2 <br/>
+					
+				
+					NetBSD NetBSD 5.0.1 <br/>
+					
+				
+					NetBSD NetBSD  Current<br/>
+					
+				
+					NetBSD NetBSD  5.1<br/>
+					
+				
+					NetBSD NetBSD  5.0 RC3<br/>
+					
+				
+					NetBSD NetBSD  5.0<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.6<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.5 FP01<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.4 FP02<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed 8.5.1 FP04<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed  8.6 FP02<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed  8.5 FP03<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed  8.4 FP07<br/>
+					
+				
+					IBM Tivoli Remote Control  5.1.2<br/>
+					
+				
+					IBM Tivoli Network Manager  3.9 FP3<br/>
+					
+				
+					IBM Tivoli Network Manager  3.8 FP7<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP9<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP8<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP7<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP6<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP5<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP4<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP3<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP2<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP13<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP12<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP11<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP10<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP1<br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.4 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.3.1 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.3 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.2.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 9.0 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 8.2.1 <br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0.2<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0.2<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6<br/>
+					
+				
+					IBM Sterling Connect:Enterprise for UNIX 2.5 <br/>
+					
+				
+					IBM Sterling Connect:Enterprise for UNIX 2.4 4<br/>
+					
+				
+					IBM Smart Analytics System 7710  0<br/>
+					
+				
+					IBM Smart Analytics System 7700  0<br/>
+					
+				
+					IBM Smart Analytics System 7600  0<br/>
+					
+				
+					IBM Smart Analytics System 5710  0<br/>
+					
+				
+					IBM Smart Analytics System 5600  2<br/>
+					
+				
+					IBM Smart Analytics System 5600  1<br/>
+					
+				
+					IBM Smart Analytics System 2050  0<br/>
+					
+				
+					IBM Smart Analytics System 1050  0<br/>
+					
+				
+					IBM Service Delivery Manager 7.2.4 <br/>
+					
+				
+					IBM Service Delivery Manager 7.2.2 <br/>
+					
+				
+					IBM Service Delivery Manager 7.2.1 <br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  D5100<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  C4000<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  C3000<br/>
+					
+				
+					IBM Informix Genero  2.41<br/>
+					
+				
+					IBM Informix Genero  2.40<br/>
+					
+				
+					IBM Informix Genero  2.32<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.3.0 <br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.2.0 SP2<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.2.0 SP1<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.2.0<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.1.0 SP4<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.1.0 SP3<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.1.0<br/>
+					
+				
+					IBM DS8870  7.1<br/>
+					
+				
+					IBM DS8870  7.0<br/>
+					
+				
+					IBM Cloudburst 2.1.1 <br/>
+					
+				
+					IBM Cloudburst  2.1<br/>
+					
+				
+					IBM Cloudburst  1.2<br/>
+					
+				
+					IBM AIX 6.1.5 <br/>
+					
+				
+					IBM AIX 6.1.4 <br/>
+					
+				
+					IBM AIX 6.1.3 <br/>
+					
+				
+					IBM AIX 6.1.2 <br/>
+					
+				
+					IBM AIX 6.1.1 <br/>
+					
+				
+					IBM AIX 5.3.10 <br/>
+					
+				
+					IBM AIX 5.3.9 <br/>
+					
+				
+					IBM AIX 5.3.8 <br/>
+					
+				
+					IBM AIX 5.3.7 <br/>
+					
+				
+					IBM AIX 5.3 L<br/>
+					
+				
+					IBM AIX 5.2.2 <br/>
+					
+				
+					IBM AIX 5.2 L<br/>
+					
+				
+					IBM AIX 5.1 L<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5300-06<br/>
+					
+				
+					IBM AIX  5200-10<br/>
+					
+				
+					IBM AIX  5.3.12<br/>
+					
+				
+					IBM AIX  5.3.11<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					IBM AIX  5.2<br/>
+					
+				
+					IBM AIX  5.1<br/>
+					
+				
+					HP System Management Homepage 6.2.2 7<br/>
+					
+				
+					HP System Management Homepage 6.0 .96<br/>
+					
+				
+					HP System Management Homepage 3.0.2 .77<br/>
+					
+				
+					HP System Management Homepage 3.0.1 .73<br/>
+					
+				
+					HP System Management Homepage 3.0 .68<br/>
+					
+				
+					HP System Management Homepage 3.0 .64<br/>
+					
+				
+					HP System Management Homepage  6.3<br/>
+					
+				
+					HP System Management Homepage  6.2.0-12<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.1.0.103<br/>
+					
+				
+					HP System Management Homepage  6.1.0.102<br/>
+					
+				
+					HP System Management Homepage  6.1.0-103<br/>
+					
+				
+					HP System Management Homepage  6.1<br/>
+					
+				
+					HP System Management Homepage  6.0.0.95<br/>
+					
+				
+					HP System Management Homepage  6.0.0-95<br/>
+					
+				
+					HP System Management Homepage  6.0<br/>
+					
+				
+					HP System Management Homepage  3.0.2.77 B<br/>
+					
+				
+					HP System Management Homepage  3.0.2-77<br/>
+					
+				
+					HP System Management Homepage  3.0.1-73<br/>
+					
+				
+					HP System Management Homepage  3.0.0-68<br/>
+					
+				
+					HP System Management Homepage  0<br/>
+					
+				
+					HP SSL for OpenVMS  1.4<br/>
+					
+				
+					HP SSL for OpenVMS  1.3<br/>
+					
+				
+					HP Insight Control  6.2<br/>
+					
+				
+					HP Insight Control  6.1<br/>
+					
+				
+					HP Insight Control  6.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 9.1.3 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 9.1.2 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 8.3.7 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 8.3.5 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 8.3.4 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 8.3.3 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 8.3.2 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter 8.3.1 <br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter  9.1.1<br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter  8<br/>
+					
+				
+					Balabit syslog-ng Premium Edition 4.0.1 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition 3.2 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition 3.0.7 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition 3.0.6 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition 3.0.5 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.1<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.0.1a<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  3.2.1B<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  3.2.1A<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  3.0.7a<br/>
+					
+				
+					Apple Mac OS X Server 10.6.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server  10.6.7<br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X 10.6.6 <br/>
+					
+				
+					Apple Mac OS X 10.6.5 <br/>
+					
+				
+					Apple Mac OS X 10.6.5 <br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X  10.6.7<br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					IBM Hardware Management Console (HMC)  7R7.7.0 <br/>
+					
+				
+					IBM DS8870  7.2<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP SSL for OpenVMS  1.4-453<br/>
+					
+				
+					HP Insight Control  6.3<br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter  9.3.2.1<br/>
+					
+				
+					Blue Coat Systems Blue Coat Reporter  9.2.5.1<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.1.2a<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.0.3b<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  3.0.7b<br/>
+					
+				
+					Apple Mac OS X Server  10.6.8<br/>
+					
+				
+					Apple Mac OS X  10.6.8<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

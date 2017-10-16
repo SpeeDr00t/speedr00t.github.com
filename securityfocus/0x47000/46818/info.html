@@ -1,0 +1,835 @@
+#SpeeDr00t@Black Falcon<br>#bid46818<p><b><span style="font-size: 18pt;">RETIRED:libxslt 'xsltGenerateIdFunction()' Function Heap Memory Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46818/info">info</a><br><a href="http://www.securityfocus.com/bid/46818/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46818/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46818/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46818/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46818
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 09 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 11 2011 03:12PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Chris Evans
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XMLSoft libxslt 1.1.24 <br/>
+					
+				
+					XMLSoft libxslt 1.1.23 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					XMLSoft libxslt 1.1.22 <br/>
+					
+				
+					XMLSoft libxslt 1.1.21 <br/>
+					
+				
+					XMLSoft libxslt 1.1.20 <br/>
+					
+				
+					XMLSoft libxslt 1.1.19 <br/>
+					
+				
+					XMLSoft libxslt 1.1.18 <br/>
+					
+				
+					XMLSoft libxslt 1.1.17 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					XMLSoft libxslt 1.1.16 <br/>
+					
+				
+					XMLSoft libxslt 1.1.15 <br/>
+					
+				
+					XMLSoft libxslt 1.1.14 <br/>
+					
+				
+					XMLSoft libxslt 1.1.13 <br/>
+					
+				
+					XMLSoft libxslt 1.1.12 <br/>
+					
+				
+					XMLSoft libxslt 1.1.11 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					XMLSoft libxslt 1.1.10 <br/>
+					
+				
+					XMLSoft libxslt 1.1.9 <br/>
+					
+				
+					XMLSoft libxslt 1.1.8 <br/>
+					
+				
+					XMLSoft libxslt 1.0.33 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					XMLSoft libxslt 1.0.15 <br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					XMLSoft libxslt  1.1.26<br/>
+					
+				
+					XMLSoft libxslt  1.1.25<br/>
+					
+				
+					Mozilla Firefox 3.6.13 <br/>
+					
+				
+					Mozilla Firefox 3.6.13 <br/>
+					
+				
+					Mozilla Firefox 3.6.10 <br/>
+					
+				
+					Mozilla Firefox 3.6.9 <br/>
+					
+				
+					Mozilla Firefox 3.6.8 <br/>
+					
+				
+					Mozilla Firefox 3.6.6 <br/>
+					
+				
+					Mozilla Firefox 3.6.4 <br/>
+					
+				
+					Mozilla Firefox 3.6.3 <br/>
+					
+				
+					Mozilla Firefox 3.6.2 <br/>
+					
+				
+					Mozilla Firefox 3.6.2 <br/>
+					
+				
+					Mozilla Firefox 3.5.17 <br/>
+					
+				
+					Mozilla Firefox 3.5.16 <br/>
+					
+				
+					Mozilla Firefox 3.5.14 <br/>
+					
+				
+					Mozilla Firefox 3.5.13 <br/>
+					
+				
+					Mozilla Firefox 3.5.10 <br/>
+					
+				
+					Mozilla Firefox 3.5.10 <br/>
+					
+				
+					Mozilla Firefox 3.5.9 <br/>
+					
+				
+					Mozilla Firefox 3.5.9 <br/>
+					
+				
+					Mozilla Firefox 3.5.8 <br/>
+					
+				
+					Mozilla Firefox 3.5.7 <br/>
+					
+				
+					Mozilla Firefox 3.5.6 <br/>
+					
+				
+					Mozilla Firefox 3.5.5 <br/>
+					
+				
+					Mozilla Firefox 3.5.4 <br/>
+					
+				
+					Mozilla Firefox 3.5.3 <br/>
+					
+				
+					Mozilla Firefox 3.5.2 <br/>
+					
+				
+					Mozilla Firefox 3.5.1 <br/>
+					
+				
+					Mozilla Firefox 3.5 <br/>
+					
+				
+					Mozilla Firefox  3.6.7<br/>
+					
+				
+					Mozilla Firefox  3.6.6<br/>
+					
+				
+					Mozilla Firefox  3.6.14<br/>
+					
+				
+					Mozilla Firefox  3.6.12<br/>
+					
+				
+					Mozilla Firefox  3.6.11<br/>
+					
+				
+					Mozilla Firefox  3.6 Beta 3<br/>
+					
+				
+					Mozilla Firefox  3.6 Beta 2<br/>
+					
+				
+					Mozilla Firefox  3.6<br/>
+					
+				
+					Mozilla Firefox  3.5.17<br/>
+					
+				
+					Mozilla Firefox  3.5.15<br/>
+					
+				
+					Mozilla Firefox  3.5.12<br/>
+					
+				
+					Mozilla Firefox  3.5.11<br/>
+					
+				
+					Microsoft Internet Explorer  8<br/>
+					
+				
+					Apple Safari  5.0.4 for Windows<br/>
+					
+				
+					Apple Safari  5.0.4<br/>
+					
+				
+					Apple Safari  5.0.3 for Windows<br/>
+					
+				
+					Apple Safari  5.0.3<br/>
+					
+				
+					Apple Safari  5.0.2 for Windows<br/>
+					
+				
+					Apple Safari  5.0.2<br/>
+					
+				
+					Apple Safari  5.0.1 for Windows<br/>
+					
+				
+					Apple Safari  5.0.1<br/>
+					
+				
+					Apple Safari  5.0 for Windows<br/>
+					
+				
+					Apple Safari  5.0<br/>
+					
+				
+					Apple iPod Touch  0<br/>
+					
+				
+					Apple iPhone  0<br/>
+					
+				
+					Apple iPad  0<br/>
+					
+				
+					Apple iOS 4.2.1 <br/>
+					
+				
+					Apple iOS 4.0.2 <br/>
+					
+				
+					Apple iOS 4.0.1 <br/>
+					
+				
+					Apple iOS 3.2.2 <br/>
+					
+				
+					Apple iOS 3.2.1 <br/>
+					
+				
+					Apple iOS  4.3.1<br/>
+					
+				
+					Apple iOS  4.3<br/>
+					
+				
+					Apple iOS  4.2 beta<br/>
+					
+				
+					Apple iOS  4.2<br/>
+					
+				
+					Apple iOS  4.1<br/>
+					
+				
+					Apple iOS  4<br/>
+					
+				
+					Apple iOS  3.2<br/>
+					
+				
+					Apple iOS  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apple iOS  4.3.2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue by enticing an unsuspecting user into visiting a specially crafted webpage.
+	
+		<ul>
+</ul>
+</div>

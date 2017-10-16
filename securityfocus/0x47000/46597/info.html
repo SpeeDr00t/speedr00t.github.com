@@ -1,0 +1,1137 @@
+#SpeeDr00t@Black Falcon<br>#bid46597<p><b><span style="font-size: 18pt;">Samba 'FD_SET' Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46597/info">info</a><br><a href="http://www.securityfocus.com/bid/46597/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46597/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46597/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46597/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46597
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0719<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 28 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 16 2015 05:45PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Volker Lendecke of SerNet.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					SuSE openSUSE  11.3<br/>
+					
+				
+					Sun Solaris  9_x86<br/>
+					
+				
+					Sun Solaris  9_sparc<br/>
+					
+				
+					Sun Solaris  10_x86<br/>
+					
+				
+					Sun Solaris  10_sparc<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux 8.1 <br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Samba Samba 3.5.2 <br/>
+					
+				
+					Samba Samba 3.5.1 <br/>
+					
+				
+					Samba Samba 3.4.8 <br/>
+					
+				
+					Samba Samba 3.4.7 <br/>
+					
+				
+					Samba Samba 3.4.6 <br/>
+					
+				
+					Samba Samba 3.4.5 <br/>
+					
+				
+					Samba Samba 3.4.2 <br/>
+					
+				
+					Samba Samba 3.4.1 <br/>
+					
+				
+					Samba Samba 3.3.13 <br/>
+					
+				
+					Samba Samba 3.3.12 <br/>
+					
+				
+					Samba Samba 3.3.11 <br/>
+					
+				
+					Samba Samba 3.3.10 <br/>
+					
+				
+					Samba Samba 3.3.8 <br/>
+					
+				
+					Samba Samba 3.3.7 <br/>
+					
+				
+					Samba Samba 3.3.6 <br/>
+					
+				
+					Samba Samba 3.3.5 <br/>
+					
+				
+					Samba Samba 3.2.15 <br/>
+					
+				
+					Samba Samba 3.2.14 <br/>
+					
+				
+					Samba Samba 3.2.13 <br/>
+					
+				
+					Samba Samba 3.2.12 <br/>
+					
+				
+					Samba Samba 3.2.6 <br/>
+					
+				
+					Samba Samba 3.2.5 <br/>
+					
+				
+					Samba Samba 3.2.4 <br/>
+					
+				
+					Samba Samba 3.2.3 <br/>
+					
+				
+					Samba Samba 3.2.2 <br/>
+					
+				
+					Samba Samba 3.2.1 <br/>
+					
+				
+					Samba Samba 3.2 <br/>
+					
+				
+					Samba Samba 3.0.37 <br/>
+					
+				
+					Samba Samba 3.0.36 <br/>
+					
+				
+					Samba Samba 3.0.35 <br/>
+					
+				
+					Samba Samba 3.0.34 <br/>
+					
+				
+					Samba Samba 3.0.33 <br/>
+					
+				
+					Samba Samba 3.0.32 <br/>
+					
+				
+					Samba Samba 3.0.31 <br/>
+					
+				
+					Samba Samba 3.0.30 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 amd64<br/>
+</span>
+					
+				
+					Samba Samba 3.0.29 <br/>
+					
+				
+					Samba Samba 3.0.28 a<br/>
+					
+				
+					Samba Samba 3.0.28 <br/>
+					
+				
+					Samba Samba 3.0.27 <br/>
+					
+				
+					Samba Samba 3.0.26 <br/>
+					
+				
+					Samba Samba 3.0.25 rc3<br/>
+					
+				
+					Samba Samba 3.0.25 rc2<br/>
+					
+				
+					Samba Samba 3.0.25 rc1<br/>
+					
+				
+					Samba Samba 3.0.25 pre2<br/>
+					
+				
+					Samba Samba 3.0.25 pre1<br/>
+					
+				
+					Samba Samba 3.0.25 c<br/>
+					
+				
+					Samba Samba 3.0.25 b<br/>
+					
+				
+					Samba Samba 3.0.25 a<br/>
+					
+				
+					Samba Samba 3.0.25 <br/>
+					
+				
+					Samba Samba 3.0.24 <br/>
+					
+				
+					Samba Samba 3.0.23 <br/>
+					
+				
+					Samba Samba 3.0.22 <br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+</span>
+					
+				
+					Samba Samba 3.0.21 <br/>
+					
+				
+					Samba Samba 3.0.20 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.2 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.14 <br/>
+					
+				
+					Samba Samba 3.0.13 <br/>
+					
+				
+					Samba Samba 3.0.12 <br/>
+					
+				
+					Samba Samba 3.0.11 <br/>
+					
+				
+					Samba Samba 3.0.10 <br/>
+					
+				
+					Samba Samba 3.0.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.8 <br/>
+					
+				
+					Samba Samba 3.0.7 <br/>
+					
+				
+					Samba Samba 3.0.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0  AMD64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0  AMD64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server 1.0  Workgroup Edition<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server 1.0  Hosting Edition<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server Hosting Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Appliance Server Workgroup Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Workstation 8.0 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.5 <br/>
+					
+				
+					Samba Samba 3.0.4 -r1<br/>
+					
+				
+					Samba Samba 3.0.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.0 <br/>
+</span>
+					
+				
+					Samba Samba 3.0.3 <br/>
+					
+				
+					Samba Samba 3.0.2 a<br/>
+					
+				
+					Samba Samba 3.0.2 <br/>
+					
+				
+					Samba Samba 3.0.1 <br/>
+					
+				
+					Samba Samba 3.0 alpha<br/>
+					
+				
+					Samba Samba 3.0 <br/>
+					
+				
+					Samba Samba  3.5.6<br/>
+					
+				
+					Samba Samba  3.5.5<br/>
+					
+				
+					Samba Samba  3.5.4<br/>
+					
+				
+					Samba Samba  3.5.3<br/>
+					
+				
+					Samba Samba  3.0.4 Rc1<br/>
+					
+				
+					Samba Samba  3.0.27a<br/>
+					
+				
+					Samba Samba  3.0.26a<br/>
+					
+				
+					Samba Samba  3.0.23d<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake  2007.0<br/>
+</span>
+					
+				
+					Samba Samba  3.0.23c<br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux  11.0<br/>
+</span>
+					
+				
+					Samba Samba  3.0.23b<br/>
+					
+				
+					Samba Samba  3.0.23a<br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 4.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server  4.0<br/>
+</span>
+					
+				
+					Samba Samba  3.0.21c<br/>
+					
+				
+					Samba Samba  3.0.21b<br/>
+					
+				
+					Samba Samba  3.0.21a<br/>
+					
+				
+					Samba Samba  3.0.20b<br/>
+					
+				
+					Samba Samba  3.0.20a<br/>
+					
+				
+					Samba Samba  3.0.14a<br/>
+					
+				
+					Samba Samba  3.0.0<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					RedHat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation  6<br/>
+					
+				
+					Red Hat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux Server  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					Pardus Linux 2011  0<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  4.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  4.1<br/>
+					
+				
+					Avaya Voice Portal  4.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  4.2<br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP3<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Messaging Storage Server  4.0<br/>
+					
+				
+					Avaya Message Networking 5.2.1 <br/>
+					
+				
+					Avaya Message Networking  5.2 SP1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Message Networking  3.1<br/>
+					
+				
+					Avaya IQ 4.1 <br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Apple Mac OS X Server 10.6.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.5 <br/>
+					
+				
+					Apple Mac Os X Server  10.6.7<br/>
+					
+				
+					Apple Mac OS X Server  10.6<br/>
+					
+				
+					Apple Mac OS X Server  10.5<br/>
+					
+				
+					Apple Mac OS X 10.6.5 <br/>
+					
+				
+					Apple Mac OS X 10.6.4 <br/>
+					
+				
+					Apple Mac OS X 10.6.3 <br/>
+					
+				
+					Apple Mac OS X 10.6.2 <br/>
+					
+				
+					Apple Mac OS X 10.6.1 <br/>
+					
+				
+					Apple Mac OS X 10.5.8 <br/>
+					
+				
+					Apple Mac OS X 10.5.7 <br/>
+					
+				
+					Apple Mac OS X 10.5.6 <br/>
+					
+				
+					Apple Mac OS X 10.5.5 <br/>
+					
+				
+					Apple Mac OS X 10.5.4 <br/>
+					
+				
+					Apple Mac OS X 10.5.3 <br/>
+					
+				
+					Apple Mac OS X 10.5.2 <br/>
+					
+				
+					Apple Mac OS X 10.5.1 <br/>
+					
+				
+					Apple Mac OS X 10.5 <br/>
+					
+				
+					Apple Mac OS X  10.6<br/>
+					
+				
+					Apple Mac OS X  10.5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Samba Samba  3.5.7<br/>
+					
+				
+					Apple Mac Os X Server  10.6.8<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any exploits.#no_exploit.
+	
+		<ul>
+</ul>
+</div>

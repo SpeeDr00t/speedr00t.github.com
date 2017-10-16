@@ -1,0 +1,411 @@
+#SpeeDr00t@Black Falcon<br>#bid48619<p><b><span style="font-size: 18pt;">FreeType 'src/psaux/t1decode.c' Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/48619/info">info</a><br><a href="http://www.securityfocus.com/bid/48619/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/48619/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/48619/solution">solution</a><br><a href="http://www.securityfocus.com/bid/48619/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				48619
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0226<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 06 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:17PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				comex, Grant 'chpwn' Paul, Jay 'saurik' Freeman
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeType FreeType 2.4.5 <br/>
+					
+				
+					FreeType FreeType 2.4.3 <br/>
+					
+				
+					FreeType FreeType 2.4.2 <br/>
+					
+				
+					FreeType FreeType 2.4 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Avaya 96x1 IP Deskphone  6<br/>
+					
+				
+					Apple Mobile Safari  0<br/>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X 10.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.4.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.4.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Apple Mac OS X Server 10.4 <br/>
+</span>
+					
+				
+					Apple Mac OS X Server  10.7.1<br/>
+					
+				
+					Apple Mac OS X Server  10.7<br/>
+					
+				
+					Apple Mac OS X  10.7.1<br/>
+					
+				
+					Apple Mac OS X  10.7<br/>
+					
+				
+					Apple iPod Touch  0<br/>
+					
+				
+					Apple iPhone  0<br/>
+					
+				
+					Apple iPad  0<br/>
+					
+				
+					Apple iOS 4.2.1 <br/>
+					
+				
+					Apple iOS 4.0.2 <br/>
+					
+				
+					Apple iOS 4.0.1 <br/>
+					
+				
+					Apple iOS 3.2.2 <br/>
+					
+				
+					Apple iOS 3.2.1 <br/>
+					
+				
+					Apple iOS  4.3.3<br/>
+					
+				
+					Apple iOS  4.3.2<br/>
+					
+				
+					Apple iOS  4.3.1<br/>
+					
+				
+					Apple iOS  4.3<br/>
+					
+				
+					Apple iOS  4.2.8<br/>
+					
+				
+					Apple iOS  4.2.7<br/>
+					
+				
+					Apple iOS  4.2.6<br/>
+					
+				
+					Apple iOS  4.2.5<br/>
+					
+				
+					Apple iOS  4.2 beta<br/>
+					
+				
+					Apple iOS  4.2<br/>
+					
+				
+					Apple iOS  4.1<br/>
+					
+				
+					Apple iOS  4<br/>
+					
+				
+					Apple iOS  3.2<br/>
+					
+				
+					Apple iOS  3.1<br/>
+					
+				
+					Apple iOS  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apple Mac OS X Server  10.7.2<br/>
+					
+				
+					Apple Mac OS X  10.7.2<br/>
+					
+				
+					Apple iOS  4.3.4<br/>
+					
+				
+					Apple iOS  4.2.9<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	This vulnerability is being exploited to jailbreak vulnerable iOS devices through 'JailbreakMe 3.0'.
+	
+		<ul>
+</ul>
+</div>

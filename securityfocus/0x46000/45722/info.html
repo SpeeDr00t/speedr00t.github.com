@@ -1,0 +1,990 @@
+#SpeeDr00t@Black Falcon<br>#bid45722<p><b><span style="font-size: 18pt;">WebKit CSS Token Sequences Handling Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/45722/info">info</a><br><a href="http://www.securityfocus.com/bid/45722/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/45722/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/45722/solution">solution</a><br><a href="http://www.securityfocus.com/bid/45722/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				45722
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-4577<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 14 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:17PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Chris Rohlf
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WebKit Open Source Project WebKit  0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Google Chrome 6.0.472 55<br/>
+					
+				
+					Google Chrome  8.0.552.223<br/>
+					
+				
+					Google Chrome  8.0.552.222<br/>
+					
+				
+					Google Chrome  8.0.552.221<br/>
+					
+				
+					Google Chrome  8.0.552.220<br/>
+					
+				
+					Google Chrome  8.0.552.219<br/>
+					
+				
+					Google Chrome  8.0.552.218<br/>
+					
+				
+					Google Chrome  8.0.552.217<br/>
+					
+				
+					Google Chrome  8.0.552.216<br/>
+					
+				
+					Google Chrome  8.0.552.215<br/>
+					
+				
+					Google Chrome  8.0.552.214<br/>
+					
+				
+					Google Chrome  8.0.552.213<br/>
+					
+				
+					Google Chrome  8.0.552.212<br/>
+					
+				
+					Google Chrome  8.0.552.211<br/>
+					
+				
+					Google Chrome  8.0.552.210<br/>
+					
+				
+					Google Chrome  8.0.552.21<br/>
+					
+				
+					Google Chrome  8.0.552.209<br/>
+					
+				
+					Google Chrome  8.0.552.208<br/>
+					
+				
+					Google Chrome  8.0.552.207<br/>
+					
+				
+					Google Chrome  8.0.552.206<br/>
+					
+				
+					Google Chrome  8.0.552.205<br/>
+					
+				
+					Google Chrome  8.0.552.204<br/>
+					
+				
+					Google Chrome  8.0.552.203<br/>
+					
+				
+					Google Chrome  8.0.552.202<br/>
+					
+				
+					Google Chrome  8.0.552.201<br/>
+					
+				
+					Google Chrome  8.0.552.200<br/>
+					
+				
+					Google Chrome  8.0.552.20<br/>
+					
+				
+					Google Chrome  8.0.552.2<br/>
+					
+				
+					Google Chrome  8.0.552.19<br/>
+					
+				
+					Google Chrome  8.0.552.18<br/>
+					
+				
+					Google Chrome  8.0.552.17<br/>
+					
+				
+					Google Chrome  8.0.552.16<br/>
+					
+				
+					Google Chrome  8.0.552.15<br/>
+					
+				
+					Google Chrome  8.0.552.14<br/>
+					
+				
+					Google Chrome  8.0.552.13<br/>
+					
+				
+					Google Chrome  8.0.552.12<br/>
+					
+				
+					Google Chrome  8.0.552.11<br/>
+					
+				
+					Google Chrome  8.0.552.105<br/>
+					
+				
+					Google Chrome  8.0.552.104<br/>
+					
+				
+					Google Chrome  8.0.552.103<br/>
+					
+				
+					Google Chrome  8.0.552.102<br/>
+					
+				
+					Google Chrome  8.0.552.101<br/>
+					
+				
+					Google Chrome  8.0.552.100<br/>
+					
+				
+					Google Chrome  8.0.552.10<br/>
+					
+				
+					Google Chrome  8.0.552.1<br/>
+					
+				
+					Google Chrome  8.0.552.0<br/>
+					
+				
+					Google Chrome  8.0.551.1<br/>
+					
+				
+					Google Chrome  8.0.551.0<br/>
+					
+				
+					Google Chrome  8.0.550.0<br/>
+					
+				
+					Google Chrome  8.0.549.0<br/>
+					
+				
+					Google Chrome  7.0.548.0<br/>
+					
+				
+					Google Chrome  7.0.547.1<br/>
+					
+				
+					Google Chrome  7.0.547.0<br/>
+					
+				
+					Google Chrome  7.0.544.0<br/>
+					
+				
+					Google Chrome  7.0.542.0<br/>
+					
+				
+					Google Chrome  7.0.541.0<br/>
+					
+				
+					Google Chrome  7.0.540.0<br/>
+					
+				
+					Google Chrome  7.0.539.0<br/>
+					
+				
+					Google Chrome  7.0.538.0<br/>
+					
+				
+					Google Chrome  7.0.537.0<br/>
+					
+				
+					Google Chrome  7.0.536.4<br/>
+					
+				
+					Google Chrome  7.0.536.3<br/>
+					
+				
+					Google Chrome  7.0.536.2<br/>
+					
+				
+					Google Chrome  7.0.536.1<br/>
+					
+				
+					Google Chrome  7.0.536.0<br/>
+					
+				
+					Google Chrome  7.0.535.2<br/>
+					
+				
+					Google Chrome  7.0.535.1<br/>
+					
+				
+					Google Chrome  7.0.531.2<br/>
+					
+				
+					Google Chrome  7.0.531.1<br/>
+					
+				
+					Google Chrome  7.0.531.0<br/>
+					
+				
+					Google Chrome  7.0.530.0<br/>
+					
+				
+					Google Chrome  7.0.529.2<br/>
+					
+				
+					Google Chrome  7.0.529.1<br/>
+					
+				
+					Google Chrome  7.0.529.0<br/>
+					
+				
+					Google Chrome  7.0.528.0<br/>
+					
+				
+					Google Chrome  7.0.526.0<br/>
+					
+				
+					Google Chrome  7.0.525.0<br/>
+					
+				
+					Google Chrome  7.0.524.0<br/>
+					
+				
+					Google Chrome  7.0.522.0<br/>
+					
+				
+					Google Chrome  7.0.521.0<br/>
+					
+				
+					Google Chrome  7.0.520.0<br/>
+					
+				
+					Google Chrome  7.0.519.0<br/>
+					
+				
+					Google Chrome  7.0.518.0<br/>
+					
+				
+					Google Chrome  7.0.517.9<br/>
+					
+				
+					Google Chrome  7.0.517.8<br/>
+					
+				
+					Google Chrome  7.0.517.7<br/>
+					
+				
+					Google Chrome  7.0.517.6<br/>
+					
+				
+					Google Chrome  7.0.517.5<br/>
+					
+				
+					Google Chrome  7.0.517.44<br/>
+					
+				
+					Google Chrome  7.0.517.43<br/>
+					
+				
+					Google Chrome  7.0.517.42<br/>
+					
+				
+					Google Chrome  7.0.517.41<br/>
+					
+				
+					Google Chrome  6.0.472.9<br/>
+					
+				
+					Google Chrome  6.0.472.8<br/>
+					
+				
+					Google Chrome  6.0.472.7<br/>
+					
+				
+					Google Chrome  6.0.472.62<br/>
+					
+				
+					Google Chrome  6.0.472.61<br/>
+					
+				
+					Google Chrome  6.0.472.60<br/>
+					
+				
+					Google Chrome  6.0.472.6<br/>
+					
+				
+					Google Chrome  6.0.472.59<br/>
+					
+				
+					Google Chrome  6.0.472.58<br/>
+					
+				
+					Google Chrome  6.0.472.57<br/>
+					
+				
+					Google Chrome  6.0.472.56<br/>
+					
+				
+					Google Chrome  6.0.472.54<br/>
+					
+				
+					Google Chrome  6.0.472.53<br/>
+					
+				
+					Google Chrome  6.0.472.52<br/>
+					
+				
+					Google Chrome  6.0.472.51<br/>
+					
+				
+					Google Chrome  6.0.472.50<br/>
+					
+				
+					Google Chrome  6.0.472.5<br/>
+					
+				
+					Google Chrome  6.0.472.49<br/>
+					
+				
+					Google Chrome  6.0.472.48<br/>
+					
+				
+					Google Chrome  6.0.472.47<br/>
+					
+				
+					Google Chrome  6.0.472.46<br/>
+					
+				
+					Google Chrome  6.0.472.45<br/>
+					
+				
+					Google Chrome  6.0.472.44<br/>
+					
+				
+					Google Chrome  6.0.472.43<br/>
+					
+				
+					Google Chrome  6.0.472.42<br/>
+					
+				
+					Google Chrome  6.0.472.41<br/>
+					
+				
+					Google Chrome  6.0.472.40<br/>
+					
+				
+					Google Chrome  6.0.472.4<br/>
+					
+				
+					Google Chrome  6.0.472.39<br/>
+					
+				
+					Google Chrome  6.0.472.38<br/>
+					
+				
+					Google Chrome  6.0.472.37<br/>
+					
+				
+					Google Chrome  6.0.472.36<br/>
+					
+				
+					Google Chrome  6.0.472.35<br/>
+					
+				
+					Google Chrome  6.0.472.34<br/>
+					
+				
+					Google Chrome  6.0.472.33<br/>
+					
+				
+					Google Chrome  6.0.472.32<br/>
+					
+				
+					Google Chrome  6.0.472.31<br/>
+					
+				
+					Google Chrome  6.0.472.30<br/>
+					
+				
+					Google Chrome  6.0.472.3<br/>
+					
+				
+					Google Chrome  6.0.472.29<br/>
+					
+				
+					Google Chrome  6.0.472.28<br/>
+					
+				
+					Google Chrome  6.0.472.27<br/>
+					
+				
+					Google Chrome  6.0.472.26<br/>
+					
+				
+					Google Chrome  6.0.472.25<br/>
+					
+				
+					Google Chrome  6.0.472.24<br/>
+					
+				
+					Google Chrome  6.0.472.23<br/>
+					
+				
+					Google Chrome  6.0.472.22<br/>
+					
+				
+					Google Chrome  6.0.472.21<br/>
+					
+				
+					Google Chrome  6.0.472.20<br/>
+					
+				
+					Google Chrome  6.0.472.2<br/>
+					
+				
+					Google Chrome  6.0.472.19<br/>
+					
+				
+					Google Chrome  6.0.472.18<br/>
+					
+				
+					Google Chrome  6.0.472.17<br/>
+					
+				
+					Google Chrome  6.0.472.16<br/>
+					
+				
+					Google Chrome  6.0.472.15<br/>
+					
+				
+					Google Chrome  6.0.472.14<br/>
+					
+				
+					Google Chrome  6.0.472.13<br/>
+					
+				
+					Google Chrome  6.0.472.12<br/>
+					
+				
+					Google Chrome  6.0.472.11<br/>
+					
+				
+					Google Chrome  6.0.472.10<br/>
+					
+				
+					Google Chrome  6.0.472.1<br/>
+					
+				
+					Google Chrome  6.0.472.0<br/>
+					
+				
+					Google Chrome  6.0.471.0<br/>
+					
+				
+					Google Chrome  6.0.470.0<br/>
+					
+				
+					Google Chrome  6.0.469.0<br/>
+					
+				
+					Google Chrome  6.0.467.0<br/>
+					
+				
+					Google Chrome  6.0.466.6<br/>
+					
+				
+					Google Chrome  6.0.466.5<br/>
+					
+				
+					Google Chrome  6.0.466.4<br/>
+					
+				
+					Google Chrome  6.0.466.3<br/>
+					
+				
+					Google Chrome  6.0.466.2<br/>
+					
+				
+					Google Chrome  6.0.466.1<br/>
+					
+				
+					Google Chrome  6.0.466.0<br/>
+					
+				
+					Google Chrome  6.0.465.2<br/>
+					
+				
+					Google Chrome  6.0.465.1<br/>
+					
+				
+					Google Chrome  6.0.464.1<br/>
+					
+				
+					Google Chrome  6.0.462.0<br/>
+					
+				
+					Google Chrome  6.0.461.0<br/>
+					
+				
+					Google Chrome  6.0.460.0<br/>
+					
+				
+					Google Chrome  6.0.459.0<br/>
+					
+				
+					Google Chrome  6.0.458.2<br/>
+					
+				
+					Google Chrome  6.0.458.1<br/>
+					
+				
+					Google Chrome  6.0.458.0<br/>
+					
+				
+					Google Chrome  6.0.457.0<br/>
+					
+				
+					Google Chrome  6.0.456.0<br/>
+					
+				
+					Google Chrome  6.0.455.0<br/>
+					
+				
+					Google Chrome  6.0.454.0<br/>
+					
+				
+					Google Chrome  6.0.453.1<br/>
+					
+				
+					Google Chrome  6.0.453.0<br/>
+					
+				
+					Google Chrome  6.0.452.1<br/>
+					
+				
+					Google Chrome  6.0.452.0<br/>
+					
+				
+					Google Chrome  6.0.451.0<br/>
+					
+				
+					Google Chrome  6.0.450.4<br/>
+					
+				
+					Google Chrome  6.0.450.3<br/>
+					
+				
+					Google Chrome  6.0.450.2<br/>
+					
+				
+					Google Chrome  6.0.450.1<br/>
+					
+				
+					Google Chrome  6.0.450.0<br/>
+					
+				
+					Google Chrome  6.0.449.0<br/>
+					
+				
+					Google Chrome  6.0.447.2<br/>
+					
+				
+					Google Chrome  6.0.447.1<br/>
+					
+				
+					Google Chrome  6.0.447.0<br/>
+					
+				
+					Google Chrome  6.0.446.0<br/>
+					
+				
+					Google Chrome  6.0.445.1<br/>
+					
+				
+					Google Chrome  6.0.445.0<br/>
+					
+				
+					Google Chrome  6.0.444.0<br/>
+					
+				
+					Google Chrome  6.0.443.0<br/>
+					
+				
+					Google Chrome  6.0.441.0<br/>
+					
+				
+					Google Chrome  6.0.440.0<br/>
+					
+				
+					Google Chrome  6.0.438.0<br/>
+					
+				
+					Google Chrome  6.0.437.3<br/>
+					
+				
+					Google Chrome  6.0.437.2<br/>
+					
+				
+					Google Chrome  6.0.437.1<br/>
+					
+				
+					Google Chrome  6.0.437.0<br/>
+					
+				
+					Google Chrome  6.0.436.0<br/>
+					
+				
+					Google Chrome  6.0.435.0<br/>
+					
+				
+					Google Chrome  6.0.434.0<br/>
+					
+				
+					Google Chrome  6.0.433.0<br/>
+					
+				
+					Google Chrome  6.0.432.0<br/>
+					
+				
+					Google Chrome  6.0.431.0<br/>
+					
+				
+					Google Chrome  6.0.430.0<br/>
+					
+				
+					Google Chrome  6.0.428.0<br/>
+					
+				
+					Google Chrome  6.0.427.0<br/>
+					
+				
+					Google Chrome  6.0.426.0<br/>
+					
+				
+					Google Chrome  6.0.425.0<br/>
+					
+				
+					Google Chrome  6.0.424.0<br/>
+					
+				
+					Google Chrome  6.0.423.0<br/>
+					
+				
+					Google Chrome  6.0.422.0<br/>
+					
+				
+					Google Chrome  6.0.421.0<br/>
+					
+				
+					Google Chrome  6.0.419.0<br/>
+					
+				
+					Google Chrome  6.0.418.9<br/>
+					
+				
+					Google Chrome  6.0.418.8<br/>
+					
+				
+					Google Chrome  6.0.418.7<br/>
+					
+				
+					Google Chrome  6.0.418.6<br/>
+					
+				
+					Google Chrome  6.0.418.5<br/>
+					
+				
+					Google Chrome  6.0.418.4<br/>
+					
+				
+					Google Chrome  6.0.418.3<br/>
+					
+				
+					Google Chrome  6.0.418.2<br/>
+					
+				
+					Google Chrome  6.0.418.1<br/>
+					
+				
+					Google Chrome  6.0.418.0<br/>
+					
+				
+					Google Chrome  6.0.417.0<br/>
+					
+				
+					Google Chrome  6.0.416.1<br/>
+					
+				
+					Google Chrome  6.0.416.0<br/>
+					
+				
+					Google Chrome  6.0.415.1<br/>
+					
+				
+					Google Chrome  6.0.415.0<br/>
+					
+				
+					Google Chrome  6.0.414.0<br/>
+					
+				
+					Google Chrome  6.0.413.0<br/>
+					
+				
+					Google Chrome  6.0.412.0<br/>
+					
+				
+					Google Chrome  6.0.411.0<br/>
+					
+				
+					Google Chrome  6.0.410.0<br/>
+					
+				
+					Google Chrome  6.0.409.0<br/>
+					
+				
+					Google Chrome  6.0.408.9<br/>
+					
+				
+					Google Chrome  6.0.408.8<br/>
+					
+				
+					Google Chrome  6.0.408.7<br/>
+					
+				
+					Google Chrome  6.0.408.6<br/>
+					
+				
+					Google Chrome  6.0.408.5<br/>
+					
+				
+					Google Chrome  6.0.408.4<br/>
+					
+				
+					Google Chrome  6.0.408.3<br/>
+					
+				
+					Google Chrome  6.0.408.2<br/>
+					
+				
+					Google Chrome  6.0.408.10<br/>
+					
+				
+					Google Chrome  6.0.408.1<br/>
+					
+				
+					Google Chrome  6.0.408.0<br/>
+					
+				
+					Google Chrome  6.0.407.0<br/>
+					
+				
+					Google Chrome  6.0.406.0<br/>
+					
+				
+					Google Chrome  6.0.405.0<br/>
+					
+				
+					Google Chrome  6.0.404.2<br/>
+					
+				
+					Google Chrome  6.0.404.1<br/>
+					
+				
+					Google Chrome  6.0.404.0<br/>
+					
+				
+					Google Chrome  6.0.403.0<br/>
+					
+				
+					Google Chrome  6.0.401.1<br/>
+					
+				
+					Google Chrome  6.0.401.0<br/>
+					
+				
+					Google Chrome  6.0.400.0<br/>
+					
+				
+					Google Chrome  6.0.399.0<br/>
+					
+				
+					Google Chrome  6.0.398.0<br/>
+					
+				
+					Google Chrome  6.0.397.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Google Chrome  8.0.552.224<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue by tricking an unsuspecting victim into viewing a malicious web page.
+	
+		<ul>
+</ul>
+</div>

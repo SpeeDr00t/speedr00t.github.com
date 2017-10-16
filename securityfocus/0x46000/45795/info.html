@@ -1,0 +1,384 @@
+#SpeeDr00t@Black Falcon<br>#bid45795<p><b><span style="font-size: 18pt;">Xen 'vbd_create()' Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/45795/info">info</a><br><a href="http://www.securityfocus.com/bid/45795/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/45795/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/45795/solution">solution</a><br><a href="http://www.securityfocus.com/bid/45795/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				45795
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-4238<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 13 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 13 2011 06:31PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Eugene Teo
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XenSource Xen 3.1.2 <br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab081.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya IP Office Application Server  6.1<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  6.0<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 SP1 Standard<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Application Server  2.1<br/>
+					
+				
+					Avaya Aura Application Server  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenVZ Project OpenVZ  028stab085.2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers requires local interactive access to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

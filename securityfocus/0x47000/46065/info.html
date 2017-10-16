@@ -1,0 +1,672 @@
+#SpeeDr00t@Black Falcon<br>#bid46065<p><b><span style="font-size: 18pt;">Exim 'log.c' Local Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/46065/info">info</a><br><a href="http://www.securityfocus.com/bid/46065/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/46065/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/46065/solution">solution</a><br><a href="http://www.securityfocus.com/bid/46065/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				46065
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0017<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 31 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 28 2014 02:44PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				This issue was disclosed by the vendor.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					University of Cambridge Exim 4.60 <br/>
+					
+				
+					University of Cambridge Exim 4.52 <br/>
+					
+				
+					University of Cambridge Exim 4.43 <br/>
+					
+				
+					University of Cambridge Exim 4.42 <br/>
+					
+				
+					University of Cambridge Exim 4.41 <br/>
+					
+				
+					University of Cambridge Exim 4.40 <br/>
+					
+				
+					University of Cambridge Exim 4.34 <br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					University of Cambridge Exim 4.33 <br/>
+					
+				
+					University of Cambridge Exim 4.32 <br/>
+					
+				
+					University of Cambridge Exim 4.21 <br/>
+					
+				
+					University of Cambridge Exim 4.20 <br/>
+					
+				
+					University of Cambridge Exim 4.10 <br/>
+					
+				
+					University of Cambridge Exim 3.952 <br/>
+					
+				
+					University of Cambridge Exim 3.36 <br/>
+					
+				
+					University of Cambridge Exim 3.35 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+					
+				
+					University of Cambridge Exim 3.34 <br/>
+					
+				
+					University of Cambridge Exim 3.33 <br/>
+					
+				
+					University of Cambridge Exim 3.32 <br/>
+					
+				
+					University of Cambridge Exim 3.31 <br/>
+					
+				
+					University of Cambridge Exim 3.30 <br/>
+					
+				
+					University of Cambridge Exim 3.22 <br/>
+<span class="related">
+						
+							-
+						
+						RedHat PowerTools 7.1 <br/>
+</span>
+					
+				
+					University of Cambridge Exim 3.21 <br/>
+					
+				
+					University of Cambridge Exim 3.20 <br/>
+					
+				
+					University of Cambridge Exim 3.19 <br/>
+					
+				
+					University of Cambridge Exim 3.18 <br/>
+					
+				
+					University of Cambridge Exim 3.17 <br/>
+					
+				
+					University of Cambridge Exim 3.16 <br/>
+					
+				
+					University of Cambridge Exim 3.15 <br/>
+					
+				
+					University of Cambridge Exim 3.14 <br/>
+					
+				
+					University of Cambridge Exim 3.13 <br/>
+					
+				
+					University of Cambridge Exim 3.12 <br/>
+					
+				
+					University of Cambridge Exim 3.11 <br/>
+					
+				
+					University of Cambridge Exim 3.3 2<br/>
+					
+				
+					University of Cambridge Exim 3.3 1<br/>
+					
+				
+					University of Cambridge Exim 3.3 <br/>
+					
+				
+					University of Cambridge Exim 3.0 x<br/>
+					
+				
+					University of Cambridge Exim 3.0 <br/>
+					
+				
+					University of Cambridge Exim 2.0 x<br/>
+					
+				
+					University of Cambridge Exim 1.6.51 <br/>
+					
+				
+					University of Cambridge Exim 1.6.2 <br/>
+					
+				
+					University of Cambridge Exim  4.73<br/>
+					
+				
+					University of Cambridge Exim  4.72 RC2<br/>
+					
+				
+					University of Cambridge Exim  4.72<br/>
+					
+				
+					University of Cambridge Exim  4.71<br/>
+					
+				
+					University of Cambridge Exim  4.70<br/>
+					
+				
+					University of Cambridge Exim  4.69-26<br/>
+					
+				
+					University of Cambridge Exim  4.69<br/>
+					
+				
+					University of Cambridge Exim  4.66<br/>
+					
+				
+					University of Cambridge Exim  4.63-5<br/>
+					
+				
+					University of Cambridge Exim  4.63-4<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Exim Exim  4.73<br/>
+					
+				
+					Exim Exim  4.72<br/>
+					
+				
+					Exim Exim  4.71<br/>
+					
+				
+					Exim Exim  4.70<br/>
+					
+				
+					Exim Exim  4.69<br/>
+					
+				
+					Exim Exim  4.68<br/>
+					
+				
+					Exim Exim  4.67<br/>
+					
+				
+					Exim Exim  4.66<br/>
+					
+				
+					Exim Exim  4.65<br/>
+					
+				
+					Exim Exim  4.64<br/>
+					
+				
+					Exim Exim  4.63<br/>
+					
+				
+					Exim Exim  4.62<br/>
+					
+				
+					Exim Exim  4.61<br/>
+					
+				
+					Exim Exim  4.60<br/>
+					
+				
+					Exim Exim  4.54<br/>
+					
+				
+					Exim Exim  4.53<br/>
+					
+				
+					Exim Exim  4.52<br/>
+					
+				
+					Exim Exim  4.51<br/>
+					
+				
+					Exim Exim  4.50<br/>
+					
+				
+					Exim Exim  4.44<br/>
+					
+				
+					Exim Exim  4.43<br/>
+					
+				
+					Exim Exim  4.42<br/>
+					
+				
+					Exim Exim  4.41<br/>
+					
+				
+					Exim Exim  4.40<br/>
+					
+				
+					Exim Exim  4.34<br/>
+					
+				
+					Exim Exim  4.33<br/>
+					
+				
+					Exim Exim  4.32<br/>
+					
+				
+					Exim Exim  4.31<br/>
+					
+				
+					Exim Exim  4.30<br/>
+					
+				
+					Exim Exim  4.24<br/>
+					
+				
+					Exim Exim  4.23<br/>
+					
+				
+					Exim Exim  4.22<br/>
+					
+				
+					Exim Exim  4.21<br/>
+					
+				
+					Exim Exim  4.20<br/>
+					
+				
+					Exim Exim  4.14<br/>
+					
+				
+					Exim Exim  4.12<br/>
+					
+				
+					Exim Exim  4.11<br/>
+					
+				
+					Exim Exim  4.10<br/>
+					
+				
+					Exim Exim  4.05<br/>
+					
+				
+					Exim Exim  4.04<br/>
+					
+				
+					Exim Exim  4.03<br/>
+					
+				
+					Exim Exim  4.02<br/>
+					
+				
+					Exim Exim  4.01<br/>
+					
+				
+					Exim Exim  4.00<br/>
+					
+				
+					Exim Exim  3.36<br/>
+					
+				
+					Exim Exim  3.35<br/>
+					
+				
+					Exim Exim  3.34<br/>
+					
+				
+					Exim Exim  3.33<br/>
+					
+				
+					Exim Exim  3.32<br/>
+					
+				
+					Exim Exim  3.31<br/>
+					
+				
+					Exim Exim  3.30<br/>
+					
+				
+					Exim Exim  3.22<br/>
+					
+				
+					Exim Exim  3.21<br/>
+					
+				
+					Exim Exim  3.20<br/>
+					
+				
+					Exim Exim  3.16<br/>
+					
+				
+					Exim Exim  3.15<br/>
+					
+				
+					Exim Exim  3.14<br/>
+					
+				
+					Exim Exim  3.13<br/>
+					
+				
+					Exim Exim  3.12<br/>
+					
+				
+					Exim Exim  3.11<br/>
+					
+				
+					Exim Exim  3.10<br/>
+					
+				
+					Exim Exim  3.03<br/>
+					
+				
+					Exim Exim  3.02<br/>
+					
+				
+					Exim Exim  3.01<br/>
+					
+				
+					Exim Exim  3.00<br/>
+					
+				
+					Exim Exim  2.12<br/>
+					
+				
+					Exim Exim  2.11<br/>
+					
+				
+					Exim Exim  2.10<br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					University of Cambridge Exim  4.74<br/>
+					
+				
+					Exim Exim  4.74<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker uses readily available tools to exploit the issue.
+	
+		<ul>
+</ul>
+</div>

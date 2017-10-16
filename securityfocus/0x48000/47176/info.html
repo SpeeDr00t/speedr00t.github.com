@@ -1,0 +1,945 @@
+#SpeeDr00t@Black Falcon<br>#bid47176<p><b><span style="font-size: 18pt;">ISC DHCP 'dhclient' Shell Characters in Response Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/47176/info">info</a><br><a href="http://www.securityfocus.com/bid/47176/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/47176/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/47176/solution">solution</a><br><a href="http://www.securityfocus.com/bid/47176/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				47176
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-0997<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 05 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 26 2016 09:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Sebastian Krahmer and Marius Tomaschewski from the SUSE Security Team
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESX Server 3.0.3 <br/>
+					
+				
+					VMWare ESX Server  4.1<br/>
+					
+				
+					VMWare ESX Server  4.0<br/>
+					
+				
+					VMWare ESX Server  3.5<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					VMWare ESX  3.5<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  9.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  9<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise  10 SP2<br/>
+					
+				
+					Slackware Linux 10.2 <br/>
+					
+				
+					Slackware Linux 10.1 <br/>
+					
+				
+					Slackware Linux 10.0 <br/>
+					
+				
+					Slackware Linux 9.1 <br/>
+					
+				
+					Slackware Linux 9.0 <br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  12.0<br/>
+					
+				
+					Slackware Linux  11.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. openSUSE  11.2<br/>
+					
+				
+					S.u.S.E. Open-Enterprise-Server  0<br/>
+					
+				
+					S.u.S.E. Novell Linux POS  9<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Pardus Linux 2009  0<br/>
+					
+				
+					NetBSD NetBSD 5.0.2 <br/>
+					
+				
+					NetBSD NetBSD 5.0.1 <br/>
+					
+				
+					NetBSD NetBSD 4.0.2 <br/>
+					
+				
+					NetBSD NetBSD 4.0.1 <br/>
+					
+				
+					NetBSD NetBSD  Current<br/>
+					
+				
+					NetBSD NetBSD  5.1<br/>
+					
+				
+					NetBSD NetBSD  5.0 RC3<br/>
+					
+				
+					NetBSD NetBSD  5.0<br/>
+					
+				
+					NetBSD NetBSD  4.0 BETA2<br/>
+					
+				
+					NetBSD NetBSD  4.0<br/>
+					
+				
+					NetBSD NetBSD  4,0_Beta<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.0<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2009.0<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					MandrakeSoft Corporate Server 4.0 x86_64<br/>
+					
+				
+					MandrakeSoft Corporate Server  4.0<br/>
+					
+				
+					Juniper CTPView  7.3<br/>
+					
+				
+					Juniper CTPView  7.1R2<br/>
+					
+				
+					Juniper CTPView  7.1r1<br/>
+					
+				
+					ISC DHCPD 4.1.1 <br/>
+					
+				
+					ISC DHCPD 3.1.1 <br/>
+					
+				
+					ISC DHCPD 3.0.4 <br/>
+					
+				
+					ISC DHCPD 3.0.1 rc9<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc8<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc7<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc6<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc5<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc4<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc3<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc2<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc14<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc13<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc12<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc11<br/>
+					
+				
+					ISC DHCPD 3.0.1 rc10<br/>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+					
+				
+					ISC DHCPD 3.0.1 rc1<br/>
+					
+				
+					ISC DHCPD 3.0 rc4<br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					ISC DHCPD 3.0 rc12<br/>
+					
+				
+					ISC DHCPD 3.0 pl2<br/>
+					
+				
+					ISC DHCPD 3.0 pl1<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 _rc2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 _rc1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+					
+				
+					ISC DHCPD 3.0 b2pl9<br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+					
+				
+					ISC DHCPD 3.0 b2pl23<br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+					
+				
+					ISC DHCPD 3.0 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Server 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux Workstation 3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Multi Network Firewall 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux Connectivity Server  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux Database Server  0<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux Enterprise Server for S/390  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. SuSE eMail Server III  <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						SuSE SUSE Linux Enterprise Server  7<br/>
+</span>
+					
+				
+					ISC DHCPD  4.1.1-P1<br/>
+					
+				
+					ISC DHCPD  4.1<br/>
+					
+				
+					ISC DHCPD  4.0.2-P1<br/>
+					
+				
+					ISC DHCPD  4.0.1p1<br/>
+					
+				
+					ISC DHCPD  4.0<br/>
+					
+				
+					ISC DHCPD  3.0.5b1<br/>
+					
+				
+					ISC DHCPD  3.0.2rc1<br/>
+					
+				
+					ISC DHCP Client 3.0 b1pl17<br/>
+					
+				
+					ISC DHCP Client 3.0 b1pl14<br/>
+					
+				
+					ISC DHCP Client 3.0 b1<br/>
+					
+				
+					ISC DHCP Client  4.1.1-P1<br/>
+					
+				
+					ISC DHCP Client  4.1.0p1<br/>
+					
+				
+					ISC DHCP Client  4.1<br/>
+					
+				
+					ISC DHCP Client  4.0.2-P1<br/>
+					
+				
+					ISC DHCP Client  4.0.1p1<br/>
+					
+				
+					ISC DHCP Client  4.0<br/>
+					
+				
+					ISC DHCP Client  3.1.2p1<br/>
+					
+				
+					ISC DHCP Client  3.0<br/>
+					
+				
+					HP Insight Control for Linux (IC-Linux)  7.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  5.0 sparc<br/>
+					
+				
+					Debian Linux  5.0 s/390<br/>
+					
+				
+					Debian Linux  5.0 powerpc<br/>
+					
+				
+					Debian Linux  5.0 mipsel<br/>
+					
+				
+					Debian Linux  5.0 mips<br/>
+					
+				
+					Debian Linux  5.0 m68k<br/>
+					
+				
+					Debian Linux  5.0 ia-64<br/>
+					
+				
+					Debian Linux  5.0 ia-32<br/>
+					
+				
+					Debian Linux  5.0 hppa<br/>
+					
+				
+					Debian Linux  5.0 armel<br/>
+					
+				
+					Debian Linux  5.0 arm<br/>
+					
+				
+					Debian Linux  5.0 amd64<br/>
+					
+				
+					Debian Linux  5.0 alpha<br/>
+					
+				
+					Debian Linux  5.0<br/>
+					
+				
+					Citrix XenServer  5.6 SP2<br/>
+					
+				
+					Citrix XenServer  5.6 Feature Pack 1 <br/>
+					
+				
+					Citrix XenServer  5.6 Common Criteria<br/>
+					
+				
+					Citrix XenServer  5.6<br/>
+					
+				
+					Citrix XenServer  5.5<br/>
+					
+				
+					Citrix XenServer  5.0 Update 3<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2.8<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP3<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP2<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1 SP1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.1<br/>
+					
+				
+					Avaya Messaging Storage Server  5.0<br/>
+					
+				
+					Avaya Message Networking  5.2.3<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya IP Office Application Server  7.0<br/>
+					
+				
+					Avaya IP Office Application Server  6.1<br/>
+					
+				
+					Avaya IP Office Application Server  6.0<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  6.2.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Conferencing 6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 SP1 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0<br/>
+					
+				
+					Apple Time Capsule  Firmware 7.5.2<br/>
+					
+				
+					Apple Time Capsule  Firmware 7.5<br/>
+					
+				
+					Apple Time Capsule  Firmware 7.4.2<br/>
+					
+				
+					Apple Time Capsule  Firmware 7.4.1<br/>
+					
+				
+					Apple Time Capsule  0<br/>
+					
+				
+					Apple AirPort Express Base Station with 802.11n  Firmware 7.5.2<br/>
+					
+				
+					Apple AirPort Express Base Station with 802.11n  Firmware 7.4.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper CTPView  7.3R1<br/>
+					
+				
+					Juniper CTPView  7.1R3<br/>
+					
+				
+					ISC DHCPD  4.2.1-P1<br/>
+					
+				
+					ISC DHCPD  4.1-ESV-R2<br/>
+					
+				
+					ISC DHCPD  3.1-ESV-R1<br/>
+					
+				
+					ISC DHCP Client  4.2.1-P1<br/>
+					
+				
+					ISC DHCP Client  4.1-ESV-R2<br/>
+					
+				
+					ISC DHCP Client  3.1-ESV-R1<br/>
+					
+				
+					Avaya Message Networking  5.2.4<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya Aura System Manager  6.3<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Apple Time Capsule  Firmware 7.6<br/>
+					
+				
+					Apple AirPort Express Base Station with 802.11n  Firmware 7.6<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	A working commercial exploit is available for Immunity CANVAS. This exploit is not otherwise publicly available or known to be circulating in the wild.<br/><br/>https://www.immunityinc.com/downloads/immpartners/cve_2011_0997.tar.gz
+	
+		<ul>
+</ul>
+</div>
