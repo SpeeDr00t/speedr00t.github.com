@@ -1,0 +1,834 @@
+#SpeeDr00t@Black Falcon<br>#bid56562<p><b><span style="font-size: 18pt;">Perl CGI.pm 'Set-Cookie' and 'P3P' Headers HTTP Header Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/56562/info">info</a><br><a href="http://www.securityfocus.com/bid/56562/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/56562/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/56562/solution">solution</a><br><a href="http://www.securityfocus.com/bid/56562/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				56562
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-5526<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 15 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 29 2016 05:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				anazawa
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					S.u.S.E. openSUSE  12.3<br/>
+					
+				
+					S.u.S.E. openSUSE  12.2<br/>
+					
+				
+					S.u.S.E. openSUSE  12.1<br/>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle VM Server for x86  3.2<br/>
+					
+				
+					Oracle Solaris  11.1<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mark Stosberg CGI.pm  3.62<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Juniper CTPOS  7.1R<br/>
+					
+				
+					Juniper CTPOS  7.0r4<br/>
+					
+				
+					Juniper CTPOS  6.6R5<br/>
+					
+				
+					Juniper CTPOS  6.6R2<br/>
+					
+				
+					Juniper CTPOS  6.6R1<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Avaya Voice Portal  5.1.3<br/>
+					
+				
+					Avaya Voice Portal  5.1.2<br/>
+					
+				
+					Avaya Voice Portal  5.1.1<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP3<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Proactive Contact  5.1<br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.0<br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IQ  5.1.1<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  8.1<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.6<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.6<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.6<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.6<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  6.0<br/>
+					
+				
+					Avaya CMS  r17<br/>
+					
+				
+					Avaya Aura System Platform 6.2.1 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.3<br/>
+					
+				
+					Avaya Aura System Platform  6.2<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.9.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.8.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.0.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.1<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager 6.3.2 <br/>
+					
+				
+					Avaya Aura System Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura System Manager  6.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.5<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura System Manager  5.0<br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.5 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.0.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.4<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  5.0<br/>
+					
+				
+					Avaya Aura Session Manager  1.1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.2<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Messaging 6.1.1 <br/>
+					
+				
+					Avaya Aura Messaging  6.2<br/>
+					
+				
+					Avaya Aura Messaging  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing 6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  7.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.5.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.4.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1 SP 6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0 PB3<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.1<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB28<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB26<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB25<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB23<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB19<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB16<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.4<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.3<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Solaris  11.1.7.5.0<br/>
+					
+				
+					Oracle Solaris  11.1.11.4.0<br/>
+					
+				
+					Mark Stosberg CGI.pm  3.63<br/>
+					
+				
+					Juniper CTPOS  7.1r2<br/>
+					
+				
+					Juniper CTPOS  7.1r1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue through a browser. For some attacks, a vulnerable user may have to follow a malicious link.
+	
+		<ul>
+</ul>
+</div>

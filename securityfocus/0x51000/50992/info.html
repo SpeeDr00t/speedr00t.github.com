@@ -1,0 +1,429 @@
+#SpeeDr00t@Black Falcon<br>#bid50992<p><b><span style="font-size: 18pt;">JasPer Multiple Remote Heap Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/50992/info">info</a><br><a href="http://www.securityfocus.com/bid/50992/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/50992/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/50992/solution">solution</a><br><a href="http://www.securityfocus.com/bid/50992/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				50992
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-4516<br/>
+				
+					CVE-2011-4517<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 08 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 07 2015 10:16PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jonathan Foote of the CERT/CC
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xerox FreeFlow Print Server (FFPS)  73.C0.41<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  73.B3.61<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Symantec Enterprise Vault 9.0.2 <br/>
+					
+				
+					Symantec Enterprise Vault 9.0.1 <br/>
+					
+				
+					Symantec Enterprise Vault  9.0<br/>
+					
+				
+					Symantec Enterprise Vault  10.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE openSUSE  11.4<br/>
+					
+				
+					SuSE openSUSE  11.3<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					RedHat Enterprise Linux WS  4<br/>
+					
+				
+					RedHat Enterprise Linux ES  4<br/>
+					
+				
+					RedHat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					RedHat Enterprise Linux  Desktop version 4<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation  6<br/>
+					
+				
+					Red Hat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux Server  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux AS  4<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					Oracle Outside In  8.3.7<br/>
+					
+				
+					Oracle Outside In  8.3.5.0<br/>
+					
+				
+					Oracle Outside In  8.3.5.0<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Enterprise Linux  4<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					JasPer JasPer   1.900.1<br/>
+					
+				
+					JasPer JasPer   1.900<br/>
+					
+				
+					JasPer JasPer   1.701<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  7.04 amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.10 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.10 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.10 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.10 amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux  6.06 LTS amd64<br/>
+</span>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

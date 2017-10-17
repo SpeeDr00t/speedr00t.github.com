@@ -1,0 +1,636 @@
+#SpeeDr00t@Black Falcon<br>#bid51447<p><b><span style="font-size: 18pt;">Apache Tomcat Parameter Handling Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/51447/info">info</a><br><a href="http://www.securityfocus.com/bid/51447/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/51447/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/51447/solution">solution</a><br><a href="http://www.securityfocus.com/bid/51447/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				51447
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-0022<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 17 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 23 2017 04:26PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported by the vendor
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare vCenter 5.0  0<br/>
+					
+				
+					VMWare vCenter  4.1<br/>
+					
+				
+					VMWare vCenter  4.0<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Sun Solaris  10<br/>
+					
+				
+					Redhat JBoss Operations Network 3.1 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 6 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for RHEL 5 Server 1.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Portal Platform  4.3 CP07<br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform for RHEL 6 Server  5<br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform for RHEL 5 Server  5<br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform for RHEL 4ES  5<br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform for RHEL 4AS  5<br/>
+					
+				
+					Redhat JBoss Communications Platform 5.1.2 <br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle GoldenGate Veridata  3.0.0.11.0<br/>
+					
+				
+					Oracle GoldenGate Management Pack  11.1.1.1.0<br/>
+					
+				
+					Oracle GoldenGate Management Pack  0<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Juniper Network and Security Manager (NSM)  2012.2<br/>
+					
+				
+					Juniper Network and Security Manager (NSM)  2012.1<br/>
+					
+				
+					Juniper Network and Security Manager (NSM)  2011.4<br/>
+					
+				
+					Juniper Network and Security Manager (NSM)  2010.3<br/>
+					
+				
+					IBM Storwize V7000 Unified 1.3.2 0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.3.1.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.3.0.5<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.3.0.0<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.22<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.21<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.18<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.17<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.15<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.14<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.13<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.12<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.10<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CTERA Networks CTERA Portal  3.1<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Apache Tomcat 7.0.17 <br/>
+					
+				
+					Apache Tomcat 7.0.16 <br/>
+					
+				
+					Apache Tomcat 7.0.15 <br/>
+					
+				
+					Apache Tomcat 7.0.14 <br/>
+					
+				
+					Apache Tomcat 7.0.13 <br/>
+					
+				
+					Apache Tomcat 7.0.12 <br/>
+					
+				
+					Apache Tomcat 7.0.9 <br/>
+					
+				
+					Apache Tomcat 7.0.8 <br/>
+					
+				
+					Apache Tomcat 7.0.7 <br/>
+					
+				
+					Apache Tomcat 7.0.6 <br/>
+					
+				
+					Apache Tomcat 7.0.4 <br/>
+					
+				
+					Apache Tomcat 7.0.3 <br/>
+					
+				
+					Apache Tomcat 7.0.2 <br/>
+					
+				
+					Apache Tomcat 7.0.1 <br/>
+					
+				
+					Apache Tomcat 6.0.35 <br/>
+					
+				
+					Apache Tomcat 6.0.32 <br/>
+					
+				
+					Apache Tomcat 6.0.29 <br/>
+					
+				
+					Apache Tomcat 6.0.28 <br/>
+					
+				
+					Apache Tomcat 6.0.27 <br/>
+					
+				
+					Apache Tomcat 6.0.26 <br/>
+					
+				
+					Apache Tomcat 6.0.25 <br/>
+					
+				
+					Apache Tomcat 6.0.24 <br/>
+					
+				
+					Apache Tomcat 6.0.20 <br/>
+					
+				
+					Apache Tomcat 6.0.18 <br/>
+					
+				
+					Apache Tomcat 6.0.17 <br/>
+					
+				
+					Apache Tomcat 6.0.16 <br/>
+					
+				
+					Apache Tomcat 6.0.15 <br/>
+					
+				
+					Apache Tomcat 6.0.14 <br/>
+					
+				
+					Apache Tomcat 6.0.13 <br/>
+					
+				
+					Apache Tomcat 6.0.12 <br/>
+					
+				
+					Apache Tomcat 6.0.11 <br/>
+					
+				
+					Apache Tomcat 6.0.10 <br/>
+					
+				
+					Apache Tomcat 6.0.9 <br/>
+					
+				
+					Apache Tomcat 6.0.8 <br/>
+					
+				
+					Apache Tomcat 6.0.7 <br/>
+					
+				
+					Apache Tomcat 6.0.6 <br/>
+					
+				
+					Apache Tomcat 6.0.5 <br/>
+					
+				
+					Apache Tomcat 6.0.4 <br/>
+					
+				
+					Apache Tomcat 6.0.3 <br/>
+					
+				
+					Apache Tomcat 6.0.2 <br/>
+					
+				
+					Apache Tomcat 6.0.1 <br/>
+					
+				
+					Apache Tomcat 6.0 <br/>
+					
+				
+					Apache Tomcat 5.5.34 <br/>
+					
+				
+					Apache Tomcat 5.5.32 <br/>
+					
+				
+					Apache Tomcat 5.5.30 <br/>
+					
+				
+					Apache Tomcat 5.5.29 <br/>
+					
+				
+					Apache Tomcat 5.5.28 <br/>
+					
+				
+					Apache Tomcat 5.5.27 <br/>
+					
+				
+					Apache Tomcat 5.5.26 <br/>
+					
+				
+					Apache Tomcat 5.5.25 <br/>
+					
+				
+					Apache Tomcat 5.5.24 <br/>
+					
+				
+					Apache Tomcat 5.5.23 <br/>
+					
+				
+					Apache Tomcat 5.5.22 <br/>
+					
+				
+					Apache Tomcat 5.5.21 <br/>
+					
+				
+					Apache Tomcat 5.5.20 <br/>
+					
+				
+					Apache Tomcat 5.5.19 <br/>
+					
+				
+					Apache Tomcat 5.5.18 <br/>
+					
+				
+					Apache Tomcat 5.5.17 <br/>
+					
+				
+					Apache Tomcat 5.5.16 <br/>
+					
+				
+					Apache Tomcat 5.5.15 <br/>
+					
+				
+					Apache Tomcat 5.5.14 <br/>
+					
+				
+					Apache Tomcat 5.5.13 <br/>
+					
+				
+					Apache Tomcat 5.5.12 <br/>
+					
+				
+					Apache Tomcat 5.5.11 <br/>
+					
+				
+					Apache Tomcat 5.5.10 <br/>
+					
+				
+					Apache Tomcat 5.5.3 <br/>
+					
+				
+					Apache Tomcat 5.5.2 <br/>
+					
+				
+					Apache Tomcat 5.5.1 <br/>
+					
+				
+					Apache Tomcat 5.5 <br/>
+					
+				
+					Apache Tomcat  7.0.5<br/>
+					
+				
+					Apache Tomcat  7.0.22<br/>
+					
+				
+					Apache Tomcat  7.0.21<br/>
+					
+				
+					Apache Tomcat  7.0.20<br/>
+					
+				
+					Apache Tomcat  7.0.19<br/>
+					
+				
+					Apache Tomcat  7.0.18<br/>
+					
+				
+					Apache Tomcat  7.0.17<br/>
+					
+				
+					Apache Tomcat  7.0.11<br/>
+					
+				
+					Apache Tomcat  7.0.10<br/>
+					
+				
+					Apache Tomcat  6.0.32<br/>
+					
+				
+					Apache Tomcat  6.0.31<br/>
+					
+				
+					Apache Tomcat  6.0.30<br/>
+					
+				
+					Apache Tomcat  6.0.29<br/>
+					
+				
+					Apache Tomcat  6.0.19<br/>
+					
+				
+					Apache Tomcat  5.5.33<br/>
+					
+				
+					Apache Tomcat  5.5.33<br/>
+					
+				
+					Apache Tomcat  5.5.31<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat JBoss Operations Network 3.1.1 <br/>
+					
+				
+					Redhat JBoss Communications Platform 5.1.3 <br/>
+					
+				
+					IBM Storwize V7000 Unified 1.4 0<br/>
+					
+				
+					IBM Storwize V7000 Unified 1.3.2 3<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.22<br/>
+					
+				
+					CTERA Networks CTERA Portal 3.2.28 <br/>
+					
+				
+					CTERA Networks CTERA Portal 3.1.39 <br/>
+					
+				
+					Apache Tomcat 7.0.23 <br/>
+					
+				
+					Apache Tomcat 5.5.35 <br/>
+					
+				
+					Apache Tomcat  6.0.33<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,830 @@
+#SpeeDr00t@Black Falcon<br>#bid51182<p><b><span style="font-size: 18pt;">FreeBSD 'telnetd' Daemon Remote Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/51182/info">info</a><br><a href="http://www.securityfocus.com/bid/51182/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/51182/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/51182/solution">solution</a><br><a href="http://www.securityfocus.com/bid/51182/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				51182
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-4862<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 23 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:39PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3 LTSS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP4<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP4<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					S.u.S.E. SUSE CORE 9 for x86  <br/>
+					
+				
+					S.u.S.E. openSUSE  11.4<br/>
+					
+				
+					S.u.S.E. openSUSE  11.3<br/>
+					
+				
+					S.u.S.E. CORE  9<br/>
+					
+				
+					Redhat Enterprise Linux WS  4<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6.0.z<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Enterprise Linux  4<br/>
+					
+				
+					MIT Kerberos 5 1.7.2 <br/>
+					
+				
+					MIT Kerberos 5 1.7.1 <br/>
+					
+				
+					MIT Kerberos 5 1.6.4 <br/>
+					
+				
+					MIT Kerberos 5 1.6.3 <br/>
+					
+				
+					MIT Kerberos 5 1.6.2 <br/>
+					
+				
+					MIT Kerberos 5 1.6.1 <br/>
+					
+				
+					MIT Kerberos 5 1.6 <br/>
+					
+				
+					MIT Kerberos 5 1.5.5 <br/>
+					
+				
+					MIT Kerberos 5 1.5.4 <br/>
+					
+				
+					MIT Kerberos 5 1.5.3 <br/>
+					
+				
+					MIT Kerberos 5 1.5.2 <br/>
+					
+				
+					MIT Kerberos 5 1.5.1 <br/>
+					
+				
+					MIT Kerberos 5 1.5 <br/>
+					
+				
+					MIT Kerberos 5 1.4.3 <br/>
+					
+				
+					MIT Kerberos 5 1.4.2 <br/>
+					
+				
+					MIT Kerberos 5 1.4.1 <br/>
+					
+				
+					MIT Kerberos 5 1.4 <br/>
+					
+				
+					MIT Kerberos 5 1.3.6 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.3.5 <br/>
+					
+				
+					MIT Kerberos 5 1.3.4 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.3.3 <br/>
+					
+				
+					MIT Kerberos 5 1.3.2 <br/>
+					
+				
+					MIT Kerberos 5 1.3.1 <br/>
+					
+				
+					MIT Kerberos 5 1.3 -alpha1<br/>
+					
+				
+					MIT Kerberos 5 1.3 <br/>
+					
+				
+					MIT Kerberos 5 1.2.8 <br/>
+					
+				
+					MIT Kerberos 5 1.2.7 <br/>
+					
+				
+					MIT Kerberos 5 1.2.6 <br/>
+					
+				
+					MIT Kerberos 5 1.2.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Corporate Server 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux  10 F...<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Desktop 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Wirex Immunix OS  7+<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.2.4 <br/>
+					
+				
+					MIT Kerberos 5 1.2.3 <br/>
+					
+				
+					MIT Kerberos 5 1.2.2 -beta1<br/>
+					
+				
+					MIT Kerberos 5 1.2.2 <br/>
+					
+				
+					MIT Kerberos 5 1.2.1 <br/>
+					
+				
+					MIT Kerberos 5 1.2 <br/>
+					
+				
+					MIT Kerberos 5 1.1.1 <br/>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0  alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.1 <br/>
+					
+				
+					MIT Kerberos 5 1.0.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.1<br/>
+</span>
+					
+				
+					MIT Kerberos 5 1.0.6 <br/>
+					
+				
+					MIT Kerberos 5 1.0 <br/>
+					
+				
+					MIT Kerberos 5  1.7<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  9.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.2 - RELEASE -p3<br/>
+					
+				
+					FreeBSD FreeBSD  8.2<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  8.0<br/>
+					
+				
+					FreeBSD FreeBSD  8-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  7.4<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.3 - RELEASE - p7<br/>
+					
+				
+					FreeBSD FreeBSD  7.3<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 Rc1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -PRE-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 BETA4<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Cisco Web Security Appliance (WSA)  0<br/>
+					
+				
+					Cisco Web Security Appliance 7.5 <br/>
+					
+				
+					Cisco Web Security Appliance 7.1 <br/>
+					
+				
+					Cisco Web Security Appliance  8.1<br/>
+					
+				
+					Cisco Web Security Appliance  8.0<br/>
+					
+				
+					Cisco Web Security Appliance  7.7<br/>
+					
+				
+					Cisco IronPort Security Management Appliance  0<br/>
+					
+				
+					Cisco IronPort Email Security Appliance X-Series  7.0.1<br/>
+					
+				
+					Cisco IronPort Email Security Appliance X-Series  0<br/>
+					
+				
+					Cisco IronPort Email Security Appliance C-Series  7.0.1<br/>
+					
+				
+					Cisco IronPort Email Security Appliance C-Series  0<br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					MIT Kerberos 5  1.8<br/>
+					
+				
+					Cisco Web Security Appliance  8.1.0-235 <br/>
+					
+				
+					Cisco Web Security Appliance  8.0.6-073<br/>
+					
+				
+					Cisco Web Security Appliance  7.7.0-757<br/>
+					
+				
+					Cisco IronPort Security Management Appliance 7.8 <br/>
+					
+				
+					Cisco IronPort Email Security Appliance X-Series 7.6 <br/>
+					
+				
+					Cisco IronPort Email Security Appliance C-Series 7.6 <br/>
+					
+				
+					Avaya Proactive Contact  5.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x52000/51182/51182.rb">#exploit_51182.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x52000/51182/51182-2.rb">#exploit_51182-2.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x52000/51182/51182-3.rb">#exploit_51182-3.rb</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x52000/51182/51182.py">#exploit_51182.py</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x52000/51182/51182.txt">#exploit_51182.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploits are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/51182.rb">/data/vulnerabilities/exploits/51182.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/51182-2.rb">/data/vulnerabilities/exploits/51182-2.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/51182-3.rb">/data/vulnerabilities/exploits/51182-3.rb</a></li>
+<li><a href="/data/vulnerabilities/exploits/51182.py">/data/vulnerabilities/exploits/51182.py</a></li>
+<li><a href="/data/vulnerabilities/exploits/51182.txt">/data/vulnerabilities/exploits/51182.txt</a></li>
+</ul>
+</div>

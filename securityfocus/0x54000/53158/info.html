@@ -1,0 +1,1536 @@
+#SpeeDr00t@Black Falcon<br>#bid53158<p><b><span style="font-size: 18pt;">OpenSSL Encoded ASN.1 Data Integer Truncation Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/53158/info">info</a><br><a href="http://www.securityfocus.com/bid/53158/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/53158/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/53158/solution">solution</a><br><a href="http://www.securityfocus.com/bid/53158/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				53158
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-2110<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 19 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:51PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Tavis Ormandy
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xerox FreeFlow Print Server (FFPS)  73.C0.41<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  73.B3.61<br/>
+					
+				
+					VMWare ESXi  0<br/>
+					
+				
+					VMWare ESX  4.1<br/>
+					
+				
+					VMWare ESX  4.0<br/>
+					
+				
+					VMWare ESX  3.5<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3 LTSS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise for SAP Applications  11 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise for SAP Applications  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP1<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP4<br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for Windows 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server for Solaris 1.0.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform 6.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform  5.1.2<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional EUS  6.1<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional EUS  6.0<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.1.z<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.0<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux Long Life  5.3 Server<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux EUS  5.6.z server<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux ES  3<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux AS  3<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  4<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.0h  0<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8u  0<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 <br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 k<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 j<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 i<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 h<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 e<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 d<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 c<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 b<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 a<br/>
+					
+				
+					OpenSSL Project OpenSSL 0.9.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0a<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8t<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8s<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8R<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8Q<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8p<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8p<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8o<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8O<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8N<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8n<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8m<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8M<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8l<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8g<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8f<br/>
+					
+				
+					OpenSSL Project OpenSSL  0.9.8 f<br/>
+					
+				
+					McAfee FireWall Enterprise 7.0.1 02<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1<br/>
+					
+				
+					McAfee FireWall Enterprise  7.0.1.03H04<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2010.1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Juniper Steel-Belted Radius Global Enterprise  0<br/>
+					
+				
+					Juniper Steel-Belted Radius Enterprise  0<br/>
+					
+				
+					Juniper Steel-Belted Radius Carrier  7.5.0<br/>
+					
+				
+					Juniper Steel-Belted Radius Carrier  7.4.1<br/>
+					
+				
+					Juniper Steel-Belted Radius Carrier  7.3.1<br/>
+					
+				
+					Juniper screenos  6.3.0R12<br/>
+					
+				
+					Juniper screenos  6.2.0R15<br/>
+					
+				
+					Juniper screenos  5.4.0R26<br/>
+					
+				
+					Juniper Junos Space Ja2500 Appliance  -<br/>
+					
+				
+					Juniper Junos Space Ja1500 Appliance  -<br/>
+					
+				
+					Juniper JUNOS Space  13.3<br/>
+					
+				
+					Juniper JUNOS Space  13.1P1.14<br/>
+					
+				
+					Juniper JUNOS Space  13.1 R1.8<br/>
+					
+				
+					Juniper JUNOS Space  13.1<br/>
+					
+				
+					Juniper JUNOS Space  0<br/>
+					
+				
+					Internet2 Shibboleth 2.4.3 <br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware 4.0.2 <br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware 4.0.1 <br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware 3.8.2 <br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware 3.8.1 <br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware 3.8 .1<br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware  4.0<br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware  3.8<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.2.1 4<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.1.3 <br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.1.2 <br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.1 <br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.2<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.1<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.0<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.6<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.5 FP01<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.4 FP02<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed 8.5.1 FP04<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed  8.6 FP02<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed  8.5 FP03<br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed  8.4 FP07<br/>
+					
+				
+					IBM Tivoli Remote Control  5.1.2<br/>
+					
+				
+					IBM Tivoli Network Manager  3.9 FP3<br/>
+					
+				
+					IBM Tivoli Network Manager  3.8 FP7<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP9<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP8<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP7<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP6<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP5<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP4<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP3<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP2<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP13<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP12<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP11<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP10<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP1<br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.4 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.3.1 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.3 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus 7.2.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 9.0 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 8.2.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager  8.2 patch 3<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0.2<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0.2<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6<br/>
+					
+				
+					IBM Sterling Connect:Enterprise for UNIX 2.5 <br/>
+					
+				
+					IBM Sterling Connect:Enterprise for UNIX 2.4 4<br/>
+					
+				
+					IBM Smart Analytics System 7710  0<br/>
+					
+				
+					IBM Smart Analytics System 7700  0<br/>
+					
+				
+					IBM Smart Analytics System 7600  0<br/>
+					
+				
+					IBM Smart Analytics System 5710  0<br/>
+					
+				
+					IBM Smart Analytics System 5600  2<br/>
+					
+				
+					IBM Smart Analytics System 5600  1<br/>
+					
+				
+					IBM Smart Analytics System 2050  0<br/>
+					
+				
+					IBM Smart Analytics System 1050  0<br/>
+					
+				
+					IBM Service Delivery Manager 7.2.4 <br/>
+					
+				
+					IBM Service Delivery Manager 7.2.2 <br/>
+					
+				
+					IBM Service Delivery Manager 7.2.1 <br/>
+					
+				
+					IBM OS/400 V7R1M0  0<br/>
+					
+				
+					IBM OS/400  V6R1M0<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  D5100<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  C4000<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  C3000<br/>
+					
+				
+					IBM Informix Genero  2.41<br/>
+					
+				
+					IBM Informix Genero  2.40<br/>
+					
+				
+					IBM Informix Genero  2.32<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.3.0 <br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.2.0 SP2<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.2.0 SP1<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.2.0<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.1.0 SP4<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.1.0 SP3<br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.1.0<br/>
+					
+				
+					IBM DS8870  7.1<br/>
+					
+				
+					IBM DS8870  7.0<br/>
+					
+				
+					IBM Cloudburst 2.1.1 <br/>
+					
+				
+					IBM Cloudburst  2.1<br/>
+					
+				
+					IBM Cloudburst  1.2<br/>
+					
+				
+					IBM AIX 7.1.1 <br/>
+					
+				
+					IBM AIX 7.1 6<br/>
+					
+				
+					IBM AIX 7.1 <br/>
+					
+				
+					IBM AIX 6.1.7 5<br/>
+					
+				
+					IBM AIX 6.1.7 <br/>
+					
+				
+					IBM AIX 6.1.6 8<br/>
+					
+				
+					IBM AIX 6.1.6 <br/>
+					
+				
+					IBM AIX 6.1.5 <br/>
+					
+				
+					IBM AIX 6.1.4 <br/>
+					
+				
+					IBM AIX 6.1.3 <br/>
+					
+				
+					IBM AIX 6.1.2 <br/>
+					
+				
+					IBM AIX 6.1.1 <br/>
+					
+				
+					IBM AIX 5.3.12 6<br/>
+					
+				
+					IBM AIX 5.3.12 <br/>
+					
+				
+					IBM AIX 5.3.10 <br/>
+					
+				
+					IBM AIX 5.3.9 <br/>
+					
+				
+					IBM AIX 5.3.8 <br/>
+					
+				
+					IBM AIX 5.3.7 <br/>
+					
+				
+					IBM AIX 5.3 L<br/>
+					
+				
+					IBM AIX  7.1.1.5<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.2<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3.12<br/>
+					
+				
+					IBM AIX  5.3.11<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP System Management Homepage 7.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.1 <br/>
+					
+				
+					HP System Management Homepage  7.1<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP SSL for OpenVMS  1.4-453<br/>
+					
+				
+					HP SSL for OpenVMS  1.4<br/>
+					
+				
+					HP SSL for OpenVMS  1.3<br/>
+					
+				
+					HP Onboard Administrator  3.55<br/>
+					
+				
+					HP Onboard Administrator  3.50<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  9.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.4<br/>
+					
+				
+					EMC RSA BSAFE SSL-C  2.8.5<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Collax Collax Business Server 5.5 <br/>
+					
+				
+					Bsdperimeter pfSense 2.0.1 <br/>
+					
+				
+					Bsdperimeter pfSense  2.0<br/>
+					
+				
+					Blue Coat Systems ProxySG  6.3<br/>
+					
+				
+					Blue Coat Systems ProxySG  6.2<br/>
+					
+				
+					Blue Coat Systems ProxySG  6.1<br/>
+					
+				
+					Blue Coat Systems ProxySG  5.5<br/>
+					
+				
+					Blue Coat Systems ProxySG  5.4<br/>
+					
+				
+					Blue Coat Systems Intelligence Center  3.2<br/>
+					
+				
+					Blue Coat Systems Intelligence Center  3.1<br/>
+					
+				
+					Balabit syslog-ng Premium Edition 4.0.1 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.1.2a<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.1<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.0.3b<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4.0.1a<br/>
+					
+				
+					Avaya Voice Portal  5.1.2<br/>
+					
+				
+					Avaya Voice Portal  5.1.1<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya Proactive Contact  4.2.2<br/>
+					
+				
+					Avaya Proactive Contact  4.2.1<br/>
+					
+				
+					Avaya Proactive Contact  4.2<br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ 4.1 <br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IQ  5.1.1<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya IQ  4.2<br/>
+					
+				
+					Avaya IQ  4.0<br/>
+					
+				
+					Avaya IP Office Application Server  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya IP Office Application Server  7.0<br/>
+					
+				
+					Avaya IP Office Application Server  6.1<br/>
+					
+				
+					Avaya IP Office Application Server  6.0<br/>
+					
+				
+					Avaya Conferencing Standard Edition  6.0 SP1<br/>
+					
+				
+					Avaya Conferencing Standard Edition  6.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  6.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  6.0<br/>
+					
+				
+					Avaya Communication Manager 4.0.3 SP1<br/>
+					
+				
+					Avaya Communication Manager  5.0 SP3<br/>
+					
+				
+					Avaya Communication Manager  5.0<br/>
+					
+				
+					Avaya Aura Utility Services  6.2<br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.2<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Platform  1.0<br/>
+					
+				
+					Avaya Aura System Manager  6.2.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.2<br/>
+					
+				
+					Avaya Aura SIP Enablement Services  5.1<br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP2<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Messaging  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Communication Manager  5.1<br/>
+					
+				
+					Avaya Aura Communication Manager  4.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.1<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.2<br/>
+					
+				
+					Attachmate Reflection for Secure IT Windows Server  7.0<br/>
+					
+				
+					Attachmate Reflection for Secure IT Windows Client  7.0<br/>
+					
+				
+					Attachmate Reflection for Secure IT Web Edition  0<br/>
+					
+				
+					Attachmate Reflection for Secure IT UNIX Server  7.0<br/>
+					
+				
+					Attachmate Reflection for Secure IT UNIX Client  7.0<br/>
+					
+				
+					Attachmate Reflection  14.1 SP2<br/>
+					
+				
+					Apple Mac OS X Server 10.7.5 <br/>
+					
+				
+					Apple Mac OS X Server  10.7.4<br/>
+					
+				
+					Apple Mac OS X Server  10.7.3<br/>
+					
+				
+					Apple Mac OS X Server  10.7.1<br/>
+					
+				
+					Apple Mac OS X Server  10.7<br/>
+					
+				
+					Apple Mac OS X Server  10.6.8<br/>
+					
+				
+					Apple Mac OS X 10.8.2 <br/>
+					
+				
+					Apple Mac OS X 10.8.1 <br/>
+					
+				
+					Apple Mac OS X 10.7.5 <br/>
+					
+				
+					Apple Mac OS X  10.8.3<br/>
+					
+				
+					Apple Mac OS X  10.8<br/>
+					
+				
+					Apple Mac OS X  10.7.4<br/>
+					
+				
+					Apple Mac OS X  10.7.3<br/>
+					
+				
+					Apple Mac OS X  10.7.2<br/>
+					
+				
+					Apple Mac OS X  10.7.1<br/>
+					
+				
+					Apple Mac OS X  10.7<br/>
+					
+				
+					Apple Mac OS X  10.6.8<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0i<br/>
+					
+				
+					OpenSSL Project OpenSSL   0.9.8v<br/>
+					
+				
+					McAfee FireWall Enterprise 8.3 <br/>
+					
+				
+					McAfee FireWall Enterprise 7.0.1 03H07<br/>
+					
+				
+					McAfee FireWall Enterprise 7.0.1 02.E16<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1P04<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1P03<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1P01<br/>
+					
+				
+					Juniper Steel-Belted Radius Global Enterprise  6.17<br/>
+					
+				
+					Juniper Steel-Belted Radius Enterprise  6.17<br/>
+					
+				
+					Juniper screenos  6.3.0R13<br/>
+					
+				
+					Juniper screenos  6.2.0R16<br/>
+					
+				
+					Juniper screenos  5.4.0R27<br/>
+					
+				
+					Juniper JUNOS Space  14.1R1<br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware  4.0.2.8<br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware  4.0.1.12<br/>
+					
+				
+					IBM WebSphere DataPower SOA Appliance Firmware  3.8.2.14<br/>
+					
+				
+					IBM Tivoli Endpoint Manager 8.2.1310 <br/>
+					
+				
+					IBM Hardware Management Console (HMC)  7R7.7.0 <br/>
+					
+				
+					IBM DS8870  7.2<br/>
+					
+				
+					HP System Management Homepage 7.2.1 <br/>
+					
+				
+					HP SSL for OpenVMS  1.4-467<br/>
+					
+				
+					HP Onboard Administrator  3.56<br/>
+					
+				
+					EMC RSA BSAFE SSL-C  2.8.6<br/>
+					
+				
+					Collax Collax Business Server 5.5.2 <br/>
+					
+				
+					Bsdperimeter pfSense 2.0.2 <br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4 LTS (4.0.5a)<br/>
+					
+				
+					Balabit syslog-ng Premium Edition  4 F2 (4.2.3a)<br/>
+					
+				
+					Attachmate Reflection for Secure IT Windows Server  7.2 SP1 Update 1 (7.<br/>
+					
+				
+					Attachmate Reflection for Secure IT Windows Client  7.2 SP2<br/>
+					
+				
+					Attachmate Reflection for Secure IT UNIX Server  7.2 SP1 Update 1 (7.<br/>
+					
+				
+					Attachmate Reflection for Secure IT UNIX Client  7.2 SP1 Update 1 (7.<br/>
+					
+				
+					Attachmate Reflection 14.1.2208 <br/>
+					
+				
+					Apple Mac OS X 10.8.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The researcher who found the issue has created a proof-of-concept. Please see the references for information.
+	
+		<ul>
+</ul>
+</div>

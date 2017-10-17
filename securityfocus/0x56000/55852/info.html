@@ -1,0 +1,957 @@
+#SpeeDr00t@Black Falcon<br>#bid55852<p><b><span style="font-size: 18pt;">ISC BIND 9 DNS RDATA Handling CVE-2012-5166 Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/55852/info">info</a><br><a href="http://www.securityfocus.com/bid/55852/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/55852/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/55852/solution">solution</a><br><a href="http://www.securityfocus.com/bid/55852/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				55852
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-5166<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 09 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 29 2016 05:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jake Montgomery of Dyn, Inc.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xerox FreeFlow Print Server (FFPS)  73.C5.11<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  73.C0.41<br/>
+					
+				
+					Xerox FreeFlow Print Server (FFPS)  73.B3.61<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1 LTSS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3 LTSS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP4<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP2<br/>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  10 SP4<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE Linux Enterprise Software Development Kit  11 SP2<br/>
+					
+				
+					Sun Solaris  9<br/>
+					
+				
+					Sun Solaris  11<br/>
+					
+				
+					Sun Solaris  10<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle VM Server for x86  3.2<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Enterprise Linux  4<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1<br/>
+					
+				
+					McAfee FireWall Enterprise  7.0.1.03H04<br/>
+					
+				
+					McAfee FireWall Enterprise  7.0.1.03<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					ISC BIND 9.6 <br/>
+					
+				
+					ISC BIND 9.4 <br/>
+					
+				
+					ISC BIND 9.2 <br/>
+					
+				
+					ISC BIND  9.7.1<br/>
+					
+				
+					ISC BIND  9.7.0<br/>
+					
+				
+					Intel McAfee Firewall Enterprise 8.3 <br/>
+					
+				
+					Intel McAfee Firewall Enterprise  7.0.1.02<br/>
+					
+				
+					IBM AIX 7.1.2 <br/>
+					
+				
+					IBM AIX 7.1.1 <br/>
+					
+				
+					IBM AIX 7.1 6<br/>
+					
+				
+					IBM AIX 7.1 <br/>
+					
+				
+					IBM AIX 6.1.8 <br/>
+					
+				
+					IBM AIX 6.1.7 5<br/>
+					
+				
+					IBM AIX 6.1.7 <br/>
+					
+				
+					IBM AIX 6.1.6 8<br/>
+					
+				
+					IBM AIX 6.1.6 <br/>
+					
+				
+					IBM AIX 6.1.5 <br/>
+					
+				
+					IBM AIX 6.1.4 <br/>
+					
+				
+					IBM AIX 6.1.3 <br/>
+					
+				
+					IBM AIX 6.1.2 <br/>
+					
+				
+					IBM AIX 6.1.1 <br/>
+					
+				
+					IBM AIX 5.3.12 6<br/>
+					
+				
+					IBM AIX 5.3.12 <br/>
+					
+				
+					IBM AIX 5.3.10 <br/>
+					
+				
+					IBM AIX 5.3.9 <br/>
+					
+				
+					IBM AIX 5.3.8 <br/>
+					
+				
+					IBM AIX 5.3.7 <br/>
+					
+				
+					IBM AIX 5.3 L<br/>
+					
+				
+					IBM AIX  7.1.1.5<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3.12<br/>
+					
+				
+					IBM AIX  5.3.11<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP TCP/IP Services for OpenVMS BIND  5.7 ECO5<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  9.1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD FreeBSD  8.3<br/>
+					
+				
+					FreeBSD FreeBSD  8.2<br/>
+					
+				
+					FreeBSD FreeBSD  8.1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.4<br/>
+					
+				
+					FreeBSD FreeBSD  7.3<br/>
+					
+				
+					FreeBSD FreeBSD  7.2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1<br/>
+					
+				
+					F5 Enterprise Manager 3.0 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+					
+				
+					F5 Enterprise Manager 2.0 <br/>
+					
+				
+					F5 Enterprise Manager 1.8 <br/>
+					
+				
+					F5 Enterprise Manager 1.6 <br/>
+					
+				
+					F5 BIG-IP PSM 11.2 <br/>
+					
+				
+					F5 BIG-IP PSM 11.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.0 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP PSM 10.0 <br/>
+					
+				
+					F5 BIG-IP PSM 9.4.8 <br/>
+					
+				
+					F5 BIG-IP PSM 9.4.5 <br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.0 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM 10.0 <br/>
+					
+				
+					F5 BIG-IP LTM 9.6.1 <br/>
+					
+				
+					F5 BIG-IP LTM 9.4.8 <br/>
+					
+				
+					F5 BIG-IP LTM 9.0 <br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller 9.4.8  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 10.0.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 9.2.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 <br/>
+					
+				
+					F5 BIG-IP GTM 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM 10.0 <br/>
+					
+				
+					F5 BIG-IP GTM 9.4.8 <br/>
+					
+				
+					F5 BIG-IP GTM 9.2.2 <br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP GTM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP ASM 9.4.8  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0 HF2  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.2.4  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 9.2 <br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0<br/>
+					
+				
+					F5 BIG-IP ASM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.0 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0<br/>
+					
+				
+					F5 BIG-IP APM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP APM  10.1<br/>
+					
+				
+					EMC VPLEX GeoSynchrony 5.2.1 <br/>
+					
+				
+					EMC VPLEX GeoSynchrony  5.2 SP1<br/>
+					
+				
+					EMC VPLEX GeoSynchrony  4.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Collax Collax Business Server 5.5.2 <br/>
+					
+				
+					Collax Collax Business Server 5.5 <br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.5 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.0.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Apple Mac OS X Server 10.7.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.4 <br/>
+					
+				
+					Apple Mac OS X 10.8.2 <br/>
+					
+				
+					Apple Mac OS X 10.8.1 <br/>
+					
+				
+					Apple Mac OS X 10.7.5 <br/>
+					
+				
+					Apple Mac OS X  10.8.3<br/>
+					
+				
+					Apple Mac OS X  10.8<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Intel McAfee Firewall Enterprise  8.3.0P02<br/>
+					
+				
+					Intel McAfee Firewall Enterprise  8.2.1P06<br/>
+					
+				
+					Intel McAfee Firewall Enterprise  7.0.1.03H06<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RC2<br/>
+					
+				
+					F5 Enterprise Manager 3.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.3 <br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP GTM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP APM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF2<br/>
+					
+				
+					EMC VPLEX GeoSynchrony  5.3<br/>
+					
+				
+					Collax Collax Business Server 5.5.4 <br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use standard, readily available tools to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

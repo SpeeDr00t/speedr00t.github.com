@@ -1,0 +1,600 @@
+#SpeeDr00t@Black Falcon<br>#bid50751<p><b><span style="font-size: 18pt;">Linux Kernel Headroom Check 'udp6_ufo_fragment()' Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/50751/info">info</a><br><a href="http://www.securityfocus.com/bid/50751/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/50751/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/50751/solution">solution</a><br><a href="http://www.securityfocus.com/bid/50751/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				50751
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2011-4326<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 21 2011 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:12PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Petr Matousek
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Real Time  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise High Availability Extension  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Desktop  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					Red Hat MRG Realtime for RHEL 6 Server  2<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation  6<br/>
+					
+				
+					Red Hat Enterprise Linux Server  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					OpenVZ Project OpenVZ  042stab039.10<br/>
+					
+				
+					OpenVZ Project OpenVZ  042stab037.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab095.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab092.2<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab091.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab089.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab085.2<br/>
+					
+				
+					OpenVZ Project OpenVZ  028stab081.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  023stab054.1<br/>
+					
+				
+					OpenVZ Project OpenVZ  023stab053.2<br/>
+					
+				
+					Linux kernel 2.6.39 rc4<br/>
+					
+				
+					Linux kernel 2.6.39 <br/>
+					
+				
+					Linux kernel 2.6.38 <br/>
+					
+				
+					Linux kernel 2.6.37 <br/>
+					
+				
+					Linux kernel 2.6.36 <br/>
+					
+				
+					Linux kernel 2.6.35 <br/>
+					
+				
+					Linux kernel 2.6.34 <br/>
+					
+				
+					Linux kernel 2.6.33 .1<br/>
+					
+				
+					Linux kernel 2.6.33 <br/>
+					
+				
+					Linux kernel 2.6.32 .9<br/>
+					
+				
+					Linux kernel 2.6.32 <br/>
+					
+				
+					Linux kernel 2.6.7 rc3<br/>
+					
+				
+					Linux kernel 2.6.7 rc2<br/>
+					
+				
+					Linux kernel 2.6.7 rc1<br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 rc3<br/>
+					
+				
+					Linux kernel 2.6.6 rc2<br/>
+					
+				
+					Linux kernel 2.6.6 rc1<br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 rc3<br/>
+					
+				
+					Linux kernel 2.6.5 rc2<br/>
+					
+				
+					Linux kernel 2.6.5 rc1<br/>
+					
+				
+					Linux kernel 2.6.5 <br/>
+					
+				
+					Linux kernel 2.6.4 rc3<br/>
+					
+				
+					Linux kernel 2.6.4 rc2<br/>
+					
+				
+					Linux kernel 2.6.4 rc1<br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel  2.6.39-rc6<br/>
+					
+				
+					Linux kernel  2.6.39-rc3<br/>
+					
+				
+					Linux kernel  2.6.38.6<br/>
+					
+				
+					Linux kernel  2.6.38.4<br/>
+					
+				
+					Linux kernel  2.6.38.3<br/>
+					
+				
+					Linux kernel  2.6.38.2<br/>
+					
+				
+					Linux kernel  2.6.38-rc7<br/>
+					
+				
+					Linux kernel  2.6.38-rc4<br/>
+					
+				
+					Linux kernel  2.6.38-rc2<br/>
+					
+				
+					Linux kernel  2.6.38-git18<br/>
+					
+				
+					Linux kernel  2.6.37rc<br/>
+					
+				
+					Linux kernel  2.6.37.2<br/>
+					
+				
+					Linux kernel  2.6.37-rc7<br/>
+					
+				
+					Linux kernel  2.6.37-rc2<br/>
+					
+				
+					Linux kernel  2.6.37-rc1<br/>
+					
+				
+					Linux kernel  2.6.36.2 (stable)<br/>
+					
+				
+					Linux kernel  2.6.36-rc8<br/>
+					
+				
+					Linux kernel  2.6.36-rc6<br/>
+					
+				
+					Linux kernel  2.6.36-rc5<br/>
+					
+				
+					Linux kernel  2.6.36-rc4<br/>
+					
+				
+					Linux kernel  2.6.36-rc1<br/>
+					
+				
+					Linux kernel  2.6.35.5<br/>
+					
+				
+					Linux kernel  2.6.35.4<br/>
+					
+				
+					Linux kernel  2.6.35.1<br/>
+					
+				
+					Linux kernel  2.6.35-rc6<br/>
+					
+				
+					Linux kernel  2.6.35-rc5-git5<br/>
+					
+				
+					Linux kernel  2.6.35-rc5<br/>
+					
+				
+					Linux kernel  2.6.35-rc4<br/>
+					
+				
+					Linux kernel  2.6.35-rc1<br/>
+					
+				
+					Linux kernel  2.6.34.3<br/>
+					
+				
+					Linux kernel  2.6.34.2<br/>
+					
+				
+					Linux kernel  2.6.34.1<br/>
+					
+				
+					Linux kernel  2.6.34-rc6<br/>
+					
+				
+					Linux kernel  2.6.34-rc5<br/>
+					
+				
+					Linux kernel  2.6.34-rc4<br/>
+					
+				
+					Linux kernel  2.6.34-rc2-git1<br/>
+					
+				
+					Linux kernel  2.6.34-rc2<br/>
+					
+				
+					Linux kernel  2.6.34-rc1<br/>
+					
+				
+					Linux kernel  2.6.33.7<br/>
+					
+				
+					Linux kernel  2.6.33-rc8<br/>
+					
+				
+					Linux kernel  2.6.33-rc7<br/>
+					
+				
+					Linux kernel  2.6.33-rc7<br/>
+					
+				
+					Linux kernel  2.6.33-rc6-git5<br/>
+					
+				
+					Linux kernel  2.6.33-rc6<br/>
+					
+				
+					Linux kernel  2.6.33-rc5<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.33-rc4<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.32.8<br/>
+					
+				
+					Linux kernel  2.6.32.7<br/>
+					
+				
+					Linux kernel  2.6.32.6<br/>
+					
+				
+					Linux kernel  2.6.32.5<br/>
+					
+				
+					Linux kernel  2.6.32.4<br/>
+					
+				
+					Linux kernel  2.6.32.3<br/>
+					
+				
+					Linux kernel  2.6.32.28<br/>
+					
+				
+					Linux kernel  2.6.32.22<br/>
+					
+				
+					Linux kernel  2.6.32.2<br/>
+					
+				
+					Linux kernel  2.6.32.18<br/>
+					
+				
+					Linux kernel  2.6.32.17<br/>
+					
+				
+					Linux kernel  2.6.32.16<br/>
+					
+				
+					Linux kernel  2.6.32.15<br/>
+					
+				
+					Linux kernel  2.6.32.14<br/>
+					
+				
+					Linux kernel  2.6.32.13<br/>
+					
+				
+					Linux kernel  2.6.32.12<br/>
+					
+				
+					Linux kernel  2.6.32.11<br/>
+					
+				
+					Linux kernel  2.6.32.10<br/>
+					
+				
+					Linux kernel  2.6.32.1<br/>
+					
+				
+					Linux kernel  2.6.32-rc8<br/>
+					
+				
+					Linux kernel  2.6.32-rc7<br/>
+					
+				
+					Linux kernel  2.6.32-rc5<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.32-rc4<br/>
+					
+				
+					Linux kernel  2.6.32-rc3<br/>
+					
+				
+					Linux kernel  2.6.32-rc2<br/>
+					
+				
+					Linux kernel  2.6.32-rc1<br/>
+					
+				
+					Avaya 96x1 IP Deskphone  6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenVZ Project OpenVZ  042stab044.11<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit this issue, attackers can use readily available network utilities.
+	
+		<ul>
+</ul>
+</div>

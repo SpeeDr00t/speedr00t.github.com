@@ -1,0 +1,660 @@
+#SpeeDr00t@Black Falcon<br>#bid54638<p><b><span style="font-size: 18pt;">PHP '_php_stream_scandir()' Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/54638/info">info</a><br><a href="http://www.securityfocus.com/bid/54638/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/54638/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/54638/solution">solution</a><br><a href="http://www.securityfocus.com/bid/54638/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				54638
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-2688<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 23 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 10:09PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Reported by the vendor
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  8.04 LTS sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS lpia<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  8.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.04 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server for VMware  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3 LTSS<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP2<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  11 SP1<br/>
+					
+				
+					SuSE SUSE Linux Enterprise SDK  10 SP4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					PHP PHP 5.4.4 <br/>
+					
+				
+					PHP PHP 5.4.3 <br/>
+					
+				
+					PHP PHP 5.4.2 <br/>
+					
+				
+					PHP PHP 5.4.1 <br/>
+					
+				
+					PHP PHP 5.3.14 <br/>
+					
+				
+					PHP PHP 5.3.13 <br/>
+					
+				
+					PHP PHP 5.3.12 <br/>
+					
+				
+					PHP PHP 5.3.9 <br/>
+					
+				
+					PHP PHP 5.3.8 <br/>
+					
+				
+					PHP PHP 5.3.7 <br/>
+					
+				
+					PHP PHP 5.3.6 <br/>
+					
+				
+					PHP PHP 5.3.5 <br/>
+					
+				
+					PHP PHP 5.3.2 <br/>
+					
+				
+					PHP PHP 5.3.1 <br/>
+					
+				
+					PHP PHP 5.3 <br/>
+					
+				
+					PHP PHP  5.3.5<br/>
+					
+				
+					PHP PHP  5.3.4<br/>
+					
+				
+					PHP PHP  5.3.3<br/>
+					
+				
+					PHP PHP  5.3.11<br/>
+					
+				
+					PHP PHP  5.3.10<br/>
+					
+				
+					Oracle Solaris  11.1<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Mandriva Linux Mandrake  2011 x86_64<br/>
+					
+				
+					Mandriva Linux Mandrake  2011<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Avaya Voice Portal  5.1.3<br/>
+					
+				
+					Avaya Voice Portal  5.1.2<br/>
+					
+				
+					Avaya Voice Portal  5.1.1<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP3<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.1 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.1<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP2<br/>
+					
+				
+					Avaya Voice Portal  5.0 SP1<br/>
+					
+				
+					Avaya Voice Portal  5.0<br/>
+					
+				
+					Avaya IP Office Application Server  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Messaging 6.1.1 <br/>
+					
+				
+					Avaya Aura Messaging  6.2<br/>
+					
+				
+					Avaya Aura Messaging  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  7.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.5.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.4.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1 SP 6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.4<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.3<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+					
+				
+					Apple Mac OS X Server 10.7.5 <br/>
+					
+				
+					Apple Mac OS X Server  10.7.3<br/>
+					
+				
+					Apple Mac OS X Server  10.7.2<br/>
+					
+				
+					Apple Mac OS X Server  10.7.1<br/>
+					
+				
+					Apple Mac OS X Server  10.7<br/>
+					
+				
+					Apple Mac OS X Server  10.6.8<br/>
+					
+				
+					Apple Mac OS X 10.8.1 <br/>
+					
+				
+					Apple Mac OS X  10.8<br/>
+					
+				
+					Apple Mac OS X  10.7.4<br/>
+					
+				
+					Apple Mac OS X  10.7.3<br/>
+					
+				
+					Apple Mac OS X  10.7.2<br/>
+					
+				
+					Apple Mac OS X  10.7.1<br/>
+					
+				
+					Apple Mac OS X  10.7<br/>
+					
+				
+					Apple Mac OS X  10.6.8<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP  5.4.5<br/>
+					
+				
+					PHP PHP  5.3.15<br/>
+					
+				
+					Oracle Solaris  11.1.17.5.0<br/>
+					
+				
+					Apple Mac OS X 10.8.2 <br/>
+					
+				
+					Apple Mac OS X 10.7.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, please mail us at:vuldb@#no_exploit.
+	
+		<ul>
+</ul>
+</div>

