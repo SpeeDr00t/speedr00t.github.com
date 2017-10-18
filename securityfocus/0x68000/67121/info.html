@@ -1,0 +1,2682 @@
+#SpeeDr00t@Black Falcon<br>#bid67121<p><b><span style="font-size: 18pt;">Apache Struts ClassLoader Manipulation CVE-2014-0114 Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/67121/info">info</a><br><a href="http://www.securityfocus.com/bid/67121/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/67121/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/67121/solution">solution</a><br><a href="http://www.securityfocus.com/bid/67121/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				67121
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-0114<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 29 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 02 2017 12:11AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Rene Gielen
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare vCenter Server  5.5<br/>
+					
+				
+					VMWare vCenter Server  5.1<br/>
+					
+				
+					VMWare vCenter Server  5.0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Software Development Kit  11 SP3<br/>
+					
+				
+					SuSE Manager (for SLE 11 SP2)  1.7<br/>
+					
+				
+					Redhat Network Satellite Server (for RHEL 6)  5.6<br/>
+					
+				
+					Redhat Network Satellite Server (for RHEL 6)  5.5<br/>
+					
+				
+					Redhat Network Satellite Server (for RHEL 6)  5.4<br/>
+					
+				
+					Redhat JBoss Operations Network 3.2.1 <br/>
+					
+				
+					Redhat JBoss Fuse  6.1.0<br/>
+					
+				
+					Redhat Fuse ESB Enterprise  7.1.0<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Weblogic Server 12.1.3 <br/>
+					
+				
+					Oracle Weblogic Server 12.1.2 0<br/>
+					
+				
+					Oracle Weblogic Server 12.1.1 0<br/>
+					
+				
+					Oracle Weblogic Server 10.3.6 0<br/>
+					
+				
+					Oracle Weblogic Server  12.2.1.2<br/>
+					
+				
+					Oracle Weblogic Server  12.2.1.1<br/>
+					
+				
+					Oracle Weblogic Server  12.2.1.0<br/>
+					
+				
+					Oracle Weblogic Server  12.1.3.0<br/>
+					
+				
+					Oracle Weblogic Server  10.0.2<br/>
+					
+				
+					Oracle Weblogic Portal  10.3.6.0<br/>
+					
+				
+					Oracle Weblogic Portal  10.2.1.0<br/>
+					
+				
+					Oracle Weblogic Portal  10.0.1.0<br/>
+					
+				
+					Oracle Waveset 8.1.1 <br/>
+					
+				
+					Oracle Utilities Framework  4.3.0.3.0<br/>
+					
+				
+					Oracle Utilities Framework  4.3.0.2.0<br/>
+					
+				
+					Oracle Utilities Framework  4.3.0.1.0<br/>
+					
+				
+					Oracle Utilities Framework  4.2.0.3.0<br/>
+					
+				
+					Oracle Utilities Framework  4.2.0.2.0<br/>
+					
+				
+					Oracle Utilities Framework  4.2.0.1.0<br/>
+					
+				
+					Oracle Utilities Framework  4.1.0.2.0<br/>
+					
+				
+					Oracle Utilities Framework  4.1.0.1.0<br/>
+					
+				
+					Oracle Retail Returns Management  2.0<br/>
+					
+				
+					Oracle Retail Returns Management  14.0<br/>
+					
+				
+					Oracle Retail Returns Management  13.4<br/>
+					
+				
+					Oracle Retail Returns Management  13.3<br/>
+					
+				
+					Oracle Retail Returns Management  13.2<br/>
+					
+				
+					Oracle Retail Returns Management  13.1<br/>
+					
+				
+					Oracle Retail Markdown Optimization  13.4<br/>
+					
+				
+					Oracle Retail Markdown Optimization  13.2<br/>
+					
+				
+					Oracle Retail Markdown Optimization  13.1<br/>
+					
+				
+					Oracle Retail Markdown Optimization  13.0<br/>
+					
+				
+					Oracle Retail Markdown Optimization  12.0<br/>
+					
+				
+					Oracle Retail Invoice Matching  14.1<br/>
+					
+				
+					Oracle Retail Invoice Matching  14.0<br/>
+					
+				
+					Oracle Retail Invoice Matching  13.2<br/>
+					
+				
+					Oracle Retail Invoice Matching  13.1<br/>
+					
+				
+					Oracle Retail Invoice Matching  13.0<br/>
+					
+				
+					Oracle Retail Invoice Matching  12.1<br/>
+					
+				
+					Oracle Retail Invoice Matching  12.0IN<br/>
+					
+				
+					Oracle Retail Invoice Matching  12.0<br/>
+					
+				
+					Oracle Retail Invoice Matching  11.0<br/>
+					
+				
+					Oracle Retail Clearance Optimization Engine  14.0<br/>
+					
+				
+					Oracle Retail Clearance Optimization Engine  13.4<br/>
+					
+				
+					Oracle Retail Clearance Optimization Engine  13.3<br/>
+					
+				
+					Oracle Retail Central Office  8.0<br/>
+					
+				
+					Oracle Retail Central Office  14.0<br/>
+					
+				
+					Oracle Retail Central Office  13.4<br/>
+					
+				
+					Oracle Retail Central Office  13.3<br/>
+					
+				
+					Oracle Retail Central Office  13.2<br/>
+					
+				
+					Oracle Retail Central Office  13.1<br/>
+					
+				
+					Oracle Retail Central Office  13.0<br/>
+					
+				
+					Oracle Retail Central Office  12.0.9IN<br/>
+					
+				
+					Oracle Retail Central Office  12.0<br/>
+					
+				
+					Oracle Retail Back Office  8.0<br/>
+					
+				
+					Oracle Retail Back Office  14.1 <br/>
+					
+				
+					Oracle Retail Back Office  14.0<br/>
+					
+				
+					Oracle Retail Back Office  13.4<br/>
+					
+				
+					Oracle Retail Back Office  13.3<br/>
+					
+				
+					Oracle Retail Back Office  13.2<br/>
+					
+				
+					Oracle Retail Back Office  13.1<br/>
+					
+				
+					Oracle Retail Back Office  13.0<br/>
+					
+				
+					Oracle Retail Back Office  12.0.9IN<br/>
+					
+				
+					Oracle Retail Back Office  12.0<br/>
+					
+				
+					Oracle Retail Allocation  13.2<br/>
+					
+				
+					Oracle Retail Allocation  13.1<br/>
+					
+				
+					Oracle Retail Allocation  13.0<br/>
+					
+				
+					Oracle Retail Allocation  12.0<br/>
+					
+				
+					Oracle Retail Allocation  11.0<br/>
+					
+				
+					Oracle Retail Allocation  10.0<br/>
+					
+				
+					Oracle Real-Time Decision Server  11.1.1.7<br/>
+					
+				
+					Oracle Real-Time Decision Platform 3.0 <br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.4<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.3<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.2<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.1<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.0<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  7.0<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  16.2<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  16.1<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  15.2<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  15.1<br/>
+					
+				
+					Oracle Primavera Contract Management  14.0<br/>
+					
+				
+					Oracle Primavera Contract Management  13.1<br/>
+					
+				
+					Oracle JDeveloper 12.1.3 0<br/>
+					
+				
+					Oracle JDeveloper 12.1.2 0.0<br/>
+					
+				
+					Oracle JDeveloper 11.1.2 4.0<br/>
+					
+				
+					Oracle JDeveloper 11.1.1 7.0<br/>
+					
+				
+					Oracle JDeveloper  10.1.3.5.0<br/>
+					
+				
+					Oracle Identity Manager 11.1.2 2<br/>
+					
+				
+					Oracle Identity Manager 11.1.2 1.0<br/>
+					
+				
+					Oracle Identity Manager  11.1.1.7<br/>
+					
+				
+					Oracle Identity Manager  11.1.1.5<br/>
+					
+				
+					Oracle Fusion Middleware 11.1.2 2.0<br/>
+					
+				
+					Oracle Fusion Middleware 11.1.2 1.0<br/>
+					
+				
+					Oracle Fusion Middleware 11.1.1 7.0<br/>
+					
+				
+					Oracle Fusion Middleware  11.1.1.5.0<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Enterprise Data Quality 9.0.11 <br/>
+					
+				
+					Oracle Enterprise Data Quality 8.1.2 <br/>
+					
+				
+					Oracle Communications MetaSolv Solution 6.2.1 0.0<br/>
+					
+				
+					NTT DATA Corporation TERASOLUNA Server Framework for Java 2.0.5 1<br/>
+					
+				
+					NTT DATA Corporation TERASOLUNA Server Framework for Java 2.0 1<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					Liferay Portal  6.2.1-ce-ga2-securit<br/>
+					
+				
+					Liferay Portal  6.2.1<br/>
+					
+				
+					Juniper Security Threat Response Manager  2013.2<br/>
+					
+				
+					Juniper Security Threat Response Manager  2012.1<br/>
+					
+				
+					Juniper Secure Analytics  2013.2<br/>
+					
+				
+					Juniper Secure Analytics  2012.1<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  8.5<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  8.0<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  7.5<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  7.0<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  6.3<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  6.2<br/>
+					
+				
+					IBM WebSphere Sensor Events  7.0<br/>
+					
+				
+					IBM Websphere Portal 7.0 <br/>
+					
+				
+					IBM Websphere Portal  8.5<br/>
+					
+				
+					IBM Websphere Portal  8.0<br/>
+					
+				
+					IBM Websphere Portal  6.1<br/>
+					
+				
+					IBM WebSphere Partner Gateway Express Edition  6.0.0.3<br/>
+					
+				
+					IBM WebSphere Partner Gateway Express Edition  6.0<br/>
+					
+				
+					IBM WebSphere Partner Gateway Enterprise Edition  6.2<br/>
+					
+				
+					IBM WebSphere Partner Gateway Advanced Edition  6.2<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.2<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.1.0<br/>
+					
+				
+					IBM WebSphere Enterprise Service Bus  7.5<br/>
+					
+				
+					IBM WebSphere Enterprise Service Bus  7<br/>
+					
+				
+					IBM WebSphere Enterprise Service Bus  6.2<br/>
+					
+				
+					IBM Websphere Application Server 8.5.5 <br/>
+					
+				
+					IBM Websphere Application Server 8.0 2<br/>
+					
+				
+					IBM Websphere Application Server 8.0 1<br/>
+					
+				
+					IBM Websphere Application Server 7.0 21<br/>
+					
+				
+					IBM Websphere Application Server  8.5<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.3<br/>
+					
+				
+					IBM Websphere Application Server  8.0<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.31<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.27<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.25<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.23<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.19<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.17<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.15<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.13<br/>
+					
+				
+					IBM Websphere Application Server  7.0<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.47<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.45<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.43<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.39<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.37<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.35<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.34<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.33<br/>
+					
+				
+					IBM Websphere Application Server  6.1.0.31<br/>
+					
+				
+					IBM Websphere Application Server  6.1<br/>
+					
+				
+					IBM WEB Interface for Content Management  1.0.4<br/>
+					
+				
+					IBM Tivoli Workload Scheduler z/OS Connector 8.5.1 <br/>
+					
+				
+					IBM Tivoli Workload Scheduler z/OS Connector 8.5 <br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed 8.6 <br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed 8.5.1 <br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed 8.5 <br/>
+					
+				
+					IBM Tivoli Workload Scheduler Distributed 8.4 <br/>
+					
+				
+					IBM Tivoli System Automation Application Manager 3.2.2 <br/>
+					
+				
+					IBM Tivoli System Automation Application Manager 3.2.1 <br/>
+					
+				
+					IBM Tivoli System Automation Application Manager  3.2<br/>
+					
+				
+					IBM Tivoli System Automation Application Manager  3.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.1.1 3<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.1.1 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.1 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 4.2.2 143<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.4<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.2<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.0<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  4.2.2.177<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  4.2.2.145<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  4.2.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  4.2.0<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  4.1<br/>
+					
+				
+					IBM Tivoli Storage Manager Administration Center  6.3<br/>
+					
+				
+					IBM Tivoli Storage Manager Administration Center  6.2<br/>
+					
+				
+					IBM Tivoli Storage Manager Administration Center  6.1<br/>
+					
+				
+					IBM Tivoli Storage Manager  6.3.0<br/>
+					
+				
+					IBM Tivoli Storage Manager  6.2<br/>
+					
+				
+					IBM Tivoli Storage Manager  6.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Software  5.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager  7.2<br/>
+					
+				
+					IBM Tivoli Provisioning Manager  7.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager  5.1<br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus Web GUI 7.4 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus Web GUI 7.3.1 <br/>
+					
+				
+					IBM Tivoli Netcool/OMNIbus Web GUI 7.3 <br/>
+					
+				
+					IBM Tivoli Netcool Configuration Manager 6.4.1 <br/>
+					
+				
+					IBM Tivoli Netcool Configuration Manager 6.3 <br/>
+					
+				
+					IBM Tivoli Netcool Configuration Manager  6.4<br/>
+					
+				
+					IBM Tivoli Netcool Configuration Manager  6.2<br/>
+					
+				
+					IBM Tivoli Integrated Portal 1.1.1 15<br/>
+					
+				
+					IBM Tivoli Integrated Portal 1.1.1 14<br/>
+					
+				
+					IBM Tivoli Integrated Portal  2.2<br/>
+					
+				
+					IBM Tivoli Integrated Portal  2.1<br/>
+					
+				
+					IBM Tivoli Integrated Portal  1.1.1.19<br/>
+					
+				
+					IBM Tivoli Integrated Portal  1.1<br/>
+					
+				
+					IBM Tivoli Identity Manager  5.1<br/>
+					
+				
+					IBM Tivoli Identity Manager  5.0<br/>
+					
+				
+					IBM Tivoli Foundations for Application Manager  1.2<br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 9.0 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 8.2.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control  9.0.1<br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control  8.2<br/>
+					
+				
+					IBM Tivoli Dynamic Workload Console 8.5.1 <br/>
+					
+				
+					IBM Tivoli Dynamic Workload Console 8.5 <br/>
+					
+				
+					IBM Tivoli Dynamic Workload Console 8.4 <br/>
+					
+				
+					IBM Tivoli Dynamic Workload Console  8.6.0.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Websphere  6.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Application Diagnostics  7.1<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager 7.2.2 <br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager 7.2.1 <br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager 7.2 <br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager 7.1.2 <br/>
+					
+				
+					IBM Social Media Analytics  1.3<br/>
+					
+				
+					IBM Social Media Analytics  1.2<br/>
+					
+				
+					IBM Smart Analytics System 7700  0<br/>
+					
+				
+					IBM Smart Analytics System 7600  0<br/>
+					
+				
+					IBM Smart Analytics System 5710  0<br/>
+					
+				
+					IBM Smart Analytics System 5600  2<br/>
+					
+				
+					IBM Smart Analytics System 5600  1<br/>
+					
+				
+					IBM Smart Analytics System 2050  0<br/>
+					
+				
+					IBM Smart Analytics System 1050  0<br/>
+					
+				
+					IBM Security SiteProtector System  3.1<br/>
+					
+				
+					IBM Security SiteProtector System  3.0<br/>
+					
+				
+					IBM Security QRadar 7.2.2 <br/>
+					
+				
+					IBM Security QRadar  7.2<br/>
+					
+				
+					IBM Security QRadar  7.1<br/>
+					
+				
+					IBM Security QRadar  7.0<br/>
+					
+				
+					IBM Security Identity Manager  6.0<br/>
+					
+				
+					IBM Records Manager  8.5<br/>
+					
+				
+					IBM Records Manager  8.4<br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 2.0.6 <br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 2.0.5 <br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 2.0.4 <br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 2.0.3 <br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 2.0.1 <br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 2.0 1<br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 1.0.2 1<br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence 1.0.2 <br/>
+					
+				
+					IBM Rational Reporting for Development Intelligence  2.0<br/>
+					
+				
+					IBM Rational Insight 1.1.1 3<br/>
+					
+				
+					IBM Rational Insight 1.1.1 2<br/>
+					
+				
+					IBM Rational Insight 1.1.1 1<br/>
+					
+				
+					IBM Rational Insight 1.1.1 <br/>
+					
+				
+					IBM Rational Insight 1.0.1 1<br/>
+					
+				
+					IBM Rational Insight 1.0.1 <br/>
+					
+				
+					IBM Rational Insight  1.1<br/>
+					
+				
+					IBM Rational Insight  1.0.1 iFix1<br/>
+					
+				
+					IBM Rational Application Developer 9.0.1 <br/>
+					
+				
+					IBM Rational Application Developer 8.5.5 <br/>
+					
+				
+					IBM Rational Application Developer 8.5.1 <br/>
+					
+				
+					IBM Rational Application Developer 8.0.4 3<br/>
+					
+				
+					IBM Rational Application Developer 8.0.4 2<br/>
+					
+				
+					IBM Rational Application Developer 8.0.4 1<br/>
+					
+				
+					IBM Rational Application Developer 8.0.4 <br/>
+					
+				
+					IBM Rational Application Developer 8.0.3 <br/>
+					
+				
+					IBM Rational Application Developer 8.0.2 <br/>
+					
+				
+					IBM Rational Application Developer 8.0.1 <br/>
+					
+				
+					IBM Rational Application Developer 7.5.5 5<br/>
+					
+				
+					IBM Rational Application Developer 7.5.5 3<br/>
+					
+				
+					IBM Rational Application Developer 7.5.5 2<br/>
+					
+				
+					IBM Rational Application Developer 7.5.5 1<br/>
+					
+				
+					IBM Rational Application Developer 7.5.5 <br/>
+					
+				
+					IBM Rational Application Developer 7.5.4 <br/>
+					
+				
+					IBM Rational Application Developer 7.5.3 <br/>
+					
+				
+					IBM Rational Application Developer 7.5.2 <br/>
+					
+				
+					IBM Rational Application Developer 7.5.1 <br/>
+					
+				
+					IBM Rational Application Developer 7.0 9<br/>
+					
+				
+					IBM Rational Application Developer 7.0 8<br/>
+					
+				
+					IBM Rational Application Developer 7.0 7<br/>
+					
+				
+					IBM Rational Application Developer 7.0 6<br/>
+					
+				
+					IBM Rational Application Developer 7.0 5<br/>
+					
+				
+					IBM Rational Application Developer 7.0 4<br/>
+					
+				
+					IBM Rational Application Developer 7.0 3<br/>
+					
+				
+					IBM Rational Application Developer 7.0 2<br/>
+					
+				
+					IBM Rational Application Developer 7.0 10<br/>
+					
+				
+					IBM Rational Application Developer 7.0 1<br/>
+					
+				
+					IBM Rational Application Developer  9.1<br/>
+					
+				
+					IBM Rational Application Developer  9.0<br/>
+					
+				
+					IBM Rational Application Developer  8.5<br/>
+					
+				
+					IBM Rational Application Developer  8.0<br/>
+					
+				
+					IBM Rational Application Developer  7.5<br/>
+					
+				
+					IBM Rational Application Developer  7.0<br/>
+					
+				
+					IBM QRadar SIEM  7.2 MR2<br/>
+					
+				
+					IBM QRadar SIEM  7.1 MR2<br/>
+					
+				
+					IBM QRadar SIEM  7.0 MR5<br/>
+					
+				
+					IBM Predictive Insight  9.1<br/>
+					
+				
+					IBM Predictive Insight  7.0<br/>
+					
+				
+					IBM OpenPages GRC Platform  7.0<br/>
+					
+				
+					IBM OpenPages GRC Platform  6.2.1<br/>
+					
+				
+					IBM OpenPages  7.0<br/>
+					
+				
+					IBM OpenPages  6.1.0.1<br/>
+					
+				
+					IBM OpenPages  6.0.1.5<br/>
+					
+				
+					IBM OpenPages  6.0<br/>
+					
+				
+					IBM OmniFind Enterprise Edition  9.1<br/>
+					
+				
+					IBM Lotus Quickr for WebSphere Portal  8.5<br/>
+					
+				
+					IBM Lotus Expeditor  6.2.3<br/>
+					
+				
+					IBM Lotus Expeditor  6.2.2<br/>
+					
+				
+					IBM Lotus Expeditor  6.2.1<br/>
+					
+				
+					IBM Lotus Expeditor  6.2<br/>
+					
+				
+					IBM Leads  9.1<br/>
+					
+				
+					IBM Leads  7.0<br/>
+					
+				
+					IBM Infosphere Master Data Management Server For Product Information  9.1<br/>
+					
+				
+					IBM Infosphere Master Data Management Server For Product Information  9.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management - Collaborative Edition  11.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management - Collaborative Edition  10.1<br/>
+					
+				
+					IBM InfoSphere Master Data Management - Collaborative Edition  10.0<br/>
+					
+				
+					IBM InfoSphere MashupHub  3.0<br/>
+					
+				
+					IBM InfoSphere MashupHub  2.0<br/>
+					
+				
+					IBM InfoSphere Information Server  9.1.2.0<br/>
+					
+				
+					IBM InfoSphere Information Server  9.1<br/>
+					
+				
+					IBM InfoSphere Information Server  8.7<br/>
+					
+				
+					IBM InfoSphere Information Server  8.5<br/>
+					
+				
+					IBM InfoSphere Information Server  8.1<br/>
+					
+				
+					IBM InfoSphere Information Server  8.0<br/>
+					
+				
+					IBM InfoSphere Identity Insight  8.1<br/>
+					
+				
+					IBM InfoSphere Identity Insight  8.0<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  D5100<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  C4000<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse  C3000<br/>
+					
+				
+					IBM IBM InfoSphere Information Server  9.1<br/>
+					
+				
+					IBM IBM InfoSphere Information Server  8.7<br/>
+					
+				
+					IBM IBM InfoSphere Information Server  8.5<br/>
+					
+				
+					IBM IBM InfoSphere Information Server  8.1<br/>
+					
+				
+					IBM Financial Transaction Manager  2.1<br/>
+					
+				
+					IBM FileNet P8 Platform Content Search Engine 4.5.1 <br/>
+					
+				
+					IBM FileNet P8 Platform Content Search Engine  5.1<br/>
+					
+				
+					IBM FileNet P8 Platform Content Search Engine  5.0<br/>
+					
+				
+					IBM FileNet Content Manager Content Engine  5.2.0<br/>
+					
+				
+					IBM Endpoint Manager for Remote Control  9.1.0<br/>
+					
+				
+					IBM DS8870  7.3<br/>
+					
+				
+					IBM DS8870  7.2<br/>
+					
+				
+					IBM DS8870  7.1<br/>
+					
+				
+					IBM DS8870  7.0<br/>
+					
+				
+					IBM Distributed Marketing  9.1<br/>
+					
+				
+					IBM Distributed Marketing  9.0<br/>
+					
+				
+					IBM Distributed Marketing  8.6<br/>
+					
+				
+					IBM Distributed Marketing  8.5<br/>
+					
+				
+					IBM Distributed Marketing  8.2<br/>
+					
+				
+					IBM Distributed Marketing  8.0<br/>
+					
+				
+					IBM Distributed Marketing  7.5<br/>
+					
+				
+					IBM Distributed Marketing  7.0<br/>
+					
+				
+					IBM Content Navigator 2.0.2 <br/>
+					
+				
+					IBM Content Navigator 2.0.1 <br/>
+					
+				
+					IBM Content Navigator 2.0 <br/>
+					
+				
+					IBM Content Manager Records Enabler  8.5<br/>
+					
+				
+					IBM Content Manager Records Enabler  8.4<br/>
+					
+				
+					IBM Content Collector  2.2<br/>
+					
+				
+					IBM Content Analytics with Enterprise Search  3.0<br/>
+					
+				
+					IBM Content Analytics with Enterprise Search  2.2<br/>
+					
+				
+					IBM Contact Optimization  9.1<br/>
+					
+				
+					IBM Contact Optimization  8.0<br/>
+					
+				
+					IBM Contact Optimization  7.0<br/>
+					
+				
+					IBM Connections 3.0 0<br/>
+					
+				
+					IBM Connections 2.0.1 0<br/>
+					
+				
+					IBM Connections  5.0<br/>
+					
+				
+					IBM Connections  4.5<br/>
+					
+				
+					IBM Connections  4.0<br/>
+					
+				
+					IBM Connections  3.0.1.1<br/>
+					
+				
+					IBM Connections  3.0.1.0<br/>
+					
+				
+					IBM Connections  3.0.1<br/>
+					
+				
+					IBM Connections  3.0<br/>
+					
+				
+					IBM Connections  2.5.0.3<br/>
+					
+				
+					IBM Connections  2.5.0.2 <br/>
+					
+				
+					IBM Connections  2.5.0.1<br/>
+					
+				
+					IBM Connections  2.5.0.0<br/>
+					
+				
+					IBM Connections  2.0.1.1<br/>
+					
+				
+					IBM Connections  2.0.0.0<br/>
+					
+				
+					IBM Cognos Business Intelligence 10.2.1 <br/>
+					
+				
+					IBM Cognos Business Intelligence 10.1.1 <br/>
+					
+				
+					IBM Cognos Business Intelligence  8.4.1<br/>
+					
+				
+					IBM Cognos Business Intelligence  10.2<br/>
+					
+				
+					IBM Cognos Business Intelligence  10.1<br/>
+					
+				
+					IBM Campaign  9.1<br/>
+					
+				
+					IBM Campaign  9.0<br/>
+					
+				
+					IBM Campaign  8.6<br/>
+					
+				
+					IBM Campaign  8.5<br/>
+					
+				
+					IBM Campaign  8.3<br/>
+					
+				
+					IBM Campaign  8.2<br/>
+					
+				
+					IBM Campaign  8.1<br/>
+					
+				
+					IBM Campaign  8.0<br/>
+					
+				
+					IBM Campaign  7.6<br/>
+					
+				
+					IBM Campaign  7.5<br/>
+					
+				
+					IBM Campaign  7.4<br/>
+					
+				
+					IBM Campaign  7.3<br/>
+					
+				
+					IBM Campaign  7.2<br/>
+					
+				
+					IBM Campaign  7.1<br/>
+					
+				
+					IBM Campaign  7.0<br/>
+					
+				
+					IBM Business Process Manager Standard 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Standard  8.5.0<br/>
+					
+				
+					IBM Business Process Manager Standard  8.0.x<br/>
+					
+				
+					IBM Business Process Manager Standard  7.5.0<br/>
+					
+				
+					IBM Business Process Manager Express 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Express  8.5.0<br/>
+					
+				
+					IBM Business Process Manager Express  8.0.0<br/>
+					
+				
+					IBM Business Process Manager Express  7.5.0<br/>
+					
+				
+					IBM Business Process Manager Advanced 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Advanced 8.5 <br/>
+					
+				
+					IBM Business Process Manager Advanced  8.5.0.1<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.1.2<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.1.1<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.1.2<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.1.1<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.0<br/>
+					
+				
+					IBM Application Manager for Smart Business  1.2.1<br/>
+					
+				
+					HP XP7 Global Link Manager Software  8.0.0-00 <br/>
+					
+				
+					HP XP7 Global Link Manager Software  7.6.0-02<br/>
+					
+				
+					HP XP7 Global Link Manager Software  6.4.0-00 <br/>
+					
+				
+					HP XP P9000 Tiered Storage Manager  8.0.0-06<br/>
+					
+				
+					HP XP P9000 Tiered Storage Manager  8.0.0-00 <br/>
+					
+				
+					HP XP P9000 Tiered Storage Manager  7.6.1-06<br/>
+					
+				
+					HP XP P9000 Tiered Storage Manager  1.1.0-00   <br/>
+					
+				
+					HP XP P9000 Replication Manager  8.0.0-06<br/>
+					
+				
+					HP XP P9000 Replication Manager  8.0.0-00 <br/>
+					
+				
+					HP XP P9000 Replication Manager  7.6.1-06<br/>
+					
+				
+					HP XP P9000 Replication Manager  6.0.0-00<br/>
+					
+				
+					HP XP P9000 Replication Manager  5.0.0-00 <br/>
+					
+				
+					HP SiteScope Monitors  11.32IP1<br/>
+					
+				
+					HP SiteScope Monitors  11.20<br/>
+					
+				
+					HP SiteScope  11.24<br/>
+					
+				
+					HP SiteScope  11.22<br/>
+					
+				
+					HP SiteScope  11.21<br/>
+					
+				
+					HP SiteScope  11.20<br/>
+					
+				
+					HP SiteScope  11.2<br/>
+					
+				
+					HP SiteScope  11.12<br/>
+					
+				
+					HP SiteScope  11.11<br/>
+					
+				
+					HP SiteScope  11.10<br/>
+					
+				
+					HP SiteScope  11.1<br/>
+					
+				
+					HP IceWall Configuration Manager  3.0<br/>
+					
+				
+					HP Device Manager  8.0.0-06<br/>
+					
+				
+					HP Device Manager  8.0.0-00 <br/>
+					
+				
+					HP Device Manager  7.6.1-06<br/>
+					
+				
+					HP Device Manager  1.0.0-00<br/>
+					
+				
+					Hitachi Tuning Manager Software 7.0 01 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 7.0 01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 7.0 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 7.0 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.4 02 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.4 02 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.4 01 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.4 01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.2 -01 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.2 -01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.2 -00 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.2 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.1 -00 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.1 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.0 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software 6.0 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-05 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-05 (Linux(SuSE<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-04 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-04 (Linux)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-03 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-03 (Linux)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-00 (Linux(SuSE<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.6.1-05 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.6.1-05 (Solaris) <br/>
+					
+				
+					Hitachi Tuning Manager Software  7.6.1-05 (Solaris(x6<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.6.1-05 (Solaris(SP<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.6.1-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.5.0-02<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.4.0-02 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.4.0-02 (Solaris(SP<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.4.0-02 (Linux)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.4.0-01 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.4.0-01 (Solaris(SP<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.4.0-01 (Linux)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.2.1-00<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.1.0-00 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.1.0 (Linux)<br/>
+					
+				
+					Hitachi Tuning Manager Software  7.0.0-00<br/>
+					
+				
+					Hitachi Tuning Manager Software  6.4.0-03 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  6.4.0-03 (Solaris(SP<br/>
+					
+				
+					Hitachi Tuning Manager Software  6.0.0 (Solaris) <br/>
+					
+				
+					Hitachi Tuning Manager Software  3.5.0 (windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.3 -00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.3 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.3 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.3 -00 (Linux(SLES))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.3 -00 (Linux(RHEL))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.1.1 -00(Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.1.1 -00(Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.1.1 -00(Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.1.1 -00(Linux(SLES))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.1.1 -00(Linux(RHEL))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 7.0 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -01 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -01 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -01 (Linux)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.2 -00 (Linux)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -01 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -01 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -01 (Linux)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1.1 -00 (Linux)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -01 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -01 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -01 (Linux)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software 6.1 -00 (Linux)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-05 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-05 (Linux(SuSE<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-00 (Linux(SuSE<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.6.1-05 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.6.1-05 (Solaris(x6<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.6.1-05 (Solaris(SP<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.6.1-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.5.0-02<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.2.1-00<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.1.1-00<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.1.0-00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.1.0-00 (Solaris(SP<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.1.0-00 (Linux(SLES<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.1.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.1-02 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.1-02 (linux(SLES<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.1-02 (linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.0-00 (Solaris(SP<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.0-00 (linux(SLES<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  7.0.0-00 (linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-08 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-08 (Solaris(SP<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-08 (Linux(SLES<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-08 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-07 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-07 (Solaris(SP<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-07 (linux(SLES<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.4.0-07 (linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.3.0-00 (linux(SLES<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.2.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  6.0.0-00 (Solaris(SP<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  0<br/>
+					
+				
+					Hitachi Raplication Manager Software  8.0.0-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Raplication Manager Software  8.0.0-00 (Linux(SuSE<br/>
+					
+				
+					Hitachi Raplication Manager Software  8.0.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Raplication Manager Software  7.6.1-05 (Windows)<br/>
+					
+				
+					Hitachi Raplication Manager Software  7.6.1-05 (Solaris(x6<br/>
+					
+				
+					Hitachi Raplication Manager Software  7.6.1-05 (Solaris(SP<br/>
+					
+				
+					Hitachi Raplication Manager Software  7.6.1-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-03 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-03 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-03 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-03 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-03 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-00 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-00 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  10-00-00 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-03 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-03 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-03 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-03 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-03 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-00 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-00 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-50-00 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-10 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-10 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-10 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-10 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-10 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-03<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-00 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-00 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10-00 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-10<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-12 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-12 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-12 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-12 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-12 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-08<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-07<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-02<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-01<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-00 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-00 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-00 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00-00<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  09-00<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-13 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-13 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-13 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-13 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-13 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-09<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-00 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-00 (HP-UX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50-00 (AIX)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-50<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-08 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-08 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-07<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-01<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11-00<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-11<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-10-08 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-10-08 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-10-07<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-10-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-10-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-10<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-12 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-12 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-11<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-03<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-02<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-00 (Linux)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00-00<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  08-00<br/>
+					
+				
+					Hitachi JP1/Performance Management - Web Console  0<br/>
+					
+				
+					Hitachi JP1/Performance Management - Manager Web Option  07-54 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Manager Web Option  07-54 (Solaris)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Manager Web Option  07-00 (Windows)<br/>
+					
+				
+					Hitachi JP1/Performance Management - Manager Web Option  07-00 (Solaris)<br/>
+					
+				
+					Hitachi Job Management Partner 1/Performance Management - Web Console  0<br/>
+					
+				
+					Hitachi Global Link Manager Software 6.6 -00 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software 6.5 -00 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software 6.2 -01 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software 6.2 -00 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software 6.1 -01 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software 6.1 -00 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software  8.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software  8.0.0-00 (Linux(SuSE<br/>
+					
+				
+					Hitachi Global Link Manager Software  8.0.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Global Link Manager Software  7.6.1-01 (Windows)<br/>
+					
+				
+					Hitachi Global Link Manager Software  7.6.1-01 (Solaris(x6<br/>
+					
+				
+					Hitachi Global Link Manager Software  7.6.1-01 (Solaris(SP<br/>
+					
+				
+					Hitachi Global Link Manager Software  7.6.1-01 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software 7.4 -00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 7.4 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 7.4 -00 (Linux(SLES))<br/>
+					
+				
+					Hitachi Device Manager Software 7.4 -00 (Linux(RHEL))<br/>
+					
+				
+					Hitachi Device Manager Software 7.3 -00(Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 7.3 -00(Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 7.3 -00(Linux(SLES))<br/>
+					
+				
+					Hitachi Device Manager Software 7.3 -00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 7.3 -00 (Linux(RHEL))<br/>
+					
+				
+					Hitachi Device Manager Software 7.0 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -02 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -02 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -02 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -02 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -01 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -01 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -01 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -01 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -00 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.2 -00 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -04 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -04 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -04 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -04 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -04 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -03 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -03 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -03 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -03 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -00 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1.1 -00 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -03 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -03 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -03 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -03 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -02 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -02 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -02 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -02 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -02 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -00 (Solaris(x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -00 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.1 -00 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -06 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -06 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -06 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -06 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -00 (Solaris(SPARC))<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -00 (Solaris (x64))<br/>
+					
+				
+					Hitachi Device Manager Software 6.0 -00 (Linux)<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-05 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-05 (Linux(SuSE<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-00 (Linux(SuSE<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  7.6.1-05 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  7.6.1-05 (Solaris(x6<br/>
+					
+				
+					Hitachi Device Manager Software  7.6.1-05 (Solaris(SP<br/>
+					
+				
+					Hitachi Device Manager Software  7.6.1-05 (Linux(SuSE<br/>
+					
+				
+					Hitachi Device Manager Software  7.6.1-05 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  7.5.0-02<br/>
+					
+				
+					Hitachi Device Manager Software  7.4.0-00 (Solaris(Op<br/>
+					
+				
+					Hitachi Device Manager Software  7.3.1 (windows)<br/>
+					
+				
+					Hitachi Device Manager Software  7.2.1-01<br/>
+					
+				
+					Hitachi Device Manager Software  7.2.1-00<br/>
+					
+				
+					Hitachi Device Manager Software  7.1.0-00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  7.1.0-00 (Solaris(SP<br/>
+					
+				
+					Hitachi Device Manager Software  7.1.0-00 (Linux(SLES<br/>
+					
+				
+					Hitachi Device Manager Software  7.1.0-00 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.1-02 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.1-02 (linux(SLES<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.1-02 (linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.0-00 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.0-00 (Solaris(SP<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.0-00 (linux(SLES<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.0-00 (linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  7.0.0-00<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-08 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-08 (Solaris(SP<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-08 (Linux(SLES<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-08 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-07 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-07 (Solaris(SP<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-07 (linux(SLES<br/>
+					
+				
+					Hitachi Device Manager Software  6.4.0-07 (linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  6.3.0-00 (linux(SLES<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+					
+				
+					F5 ARX 6.4 <br/>
+					
+				
+					F5 ARX 6.3 <br/>
+					
+				
+					F5 ARX 6.2 <br/>
+					
+				
+					F5 ARX 6.1.1 <br/>
+					
+				
+					F5 ARX 6.1 <br/>
+					
+				
+					F5 ARX 6.0 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Apache Struts 1.3.10 <br/>
+					
+				
+					Apache Struts 1.3.8 <br/>
+					
+				
+					Apache Struts 1.3.5 <br/>
+					
+				
+					Apache Struts 1.2.9 <br/>
+					
+				
+					Apache Struts 1.2.8 <br/>
+					
+				
+					Apache Struts 1.2.7 <br/>
+					
+				
+					Apache Struts 1.2.4 <br/>
+					
+				
+					Apache Struts 1.1 <br/>
+					
+				
+					Apache Struts 1.0.2 <br/>
+					
+				
+					Apache Struts  1.2.6<br/>
+					
+				
+					Apache Struts  1.2.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare vCenter Server  5.5 Update 2<br/>
+					
+				
+					NTT DATA Corporation TERASOLUNA Server Framework for Java  2.0.5.2<br/>
+					
+				
+					Juniper Security Threat Response Manager  2013.2R8<br/>
+					
+				
+					Juniper Security Threat Response Manager  2012.1R7<br/>
+					
+				
+					Juniper Secure Analytics  2014.2R2<br/>
+					
+				
+					Juniper Secure Analytics  2013.2R8<br/>
+					
+				
+					Juniper Secure Analytics  2012.1R7<br/>
+					
+				
+					HP SiteScope  11.24.271<br/>
+					
+				
+					HP SiteScope  11.13<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-06 (Windows)<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-06 (Linux(SuSE<br/>
+					
+				
+					Hitachi Tuning Manager Software  8.0.0-06 (Linux(RHEL<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-06 (Windows)<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-06 (Linux(SuSE<br/>
+					
+				
+					Hitachi Tiered Storage Manager Software  8.0.0-06 (Linux(RHEL<br/>
+					
+				
+					Hitachi Raplication Manager Software  8.0.0-06 (Linux(SuSE<br/>
+					
+				
+					Hitachi Raplication Manager Software  8.0.0-06 (Linux(RHEL<br/>
+					
+				
+					Hitachi Global Link Manager Software  8.0.0-01 (Linux(SuSE<br/>
+					
+				
+					Hitachi Global Link Manager Software  8.0.0-01 (Linux(RHEL<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-06 (Windows)<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-06 (Linux(SuSE<br/>
+					
+				
+					Hitachi Device Manager Software  8.0.0-06 (Linux(RHEL<br/>
+					
+				
+					Apache Struts  2.3.16.2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use readily available tools to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

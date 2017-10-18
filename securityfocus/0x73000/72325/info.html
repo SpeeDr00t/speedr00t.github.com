@@ -1,0 +1,3442 @@
+#SpeeDr00t@Black Falcon<br>#bid72325<p><b><span style="font-size: 18pt;">GNU glibc CVE-2015-0235 Remote Heap Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/72325/info">info</a><br><a href="http://www.securityfocus.com/bid/72325/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/72325/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/72325/solution">solution</a><br><a href="http://www.securityfocus.com/bid/72325/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				72325
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-0235<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 27 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 26 2016 08:14AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Qualys
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xerox WorkCentre 7970  0<br/>
+					
+				
+					Xerox WorkCentre 3655  0<br/>
+					
+				
+					Xerox WorkCentre  7855 <br/>
+					
+				
+					Xerox WorkCentre  7845<br/>
+					
+				
+					Xerox WorkCentre  7835<br/>
+					
+				
+					Xerox WorkCentre  7830<br/>
+					
+				
+					Xerox WorkCentre  7225<br/>
+					
+				
+					Xerox WorkCentre  7220<br/>
+					
+				
+					Xerox WorkCentre  6655<br/>
+					
+				
+					Xerox WorkCentre  5890<br/>
+					
+				
+					Xerox WorkCentre  5875<br/>
+					
+				
+					Xerox WorkCentre  5865<br/>
+					
+				
+					Xerox WorkCentre  5855<br/>
+					
+				
+					Xerox WorkCentre  5845<br/>
+					
+				
+					Xerox ColorQube  9393<br/>
+					
+				
+					Xerox ColorQube  9303<br/>
+					
+				
+					Xerox ColorQube  9302<br/>
+					
+				
+					Xerox ColorQube  9301<br/>
+					
+				
+					Xerox ColorQube  8900<br/>
+					
+				
+					Xerox ColorQube  8700<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Software Development Kit  11 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server 11 SP2 LTSS  0<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3 for VMware<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1 LTSS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4 LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Desktop  11 SP3<br/>
+					
+				
+					Splunk Splunk Enterprise  6.2<br/>
+					
+				
+					Splunk Splunk Enterprise  6.1<br/>
+					
+				
+					Splunk Splunk Enterprise  6.0<br/>
+					
+				
+					Splunk Splunk Enterprise  5.0<br/>
+					
+				
+					Splunk MINT  0<br/>
+					
+				
+					Splunk Hunk  6.2<br/>
+					
+				
+					Splunk Hunk  6.1<br/>
+					
+				
+					Splunk Hunk  6.0<br/>
+					
+				
+					Splunk Cloud  0<br/>
+					
+				
+					Splunk App for VMware 3.1.3 <br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Slackware Slackware Linux  13.37<br/>
+					
+				
+					Slackware Slackware Linux  13.1<br/>
+					
+				
+					Slackware Slackware Linux  13.0<br/>
+					
+				
+					Siemens SINUMERIK 840D sl  4.7<br/>
+					
+				
+					Siemens SINUMERIK 828D  4.7<br/>
+					
+				
+					Siemens SINUMERIK 808D  4.7<br/>
+					
+				
+					Siemens SIMATIC HMI Panels  0<br/>
+					
+				
+					Siemens Ruggedcom APE1404-C01  0<br/>
+					
+				
+					Siemens Ruggedcom APE 1404  0<br/>
+					
+				
+					Siemens Ruggedcom APE 1402-C01  0<br/>
+					
+				
+					Siemens Ruggedcom APE 1402  0<br/>
+					
+				
+					S.u.S.E. openSUSE  12.3<br/>
+					
+				
+					Redhat Enterprise Linux ES  4<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux AS  4<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Polycom Video Border Proxy (VBP)  0<br/>
+					
+				
+					Polycom UC Phones â?? VVX  0<br/>
+					
+				
+					Polycom RSS 4000  0<br/>
+					
+				
+					Polycom RealPresence Resource Manager (RPRM)  0<br/>
+					
+				
+					Polycom RealPresence Collaboration Server (RMX)  0<br/>
+					
+				
+					Polycom Platform Director  0<br/>
+					
+				
+					Polycom HDX  0<br/>
+					
+				
+					Polycom Distributed Media Application (DMA)  0<br/>
+					
+				
+					Polycom Content Sharing Suite Client/Server  0<br/>
+					
+				
+					Polycom CloudAXIS WSP  0<br/>
+					
+				
+					Polycom Capture Server  0<br/>
+					
+				
+					Pexip AS Infinity  8<br/>
+					
+				
+					Pexip AS Infinity  7<br/>
+					
+				
+					Pexip AS Infinity  6<br/>
+					
+				
+					Pexip AS Infinity  5<br/>
+					
+				
+					Pexip AS Infinity  4<br/>
+					
+				
+					Pexip AS Infinity  3<br/>
+					
+				
+					Pexip AS Infinity  2<br/>
+					
+				
+					Pexip AS Infinity  1<br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.6 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.2 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.15 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.14 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.8 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.7 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.6 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.16 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.15 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.14 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.13 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.2 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.8 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.7 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.6 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 4.0.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 3.1.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 3.1.11 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 3.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 3.1.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.1.2<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.0.8<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.0<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.1.5<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.1.4<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.0.2<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.0.16<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.0.1<br/>
+					
+				
+					Paloaltonetworks PAN-OS  4.1.11<br/>
+					
+				
+					Paloaltonetworks PAN-OS  4.1<br/>
+					
+				
+					Paloaltonetworks PAN-OS  4.0.14<br/>
+					
+				
+					Paloaltonetworks PAN-OS  4.0<br/>
+					
+				
+					Paloaltonetworks PAN-OS  3.1<br/>
+					
+				
+					Oracle Switch ES1-24  1.3<br/>
+					
+				
+					Oracle Sun Network QDR InfiniBand Gateway Switch  0<br/>
+					
+				
+					Oracle Sun Network 10GE Switch 72p  0<br/>
+					
+				
+					Oracle Sun Data Center InfiniBand Switch 36  0<br/>
+					
+				
+					Oracle Sun Blade 6000 Ethernet Switched NEM 24P 10GE  0<br/>
+					
+				
+					Oracle SPARC Enterprise M9000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M9000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M8000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M8000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M8000  0<br/>
+					
+				
+					Oracle SPARC Enterprise M5000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M5000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M5000  0<br/>
+					
+				
+					Oracle SPARC Enterprise M4000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M4000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M4000  0<br/>
+					
+				
+					Oracle SPARC Enterprise M3000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M3000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M3000  0<br/>
+					
+				
+					Oracle Integrated Lights Out Manager 3.2.4 <br/>
+					
+				
+					Oracle Integrated Lights Out Manager 3.2.3 <br/>
+					
+				
+					Oracle Integrated Lights Out Manager  0<br/>
+					
+				
+					Oracle Fujitsu M10-4S Server  XCP 2230<br/>
+					
+				
+					Oracle Fujitsu M10-4 Server  XCP 2230<br/>
+					
+				
+					Oracle Fujitsu M10-1 Server  XCP 2230<br/>
+					
+				
+					Oracle FS1-2 Flash Storage System  6.3<br/>
+					
+				
+					Oracle FS1-2 Flash Storage System  6.2<br/>
+					
+				
+					Oracle FS1-2 Flash Storage System  6.1<br/>
+					
+				
+					Oracle Exalogic Infrastructure  2.0<br/>
+					
+				
+					Oracle Exalogic Infrastructure  1.0<br/>
+					
+				
+					Oracle Ethernet Switch ES2-72 1.9.1 <br/>
+					
+				
+					Oracle Ethernet Switch ES2-64 1.9.1 <br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Enterprise Linux  4<br/>
+					
+				
+					Oracle Communications Session Border Controller  0<br/>
+					
+				
+					Oracle Communications Policy Management 12.1.1 <br/>
+					
+				
+					Oracle Communications Policy Management 10.4.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.9.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.7.3 <br/>
+					
+				
+					Oracle Communications LSMS  13.1<br/>
+					
+				
+					Oracle Communications EAGLE LNP Application Processor  10.0<br/>
+					
+				
+					Oracle Communications EAGLE Application Processor  16.0<br/>
+					
+				
+					openSUSE openSUSE  12.3<br/>
+					
+				
+					openSUSE Evergreen  11.4<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.2 <br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Juniper JUNOS Space  0<br/>
+					
+				
+					Juniper CTPView  0<br/>
+					
+				
+					Juniper CTP  0<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.4<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.3<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.2<br/>
+					
+				
+					IBM XIV Storage System 2810 11.5.1 <br/>
+					
+				
+					IBM XIV Storage System 2810 11.4.1 a<br/>
+					
+				
+					IBM XIV Storage System 2810 11.4.1 <br/>
+					
+				
+					IBM XIV Storage System 2810 11.3.1 <br/>
+					
+				
+					IBM XIV Storage System 2810 11.3 a<br/>
+					
+				
+					IBM XIV Storage System 2810 11.3 <br/>
+					
+				
+					IBM XIV Storage System 2810  11.4<br/>
+					
+				
+					IBM XIV Storage System 2810  10.2.4.e-7<br/>
+					
+				
+					IBM XIV Storage System 2810  10.2.4.e-6<br/>
+					
+				
+					IBM Workload Deployer 3.1 7<br/>
+					
+				
+					IBM Workload Deployer 3.1 6<br/>
+					
+				
+					IBM Workload Deployer 3.1 2<br/>
+					
+				
+					IBM Workload Deployer 3.1 1<br/>
+					
+				
+					IBM Workload Deployer  3.1<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4.1 2<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4.1 1<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4.1 0<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4 4<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4 3<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4 2<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4 1<br/>
+					
+				
+					IBM WebSphere Transformation Extender 8.4 0<br/>
+					
+				
+					IBM WebSphere Transformation Extender  8.4.0.5<br/>
+					
+				
+					IBM WebSphere DataPower XC10 Appliance  2.5<br/>
+					
+				
+					IBM WebSphere DataPower XC10 Appliance  2.1<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 7.0 <br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.4 1<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.4 0<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.3 2<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.3 1<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.1 9<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.1 6<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.1 3<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.1 15<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.1 12<br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration 6.0 <br/>
+					
+				
+					IBM WebSphere Cast Iron Cloud Integration  6.0.0.1<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.6.0<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.4.1<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.4.0<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.3.2<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.3.1<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.3.0<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.2.1<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.2.0<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.1.1<br/>
+					
+				
+					IBM Systems Director Storage Control  4.2.1.0<br/>
+					
+				
+					IBM Systems Director 6.3.2 0<br/>
+					
+				
+					IBM Systems Director  6.3.5.0<br/>
+					
+				
+					IBM Systems Director  6.3.3.1<br/>
+					
+				
+					IBM Systems Director  6.3.3.0<br/>
+					
+				
+					IBM Systems Director  6.3.2.2<br/>
+					
+				
+					IBM Systems Director  6.3.2.1<br/>
+					
+				
+					IBM Systems Director  6.3.1.1<br/>
+					
+				
+					IBM Systems Director  6.3.1.0<br/>
+					
+				
+					IBM Systems Director  6.3.0.0<br/>
+					
+				
+					IBM Systems Director  6.2.1.2<br/>
+					
+				
+					IBM Systems Director  6.2.1.0<br/>
+					
+				
+					IBM System X  0<br/>
+					
+				
+					IBM SmartCloud Provisioning 2.1 3<br/>
+					
+				
+					IBM SmartCloud Provisioning 2.1 2<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.1<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1<br/>
+					
+				
+					IBM Smart Analytics System 7710  9.7<br/>
+					
+				
+					IBM Smart Analytics System 7700  9.7<br/>
+					
+				
+					IBM Smart Analytics System 7600  9.7<br/>
+					
+				
+					IBM Security Virtual Server Protection for VMware 1.1.1 <br/>
+					
+				
+					IBM Security Virtual Server Protection for VMware  1.1.0.1<br/>
+					
+				
+					IBM Security Virtual Server Protection for VMware  1.1<br/>
+					
+				
+					IBM Security Proventia Network Enterprise Scanner  2.3<br/>
+					
+				
+					IBM Security Privileged Identity Manager 2.0 <br/>
+					
+				
+					IBM Security Privileged Identity Manager  1.0.1.1<br/>
+					
+				
+					IBM Security Privileged Identity Manager  1.0.1<br/>
+					
+				
+					IBM Security Network Protection  5.3<br/>
+					
+				
+					IBM Security Network Protection  5.2.0<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.6.1<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.3<br/>
+					
+				
+					IBM Security Identity Manager  7.0<br/>
+					
+				
+					IBM Security Identity Governance  5.1<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0<br/>
+					
+				
+					IBM SDN for Virtual Environments 1.2.2 <br/>
+					
+				
+					IBM SDN for Virtual Environments  1.2<br/>
+					
+				
+					IBM SDN for Virtual Environments  1.1<br/>
+					
+				
+					IBM SDN for Virtual Environments  1.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage 1.5.1 <br/>
+					
+				
+					IBM Scale Out Network Attached Storage 1.3.2 <br/>
+					
+				
+					IBM Scale Out Network Attached Storage 1.3.1 <br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.3.4<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.3.3<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.3.2<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.3.1<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.3.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.2.1<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.2.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.1.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.4.0.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.3.2.3<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.3.2.2<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.3.0.5<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.3.0.4<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.3.0.0<br/>
+					
+				
+					IBM Real-time Compression Appliance 3.8 <br/>
+					
+				
+					IBM Real-time Compression Appliance  4.1<br/>
+					
+				
+					IBM Real-time Compression Appliance  3.9<br/>
+					
+				
+					IBM QRadar Vulnerability Manager 7.2.4 Patch 3<br/>
+					
+				
+					IBM QRadar Vulnerability Manager  7.2.4<br/>
+					
+				
+					IBM QRadar SIEM 7.2.4 Patch 3<br/>
+					
+				
+					IBM QRadar SIEM 7.2.4 Patch 1<br/>
+					
+				
+					IBM QRadar SIEM 7.2.3 Patch 4<br/>
+					
+				
+					IBM QRadar SIEM 7.2.3 <br/>
+					
+				
+					IBM QRadar SIEM  7.1 MR2 Patch 9<br/>
+					
+				
+					IBM QRadar SIEM  7.1 MR2 Patch 8<br/>
+					
+				
+					IBM QRadar SIEM  7.1 MR2<br/>
+					
+				
+					IBM QRadar Risk Manager 7.2.4 Patch 3<br/>
+					
+				
+					IBM QRadar Risk Manager  7.2.4<br/>
+					
+				
+					IBM QRadar Risk Manager  7.1 MR2 Patch 9<br/>
+					
+				
+					IBM QRadar Risk Manager  7.1 MR2 Patch 8<br/>
+					
+				
+					IBM QRadar Risk Manager  7.1 MR2<br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2.4 Patch 1<br/>
+					
+				
+					IBM PureData System for Operational Analytics A1791  1.0<br/>
+					
+				
+					IBM PureApplication System  2.0<br/>
+					
+				
+					IBM PureApplication System  1.1<br/>
+					
+				
+					IBM PureApplication System  1.0<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Power HMC  8.8.2.0<br/>
+					
+				
+					IBM Power HMC  8.8.1.0<br/>
+					
+				
+					IBM Power HMC  7.7.9.0<br/>
+					
+				
+					IBM Power HMC  7.7.8.0<br/>
+					
+				
+					IBM Power HMC  7.7.7.0<br/>
+					
+				
+					IBM Power HMC  7.7.3.0<br/>
+					
+				
+					IBM Netezza Host Management  5.3.2.0<br/>
+					
+				
+					IBM Messagesight  1.2<br/>
+					
+				
+					IBM Messagesight  1.1<br/>
+					
+				
+					IBM InfoSphere Guardium  9.1<br/>
+					
+				
+					IBM InfoSphere Guardium  9.0<br/>
+					
+				
+					IBM InfoSphere Guardium  8.2<br/>
+					
+				
+					IBM IBM Security Access Manager for Enterprise Single Sign-On  8.2<br/>
+					
+				
+					IBM Hyper-Scale Manager Virtual Appliance  0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 <br/>
+					
+				
+					IBM Flex System Manager 1.2.1 <br/>
+					
+				
+					IBM Flex System Manager 1.2 <br/>
+					
+				
+					IBM Flex System Manager 1.1 <br/>
+					
+				
+					IBM Flex System Manager  1.3.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0<br/>
+					
+				
+					IBM Flex System IB6131 40Gb Infiniband Switch 3.4.1110 <br/>
+					
+				
+					IBM Flex System IB6131 40Gb Infiniband Switch 3.4 <br/>
+					
+				
+					IBM Flex System EN6131 40Gb Ethernet Switch 3.4.1110 <br/>
+					
+				
+					IBM Flex System EN6131 40Gb Ethernet Switch 3.4 <br/>
+					
+				
+					IBM DS8870  7.3<br/>
+					
+				
+					IBM DS8870  7.2<br/>
+					
+				
+					IBM DS8870  7.1<br/>
+					
+				
+					IBM DS8870  7.0<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.2<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.4<br/>
+					
+				
+					IBM DataPower Gateway  6.0.1.7<br/>
+					
+				
+					IBM DataPower Gateway  6.0.0.11<br/>
+					
+				
+					IBM API Management 3.0 <br/>
+					
+				
+					HP Virtualization Performance Viewer  2.10<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.01<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.0<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.2<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.1<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.0<br/>
+					
+				
+					HP ThinPro Linux (x86)  5.1<br/>
+					
+				
+					HP ThinPro Linux (x86)  5.0<br/>
+					
+				
+					HP ThinPro Linux (x86)  4.4<br/>
+					
+				
+					HP ThinPro Linux (x86)  4.3<br/>
+					
+				
+					HP ThinPro Linux (x86)  4.2<br/>
+					
+				
+					HP ThinPro Linux (x86)  4.1<br/>
+					
+				
+					HP ThinPro Linux (ARM)  4.4<br/>
+					
+				
+					HP ThinPro Linux (ARM)  4.3<br/>
+					
+				
+					HP ThinPro Linux (ARM)  4.2<br/>
+					
+				
+					HP ThinPro Linux (ARM)  4.1<br/>
+					
+				
+					HP Operations Manager i  10.00<br/>
+					
+				
+					HP Operations Analytics  2.2<br/>
+					
+				
+					HP Operations Analytics  2.1<br/>
+					
+				
+					HP Operations Analytics  2.0<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.14<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.13<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.12<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.11<br/>
+					
+				
+					HP Mobility Software  6.5.3.0<br/>
+					
+				
+					HP Mobility Software  6.4.0.0<br/>
+					
+				
+					HP Matrix Operating Environment  0<br/>
+					
+				
+					HP IceWall SSO Dfw  8.0 R3<br/>
+					
+				
+					HP IceWall SSO Dfw  8.0 R2<br/>
+					
+				
+					HP IceWall SSO Dfw  8.0 R1<br/>
+					
+				
+					HP IceWall SSO Dfw  8.0<br/>
+					
+				
+					HP Helion Application Lifecycle Service (ALS) for Linux  1.0.1.10<br/>
+					
+				
+					GNU glibc 2.12.2 <br/>
+					
+				
+					GNU glibc 2.12.1 <br/>
+					
+				
+					GNU glibc 2.11.2 <br/>
+					
+				
+					GNU glibc 2.11.1 <br/>
+					
+				
+					GNU glibc 2.10.1 <br/>
+					
+				
+					GNU glibc 2.5 <br/>
+					
+				
+					GNU glibc 2.3.10 <br/>
+					
+				
+					GNU glibc 2.3.4 <br/>
+					
+				
+					GNU glibc 2.3.3 <br/>
+					
+				
+					GNU glibc 2.3.2 <br/>
+					
+				
+					GNU glibc 2.3.1 <br/>
+					
+				
+					GNU glibc 2.3 <br/>
+					
+				
+					GNU glibc 2.2.5 <br/>
+					
+				
+					GNU glibc 2.2.4 <br/>
+					
+				
+					GNU glibc 2.2.3 <br/>
+					
+				
+					GNU glibc 2.2.2 <br/>
+					
+				
+					GNU glibc 2.2.1 <br/>
+					
+				
+					GNU glibc 2.2 <br/>
+					
+				
+					GNU glibc  2.9<br/>
+					
+				
+					GNU glibc  2.8<br/>
+					
+				
+					GNU glibc  2.7<br/>
+					
+				
+					GNU glibc  2.6.1<br/>
+					
+				
+					GNU glibc  2.6<br/>
+					
+				
+					GNU glibc  2.5.1<br/>
+					
+				
+					GNU glibc  2.4<br/>
+					
+				
+					GNU glibc  2.3.6<br/>
+					
+				
+					GNU glibc  2.3.5<br/>
+					
+				
+					GNU glibc  2.21<br/>
+					
+				
+					GNU glibc  2.20<br/>
+					
+				
+					GNU glibc  2.17<br/>
+					
+				
+					GNU glibc  2.16<br/>
+					
+				
+					GNU glibc  2.15<br/>
+					
+				
+					GNU glibc  2.14.1<br/>
+					
+				
+					GNU glibc  2.14<br/>
+					
+				
+					GNU glibc  2.13<br/>
+					
+				
+					GNU glibc  2.12<br/>
+					
+				
+					GNU glibc  2.11.3<br/>
+					
+				
+					GNU glibc  2.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Fortinet FortiWAN  0<br/>
+					
+				
+					Fortinet FortiVoice  3.0<br/>
+					
+				
+					Fortinet FortiVoice  200D<br/>
+					
+				
+					Fortinet FortiSwitch  0<br/>
+					
+				
+					Fortinet FortiSanbbox  0<br/>
+					
+				
+					Fortinet FortiRecorder 1.5 <br/>
+					
+				
+					Fortinet FortiRecorder 1.4.2 <br/>
+					
+				
+					Fortinet FortiRecorder 1.4.1 <br/>
+					
+				
+					Fortinet FortiManager  0<br/>
+					
+				
+					Fortinet FortiMail  0<br/>
+					
+				
+					Fortinet FortiDDoS  0<br/>
+					
+				
+					Fortinet FortiCache  0<br/>
+					
+				
+					Fortinet FortiAuthenticator  0<br/>
+					
+				
+					Fortinet FortiAnalyzer  0<br/>
+					
+				
+					Fortinet FortiADC-D  0<br/>
+					
+				
+					Fortinet AscenLink  7.1-B5745<br/>
+					
+				
+					Fortinet AscenLink  7.1-B5599<br/>
+					
+				
+					Fortinet AscenLink  7.0<br/>
+					
+				
+					F5 Traffix-SDC 4.1 <br/>
+					
+				
+					F5 Traffix-SDC 4.0.5 <br/>
+					
+				
+					F5 Traffix-SDC 4.0 <br/>
+					
+				
+					F5 Traffix-SDC 3.5.2 <br/>
+					
+				
+					F5 Traffix-SDC 3.4.1 <br/>
+					
+				
+					F5 Traffix-SDC 3.4 <br/>
+					
+				
+					F5 Traffix-SDC 3.3.2 <br/>
+					
+				
+					F5 Enterprise Manager 3.1.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.0 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+					
+				
+					F5 Enterprise Manager 2.2 <br/>
+					
+				
+					F5 Enterprise Manager 2.1 <br/>
+					
+				
+					F5 Enterprise Manager  2.1.0-HF2<br/>
+					
+				
+					F5 BIG-IQ Security 4.3 <br/>
+					
+				
+					F5 BIG-IQ Security 4.2 <br/>
+					
+				
+					F5 BIG-IQ Security 4.1 <br/>
+					
+				
+					F5 BIG-IQ Security 4.0 <br/>
+					
+				
+					F5 BIG-IQ Device 4.5 <br/>
+					
+				
+					F5 BIG-IQ Device 4.3 <br/>
+					
+				
+					F5 BIG-IQ Device 4.2 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.5 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.3 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.2 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.1 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.0 <br/>
+					
+				
+					F5 BIG-IP WOM 11.2 <br/>
+					
+				
+					F5 BIG-IP WOM 11.0 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP WOM 10.1 <br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0<br/>
+					
+				
+					F5 BIG-IP WOM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP PEM 11.5 <br/>
+					
+				
+					F5 BIG-IP PEM 11.3 <br/>
+					
+				
+					F5 BIG-IP PEM  11.6.0<br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1<br/>
+					
+				
+					F5 BIG-IP PEM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP LTM 11.5 <br/>
+					
+				
+					F5 BIG-IP LTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.0 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP LTM  11.6.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.5<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  10.1.0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0-HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0-HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Link Controller  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5 <br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 <br/>
+					
+				
+					F5 BIG-IP GTM 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP GTM  11.6.0<br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP GTM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  10.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0-HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0-HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.0.0-HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.0.0-HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.3-HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0 HF2  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.2.4  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP ASM  11.6.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP ASM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  10.1.0<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.0 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP APM  11.6.0<br/>
+					
+				
+					F5 BIG-IP APM  11.5.0<br/>
+					
+				
+					F5 BIG-IP APM  11.4.1<br/>
+					
+				
+					F5 BIG-IP APM  11.4.0<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0<br/>
+					
+				
+					F5 BIG-IP APM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  10.2.1<br/>
+					
+				
+					F5 BIG-IP APM  10.1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 <br/>
+					
+				
+					F5 BIG-IP Analytics  11.6.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0-HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5 <br/>
+					
+				
+					F5 BIG-IP AFM 11.3 <br/>
+					
+				
+					F5 BIG-IP AFM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AFM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+					
+				
+					F5 ARX 6.4 <br/>
+					
+				
+					F5 ARX 6.3 <br/>
+					
+				
+					F5 ARX 6.2 <br/>
+					
+				
+					F5 ARX 6.1.1 <br/>
+					
+				
+					F5 ARX 6.1 <br/>
+					
+				
+					F5 ARX 6.0 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Cisco Wireless Security Gateway  0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5 Base<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0MR2<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco WebEx Meeting Center  0<br/>
+					
+				
+					Cisco Virtual Security Gateway for Microsoft Hyper-V  0<br/>
+					
+				
+					Cisco Videoscape Distribution Suite Transparent Caching  0<br/>
+					
+				
+					Cisco Videoscape Conductor  0<br/>
+					
+				
+					Cisco Videoscape Back Office (VBO)  0<br/>
+					
+				
+					Cisco Unified SIP Proxy  0<br/>
+					
+				
+					Cisco Unified Contact Center Express  0<br/>
+					
+				
+					Cisco Unified Communications Manager Session Management Edition (SME)  0<br/>
+					
+				
+					Cisco Unified Communications Manager IM and Presence Service  0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM) 10.0  0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  9.0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  8.0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  7.0<br/>
+					
+				
+					Cisco UCS Manager  0<br/>
+					
+				
+					Cisco Telepresence Video Communication Server  0<br/>
+					
+				
+					Cisco TelePresence TX 9000 Series  0<br/>
+					
+				
+					Cisco TelePresence TE Software (for E20 - EoL)  0<br/>
+					
+				
+					Cisco TelePresence System 3000 Series  0<br/>
+					
+				
+					Cisco TelePresence System 1300  0<br/>
+					
+				
+					Cisco TelePresence System  500-37<br/>
+					
+				
+					Cisco TelePresence System  500-32<br/>
+					
+				
+					Cisco TelePresence System  1100<br/>
+					
+				
+					Cisco TelePresence System  1000<br/>
+					
+				
+					Cisco TelePresence SX Series  0<br/>
+					
+				
+					Cisco Telepresence Recording Server  0<br/>
+					
+				
+					Cisco TelePresence Profile Series  0<br/>
+					
+				
+					Cisco TelePresence MX Series  0<br/>
+					
+				
+					Cisco TelePresence Integrator C Series  0<br/>
+					
+				
+					Cisco TelePresence Exchange System (CTX)  0<br/>
+					
+				
+					Cisco TelePresence EX Series  0<br/>
+					
+				
+					Cisco TelePresence Conductor  0<br/>
+					
+				
+					Cisco TelePresence 1310  0<br/>
+					
+				
+					Cisco Sunstone XRv-64 VRP  0<br/>
+					
+				
+					Cisco Standalone rack server CIMC  0<br/>
+					
+				
+					Cisco SocialMiner  0<br/>
+					
+				
+					Cisco Smart Call Home  0<br/>
+					
+				
+					Cisco Small Cell factory recovery root filesystem  2.99.4<br/>
+					
+				
+					Cisco SLIM  0<br/>
+					
+				
+					Cisco Show and Share  0<br/>
+					
+				
+					Cisco Secure ACS 5.4 46.5<br/>
+					
+				
+					Cisco Prime Service Catalog Virtual Appliance  0<br/>
+					
+				
+					Cisco Prime Optical for SPs  0<br/>
+					
+				
+					Cisco Prime Network Service Controller (PNSC)  0<br/>
+					
+				
+					Cisco Prime Infrastructure Plug and Play Gateway Server  0<br/>
+					
+				
+					Cisco Prime Infrastructure  2.2<br/>
+					
+				
+					Cisco Prime Infrastructure  -<br/>
+					
+				
+					Cisco Prime Data Center Network Manager  0<br/>
+					
+				
+					Cisco PowerVu D9190 Conditional Access Manager (PCAM)  0<br/>
+					
+				
+					Cisco Physical Access Manager  0<br/>
+					
+				
+					Cisco OnePK All-in-One VM  0<br/>
+					
+				
+					Cisco Nexus 7000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 5000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 3000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 2000 Series FEX  0<br/>
+					
+				
+					Cisco Network Performance Analytics (NPA)  0<br/>
+					
+				
+					Cisco Network Analysis Module  0<br/>
+					
+				
+					Cisco Multicast Manager  0<br/>
+					
+				
+					Cisco MMP server  0<br/>
+					
+				
+					Cisco MeetingPlace  <br/>
+					
+				
+					Cisco MDS Fiber Channel Switch  6.2<br/>
+					
+				
+					Cisco MDS Fiber Channel Switch  5.2<br/>
+					
+				
+					Cisco MDS 9710 Director  0<br/>
+					
+				
+					Cisco MDS 9706 Director  0<br/>
+					
+				
+					Cisco MDS 9513 Multiplayer Director  0<br/>
+					
+				
+					Cisco MDS 9509 Multilayer Director  0<br/>
+					
+				
+					Cisco MDS 9506 Multilayer Director  0<br/>
+					
+				
+					Cisco MDS 9250i Multilayer Fabric Switch  0<br/>
+					
+				
+					Cisco MDS 9222i Multilayer Fabric Switch  0<br/>
+					
+				
+					Cisco MDS 9148S Switch  0<br/>
+					
+				
+					Cisco MDS 9134 Fabric Switch  0<br/>
+					
+				
+					Cisco MDS 9124 Fabric Switch  0<br/>
+					
+				
+					Cisco MDS 9000 Series Multilayer Switches  0<br/>
+					
+				
+					Cisco Jabber Guest  10.0(2)<br/>
+					
+				
+					Cisco IOS-XR for Cisco Network Convergence System (NCS) 6000  0<br/>
+					
+				
+					Cisco IOS-XE for ISR4400  0<br/>
+					
+				
+					Cisco IOS-XE for CSR1000v  0<br/>
+					
+				
+					Cisco IOS-XE for Catalyst AIR-CT5760  0<br/>
+					
+				
+					Cisco IOS-XE for Catalyst 4k  0<br/>
+					
+				
+					Cisco IOS-XE for Catalyst 3k  0<br/>
+					
+				
+					Cisco IOS-XE for Catalyst 3k   4k<br/>
+					
+				
+					Cisco IOS-XE for ASR903  0<br/>
+					
+				
+					Cisco IOS-XE for ASR1k  0<br/>
+					
+				
+					Cisco Intercloud Fabric  0<br/>
+					
+				
+					Cisco Intelligent Automation for Cloud  0<br/>
+					
+				
+					Cisco Identity Services Engine (ISE)  0<br/>
+					
+				
+					Cisco Hosted Collaboration Mediation Fulfillment (HCM-F)  0<br/>
+					
+				
+					Cisco Expressway series  0<br/>
+					
+				
+					Cisco Edge 340 Digital Media Player  0<br/>
+					
+				
+					Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco Digital Media Player(DMP) 4400  0<br/>
+					
+				
+					Cisco Digital Media Player(DMP) 4310  0<br/>
+					
+				
+					Cisco Digital Media Manager (DMM)  0<br/>
+					
+				
+					Cisco DCM Series 9900-Digital Content Manager  0<br/>
+					
+				
+					Cisco D9036 Modular Encoding Platform  0<br/>
+					
+				
+					Cisco Content Security Appliance Updater Servers  0<br/>
+					
+				
+					Cisco Connected Grid Routers (CGR)  0<br/>
+					
+				
+					Cisco Cloud Object Store (COS)  0<br/>
+					
+				
+					Cisco Cisco WebEx Node  0<br/>
+					
+				
+					Cisco Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco ASR 5000 Series  0<br/>
+					
+				
+					Cisco Application Networking Manager (ANM)  0<br/>
+					
+				
+					Cisco Agent Desktop for Cisco Unified Contact Center Express  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Module ACE20  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Module ACE10  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Module (ACE30)  0<br/>
+					
+				
+					Cisco ACE 4700 Series Application Control Engine  0<br/>
+					
+				
+					Cisco ACE 4700 Application Control Engine  0<br/>
+					
+				
+					Cisco ACE 30 Application Control Engine Module  0<br/>
+					
+				
+					Cisco ACE 10 &amp; 20 Application Control Engine Module  0<br/>
+					
+				
+					Cisco 5020 Switch  0<br/>
+					
+				
+					Cisco 5010 Switch  0<br/>
+					
+				
+					Check Point Software VSX  R67<br/>
+					
+				
+					Check Point Software VSX  R65.20<br/>
+					
+				
+					Check Point Software VSX  0<br/>
+					
+				
+					Check Point Software Security Management  R75.20<br/>
+					
+				
+					Check Point Software Security Management  R75.10<br/>
+					
+				
+					Check Point Software Security Management  R71.40 <br/>
+					
+				
+					Check Point Software Security Management  R71.30<br/>
+					
+				
+					Check Point Software Security Management  R70.40<br/>
+					
+				
+					Check Point Software Security Management  R65.70<br/>
+					
+				
+					Check Point Software Security Management  0<br/>
+					
+				
+					Check Point Software Security Gateway 80  R75.20.4<br/>
+					
+				
+					Check Point Software Security Gateway 80  R75.20<br/>
+					
+				
+					Check Point Software Security Gateway 80  R71.45<br/>
+					
+				
+					Check Point Software Security Gateway 80  R71.00<br/>
+					
+				
+					Check Point Software Security Gateway  R77.10<br/>
+					
+				
+					Check Point Software Security Gateway  R77<br/>
+					
+				
+					Check Point Software Security Gateway  R76<br/>
+					
+				
+					Check Point Software Security Gateway  R75.47<br/>
+					
+				
+					Check Point Software Security Gateway  R75.46<br/>
+					
+				
+					Check Point Software Security Gateway  R75.45<br/>
+					
+				
+					Check Point Software Security Gateway  R75.40 Vs<br/>
+					
+				
+					Check Point Software Security Gateway  R75.20<br/>
+					
+				
+					Check Point Software Security Gateway  R75<br/>
+					
+				
+					Check Point Software Security Gateway  R71.45<br/>
+					
+				
+					Check Point Software Security Gateway  R71.00<br/>
+					
+				
+					Check Point Software Security Gateway  0<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R77.20<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R77.10<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R77<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R76<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.47<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.46<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.45<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.40VS<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.40<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.30<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.20<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75.10<br/>
+					
+				
+					Check Point Software SecurePlatform OS  R75<br/>
+					
+				
+					Check Point Software SecurePlatform 2.6  0<br/>
+					
+				
+					Check Point Software SecurePlatform  R75<br/>
+					
+				
+					Check Point Software SecurePlatform  R71.30<br/>
+					
+				
+					Check Point Software SecurePlatform  R70.40<br/>
+					
+				
+					Check Point Software SecurePlatform  R65.70<br/>
+					
+				
+					Check Point Software SecurePlatform  R65 HFA02<br/>
+					
+				
+					Check Point Software SecurePlatform  R60_HFA_05<br/>
+					
+				
+					Check Point Software Multi-Domain Management/Provider-1  0<br/>
+					
+				
+					Check Point Software Gaia Os  R77.20<br/>
+					
+				
+					Check Point Software Gaia Os  R77.10<br/>
+					
+				
+					Check Point Software Gaia Os  R77.0<br/>
+					
+				
+					Check Point Software Gaia Os  R76.0<br/>
+					
+				
+					Check Point Software Gaia Os  R75.47<br/>
+					
+				
+					Check Point Software Gaia Os  R75.46<br/>
+					
+				
+					Check Point Software Gaia Os  R75.45<br/>
+					
+				
+					Check Point Software Gaia Os  R75.40<br/>
+					
+				
+					Check Point Software Gaia Os  R75.30<br/>
+					
+				
+					Check Point Software Gaia Os  R75.20<br/>
+					
+				
+					Check Point Software Gaia Os  R75.10<br/>
+					
+				
+					Check Point Software Gaia Os  R75.0<br/>
+					
+				
+					Check Point Software Gaia Os  R71.0<br/>
+					
+				
+					Check Point Software Gaia Os  R70.0<br/>
+					
+				
+					Avaya Session Border Controller for Enterprise  6.3.0<br/>
+					
+				
+					Avaya Proactive Contact 4.1.2 <br/>
+					
+				
+					Avaya Proactive Contact 4.1.1 <br/>
+					
+				
+					Avaya Proactive Contact  5.1<br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya Proactive Contact  4.2.2<br/>
+					
+				
+					Avaya Proactive Contact  4.2.1<br/>
+					
+				
+					Avaya Proactive Contact  4.2<br/>
+					
+				
+					Avaya Proactive Contact  4.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0.1<br/>
+					
+				
+					Avaya Proactive Contact  4.0<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2 SP2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1.2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1.1<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1 SP3<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1 SP2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1 SP1<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1<br/>
+					
+				
+					Avaya Message Networking 6.3 <br/>
+					
+				
+					Avaya Message Networking 5.2.1 <br/>
+					
+				
+					Avaya Message Networking  6.2.0<br/>
+					
+				
+					Avaya Message Networking  5.2.5<br/>
+					
+				
+					Avaya Message Networking  5.2.4<br/>
+					
+				
+					Avaya Message Networking  5.2.3<br/>
+					
+				
+					Avaya Message Networking  5.2.2<br/>
+					
+				
+					Avaya Message Networking  5.2 SP4<br/>
+					
+				
+					Avaya Message Networking  5.2 SP3<br/>
+					
+				
+					Avaya Message Networking  5.2 SP1<br/>
+					
+				
+					Avaya Message Networking  5.2<br/>
+					
+				
+					Avaya Meeting Exchange 5.0 .0.52<br/>
+					
+				
+					Avaya Meeting Exchange  6.2<br/>
+					
+				
+					Avaya Meeting Exchange  6.0<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.2 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP2<br/>
+					
+				
+					Avaya Meeting Exchange  5.0 SP1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ  5.2<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0 SP 2<br/>
+					
+				
+					Avaya IP Office Application Server  9.0 SP 1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya IP Office Application Server  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.6<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.6<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.6<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.6<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya CMS  R17ac.h<br/>
+					
+				
+					Avaya CMS  R17ac.g<br/>
+					
+				
+					Avaya CMS  R17 R4<br/>
+					
+				
+					Avaya CMS  R17 R3<br/>
+					
+				
+					Avaya CMS  r17<br/>
+					
+				
+					Avaya Aura System Platform 6.2.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.2.1 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.3<br/>
+					
+				
+					Avaya Aura System Platform  6.2.1.0.9<br/>
+					
+				
+					Avaya Aura System Platform  6.2 SP1<br/>
+					
+				
+					Avaya Aura System Platform  6.2<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.9.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.8.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.0.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Manager 6.3.10 <br/>
+					
+				
+					Avaya Aura System Manager 6.3.6 <br/>
+					
+				
+					Avaya Aura System Manager 6.3.4 <br/>
+					
+				
+					Avaya Aura System Manager 6.3.2 <br/>
+					
+				
+					Avaya Aura System Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura System Manager  6.3.3<br/>
+					
+				
+					Avaya Aura System Manager  6.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2.4<br/>
+					
+				
+					Avaya Aura System Manager  6.2.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2 SP3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.7<br/>
+					
+				
+					Avaya Aura System Manager  6.1.5<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.5 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.0.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.4<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1.7<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.2<br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP2<br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP1<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Messaging 6.1.1 <br/>
+					
+				
+					Avaya Aura Messaging  6.3<br/>
+					
+				
+					Avaya Aura Messaging  6.2 SP4<br/>
+					
+				
+					Avaya Aura Messaging  6.2<br/>
+					
+				
+					Avaya Aura Messaging  6.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP2<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP1<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  8.0 SP2<br/>
+					
+				
+					Avaya Aura Conferencing  8.0 SP1<br/>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Conferencing  7.2 SP7<br/>
+					
+				
+					Avaya Aura Conferencing  7.2 SP6<br/>
+					
+				
+					Avaya Aura Conferencing  7.2<br/>
+					
+				
+					Avaya Aura Conferencing  7.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  7.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.5.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.4.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1 SP 6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager 6.3.8 <br/>
+					
+				
+					Avaya Aura Communication Manager  6.3 SSP04<br/>
+					
+				
+					Avaya Aura Communication Manager  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  3.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  2.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0 SP10<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0 PB5<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0 PB3<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.1<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 SP10<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB28<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB26<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB25<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB23<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB19<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0 PB16<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.3<br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+					
+				
+					Apple Mac OS X 10.10 <br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac OS X 10.9.1 <br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.4 <br/>
+					
+				
+					Apple Mac OS X 10.8.2 <br/>
+					
+				
+					Apple Mac OS X 10.8.1 <br/>
+					
+				
+					Apple Mac OS X 10.8 <br/>
+					
+				
+					Apple Mac OS X 10.7 <br/>
+					
+				
+					Apple Mac OS X  10.9.4<br/>
+					
+				
+					Apple Mac OS X  10.9.3<br/>
+					
+				
+					Apple Mac OS X  10.9.2<br/>
+					
+				
+					Apple Mac OS X  10.9<br/>
+					
+				
+					Apple Mac OS X  10.8.3<br/>
+					
+				
+					Apple Mac OS X  10.7.5<br/>
+					
+				
+					Apple Mac OS X  10.7.4<br/>
+					
+				
+					Apple Mac OS X  10.7.3<br/>
+					
+				
+					Apple Mac OS X  10.7.1<br/>
+					
+				
+					Apple Mac OS X  10.6.8<br/>
+					
+				
+					Apple Mac Os X  10.11<br/>
+					
+				
+					Apple Mac Os X  10.10.4<br/>
+					
+				
+					Apple Mac Os X  10.10.3<br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+					
+				
+					Apple Mac OS X  10.10<br/>
+					
+				
+					AlienVault AlienVault  4.15<br/>
+					
+				
+					AlienVault AlienVault  4.13<br/>
+					
+				
+					AlienVault AlienVault  4.12.1<br/>
+					
+				
+					AlienVault AlienVault  4.12<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Polycom Video Border Proxy (VBP) 11.2.22 <br/>
+					
+				
+					Polycom UC Phones â?? VVX  5.3<br/>
+					
+				
+					Polycom RSS 4000 8.5.3 <br/>
+					
+				
+					Polycom RealPresence Resource Manager (RPRM) 8.3.1 <br/>
+					
+				
+					Polycom RealPresence Collaboration Server (RMX) 8.4.2 Hotfix<br/>
+					
+				
+					Polycom Platform Director  2.0<br/>
+					
+				
+					Polycom HDX 3.1.7 <br/>
+					
+				
+					Polycom Distributed Media Application (DMA) 6.2.1 <br/>
+					
+				
+					Polycom Distributed Media Application (DMA) 6.1.3 <br/>
+					
+				
+					Polycom Content Sharing Suite Client/Server  1.5<br/>
+					
+				
+					Polycom CloudAXIS WSP 1.7 <br/>
+					
+				
+					Polycom Capture Server  2.0<br/>
+					
+				
+					Pexip AS Infinity  8.1<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0<br/>
+					
+				
+					Oracle Sun Network QDR InfiniBand Gateway Switch  2.2.2<br/>
+					
+				
+					Oracle Sun Data Center InfiniBand Switch 36  2.2.2<br/>
+					
+				
+					Oracle Integrated Lights Out Manager  3.2.6<br/>
+					
+				
+					Oracle Communications Session Border Controller  7.2.0m4<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.4.3<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5.2.0<br/>
+					
+				
+					HP Mobility Software  6.4.3.0<br/>
+					
+				
+					HP Helion Application Lifecycle Service (ALS) for Linux  1.0.1.11<br/>
+					
+				
+					GNU glibc  2.19<br/>
+					
+				
+					GNU glibc  2.18<br/>
+					
+				
+					Apple Mac Os X 10.11.2 <br/>
+					
+				
+					Apple Mac Os X  Security Update 2015<br/>
+					
+				
+					Apple Mac Os X  10.11<br/>
+					
+				
+					Apple Mac Os X  10.10.4<br/>
+					
+				
+					AlienVault AlienVault  4.15.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x73000/72325/72325.rb">#exploit_72325.rb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit is available:<br/><br/>Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/72325.rb">/data/vulnerabilities/exploits/72325.rb</a></li>
+</ul>
+</div>

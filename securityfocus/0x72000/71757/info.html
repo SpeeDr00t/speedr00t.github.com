@@ -1,0 +1,1602 @@
+#SpeeDr00t@Black Falcon<br>#bid71757<p><b><span style="font-size: 18pt;">NTP 'ntp_config.c' Insufficient Entropy Security Weakness</span></b></p><br><br><a href="http://www.securityfocus.com/bid/71757/info">info</a><br><a href="http://www.securityfocus.com/bid/71757/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/71757/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/71757/solution">solution</a><br><a href="http://www.securityfocus.com/bid/71757/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				71757
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-9293<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 19 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 26 2016 05:10AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Neel Mehta of the Google Security Team.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1 LTSS<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Slackware Slackware Linux  13.37<br/>
+					
+				
+					Slackware Slackware Linux  13.1<br/>
+					
+				
+					Slackware Slackware Linux  13.0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux ComputeNode Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux ComputeNode  7<br/>
+					
+				
+					Redhat Enterprise Linux Client Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux Client  7<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Communications Policy Management 12.1.1 <br/>
+					
+				
+					Oracle Communications Policy Management 10.4.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.9.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.7.3 <br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.7p10<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.7<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.6<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.5<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.4P8@Lennon-O-Lpv<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.4P7@Copenhagen-O<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.4<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.2<br/>
+					
+				
+					Meinberg Network Time Protocol  4.2.0<br/>
+					
+				
+					Meinberg Network Time Protocol  4.1.0<br/>
+					
+				
+					Meinberg Network Time Protocol  4.0<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Juniper vGW  0<br/>
+					
+				
+					Juniper Nsmexpress  -<br/>
+					
+				
+					Juniper NSM Server Software  0<br/>
+					
+				
+					Juniper NSM Series Appliances  0<br/>
+					
+				
+					Juniper NSM  0<br/>
+					
+				
+					Juniper JUNOS Space  0<br/>
+					
+				
+					Juniper Junos OS  14.2R1<br/>
+					
+				
+					Juniper Junos OS  14.1R2-S2<br/>
+					
+				
+					Juniper Junos OS  14.1R2<br/>
+					
+				
+					Juniper Junos OS  14.1R1<br/>
+					
+				
+					Juniper Junos OS  13.3R4<br/>
+					
+				
+					Juniper Junos OS  13.3R3-S2<br/>
+					
+				
+					Juniper Junos OS  13.3R3<br/>
+					
+				
+					Juniper Junos OS  13.3R2-S3<br/>
+					
+				
+					Juniper Junos OS  13.3R1<br/>
+					
+				
+					Juniper Junos OS  13.2X51-D25<br/>
+					
+				
+					Juniper Junos OS  13.2R5-S1<br/>
+					
+				
+					Juniper Junos OS  13.2R5<br/>
+					
+				
+					Juniper Junos OS  13.1X50-D30<br/>
+					
+				
+					Juniper Junos OS  13.1R4-S3<br/>
+					
+				
+					Juniper Junos OS  13.1R4-S2<br/>
+					
+				
+					Juniper Junos OS  12.3R8<br/>
+					
+				
+					Juniper Junos OS  12.3R7<br/>
+					
+				
+					Juniper Junos OS  12.2X50-D70<br/>
+					
+				
+					Juniper Junos OS  12.2R9<br/>
+					
+				
+					Juniper Junos OS  12.1X47-D15<br/>
+					
+				
+					Juniper Junos OS  12.1X47-D10<br/>
+					
+				
+					Juniper Junos OS  12.1X46-D25<br/>
+					
+				
+					Juniper Junos OS  12.1X46-D20<br/>
+					
+				
+					Juniper Junos OS  12.1X44-D40<br/>
+					
+				
+					Juniper Junos OS  11.4R12-S4<br/>
+					
+				
+					Juniper Junos OS  11.4R12-S1<br/>
+					
+				
+					Juniper Junos OS  0<br/>
+					
+				
+					Intel Xeon Phi  7120P<br/>
+					
+				
+					Intel Xeon Phi  7120A<br/>
+					
+				
+					Intel Xeon Phi  5110P<br/>
+					
+				
+					Intel Xeon Phi  3120A<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.4<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.3<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.2<br/>
+					
+				
+					Intel Manycore Platform Software Stack  3.1<br/>
+					
+				
+					Intel Manycore Platform Software Stack  2.1<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 FP 9<br/>
+					
+				
+					IBM SmartCloud Entry  3.1<br/>
+					
+				
+					IBM Smart Analytics System 7710  0<br/>
+					
+				
+					IBM Smart Analytics System 7700  0<br/>
+					
+				
+					IBM Smart Analytics System 7600  0<br/>
+					
+				
+					IBM Smart Analytics System 5710  0<br/>
+					
+				
+					IBM Smart Analytics System 5600  3<br/>
+					
+				
+					IBM Smart Analytics System 5600  2<br/>
+					
+				
+					IBM Smart Analytics System 5600  1<br/>
+					
+				
+					IBM Smart Analytics System 2050  0<br/>
+					
+				
+					IBM Smart Analytics System 1050  0<br/>
+					
+				
+					IBM Security Network Protection (XGS) 7100  5.3<br/>
+					
+				
+					IBM Security Network Protection (XGS) 7100  5.2<br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100  5.3<br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100  5.2<br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100  5.3<br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100  5.2<br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100  5.3<br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100  5.2<br/>
+					
+				
+					IBM PureFlex  x3950X6<br/>
+					
+				
+					IBM PureFlex  x3850X6<br/>
+					
+				
+					IBM PureFlex  x240m5+PEN<br/>
+					
+				
+					IBM PureFlex  x240m4<br/>
+					
+				
+					IBM PureFlex  x220m4<br/>
+					
+				
+					IBM PureData System for Operational Analytics  1.1 (A1801)<br/>
+					
+				
+					IBM PureData System for Operational Analytics  1.0 (A1791)<br/>
+					
+				
+					IBM Power HMC  8.8.2.0<br/>
+					
+				
+					IBM Power HMC  8.8.1.0<br/>
+					
+				
+					IBM Power HMC  7.7.9.0<br/>
+					
+				
+					IBM Power HMC  7.7.8.0<br/>
+					
+				
+					IBM Power HMC  7.7.7.0<br/>
+					
+				
+					IBM Power HMC  7.7.3.0<br/>
+					
+				
+					IBM NeXtScale  nx360m5<br/>
+					
+				
+					IBM NeXtScale  nx360m4<br/>
+					
+				
+					IBM Netezza Host Management  5.3.3<br/>
+					
+				
+					IBM Netezza Host Management  5.3.2.0<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse C4000  0<br/>
+					
+				
+					IBM InfoSphere Balanced Warehouse C3000  0<br/>
+					
+				
+					IBM iDataPlex  dx360m4<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.1.0.0<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					Huawei X8000 Rack  V100R001C00<br/>
+					
+				
+					Huawei V1300N  V100R002C02<br/>
+					
+				
+					Huawei Tecal XH621 V2  V100R001C00B010<br/>
+					
+				
+					Huawei Tecal XH320 V2  V100R001C00SPC105<br/>
+					
+				
+					Huawei Tecal XH311 V2  V100R001C00SPC100<br/>
+					
+				
+					Huawei Tecal XH310 V2  V100R001C00SPC100<br/>
+					
+				
+					Huawei RH5885H V3  V100R003C00<br/>
+					
+				
+					Huawei RH5885 V3  V100R003C01<br/>
+					
+				
+					Huawei RH5885 V2  V100R001C00<br/>
+					
+				
+					Huawei RH2485 V2  V100R002C00<br/>
+					
+				
+					Huawei RH2288H V2  V100R002C00<br/>
+					
+				
+					Huawei RH2288E V2  V100R002C00<br/>
+					
+				
+					Huawei RH2288 V2  V100R002C00<br/>
+					
+				
+					Huawei RH2285H V2  V100R002C00<br/>
+					
+				
+					Huawei RH2285 V2  V100R002C00<br/>
+					
+				
+					Huawei RH1288 V2  V100R002C00<br/>
+					
+				
+					Huawei OceanStor UDS  V100R002C01<br/>
+					
+				
+					Huawei OceanStor UDS  V100R002C00<br/>
+					
+				
+					Huawei OceanStor S6800T  V200R002C00<br/>
+					
+				
+					Huawei OceanStor S5800T  V200R002C00<br/>
+					
+				
+					Huawei OceanStor S5600T  V100R002C00<br/>
+					
+				
+					Huawei OceanStor S5500T  V200R002C00<br/>
+					
+				
+					Huawei OceanStor S2600T  V200R002C00<br/>
+					
+				
+					Huawei OceanStor HVS88T  V100R001C00<br/>
+					
+				
+					Huawei OceanStor HVS85T  V100R001C00<br/>
+					
+				
+					Huawei OceanStor 18800F  V100R001C00<br/>
+					
+				
+					Huawei OceanStor 18800  V100R001C00<br/>
+					
+				
+					Huawei High-Density Server  DH628 V2 V100R001C00<br/>
+					
+				
+					Huawei High-Density Server  DH621 V2 V100R001C00<br/>
+					
+				
+					Huawei High-Density Server  DH620 V2 V100R001C00<br/>
+					
+				
+					Huawei High-Density Server  DH320 V2 V100R001C00<br/>
+					
+				
+					Huawei FusionSphere OpenStack  V100R005C00<br/>
+					
+				
+					Huawei Fusioncube  V100R002C02SPC300<br/>
+					
+				
+					Huawei Fusioncube  V100R002C02SPC200<br/>
+					
+				
+					Huawei Fusioncube  V100R002C02SPC100<br/>
+					
+				
+					Huawei Fusioncube  V100R002C01SPC100<br/>
+					
+				
+					Huawei FusionCompute  V100R005C10<br/>
+					
+				
+					Huawei FusionCompute  V100R005C00<br/>
+					
+				
+					Huawei FusionCompute  V100R003C10<br/>
+					
+				
+					Huawei FusionCompute  V100R003C00<br/>
+					
+				
+					Huawei FusionAccess  V100R005C20<br/>
+					
+				
+					Huawei FusionAccess  V100R005C10<br/>
+					
+				
+					Huawei eSpace VTM  V100R002C00<br/>
+					
+				
+					Huawei eSpace VTM  V100R001C30<br/>
+					
+				
+					Huawei eSpace VTM  V100R001C02<br/>
+					
+				
+					Huawei eSpace VCN3000  V100R002C00<br/>
+					
+				
+					Huawei eSpace USM  V200R003C00<br/>
+					
+				
+					Huawei eSpace UC  V200R003C00<br/>
+					
+				
+					Huawei eSpace UC  V200R002C01<br/>
+					
+				
+					Huawei eSpace UC  V100R002C00<br/>
+					
+				
+					Huawei eSpace U2980  V200R003C00<br/>
+					
+				
+					Huawei eSpace U2980  V100R001C02SPC200<br/>
+					
+				
+					Huawei eSpace U2980  V100R001C01<br/>
+					
+				
+					Huawei eSpace IVS  V100R001C02<br/>
+					
+				
+					Huawei eSpace DCM  V100R002C01<br/>
+					
+				
+					Huawei eSpace DCM  V100R001C03<br/>
+					
+				
+					Huawei eSpace DCM  V100R001C02<br/>
+					
+				
+					Huawei eSpace DCM  V100R001C01<br/>
+					
+				
+					Huawei eSpace CC  V200R001C50<br/>
+					
+				
+					Huawei eSpace CC  V200R001C32<br/>
+					
+				
+					Huawei eSpace CC  V200R001C31<br/>
+					
+				
+					Huawei eSpace CC  V200R001C03<br/>
+					
+				
+					Huawei eSpace CAD  V100R001C01LHUE01<br/>
+					
+				
+					Huawei eSight UC&amp;C;  V100R001C20<br/>
+					
+				
+					Huawei eSight UC&amp;C;  V100R001C01<br/>
+					
+				
+					Huawei eSight NetWork  V200R005C00<br/>
+					
+				
+					Huawei eSight NetWork  V200R003C10<br/>
+					
+				
+					Huawei eSight NetWork  V200R003C01<br/>
+					
+				
+					Huawei E9000 Chassis  V100R001C00<br/>
+					
+				
+					Huawei E6000 Chassis  V100R001C00<br/>
+					
+				
+					Huawei DC  V100R002C01SPC001<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.10<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.01<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.0<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.2<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.1<br/>
+					
+				
+					HP Virtualization Performance Viewer  1.0<br/>
+					
+				
+					HP VCX  0<br/>
+					
+				
+					HP TCP/IP Services for OpenVMS  5.7<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					Hitachi BladeSymphony CB500 Series  0<br/>
+					
+				
+					Hitachi BladeSymphony CB320 Series  0<br/>
+					
+				
+					Hitachi BladeSymphony CB2000 Series  0<br/>
+					
+				
+					Hitachi BladeSymphony BS500 Series  0<br/>
+					
+				
+					Hitachi BladeSymphony BS320 Series  0<br/>
+					
+				
+					Hitachi BladeSymphony BS2000 Series  0<br/>
+					
+				
+					Hitachi Advanced Server HA8000CR  0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  0<br/>
+					
+				
+					EMC ViPR SRM  3.6.0<br/>
+					
+				
+					EMC M&amp;R;  6.5<br/>
+					
+				
+					Citrix NetScaler Gateway  0<br/>
+					
+				
+					Citrix Netscaler Application Delivery Controller  0<br/>
+					
+				
+					Cisco Wide Area Application Services (WAAS)  0<br/>
+					
+				
+					Cisco WebEx Social  0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5 Base<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0MR2<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco Virtualization Experience Client 6215  0<br/>
+					
+				
+					Cisco Virtual Systems Operations Center for vPE Project  0<br/>
+					
+				
+					Cisco Virtual Security Gateway  0<br/>
+					
+				
+					Cisco Videoscape Conductor  0<br/>
+					
+				
+					Cisco Videoscape Back Office (VBO)  0<br/>
+					
+				
+					Cisco Video Surveillance Media Server  0<br/>
+					
+				
+					Cisco Video Delivery System Recorder  0<br/>
+					
+				
+					Cisco Universal Small Cell RAN Management System Wireless  0<br/>
+					
+				
+					Cisco Unity Connection  0<br/>
+					
+				
+					Cisco Unified SIP Proxy  0<br/>
+					
+				
+					Cisco Unified Provisioning Manager  8.6<br/>
+					
+				
+					Cisco Unified MeetingPlace  0<br/>
+					
+				
+					Cisco Unified Intelligence Center (CUIC)  0<br/>
+					
+				
+					Cisco Unified Contact Center Express (UCCX)  0<br/>
+					
+				
+					Cisco Unified Communications Manager (CUCM)  0<br/>
+					
+				
+					Cisco Unified Communications Domain Manager  0<br/>
+					
+				
+					Cisco UCS Manager  0<br/>
+					
+				
+					Cisco UCS Invicta Series  0<br/>
+					
+				
+					Cisco UCS Director  0<br/>
+					
+				
+					Cisco Transaction Encryption Device (TED)  0<br/>
+					
+				
+					Cisco TelePresence TX 9000 Series  0<br/>
+					
+				
+					Cisco TelePresence TE Software (for E20 - EoL)  0<br/>
+					
+				
+					Cisco TelePresence System 500-37  0<br/>
+					
+				
+					Cisco TelePresence System 500-32  0<br/>
+					
+				
+					Cisco TelePresence System 3000 Series  0<br/>
+					
+				
+					Cisco TelePresence System 1300  0<br/>
+					
+				
+					Cisco TelePresence System 1100  0<br/>
+					
+				
+					Cisco TelePresence System 1000  0<br/>
+					
+				
+					Cisco TelePresence Profile Series  0<br/>
+					
+				
+					Cisco TelePresence ISDN Link  0<br/>
+					
+				
+					Cisco TelePresence 1310  0<br/>
+					
+				
+					Cisco Show and Share  0<br/>
+					
+				
+					Cisco Service Control Engines System Software  0<br/>
+					
+				
+					Cisco SCOS (Service Control Operating System)  0<br/>
+					
+				
+					Cisco Remote Network Control System (RNCS)  0<br/>
+					
+				
+					Cisco Remote Conditional Access System (RCAS)  0<br/>
+					
+				
+					Cisco Quantum SON Suite  0<br/>
+					
+				
+					Cisco Quantum Policy Suite (QPS)  0<br/>
+					
+				
+					Cisco Prime Service Catalog Virtual Appliance  0<br/>
+					
+				
+					Cisco Prime License Manager  0<br/>
+					
+				
+					Cisco Prime LAN Management Solution  0<br/>
+					
+				
+					Cisco Prime Infrastructure  -<br/>
+					
+				
+					Cisco Prime Data Center Network Manager  0<br/>
+					
+				
+					Cisco Prime Collaboration Provisioning  0<br/>
+					
+				
+					Cisco PowerVu Network Center  0<br/>
+					
+				
+					Cisco PowerVu D9190 Conditional Access Manager (PCAM)  0<br/>
+					
+				
+					Cisco Powerkey Encryption Server (PKES)  0<br/>
+					
+				
+					Cisco Physical Access Manager  0<br/>
+					
+				
+					Cisco Paging Server (Informacast)  0<br/>
+					
+				
+					Cisco Paging Server  0<br/>
+					
+				
+					Cisco OnePK All-in-One VM  0<br/>
+					
+				
+					Cisco Nexus 9000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 7000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 6000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 5000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 4000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 3000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 1000V Series Switches  0<br/>
+					
+				
+					Cisco Network Configuration and Change Management Service  0<br/>
+					
+				
+					Cisco Network Configuration and Change Management  0<br/>
+					
+				
+					Cisco NetFlow Collection Agent  0<br/>
+					
+				
+					Cisco MediaSense  0<br/>
+					
+				
+					Cisco Media Experience Engines (MXE)  0<br/>
+					
+				
+					Cisco MDS 9000 Series Multilayer Switches  0<br/>
+					
+				
+					Cisco Management Heartbeat Server  0<br/>
+					
+				
+					Cisco Jabber Guest  0<br/>
+					
+				
+					Cisco IPTV Service Delivery System (ISDS)  0<br/>
+					
+				
+					Cisco IP Interoperability and Collaboration System (IPICS)  0<br/>
+					
+				
+					Cisco IOS XR Software  0<br/>
+					
+				
+					Cisco IOS XR for Cisco Network Convergence System (NCS) 6000  0<br/>
+					
+				
+					Cisco International Digital Network Control System (iDNCS)  0<br/>
+					
+				
+					Cisco Intelligent Automation for Cloud  0<br/>
+					
+				
+					Cisco IM and Presence Service (CUPS)  0<br/>
+					
+				
+					Cisco FireSIGHT System Software  0<br/>
+					
+				
+					Cisco Finesse  0<br/>
+					
+				
+					Cisco Explorer Controller (EC)  0<br/>
+					
+				
+					Cisco Enterprise Content Delivery Service  0<br/>
+					
+				
+					Cisco Encryption Appliance (IEA)  0<br/>
+					
+				
+					Cisco Emergency Responder  0<br/>
+					
+				
+					Cisco Emergency Responder  <br/>
+					
+				
+					Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco Download Server (DLS) (Sparc Based)  0<br/>
+					
+				
+					Cisco Download Server (DLS) (Linux Based)  0<br/>
+					
+				
+					Cisco DNCS Application Server (AppServer)  0<br/>
+					
+				
+					Cisco Digital Transport Adapter Control System (DTACS)  0<br/>
+					
+				
+					Cisco Digital Network Control System (DNCS)  0<br/>
+					
+				
+					Cisco Digital Media Manager (DMM)  0<br/>
+					
+				
+					Cisco DCM Series 9900-Digital Content Manager  0<br/>
+					
+				
+					Cisco D9036 Modular Encoding Platform  0<br/>
+					
+				
+					Cisco Common Services Platform Collector  0<br/>
+					
+				
+					Cisco Common Download Server (CDLS)  0<br/>
+					
+				
+					Cisco Command 2000 Server (cmd2k)  0<br/>
+					
+				
+					Cisco Cloud Object Store (COS)  0<br/>
+					
+				
+					Cisco Cisco Telepresence endpoints SX series  0<br/>
+					
+				
+					Cisco Cisco Telepresence endpoints MXG2 series  0<br/>
+					
+				
+					Cisco Cisco Telepresence endpoints MX series  0<br/>
+					
+				
+					Cisco Cisco Telepresence endpoints EX series  0<br/>
+					
+				
+					Cisco Cisco Telepresence endpoints C series  0<br/>
+					
+				
+					Cisco Cisco Telepresence endpoints 10" touch panel  0<br/>
+					
+				
+					Cisco Cisco IronPort Encryption Appliance (IEA)  0<br/>
+					
+				
+					Cisco Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco Cisco Application Policy Infrastructure Controller  0<br/>
+					
+				
+					Cisco AutoBackup Server  0<br/>
+					
+				
+					Cisco ASA CX and Cisco Prime Security Manager  0<br/>
+					
+				
+					Cisco Application Networking Manager (ANM)  0<br/>
+					
+				
+					Cisco Application and Content Networking System (ACNS)  0<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Avaya Proactive Contact  5.1<br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2 SP2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1.2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Message Networking 6.3 <br/>
+					
+				
+					Avaya Message Networking  6.2.0<br/>
+					
+				
+					Avaya Meeting Exchange  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  5.1<br/>
+					
+				
+					Avaya Meeting Exchange  5.0<br/>
+					
+				
+					Avaya IQ  5.1.1<br/>
+					
+				
+					Avaya IQ  5.1<br/>
+					
+				
+					Avaya IQ  5<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0 SP 2<br/>
+					
+				
+					Avaya IP Office Application Server  9.0 SP 1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya IP Office Application Server  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya CMS  r17<br/>
+					
+				
+					Avaya Aura System Platform 6.2.1 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.2 <br/>
+					
+				
+					Avaya Aura System Platform 6.0.1 <br/>
+					
+				
+					Avaya Aura System Platform  6.3<br/>
+					
+				
+					Avaya Aura System Platform  6.2.1.0.9<br/>
+					
+				
+					Avaya Aura System Platform  6.2 SP1<br/>
+					
+				
+					Avaya Aura System Platform  6.2<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.9.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.8.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0.3.0.3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP3<br/>
+					
+				
+					Avaya Aura System Platform  6.0 SP2<br/>
+					
+				
+					Avaya Aura System Platform  6.0<br/>
+					
+				
+					Avaya Aura System Manager  6.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2 SP3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.5<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.5 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.0.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP1<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP1<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Conferencing  7.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 SP1 Standard<br/>
+					
+				
+					Avaya Aura Communication Manager  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0.1<br/>
+					
+				
+					Avaya Aura Communication Manager  6.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  3.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  2.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Meinberg NTP 4.2.8 <br/>
+					
+				
+					Meinberg NTP  4.2.7p11<br/>
+					
+				
+					Juniper Junos OS  14.2R3<br/>
+					
+				
+					Juniper Junos OS  14.1X55-D16<br/>
+					
+				
+					Juniper Junos OS  14.1X50-D90<br/>
+					
+				
+					Juniper Junos OS  14.1R5<br/>
+					
+				
+					Juniper Junos OS  13.3R6<br/>
+					
+				
+					Juniper Junos OS  13.2R8<br/>
+					
+				
+					Juniper Junos OS  12.3X48-D15<br/>
+					
+				
+					Juniper Junos OS  12.3R9<br/>
+					
+				
+					Juniper Junos OS  12.1X47-D20<br/>
+					
+				
+					Juniper Junos OS  12.1X46-D35<br/>
+					
+				
+					Juniper Junos OS  12.1X44-D50<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 FP 10<br/>
+					
+				
+					HP VCX  9.8.17<br/>
+					
+				
+					EMC ViPR SRM  3.6.1<br/>
+					
+				
+					EMC M&amp;R;  6.5u1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit this issue using readily available tools.
+	
+		<ul>
+</ul>
+</div>

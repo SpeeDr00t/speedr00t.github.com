@@ -1,0 +1,13 @@
+local p = {}
+
+ function p.hello()
+     p['-->XSS']()
+     for i = 0, 1e8 do end
+ end
+
+ p['-->XSS'] = function ()
+     for i = 0, 1e9 do end
+ end
+
+ return p 
+

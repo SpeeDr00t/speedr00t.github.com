@@ -1,0 +1,567 @@
+#SpeeDr00t@Black Falcon<br>#bid68549<p><b><span style="font-size: 18pt;">PHP libicu 'locale_get_display_name()' Stack Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/68549/info">info</a><br><a href="http://www.securityfocus.com/bid/68549/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/68549/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/68549/solution">solution</a><br><a href="http://www.securityfocus.com/bid/68549/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				68549
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-9912<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 08 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 07 2017 03:03AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				mikispag
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					PHP PHP 5.5.13 <br/>
+					
+				
+					PHP PHP 5.5.12 <br/>
+					
+				
+					PHP PHP 5.5.11 <br/>
+					
+				
+					PHP PHP 5.5.10 <br/>
+					
+				
+					PHP PHP 5.5.6 <br/>
+					
+				
+					PHP PHP 5.5.5 <br/>
+					
+				
+					PHP PHP 5.5.4 <br/>
+					
+				
+					PHP PHP 5.5.3 <br/>
+					
+				
+					PHP PHP 5.5.1 <br/>
+					
+				
+					PHP PHP 5.5 <br/>
+					
+				
+					PHP PHP 5.4.29 <br/>
+					
+				
+					PHP PHP 5.4.26 <br/>
+					
+				
+					PHP PHP 5.4.25 <br/>
+					
+				
+					PHP PHP 5.4.17 <br/>
+					
+				
+					PHP PHP 5.4.14 <br/>
+					
+				
+					PHP PHP 5.4.8 <br/>
+					
+				
+					PHP PHP 5.4.7 <br/>
+					
+				
+					PHP PHP 5.4.6 <br/>
+					
+				
+					PHP PHP 5.4.4 <br/>
+					
+				
+					PHP PHP 5.4.3 <br/>
+					
+				
+					PHP PHP 5.4.2 <br/>
+					
+				
+					PHP PHP 5.4.1 <br/>
+					
+				
+					PHP PHP 5.3.28 <br/>
+					
+				
+					PHP PHP 5.3.24 <br/>
+					
+				
+					PHP PHP 5.3.23 <br/>
+					
+				
+					PHP PHP 5.3.22 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  IA-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2  68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 6.2  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					PHP PHP 5.3.21 <br/>
+					
+				
+					PHP PHP 5.3.20 <br/>
+					
+				
+					PHP PHP 5.3.17 <br/>
+					
+				
+					PHP PHP 5.3.16 <br/>
+					
+				
+					PHP PHP 5.3.14 <br/>
+					
+				
+					PHP PHP 5.3.13 <br/>
+					
+				
+					PHP PHP 5.3.12 <br/>
+					
+				
+					PHP PHP 5.3.9 <br/>
+					
+				
+					PHP PHP 5.3.8 <br/>
+					
+				
+					PHP PHP 5.3.7 <br/>
+					
+				
+					PHP PHP 5.3.6 <br/>
+					
+				
+					PHP PHP 5.3.5 <br/>
+					
+				
+					PHP PHP 5.3.2 <br/>
+					
+				
+					PHP PHP 5.3.1 <br/>
+					
+				
+					PHP PHP 5.3 <br/>
+					
+				
+					PHP PHP  5.5.9<br/>
+					
+				
+					PHP PHP  5.5.8<br/>
+					
+				
+					PHP PHP  5.5.7<br/>
+					
+				
+					PHP PHP  5.5.2<br/>
+					
+				
+					PHP PHP  5.4.9<br/>
+					
+				
+					PHP PHP  5.4.5<br/>
+					
+				
+					PHP PHP  5.4.28<br/>
+					
+				
+					PHP PHP  5.4.27<br/>
+					
+				
+					PHP PHP  5.4.24<br/>
+					
+				
+					PHP PHP  5.4.23<br/>
+					
+				
+					PHP PHP  5.4.22<br/>
+					
+				
+					PHP PHP  5.4.21<br/>
+					
+				
+					PHP PHP  5.4.20<br/>
+					
+				
+					PHP PHP  5.4.19<br/>
+					
+				
+					PHP PHP  5.4.18<br/>
+					
+				
+					PHP PHP  5.4.16<br/>
+					
+				
+					PHP PHP  5.4.15<br/>
+					
+				
+					PHP PHP  5.4.13<br/>
+					
+				
+					PHP PHP  5.4.12<br/>
+					
+				
+					PHP PHP  5.4.11<br/>
+					
+				
+					PHP PHP  5.4.10<br/>
+					
+				
+					PHP PHP  5.3.4<br/>
+					
+				
+					PHP PHP  5.3.3<br/>
+					
+				
+					PHP PHP  5.3.27<br/>
+					
+				
+					PHP PHP  5.3.26<br/>
+					
+				
+					PHP PHP  5.3.25<br/>
+					
+				
+					PHP PHP  5.3.19<br/>
+					
+				
+					PHP PHP  5.3.18<br/>
+					
+				
+					PHP PHP  5.3.15<br/>
+					
+				
+					PHP PHP  5.3.11<br/>
+					
+				
+					PHP PHP  5.3.10<br/>
+					
+				
+					ICU libicu  4.8.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP 5.6 <br/>
+					
+				
+					PHP PHP 5.5.14 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					PHP PHP 5.4.30 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					PHP PHP 5.3.29 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The researcher who discovered this issue has created a proof-of-concept. Please see the references for more information.
+	
+		<ul>
+</ul>
+</div>

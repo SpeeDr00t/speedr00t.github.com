@@ -1,0 +1,14 @@
+<?php
+$plugins->add_hook("datahandler_user_update", "profileskype_update");    /*Line 15*/
+ 
+function profileskype_update($skype)                                    /*Line 167*/
+{
+  global $mybb;
+ 
+  if (isset($mybb->input['skype']))
+   {
+      $skype->user_update_data['skype'] = $mybb->input['skype'];
+   }
+}
+ 
+?>

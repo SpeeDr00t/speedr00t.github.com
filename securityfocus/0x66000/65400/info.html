@@ -1,0 +1,3114 @@
+#SpeeDr00t@Black Falcon<br>#bid65400<p><b><span style="font-size: 18pt;">Apache Commons FileUpload CVE-2014-0050 Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/65400/info">info</a><br><a href="http://www.securityfocus.com/bid/65400/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/65400/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/65400/solution">solution</a><br><a href="http://www.securityfocus.com/bid/65400/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				65400
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-0050<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 06 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 23 2017 04:26PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Hitachi Incident Response Team (HIRT) via JPCERT
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare vCenter Server  5.5<br/>
+					
+				
+					VMWare vCenter Server  5.1<br/>
+					
+				
+					VMWare vCenter Server  5.0<br/>
+					
+				
+					VMWare vCenter Orchestrator  5.5<br/>
+					
+				
+					VMWare vCenter Orchestrator  5.1<br/>
+					
+				
+					VMWare vCenter Orchestrator  4.2<br/>
+					
+				
+					VMWare vCenter Operations Management Suite 5.8.1 <br/>
+					
+				
+					VMWare vCenter Operations Management Suite 5.7.1 <br/>
+					
+				
+					Ubuntu Ubuntu Linux  13.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04.LTS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3 for VMware<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3<br/>
+					
+				
+					S.u.S.E. openSUSE  12.3<br/>
+					
+				
+					Redhat JBoss Operations Network 3.2.1 <br/>
+					
+				
+					Redhat JBoss Operations Network  3.2.0<br/>
+					
+				
+					Redhat JBoss Fuse Service Works  6.0.0<br/>
+					
+				
+					Redhat JBoss Fuse 6.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server EL6 2.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Web Server EL5 2.0 <br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform 6.2.1 <br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform 6.2 <br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform  6 EL6<br/>
+					
+				
+					Redhat JBoss Enterprise Application Platform  6 EL5<br/>
+					
+				
+					Redhat JBoss BRMS  6.0.1<br/>
+					
+				
+					Redhat JBoss BRMS  6.0.0<br/>
+					
+				
+					Redhat JBoss BPMS 6.0.1 <br/>
+					
+				
+					Redhat JBoss BPMS  6.0<br/>
+					
+				
+					Redhat JBoss A-MQ  6.0.0<br/>
+					
+				
+					Redhat Fuse ESB Enterprise  7.1.0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.5.z<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Weblogic Portal  10.3.6.0<br/>
+					
+				
+					Oracle WebCenter Sites 11.1.1 8.0<br/>
+					
+				
+					Oracle WebCenter Sites 7.6.2 <br/>
+					
+				
+					Oracle WebCenter Sites  11.1.1.6.1<br/>
+					
+				
+					Oracle Retail Returns Management  RM2.0<br/>
+					
+				
+					Oracle Retail Returns Management  14.0<br/>
+					
+				
+					Oracle Retail Returns Management  13.4<br/>
+					
+				
+					Oracle Retail Returns Management  13.3<br/>
+					
+				
+					Oracle Retail Returns Management  13.2<br/>
+					
+				
+					Oracle Retail Returns Management  13.1<br/>
+					
+				
+					Oracle Retail Returns Management  12.0IN<br/>
+					
+				
+					Oracle Retail Returns Management  12.0<br/>
+					
+				
+					Oracle Retail Open Commerce Platform  3.0<br/>
+					
+				
+					Oracle Retail Central Office  RM2.0<br/>
+					
+				
+					Oracle Retail Central Office  14.0<br/>
+					
+				
+					Oracle Retail Central Office  13.4<br/>
+					
+				
+					Oracle Retail Central Office  13.3<br/>
+					
+				
+					Oracle Retail Central Office  13.2<br/>
+					
+				
+					Oracle Retail Central Office  13.1<br/>
+					
+				
+					Oracle Retail Central Office  13.0<br/>
+					
+				
+					Oracle Retail Central Office  12.0IN<br/>
+					
+				
+					Oracle Retail Central Office  12.0<br/>
+					
+				
+					Oracle Retail Back Office  RM2.0<br/>
+					
+				
+					Oracle Retail Back Office  14.0<br/>
+					
+				
+					Oracle Retail Back Office  13.4<br/>
+					
+				
+					Oracle Retail Back Office  13.3<br/>
+					
+				
+					Oracle Retail Back Office  13.2<br/>
+					
+				
+					Oracle Retail Back Office  13.1<br/>
+					
+				
+					Oracle Retail Back Office  13.0<br/>
+					
+				
+					Oracle Retail Back Office  12.0IN<br/>
+					
+				
+					Oracle Retail Back Office  12.0<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 3.0.10 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 3.0 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 2.3.16 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 2.3.15 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 2.3.14 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 2.3.13 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  2.3<br/>
+					
+				
+					Oracle Health Sciences Empirica Study  3.1.2.0<br/>
+					
+				
+					Oracle Health Sciences Empirica Signal  7.3.3.3<br/>
+					
+				
+					Oracle Health Sciences Empirica Inspections  1.0.1.0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Endeca Information Discovery Studio 2.2.2 <br/>
+					
+				
+					Oracle Endeca Information Discovery Studio  3.1<br/>
+					
+				
+					Oracle Endeca Information Discovery Studio  3.0<br/>
+					
+				
+					Oracle Endeca Information Discovery Studio  2.4<br/>
+					
+				
+					Oracle Endeca Information Discovery Studio  2.3<br/>
+					
+				
+					Oracle Communications Service Broker Engineered System Edition  6.0<br/>
+					
+				
+					Oracle Communications Service Broker  6.1<br/>
+					
+				
+					Oracle Communications Service Broker  6.0<br/>
+					
+				
+					Oracle Communications Policy Management 12.1.1 <br/>
+					
+				
+					Oracle Communications Policy Management 10.4.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.9.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.7.3 <br/>
+					
+				
+					Oracle Communications Online Mediation Controller  6.1<br/>
+					
+				
+					Oracle Communications Converged Application Server Service Controller  6.1<br/>
+					
+				
+					Oracle Application Express 4.2.1 <br/>
+					
+				
+					Oracle Application Express 3.2.1 .00.10<br/>
+					
+				
+					Oracle Application Express 2.2.1 <br/>
+					
+				
+					Oracle Application Express 1.1.3 <br/>
+					
+				
+					Oracle Application Express 1.1.2 <br/>
+					
+				
+					Oracle Application Express 1.1.1 <br/>
+					
+				
+					Oracle Application Express  4.2<br/>
+					
+				
+					Oracle Application Express  4.1<br/>
+					
+				
+					Oracle Application Express  4.0<br/>
+					
+				
+					Oracle Application Express  3.2.0.00.27<br/>
+					
+				
+					Oracle Application Express  3.2<br/>
+					
+				
+					Oracle Application Express  2.2<br/>
+					
+				
+					Oracle Application Express  2.1<br/>
+					
+				
+					Oracle Application Express  2.0<br/>
+					
+				
+					Oracle Application Express  1.5<br/>
+					
+				
+					Oracle Application Express  1.1-ea<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					IBM Websphere Portal  8.5<br/>
+					
+				
+					IBM Websphere Portal  8.0<br/>
+					
+				
+					IBM Websphere Portal  7.0<br/>
+					
+				
+					IBM Websphere Portal  6.1<br/>
+					
+				
+					IBM WebSphere Message Broker for z/OS  8.0<br/>
+					
+				
+					IBM WebSphere Message Broker  8.0<br/>
+					
+				
+					IBM WebSphere Message Broker  7.0<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.2.0<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.1.0<br/>
+					
+				
+					IBM WebSphere Extended Deployment Compute Grid  8.0.0.0<br/>
+					
+				
+					IBM WebSphere Extended Deployment Compute  6.1<br/>
+					
+				
+					IBM WebSphere Dashboard Framework  0<br/>
+					
+				
+					IBM Websphere Business Monitor  7.0<br/>
+					
+				
+					IBM Websphere Application Server 8.5.5 <br/>
+					
+				
+					IBM Websphere Application Server  8.5<br/>
+					
+				
+					IBM Websphere Application Server  8.0<br/>
+					
+				
+					IBM Websphere Application Server  7.0<br/>
+					
+				
+					IBM Websphere Application Server  6.1<br/>
+					
+				
+					IBM Web Experience Factory  8.5.0.0<br/>
+					
+				
+					IBM Web Experience Factory  8.0<br/>
+					
+				
+					IBM Web Experience Factory  7.0.1 <br/>
+					
+				
+					IBM Web Experience Factory  7.0<br/>
+					
+				
+					IBM UrbanCode Release 6.0.1 <br/>
+					
+				
+					IBM UrbanCode Release  6.0.1.3<br/>
+					
+				
+					IBM UrbanCode Release  6.0.1.2<br/>
+					
+				
+					IBM UrbanCode Release  6.0.1.1<br/>
+					
+				
+					IBM UrbanCode Release  6.0.0.1<br/>
+					
+				
+					IBM UrbanCode Release  6.0<br/>
+					
+				
+					IBM UrbanCode Deploy 6.0.1 3<br/>
+					
+				
+					IBM UrbanCode Deploy 6.0.1 2<br/>
+					
+				
+					IBM UrbanCode Deploy 6.0.1 1<br/>
+					
+				
+					IBM UrbanCode Deploy 6.0.1 <br/>
+					
+				
+					IBM UrbanCode Deploy  6.0<br/>
+					
+				
+					IBM Tivoli Storage Manager Operations Center 7.1 100<br/>
+					
+				
+					IBM Tivoli Storage Manager Operations Center 7.1 000<br/>
+					
+				
+					IBM Tivoli Storage Manager Operations Center 6.4.1 000<br/>
+					
+				
+					IBM Tivoli Storage Manager Operations Center 6.4 100<br/>
+					
+				
+					IBM Tivoli Remote Control  5.1.2<br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 9.0 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 8.2.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control  9.0.1<br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control  8.2<br/>
+					
+				
+					IBM Tivoli Endpoint Manager 8.2.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager 8.2 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager  0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Application Diagnostics  7.1<br/>
+					
+				
+					IBM Tivoli Asset Discovery for Distributed  7.5<br/>
+					
+				
+					IBM Tivoli Asset Discovery for Distributed  7.2.2.0<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager 7.2.2 1<br/>
+					
+				
+					IBM Support Assistant  5.0<br/>
+					
+				
+					IBM Storwize V7000 Unified Software 1.4 0<br/>
+					
+				
+					IBM Storwize V7000 Unified Software 1.3.2 0<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.4.3.2<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.4.2.1<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.4.2.0<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.4.1.1<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.4.1.0<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.4.0.4<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.3.2.3<br/>
+					
+				
+					IBM Storwize V7000 Unified Software  1.3.0.0<br/>
+					
+				
+					IBM Sterling Secure Proxy 3.4.1 .7<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.1.6<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.1.5<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.1.2<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.1.0<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.1<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.0.6<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.0.0<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.0<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.3.01<br/>
+					
+				
+					IBM Sterling Control Center 5.4 1<br/>
+					
+				
+					IBM Sterling Control Center  5.4.1<br/>
+					
+				
+					IBM Sterling Control Center  5.4<br/>
+					
+				
+					IBM Sterling Control Center  5.3<br/>
+					
+				
+					IBM Sterling Control Center  5.2<br/>
+					
+				
+					IBM Sametime Proxy Server and Web Client  9.0.0.1<br/>
+					
+				
+					IBM Sametime Proxy Server and Web Client  9.0<br/>
+					
+				
+					IBM Sametime Meeting Server  9.0.0.1 <br/>
+					
+				
+					IBM Sametime Meeting Server  9.0.0<br/>
+					
+				
+					IBM Sametime Meeting Server  8.5.2.1<br/>
+					
+				
+					IBM Sametime Meeting Server  8.5.2<br/>
+					
+				
+					IBM Rational Team Concert 4.0.5 <br/>
+					
+				
+					IBM Rational Team Concert 4.0.4 <br/>
+					
+				
+					IBM Rational Team Concert 4.0.3 <br/>
+					
+				
+					IBM Rational Team Concert 4.0.2 <br/>
+					
+				
+					IBM Rational Team Concert 4.0.1 <br/>
+					
+				
+					IBM Rational Team Concert 3.0.1 6<br/>
+					
+				
+					IBM Rational Team Concert 3.0.1 .2<br/>
+					
+				
+					IBM Rational Team Concert 2.0 2<br/>
+					
+				
+					IBM Rational Team Concert 2.0 1<br/>
+					
+				
+					IBM Rational Team Concert  4.0.6<br/>
+					
+				
+					IBM Rational Team Concert  4.0.0.1<br/>
+					
+				
+					IBM Rational Team Concert  4.0<br/>
+					
+				
+					IBM Rational Team Concert  3.0.1.5<br/>
+					
+				
+					IBM Rational Team Concert  3.0.1.4<br/>
+					
+				
+					IBM Rational Team Concert  3.0.1.3<br/>
+					
+				
+					IBM Rational Team Concert  3.0.1<br/>
+					
+				
+					IBM Rational Team Concert  3.0<br/>
+					
+				
+					IBM Rational Team Concert  2.0<br/>
+					
+				
+					IBM Rational Software Architect Design Manager 4.0.3 <br/>
+					
+				
+					IBM Rational Software Architect Design Manager 4.0.2 <br/>
+					
+				
+					IBM Rational Software Architect Design Manager 4.0.1 <br/>
+					
+				
+					IBM Rational Software Architect Design Manager 3.0.1 <br/>
+					
+				
+					IBM Rational Software Architect Design Manager 3.0 1<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  4.0.6<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  4.0.5<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  4.0.4<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  4.0.0<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  4.0<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  3.0.0<br/>
+					
+				
+					IBM Rational Software Architect Design Manager  3.0<br/>
+					
+				
+					IBM Rational Rhapsody Design Manager 4.0.4 <br/>
+					
+				
+					IBM Rational Rhapsody Design Manager 4.0.3 <br/>
+					
+				
+					IBM Rational Rhapsody Design Manager 4.0.2 <br/>
+					
+				
+					IBM Rational Rhapsody Design Manager 4.0.1 <br/>
+					
+				
+					IBM Rational Rhapsody Design Manager  4.0.6<br/>
+					
+				
+					IBM Rational Rhapsody Design Manager  4.0.5<br/>
+					
+				
+					IBM Rational Rhapsody Design Manager  4.0<br/>
+					
+				
+					IBM Rational Rhapsody Design Manager  3.0.1<br/>
+					
+				
+					IBM Rational Rhapsody Design Manager  3.0.0.1<br/>
+					
+				
+					IBM Rational Rhapsody Design Manager  3.0<br/>
+					
+				
+					IBM Rational Requirements Composer 4.0.5 <br/>
+					
+				
+					IBM Rational Requirements Composer 4.0.4 <br/>
+					
+				
+					IBM Rational Requirements Composer 4.0.3 <br/>
+					
+				
+					IBM Rational Requirements Composer 4.0.1 <br/>
+					
+				
+					IBM Rational Requirements Composer 3.0.1 6 iFix1<br/>
+					
+				
+					IBM Rational Requirements Composer 3.0.1 6<br/>
+					
+				
+					IBM Rational Requirements Composer 3.0.1 .2<br/>
+					
+				
+					IBM Rational Requirements Composer 2.0 4<br/>
+					
+				
+					IBM Rational Requirements Composer 2.0 2<br/>
+					
+				
+					IBM Rational Requirements Composer 2.0 1<br/>
+					
+				
+					IBM Rational Requirements Composer  4.0.6<br/>
+					
+				
+					IBM Rational Requirements Composer  4.0.2<br/>
+					
+				
+					IBM Rational Requirements Composer  4.0.0.2<br/>
+					
+				
+					IBM Rational Requirements Composer  4.0.0.1<br/>
+					
+				
+					IBM Rational Requirements Composer  4.0.0<br/>
+					
+				
+					IBM Rational Requirements Composer  4.0<br/>
+					
+				
+					IBM Rational Requirements Composer  3.0.1<br/>
+					
+				
+					IBM Rational Requirements Composer  3.0<br/>
+					
+				
+					IBM Rational Requirements Composer  2.0.0.3<br/>
+					
+				
+					IBM Rational Requirements Composer  2.0<br/>
+					
+				
+					IBM Rational Engineering Lifecycle Manager 4.0.5 <br/>
+					
+				
+					IBM Rational Engineering Lifecycle Manager 4.0.4 <br/>
+					
+				
+					IBM Rational Engineering Lifecycle Manager 4.0.3 <br/>
+					
+				
+					IBM Rational Engineering Lifecycle Manager  4.0.6<br/>
+					
+				
+					IBM Rational Engineering Lifecycle Manager  1.0.0.1<br/>
+					
+				
+					IBM Rational Engineering Lifecycle Manager  1.0<br/>
+					
+				
+					IBM Rational DOORS Next Generation 4.0.5 <br/>
+					
+				
+					IBM Rational DOORS Next Generation 4.0.4 <br/>
+					
+				
+					IBM Rational DOORS Next Generation 4.0.3 <br/>
+					
+				
+					IBM Rational DOORS Next Generation 4.0.2 <br/>
+					
+				
+					IBM Rational DOORS Next Generation 4.0.1 <br/>
+					
+				
+					IBM Rational DOORS Next Generation  4.0.6<br/>
+					
+				
+					IBM Rational DOORS Next Generation  4.0.0<br/>
+					
+				
+					IBM Operational Decision Manager 7.0.2 <br/>
+					
+				
+					IBM Operational Decision Manager  8.5<br/>
+					
+				
+					IBM Operational Decision Manager  8.0<br/>
+					
+				
+					IBM Operational Decision Manager  7.5<br/>
+					
+				
+					IBM Operational Decision Manager  7.1<br/>
+					
+				
+					IBM OmniFind Enterprise Edition  9.1<br/>
+					
+				
+					IBM Lotus Widget Factory  0<br/>
+					
+				
+					IBM Lotus Mashups  3.0.0.1<br/>
+					
+				
+					IBM Lotus Mashups  2.0.0.2<br/>
+					
+				
+					IBM License Metric Tool  7.5<br/>
+					
+				
+					IBM License Metric Tool  7.2.2<br/>
+					
+				
+					IBM Interact  9.1<br/>
+					
+				
+					IBM Interact  7.5<br/>
+					
+				
+					IBM Integration Bus for z/OS  9.0.0.0<br/>
+					
+				
+					IBM Integration Bus  9.0.0.0<br/>
+					
+				
+					IBM Initiate Master Data Service  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  9.2<br/>
+					
+				
+					IBM Initiate Master Data Service  10.1<br/>
+					
+				
+					IBM Initiate Master Data Service  10.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Server  10.1<br/>
+					
+				
+					IBM InfoSphere Master Data Management Server  10.0<br/>
+					
+				
+					IBM Infosphere Master Data Management  11.0<br/>
+					
+				
+					IBM InfoSphere MashupHub  3.0<br/>
+					
+				
+					IBM InfoSphere MashupHub  2.0<br/>
+					
+				
+					IBM InfoSphere Guardium Data Redaction  2.5<br/>
+					
+				
+					IBM IBM Business Monitor 7.5.1 <br/>
+					
+				
+					IBM IBM Business Monitor  7.5<br/>
+					
+				
+					IBM Forms Server 8.0.1 <br/>
+					
+				
+					IBM Forms Server 4.0 2<br/>
+					
+				
+					IBM Forms Server  8.0<br/>
+					
+				
+					IBM Forms Server  4.0<br/>
+					
+				
+					IBM Forms Experience Builder  8.5<br/>
+					
+				
+					IBM Forms Experience Builder  8.0<br/>
+					
+				
+					IBM FlashSystem V840  9848-AE1<br/>
+					
+				
+					IBM FlashSystem V840  9848-AC1<br/>
+					
+				
+					IBM FlashSystem V840  9848-AC0<br/>
+					
+				
+					IBM FlashSystem V840  9846-AE1<br/>
+					
+				
+					IBM FlashSystem V840  9846-AC1<br/>
+					
+				
+					IBM FlashSystem V840  9846-AC0<br/>
+					
+				
+					IBM FlashSystem V840  9840-AE1<br/>
+					
+				
+					IBM FlashSystem 840  9848-AE1<br/>
+					
+				
+					IBM FlashSystem 840  9846-AE1<br/>
+					
+				
+					IBM FlashSystem 840  9843-AE1<br/>
+					
+				
+					IBM FlashSystem 840  9840-AE1<br/>
+					
+				
+					IBM FlashSystem 840  0<br/>
+					
+				
+					IBM FileNet Services for Lotus Quickr  1.1<br/>
+					
+				
+					IBM Filenet P8 Application Engine  4.0.2<br/>
+					
+				
+					IBM FileNet Content Manager Workplace XT 1.1.5 <br/>
+					
+				
+					IBM FileNet Content Manager Workplace XT 1.1.4 <br/>
+					
+				
+					IBM FileNet Content Manager Workplace XT 1.1.3 <br/>
+					
+				
+					IBM FileNet Content Manager Workplace XT 1.1.2 <br/>
+					
+				
+					IBM FileNet Content Manager Workplace XT 1.1.1 <br/>
+					
+				
+					IBM FileNet Content Manager  5.2.0<br/>
+					
+				
+					IBM FileNet Collaboration Services  2.0.2<br/>
+					
+				
+					IBM FileNet Business Process Framework 4.1 <br/>
+					
+				
+					IBM Endpoint Manager for Remote Control  9.1.0<br/>
+					
+				
+					IBM Distributed Marketing  9.1<br/>
+					
+				
+					IBM Distributed Marketing  9.0<br/>
+					
+				
+					IBM Distributed Marketing  7.0<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  9.1 Fix Pack 22<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  9.1<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  11.1 Fix Pack 1<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  11.1<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  10.1 Fix Pack 9<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  10.1<br/>
+					
+				
+					IBM DataQuant 2.1.1 <br/>
+					
+				
+					IBM DataQuant  1.2.19<br/>
+					
+				
+					IBM Content Manager Services for Lotus Quickr  1.1<br/>
+					
+				
+					IBM Content Manager Services for Lotus Quickr  1.0<br/>
+					
+				
+					IBM Content Integrator 8.5.1 <br/>
+					
+				
+					IBM Content Integrator  8.6<br/>
+					
+				
+					IBM Content Foundation  5.2.0<br/>
+					
+				
+					IBM Content Analytics with Enterprise Search  3.0<br/>
+					
+				
+					IBM Content Analytics with Enterprise Search  2.2<br/>
+					
+				
+					IBM Connections  5.0<br/>
+					
+				
+					IBM Connections  4.5<br/>
+					
+				
+					IBM Connections  4.0<br/>
+					
+				
+					IBM Connections  3.0.1.1<br/>
+					
+				
+					IBM Connections  3.0.1.0<br/>
+					
+				
+					IBM Campaign  9.1<br/>
+					
+				
+					IBM Campaign  9.0<br/>
+					
+				
+					IBM Campaign  8.6<br/>
+					
+				
+					IBM Campaign  8.5<br/>
+					
+				
+					IBM Campaign  8.3<br/>
+					
+				
+					IBM Campaign  8.2<br/>
+					
+				
+					IBM Campaign  8.1<br/>
+					
+				
+					IBM Campaign  8.0<br/>
+					
+				
+					IBM Campaign  7.6<br/>
+					
+				
+					IBM Campaign  7.5<br/>
+					
+				
+					IBM Campaign  7.4<br/>
+					
+				
+					IBM Campaign  7.3<br/>
+					
+				
+					IBM Campaign  7.2<br/>
+					
+				
+					IBM Campaign  7.1<br/>
+					
+				
+					IBM Campaign  7.0<br/>
+					
+				
+					IBM CÃºram Social Program Management 6.0.5 <br/>
+					
+				
+					IBM CÃºram Social Program Management 6.0.4 <br/>
+					
+				
+					IBM CÃºram Social Program Management 6.0.3 <br/>
+					
+				
+					IBM CÃºram Social Program Management 6.0.2 <br/>
+					
+				
+					IBM CÃºram Social Program Management 5.2.6 <br/>
+					
+				
+					IBM CÃºram Social Program Management 5.2.5 <br/>
+					
+				
+					IBM CÃºram Social Program Management 5.2.4 <br/>
+					
+				
+					IBM CÃºram Social Program Management 5.2.1 <br/>
+					
+				
+					IBM CÃºram Social Program Management 5.2 <br/>
+					
+				
+					IBM CÃºram Social Program Management  6.0.5.4<br/>
+					
+				
+					IBM CÃºram Social Program Management  6.0.5.3<br/>
+					
+				
+					IBM CÃºram Social Program Management  6.0.5.2<br/>
+					
+				
+					IBM CÃºram Social Program Management  6.0.4.5<br/>
+					
+				
+					IBM CÃºram Social Program Management  6.0.4.4<br/>
+					
+				
+					IBM CÃºram Social Program Management  6.0.4.3<br/>
+					
+				
+					IBM CÃºram Social Program Management  4.5<br/>
+					
+				
+					IBM Business Process Manager Standard 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Standard  8.5.0<br/>
+					
+				
+					IBM Business Process Manager Standard  8.0<br/>
+					
+				
+					IBM Business Process Manager Standard  7.5.0<br/>
+					
+				
+					IBM Business Process Manager Express 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Express  8.5.0<br/>
+					
+				
+					IBM Business Process Manager Express  8.0.0<br/>
+					
+				
+					IBM Business Process Manager Express  7.5.0<br/>
+					
+				
+					IBM Business Process Manager Advanced on z/OS  8.5.0<br/>
+					
+				
+					IBM Business Process Manager Advanced on z/OS  8.0.0<br/>
+					
+				
+					IBM Business Process Manager Advanced on z/OS  7.5.0<br/>
+					
+				
+					IBM Business Process Manager Advanced 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Advanced 8.5 <br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.0<br/>
+					
+				
+					IBM Business Monitor  8.0.1<br/>
+					
+				
+					Huawei USG9580  V200R001C00<br/>
+					
+				
+					Huawei USG9560  V200R001C00<br/>
+					
+				
+					Huawei USG9520  V200R001C00<br/>
+					
+				
+					Huawei Eudemon8000E-X8  V200R001C00<br/>
+					
+				
+					Huawei Eudemon8000E-X3  V200R001C00<br/>
+					
+				
+					Huawei Eudemon8000E-X16  V200R001C00<br/>
+					
+				
+					Huawei eSpace Meeting Portal  V100R001C00<br/>
+					
+				
+					Huawei AnyOffice  V200R002C10SPC500<br/>
+					
+				
+					Huawei AntiDDoS 8080  V100R001C00<br/>
+					
+				
+					Huawei AntiDDoS 8060  V100R001C00<br/>
+					
+				
+					Huawei AntiDDoS 8030  V100R001C00<br/>
+					
+				
+					Huawei AntiDDoS 500-D  V100R001C00<br/>
+					
+				
+					Huawei AntiDDoS 1550  V100R001C00<br/>
+					
+				
+					Huawei AntiDDoS 1520  V100R001C00<br/>
+					
+				
+					HP SiteScope Monitors  11.32IP1<br/>
+					
+				
+					HP SiteScope Monitors  11.20<br/>
+					
+				
+					HP SDN VAN Controller  2.5<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP Insight Control 7.5 <br/>
+					
+				
+					HP Insight Control  7.4<br/>
+					
+				
+					HP Insight Control  7.3<br/>
+					
+				
+					HP Insight Control  7.2<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50-01 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform(64)  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00 HP-UX (IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Platform  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Service Architect  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50-01 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base(64)  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-50 (HP-UX(IPF))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Primary Server Base  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Developer 01  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50-01 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Developer  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server-r  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server(64)  09-00 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-60 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-50-02 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-50 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-50 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00-03 (Linux)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi uCosminexus Application Server  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-50 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-50 (AIX)<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00-03 (Windows(x8<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00-02 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00-02 (Windows(x6<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi Programming Environment for Java  09-00 (AIX)<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-10-03<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-10<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-02-04<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-02<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-01-03<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-01-02<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-01-01<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-01<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-00-02<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-00-01<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  10-00<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-51-05<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-51-04<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-51-03<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-51-02<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-51-01<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-51<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-50-03<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-50-02<br/>
+					
+				
+					Hitachi JP1/IT Desktop Management - Manager  09-50<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  10-01-06<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  10-01-03<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  10-01<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  09-50-03<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  09-50-02<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  09-50-01<br/>
+					
+				
+					Hitachi Job Management Partner 1/IT Desktop Management - Manager  09-50<br/>
+					
+				
+					Hitachi IT Operations Director  04-00-06<br/>
+					
+				
+					Hitachi IT Operations Director  04-00-02<br/>
+					
+				
+					Hitachi IT Operations Director  04-00-01<br/>
+					
+				
+					Hitachi IT Operations Director  04-00<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-12<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-11<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-10<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-09<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-08<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-07<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-06<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-04<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-03<br/>
+					
+				
+					Hitachi IT Operations Director  03-00-01<br/>
+					
+				
+					Hitachi IT Operations Director  03-00<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-07<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-06<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-05<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-04<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-03<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-02<br/>
+					
+				
+					Hitachi IT Operations Director  02-50-01<br/>
+					
+				
+					Hitachi IT Operations Analyzer  03-02<br/>
+					
+				
+					Hitachi IT Operations Analyzer  03-01-02<br/>
+					
+				
+					Hitachi IT Operations Analyzer  03-01-01<br/>
+					
+				
+					Hitachi IT Operations Analyzer  03-01<br/>
+					
+				
+					Hitachi IT Operations Analyzer  02-53-02<br/>
+					
+				
+					Hitachi IT Operations Analyzer  02-53-01<br/>
+					
+				
+					Hitachi IT Operations Analyzer  02-53<br/>
+					
+				
+					Hitachi IT Operations Analyzer  02-51-01<br/>
+					
+				
+					Hitachi IT Operations Analyzer  02-51<br/>
+					
+				
+					Hitachi IT Operations Analyzer  02-01<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-03 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-03 (Windows(x8<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-03 (Windows(x6<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-03 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-03 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-01 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-01 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50 (Windows(x86))<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50 (Windows(x64))<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-10 (Windows(x8<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-10 (Windows(x6<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-10 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-08 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-08 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-02 (AIX)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00-01 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00 (Windows(x86))<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00 (Windows(x64))<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-00 (Linux)<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					F5 Enterprise Manager 3.1.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.0 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+					
+				
+					F5 Enterprise Manager 2.0 <br/>
+					
+				
+					F5 BIG-IP WOM 11.2 <br/>
+					
+				
+					F5 BIG-IP WOM 11.0 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP WOM 10.0 <br/>
+					
+				
+					F5 BIG-IP WOM  11.3.0<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP PSM 11.4.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.3 <br/>
+					
+				
+					F5 BIG-IP PSM 11.2 <br/>
+					
+				
+					F5 BIG-IP PSM 11.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.0 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP PSM 10.0 <br/>
+					
+				
+					F5 BIG-IP PSM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP PEM 11.5 <br/>
+					
+				
+					F5 BIG-IP PEM 11.3 <br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1<br/>
+					
+				
+					F5 BIG-IP PEM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.0 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP LTM 10.0 <br/>
+					
+				
+					F5 BIG-IP LTM  11.5<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5 <br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 <br/>
+					
+				
+					F5 BIG-IP GTM 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP GTM 10.0 <br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0 HF2  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.2.4  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0<br/>
+					
+				
+					F5 BIG-IP ASM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.0 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP APM  11.5.0<br/>
+					
+				
+					F5 BIG-IP APM  11.4.1<br/>
+					
+				
+					F5 BIG-IP APM  11.4.0<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0<br/>
+					
+				
+					F5 BIG-IP APM  10.2.4 HF5<br/>
+					
+				
+					F5 BIG-IP APM  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP APM  10.1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 <br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0-HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5 <br/>
+					
+				
+					F5 BIG-IP AFM 11.3 <br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AFM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Application Server  9.0 SP 2<br/>
+					
+				
+					Avaya IP Office Application Server  9.0 SP 1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya Aura Conferencing  7.0 Standard<br/>
+					
+				
+					Avaya Aura Conferencing  7.0<br/>
+					
+				
+					Arubanetworks ClearPass 6.0.2 <br/>
+					
+				
+					Arubanetworks ClearPass 6.0.1 <br/>
+					
+				
+					Arubanetworks ClearPass  6.3.0<br/>
+					
+				
+					Arubanetworks ClearPass  6.2.0<br/>
+					
+				
+					Arubanetworks ClearPass  6.1.3<br/>
+					
+				
+					Arubanetworks ClearPass  6.1.0<br/>
+					
+				
+					Arubanetworks ClearPass  5.0<br/>
+					
+				
+					Apache Tomcat 8.0.1 <br/>
+					
+				
+					Apache Tomcat 7.0.50 <br/>
+					
+				
+					Apache Tomcat 7.0.33 <br/>
+					
+				
+					Apache Tomcat 7.0.32 <br/>
+					
+				
+					Apache Tomcat 7.0.31 <br/>
+					
+				
+					Apache Tomcat 7.0.30 <br/>
+					
+				
+					Apache Tomcat 7.0.29 <br/>
+					
+				
+					Apache Tomcat 7.0.28 <br/>
+					
+				
+					Apache Tomcat 7.0.27 <br/>
+					
+				
+					Apache Tomcat 7.0.26 <br/>
+					
+				
+					Apache Tomcat 7.0.25 <br/>
+					
+				
+					Apache Tomcat 7.0.24 <br/>
+					
+				
+					Apache Tomcat 7.0.23 <br/>
+					
+				
+					Apache Tomcat 7.0.16 <br/>
+					
+				
+					Apache Tomcat 7.0.15 <br/>
+					
+				
+					Apache Tomcat 7.0.14 <br/>
+					
+				
+					Apache Tomcat 7.0.13 <br/>
+					
+				
+					Apache Tomcat 7.0.12 <br/>
+					
+				
+					Apache Tomcat 7.0.9 <br/>
+					
+				
+					Apache Tomcat 7.0.8 <br/>
+					
+				
+					Apache Tomcat 7.0.7 <br/>
+					
+				
+					Apache Tomcat 7.0.6 <br/>
+					
+				
+					Apache Tomcat 7.0.4 <br/>
+					
+				
+					Apache Tomcat 7.0.3 <br/>
+					
+				
+					Apache Tomcat 7.0.2 <br/>
+					
+				
+					Apache Tomcat 7.0.1 <br/>
+					
+				
+					Apache Tomcat 7.0 beta<br/>
+					
+				
+					Apache Tomcat 7.0 <br/>
+					
+				
+					Apache Tomcat  8.0.0-RC1<br/>
+					
+				
+					Apache Tomcat  7.0.5<br/>
+					
+				
+					Apache Tomcat  7.0.40<br/>
+					
+				
+					Apache Tomcat  7.0.4 Beta<br/>
+					
+				
+					Apache Tomcat  7.0.22<br/>
+					
+				
+					Apache Tomcat  7.0.21<br/>
+					
+				
+					Apache Tomcat  7.0.20<br/>
+					
+				
+					Apache Tomcat  7.0.2 Beta<br/>
+					
+				
+					Apache Tomcat  7.0.19<br/>
+					
+				
+					Apache Tomcat  7.0.18<br/>
+					
+				
+					Apache Tomcat  7.0.11<br/>
+					
+				
+					Apache Tomcat  7.0.10<br/>
+					
+				
+					Apache Struts 2  0<br/>
+					
+				
+					Apache Struts 2.3.4 1<br/>
+					
+				
+					Apache Struts 2.3.4 <br/>
+					
+				
+					Apache Struts 2.2.3 <br/>
+					
+				
+					Apache Struts 2.2.1 1<br/>
+					
+				
+					Apache Struts 2.2 <br/>
+					
+				
+					Apache Struts 2.1.8 .1<br/>
+					
+				
+					Apache Struts 2.1.8 <br/>
+					
+				
+					Apache Struts 2.1.6 <br/>
+					
+				
+					Apache Struts 2.1.5 <br/>
+					
+				
+					Apache Struts 2.1.2 <br/>
+					
+				
+					Apache Struts 2.1.1 <br/>
+					
+				
+					Apache Struts 2.1 <br/>
+					
+				
+					Apache Struts 2.0.14 <br/>
+					
+				
+					Apache Struts 2.0.12 <br/>
+					
+				
+					Apache Struts 2.0.11 .2<br/>
+					
+				
+					Apache Struts 2.0.11 .1<br/>
+					
+				
+					Apache Struts 2.0.11 <br/>
+					
+				
+					Apache Struts 2.0.10 <br/>
+					
+				
+					Apache Struts 2.0.9 <br/>
+					
+				
+					Apache Struts 2.0.8 <br/>
+					
+				
+					Apache Struts 2.0.7 <br/>
+					
+				
+					Apache Struts 2.0.6 <br/>
+					
+				
+					Apache Struts 2.0.5 <br/>
+					
+				
+					Apache Struts 2.0.4 <br/>
+					
+				
+					Apache Struts 2.0.3 <br/>
+					
+				
+					Apache Struts 2.0.2 <br/>
+					
+				
+					Apache Struts 2.0.1 <br/>
+					
+				
+					Apache Struts 2.0 <br/>
+					
+				
+					Apache Struts  2.3.8<br/>
+					
+				
+					Apache Struts  2.3.7<br/>
+					
+				
+					Apache Struts  2.3.3<br/>
+					
+				
+					Apache Struts  2.3.16<br/>
+					
+				
+					Apache Struts  2.3.15.3<br/>
+					
+				
+					Apache Struts  2.3.15.2<br/>
+					
+				
+					Apache Struts  2.3.15.1<br/>
+					
+				
+					Apache Struts  2.3.15<br/>
+					
+				
+					Apache Struts  2.3.14.3<br/>
+					
+				
+					Apache Struts  2.3.14.2<br/>
+					
+				
+					Apache Struts  2.3.14.1<br/>
+					
+				
+					Apache Struts  2.3.14<br/>
+					
+				
+					Apache Struts  2.3.12<br/>
+					
+				
+					Apache Struts  2.3.1.2<br/>
+					
+				
+					Apache Struts  2.3.1.1<br/>
+					
+				
+					Apache Struts  2.3.1<br/>
+					
+				
+					Apache Struts  2.2.3.1<br/>
+					
+				
+					Apache Struts  2.1.4<br/>
+					
+				
+					Apache Struts  2.1.3<br/>
+					
+				
+					Apache Struts  2.0.13<br/>
+					
+				
+					Apache Commons FileUpload  1.3<br/>
+					
+				
+					Apache Commons FileUpload  1.2.2<br/>
+					
+				
+					Apache Commons FileUpload  1.2.1<br/>
+					
+				
+					Apache Commons FileUpload  1.2<br/>
+					
+				
+					Apache Commons FileUpload  1.1.1<br/>
+					
+				
+					Apache Commons FileUpload  1.1<br/>
+					
+				
+					Apache Commons FileUpload  1.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare vCenter Server  5.5 Update 2<br/>
+					
+				
+					VMWare vCenter Operations Management Suite 5.8.2 <br/>
+					
+				
+					VMWare vCenter Operations Management Suite 5.7.3 <br/>
+					
+				
+					Redhat JBoss Fuse  6.1.0<br/>
+					
+				
+					Redhat JBoss A-MQ  6.1.0<br/>
+					
+				
+					IBM UrbanCode Release  6.0.1.4<br/>
+					
+				
+					IBM UrbanCode Deploy 6.0.1 4<br/>
+					
+				
+					IBM Tivoli Storage Manager Operations Center 7.1 200<br/>
+					
+				
+					IBM Tivoli Storage Manager Operations Center 6.4.2 000<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.1.8<br/>
+					
+				
+					IBM InfoSphere Guardium Data Redaction  2.5.1<br/>
+					
+				
+					IBM FileNet Business Process Framework  4.1.0.10<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  9.1 Fix Pack 23<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  11.1 Fix Pack 2<br/>
+					
+				
+					IBM DB2 Query Management Facility for WebSphere  10.1 Fix Pack 10<br/>
+					
+				
+					IBM DataQuant 2.1.2 <br/>
+					
+				
+					IBM DataQuant  1.2.20<br/>
+					
+				
+					IBM Connections  5.0 CR1<br/>
+					
+				
+					Huawei eSpace Meeting Portal  V100R001C00SPC303<br/>
+					
+				
+					Huawei AnyOffice  V200R002C10L00422<br/>
+					
+				
+					Huawei AntiDDoS 8000  V100R001C00SPH503<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-04 Window(x86)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-04 Window(x64)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-04 HP-UX(IPF)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-04 (Linux)<br/>
+					
+				
+					Hitachi Cosminexus Component Container  09-50-04 (AIX)<br/>
+					
+				
+					Arubanetworks ClearPass  6.3.2<br/>
+					
+				
+					Arubanetworks ClearPass  6.2.6<br/>
+					
+				
+					Arubanetworks ClearPass  6.1.4<br/>
+					
+				
+					Apache Struts  2.3.16.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

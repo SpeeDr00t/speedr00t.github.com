@@ -1,0 +1,660 @@
+#SpeeDr00t@Black Falcon<br>#bid69322<p><b><span style="font-size: 18pt;">PHP DNS TXT Record Handling CVE-2014-3597 Heap Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/69322/info">info</a><br><a href="http://www.securityfocus.com/bid/69322/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/69322/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/69322/solution">solution</a><br><a href="http://www.securityfocus.com/bid/69322/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				69322
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-3597<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 21 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 07 2015 05:33PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				David Kutalek from Red Hat
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Slackware Slackware Linux  13.37<br/>
+					
+				
+					Slackware Slackware Linux  13.1<br/>
+					
+				
+					Slackware Slackware Linux  13.0<br/>
+					
+				
+					PHP PHP  5.4.31<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.3<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.4<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  5.0<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.3<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.5.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2.4.0.15<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.2<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1 SP 6.1.0.9.8<br/>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server DEFINITY Server SI/CS  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8100  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8300  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8500  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Avaya Communication Manager Server S8700  <br/>
+</span>
+					
+				
+					Avaya Aura Communication Manager Utility Services  6.0<br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+					
+				
+					Apple Mac OS X  10.10<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apple Mac Os X  10.10.3<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

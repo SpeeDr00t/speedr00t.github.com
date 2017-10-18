@@ -1,0 +1,1440 @@
+#SpeeDr00t@Black Falcon<br>#bid62811<p><b><span style="font-size: 18pt;">Microsoft Internet Explorer CVE-2013-3897 Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/62811/info">info</a><br><a href="http://www.securityfocus.com/bid/62811/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/62811/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/62811/solution">solution</a><br><a href="http://www.securityfocus.com/bid/62811/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				62811
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Unknown
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-3897<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 08 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 01 2014 03:31AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Hoodie22, working with the National Cyber Security Centre of the Netherlands, Daniel Chechik of the Trustwave SpiderLabs Team, and Renato Ettisberger of IOprotect GmbH.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Microsoft Internet Explorer  9<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows  7<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for 32-bit Systems  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for 32-bit Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for x64-based Systems  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for x64-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 Home Premium  - Sp1 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 Home Premium  - Sp1 X32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server  2008 R2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for 32-bit Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for 32-bit Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 R2 for x64-based Systems  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  0<br/>
+</span>
+					
+				
+					Microsoft Internet Explorer  8<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows  7<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for 32-bit Systems  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for 32-bit Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for x64-based Systems  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 for x64-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 Home Premium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 Home Premium  - Sp1 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows 7 Home Premium  - Sp1 X32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server  2008 R2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  Sp2 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  Sp1 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008  R2 SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 R2 x64  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 R2 x64  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 Standard Edition  X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 Standard Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 Standard Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 Standard Edition  - Sp2 Web<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Business 64-bit edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Business 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Business 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Enterprise 64-bit edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Enterprise 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Enterprise 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  Sp2 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Premium 64-bit edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Premium 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Premium 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  <br/>
+</span>
+					
+				
+					Microsoft Internet Explorer  7.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  Sp2 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  Sp1 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Itanium  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Itanium  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Itanium  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 Itanium  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 x64  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003 x64  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for 32-bit Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for 32-bit Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for 32-bit Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for 32-bit Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for Itanium-based Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for Itanium-based Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for Itanium-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for Itanium-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  R2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2008 for x64-based Systems  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Ultimate<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Ultimate<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Ultimate<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Ultimate<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Ultimate<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Premium<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Home Basic<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Enterprise<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  Business<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Enterprise 64-bit edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Enterprise 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Enterprise 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  Sp1 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Basic 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Premium 64-bit edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Premium 64-bit edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista Home Premium 64-bit edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Vista x64 Edition  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Service Pack 3  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Tablet PC Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Tablet PC Edition  SP3<br/>
+</span>
+					
+				
+					Microsoft Internet Explorer  6.0<br/>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  Sp1 X64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows Server 2003  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP  - Gold Home<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP  - Gold 64-Bit-2002<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Embedded  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Home  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Media Center Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Professional x64 Edition  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Service Pack 3  0<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Tablet PC Edition  SP3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Tablet PC Edition  SP2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Tablet PC Edition  SP1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Microsoft Windows XP Tablet PC Edition  <br/>
+</span>
+					
+				
+					Avaya Messaging Application Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Web Conferencing Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Streaming Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Recording Server  0<br/>
+					
+				
+					Avaya Meeting Exchange - Client Registration Server  0<br/>
+					
+				
+					Avaya Communication Server 1000 Telephony Manager  0<br/>
+					
+				
+					Avaya CallPilot  0<br/>
+					
+				
+					Avaya Aura Conferencing  Standard<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x63000/62811/62811.html">#exploit_62811.html</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x63000/62811/62811.rb">#exploit_62811.rb</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Reports indicate that this issue is actively being exploited in targeted attacks.  <br/><br/><br/><br/>The following exploits are available:<br/><br/>Core Security Technologies has developed a working commercial exploit for its CORE IMPACT product. This exploit is not otherwise publicly available or known to be circulating in the wild.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/62811.html">/data/vulnerabilities/exploits/62811.html</a></li>
+<li><a href="/data/vulnerabilities/exploits/62811.rb">/data/vulnerabilities/exploits/62811.rb</a></li>
+</ul>
+</div>

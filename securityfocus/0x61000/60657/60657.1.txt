@@ -1,0 +1,79 @@
+I. BACKGROUND
+
+http://en.wikipedia.org/wiki/JavaSE
+http://openjdk.java.net/projects/jdk7u/
+http://hg.openjdk.java.net/jdk7u/jdk7u/jdk  // Java and native sources
+
+
+II. DESCRIPTION
+
+The vulnerable Java's IntegerInterleavedRaster.verify() method allows to bypass 
+"dataOffsets[]" boundary checks by setting the "numDataElements" field to 0:  
+
+    // sun.awt.image.IntegerInterleavedRaster
+    protected final void verify()
+    {
+        if ((width <= 0) || (height <= 0) || (height > Integer.MAX_VALUE / width))
+            throw new RasterFormatException("Invalid raster dimension");
+        if (dataOffsets[0] < 0)
+            throw new RasterFormatException("Data offset (" + dataOffsets[0] + ") must be >= 0");
+
+        int i = 0;
+        if ((scanlineStride < 0) || (scanlineStride > Integer.MAX_VALUE / height))
+            throw new RasterFormatException("Incorrect scanline stride: " + scanlineStride);
+
+        int k = (height - 1) * scanlineStride;
+        if ((pixelStride < 0) || (pixelStride > Integer.MAX_VALUE / width))
+            throw new RasterFormatException("Incorrect pixel stride: " + pixelStride);
+
+        int m = (width - 1) * pixelStride;
+        if (m > Integer.MAX_VALUE - k)
+            throw new RasterFormatException("Incorrect raster attributes");
+
+        m += k;
+        for (int n = 0; n < numDataElements; n++)
+        {
+            if (dataOffsets[n] > Integer.MAX_VALUE - m)
+                throw new RasterFormatException("Incorrect band offset: " + dataOffsets[n]);
+            int j = m + dataOffsets[n];
+            if (j > i)
+                i = j;
+        }
+        if (data.length < i)
+            throw new RasterFormatException("Data array too small (should be " + i + " )");
+    }
+ 
+The BufImgSurfaceData.createDataIC() method accepts malformed raster and
+calls native Java_sun_awt_image_BufImgSurfaceData_initRaster() with 
+out-of-bounds "getDataOffset(0)" parameter.
+ 
+    // sun.awt.image.BufImgSurfaceData
+    public static SurfaceData createDataIC(BufferedImage bImg, SurfaceType sType) 
+    {
+        IntegerComponentRaster icRaster = (IntegerComponentRaster)bImg.getRaster();
+        BufImgSurfaceData bisd = new BufImgSurfaceData(icRaster.getDataBuffer(), bImg, sType);
+        bisd.initRaster(icRaster.getDataStorage(),
+                        icRaster.getDataOffset(0) * 4, 0,
+                        icRaster.getWidth(),
+                        icRaster.getHeight(),
+                        icRaster.getPixelStride() * 4,
+                        icRaster.getScanlineStride() * 4,
+                        null);
+        return bisd;
+    }
+
+The memory corruption can occur later when the stored "dataOffset" value will 
+be used by the native code.
+
+
+III. ANALYSIS
+
+This vulnerability allows remote attackers to execute arbitrary code on vulnerable 
+installations of Oracle Java. User interaction is required to exploit this 
+vulnerability in that the target must visit a malicious page or open a malicious file.
+
+
+
+IV. DETECTION
+Oracle Java SE 6u43, 7u17
+

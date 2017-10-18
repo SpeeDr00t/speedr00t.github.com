@@ -1,0 +1,666 @@
+#SpeeDr00t@Black Falcon<br>#bid72673<p><b><span style="font-size: 18pt;">ISC BIND CVE-2015-1349 Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/72673/info">info</a><br><a href="http://www.securityfocus.com/bid/72673/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/72673/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/72673/solution">solution</a><br><a href="http://www.securityfocus.com/bid/72673/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				72673
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-1349<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 18 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 18 2017 12:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jan-Piet Mens
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					SuSE openSUSE Evergreen  11.4<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Slackware Slackware Linux  13.37<br/>
+					
+				
+					Slackware Slackware Linux  13.1<br/>
+					
+				
+					Slackware Slackware Linux  13.0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.6.z<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Juniper NorthStar Controller Application  2.1.0<br/>
+					
+				
+					ISC BIND  9.7.1-P2<br/>
+					
+				
+					ISC BIND  9.7.1 P1<br/>
+					
+				
+					ISC BIND  9.7.1<br/>
+					
+				
+					ISC BIND  9.7.0 P2<br/>
+					
+				
+					ISC BIND  9.7.0<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM i  7.2<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA3-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC2-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 Rc2<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 Rc1<br/>
+					
+				
+					FreeBSD FreeBSD  9.2 Prerelease<br/>
+					
+				
+					FreeBSD FreeBSD  9.2<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p22<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p18<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.1--RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.1 Release-P5<br/>
+					
+				
+					FreeBSD FreeBSD  9.1 Release-P4<br/>
+					
+				
+					FreeBSD FreeBSD  9.1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0--RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD Freebsd  8.4-RELEASE-p23<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p19<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  8.4<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  8.3-RELEASE-p11<br/>
+					
+				
+					FreeBSD FreeBSD  8.3<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.2-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.2 - RELEASE -p3<br/>
+					
+				
+					FreeBSD FreeBSD  8.2<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  8.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  8.0 -RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  8.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Avaya Session Border Controller for Enterprise  6.3.0<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.0<br/>
+					
+				
+					Avaya IP Office Server Edition  9.0<br/>
+					
+				
+					Avaya IP Office Server Edition  8.1<br/>
+					
+				
+					Avaya IP Office Server Edition  8.0<br/>
+					
+				
+					Avaya IP Office Application Server  9.0<br/>
+					
+				
+					Avaya IP Office Application Server  8.0<br/>
+					
+				
+					Avaya CMS  17.0<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Conferencing  7.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  3.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  2.0<br/>
+					
+				
+					Apple Mac OS X Server 4.1.5 <br/>
+					
+				
+					Apple Mac OS X Server 3.2.2 <br/>
+					
+				
+					Apple Mac OS X Server 3.2.1 <br/>
+					
+				
+					Apple Mac OS X Server 3.1.2 <br/>
+					
+				
+					Apple Mac OS X Server  4.1<br/>
+					
+				
+					Apple Mac OS X Server  4.0<br/>
+					
+				
+					Apple Mac OS X Server  3.2<br/>
+					
+				
+					Apple Mac OS X Server  3.0<br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper NorthStar Controller Application  2.1.0 Service Pack 1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  8.4-RELEASE-p24<br/>
+					
+				
+					Apple Mac OS X Server 5.0.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers will likely use standard tools to exploit this issue.
+	
+		<ul>
+</ul>
+</div>

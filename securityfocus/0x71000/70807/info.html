@@ -1,0 +1,432 @@
+#SpeeDr00t@Black Falcon<br>#bid70807<p><b><span style="font-size: 18pt;">PHP 'donote()' Function Out-of-Bounds Read Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/70807/info">info</a><br><a href="http://www.securityfocus.com/bid/70807/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/70807/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/70807/solution">solution</a><br><a href="http://www.securityfocus.com/bid/70807/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				70807
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-3710<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 22 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 09:11AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Francisco Alonso
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Slackware Linux  14.0<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					PHP PHP  5.4.34<br/>
+					
+				
+					Pexip Pexip Infinity  8.0<br/>
+					
+				
+					Pexip Pexip Infinity  7.0<br/>
+					
+				
+					Pexip Pexip Infinity  6.0<br/>
+					
+				
+					Pexip Pexip Infinity  5.0<br/>
+					
+				
+					Pexip Pexip Infinity  4.0<br/>
+					
+				
+					Pexip Pexip Infinity  3.0<br/>
+					
+				
+					Pexip Pexip Infinity  2.0<br/>
+					
+				
+					Pexip Pexip Infinity  1.0<br/>
+					
+				
+					Oracle Linux  0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 18<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 14<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 11<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Fix Pack 10<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0 fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 JRE Update 4<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+					
+				
+					Apple Mac OS X  10.10<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Pexip Pexip Infinity  9.0<br/>
+					
+				
+					IBM PowerKVM 2.1.1 SP3<br/>
+					
+				
+					IBM PowerKVM 2.1.1 Build 65.6<br/>
+					
+				
+					IBM PowerKVM  3.1 Build 3<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p13<br/>
+					
+				
+					Apple Mac Os X  10.10.3<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

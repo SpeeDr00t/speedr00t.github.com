@@ -1,0 +1,61 @@
+I. BACKGROUND
+
+http://en.wikipedia.org/wiki/JavaSE
+http://openjdk.java.net/projects/jdk7u/
+http://hg.openjdk.java.net/jdk7u/jdk7u-dev/jdk  // Java and native sources
+
+
+II. DESCRIPTION
+
+The Java's IntegerInterleavedRaster.verify() method is vulnerable to the signed 
+integer overflow what allows to bypass "dataOffsets[0]" boundary checks:  
+
+    // sun.awt.image.IntegerInterleavedRaster
+    private void verify (boolean strictCheck) {
+        int maxSize = 0;
+        int size;
+
+        size = (height-1)*scanlineStride + (width-1) + dataOffsets[0];
+        if (size > maxSize) {
+            maxSize = size;
+        }
+        if (data.length < maxSize) {
+            throw new RasterFormatException("Data array too small (should be " + maxSize + " but is " + data.length+ 
+" )");
+        }
+    }
+ 
+The BufImgSurfaceData.createDataIC() method accepts malformed raster and
+calls native Java_sun_awt_image_BufImgSurfaceData_initRaster() with 
+out-of-bounds "getDataOffset(0)" parameter.
+ 
+    // sun.awt.image.BufImgSurfaceData
+    public static SurfaceData createDataIC(BufferedImage bImg, SurfaceType sType) 
+    {
+        IntegerComponentRaster icRaster = (IntegerComponentRaster)bImg.getRaster();
+        BufImgSurfaceData bisd = new BufImgSurfaceData(icRaster.getDataBuffer(), bImg, sType);
+        bisd.initRaster(icRaster.getDataStorage(),
+                        icRaster.getDataOffset(0) * 4, 0,
+                        icRaster.getWidth(),
+                        icRaster.getHeight(),
+                        icRaster.getPixelStride() * 4,
+                        icRaster.getScanlineStride() * 4,
+                        null);
+        return bisd;
+    }
+
+The memory corruption can occur later when the stored "dataOffset" value will 
+be used by the native code.
+
+
+III. ANALYSIS
+
+This vulnerability allows remote attackers to execute arbitrary code on vulnerable 
+installations of Oracle Java. User interaction is required to exploit this 
+vulnerability in that the target must visit a malicious page or open a malicious file.
+
+
+
+IV. DETECTION
+Oracle Java SE 6u41, 7u15
+

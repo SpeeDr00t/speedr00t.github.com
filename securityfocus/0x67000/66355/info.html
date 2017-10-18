@@ -1,0 +1,1215 @@
+#SpeeDr00t@Black Falcon<br>#bid66355<p><b><span style="font-size: 18pt;">OpenSSH 'child_set_env()' Function Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/66355/info">info</a><br><a href="http://www.securityfocus.com/bid/66355/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/66355/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/66355/solution">solution</a><br><a href="http://www.securityfocus.com/bid/66355/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				66355
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-2532<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 21 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 26 2016 03:13AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jann Horn
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  13.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 LTS<br/>
+					
+				
+					Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Communications User Data Repository  10.0.1<br/>
+					
+				
+					Oracle Communications Policy Management 12.1.1 <br/>
+					
+				
+					Oracle Communications Policy Management 10.4.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.9.1 <br/>
+					
+				
+					Oracle Communications Policy Management 9.7.3 <br/>
+					
+				
+					OpenSSH OpenSSH  6.5<br/>
+					
+				
+					OpenSSH OpenSSH  6.4<br/>
+					
+				
+					OpenSSH OpenSSH  6.3<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p2<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p1<br/>
+					
+				
+					OpenSSH OpenSSH  6.2<br/>
+					
+				
+					OpenSSH OpenSSH  6.1<br/>
+					
+				
+					OpenSSH OpenSSH  6.0<br/>
+					
+				
+					OpenSSH OpenSSH  5.8 p2<br/>
+					
+				
+					OpenSSH OpenSSH  5.8<br/>
+					
+				
+					OpenSSH OpenSSH  5.7<br/>
+					
+				
+					OpenSSH OpenSSH  5.6p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.6<br/>
+					
+				
+					OpenSSH OpenSSH  5.5<br/>
+					
+				
+					OpenSSH OpenSSH  5.4<br/>
+					
+				
+					OpenSSH OpenSSH  5.3<br/>
+					
+				
+					OpenSSH OpenSSH  5.2p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.2<br/>
+					
+				
+					OpenSSH OpenSSH  5.1<br/>
+					
+				
+					OpenSSH OpenSSH  5.0p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.0<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Juniper NSMXpress Appliances  2012.2<br/>
+					
+				
+					Juniper NSM3000 Appliances  2012.2<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.2.3 <br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.2.2 <br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.2.1 4<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS) 2.2.1 <br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.2.3.3<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.2.2.4<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.2.1.8<br/>
+					
+				
+					IBM Virtual I/O Server (VIOS)  2.2<br/>
+					
+				
+					IBM System x3950 X6 Type 3837  0<br/>
+					
+				
+					IBM System x3850 X6 Type 3837  0<br/>
+					
+				
+					IBM System X3750 M4  8752<br/>
+					
+				
+					IBM System x3650 M4 Type 7915  0<br/>
+					
+				
+					IBM System x3650 M4 HD  5460<br/>
+					
+				
+					IBM System x3630 M4 HD  5466<br/>
+					
+				
+					IBM System X3630 M4  7158<br/>
+					
+				
+					IBM System x3570 M4 type 8733  0<br/>
+					
+				
+					IBM System x3570 M4 type 8722  0<br/>
+					
+				
+					IBM System x3570 M4 type 8718  0<br/>
+					
+				
+					IBM System X3550 M4  7914<br/>
+					
+				
+					IBM System X3530 M4  7160<br/>
+					
+				
+					IBM System X3500 M4  7383<br/>
+					
+				
+					IBM System x3300 M4  7382<br/>
+					
+				
+					IBM System x3250 M5 type 5458  0<br/>
+					
+				
+					IBM System X3250 M4  2583<br/>
+					
+				
+					IBM System x3100 M5 type 5457  0<br/>
+					
+				
+					IBM System X3100 M4  2582<br/>
+					
+				
+					IBM NeXtScale nx360 M4 type 5455  0<br/>
+					
+				
+					IBM iDatplex dx360 M4 Water Cooled type 7919  0<br/>
+					
+				
+					IBM iDatplex dx360 M4 Water Cooled type 7918  0<br/>
+					
+				
+					IBM iDatplex dx360 M4 type 7913  0<br/>
+					
+				
+					IBM iDatplex dx360 M4 type 7912  0<br/>
+					
+				
+					IBM GPFS for Windows  3.5.0.11<br/>
+					
+				
+					IBM GPFS for Windows  3.5<br/>
+					
+				
+					IBM Flex System x880 Compute Node  7903<br/>
+					
+				
+					IBM Flex System x880 Compute Node  4259<br/>
+					
+				
+					IBM Flex System X440 Compute Node  7917<br/>
+					
+				
+					IBM Flex System X240 Compute Node  8956<br/>
+					
+				
+					IBM Flex System X240 Compute Node  8738<br/>
+					
+				
+					IBM Flex System X240 Compute Node  8737<br/>
+					
+				
+					IBM Flex System X240 Compute Node  7863<br/>
+					
+				
+					IBM Flex System x222 Compute Node  7916<br/>
+					
+				
+					IBM Flex System X220 Compute Node  7906<br/>
+					
+				
+					IBM Flex System X220 Compute Node  2585<br/>
+					
+				
+					IBM Flex System Manager Node  8734<br/>
+					
+				
+					IBM Flex System Manager Node  8731<br/>
+					
+				
+					IBM Flex System Manager Node  7955<br/>
+					
+				
+					IBM BladeCenter Advanced Management Module  3.66G<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					F5 Enterprise Manager 3.1.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.0 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+					
+				
+					F5 Enterprise Manager 2.1 <br/>
+					
+				
+					F5 BIG-IQ Security 4.3 <br/>
+					
+				
+					F5 BIG-IQ Security 4.2 <br/>
+					
+				
+					F5 BIG-IQ Security 4.1 <br/>
+					
+				
+					F5 BIG-IQ Security 4.0 <br/>
+					
+				
+					F5 BIG-IQ Device 4.3 <br/>
+					
+				
+					F5 BIG-IQ Device 4.2 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.3 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.2 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.1 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.0 <br/>
+					
+				
+					F5 BIG-IP WOM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP WOM 11.2 <br/>
+					
+				
+					F5 BIG-IP WOM 11.0 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP WOM 10.0 <br/>
+					
+				
+					F5 BIG-IP WOM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP WOM  11.3.0<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0<br/>
+					
+				
+					F5 BIG-IP WOM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.5.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.5 <br/>
+					
+				
+					F5 BIG-IP PSM 11.4.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.3 <br/>
+					
+				
+					F5 BIG-IP PSM 11.2 <br/>
+					
+				
+					F5 BIG-IP PSM 11.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.0 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP PSM 10.0 <br/>
+					
+				
+					F5 BIG-IP PSM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP PSM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP PEM 11.5 <br/>
+					
+				
+					F5 BIG-IP PEM 11.3 <br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1<br/>
+					
+				
+					F5 BIG-IP PEM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP LTM 11.5 <br/>
+					
+				
+					F5 BIG-IP LTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.0 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP LTM 10.0 <br/>
+					
+				
+					F5 BIG-IP LTM  11.5<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.1<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Link Controller  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5 <br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 <br/>
+					
+				
+					F5 BIG-IP GTM 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP GTM 10.0 <br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP GTM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0 HF2  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.2.4  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0<br/>
+					
+				
+					F5 BIG-IP ASM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.0 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP APM 10.0 <br/>
+					
+				
+					F5 BIG-IP APM  11.5.0<br/>
+					
+				
+					F5 BIG-IP APM  11.4.1<br/>
+					
+				
+					F5 BIG-IP APM  11.4.0<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0<br/>
+					
+				
+					F5 BIG-IP APM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  10.2.1<br/>
+					
+				
+					F5 BIG-IP APM  10.1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 <br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0-HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5 <br/>
+					
+				
+					F5 BIG-IP AFM 11.3 <br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AFM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+					
+				
+					F5 ARX 6.4 <br/>
+					
+				
+					F5 ARX 6.3 <br/>
+					
+				
+					F5 ARX 6.2 <br/>
+					
+				
+					F5 ARX 6.1.1 <br/>
+					
+				
+					F5 ARX 6.1 <br/>
+					
+				
+					F5 ARX 6.0 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+					
+				
+					Apple Mac OS X 10.10 <br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac OS X 10.9.1 <br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.4 <br/>
+					
+				
+					Apple Mac OS X 10.8.2 <br/>
+					
+				
+					Apple Mac OS X 10.8.1 <br/>
+					
+				
+					Apple Mac OS X 10.8 <br/>
+					
+				
+					Apple Mac OS X 10.7 <br/>
+					
+				
+					Apple Mac OS X  10.9.4<br/>
+					
+				
+					Apple Mac OS X  10.9.3<br/>
+					
+				
+					Apple Mac OS X  10.9.2<br/>
+					
+				
+					Apple Mac OS X  10.9<br/>
+					
+				
+					Apple Mac OS X  10.8.3<br/>
+					
+				
+					Apple Mac OS X  10.7.5<br/>
+					
+				
+					Apple Mac OS X  10.7.4<br/>
+					
+				
+					Apple Mac OS X  10.7.3<br/>
+					
+				
+					Apple Mac OS X  10.7.1<br/>
+					
+				
+					Apple Mac OS X  10.6.8<br/>
+					
+				
+					Apple Mac Os X  10.10.4<br/>
+					
+				
+					Apple Mac Os X  10.10.3<br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSH OpenSSH  6.6<br/>
+					
+				
+					Apple Mac Os X  10.11<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

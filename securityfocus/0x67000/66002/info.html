@@ -1,0 +1,447 @@
+#SpeeDr00t@Black Falcon<br>#bid66002<p><b><span style="font-size: 18pt;">PHP Fileinfo Component Out of Bounds Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/66002/info">info</a><br><a href="http://www.securityfocus.com/bid/66002/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/66002/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/66002/solution">solution</a><br><a href="http://www.securityfocus.com/bid/66002/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				66002
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-2270<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 06 2014 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:37PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  13.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.5.z<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					PHP PHP 5.5.5 <br/>
+					
+				
+					PHP PHP 5.5.4 <br/>
+					
+				
+					PHP PHP 5.5.3 <br/>
+					
+				
+					PHP PHP 5.5.1 <br/>
+					
+				
+					PHP PHP 5.5 <br/>
+					
+				
+					PHP PHP 5.4.25 <br/>
+					
+				
+					PHP PHP 5.4.17 <br/>
+					
+				
+					PHP PHP 5.4.14 <br/>
+					
+				
+					PHP PHP 5.4.8 <br/>
+					
+				
+					PHP PHP 5.4.7 <br/>
+					
+				
+					PHP PHP 5.4.6 <br/>
+					
+				
+					PHP PHP 5.4.4 <br/>
+					
+				
+					PHP PHP 5.4.3 <br/>
+					
+				
+					PHP PHP 5.4.2 <br/>
+					
+				
+					PHP PHP 5.4.1 <br/>
+					
+				
+					PHP PHP  5.5.9<br/>
+					
+				
+					PHP PHP  5.5.8<br/>
+					
+				
+					PHP PHP  5.5.2<br/>
+					
+				
+					PHP PHP  5.5.0-DEV<br/>
+					
+				
+					PHP PHP  5.5.0 Rc2<br/>
+					
+				
+					PHP PHP  5.5.0 Rc1<br/>
+					
+				
+					PHP PHP  5.5.0 Beta4<br/>
+					
+				
+					PHP PHP  5.5.0 Beta3<br/>
+					
+				
+					PHP PHP  5.5.0 Beta2<br/>
+					
+				
+					PHP PHP  5.5.0 Beta1<br/>
+					
+				
+					PHP PHP  5.5.0 Alpha6<br/>
+					
+				
+					PHP PHP  5.5.0 Alpha5<br/>
+					
+				
+					PHP PHP  5.5.0 Alpha4<br/>
+					
+				
+					PHP PHP  5.5.0 Alpha3<br/>
+					
+				
+					PHP PHP  5.5.0 Alpha2<br/>
+					
+				
+					PHP PHP  5.5.0 Alpha1<br/>
+					
+				
+					PHP PHP  5.4.9<br/>
+					
+				
+					PHP PHP  5.4.5<br/>
+					
+				
+					PHP PHP  5.4.23<br/>
+					
+				
+					PHP PHP  5.4.22<br/>
+					
+				
+					PHP PHP  5.4.21<br/>
+					
+				
+					PHP PHP  5.4.20<br/>
+					
+				
+					PHP PHP  5.4.1RC1-DEV<br/>
+					
+				
+					PHP PHP  5.4.19<br/>
+					
+				
+					PHP PHP  5.4.18<br/>
+					
+				
+					PHP PHP  5.4.16 Rc1<br/>
+					
+				
+					PHP PHP  5.4.16<br/>
+					
+				
+					PHP PHP  5.4.15 Rc1<br/>
+					
+				
+					PHP PHP  5.4.15<br/>
+					
+				
+					PHP PHP  5.4.14 Rc1<br/>
+					
+				
+					PHP PHP  5.4.13 Rc1<br/>
+					
+				
+					PHP PHP  5.4.13<br/>
+					
+				
+					PHP PHP  5.4.12 Rc2<br/>
+					
+				
+					PHP PHP  5.4.12 Rc1<br/>
+					
+				
+					PHP PHP  5.4.12<br/>
+					
+				
+					PHP PHP  5.4.11<br/>
+					
+				
+					PHP PHP  5.4.10<br/>
+					
+				
+					PHP PHP  5.4.0RC2<br/>
+					
+				
+					PHP PHP  5.4.0beta2<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -STABLE<br/>
+					
+				
+					FreeBSD FreeBSD 6.0 -RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD 5.0 <br/>
+					
+				
+					FreeBSD FreeBSD 4.0 <br/>
+					
+				
+					FreeBSD FreeBSD 3.0 <br/>
+					
+				
+					FreeBSD FreeBSD 2.0 <br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD FreeBSD  8.0<br/>
+					
+				
+					FreeBSD FreeBSD  7.1<br/>
+					
+				
+					FreeBSD FreeBSD  7.0<br/>
+					
+				
+					FreeBSD FreeBSD  6.0<br/>
+					
+				
+					FreeBSD FreeBSD  1.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Apple Mac OS X 10.9.1 <br/>
+					
+				
+					Apple Mac OS X  10.9.4<br/>
+					
+				
+					Apple Mac OS X  10.9.4<br/>
+					
+				
+					Apple Mac OS X  10.9.3<br/>
+					
+				
+					Apple Mac OS X  10.9.2<br/>
+					
+				
+					Apple Mac OS X  10.9<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP  5.4.28<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p6<br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

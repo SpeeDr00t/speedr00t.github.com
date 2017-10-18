@@ -1,0 +1,540 @@
+#SpeeDr00t@Black Falcon<br>#bid72372<p><b><span style="font-size: 18pt;">ClamAV CVE-2014-9328 Multiple Heap Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/72372/info">info</a><br><a href="http://www.securityfocus.com/bid/72372/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/72372/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/72372/solution">solution</a><br><a href="http://www.securityfocus.com/bid/72372/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				72372
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2014-9328<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 29 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 02 2016 08:10PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Sebastian Andrzej Siewior
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					ifenslave ifenslave 0.88 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.98.5 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.98.4 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.97.7 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.97.5 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.97.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.96.5 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.96.4 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.96.3 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.96.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.96.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.95.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.95.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.94.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.94.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.93.3 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.93.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.93.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.92.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.91.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.91.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.90.3 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.90.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.90.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.90 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.88.5 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.88.4 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.88.3 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.88.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.88.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.87.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.87 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.86.2 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.86.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.86 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.85.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.85 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.84 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+					
+				
+					Clam Anti-Virus ClamAV 0.83 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.82 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.81 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Clam Anti-Virus ClamAV 0.80 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.75.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.70 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.68.1 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.68 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.67 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.65 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.60 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.54 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.53 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.52 <br/>
+					
+				
+					Clam Anti-Virus ClamAV 0.51 <br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.97.6<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.97.4<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.97.3<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.97.2<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.97<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.96<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.95.3<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.95<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.94<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.93<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.92<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.91<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.90<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.88.7<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.88.6<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.88<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.87<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.86<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.85<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.84<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.83<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.82<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.81<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.80<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.75<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.74<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.73<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.72<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.71<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.70<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.68<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.67<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.66<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.65<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.60<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.54<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.53<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.52<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.51<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.3<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.24<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.23<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.22<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.21<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.20<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.15<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.14<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.13<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.12<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.10<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.05<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.03<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.02<br/>
+					
+				
+					Clam Anti-Virus ClamAV  0.01<br/>
+					
+				
+					Clam Anti-Virus Antivirus  0.96.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Clam Anti-Virus ClamAV 0.98.6 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

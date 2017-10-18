@@ -1,0 +1,706 @@
+#SpeeDr00t@Black Falcon<br>#bid62055<p><b><span style="font-size: 18pt;">Linux Kernel CVE-2013-2890 Heap Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/62055/info">info</a><br><a href="http://www.securityfocus.com/bid/62055/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/62055/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/62055/solution">solution</a><br><a href="http://www.securityfocus.com/bid/62055/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				62055
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-2890<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Aug 28 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 28 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Kees Cook of Chrome OS Security
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 3.10.9 <br/>
+					
+				
+					Linux kernel 3.10.7 <br/>
+					
+				
+					Linux kernel 3.8.9 <br/>
+					
+				
+					Linux kernel 3.8.6 <br/>
+					
+				
+					Linux kernel 3.8.5 <br/>
+					
+				
+					Linux kernel 3.8.4 <br/>
+					
+				
+					Linux kernel 3.8.2 <br/>
+					
+				
+					Linux kernel 3.8.1 <br/>
+					
+				
+					Linux kernel 3.7.10 <br/>
+					
+				
+					Linux kernel 3.7.9 <br/>
+					
+				
+					Linux kernel 3.7.8 <br/>
+					
+				
+					Linux kernel 3.7.7 <br/>
+					
+				
+					Linux kernel 3.7.5 <br/>
+					
+				
+					Linux kernel 3.7.4 <br/>
+					
+				
+					Linux kernel 3.7.3 <br/>
+					
+				
+					Linux kernel 3.7.2 <br/>
+					
+				
+					Linux kernel 3.7.1 <br/>
+					
+				
+					Linux kernel 3.6.11 <br/>
+					
+				
+					Linux kernel 3.6.10 <br/>
+					
+				
+					Linux kernel 3.6.9 <br/>
+					
+				
+					Linux kernel 3.6.8 <br/>
+					
+				
+					Linux kernel 3.6.7 <br/>
+					
+				
+					Linux kernel 3.6.6 <br/>
+					
+				
+					Linux kernel 3.6.5 <br/>
+					
+				
+					Linux kernel 3.6.4 <br/>
+					
+				
+					Linux kernel 3.6.3 <br/>
+					
+				
+					Linux kernel 3.6.2 <br/>
+					
+				
+					Linux kernel 3.6.1 <br/>
+					
+				
+					Linux kernel 3.5.7 <br/>
+					
+				
+					Linux kernel 3.5.6 <br/>
+					
+				
+					Linux kernel 3.5.5 <br/>
+					
+				
+					Linux kernel 3.5.4 <br/>
+					
+				
+					Linux kernel 3.5.3 <br/>
+					
+				
+					Linux kernel 3.5.2 <br/>
+					
+				
+					Linux kernel 3.5.1 <br/>
+					
+				
+					Linux kernel 3.4.58 <br/>
+					
+				
+					Linux kernel 3.4.42 <br/>
+					
+				
+					Linux kernel 3.4.36 <br/>
+					
+				
+					Linux kernel 3.4.32 <br/>
+					
+				
+					Linux kernel 3.4.31 <br/>
+					
+				
+					Linux kernel 3.4.27 <br/>
+					
+				
+					Linux kernel 3.4.26 <br/>
+					
+				
+					Linux kernel 3.4.25 <br/>
+					
+				
+					Linux kernel 3.4.21 <br/>
+					
+				
+					Linux kernel 3.4.20 <br/>
+					
+				
+					Linux kernel 3.4.19 <br/>
+					
+				
+					Linux kernel 3.4.18 <br/>
+					
+				
+					Linux kernel 3.4.17 <br/>
+					
+				
+					Linux kernel 3.4.16 <br/>
+					
+				
+					Linux kernel 3.4.15 <br/>
+					
+				
+					Linux kernel 3.4.14 <br/>
+					
+				
+					Linux kernel 3.4.13 <br/>
+					
+				
+					Linux kernel 3.4.12 <br/>
+					
+				
+					Linux kernel 3.4.11 <br/>
+					
+				
+					Linux kernel 3.4.10 <br/>
+					
+				
+					Linux kernel 3.4.9 <br/>
+					
+				
+					Linux kernel 3.4.8 <br/>
+					
+				
+					Linux kernel 3.4.7 <br/>
+					
+				
+					Linux kernel 3.4.6 <br/>
+					
+				
+					Linux kernel 3.4.5 <br/>
+					
+				
+					Linux kernel 3.4.4 <br/>
+					
+				
+					Linux kernel 3.4.3 <br/>
+					
+				
+					Linux kernel 3.4.2 <br/>
+					
+				
+					Linux kernel 3.4.1 <br/>
+					
+				
+					Linux kernel 3.3.5 <br/>
+					
+				
+					Linux kernel 3.3.4 <br/>
+					
+				
+					Linux kernel 3.3.2 <br/>
+					
+				
+					Linux kernel 3.2.23 <br/>
+					
+				
+					Linux kernel 3.2.13 <br/>
+					
+				
+					Linux kernel 3.2.12 <br/>
+					
+				
+					Linux kernel 3.2.9 <br/>
+					
+				
+					Linux kernel 3.2.1 <br/>
+					
+				
+					Linux kernel 3.1.8 <br/>
+					
+				
+					Linux kernel 3.0.75 <br/>
+					
+				
+					Linux kernel 3.0.72 <br/>
+					
+				
+					Linux kernel 3.0.69 <br/>
+					
+				
+					Linux kernel 3.0.65 <br/>
+					
+				
+					Linux kernel 3.0.60 <br/>
+					
+				
+					Linux kernel 3.0.59 <br/>
+					
+				
+					Linux kernel 3.0.58 <br/>
+					
+				
+					Linux kernel 3.0.37 <br/>
+					
+				
+					Linux kernel 3.0.34 <br/>
+					
+				
+					Linux kernel 3.0.5 <br/>
+					
+				
+					Linux kernel 3.0.4 <br/>
+					
+				
+					Linux kernel 3.0.2 <br/>
+					
+				
+					Linux kernel 3.0.1 <br/>
+					
+				
+					Linux kernel 2.6.39 <br/>
+					
+				
+					Linux kernel 2.6.38 <br/>
+					
+				
+					Linux kernel 2.6.37 <br/>
+					
+				
+					Linux kernel 2.6.36 <br/>
+					
+				
+					Linux kernel 2.6.35 <br/>
+					
+				
+					Linux kernel 2.6.34 <br/>
+					
+				
+					Linux kernel 2.6.33 <br/>
+					
+				
+					Linux kernel 2.6.32 <br/>
+					
+				
+					Linux kernel 2.6.31 <br/>
+					
+				
+					Linux kernel 2.6.30 <br/>
+					
+				
+					Linux kernel 2.6.29 <br/>
+					
+				
+					Linux kernel 2.6.28 <br/>
+					
+				
+					Linux kernel 2.6.19 <br/>
+					
+				
+					Linux kernel 2.6.17 <br/>
+					
+				
+					Linux kernel 2.6.16 <br/>
+					
+				
+					Linux kernel 2.6.15 <br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+					
+				
+					Linux kernel 2.6.12 <br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+					
+				
+					Linux kernel 2.6.9 rc4<br/>
+					
+				
+					Linux kernel 2.6.9 rc3<br/>
+					
+				
+					Linux kernel 2.6.9 rc2<br/>
+					
+				
+					Linux kernel 2.6.9 rc1<br/>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.8 rc4<br/>
+					
+				
+					Linux kernel 2.6.8 rc3<br/>
+					
+				
+					Linux kernel 2.6.8 rc2<br/>
+					
+				
+					Linux kernel 2.6.8 rc1<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 rc1<br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.1 <br/>
+					
+				
+					Linux kernel 2.6 <br/>
+					
+				
+					Linux kernel  3.9.8<br/>
+					
+				
+					Linux kernel  3.9.4<br/>
+					
+				
+					Linux kernel  3.9-rc8<br/>
+					
+				
+					Linux kernel  3.9-rc7<br/>
+					
+				
+					Linux kernel  3.9-rc3<br/>
+					
+				
+					Linux kernel  3.9<br/>
+					
+				
+					Linux kernel  3.8-rc1 <br/>
+					
+				
+					Linux kernel  3.8<br/>
+					
+				
+					Linux kernel  3.7.6<br/>
+					
+				
+					Linux kernel  3.7-rc1<br/>
+					
+				
+					Linux kernel  3.7<br/>
+					
+				
+					Linux kernel  3.6<br/>
+					
+				
+					Linux kernel  3.4.29<br/>
+					
+				
+					Linux kernel  3.3<br/>
+					
+				
+					Linux kernel  3.2.50<br/>
+					
+				
+					Linux kernel  3.2.44<br/>
+					
+				
+					Linux kernel  3.2.42<br/>
+					
+				
+					Linux kernel  3.2.38<br/>
+					
+				
+					Linux kernel  3.2.2<br/>
+					
+				
+					Linux kernel  3.2<br/>
+					
+				
+					Linux kernel  3.11-rc7<br/>
+					
+				
+					Linux kernel  3.11-rc4<br/>
+					
+				
+					Linux kernel  3.11-rc1<br/>
+					
+				
+					Linux kernel  3.10.5<br/>
+					
+				
+					Linux kernel  3.10<br/>
+					
+				
+					Linux kernel  3.1<br/>
+					
+				
+					Linux kernel  3.0.66<br/>
+					
+				
+					Linux kernel  3.0.62<br/>
+					
+				
+					Linux kernel  3.0.18<br/>
+					
+				
+					Linux kernel  3.0-rc4-git1<br/>
+					
+				
+					Linux kernel  3.0-rc1<br/>
+					
+				
+					Linux kernel  3.0<br/>
+					
+				
+					Linux kernel  2.6.8.1<br/>
+					
+				
+					Linux kernel  2.6.38.6<br/>
+					
+				
+					Linux kernel  2.6.38.4<br/>
+					
+				
+					Linux kernel  2.6.38.3<br/>
+					
+				
+					Linux kernel  2.6.38.2<br/>
+					
+				
+					Linux kernel  2.6.35.5<br/>
+					
+				
+					Linux kernel  2.6.35.4<br/>
+					
+				
+					Linux kernel  2.6.35.1<br/>
+					
+				
+					Linux kernel  2.6.34.2<br/>
+					
+				
+					Linux kernel  2.6.34.13<br/>
+					
+				
+					Linux kernel  2.6.33.7<br/>
+					
+				
+					Linux kernel  2.6.32.8<br/>
+					
+				
+					Linux kernel  2.6.32.7<br/>
+					
+				
+					Linux kernel  2.6.32.4<br/>
+					
+				
+					Linux kernel  2.6.32.3<br/>
+					
+				
+					Linux kernel  2.6.32.28<br/>
+					
+				
+					Linux kernel  2.6.32.22<br/>
+					
+				
+					Linux kernel  2.6.32.17<br/>
+					
+				
+					Linux kernel  2.6.32.12<br/>
+					
+				
+					Linux kernel  2.6.32.11<br/>
+					
+				
+					Linux kernel  2.6.31.6<br/>
+					
+				
+					Linux kernel  2.6.31.4<br/>
+					
+				
+					Linux kernel  2.6.31.1<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Linux kernel  2.6.30.5<br/>
+					
+				
+					Linux kernel  2.6.30.4<br/>
+					
+				
+					Linux kernel  2.6.30.3<br/>
+					
+				
+					Linux kernel  2.6.28.4<br/>
+					
+				
+					Linux kernel  2.6.28.10<br/>
+					
+				
+					Linux kernel  2.6.25.4<br/>
+					
+				
+					Linux kernel  2.6.25.3<br/>
+					
+				
+					Linux kernel  2.6.25.2<br/>
+					
+				
+					Linux kernel  2.6.25.1<br/>
+					
+				
+					Linux kernel  2.6.24.6<br/>
+					
+				
+					Linux kernel  2.6.24.4<br/>
+					
+				
+					Linux kernel  2.6.24.3<br/>
+					
+				
+					Linux kernel  2.6.23.14<br/>
+					
+				
+					Linux kernel  2.6.23.10<br/>
+					
+				
+					Linux kernel  2.6.23.1<br/>
+					
+				
+					Linux kernel  2.6.18<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

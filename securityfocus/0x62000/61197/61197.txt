@@ -1,0 +1,267 @@
+Proof of Concept:
+=================
+The vulnerability can be exploited by remote attackers with low user interaction and low privilege application user account.
+For demonstration or reproduce ...
+
+1.1
+
+URL:  https://www.example.com/adminui/machine.php?ID=1
+Affected Module: Inventory =&gt; Computers 
+
+
+Code Review:
+
+&lt;div style=&quot;margin-left:15px; color: #005FA9; font-family:Verdana,Arial,Helvetica,sans-serif; font-size:10px; font-weight:300;&quot;&gt;
+            
+&lt;script type=&quot;text/javascript&quot; src=&quot;/common/js/scw.js&quot;&gt;&lt;/script&gt;
+            &lt;script type=&quot;text/javascript&quot;&gt;
+ 
+// this will get set at the end of the page, after we&#039;ve generated all the dynamic sections
+            var gLastSectionId = 0;
+&lt;/script&gt;
+            [&lt;a href=&quot;#&quot; onclick=&#039;expandAllDetail(gLastSectionId, 1);&#039;&gt;Expand All&lt;/a&gt;]
+            [&lt;a href=&quot;#&quot; onclick=&#039;expandAllDetail
+(gLastSectionId);printSpecial()&#039;&gt;Printer Friendly Version&lt;/a&gt;]
+                        [&lt;a href=&quot;history_log.php?HISTORY_TYPE=ASSET&amp;TYPE_NAME=
+Computer&amp;TYPE_ID=8&amp;NAME=%26lt%3Bh1%26gt%3BName%26lt%3B%2Fh1%26gt%3B&amp;SHOW_ALL=1&quot; onclick=&#039;logPopup(this); return false;&#039;&gt;Show All History&lt;/a&gt;]
+ 
+                       &lt;div id=&quot;printReady&quot; style=&quot;margin-top:2px;&quot;&gt;
+                &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; 
+style=&quot;border-collapse:collapse;width:70%;&quot;&gt;
+                &lt;tbody&gt;
+&lt;tr class=&quot;detail_page_section_heading_no_cursor&quot;&gt;
+    &lt;td colspan=&quot;3&quot;&gt;
+        
+&lt;a style=&quot;cursor: pointer;cursor: hand;&quot; onclick=&quot;hideShowDetail(&#039;section1&#039;,null,&#039;&#039;,&#039;&#039;,&#039;&#039;); return false;&quot;&gt;Summary&lt;/a&gt;
+    &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+
+&lt;tbody id=&quot;section1&quot; style=&quot;display:none;&quot;&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-
+width:100px;&quot;&gt;Name:&lt;/td&gt;&lt;td&gt;&lt;h1&gt;Name&lt;/h1&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;
+&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Manual Entry:&lt;/td&gt;&lt;td&gt;Manually Entered Record, no communication with the server 
+[&lt;a href=&quot;/adminui/machine_edit.php?ID=2&quot;&gt;Edit&lt;/a&gt;]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;
+&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;IP Address:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]  &lt;select onchange=&quot;
+if(this.options[this.selectedIndex].value==&#039;1&#039;) MachineAction(&#039;&lt;h1&gt;Ip-Address&lt;/h1&gt;&#039;,&#039;&lt;h1&gt;Name&lt;/h1&gt;&#039;, 2, encodeURI(&#039;mstsc.exe /v:KACE_HOST_IP /w:900 /h:800&#039;));&quot;&gt;
+&lt;option value=&quot;&quot;&gt;Action...&lt;/option&gt;&lt;option title=&quot;Launch: mstsc.exe /v:KACE_HOST_IP /w:900 /h:800&quot; value=&quot;1&quot;&gt;Action 1&lt;/option&gt;&lt;/select&gt;&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr valign=&quot;top&quot; class=&quot;rowData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;MAC:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;
+Processors:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;
+min-width:100px;&quot;&gt;OS Name:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]v&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;
+&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Service Pack:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowData&quot;&gt;
+&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Notes:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; 
+class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Record Created:&lt;/td&gt;&lt;td&gt;01/28/2013 05:31:49&lt;/td&gt;&lt;/tr&gt;
+
+&lt;tr class=&quot;rowData&quot;&gt;&lt;td colspan=&quot;3&quot;&gt; &lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;tbody&gt;&lt;tr class=&quot;detail_page_group_heading&quot;&gt;&lt;td colspan=&quot;3&quot;&gt;Inventory Information
+&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;detail_page_section_heading_no_cursor&quot;&gt;
+    &lt;td colspan=&quot;3&quot;&gt;
+        &lt;a style=&quot;cursor: pointer;cursor: hand;&quot; 
+onclick=&quot;hideShowDetail(&#039;section2&#039;,null,&#039;&#039;,&#039;&#039;,&#039;&#039;); return false;&quot;&gt;Hardware&lt;/a&gt;   &lt;span style=&quot;color:#909090&quot;&gt; [no changes]&lt;/span&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;tbody id=&quot;section2&quot; style=&quot;display:none;&quot;&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;
+&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Processors:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;CD/DVD Drives:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot;
+ class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;
+Sound Devices:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; class=&quot;rowData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;
+&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Video Controllers:&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr valign=&quot;top&quot; 
+class=&quot;rowHighlightData&quot;&gt;&lt;td width=&quot;1%&quot;&gt;  &lt;/td&gt;&lt;td style=&quot;width:150px;min-width:100px;&quot;&gt;Monitor:
+&lt;/td&gt;&lt;td&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/td&gt;&lt;/tr&gt;
+&lt;tr class=&quot;rowData&quot;&gt;&lt;td colspan=&quot;3&quot;&gt; &lt;/td&gt;&lt;/tr&gt;
+&lt;/tbody&gt;&lt;tbody&gt;
+&lt;tr class=&quot;detail_page_section_heading_no_cursor&quot;&gt;
+    &lt;td colspan=&quot;3&quot;&gt;
+        &lt;a style=&quot;cursor: pointer;cursor: hand;&quot; onclick=&quot;hideShowDetail
+(&#039;section3&#039;,null,&#039;&#039;,&#039;&#039;,&#039;&#039;); return false;&quot;&gt;Printers (1)&lt;/a&gt;
+    &lt;/td&gt;
+    
+...
+    
+
+
+1.2
+
+URL:https://www.example.com/adminui/computer_inventory.php
+
+Affected Module: Inventory =&gt;Computers =&gt; choose action =&gt; Apply Label
+
+
+Code Review:
+
+
+&lt;td class=&quot;inputFormat&quot;&gt;&lt;select name=&quot;FINDFIELDS[EXP_SELECT8]&quot; id=&quot;FINDFIELDS[EXP_SELECT8]&quot; onchange=&quot;$(&#039;FINDFIELDS[INPUT8]&#039;).disabled =
+ 
+                            ($F(this) == &#039;NULL&#039; || $F(this) == &#039;NOT_NULL&#039;)&quot; style=&quot;width:auto&quot;&gt;
+&lt;option value=&quot;NOT_EQUAL&quot; title=&quot;!=&quot;&gt;!=
+&lt;/option&gt;
+&lt;option value=&quot;GT&quot; title=&quot;&gt;&quot;&gt;&gt;&lt;/option&gt;
+&lt;option value=&quot;LT&quot; title=&quot;&lt;&quot;&gt;&lt;&lt;/option&gt;
+&lt;option value=&quot;EQUALS&quot; title=&quot;=&quot;&gt;=&lt;/option&gt;
+
+&lt;option value=&quot;BEGINS_WITH&quot; title=&quot;begins with&quot;&gt;begins with&lt;/option&gt;
+&lt;option value=&quot;CONTAINS&quot; title=&quot;contains&quot;&gt;contains&lt;/option&gt;
+&lt;option 
+value=&quot;NOT_BEGINS_WITH&quot; title=&quot;does not begin with&quot;&gt;does not begin with&lt;/option&gt;
+&lt;option value=&quot;NO_CONTAIN&quot; title=&quot;does not contain&quot;&gt;does not 
+contain&lt;/option&gt;
+&lt;option value=&quot;NOT_ENDS_WITH&quot; title=&quot;does not end with&quot;&gt;does not end with&lt;/option&gt;
+&lt;option value=&quot;NOT_MATCH_REGEX&quot; title=&quot;does 
+not match REGEX&quot;&gt;does not match REGEX&lt;/option&gt;
+&lt;option value=&quot;ENDS_WITH&quot; title=&quot;ends with&quot;&gt;ends with&lt;/option&gt;
+&lt;option value=&quot;NOT_NULL&quot; title=&quot;
+is NOT NULL&quot;&gt;is NOT NULL&lt;/option&gt;
+&lt;option value=&quot;NULL&quot; title=&quot;is NULL&quot;&gt;is NULL&lt;/option&gt;
+&lt;option value=&quot;MATCH_REGEX&quot; title=&quot;matches REGEX&quot;&gt;matches 
+REGEX&lt;/option&gt;
+&lt;/select&gt;
+&lt;/td&gt;
+&lt;td class=&quot;inputFormat&quot;&gt;&lt;input class=&quot;inputFormat&quot; name=&quot;FINDFIELDS[INPUT8]&quot; id=&quot;FINDFIELDS[INPUT8]&quot; value=&quot;&quot; 
+size=&quot;46&quot; maxlength=&quot;255&quot;  /&gt;&lt;/td&gt;
+&lt;/tr&gt;
+                &lt;tr&gt;
+                    &lt;td colspan=&quot;4&quot; align=&quot;center&quot; class=&quot;inputFormat&quot;&gt;
+Choose label:
+                        &lt;select name=&quot;FINDFIELDS[FILTER_LABEL]&quot; dojoType=&quot;dijit.form.ComboBox&quot;&gt;
+&lt;script type=&quot;dojo/connect&quot;&gt;
+this.attr(&quot;value&quot;,&quot;&quot;);&lt;/script&gt;
+&lt;option selected value=&quot;&quot; title=&quot;&quot;&gt;&lt;/option&gt;
+&lt;option value=&quot;77&quot; title=&quot;&quot;&gt;[PERSISTENT INJECTED SCRIPT CODE!]&quot;
+&gt;&quot;&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/option&gt;
+&lt;/select&gt;
+ 
+                        &lt;input name=&quot;test_filter&quot; class=&quot;inputFormatButton&quot; type=&quot;submit&quot; 
+value=&quot;Test Smart Label&quot; /&gt;
+                                                    &lt;input name=&quot;create_filter&quot; class=&quot;inputFormatButton&quot; type=&quot;submit&quot; 
+value=&quot;Create Smart Label&quot; /&gt;
+                            &lt;input name=&quot;cancel&quot; class=&quot;inputFormatButton&quot; type=&quot;reset&quot; value=&quot;Reset&quot; onclick=&quot;document.createFilterForm.reset(); return true;&quot; /&gt;
+                                            &lt;/td&gt;
+                &lt;/tr&gt;
+ 
+&lt;/table&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;createNotifyForm&quot; class=&quot;advQueryOuter&quot;&gt;
+        &lt;div class=&quot;advQueryInner&quot;&gt;
+
+&lt;h2&gt;Create Email Notification&lt;/h2&gt;
+            &lt;p&gt;To create a notification rule simply enter the search criteria, title, email recipient - 
+then Test &amp; Create:&lt;/p&gt;            &lt;form name=&quot;createNotifyForm&quot; action=&quot;/adminui/advanced_query.php&quot; method=&quot;post&quot; onreset=&quot;fieldsReset(); 
+fieldsOnchange();&quot;&gt;
+                &lt;table border=&quot;0&quot; cellspacing=&quot;0&quot; cellpadding=&quot;0&quot; style=&quot;margin-left: auto; margin-right: auto;&quot; align=&quot;center&quot;&gt;
+                &lt;tr&gt;
+...
+
+
+
+1.3
+
+URL: https://www.example.com/adminui/settings_network_scan.php
+
+Affected module: Distribution =&gt; Wake-on Lan =&gt; Exception handeling 
+
+
+Code Review:
+
+&lt;p&gt;
+&lt;b&gt;&lt;u&gt;Wake-on-LAN&lt;/u&gt;&lt;/b&gt;
+&lt;br/&gt;&lt;br/&gt;
+This page allows you to wake up a computer or other device that has been inventoried by the K1000 
+if the remote device is attached to the network and supports Wake-on-LAN.  If the device you wish to wake is not inventoried by the K1000 
+but you still know the MAC (Hardware) address and its last-known IP address, you can manually enter the info to wake the device.
+&lt;/p&gt;
+
+&lt;div class=&quot;roundbottom&quot;&gt;
+&lt;img src=&quot;./images/RoundRectBottomLeft.gif&quot; alt=&quot;&quot; width=&quot;15&quot; height=&quot;15&quot; class=&quot;corner&quot; style=&quot;display: none;&quot;&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+        &lt;span class=&quot;filtercount&quot; style=&quot;display:none&quot; id=&quot;hidden_machine_picker_count&quot;&gt;&lt;/span&gt;
+        &lt;span class=&quot;filtercount&quot; style=&quot;display:none
+&quot; id=&quot;hidden_device_picker_count&quot;&gt;&lt;/span&gt;
+        &lt;form class=&quot;edit&quot; action=&quot;&quot; method=&quot;post&quot; target=&quot;_self&quot; /&gt;
+        &lt;div class=&quot;wordwrap messageBox&quot;&gt;
+&lt;span class=&quot;messageBoxTitle&quot;&gt;Please correct the following errors:&lt;/span&gt;&lt;ul&gt;&lt;li class=&quot;error&quot;&gt;A Wake-on-LAN packet was sent to 
+wake &lt;strong&gt;[PERSISTENT INJECTED SCRIPT CODE!] ([PERSISTENT INJECTED SCRIPT CODE!])&lt;/strong&gt;. &lt;/li&gt;&lt;li class=&quot;error&quot;&gt;Please note that it may 
+take several minutes for the device to power on and be available for use.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt; 
+        &lt;table cellspacing=&quot;1&quot; cellpadding=&quot;0&quot; border=&quot;0&quot;&gt;
+
+&lt;tr&gt;
+            &lt;td colspan=&quot;2&quot; class=&quot;inputFormat&quot;&gt;&lt;h2&gt;Wake Multiple Devices&lt;/h2&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td class=&quot;inputFormat&quot; 
+style=&quot;width: 30%; vertical-align:middle;&quot;&gt;Limit To Selected Labels:&lt;/td&gt;
+            &lt;td width=&quot;70%&quot;&gt;
+                &lt;select name=&quot;label&quot; style=&quot;width: 
+30em&quot; onchange=&quot;updateFields(this)&quot; id=&quot;label&quot;&gt;
+&lt;option selected value=&quot;&quot; title=&quot;Select a label.&quot;&gt;Select a label.&lt;/option&gt;
+&lt;option 
+value=&quot;77&quot; title=&quot;&quot;&gt;[PERSISTENT INJECTED SCRIPT CODE!]&quot;&gt;&quot;&gt;[PERSISTENT INJECTED SCRIPT CODE!]&lt;/option&gt;
+&lt;option value=&quot;72&quot; 
+title=&quot;Adobe Flash Player&quot;&gt;Adobe Flash Player&lt;/option&gt;
+&lt;option value=&quot;71&quot; title=&quot;Adobe Reader X&quot;&gt;Adobe Reader X&lt;/option&gt;
+&lt;option value=&quot;49&quot; 
+title=&quot;All Ticket Owners&quot;&gt;All Ticket Owners&lt;/option&gt;
+&lt;option value=&quot;33&quot; title=&quot;MemberOfBuildingA&quot;&gt;MemberOfBuildingA&lt;/option&gt;
+&lt;option value=&quot;32&quot; 
+title=&quot;MemberOfFinanceGroup&quot;&gt;MemberOfFinanceGroup&lt;/option&gt;
+&lt;option value=&quot;64&quot; title=&quot;Windows 7 - Critical - 2012&quot;&gt;Windows 7 - Critical - 
+2012&lt;/option&gt;
+&lt;option value=&quot;65&quot; title=&quot;Windows XP - Critical - 2012&quot;&gt;Windows XP - Critical - 2012&lt;/option&gt;
+&lt;/select&gt;
+            &lt;/td&gt;
+&lt;/tr&gt;
+
+&lt;tr&gt;
+            &lt;td colspan=&quot;2&quot; class=&quot;inputFormat&quot;&gt;&lt;img src=&quot;/adminui/images/timer_16x16.gif&quot; alt=&quot;&quot; height=&quot;16&quot; width=&quot;16&quot; border=&quot;0&quot; /&gt; 
+&lt;a href=&quot;wol_list.php&quot;&gt;Schedule a routine Wake-on-LAN event&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot; height=&quot;10px&quot;&gt;&lt;/td&gt;
+ 
+&lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td colspan=&quot;2&quot; class=&quot;inputFormat&quot;&gt;&lt;h2&gt;Wake a Computer&lt;/h2&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+
+&lt;td class=&quot;inputFormat&quot; style=&quot;width: 140px; max-width: 140px; vertical-align:middle;&quot;&gt;Limit To Listed Machines:&lt;/td&gt;
+            &lt;td&gt;
+
+&lt;select name=&quot;machine[]&quot; size=&quot;7&quot; multiple=&quot;1&quot; id=&quot;machine[]&quot; style=&quot;width:30em&quot;&gt;
+                    &lt;option value=&quot;0&quot; 
+title=&quot;----- Machine Names -----&quot;&gt;----- Machine Names -----&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;input class=&quot;inputFormat&quot; 
+type=&quot;button&quot; value=&quot;Remove&quot;  onclick=&quot;machineRemoveSelected()&quot; /&gt;
+                &lt;input class=&quot;inputFormat&quot; type=&quot;button&quot; value=&quot;Remove All&quot; 
+onclick=&quot;machineRemoveAll()&quot; /&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td height=&quot;10px&quot;&gt;&lt;/td&gt;
+            
+&lt;td valign=&quot;bottom&quot;&gt;
+                &lt;select name=&quot;&quot; id=&quot;machine_picker&quot; style=&quot;width:30em&quot; onchange=&quot;machineAddNameToList(this);
+this.selectedIndex = 0; &quot;&gt;
+&lt;option value=&quot;&quot; title=&quot;Loading...&quot;&gt;Loading...&lt;/option&gt;
+&lt;/select&gt;
+

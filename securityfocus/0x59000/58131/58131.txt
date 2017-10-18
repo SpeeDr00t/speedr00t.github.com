@@ -1,0 +1,11 @@
+// wine gcc -Wall -shared inject.c -o ddraw.dll
+#include <windows.h>
+
+BOOL WINAPI DllMain(HINSTANCE hInstDLL, DWORD dwReason, LPVOID lpvReserved)
+{
+    if (dwReason == DLL_PROCESS_ATTACH)
+    {
+        MessageBox(0,"DLL Injection","DLL Injection", 0);
+    }
+return TRUE;
+} 

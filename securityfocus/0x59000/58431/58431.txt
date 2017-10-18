@@ -1,0 +1,43 @@
+&lt;?php
+ 
+$uploadfile=&quot;KedAns.txt&quot;;
+$ch = curl_init(&quot;http://www.example.com/kindeditor/php/upload_json.php?dir=file&quot;);
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS,
+       array(&#039;imgFile&#039;=&gt;&quot;@$uploadfile&quot;));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$postResult = curl_exec($ch);
+curl_close($ch);
+print &quot;$postResult&quot;;
+ 
+?&gt;
+
+# KindEditor (ASP,ASP.NET,JSP,PHP) _JSON Uploader :
+--------------------------------------------------
+
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;Uploader By KedAns-Dz&lt;/title&gt;
+&lt;script src=&quot;http://www.example.com/kindeditor/kindeditor-min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+KindEditor.ready(function(K) {
+var uploadbutton = K.uploadbutton({
+button : K(&#039;#uploadButton&#039;)[0],
+fieldName : &#039;imgFile&#039;,
+url : &#039;http://www.example.com/kindeditor/php/upload_json.asp?dir=file&#039;,
+afterUpload : function(data) {
+if (data.error === 0) {
+var url = K.formatUrl(data.url, &#039;absolute&#039;);
+K(&#039;#url&#039;).val(url);}
+},
+});
+uploadbutton.fileBox.change(function(e) {
+uploadbutton.submit();
+});
+});
+&lt;/script&gt;&lt;/head&gt;&lt;body&gt;
+&lt;div class=&quot;upload&quot;&gt;
+&lt;input class=&quot;ke-input-text&quot; type=&quot;text&quot; id=&quot;url&quot; value=&quot;&quot; readonly=&quot;readonly&quot; /&gt;
+&lt;input type=&quot;button&quot; id=&quot;uploadButton&quot; value=&quot;Upload&quot; /&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;

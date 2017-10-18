@@ -1,0 +1,606 @@
+#SpeeDr00t@Black Falcon<br>#bid63873<p><b><span style="font-size: 18pt;">Ruby Floating Point Parsing Heap Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/63873/info">info</a><br><a href="http://www.securityfocus.com/bid/63873/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/63873/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/63873/solution">solution</a><br><a href="http://www.securityfocus.com/bid/63873/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				63873
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-4164<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Nov 22 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:19PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Charlie Somerville
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Yukihiro Matsumoto Ruby 1.9.3 dev<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 RC2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 P180<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 P136<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 P0<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.2 -rc1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 P431<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 -p429<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 -p376<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9.1 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9 -2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9 -1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.9 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p72<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p71<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p22<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 -p21<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.7 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p287<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p286<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p230<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p229<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 -p114<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.6 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p231<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p230<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 -p115<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.5 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.4 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.3 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2 pre4<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre3<br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2  pre1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.2 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Fedora  Core2<br/>
+</span>
+					
+				
+					Yukihiro Matsumoto Ruby 1.8 <br/>
+					
+				
+					Yukihiro Matsumoto Ruby  2.1.0-preview1<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  2.0.0-p247<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  2.0.0-p195<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  2.0<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.3-p448<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.3-p426<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.3-p392<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.3-p327<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.3-p0<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.2 pre3<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.1-p430<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.1-p378<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.0-3<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.8dev<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p374<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-P357<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-P352<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p334<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p330<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p302<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p299<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p249<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p248<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p173<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.7-p160<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p420<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p399<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p388<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p383<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p369<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.8.6-p368<br/>
+					
+				
+					Ubuntu Ubuntu Linux  13.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  13.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Software Development Kit  11 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3 for VMware<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP2 for VMware<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE Suse Linux Enterprise Desktop  11 SP2<br/>
+					
+				
+					SuSE Studio Onsite  1.3<br/>
+					
+				
+					SuSE Linux Enterprise Software Development Kit  11 SP2<br/>
+					
+				
+					SuSE Lifecycle Management Server  1.3<br/>
+					
+				
+					Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					S.u.S.E. openSUSE  12.3<br/>
+					
+				
+					S.u.S.E. openSUSE  12.2<br/>
+					
+				
+					Redhat Software Collections for RHEL  0<br/>
+					
+				
+					Redhat OpenStack  3.0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.4.z<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.3.z<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.2.z<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.4<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.2<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux High Availability EUS  6.4.z<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat CloudForms  3.0<br/>
+					
+				
+					Puppetlabs Puppet Enterprise 3.1 <br/>
+					
+				
+					Puppetlabs Puppet Enterprise 2.8.3 <br/>
+					
+				
+					Puppetlabs Puppet Enterprise 2.8.2 <br/>
+					
+				
+					Puppetlabs Puppet Enterprise  2.8.0<br/>
+					
+				
+					Oracle Solaris  11.2<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					IBM Security Network Protection XGS 5100 5.1.1 <br/>
+					
+				
+					IBM Security Network Protection XGS 5100  5.1<br/>
+					
+				
+					IBM Security Network Protection XGS 5.1.2 <br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Apple OS X Mavericks  10.9.2<br/>
+					
+				
+					Apple Mac OS X Server 10.7.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.6.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.5.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.4.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.9 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.8 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.7 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.6 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.5 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.4 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.2 <br/>
+					
+				
+					Apple Mac OS X Server 10.3.1 <br/>
+					
+				
+					Apple Mac OS X Server 10.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.2.3 <br/>
+					
+				
+					Apple Mac OS X Server 10.1.3 <br/>
+					
+				
+					Apple Mac OS X Server  3.0<br/>
+					
+				
+					Apple Mac OS X Server  2.0<br/>
+					
+				
+					Apple Mac OS X Server  10.7.3<br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+					
+				
+					Apple Mac OS X 10.7.5 <br/>
+					
+				
+					Apple Mac OS X  10.9.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Yukihiro Matsumoto Ruby  2.1.0-preview2<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  2.0.0-p353<br/>
+					
+				
+					Yukihiro Matsumoto Ruby  1.9.3-p484<br/>
+					
+				
+					Puppetlabs Puppet Enterprise  3.1.1<br/>
+					
+				
+					Puppetlabs Puppet Enterprise  2.8.4<br/>
+					
+				
+					Apple OS X Mavericks  10.9.3<br/>
+					
+				
+					Apple Mac OS X Server 3.1.2 <br/>
+					
+				
+					Apple Mac OS X Server  4.0<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

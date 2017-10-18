@@ -1,0 +1,774 @@
+#SpeeDr00t@Black Falcon<br>#bid58736<p><b><span style="font-size: 18pt;">ISC BIND 9 'libdns' Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/58736/info">info</a><br><a href="http://www.securityfocus.com/bid/58736/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/58736/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/58736/solution">solution</a><br><a href="http://www.securityfocus.com/bid/58736/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				58736
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2013-2266<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 26 2013 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 13 2015 09:48PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Matthew Horsfall of Dyn, Inc.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  12.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  11.10 amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 sparc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 powerpc<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 ARM<br/>
+					
+				
+					Ubuntu Ubuntu Linux  10.04 amd64<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  12.2<br/>
+					
+				
+					Slackware Linux  12.1<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					McAfee FireWall Enterprise  8.3.1<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1P04<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1P03<br/>
+					
+				
+					McAfee FireWall Enterprise  8.2.1<br/>
+					
+				
+					McAfee FireWall Enterprise  7.0.1.03<br/>
+					
+				
+					Mandriva Business Server  1 X86 64<br/>
+					
+				
+					Mandriva Business Server  1<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5 x86_64<br/>
+					
+				
+					MandrakeSoft Enterprise Server  5<br/>
+					
+				
+					ISC BIND  9.7.1-P2<br/>
+					
+				
+					ISC BIND  9.7.1 P1<br/>
+					
+				
+					ISC BIND  9.7.1<br/>
+					
+				
+					ISC BIND  9.7.0 P2<br/>
+					
+				
+					ISC BIND  9.7.0<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD FreeBSD  9.1-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.1-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.1--RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0-RC1<br/>
+					
+				
+					FreeBSD FreeBSD  9.0--RELENG<br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-BETA1<br/>
+					
+				
+					F5 Enterprise Manager 3.1 <br/>
+					
+				
+					F5 Enterprise Manager 3.0 <br/>
+					
+				
+					F5 BIG-IP WOM 11.2 <br/>
+					
+				
+					F5 BIG-IP WOM 11.0 <br/>
+					
+				
+					F5 BIG-IP WOM  11.3.0<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.0 <br/>
+					
+				
+					F5 BIG-IP PSM 11.3 <br/>
+					
+				
+					F5 BIG-IP PSM 11.2 <br/>
+					
+				
+					F5 BIG-IP PSM 11.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.0 <br/>
+					
+				
+					F5 BIG-IP PEM 11.3 <br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.0 <br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP ASM 11.2.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 11.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0<br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.0 <br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 <br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0<br/>
+					
+				
+					F5 BIG-IP AFM 11.3 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Avaya Aura Session Manager 6.2.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.5 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.3 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.2 <br/>
+					
+				
+					Avaya Aura Session Manager 6.1.1 <br/>
+					
+				
+					Avaya Aura Session Manager 6.0.1 <br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.2.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  6.1 Sp1<br/>
+					
+				
+					Avaya Aura Session Manager  6.1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  6.0<br/>
+					
+				
+					Avaya Aura Session Manager  5.2.1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP2<br/>
+					
+				
+					Avaya Aura Session Manager  5.2 SP1<br/>
+					
+				
+					Avaya Aura Session Manager  5.2<br/>
+					
+				
+					Avaya Aura Session Manager  1.1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.1<br/>
+					
+				
+					Avaya Aura Session Manager  1.0<br/>
+					
+				
+					Apple Mac OS X Server 10.7.5 <br/>
+					
+				
+					Apple Mac OS X 10.8.4 <br/>
+					
+				
+					Apple Mac OS X 10.8.2 <br/>
+					
+				
+					Apple Mac OS X 10.8.1 <br/>
+					
+				
+					Apple Mac OS X 10.7.5 <br/>
+					
+				
+					Apple Mac OS X  10.8.3<br/>
+					
+				
+					Apple Mac OS X  10.8<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					F5 Enterprise Manager 3.1.1 <br/>
+					
+				
+					F5 Enterprise Manager 2.3 <br/>
+					
+				
+					F5 Enterprise Manager 2.0 <br/>
+					
+				
+					F5 Enterprise Manager 1.8 <br/>
+					
+				
+					F5 Enterprise Manager 1.6 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WOM 10.0 <br/>
+					
+				
+					F5 BIG-IP WOM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 9.4.8  0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP PSM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP PSM 10.0 <br/>
+					
+				
+					F5 BIG-IP PSM 9.4.8 <br/>
+					
+				
+					F5 BIG-IP PSM 9.4.5 <br/>
+					
+				
+					F5 BIG-IP PSM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP PEM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM 10.0 <br/>
+					
+				
+					F5 BIG-IP LTM 9.6.1 <br/>
+					
+				
+					F5 BIG-IP LTM 9.4.8 <br/>
+					
+				
+					F5 BIG-IP LTM 9.0 <br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Link Controller 9.4.8  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 10.0.0  0<br/>
+					
+				
+					F5 BIG-IP Link Controller 9.2.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Link Controller  10.2.4 HF4<br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM 10.0 <br/>
+					
+				
+					F5 BIG-IP GTM 9.4.8 <br/>
+					
+				
+					F5 BIG-IP GTM 9.2.2 <br/>
+					
+				
+					F5 BIG-IP GTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP ASM 9.4.8  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.2.4  0<br/>
+					
+				
+					F5 BIG-IP ASM 10.0.0  0<br/>
+					
+				
+					F5 BIG-IP ASM 9.2 <br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP APM  10.1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP AFM  11.3.0 HF4<br/>
+					
+				
+					Apple Mac OS X 10.8.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>
