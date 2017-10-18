@@ -1,0 +1,435 @@
+#SpeeDr00t@Black Falcon<br>#bid75525<p><b><span style="font-size: 18pt;">OpenSSH 'x11_open_helper()' Function Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/75525/info">info</a><br><a href="http://www.securityfocus.com/bid/75525/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/75525/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/75525/solution">solution</a><br><a href="http://www.securityfocus.com/bid/75525/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				75525
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-5352<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 01 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 04:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					OpenSSH OpenSSH  6.6<br/>
+					
+				
+					OpenSSH OpenSSH  6.5<br/>
+					
+				
+					OpenSSH OpenSSH  6.4<br/>
+					
+				
+					OpenSSH OpenSSH  6.3<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p2<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p1<br/>
+					
+				
+					OpenSSH OpenSSH  6.2<br/>
+					
+				
+					OpenSSH OpenSSH  6.1<br/>
+					
+				
+					OpenSSH OpenSSH  6.0<br/>
+					
+				
+					Juniper Nsmexpress  -<br/>
+					
+				
+					Juniper NSM4000  0<br/>
+					
+				
+					Juniper Nsm3000  -<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Security Privileged Identity Manager  2.0<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.3<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.0<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.3<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.2<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.0<br/>
+					
+				
+					IBM Security Identity Governance and Intelligence 5.2.1 <br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					Gentoo Linux  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Solaris  11.3 SRU 5.6<br/>
+					
+				
+					OpenSSH OpenSSH  6.9<br/>
+					
+				
+					IBM Security Privileged Identity Manager 2.0.2 Fixpack 8<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,351 @@
+#SpeeDr00t@Black Falcon<br>#bid74419<p><b><span style="font-size: 18pt;">GNU Libtasn1 'decoding.c' Heap Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/74419/info">info</a><br><a href="http://www.securityfocus.com/bid/74419/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/74419/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/74419/solution">solution</a><br><a href="http://www.securityfocus.com/bid/74419/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				74419
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-3622<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 30 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 03 2015 07:47PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Hanno B&amp;amp;amp;ouml;ck
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					GNU Libtasn1 3.1.4 <br/>
+					
+				
+					GNU Libtasn1 3.0.1 <br/>
+					
+				
+					GNU Libtasn1 1.4.4 <br/>
+					
+				
+					GNU Libtasn1 1.4.3 <br/>
+					
+				
+					GNU Libtasn1 1.4.2 <br/>
+					
+				
+					GNU Libtasn1 1.4.1 <br/>
+					
+				
+					GNU Libtasn1 1.4 <br/>
+					
+				
+					GNU Libtasn1 1.3.9 <br/>
+					
+				
+					GNU Libtasn1 1.3.7 <br/>
+					
+				
+					GNU Libtasn1 1.3.6 <br/>
+					
+				
+					GNU Libtasn1 1.3.3 <br/>
+					
+				
+					GNU Libtasn1 1.2.2 <br/>
+					
+				
+					GNU Libtasn1 0.3.10 <br/>
+					
+				
+					GNU Libtasn1 0.2.18 <br/>
+					
+				
+					GNU Libtasn1 0.2.17 <br/>
+					
+				
+					GNU Libtasn1 0.2.16 <br/>
+					
+				
+					GNU Libtasn1 0.2.15 <br/>
+					
+				
+					GNU Libtasn1 0.2.14 <br/>
+					
+				
+					GNU Libtasn1 0.2.13 <br/>
+					
+				
+					GNU Libtasn1 0.2.12 <br/>
+					
+				
+					GNU Libtasn1 0.2.11 <br/>
+					
+				
+					GNU Libtasn1 0.2.10 <br/>
+					
+				
+					GNU Libtasn1 0.2.9 <br/>
+					
+				
+					GNU Libtasn1 0.2.8 <br/>
+					
+				
+					GNU Libtasn1 0.2.7 <br/>
+					
+				
+					GNU Libtasn1 0.2.6 <br/>
+					
+				
+					GNU Libtasn1 0.2.5 <br/>
+					
+				
+					GNU Libtasn1 0.2.4 <br/>
+					
+				
+					GNU Libtasn1 0.2.3 <br/>
+					
+				
+					GNU Libtasn1 0.2.2 <br/>
+					
+				
+					GNU Libtasn1 0.2.1 <br/>
+					
+				
+					GNU Libtasn1 0.2 <br/>
+					
+				
+					GNU Libtasn1 0.1.2 <br/>
+					
+				
+					GNU Libtasn1 0.1.1 <br/>
+					
+				
+					GNU Libtasn1 0.1 <br/>
+					
+				
+					GNU Libtasn1  4.4<br/>
+					
+				
+					GNU Libtasn1  4.3<br/>
+					
+				
+					GNU Libtasn1  4.2<br/>
+					
+				
+					GNU Libtasn1  4.1<br/>
+					
+				
+					GNU Libtasn1  4.0<br/>
+					
+				
+					GNU Libtasn1  3.9<br/>
+					
+				
+					GNU Libtasn1  3.7<br/>
+					
+				
+					GNU Libtasn1  3.6<br/>
+					
+				
+					GNU Libtasn1  3.5<br/>
+					
+				
+					GNU Libtasn1  3.4<br/>
+					
+				
+					GNU Libtasn1  3.3<br/>
+					
+				
+					GNU Libtasn1  3.2<br/>
+					
+				
+					GNU Libtasn1  2.9<br/>
+					
+				
+					GNU Libtasn1  2.8<br/>
+					
+				
+					GNU Libtasn1  2.7<br/>
+					
+				
+					GNU Libtasn1  2.6<br/>
+					
+				
+					GNU Libtasn1  2.2<br/>
+					
+				
+					GNU Libtasn1  2.12<br/>
+					
+				
+					GNU Libtasn1  2.11<br/>
+					
+				
+					GNU Libtasn1  2.10<br/>
+					
+				
+					GNU Libtasn1  1.8<br/>
+					
+				
+					GNU Libtasn1  1.6<br/>
+					
+				
+					GNU Libtasn1  1.5<br/>
+					
+				
+					GNU Libtasn1  1.4<br/>
+					
+				
+					GNU Libtasn1  1.3<br/>
+					
+				
+					GNU Libtasn1  1.0<br/>
+					
+				
+					GNU Libtasn1  0.3.9<br/>
+					
+				
+					GNU Libtasn1  0.3.8<br/>
+					
+				
+					GNU Libtasn1  0.3.7<br/>
+					
+				
+					GNU Libtasn1  0.3.6<br/>
+					
+				
+					GNU Libtasn1  0.3.5<br/>
+					
+				
+					GNU Libtasn1  0.3.4<br/>
+					
+				
+					GNU Libtasn1  0.3.3<br/>
+					
+				
+					GNU Libtasn1  0.3.2<br/>
+					
+				
+					GNU Libtasn1  0.3.1<br/>
+					
+				
+					GNU Libtasn1  0.3.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					GNU Libtasn1  4.5<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working  exploits. If you feel we are in error or if you are aware of more recent  information, #no_exploit
+	
+		<ul>
+</ul>
+</div>

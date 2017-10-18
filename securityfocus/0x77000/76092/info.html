@@ -1,0 +1,1846 @@
+#SpeeDr00t@Black Falcon<br>#bid76092<p><b><span style="font-size: 18pt;">ISC BIND CVE-2015-5477 Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/76092/info">info</a><br><a href="http://www.securityfocus.com/bid/76092/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/76092/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/76092/solution">solution</a><br><a href="http://www.securityfocus.com/bid/76092/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				76092
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-5477<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 28 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 18 2017 12:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jonathan Foote
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4 LTSS<br/>
+					
+				
+					SuSE openSUSE Evergreen  11.4<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Workstation  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle VM Server for x86  3.2<br/>
+					
+				
+					Oracle Solaris  11.2<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					NetApp Clustered Data ONTAP  0<br/>
+					
+				
+					Juniper NorthStar Controller Application  2.1.0<br/>
+					
+				
+					Juniper Junos OS  12.3X50-D42<br/>
+					
+				
+					Juniper Junos  15.1X49-D20<br/>
+					
+				
+					Juniper Junos  15.1X49-D10<br/>
+					
+				
+					Juniper Junos  15.1R1<br/>
+					
+				
+					Juniper Junos  15.1F2-S2<br/>
+					
+				
+					Juniper Junos  14.2R4<br/>
+					
+				
+					Juniper Junos  14.2R3<br/>
+					
+				
+					Juniper Junos  14.2R2<br/>
+					
+				
+					Juniper Junos  14.2R1<br/>
+					
+				
+					Juniper Junos  14.1X53-D26<br/>
+					
+				
+					Juniper Junos  14.1X53-D25<br/>
+					
+				
+					Juniper Junos  14.1X53-D20<br/>
+					
+				
+					Juniper Junos  14.1X53-D18<br/>
+					
+				
+					Juniper Junos  14.1X53-D16<br/>
+					
+				
+					Juniper Junos  14.1X53-D12<br/>
+					
+				
+					Juniper Junos  14.1X53-D10<br/>
+					
+				
+					Juniper Junos  14.1R5<br/>
+					
+				
+					Juniper Junos  14.1R4<br/>
+					
+				
+					Juniper Junos  14.1R3<br/>
+					
+				
+					Juniper JUNOS  14.1R2<br/>
+					
+				
+					Juniper Junos  14.1R1<br/>
+					
+				
+					Juniper Junos  13.2X51-D36<br/>
+					
+				
+					Juniper Junos  13.2X51-D30<br/>
+					
+				
+					Juniper Junos  13.2X51-D26<br/>
+					
+				
+					Juniper Junos  13.2X51-D25<br/>
+					
+				
+					Juniper Junos  13.2X51-D20<br/>
+					
+				
+					Juniper Junos  13.2X51-D15<br/>
+					
+				
+					Juniper Junos  13.2R8<br/>
+					
+				
+					Juniper Junos  13.2R7<br/>
+					
+				
+					Juniper Junos  13.2R6<br/>
+					
+				
+					Juniper Junos  13.2R5<br/>
+					
+				
+					Juniper Junos  13.2R4<br/>
+					
+				
+					Juniper Junos  13.2R3<br/>
+					
+				
+					Juniper JUNOS  13.2R1<br/>
+					
+				
+					Juniper Junos  12.3X48-D20<br/>
+					
+				
+					Juniper Junos  12.3X48-D15<br/>
+					
+				
+					Juniper Junos  12.3X48-D10<br/>
+					
+				
+					Juniper Junos  12.3R9<br/>
+					
+				
+					Juniper Junos  12.3R8<br/>
+					
+				
+					Juniper Junos  12.3R7<br/>
+					
+				
+					Juniper Junos  12.3R5<br/>
+					
+				
+					Juniper Junos  12.3R4.6<br/>
+					
+				
+					Juniper JUNOS  12.3R4<br/>
+					
+				
+					Juniper Junos  12.3R3.4<br/>
+					
+				
+					Juniper Junos  12.3R2-S3<br/>
+					
+				
+					Juniper JUNOS  12.3R2<br/>
+					
+				
+					Juniper Junos  12.3R10.2<br/>
+					
+				
+					Juniper Junos  12.3R10<br/>
+					
+				
+					Juniper Junos  12.3R1.8<br/>
+					
+				
+					Juniper Junos  12.1X47-D25<br/>
+					
+				
+					Juniper Junos  12.1X47-D20<br/>
+					
+				
+					Juniper Junos  12.1X47-D15<br/>
+					
+				
+					Juniper Junos  12.1X47-D11<br/>
+					
+				
+					Juniper Junos  12.1X47-D10<br/>
+					
+				
+					Juniper Junos  12.1X46-D36<br/>
+					
+				
+					Juniper Junos  12.1X46-D35<br/>
+					
+				
+					Juniper Junos  12.1X46-D30<br/>
+					
+				
+					Juniper JUNOS  12.1X46-D25<br/>
+					
+				
+					Juniper Junos  12.1X46-D20.5<br/>
+					
+				
+					Juniper Junos  12.1X46-D20<br/>
+					
+				
+					Juniper Junos  12.1X46-D15<br/>
+					
+				
+					Juniper Junos  12.1X46-D10<br/>
+					
+				
+					Juniper Junos  12.1X44-D51<br/>
+					
+				
+					Juniper Junos  12.1X44-D50<br/>
+					
+				
+					Juniper Junos  12.1X44-D45<br/>
+					
+				
+					Juniper JUNOS  12.1X44-D40<br/>
+					
+				
+					Juniper Junos  12.1X44-D35.5<br/>
+					
+				
+					Juniper Junos  12.1X44-D35<br/>
+					
+				
+					Juniper Junos  12.1X44-D34<br/>
+					
+				
+					Juniper Junos  12.1X44-D33<br/>
+					
+				
+					Juniper Junos  12.1X44-D32<br/>
+					
+				
+					Juniper Junos  12.1X44-D30.4<br/>
+					
+				
+					Juniper Junos  12.1X44-D30<br/>
+					
+				
+					Juniper Junos  12.1X44-D26<br/>
+					
+				
+					Juniper JUNOS  12.1X44-D25<br/>
+					
+				
+					Juniper Junos  12.1X44-D24<br/>
+					
+				
+					Juniper Junos  12.1X44-D20.3<br/>
+					
+				
+					Juniper JUNOS  12.1X44-D20 (SRX)<br/>
+					
+				
+					Juniper JUNOS  12.1X44-D20<br/>
+					
+				
+					Juniper JUNOS  12.1X44-D15<br/>
+					
+				
+					Juniper JUNOS  12.1X44 D40<br/>
+					
+				
+					Juniper JUNOS  12.1X44 D35<br/>
+					
+				
+					Juniper Junos  12.1X44 D30<br/>
+					
+				
+					Juniper JUNOS  12.1X44 D25<br/>
+					
+				
+					Juniper Junos  12.1X44 D20<br/>
+					
+				
+					Juniper JUNOS  12.1X44 D15<br/>
+					
+				
+					Juniper Junos  12.1X44 D10<br/>
+					
+				
+					Juniper JUNOS  12.1X44<br/>
+					
+				
+					ISC BIND 9.6 <br/>
+					
+				
+					ISC BIND 9.5.1 P3<br/>
+					
+				
+					ISC BIND 9.5.1 P1<br/>
+					
+				
+					ISC BIND 9.5 a2<br/>
+					
+				
+					ISC BIND 9.5 a1<br/>
+					
+				
+					ISC BIND 9.4.3 P3<br/>
+					
+				
+					ISC BIND 9.4.3 <br/>
+					
+				
+					ISC BIND 9.4.1 -P1<br/>
+					
+				
+					ISC BIND 9.4.1 <br/>
+					
+				
+					ISC BIND 9.4 rc2<br/>
+					
+				
+					ISC BIND 9.4 rc1<br/>
+					
+				
+					ISC BIND 9.4 b4<br/>
+					
+				
+					ISC BIND 9.4 b3<br/>
+					
+				
+					ISC BIND 9.4 b2<br/>
+					
+				
+					ISC BIND 9.4 b1<br/>
+					
+				
+					ISC BIND 9.4 a6<br/>
+					
+				
+					ISC BIND 9.4 a5<br/>
+					
+				
+					ISC BIND 9.4 a4<br/>
+					
+				
+					ISC BIND 9.4 a3<br/>
+					
+				
+					ISC BIND 9.4 a2<br/>
+					
+				
+					ISC BIND 9.4 a1<br/>
+					
+				
+					ISC BIND 9.4 <br/>
+					
+				
+					ISC BIND 9.3.6 P1<br/>
+					
+				
+					ISC BIND 9.3.6 <br/>
+					
+				
+					ISC BIND 9.3.5 <br/>
+					
+				
+					ISC BIND 9.3.4 <br/>
+					
+				
+					ISC BIND 9.3.3 rc3<br/>
+					
+				
+					ISC BIND 9.3.3 rc2<br/>
+					
+				
+					ISC BIND 9.3.3 rc1<br/>
+					
+				
+					ISC BIND 9.3.3 b1<br/>
+					
+				
+					ISC BIND 9.3.3 b<br/>
+					
+				
+					ISC BIND 9.3.3 <br/>
+					
+				
+					ISC BIND 9.3.2 -P2<br/>
+					
+				
+					ISC BIND 9.3.2 -P1<br/>
+					
+				
+					ISC BIND 9.3.2 <br/>
+					
+				
+					ISC BIND 9.3.1 <br/>
+					
+				
+					ISC BIND 9.3 <br/>
+					
+				
+					ISC BIND 9.2.8 <br/>
+					
+				
+					ISC BIND 9.2.7 rc3<br/>
+					
+				
+					ISC BIND 9.2.7 rc2<br/>
+					
+				
+					ISC BIND 9.2.7 rc1<br/>
+					
+				
+					ISC BIND 9.2.7 b1<br/>
+					
+				
+					ISC BIND 9.2.7 <br/>
+					
+				
+					ISC BIND 9.2.6 -P2<br/>
+					
+				
+					ISC BIND 9.2.6 -P1<br/>
+					
+				
+					ISC BIND 9.2.6 <br/>
+					
+				
+					ISC BIND 9.2.5 <br/>
+					
+				
+					ISC BIND 9.2.4 <br/>
+					
+				
+					ISC BIND 9.2.3 <br/>
+					
+				
+					ISC BIND 9.2.2 <br/>
+					
+				
+					ISC BIND 9.2.1 <br/>
+					
+				
+					ISC BIND 9.2 <br/>
+					
+				
+					ISC BIND 9.1.3 <br/>
+					
+				
+					ISC BIND 9.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					ISC BIND 9.1.1 <br/>
+					
+				
+					ISC BIND 9.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					ISC BIND  9.7.1-P2<br/>
+					
+				
+					ISC BIND  9.7.1 P1<br/>
+					
+				
+					ISC BIND  9.7.1<br/>
+					
+				
+					ISC BIND  9.7.0 P2<br/>
+					
+				
+					ISC BIND  9.7.0<br/>
+					
+				
+					ISC BIND  9.6.1-P3<br/>
+					
+				
+					ISC BIND  9.6.1-P2<br/>
+					
+				
+					ISC BIND  9.6.0-P1<br/>
+					
+				
+					ISC BIND  9.5.2-P2<br/>
+					
+				
+					ISC BIND  9.5.2-P1<br/>
+					
+				
+					ISC BIND  9.5.1b1<br/>
+					
+				
+					ISC BIND  9.5.0b2<br/>
+					
+				
+					ISC BIND  9.5.0b1<br/>
+					
+				
+					ISC BIND  9.5.0a7<br/>
+					
+				
+					ISC BIND  9.5.0a6<br/>
+					
+				
+					ISC BIND  9.5.0a5<br/>
+					
+				
+					ISC BIND  9.5.0a4<br/>
+					
+				
+					ISC BIND  9.5.0a3<br/>
+					
+				
+					ISC BIND  9.5.0-P2<br/>
+					
+				
+					ISC BIND  9.4.3b2<br/>
+					
+				
+					ISC BIND  9.4.3-P5<br/>
+					
+				
+					ISC BIND  9.4.3-P4<br/>
+					
+				
+					ISC BIND  9.4.3-P1<br/>
+					
+				
+					ISC BIND  9.4.2-P2<br/>
+					
+				
+					ISC BIND  9.3.5-P2<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM SmartCloud Provisioning for Software Virtual Appliance  2.1<br/>
+					
+				
+					IBM Netezza Host Management  5.3.7.0<br/>
+					
+				
+					IBM Lotus Protector for Mail Security 2.8 0<br/>
+					
+				
+					IBM Lotus Protector for Mail Security  2.8.1.0<br/>
+					
+				
+					IBM i  V5R4 7.2<br/>
+					
+				
+					IBM i  V5R4 7.1<br/>
+					
+				
+					IBM i  V5R4 6.1<br/>
+					
+				
+					IBM i  V5R3 7.2<br/>
+					
+				
+					IBM i  V5R3 7.1<br/>
+					
+				
+					IBM i  V5R3 6.1<br/>
+					
+				
+					IBM i  V5R3<br/>
+					
+				
+					IBM i  V5R2 7.2<br/>
+					
+				
+					IBM i  V5R2 7.1<br/>
+					
+				
+					IBM i  V5R2 6.1<br/>
+					
+				
+					IBM i  V5R1 7.2<br/>
+					
+				
+					IBM i  V5R1 7.1<br/>
+					
+				
+					IBM i  V5R1 6.1<br/>
+					
+				
+					IBM i  V4R4 7.2<br/>
+					
+				
+					IBM i  V4R4 7.1<br/>
+					
+				
+					IBM i  V4R4 6.1<br/>
+					
+				
+					IBM i  V4R3 7.2<br/>
+					
+				
+					IBM i  V4R3 7.1<br/>
+					
+				
+					IBM i  V4R3 6.1<br/>
+					
+				
+					IBM i  V4R2 7.2<br/>
+					
+				
+					IBM i  V4R2 7.1<br/>
+					
+				
+					IBM i  V4R2 6.1<br/>
+					
+				
+					IBM i  V4R1 7.2<br/>
+					
+				
+					IBM i  V4R1 7.1<br/>
+					
+				
+					IBM i  V4R1 6.1<br/>
+					
+				
+					IBM i  V3R7 7.2<br/>
+					
+				
+					IBM i  V3R7 7.1<br/>
+					
+				
+					IBM i  V3R7 6.1<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					HP VCX  9.8.17<br/>
+					
+				
+					HP TCP/IP Services for OpenVMS BIND  5.7 ECO5<br/>
+					
+				
+					HP HP-UX  B.11.31.09<br/>
+					
+				
+					HP HP-UX  B.11.31.08<br/>
+					
+				
+					HP HP-UX  B.11.31.06<br/>
+					
+				
+					HP HP-UX  B.11.31<br/>
+					
+				
+					HP HP-UX  B.11.23<br/>
+					
+				
+					HP HP-UX  B.11.11<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p4<br/>
+					
+				
+					FreeBSD Freebsd  8.4-RELEASE-p27<br/>
+					
+				
+					FreeBSD Freebsd  8.4-RELEASE-p24<br/>
+					
+				
+					FreeBSD Freebsd  8.4-RELEASE-p23<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p20<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p19<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p15<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p14<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  8.4-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  8.4<br/>
+					
+				
+					F5 Enterprise Manager 3.1.1 <br/>
+					
+				
+					F5 BIG-IQ Security 4.5 <br/>
+					
+				
+					F5 BIG-IQ Security 4.4 <br/>
+					
+				
+					F5 BIG-IQ Security 4.3 <br/>
+					
+				
+					F5 BIG-IQ Security 4.2 <br/>
+					
+				
+					F5 BIG-IQ Security 4.1 <br/>
+					
+				
+					F5 BIG-IQ Security 4.0 <br/>
+					
+				
+					F5 BIG-IQ Device 4.5 <br/>
+					
+				
+					F5 BIG-IQ Device 4.4 <br/>
+					
+				
+					F5 BIG-IQ Device 4.3 <br/>
+					
+				
+					F5 BIG-IQ Device 4.2 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.5 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.4 HF2<br/>
+					
+				
+					F5 BIG-IQ Cloud 4.4 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.3 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.2 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.1 <br/>
+					
+				
+					F5 BIG-IQ Cloud 4.0 <br/>
+					
+				
+					F5 BIG-IQ ADC 4.5 <br/>
+					
+				
+					F5 BIG-IP WOM 11.2 <br/>
+					
+				
+					F5 BIG-IP WOM 11.0 <br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WOM  11.1.0<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.0 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.1 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP WebAccelerator  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM 11.4.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.3 <br/>
+					
+				
+					F5 BIG-IP PSM 11.2 <br/>
+					
+				
+					F5 BIG-IP PSM 11.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.0 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP PSM 10.0 <br/>
+					
+				
+					F5 BIG-IP PSM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP PSM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP PSM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP PSM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP PSM  10.1<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP PEM 11.5 <br/>
+					
+				
+					F5 BIG-IP PEM 11.3 <br/>
+					
+				
+					F5 BIG-IP PEM  11.6.0<br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1<br/>
+					
+				
+					F5 BIG-IP PEM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP LTM 11.5 <br/>
+					
+				
+					F5 BIG-IP LTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.0 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP LTM  11.6.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.5<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP LTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP LTM  10.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  10.1.0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 HF7<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.0.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0-HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0-HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5 <br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 <br/>
+					
+				
+					F5 BIG-IP GTM 11.0 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP GTM  11.6.0<br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP GTM  11.1.0<br/>
+					
+				
+					F5 BIG-IP GTM  10.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.0.1 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.0 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0-HF3<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.1.0-HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.0.0-HF2<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.3-HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5 <br/>
+					
+				
+					F5 BIG-IP ASM 11.0 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP ASM 10.2.1 <br/>
+					
+				
+					F5 BIG-IP ASM 10.0 <br/>
+					
+				
+					F5 BIG-IP ASM  11.6.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP ASM  10.1.0<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.0 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.2 <br/>
+					
+				
+					F5 BIG-IP APM  11.6.0<br/>
+					
+				
+					F5 BIG-IP APM  11.5.0<br/>
+					
+				
+					F5 BIG-IP APM  11.4.1<br/>
+					
+				
+					F5 BIG-IP APM  11.4.0<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF3<br/>
+					
+				
+					F5 BIG-IP APM  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP APM  11.1.0<br/>
+					
+				
+					F5 BIG-IP APM  10.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM  10.2.1<br/>
+					
+				
+					F5 BIG-IP APM  10.1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.6 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.2 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 HF8<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 <br/>
+					
+				
+					F5 BIG-IP Analytics  11.6.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.1 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.2.0 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics  11.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0-HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  11.0.0<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5 <br/>
+					
+				
+					F5 BIG-IP AFM 11.3 <br/>
+					
+				
+					F5 BIG-IP AFM 11.2.1 <br/>
+					
+				
+					F5 BIG-IP AFM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AFM  11.3.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  5<br/>
+					
+				
+					Apple Mac OS X Server  4.1<br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper NorthStar Controller Application  2.1.0 Service Pack 1<br/>
+					
+				
+					Juniper Junos OS  15.1X49-D30 <br/>
+					
+				
+					Juniper Junos OS  12.1X47-D30<br/>
+					
+				
+					Juniper Junos  15.2R1<br/>
+					
+				
+					Juniper Junos  15.1X53-D20<br/>
+					
+				
+					Juniper Junos  15.1R3<br/>
+					
+				
+					Juniper Junos  15.1R2<br/>
+					
+				
+					Juniper Junos  15.1F3<br/>
+					
+				
+					Juniper Junos  14.2R5<br/>
+					
+				
+					Juniper Junos  14.1X53-D30<br/>
+					
+				
+					Juniper Junos  14.1R7<br/>
+					
+				
+					Juniper Junos  14.1R6<br/>
+					
+				
+					Juniper Junos  13.3R8<br/>
+					
+				
+					Juniper Junos  13.2X51-D40<br/>
+					
+				
+					Juniper Junos  13.2X51-D39<br/>
+					
+				
+					Juniper Junos  13.2R9<br/>
+					
+				
+					Juniper Junos  12.3X50-D50<br/>
+					
+				
+					Juniper Junos  12.3R12<br/>
+					
+				
+					Juniper Junos  12.3R11<br/>
+					
+				
+					Juniper Junos  12.1X46-D45<br/>
+					
+				
+					Juniper Junos  12.1X46-D40<br/>
+					
+				
+					Juniper Junos  12.1X44-D55<br/>
+					
+				
+					IBM Netezza Host Management  5.3.8.0<br/>
+					
+				
+					HP VCX 9.8.18 <br/>
+					
+				
+					HP HP-UX  C.9.7.3.8.0<br/>
+					
+				
+					Apple Mac OS X Server 4.1.5 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x77000/76092/Errata Security">#exploit_Errata Security</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit code is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/Errata Security">/data/vulnerabilities/exploits/Errata Security</a></li>
+</ul>
+</div>

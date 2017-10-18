@@ -1,0 +1,1605 @@
+#SpeeDr00t@Black Falcon<br>#bid78622<p><b><span style="font-size: 18pt;">OpenSSL CVE-2015-3196 Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/78622/info">info</a><br><a href="http://www.securityfocus.com/bid/78622/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/78622/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/78622/solution">solution</a><br><a href="http://www.securityfocus.com/bid/78622/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				78622
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Race Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-3196<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 03 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 07 2017 02:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Dr. Stephen Henson of the OpenSSL development team
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Linux  0<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.2 <br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0 <br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1o<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1n<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1m<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1l<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1k<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1j<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1i<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0s<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0r<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0q<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0p<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0o<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0n<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0m<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0L<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0k<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0j<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0i<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0H<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0a<br/>
+					
+				
+					NetApp OnCommand Unified Manager Host Package  0<br/>
+					
+				
+					NetApp OnCommand Unified Manager for Clustered Data ONTAP  6.0<br/>
+					
+				
+					NetApp OnCommand Report  0<br/>
+					
+				
+					NetApp OnCommand Performance Manager  0<br/>
+					
+				
+					NetApp Manageability SDK  0<br/>
+					
+				
+					NetApp AltaVault  0<br/>
+					
+				
+					Juniper CTPView  7.3<br/>
+					
+				
+					Juniper CTPView  7.1R2<br/>
+					
+				
+					Juniper CTPView  7.1r1<br/>
+					
+				
+					IBM Workload Deployer 3.1 7<br/>
+					
+				
+					IBM Worklight Enterprise Edition  6.1.0.2<br/>
+					
+				
+					IBM Worklight Enterprise Edition  6.1.0.1<br/>
+					
+				
+					IBM Worklight Enterprise Edition  6.1.0.0<br/>
+					
+				
+					IBM Worklight Consumer Edition  6.1.0.2<br/>
+					
+				
+					IBM Worklight Consumer Edition  6.1.0.1<br/>
+					
+				
+					IBM Worklight Consumer Edition  6.1.0.0<br/>
+					
+				
+					IBM WebSphere MQ - Advanced Message Security  8.0.0.0<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.6<br/>
+					
+				
+					IBM Tivoli Workload Scheduler for Applications  8.5 FP01<br/>
+					
+				
+					IBM Tivoli Netcool Reporter  2.2<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.3<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.2<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.1<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.1.3<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.1.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.0.2<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.0.1<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.0.0<br/>
+					
+				
+					IBM SONAS  1.5.2.3<br/>
+					
+				
+					IBM SONAS  1.5.2.2<br/>
+					
+				
+					IBM SONAS  1.5.2.1<br/>
+					
+				
+					IBM SONAS  1.5.2.0<br/>
+					
+				
+					IBM SONAS  1.5.1.3<br/>
+					
+				
+					IBM SONAS  1.5.1.0<br/>
+					
+				
+					IBM SONAS  1.5.0.2<br/>
+					
+				
+					IBM SONAS  1.5.0.1<br/>
+					
+				
+					IBM SONAS  1.5.0.0<br/>
+					
+				
+					IBM SmartCloud Provisioning 2.1 3<br/>
+					
+				
+					IBM SmartCloud Provisioning 2.1 2<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.5<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.4<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.1<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM Security Network Controller 1.0.3387 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3381 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3379 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3376 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3361 <br/>
+					
+				
+					IBM Security Network Controller 1.0.1768 <br/>
+					
+				
+					IBM Security Network Controller 1.0.1209 <br/>
+					
+				
+					IBM Security Network Controller 1.0.913 <br/>
+					
+				
+					IBM Security Network Controller  1.0.3394M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3394<br/>
+					
+				
+					IBM Security Network Controller  1.0.3387M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3381M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3379M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3376M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3361M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3352M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3350M<br/>
+					
+				
+					IBM Security Identity Governance and Intelligence  5.2<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 3<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  9.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0<br/>
+					
+				
+					IBM Security Access Manager  9.0<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.4 1<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 8<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 7<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 5<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 4<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 3<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 2<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.3 1<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.2 11<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.2 10<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.1 8<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.1 7<br/>
+					
+				
+					IBM Rational Requisitepro 7.1.1 6<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.4.9<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.4.8<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.4.7<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.4.6<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.4.3<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.4.10 <br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.9<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.6<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.17<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.16<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.15<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.14<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.13<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.12<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.3.10<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.9<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.8<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.7<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.6<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.5<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.4<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.3<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.2<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.18<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.17<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.16<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.15<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.14<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.13<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.12<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.2.1<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.1.9<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.1.5<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.1.4<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.1.3<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.1.2<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.1.1<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.0.2<br/>
+					
+				
+					IBM Rational Requisitepro  7.1.0.1<br/>
+					
+				
+					IBM Rational ClearQuest 8.0.1 3<br/>
+					
+				
+					IBM Rational ClearQuest 8.0 10<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.2 8<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.2 5<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.2 3<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.2 13<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.2 11<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.1 8<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.1 3<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.1 2<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.1 1<br/>
+					
+				
+					IBM Rational ClearQuest 7.1.1 <br/>
+					
+				
+					IBM Rational ClearQuest  9.0<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.9<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.8<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.7<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.6<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.5<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.4<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.2<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.10<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.1<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.9<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.8<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.7<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.5<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.4<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.3<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.2<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.17<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.16<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.15<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.14<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.13<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.12<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.11<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.1<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0 6<br/>
+					
+				
+					IBM Rational ClearQuest  8.0<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.9<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.7<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.6<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.4<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.2<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.19<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.18<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.16<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.15<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.14<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.12<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.10<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2.1<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.2<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.1.9<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.1.7<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.1.6<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.1.5<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.1.4<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.0.2<br/>
+					
+				
+					IBM Rational ClearQuest  7.1.0.1<br/>
+					
+				
+					IBM Rational ClearQuest  7.1<br/>
+					
+				
+					IBM QRadar SIEM 7.2.5 Patch 3<br/>
+					
+				
+					IBM QRadar SIEM 7.2.4 Patch 4 iFix01<br/>
+					
+				
+					IBM QRadar SIEM 7.2.4 Patch 3<br/>
+					
+				
+					IBM QRadar SIEM 7.2.4 Patch 1<br/>
+					
+				
+					IBM QRadar SIEM 7.2.3 Patch 4<br/>
+					
+				
+					IBM QRadar SIEM 7.2.3 <br/>
+					
+				
+					IBM QRadar SIEM 7.2 <br/>
+					
+				
+					IBM QRadar SIEM 7.1 <br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2.6 Patch 2<br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2.5 Patch 3<br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2.4 Patch 1<br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2.2 <br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2 <br/>
+					
+				
+					IBM QLogic Virtual Fabric Extension Module for IBM BladeCenter  9.0<br/>
+					
+				
+					IBM QLogic 8Gb Intelligent Pass-thru Module &amp; SAN Switch Module for   7.10<br/>
+					
+				
+					IBM Proventia Network Enterprise Scanner  2.3<br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM Power HMC  7.9.0.0<br/>
+					
+				
+					IBM Power HMC  7.3.0.0<br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.1<br/>
+					
+				
+					IBM MobileFirst Platform Foundation  7.1.0.0<br/>
+					
+				
+					IBM MobileFirst Platform Foundation  7.0.0.0<br/>
+					
+				
+					IBM MobileFirst Platform Foundation  6.3.0.0<br/>
+					
+				
+					IBM Mobile Foundation Enterprise Edition  6.2.0.1<br/>
+					
+				
+					IBM Mobile Foundation Enterprise Edition  6.2.0.0<br/>
+					
+				
+					IBM Mobile Foundation Consumer Edition  6.2.0.1<br/>
+					
+				
+					IBM Mobile Foundation Consumer Edition  6.2.0.0<br/>
+					
+				
+					IBM Initiate Master Data Service Provider Hub  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service Provider Hub  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service Patient Hub  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service Patient Hub  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  10.1<br/>
+					
+				
+					IBM Initiate Master Data Service  10.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.5<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.4<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.3<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Provider Hub  10.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Patient Hub  10.0<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.3.2.0<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.3.1.0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager 1.2.1 <br/>
+					
+				
+					IBM Flex System Manager 1.2 <br/>
+					
+				
+					IBM Flex System Manager 1.1 <br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0<br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Switch  9.1<br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Pass-thru  9.1<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 <br/>
+					
+				
+					IBM Cognos TM1  10.2<br/>
+					
+				
+					IBM Cognos TM1  10.1.0<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 <br/>
+					
+				
+					IBM Cognos Insight 10.2.1 <br/>
+					
+				
+					IBM Cognos Insight  10.2<br/>
+					
+				
+					IBM Business Process Manager 8.5.6 <br/>
+					
+				
+					IBM Business Process Manager 8.5.5 <br/>
+					
+				
+					IBM API Management  4.0<br/>
+					
+				
+					IBM API Management  3.0<br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP VCX  0<br/>
+					
+				
+					HP Intelligent Management Center (IMC)  0<br/>
+					
+				
+					HP IceWall SSO Certd  10.0<br/>
+					
+				
+					HP IceWall SSO Agent Option  10<br/>
+					
+				
+					HP IceWall MCRP  3.0<br/>
+					
+				
+					HP Comware 7  0<br/>
+					
+				
+					HP Comware 5  0<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1<br/>
+					
+				
+					Fortinet FortiWeb 5.3.5 <br/>
+					
+				
+					Fortinet FortiWeb 5.3.4 <br/>
+					
+				
+					Fortinet FortiWeb 5.3.3 <br/>
+					
+				
+					Fortinet FortiWeb 5.3.2 <br/>
+					
+				
+					Fortinet FortiWeb 5.3.1 <br/>
+					
+				
+					Fortinet FortiWeb 5.2.1 <br/>
+					
+				
+					Fortinet FortiWeb  5.2.0<br/>
+					
+				
+					Fortinet FortiWeb  5.1.4<br/>
+					
+				
+					Fortinet FortiWeb  5.0<br/>
+					
+				
+					Fortinet FortiWAN  0<br/>
+					
+				
+					Fortinet FortiVoiceOS  0<br/>
+					
+				
+					Fortinet FortiSwitch  0<br/>
+					
+				
+					Fortinet FortiSandbox 2.0 <br/>
+					
+				
+					Fortinet FortiSandbox  2.1<br/>
+					
+				
+					Fortinet FortiSandbox  2.0.3<br/>
+					
+				
+					Fortinet FortiSandbox  2.0.2<br/>
+					
+				
+					Fortinet FortiRecorder 2.0.1 <br/>
+					
+				
+					Fortinet FortiRecorder 1.5 <br/>
+					
+				
+					Fortinet FortiRecorder 1.4.2 <br/>
+					
+				
+					Fortinet Fortios 5.2.4 <br/>
+					
+				
+					Fortinet Fortios 5.2.3 <br/>
+					
+				
+					Fortinet Fortios 5.2.2 <br/>
+					
+				
+					Fortinet Fortios 5.2.1 <br/>
+					
+				
+					Fortinet Fortios  5.0.0<br/>
+					
+				
+					Fortinet FortiManager 5.2.2 <br/>
+					
+				
+					Fortinet FortiManager 5.2.1 <br/>
+					
+				
+					Fortinet FortiManager 5.2 <br/>
+					
+				
+					Fortinet FortiManager  5.2.4<br/>
+					
+				
+					Fortinet FortiManager  5.2.3<br/>
+					
+				
+					Fortinet FortiMail  0<br/>
+					
+				
+					Fortinet FortiDDoS  0<br/>
+					
+				
+					Fortinet FortiDB  0<br/>
+					
+				
+					Fortinet FortiClient iOS 5.2.1 <br/>
+					
+				
+					Fortinet FortiClient Android 5.2.6 <br/>
+					
+				
+					Fortinet FortiClient  5.2.4.0650<br/>
+					
+				
+					Fortinet FortiClient  5.2.3.633<br/>
+					
+				
+					Fortinet FortiClient  5.2.3.091<br/>
+					
+				
+					Fortinet FortiCache  0<br/>
+					
+				
+					Fortinet FortiAuthenticator  0<br/>
+					
+				
+					Fortinet FortiAP 5.0.8 <br/>
+					
+				
+					Fortinet FortiAP  0<br/>
+					
+				
+					Fortinet FortiAnalyzer  0<br/>
+					
+				
+					Fortinet FortiADC 4.2 <br/>
+					
+				
+					Fortinet FortiADC 3.2.1 <br/>
+					
+				
+					Fortinet FortiADC 3.2 <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSL Project OpenSSL  1.0.2d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1p<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.0t<br/>
+					
+				
+					Juniper CTPView  7.3R1<br/>
+					
+				
+					Juniper CTPView  7.1R3<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.4<br/>
+					
+				
+					IBM SONAS  1.5.2.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM Rational ClearQuest  9.0.0.1<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.1.11<br/>
+					
+				
+					IBM Rational ClearQuest  8.0.0.18<br/>
+					
+				
+					IBM QLogic Virtual Fabric Extension Module for IBM BladeCenter  9.0.3.16.00<br/>
+					
+				
+					IBM QLogic 8Gb Intelligent Pass-thru Module &amp; SAN Switch Module for   7.10.1.38.00<br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.2<br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Switch  9.1.8.01.00<br/>
+					
+				
+					IBM Flex System FC3171 8Gb SAN Pass-thru  9.1.8.01.00<br/>
+					
+				
+					HP WX5004-EI (Comware 5)  R2507P44<br/>
+					
+				
+					HP VSR (Comware 7)  E0322P01<br/>
+					
+				
+					HP VCX 9.8.19 <br/>
+					
+				
+					HP V1910 (Comware 5)  R1517P01<br/>
+					
+				
+					HP U200S and CS (Comware 5)  F5123P33<br/>
+					
+				
+					HP U200A and M (Comware 5)  F5123P33<br/>
+					
+				
+					HP SMB1920 (Comware 5)  R1112<br/>
+					
+				
+					HP SMB1910 (Comware 5)  R1113<br/>
+					
+				
+					HP SMB 1620 (Comware 5)  R1110<br/>
+					
+				
+					HP SecBlade FW (Comware 5)  R3181P07<br/>
+					
+				
+					HP NJ5000  R1107<br/>
+					
+				
+					HP MSR4000 (Comware 7)  R0306P12<br/>
+					
+				
+					HP MSR3000 (Comware 7)  R0306P12<br/>
+					
+				
+					HP MSR2000 (Comware 7)  R0306P12<br/>
+					
+				
+					HP MSR20-1X (Comware 5)  R2516<br/>
+					
+				
+					HP MSR20 (Comware 5)  R2516<br/>
+					
+				
+					HP MSR1000 (Comware 7)  R0306P12<br/>
+					
+				
+					HP MSR 9XX (Comware 5)  R2516<br/>
+					
+				
+					HP MSR 93X (Comware 5)  R2516<br/>
+					
+				
+					HP MSR 50-G2 (Comware 5)  R2516<br/>
+					
+				
+					HP MSR 50 (Comware 5)  R2516<br/>
+					
+				
+					HP MSR 30-1X (Comware 5)  R2516<br/>
+					
+				
+					HP MSR 30-16 (Comware 5)  R2516<br/>
+					
+				
+					HP MSR 30 (Comware 5)  R2516<br/>
+					
+				
+					HP Moonshot  R2432P01<br/>
+					
+				
+					HP iMC WSM  7.2 E0502P04<br/>
+					
+				
+					HP IMC UAM_TAM  7.1 E0406<br/>
+					
+				
+					HP iMC PLAT  7.2 E0403P04<br/>
+					
+				
+					HP IMC iNode  7.2 E0407<br/>
+					
+				
+					HP HSR6800 RU (Comware 5 Low Encryption SW)  R3303P28.RU<br/>
+					
+				
+					HP HSR6800 (Comware 7)  R7103P09<br/>
+					
+				
+					HP HSR6800 (Comware 5)  R3303P28<br/>
+					
+				
+					HP HSR6602 RU (Comware 5 Low Encryption SW)  R3303P28.RU<br/>
+					
+				
+					HP HSR6602 (Comware 5)  R3303P28<br/>
+					
+				
+					HP HSR6600 (Comware 7)  R7103P09<br/>
+					
+				
+					HP HP870 (Comware 5)  R2607P51<br/>
+					
+				
+					HP HP850 (Comware 5)  R2607P51<br/>
+					
+				
+					HP HP830 (Comware 5)  R3507P51<br/>
+					
+				
+					HP HP6000 (Comware 5)  R2507P44<br/>
+					
+				
+					HP F5000-A (Comware 5)  F3210P26<br/>
+					
+				
+					HP A6600 (Comware 5)  R3303P28<br/>
+					
+				
+					HP 9500E (Comware 5)  R1829P02<br/>
+					
+				
+					HP 7900 (Comware 7)  R2150<br/>
+					
+				
+					HP 7500 (Comware 7)  R7180<br/>
+					
+				
+					HP 7500 (Comware 5)  R6710P02<br/>
+					
+				
+					HP 6602 RU (Comware 5 Low Encryption SW)  R3303P28.RU<br/>
+					
+				
+					HP 6600 RSE RU (Comware 5 Low Encryption SW)  R3303P28.RU<br/>
+					
+				
+					HP 6600 RPE RU (Comware 5 Low Encryption SW)  R3303P28.RU<br/>
+					
+				
+					HP 6127XLG  R2432P01<br/>
+					
+				
+					HP 6125XLG  R2432P01<br/>
+					
+				
+					HP 6125G/XG Blade Switch  R2112P05<br/>
+					
+				
+					HP 5930 (Comware 7)  R2432P01<br/>
+					
+				
+					HP 5900 (Comware 7)  R2432P01<br/>
+					
+				
+					HP 5830 (Comware 5)  R1118P13<br/>
+					
+				
+					HP 5800 (Comware 5)  R1810P03<br/>
+					
+				
+					HP 5700 (Comware 7)  R2432P01<br/>
+					
+				
+					HP 5510HI (Comware 7)  R1120<br/>
+					
+				
+					HP 5500SI (Comware 5)  R2221P22<br/>
+					
+				
+					HP 5500 HI (Comware 5)  R5501P21<br/>
+					
+				
+					HP 5500 EI (Comware 5)  R2221P22<br/>
+					
+				
+					HP 5130HI (Comware 7)  R1120<br/>
+					
+				
+					HP 5130 (Comware 7)  R3113P02<br/>
+					
+				
+					HP 5120 SI (Comware 5)  R1517<br/>
+					
+				
+					HP 5120 EI (Comware 5)  R2221P22<br/>
+					
+				
+					HP 4800G (Comware 5)  R2221P22<br/>
+					
+				
+					HP 4500G (Comware 5)  R2221P22<br/>
+					
+				
+					HP 4210G (Comware 5)  R2221P22<br/>
+					
+				
+					HP 3610 (Comware 5)  R5319P15<br/>
+					
+				
+					HP 3600V2 (Comware 5)  R2111P01<br/>
+					
+				
+					HP 3100V2 (Comware 5)  R5213P01<br/>
+					
+				
+					HP 1950 (Comware 7)  R3113P02<br/>
+					
+				
+					HP 12900 (Comware 7)  R1150<br/>
+					
+				
+					HP 12500 (Comware 7)  R7377<br/>
+					
+				
+					HP 12500 (Comware 5)  R1829P02<br/>
+					
+				
+					HP 10500 (Comware 7)  R7180<br/>
+					
+				
+					HP 10500 (Comware 5)  R1210P02<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p25<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

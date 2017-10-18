@@ -1,0 +1,981 @@
+#SpeeDr00t@Black Falcon<br>#bid77312<p><b><span style="font-size: 18pt;">Network Time Protocol CVE-2015-5300 Man in the Middle Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/77312/info">info</a><br><a href="http://www.securityfocus.com/bid/77312/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/77312/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/77312/solution">solution</a><br><a href="http://www.securityfocus.com/bid/77312/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				77312
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-5300<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 22 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 02 2017 01:02AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Aanchal Malhotra, Isaac E. Cohen, and Sharon Goldberg of Boston University 
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Siemens RuggedCom ROX  2.6.3<br/>
+					
+				
+					Siemens RuggedCom ROX  2.6.2<br/>
+					
+				
+					Siemens RuggedCom ROX  2.0<br/>
+					
+				
+					Siemens RuggedCom ROX  1.16<br/>
+					
+				
+					Siemens RuggedCom ROX  1.14.5<br/>
+					
+				
+					Siemens RuggedCom ROX  1.0<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.7.z<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Linux  0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Communications Session Border Controller  7.3.0<br/>
+					
+				
+					Oracle Communications Session Border Controller  7.2.0<br/>
+					
+				
+					NTP NTP 4.3.25 <br/>
+					
+				
+					NTP NTP 4.3 <br/>
+					
+				
+					NTP NTP 4.2.8 <br/>
+					
+				
+					NTP NTP 4.2.6 <br/>
+					
+				
+					NTP NTP 4.2.5 p74<br/>
+					
+				
+					NTP NTP 4.2.4 p8<br/>
+					
+				
+					NTP NTP 4.2.4 p7<br/>
+					
+				
+					NTP NTP 4.2.4 p6<br/>
+					
+				
+					NTP NTP 4.2.4 p5<br/>
+					
+				
+					NTP NTP 4.2.4 p4<br/>
+					
+				
+					NTP NTP 4.2.2 p4<br/>
+					
+				
+					NTP NTP 4.2.2 p1<br/>
+					
+				
+					NTP NTP 4.1.2 <br/>
+					
+				
+					NTP NTP  4.3.77<br/>
+					
+				
+					NTP NTP  4.3.70<br/>
+					
+				
+					NTP NTP  4.2.8p3<br/>
+					
+				
+					NTP NTP  4.2.8p2<br/>
+					
+				
+					NTP NTP  4.2.8p1<br/>
+					
+				
+					NTP NTP  4.2.7p366<br/>
+					
+				
+					NTP NTP  4.2.7p111<br/>
+					
+				
+					NTP NTP  4.2.7p11<br/>
+					
+				
+					NTP NTP  4.2.5p3<br/>
+					
+				
+					NTP NTP  4.2.0.a<br/>
+					
+				
+					IBM WebSphere DataPower XC10 Appliance  2.5<br/>
+					
+				
+					IBM WebSphere DataPower XC10 Appliance  2.1<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.4.0<br/>
+					
+				
+					IBM Vios  2.2.3.50<br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 19<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 18<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 14<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 11<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 FP 9<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Fix Pack 10<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 9<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 8<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 10<br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0 fix pack 9<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0 fix pack 8<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0 fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 JRE Update 4<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 FixPack 3<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0<br/>
+					
+				
+					IBM Security Access Manager  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager  9.0<br/>
+					
+				
+					IBM Real-time Compression Appliance 4.1.2 <br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM Integrated Management Module II for System x  1aoo<br/>
+					
+				
+					IBM Integrated Management Module II for FLEX Systems  1aoo<br/>
+					
+				
+					IBM Integrated Management Module II for BladeCenter  1aoo<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Chassis Management Module (CMM)  2PET<br/>
+					
+				
+					IBM Aix 7.2 <br/>
+					
+				
+					IBM AIX 7.1 <br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p31<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p29<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p24<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p22<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p21<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA3-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC2-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-PRERELEASE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELENG<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC4-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p3<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.0-RELEASE-p18<br/>
+					
+				
+					FreeBSD Freebsd  10.0-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-BETA<br/>
+					
+				
+					FreeBSD FreeBSD  10.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Citrix XenServer 6.0.2 Common Criteria<br/>
+					
+				
+					Citrix XenServer 6.0.2 <br/>
+					
+				
+					Citrix XenServer  7.0<br/>
+					
+				
+					Citrix XenServer  6.5 SP1<br/>
+					
+				
+					Citrix XenServer  6.5<br/>
+					
+				
+					Citrix XenServer  6.2.0 Sp1<br/>
+					
+				
+					Citrix XenServer  6.2<br/>
+					
+				
+					CentOS CentOS  6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Siemens RuggedCom ROX  2.9.0<br/>
+					
+				
+					Oracle Solaris  11.3 SRU 6.5<br/>
+					
+				
+					NTP NTP  4.2.8p4<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM Real-time Compression Appliance 4.1.17 <br/>
+					
+				
+					IBM Integrated Management Module II for System x  1AOO74F-5.80<br/>
+					
+				
+					IBM Integrated Management Module II for FLEX Systems  1AOO74F-5.80<br/>
+					
+				
+					IBM Integrated Management Module II for BladeCenter  1AOO74F-5.80<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p33<br/>
+					
+				
+					FreeBSD Freebsd  10.2-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p26<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, please mail us at: http://.
+	
+		<ul>
+</ul>
+</div>

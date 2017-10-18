@@ -1,0 +1,858 @@
+#SpeeDr00t@Black Falcon<br>#bid77304<p><b><span style="font-size: 18pt;">libpng 'png_convert_to_rfc1123()' Function Out Of Bounds Read Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/77304/info">info</a><br><a href="http://www.securityfocus.com/bid/77304/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/77304/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/77304/solution">solution</a><br><a href="http://www.securityfocus.com/bid/77304/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				77304
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-7981<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 26 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 02 2016 06:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Qixue Xiao
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4 LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Module for Legacy Software  12<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Supplementary  5 server<br/>
+					
+				
+					Redhat Enterprise Linux Server Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Supplementary  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Supplementary  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Linux  0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					libpng libpng 1.4.10 <br/>
+					
+				
+					libpng libpng 1.4.9 <br/>
+					
+				
+					libpng libpng 1.4.8 <br/>
+					
+				
+					libpng libpng 1.4.3 <br/>
+					
+				
+					libpng libpng 1.4.2 <br/>
+					
+				
+					libpng libpng 1.4.1 <br/>
+					
+				
+					libpng libpng 1.4 <br/>
+					
+				
+					libpng libpng 1.2.45 <br/>
+					
+				
+					libpng libpng 1.2.44 <br/>
+					
+				
+					libpng libpng 1.2.43 <br/>
+					
+				
+					libpng libpng 1.2.42 <br/>
+					
+				
+					libpng libpng 1.2.40 <br/>
+					
+				
+					libpng libpng 1.2.37 <br/>
+					
+				
+					libpng libpng 1.2.36 <br/>
+					
+				
+					libpng libpng 1.2.35 <br/>
+					
+				
+					libpng libpng 1.2.34 <br/>
+					
+				
+					libpng libpng 1.2.33 <br/>
+					
+				
+					libpng libpng 1.2.29 <br/>
+					
+				
+					libpng libpng 1.2.27 <br/>
+					
+				
+					libpng libpng 1.2.26 <br/>
+					
+				
+					libpng libpng 1.2.25 <br/>
+					
+				
+					libpng libpng 1.2.24 <br/>
+					
+				
+					libpng libpng 1.2.23 <br/>
+					
+				
+					libpng libpng 1.2.22 rc1<br/>
+					
+				
+					libpng libpng 1.2.22 <br/>
+					
+				
+					libpng libpng 1.2.21 <br/>
+					
+				
+					libpng libpng 1.2.20 <br/>
+					
+				
+					libpng libpng 1.2.19 <br/>
+					
+				
+					libpng libpng 1.2.18 <br/>
+					
+				
+					libpng libpng 1.2.17 <br/>
+					
+				
+					libpng libpng 1.2.16 <br/>
+					
+				
+					libpng libpng 1.2.13 <br/>
+					
+				
+					libpng libpng 1.2.8 <br/>
+					
+				
+					libpng libpng  1.4.6<br/>
+					
+				
+					libpng libpng  1.4.5<br/>
+					
+				
+					libpng libpng  1.4.4<br/>
+					
+				
+					libpng libpng  1.4.11<br/>
+					
+				
+					libpng libpng  1.4<br/>
+					
+				
+					libpng libpng  1.2.9<br/>
+					
+				
+					libpng libpng  1.2.7<br/>
+					
+				
+					libpng libpng  1.2.6<br/>
+					
+				
+					libpng libpng  1.2.49<br/>
+					
+				
+					libpng libpng  1.2.48<br/>
+					
+				
+					libpng libpng  1.2.47<br/>
+					
+				
+					libpng libpng  1.2.46<br/>
+					
+				
+					libpng libpng  1.2.41<br/>
+					
+				
+					libpng libpng  1.2.39<br/>
+					
+				
+					libpng libpng  1.2.38<br/>
+					
+				
+					libpng libpng  1.2.30<br/>
+					
+				
+					libpng libpng  1.2.3<br/>
+					
+				
+					libpng libpng  1.2.28<br/>
+					
+				
+					libpng libpng  1.2.15<br/>
+					
+				
+					libpng libpng  1.2.11<br/>
+					
+				
+					libpng libpng  1.2.10<br/>
+					
+				
+					libpng libpng  1.2<br/>
+					
+				
+					IBM WebSphere Real Time  3.0<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR9 FP10<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR9<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR8 FP10<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR8<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR7 FP1<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR7<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR6<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR5<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR4-FP2 <br/>
+					
+				
+					IBM WebSphere Real Time  3 SR2 <br/>
+					
+				
+					IBM WebSphere Real Time  3 SR 9 FP 20<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR 9<br/>
+					
+				
+					IBM WebSphere Real Time  3 SR 8 FP 10<br/>
+					
+				
+					IBM WebSphere Real Time  3<br/>
+					
+				
+					IBM WebSphere Real Time  2.0<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.4.0<br/>
+					
+				
+					IBM Vios  2.2.3.50<br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Tivoli Network Manager  4.2<br/>
+					
+				
+					IBM Tivoli Network Manager  4.1.1<br/>
+					
+				
+					IBM Tivoli Network Manager  4.1<br/>
+					
+				
+					IBM Tivoli Network Manager  3.9<br/>
+					
+				
+					IBM Tivoli Network Manager  3.8<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 Fix Pack 1<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 Fix Pack 06<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 Fix Pack 03<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 Fix Pack 02<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 2<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 1<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 Fix Pack 5<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 Fix Pack 3<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 Fix Pack 05<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 Fix Pack 03<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 2<br/>
+					
+				
+					IBM Tivoli Monitoring  6.3.0.4<br/>
+					
+				
+					IBM Tivoli Monitoring  6.3.0.3<br/>
+					
+				
+					IBM Tivoli Monitoring  6.3.0.1<br/>
+					
+				
+					IBM Tivoli Monitoring  6.3.0<br/>
+					
+				
+					IBM Tivoli Monitoring  6.2.3.5<br/>
+					
+				
+					IBM Tivoli Monitoring  6.2.3.4<br/>
+					
+				
+					IBM Tivoli Monitoring  6.2.3.3<br/>
+					
+				
+					IBM Tivoli Monitoring  6.2.3.1<br/>
+					
+				
+					IBM Tivoli Monitoring  6.2.3<br/>
+					
+				
+					IBM Tivoli Endpoint Manager for Remote Control 8.2.1 <br/>
+					
+				
+					IBM Tivoli Directory Server 6.3 11<br/>
+					
+				
+					IBM Tivoli Directory Server  6.4.0.6<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.1.15<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.1<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.0.41<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.0.32<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.0.2<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.0.1<br/>
+					
+				
+					IBM Tivoli Directory Server  6.3.0.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.4<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0<br/>
+					
+				
+					IBM SmartCloud Provisioning for Software Virtual Appliance  2.1<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Identity Governance and Intelligence  5.2<br/>
+					
+				
+					IBM Security Guardium  10.0<br/>
+					
+				
+					IBM Java SDK  7.1.3.20<br/>
+					
+				
+					IBM Java SDK  7.1.3.10<br/>
+					
+				
+					IBM Java SDK  7.1.3.1<br/>
+					
+				
+					IBM Java SDK  7.1.2.10<br/>
+					
+				
+					IBM Java SDK  7.0.9.20<br/>
+					
+				
+					IBM Java SDK  7.0.9.10<br/>
+					
+				
+					IBM Java SDK  7.0.9.1<br/>
+					
+				
+					IBM Java SDK  7.0.8.10<br/>
+					
+				
+					IBM Java SDK  6.1.8.7<br/>
+					
+				
+					IBM Java SDK  6.1.8.5<br/>
+					
+				
+					IBM Java SDK  6.1.8.4<br/>
+					
+				
+					IBM Java SDK  6.1.8.3<br/>
+					
+				
+					IBM Java SDK  6.1.8.2<br/>
+					
+				
+					IBM Java SDK  6.1.8.15<br/>
+					
+				
+					IBM Java SDK  6.0.16.7<br/>
+					
+				
+					IBM Java SDK  6.0.16.5<br/>
+					
+				
+					IBM Java SDK  6.0.16.4<br/>
+					
+				
+					IBM Java SDK  6.0.16.3<br/>
+					
+				
+					IBM Java SDK  6.0.16.2<br/>
+					
+				
+					IBM Integrated Management Module  YUOO<br/>
+					
+				
+					IBM ILOG Optimization Decision Manager Enterprise  3.7.0.2<br/>
+					
+				
+					IBM ILOG Optimization Decision Manager Enterprise  3.6<br/>
+					
+				
+					IBM ILOG Optimization Decision Manager Enterprise  3.5<br/>
+					
+				
+					IBM ILOG Optimization Decision Manager Enterprise  3.4<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM FileNet System Monitor 4.5 <br/>
+					
+				
+					IBM Fabric Manager  4.1<br/>
+					
+				
+					IBM Expeditor 6.2.3 <br/>
+					
+				
+					IBM Expeditor 6.2.2 <br/>
+					
+				
+					IBM Expeditor 6.2.1 <br/>
+					
+				
+					IBM Enterprise Content Management System Monitor 5.2 <br/>
+					
+				
+					IBM Enterprise Content Management System Monitor 5.1 <br/>
+					
+				
+					IBM Decision Optimization Center  3.8.0.2<br/>
+					
+				
+					IBM Decision Optimization Center  3.8<br/>
+					
+				
+					IBM Decision Optimization Center  3.7.0.2<br/>
+					
+				
+					IBM Decision Optimization Center  3.7<br/>
+					
+				
+					IBM Decision Optimization Center  3.6<br/>
+					
+				
+					IBM CPLEX Optimization Studio 12.6.3 <br/>
+					
+				
+					IBM CPLEX Optimization Studio 12.6.1 <br/>
+					
+				
+					IBM CPLEX Optimization Studio 12.5.1 <br/>
+					
+				
+					IBM CPLEX Optimization Studio  12.6.0.1<br/>
+					
+				
+					IBM CPLEX Optimization Studio  12.6<br/>
+					
+				
+					IBM CPLEX Optimization Studio  12.5.0.1<br/>
+					
+				
+					IBM CPLEX Optimization Studio  12.5<br/>
+					
+				
+					IBM CPLEX Optimization Studio  12.4.0.1<br/>
+					
+				
+					IBM CPLEX Optimization Studio  12.4<br/>
+					
+				
+					IBM CPLEX Enterprise Server 12.6.3 <br/>
+					
+				
+					IBM CPLEX Enterprise Server 12.6.1 <br/>
+					
+				
+					IBM CPLEX Enterprise Server 12.5.1 <br/>
+					
+				
+					IBM CPLEX Enterprise Server  12.6.0.1<br/>
+					
+				
+					IBM CPLEX Enterprise Server  12.6<br/>
+					
+				
+					IBM CPLEX Enterprise Server  12.5.0.1<br/>
+					
+				
+					IBM CPLEX Enterprise Server  12.5<br/>
+					
+				
+					IBM CPLEX Enterprise Server  12.4.0.1<br/>
+					
+				
+					IBM CPLEX Enterprise Server  12.4<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 <br/>
+					
+				
+					IBM Cognos TM1  10.2<br/>
+					
+				
+					IBM Cognos TM1  10.1.0<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 <br/>
+					
+				
+					IBM Cognos Insight 10.2.1 <br/>
+					
+				
+					IBM Cognos Insight  10.2<br/>
+					
+				
+					IBM Aix 7.2 <br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					IBM WebSphere Real Time  3 SR 9 FP 30<br/>
+					
+				
+					IBM Tivoli Network Manager  4.2 IF0002 IP Editio<br/>
+					
+				
+					IBM Java SDK  7.1.3.30<br/>
+					
+				
+					IBM Java SDK  7.0.9.30<br/>
+					
+				
+					IBM Java SDK  6.1.8.20<br/>
+					
+				
+					IBM Java SDK  6.0.16.20<br/>
+					
+				
+					IBM Fabric Manager  4.1.04.0048<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

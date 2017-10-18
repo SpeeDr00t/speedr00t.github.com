@@ -1,0 +1,1008 @@
+#SpeeDr00t@Black Falcon<br>#bid75963<p><b><span style="font-size: 18pt;">Apache HTTP Server CVE-2015-3183 Security Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/75963/info">info</a><br><a href="http://www.securityfocus.com/bid/75963/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/75963/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/75963/solution">solution</a><br><a href="http://www.securityfocus.com/bid/75963/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				75963
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-3183<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jul 15 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Oct 26 2016 12:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				R&amp;amp;amp;amp;amp;amp;amp;amp;amp;amp;eacute;gis Leroy
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Pexip Pexip Infinity  9.0<br/>
+					
+				
+					Pexip Pexip Infinity  8.0<br/>
+					
+				
+					Pexip Pexip Infinity  7.0<br/>
+					
+				
+					Pexip Pexip Infinity  6.0<br/>
+					
+				
+					Pexip Pexip Infinity  5.0<br/>
+					
+				
+					Pexip Pexip Infinity  4.0<br/>
+					
+				
+					Pexip Pexip Infinity  3.0<br/>
+					
+				
+					Pexip Pexip Infinity  2.0<br/>
+					
+				
+					Pexip Pexip Infinity  1.0<br/>
+					
+				
+					Oracle SPARC Enterprise M9000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M9000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M8000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M8000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M5000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M5000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M4000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M4000  XCP 1117<br/>
+					
+				
+					Oracle SPARC Enterprise M3000  XCP 1118<br/>
+					
+				
+					Oracle SPARC Enterprise M3000  XCP 1117<br/>
+					
+				
+					Oracle Secure Global Desktop  5.2<br/>
+					
+				
+					Oracle Secure Global Desktop  4.71<br/>
+					
+				
+					Oracle Secure Global Desktop  4.63<br/>
+					
+				
+					Oracle Oracle HTTP Server 12.1.2 0<br/>
+					
+				
+					Oracle Oracle HTTP Server  12.1.3.0<br/>
+					
+				
+					Oracle Oracle HTTP Server  11.1.1.9<br/>
+					
+				
+					Oracle Oracle HTTP Server  11.1.1.7.0<br/>
+					
+				
+					Oracle Oracle HTTP Server  10.1.3.5<br/>
+					
+				
+					Oracle Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Juniper CTPOS  7.1R<br/>
+					
+				
+					Juniper CTPOS  7.0r4<br/>
+					
+				
+					Juniper CTPOS  6.6R5<br/>
+					
+				
+					Juniper CTPOS  6.6R2<br/>
+					
+				
+					Juniper CTPOS  6.6R1<br/>
+					
+				
+					IBM Transformation Extender Advanced  9.0.0.0<br/>
+					
+				
+					IBM Tivoli System Automation Application Manager 3.2.2 <br/>
+					
+				
+					IBM Tivoli System Automation Application Manager  4.1<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 2<br/>
+					
+				
+					IBM Tivoli Monitoring  6.30 FP 2<br/>
+					
+				
+					IBM Tivoli Monitoring  6.30<br/>
+					
+				
+					IBM Tivoli Monitoring  6.23<br/>
+					
+				
+					IBM Standards Processing Engine  8.5.1.1<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 8<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 7<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 6<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 5<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 4<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 3<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 2<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1 iFix 1<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3.0.1<br/>
+					
+				
+					IBM SmartCloud Orchestrator Enterprise  2.3<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix8<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix7<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix6<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix5<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix4<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix3<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix2<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix1<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 19<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 18<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 14<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 11<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 FixPack 15<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 FixPack 13<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 fix pack 11<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 9<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 8<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 10<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 FixPack 15<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 FixPack 12<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 fix pack 10<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0 fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 FixPack 3<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Real-time Compression Appliance 4.1.2 <br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM HTTP Server 8.5.5 2<br/>
+					
+				
+					IBM HTTP Server 8.5 2<br/>
+					
+				
+					IBM HTTP Server 8.0 9<br/>
+					
+				
+					IBM HTTP Server 7.0 33<br/>
+					
+				
+					IBM HTTP Server 7.0 29<br/>
+					
+				
+					IBM HTTP Server 7.0 .11<br/>
+					
+				
+					IBM HTTP Server 6.1 47<br/>
+					
+				
+					IBM HTTP Server 6.1 41<br/>
+					
+				
+					IBM HTTP Server 6.1 .31<br/>
+					
+				
+					IBM HTTP Server 6.1 .27<br/>
+					
+				
+					IBM HTTP Server 6.1 .25<br/>
+					
+				
+					IBM HTTP Server 6.1 .19<br/>
+					
+				
+					IBM HTTP Server 6.1 .17<br/>
+					
+				
+					IBM HTTP Server 6.1 .15<br/>
+					
+				
+					IBM HTTP Server  8.5.5.6<br/>
+					
+				
+					IBM HTTP Server  8.5.5.3<br/>
+					
+				
+					IBM HTTP Server  8.5.5.1<br/>
+					
+				
+					IBM HTTP Server  8.5.5<br/>
+					
+				
+					IBM HTTP Server  8.5.0.1<br/>
+					
+				
+					IBM HTTP Server  8.5<br/>
+					
+				
+					IBM HTTP Server  8.0.0.7<br/>
+					
+				
+					IBM HTTP Server  8.0.0.6<br/>
+					
+				
+					IBM HTTP Server  8.0.0.5<br/>
+					
+				
+					IBM HTTP Server  8.0.0.4<br/>
+					
+				
+					IBM HTTP Server  8.0.0.3<br/>
+					
+				
+					IBM HTTP Server  8.0.0.2<br/>
+					
+				
+					IBM HTTP Server  8.0.0.11<br/>
+					
+				
+					IBM HTTP Server  8.0.0.1<br/>
+					
+				
+					IBM HTTP Server  8.0<br/>
+					
+				
+					IBM HTTP Server  7.0.4.27<br/>
+					
+				
+					IBM HTTP Server  7.0.0.5<br/>
+					
+				
+					IBM HTTP Server  7.0.0.27<br/>
+					
+				
+					IBM HTTP Server  7.0.0.25<br/>
+					
+				
+					IBM HTTP Server  7.0.0.21<br/>
+					
+				
+					IBM HTTP Server  7.0.0.19<br/>
+					
+				
+					IBM HTTP Server  7.0.0.17<br/>
+					
+				
+					IBM HTTP Server  7.0.0.15<br/>
+					
+				
+					IBM HTTP Server  7.0.0.13<br/>
+					
+				
+					IBM HTTP Server  7.0<br/>
+					
+				
+					IBM HTTP Server  6.1.0.39<br/>
+					
+				
+					IBM HTTP Server  6.1.0.37<br/>
+					
+				
+					IBM HTTP Server  6.1.0.35<br/>
+					
+				
+					IBM HTTP Server  6.1.0.13<br/>
+					
+				
+					IBM HTTP Server  6.1.0.1<br/>
+					
+				
+					IBM HTTP Server  6.1.0<br/>
+					
+				
+					IBM Cloud Orchestrator Enterprise  2.5<br/>
+					
+				
+					IBM Cloud Orchestrator Enterprise  2.4.0.2 iFix1<br/>
+					
+				
+					IBM Cloud Orchestrator Enterprise  2.4.0.2<br/>
+					
+				
+					IBM Cloud Orchestrator Enterprise  2.4.0.1<br/>
+					
+				
+					IBM Cloud Orchestrator Enterprise  2.4<br/>
+					
+				
+					IBM Cloud Orchestrator  2.5<br/>
+					
+				
+					IBM Cloud Orchestrator  2.4.0.2 iFix 1<br/>
+					
+				
+					IBM Cloud Orchestrator  2.4.0.2<br/>
+					
+				
+					IBM Cloud Orchestrator  2.4.0.1<br/>
+					
+				
+					IBM Cloud Orchestrator  2.4<br/>
+					
+				
+					IBM Business Process Manager Standard 8.5.6 <br/>
+					
+				
+					IBM Business Process Manager Standard  8.5.0.1<br/>
+					
+				
+					IBM Business Process Manager Standard  8.5.0<br/>
+					
+				
+					HP HP-UX Web Server Suite  4.05 HPUXWSATW405<br/>
+					
+				
+					HP HP-UX Apache-Based Web Server  2.2.15.21<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Apple Mac OS X Server 4.1.5 <br/>
+					
+				
+					Apple Mac OS X Server 3.2.2 <br/>
+					
+				
+					Apple Mac OS X Server 3.2.1 <br/>
+					
+				
+					Apple Mac OS X Server 3.1.2 <br/>
+					
+				
+					Apple Mac OS X Server  4.1<br/>
+					
+				
+					Apple Mac OS X Server  4.0<br/>
+					
+				
+					Apple Mac OS X Server  3.2<br/>
+					
+				
+					Apple Mac OS X Server  3.0<br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac Os X  10.10.4<br/>
+					
+				
+					Apple Mac Os X  10.10.3<br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+					
+				
+					Apple Mac OS X  10.10<br/>
+					
+				
+					Apache Apache 2.4.12 <br/>
+					
+				
+					Apache Apache 2.4.10 <br/>
+					
+				
+					Apache Apache 2.4.4 <br/>
+					
+				
+					Apache Apache  2.4.9<br/>
+					
+				
+					Apache Apache  2.4.8<br/>
+					
+				
+					Apache Apache  2.4.7<br/>
+					
+				
+					Apache Apache  2.4.6<br/>
+					
+				
+					Apache Apache  2.4.3<br/>
+					
+				
+					Apache Apache  2.4.2<br/>
+					
+				
+					Apache Apache  2.4.1<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Pexip Pexip Infinity  10.1<br/>
+					
+				
+					Oracle SPARC Enterprise M9000  XCP 1121<br/>
+					
+				
+					Oracle SPARC Enterprise M8000  XCP 1121<br/>
+					
+				
+					Oracle SPARC Enterprise M5000  XCP 1121<br/>
+					
+				
+					Oracle SPARC Enterprise M4000  XCP 1121<br/>
+					
+				
+					Oracle SPARC Enterprise M3000  XCP 1121<br/>
+					
+				
+					Juniper CTPOS  7.1r2<br/>
+					
+				
+					Juniper CTPOS  7.1r1<br/>
+					
+				
+					IBM Tivoli Monitoring  6.30 FP6<br/>
+					
+				
+					IBM Tivoli Monitoring  6.23 FP 5<br/>
+					
+				
+					IBM SmartCloud Orchestrator  2.3.0.1 iFix 9<br/>
+					
+				
+					IBM Real-time Compression Appliance  4.1.2.17<br/>
+					
+				
+					IBM HTTP Server  8.5.5.7<br/>
+					
+				
+					IBM HTTP Server  8.0.0.12<br/>
+					
+				
+					IBM HTTP Server  7.0.0.39<br/>
+					
+				
+					IBM Cloud Orchestrator  2.5.0.1 iFix 1<br/>
+					
+				
+					IBM Cloud Orchestrator  2.5.0.1<br/>
+					
+				
+					IBM Cloud Orchestrator  2.4 Fix Pack 3<br/>
+					
+				
+					HP HP-UX Web Server Suite  4.06 HPUXWSATW406<br/>
+					
+				
+					HP HP-UX Web Server Suite  3.31 HPUXWSATW331<br/>
+					
+				
+					HP HP-UX Tomcat Servlet Engine  5.5.36.02<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP HP-UX PHP  5.2.17.04<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					HP HP-UX Apache-Based Web Server  2.2.15.23<br/>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.22 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.20 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.11 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						HP HP-UX 11.0 <br/>
+</span>
+					
+				
+					Apple Mac OS X Server 5.0.3 <br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+					
+				
+					Apache Apache 2.4.16 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

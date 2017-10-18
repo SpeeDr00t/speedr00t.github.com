@@ -1,0 +1,432 @@
+#SpeeDr00t@Black Falcon<br>#bid74640<p><b><span style="font-size: 18pt;">QEMU 'hw/block/fdc.c' VENOM Remote Memory Corruption Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/74640/info">info</a><br><a href="http://www.securityfocus.com/bid/74640/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/74640/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/74640/solution">solution</a><br><a href="http://www.securityfocus.com/bid/74640/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				74640
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-3456<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 13 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 18 2017 01:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Jason Geffner, CrowdStrike Senior Security Researcher
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Xen Xen  4.5.0<br/>
+					
+				
+					Xen Xen  4.4.1<br/>
+					
+				
+					Xen Xen  4.4.0 Rc1<br/>
+					
+				
+					Xen Xen  4.4.0<br/>
+					
+				
+					Xen Xen  4.3.1<br/>
+					
+				
+					Xen Xen  4.3.0<br/>
+					
+				
+					Xen Xen  4.2.3<br/>
+					
+				
+					Xen Xen  4.2.2<br/>
+					
+				
+					Xen Xen  4.2.1<br/>
+					
+				
+					Xen Xen  4.2.0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Software Development Kit  11 SP3<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP3<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP2<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  11 SP1<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4 LTSS<br/>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4<br/>
+<span class="related">
+						
+							+ 
+						
+						Linux kernel 2.6.5 <br/>
+</span>
+					
+				
+					SuSE SUSE Linux Enterprise Server  10 SP3<br/>
+					
+				
+					SuSE Linux Enterprise Software Development Kit  12<br/>
+					
+				
+					SuSE Linux Enterprise Server  12<br/>
+					
+				
+					SuSE Linux Enterprise Server  11 SP2 LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Server  11 SP1 LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Expanded Support  7<br/>
+					
+				
+					SuSE Linux Enterprise Expanded Support  6<br/>
+					
+				
+					SuSE Linux Enterprise Expanded Support  5<br/>
+					
+				
+					SuSE Linux Enterprise Desktop  12<br/>
+					
+				
+					SuSE Linux Enterprise Desktop  11 SP3<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat OpenStack 6.0 for RHEL  7<br/>
+					
+				
+					Redhat OpenStack 5.0 for RHEL  7<br/>
+					
+				
+					Redhat OpenStack 5.0 for RHEL  6<br/>
+					
+				
+					Redhat OpenStack  4.0<br/>
+					
+				
+					Redhat Enterprise Virtualization  3<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Virtualization  5 Server<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.5.z<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Multi OS  5 client<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  5 client<br/>
+					
+				
+					Redhat Enterprise Linux  5 Server<br/>
+					
+				
+					QEMU QEMU  0<br/>
+					
+				
+					Oracle PeopleSoft Enterprise PeopleTools  8.54<br/>
+					
+				
+					Oracle PeopleSoft Enterprise PeopleTools  8.53<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Juniper NorthStar Controller Application  2.1.0<br/>
+					
+				
+					Joyent SmartDataCenter (SDC)  0<br/>
+					
+				
+					Joyent Public Cloud (JPC)  0<br/>
+					
+				
+					IBM PureApplication System  2.1<br/>
+					
+				
+					IBM PureApplication System  2.0<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.1.0.0<br/>
+					
+				
+					Huawei FusionCompute  V100R005C10<br/>
+					
+				
+					Huawei FusionCompute  V100R005C00SPC300<br/>
+					
+				
+					Huawei FusionCompute  V100R005C00<br/>
+					
+				
+					Huawei FusionCompute  V100R003C10SPC600<br/>
+					
+				
+					Huawei FusionCompute  V100R003C10CP6001<br/>
+					
+				
+					Huawei FusionCompute  V100R003C10<br/>
+					
+				
+					Huawei FusionCompute  V100R003C00SPC300<br/>
+					
+				
+					Huawei FusionCompute  V100R003C00<br/>
+					
+				
+					HP Helion OpenStack  1.1.0<br/>
+					
+				
+					HP Helion OpenStack  1.0.0<br/>
+					
+				
+					HP Helion CloudSystem  8.1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Fortinet FortiSandbox  2.0.2<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Citrix XenServer 6.0.2 <br/>
+					
+				
+					Citrix XenServer  6.5<br/>
+					
+				
+					Citrix XenServer  6.2<br/>
+					
+				
+					Citrix XenServer  6.1<br/>
+					
+				
+					Citrix XenServer  6.0<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					CentOS CentOS  5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper NorthStar Controller Application  2.1.0 Service Pack 1<br/>
+					
+				
+					Huawei FusionCompute  V100R005C00CP3001<br/>
+					
+				
+					Fortinet FortiSandbox  2.0.3<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Reportedly, this issue is being exploited in the wild.
+	
+		<ul>
+</ul>
+</div>

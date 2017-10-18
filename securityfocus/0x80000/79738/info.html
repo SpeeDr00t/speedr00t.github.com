@@ -1,0 +1,2565 @@
+#SpeeDr00t@Black Falcon<br>#bid79738<p><b><span style="font-size: 18pt;">Linux Kernel 'fs/ext4/namei.c' Local Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/79738/info">info</a><br><a href="http://www.securityfocus.com/bid/79738/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/79738/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/79738/solution">solution</a><br><a href="http://www.securityfocus.com/bid/79738/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				79738
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-7509<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 28 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Dec 28 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Anatol Pomozov
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel 3.19.3 <br/>
+					
+				
+					Linux kernel 3.18.22 <br/>
+					
+				
+					Linux kernel 3.18.17 <br/>
+					
+				
+					Linux kernel 3.18.11 <br/>
+					
+				
+					Linux kernel 3.18.8 <br/>
+					
+				
+					Linux kernel 3.18.7 <br/>
+					
+				
+					Linux kernel 3.18.3 <br/>
+					
+				
+					Linux kernel 3.18.2 <br/>
+					
+				
+					Linux kernel 3.18.1 <br/>
+					
+				
+					Linux kernel 3.17.4 <br/>
+					
+				
+					Linux kernel 3.17.2 <br/>
+					
+				
+					Linux kernel 3.16.7 <br/>
+					
+				
+					Linux kernel 3.16.2 <br/>
+					
+				
+					Linux kernel 3.16.1 <br/>
+					
+				
+					Linux kernel 3.15.5 <br/>
+					
+				
+					Linux kernel 3.15.2 <br/>
+					
+				
+					Linux kernel 3.14.54 <br/>
+					
+				
+					Linux kernel 3.14.45 <br/>
+					
+				
+					Linux kernel 3.14.37 <br/>
+					
+				
+					Linux kernel 3.14.4 <br/>
+					
+				
+					Linux kernel 3.14.3 <br/>
+					
+				
+					Linux kernel 3.14.2 <br/>
+					
+				
+					Linux kernel 3.13.11 <br/>
+					
+				
+					Linux kernel 3.13.9 <br/>
+					
+				
+					Linux kernel 3.13.3 <br/>
+					
+				
+					Linux kernel 3.13.1 <br/>
+					
+				
+					Linux kernel 3.12.49 <br/>
+					
+				
+					Linux kernel 3.12.48 <br/>
+					
+				
+					Linux kernel 3.12.44 <br/>
+					
+				
+					Linux kernel 3.12.40 <br/>
+					
+				
+					Linux kernel 3.12.21 <br/>
+					
+				
+					Linux kernel 3.12.18 <br/>
+					
+				
+					Linux kernel 3.12.17 <br/>
+					
+				
+					Linux kernel 3.12.16 <br/>
+					
+				
+					Linux kernel 3.12.11 <br/>
+					
+				
+					Linux kernel 3.12.7 <br/>
+					
+				
+					Linux kernel 3.12.4 <br/>
+					
+				
+					Linux kernel 3.12.3 <br/>
+					
+				
+					Linux kernel 3.12.2 <br/>
+					
+				
+					Linux kernel 3.11.3 <br/>
+					
+				
+					Linux kernel 3.10.90 <br/>
+					
+				
+					Linux kernel 3.10.81 <br/>
+					
+				
+					Linux kernel 3.10.73 <br/>
+					
+				
+					Linux kernel 3.10.45 <br/>
+					
+				
+					Linux kernel 3.10.41 <br/>
+					
+				
+					Linux kernel 3.10.38 <br/>
+					
+				
+					Linux kernel 3.10.37 <br/>
+					
+				
+					Linux kernel 3.10.36 <br/>
+					
+				
+					Linux kernel 3.10.30 <br/>
+					
+				
+					Linux kernel 3.10.27 <br/>
+					
+				
+					Linux kernel 3.10.26 <br/>
+					
+				
+					Linux kernel 3.10.23 <br/>
+					
+				
+					Linux kernel 3.10.22 <br/>
+					
+				
+					Linux kernel 3.10.21 <br/>
+					
+				
+					Linux kernel 3.10.14 <br/>
+					
+				
+					Linux kernel 3.10.10 <br/>
+					
+				
+					Linux kernel 3.10.9 <br/>
+					
+				
+					Linux kernel 3.10.7 <br/>
+					
+				
+					Linux kernel 3.6.11 <br/>
+					
+				
+					Linux kernel 3.6.10 <br/>
+					
+				
+					Linux kernel 3.6.9 <br/>
+					
+				
+					Linux kernel 3.6.8 <br/>
+					
+				
+					Linux kernel 3.6.7 <br/>
+					
+				
+					Linux kernel 3.6.6 <br/>
+					
+				
+					Linux kernel 3.6.5 <br/>
+					
+				
+					Linux kernel 3.6.4 <br/>
+					
+				
+					Linux kernel 3.6.3 <br/>
+					
+				
+					Linux kernel 3.6.2 <br/>
+					
+				
+					Linux kernel 3.6.1 <br/>
+					
+				
+					Linux kernel 3.5.7 <br/>
+					
+				
+					Linux kernel 3.5.6 <br/>
+					
+				
+					Linux kernel 3.5.5 <br/>
+					
+				
+					Linux kernel 3.5.4 <br/>
+					
+				
+					Linux kernel 3.5.3 <br/>
+					
+				
+					Linux kernel 3.5.2 <br/>
+					
+				
+					Linux kernel 3.5.1 <br/>
+					
+				
+					Linux kernel 3.4.88 <br/>
+					
+				
+					Linux kernel 3.4.87 <br/>
+					
+				
+					Linux kernel 3.4.86 <br/>
+					
+				
+					Linux kernel 3.4.80 <br/>
+					
+				
+					Linux kernel 3.4.76 <br/>
+					
+				
+					Linux kernel 3.4.73 <br/>
+					
+				
+					Linux kernel 3.4.72 <br/>
+					
+				
+					Linux kernel 3.4.71 <br/>
+					
+				
+					Linux kernel 3.4.64 <br/>
+					
+				
+					Linux kernel 3.4.58 <br/>
+					
+				
+					Linux kernel 3.4.42 <br/>
+					
+				
+					Linux kernel 3.4.36 <br/>
+					
+				
+					Linux kernel 3.4.32 <br/>
+					
+				
+					Linux kernel 3.4.31 <br/>
+					
+				
+					Linux kernel 3.4.27 <br/>
+					
+				
+					Linux kernel 3.4.26 <br/>
+					
+				
+					Linux kernel 3.4.25 <br/>
+					
+				
+					Linux kernel 3.4.21 <br/>
+					
+				
+					Linux kernel 3.4.20 <br/>
+					
+				
+					Linux kernel 3.4.19 <br/>
+					
+				
+					Linux kernel 3.4.18 <br/>
+					
+				
+					Linux kernel 3.4.17 <br/>
+					
+				
+					Linux kernel 3.4.16 <br/>
+					
+				
+					Linux kernel 3.4.15 <br/>
+					
+				
+					Linux kernel 3.4.14 <br/>
+					
+				
+					Linux kernel 3.4.13 <br/>
+					
+				
+					Linux kernel 3.4.12 <br/>
+					
+				
+					Linux kernel 3.4.11 <br/>
+					
+				
+					Linux kernel 3.4.10 <br/>
+					
+				
+					Linux kernel 3.4.9 <br/>
+					
+				
+					Linux kernel 3.4.8 <br/>
+					
+				
+					Linux kernel 3.4.7 <br/>
+					
+				
+					Linux kernel 3.4.6 <br/>
+					
+				
+					Linux kernel 3.4.5 <br/>
+					
+				
+					Linux kernel 3.4.4 <br/>
+					
+				
+					Linux kernel 3.4.3 <br/>
+					
+				
+					Linux kernel 3.4.2 <br/>
+					
+				
+					Linux kernel 3.4.1 <br/>
+					
+				
+					Linux kernel 3.3.5 <br/>
+					
+				
+					Linux kernel 3.3.4 <br/>
+					
+				
+					Linux kernel 3.3.2 <br/>
+					
+				
+					Linux kernel 3.2.72 <br/>
+					
+				
+					Linux kernel 3.2.62 <br/>
+					
+				
+					Linux kernel 3.2.57 <br/>
+					
+				
+					Linux kernel 3.2.56 <br/>
+					
+				
+					Linux kernel 3.2.51 <br/>
+					
+				
+					Linux kernel 3.2.24 <br/>
+					
+				
+					Linux kernel 3.2.23 <br/>
+					
+				
+					Linux kernel 3.2.13 <br/>
+					
+				
+					Linux kernel 3.2.12 <br/>
+					
+				
+					Linux kernel 3.2.9 <br/>
+					
+				
+					Linux kernel 3.2.1 <br/>
+					
+				
+					Linux kernel 3.1.8 <br/>
+					
+				
+					Linux kernel 3.0.98 <br/>
+					
+				
+					Linux kernel 3.0.75 <br/>
+					
+				
+					Linux kernel 3.0.72 <br/>
+					
+				
+					Linux kernel 3.0.69 <br/>
+					
+				
+					Linux kernel 3.0.65 <br/>
+					
+				
+					Linux kernel 3.0.60 <br/>
+					
+				
+					Linux kernel 3.0.59 <br/>
+					
+				
+					Linux kernel 3.0.58 <br/>
+					
+				
+					Linux kernel 3.0.37 <br/>
+					
+				
+					Linux kernel 3.0.34 <br/>
+					
+				
+					Linux kernel 3.0.5 <br/>
+					
+				
+					Linux kernel 3.0.4 <br/>
+					
+				
+					Linux kernel 3.0.2 <br/>
+					
+				
+					Linux kernel 3.0.1 <br/>
+					
+				
+					Linux kernel 2.6.39 <br/>
+					
+				
+					Linux kernel 2.6.38 <br/>
+					
+				
+					Linux kernel 2.6.37 <br/>
+					
+				
+					Linux kernel 2.6.36 <br/>
+					
+				
+					Linux kernel 2.6.35 <br/>
+					
+				
+					Linux kernel 2.6.34 <br/>
+					
+				
+					Linux kernel 2.6.33 .1<br/>
+					
+				
+					Linux kernel 2.6.33 <br/>
+					
+				
+					Linux kernel 2.6.32 .9<br/>
+					
+				
+					Linux kernel 2.6.32 <br/>
+					
+				
+					Linux kernel 2.6.31 5<br/>
+					
+				
+					Linux kernel 2.6.31 13<br/>
+					
+				
+					Linux kernel 2.6.31 .2<br/>
+					
+				
+					Linux kernel 2.6.31 .11<br/>
+					
+				
+					Linux kernel 2.6.31 <br/>
+					
+				
+					Linux kernel 2.6.30 .10<br/>
+					
+				
+					Linux kernel 2.6.30 .1<br/>
+					
+				
+					Linux kernel 2.6.30 <br/>
+					
+				
+					Linux kernel 2.6.29 .4<br/>
+					
+				
+					Linux kernel 2.6.29 .1<br/>
+					
+				
+					Linux kernel 2.6.29 <br/>
+					
+				
+					Linux kernel 2.6.28 .9<br/>
+					
+				
+					Linux kernel 2.6.28 .8<br/>
+					
+				
+					Linux kernel 2.6.28 .6<br/>
+					
+				
+					Linux kernel 2.6.28 .5<br/>
+					
+				
+					Linux kernel 2.6.28 .3<br/>
+					
+				
+					Linux kernel 2.6.28 .2<br/>
+					
+				
+					Linux kernel 2.6.28 .1<br/>
+					
+				
+					Linux kernel 2.6.28 <br/>
+					
+				
+					Linux kernel 2.6.27 6<br/>
+					
+				
+					Linux kernel 2.6.27 3<br/>
+					
+				
+					Linux kernel 2.6.27 12<br/>
+					
+				
+					Linux kernel 2.6.27 .8<br/>
+					
+				
+					Linux kernel 2.6.27 .5<br/>
+					
+				
+					Linux kernel 2.6.27 .46<br/>
+					
+				
+					Linux kernel 2.6.27 .24<br/>
+					
+				
+					Linux kernel 2.6.27 .14<br/>
+					
+				
+					Linux kernel 2.6.27 .13<br/>
+					
+				
+					Linux kernel 2.6.27 .12<br/>
+					
+				
+					Linux kernel 2.6.27 <br/>
+					
+				
+					Linux kernel 2.6.26 7<br/>
+					
+				
+					Linux kernel 2.6.26 .6<br/>
+					
+				
+					Linux kernel 2.6.26 .4<br/>
+					
+				
+					Linux kernel 2.6.26 .3<br/>
+					
+				
+					Linux kernel 2.6.26 <br/>
+					
+				
+					Linux kernel 2.6.25 19<br/>
+					
+				
+					Linux kernel 2.6.25 .9<br/>
+					
+				
+					Linux kernel 2.6.25 .8<br/>
+					
+				
+					Linux kernel 2.6.25 .7<br/>
+					
+				
+					Linux kernel 2.6.25 .6<br/>
+					
+				
+					Linux kernel 2.6.25 .5<br/>
+					
+				
+					Linux kernel 2.6.25 .15<br/>
+					
+				
+					Linux kernel 2.6.25 .13<br/>
+					
+				
+					Linux kernel 2.6.25 .12<br/>
+					
+				
+					Linux kernel 2.6.25 .11<br/>
+					
+				
+					Linux kernel 2.6.25 .10<br/>
+					
+				
+					Linux kernel 2.6.25 <br/>
+					
+				
+					Linux kernel 2.6.24 .2<br/>
+					
+				
+					Linux kernel 2.6.24 .1<br/>
+					
+				
+					Linux kernel 2.6.24 <br/>
+					
+				
+					Linux kernel 2.6.23 .7<br/>
+					
+				
+					Linux kernel 2.6.23 .6<br/>
+					
+				
+					Linux kernel 2.6.23 .5<br/>
+					
+				
+					Linux kernel 2.6.23 .4<br/>
+					
+				
+					Linux kernel 2.6.23 .3<br/>
+					
+				
+					Linux kernel 2.6.23 .2<br/>
+					
+				
+					Linux kernel 2.6.23 <br/>
+					
+				
+					Linux kernel 2.6.22 .8<br/>
+					
+				
+					Linux kernel 2.6.22 .7<br/>
+					
+				
+					Linux kernel 2.6.22 .6<br/>
+					
+				
+					Linux kernel 2.6.22 .5<br/>
+					
+				
+					Linux kernel 2.6.22 .4<br/>
+					
+				
+					Linux kernel 2.6.22 .3<br/>
+					
+				
+					Linux kernel 2.6.22 .2<br/>
+					
+				
+					Linux kernel 2.6.22 .17<br/>
+					
+				
+					Linux kernel 2.6.22 .16<br/>
+					
+				
+					Linux kernel 2.6.22 .15<br/>
+					
+				
+					Linux kernel 2.6.22 .14<br/>
+					
+				
+					Linux kernel 2.6.22 .13<br/>
+					
+				
+					Linux kernel 2.6.22 .12<br/>
+					
+				
+					Linux kernel 2.6.22 .11<br/>
+					
+				
+					Linux kernel 2.6.22 .1<br/>
+					
+				
+					Linux kernel 2.6.22 <br/>
+					
+				
+					Linux kernel 2.6.21 4<br/>
+					
+				
+					Linux kernel 2.6.21 .7<br/>
+					
+				
+					Linux kernel 2.6.21 .6<br/>
+					
+				
+					Linux kernel 2.6.21 .3<br/>
+					
+				
+					Linux kernel 2.6.21 .2<br/>
+					
+				
+					Linux kernel 2.6.21 .1<br/>
+					
+				
+					Linux kernel 2.6.21 <br/>
+					
+				
+					Linux kernel 2.6.20 .9<br/>
+					
+				
+					Linux kernel 2.6.20 .8<br/>
+					
+				
+					Linux kernel 2.6.20 .7<br/>
+					
+				
+					Linux kernel 2.6.20 .6<br/>
+					
+				
+					Linux kernel 2.6.20 .5<br/>
+					
+				
+					Linux kernel 2.6.20 .4<br/>
+					
+				
+					Linux kernel 2.6.20 .15<br/>
+					
+				
+					Linux kernel 2.6.20 .14<br/>
+					
+				
+					Linux kernel 2.6.20 .12<br/>
+					
+				
+					Linux kernel 2.6.20 .10<br/>
+					
+				
+					Linux kernel 2.6.20 .1<br/>
+					
+				
+					Linux kernel 2.6.20 <br/>
+					
+				
+					Linux kernel 2.6.19 .4<br/>
+					
+				
+					Linux kernel 2.6.19 .3<br/>
+					
+				
+					Linux kernel 2.6.19 .2<br/>
+					
+				
+					Linux kernel 2.6.19 .1<br/>
+					
+				
+					Linux kernel 2.6.19 <br/>
+					
+				
+					Linux kernel 2.6.18 .8<br/>
+					
+				
+					Linux kernel 2.6.18 .7<br/>
+					
+				
+					Linux kernel 2.6.18 .6<br/>
+					
+				
+					Linux kernel 2.6.18 .5<br/>
+					
+				
+					Linux kernel 2.6.18 .4<br/>
+					
+				
+					Linux kernel 2.6.18 .3<br/>
+					
+				
+					Linux kernel 2.6.18 .2<br/>
+					
+				
+					Linux kernel 2.6.18 .1<br/>
+					
+				
+					Linux kernel 2.6.17 .9<br/>
+					
+				
+					Linux kernel 2.6.17 .8<br/>
+					
+				
+					Linux kernel 2.6.17 .7<br/>
+					
+				
+					Linux kernel 2.6.17 .6<br/>
+					
+				
+					Linux kernel 2.6.17 .5<br/>
+					
+				
+					Linux kernel 2.6.17 .4<br/>
+					
+				
+					Linux kernel 2.6.17 .3<br/>
+					
+				
+					Linux kernel 2.6.17 .2<br/>
+					
+				
+					Linux kernel 2.6.17 .14<br/>
+					
+				
+					Linux kernel 2.6.17 .13<br/>
+					
+				
+					Linux kernel 2.6.17 .12<br/>
+					
+				
+					Linux kernel 2.6.17 .11<br/>
+					
+				
+					Linux kernel 2.6.17 .10<br/>
+					
+				
+					Linux kernel 2.6.17 .1<br/>
+					
+				
+					Linux kernel 2.6.17 <br/>
+					
+				
+					Linux kernel 2.6.16 27<br/>
+					
+				
+					Linux kernel 2.6.16 13<br/>
+					
+				
+					Linux kernel 2.6.16 .9<br/>
+					
+				
+					Linux kernel 2.6.16 .8<br/>
+					
+				
+					Linux kernel 2.6.16 .7<br/>
+					
+				
+					Linux kernel 2.6.16 .6<br/>
+					
+				
+					Linux kernel 2.6.16 .53<br/>
+					
+				
+					Linux kernel 2.6.16 .52<br/>
+					
+				
+					Linux kernel 2.6.16 .51<br/>
+					
+				
+					Linux kernel 2.6.16 .50<br/>
+					
+				
+					Linux kernel 2.6.16 .5<br/>
+					
+				
+					Linux kernel 2.6.16 .49<br/>
+					
+				
+					Linux kernel 2.6.16 .48<br/>
+					
+				
+					Linux kernel 2.6.16 .47<br/>
+					
+				
+					Linux kernel 2.6.16 .46<br/>
+					
+				
+					Linux kernel 2.6.16 .45<br/>
+					
+				
+					Linux kernel 2.6.16 .44<br/>
+					
+				
+					Linux kernel 2.6.16 .43<br/>
+					
+				
+					Linux kernel 2.6.16 .41<br/>
+					
+				
+					Linux kernel 2.6.16 .40<br/>
+					
+				
+					Linux kernel 2.6.16 .4<br/>
+					
+				
+					Linux kernel 2.6.16 .39<br/>
+					
+				
+					Linux kernel 2.6.16 .38<br/>
+					
+				
+					Linux kernel 2.6.16 .37<br/>
+					
+				
+					Linux kernel 2.6.16 .36<br/>
+					
+				
+					Linux kernel 2.6.16 .35<br/>
+					
+				
+					Linux kernel 2.6.16 .34<br/>
+					
+				
+					Linux kernel 2.6.16 .33<br/>
+					
+				
+					Linux kernel 2.6.16 .32<br/>
+					
+				
+					Linux kernel 2.6.16 .31<br/>
+					
+				
+					Linux kernel 2.6.16 .30<br/>
+					
+				
+					Linux kernel 2.6.16 .3<br/>
+					
+				
+					Linux kernel 2.6.16 .29<br/>
+					
+				
+					Linux kernel 2.6.16 .28<br/>
+					
+				
+					Linux kernel 2.6.16 .27<br/>
+					
+				
+					Linux kernel 2.6.16 .26<br/>
+					
+				
+					Linux kernel 2.6.16 .25<br/>
+					
+				
+					Linux kernel 2.6.16 .24<br/>
+					
+				
+					Linux kernel 2.6.16 .23<br/>
+					
+				
+					Linux kernel 2.6.16 .22<br/>
+					
+				
+					Linux kernel 2.6.16 .21<br/>
+					
+				
+					Linux kernel 2.6.16 .20<br/>
+					
+				
+					Linux kernel 2.6.16 .2<br/>
+					
+				
+					Linux kernel 2.6.16 .19<br/>
+					
+				
+					Linux kernel 2.6.16 .18<br/>
+					
+				
+					Linux kernel 2.6.16 .17<br/>
+					
+				
+					Linux kernel 2.6.16 .16<br/>
+					
+				
+					Linux kernel 2.6.16 .15<br/>
+					
+				
+					Linux kernel 2.6.16 .14<br/>
+					
+				
+					Linux kernel 2.6.16 .12<br/>
+					
+				
+					Linux kernel 2.6.16 .11<br/>
+					
+				
+					Linux kernel 2.6.16 .10<br/>
+					
+				
+					Linux kernel 2.6.16 .1<br/>
+					
+				
+					Linux kernel 2.6.16 <br/>
+					
+				
+					Linux kernel 2.6.15 .7<br/>
+					
+				
+					Linux kernel 2.6.15 .6<br/>
+					
+				
+					Linux kernel 2.6.15 .4<br/>
+					
+				
+					Linux kernel 2.6.15 .3<br/>
+					
+				
+					Linux kernel 2.6.15 .2<br/>
+					
+				
+					Linux kernel 2.6.15 .1<br/>
+					
+				
+					Linux kernel 2.6.15 <br/>
+					
+				
+					Linux kernel 2.6.14 .7<br/>
+					
+				
+					Linux kernel 2.6.14 .6<br/>
+					
+				
+					Linux kernel 2.6.14 .5<br/>
+					
+				
+					Linux kernel 2.6.14 .4<br/>
+					
+				
+					Linux kernel 2.6.14 .3<br/>
+					
+				
+					Linux kernel 2.6.14 .2<br/>
+					
+				
+					Linux kernel 2.6.14 .1<br/>
+					
+				
+					Linux kernel 2.6.14 <br/>
+					
+				
+					Linux kernel 2.6.13 .5<br/>
+					
+				
+					Linux kernel 2.6.13 .4<br/>
+					
+				
+					Linux kernel 2.6.13 .3<br/>
+					
+				
+					Linux kernel 2.6.13 .2<br/>
+					
+				
+					Linux kernel 2.6.13 .1<br/>
+					
+				
+					Linux kernel 2.6.13 <br/>
+					
+				
+					Linux kernel 2.6.12 .6<br/>
+					
+				
+					Linux kernel 2.6.12 .5<br/>
+					
+				
+					Linux kernel 2.6.12 .4<br/>
+					
+				
+					Linux kernel 2.6.12 .3<br/>
+					
+				
+					Linux kernel 2.6.12 .22<br/>
+					
+				
+					Linux kernel 2.6.12 .2<br/>
+					
+				
+					Linux kernel 2.6.12 .12<br/>
+					
+				
+					Linux kernel 2.6.12 .1<br/>
+					
+				
+					Linux kernel 2.6.12 <br/>
+					
+				
+					Linux kernel 2.6.11 .9<br/>
+					
+				
+					Linux kernel 2.6.11 .8<br/>
+					
+				
+					Linux kernel 2.6.11 .7<br/>
+					
+				
+					Linux kernel 2.6.11 .6<br/>
+					
+				
+					Linux kernel 2.6.11 .5<br/>
+					
+				
+					Linux kernel 2.6.11 .4<br/>
+					
+				
+					Linux kernel 2.6.11 .3<br/>
+					
+				
+					Linux kernel 2.6.11 .2<br/>
+					
+				
+					Linux kernel 2.6.11 .12<br/>
+					
+				
+					Linux kernel 2.6.11 .11<br/>
+					
+				
+					Linux kernel 2.6.11 .10<br/>
+					
+				
+					Linux kernel 2.6.11 .1<br/>
+					
+				
+					Linux kernel 2.6.11 <br/>
+					
+				
+					Linux kernel 2.6.10 <br/>
+					
+				
+					Linux kernel 2.6.9 <br/>
+					
+				
+					Linux kernel 2.6.8 <br/>
+					
+				
+					Linux kernel 2.6.7 <br/>
+					
+				
+					Linux kernel 2.6.6 <br/>
+					
+				
+					Linux kernel 2.6.5 <br/>
+					
+				
+					Linux kernel 2.6.4 <br/>
+					
+				
+					Linux kernel 2.6.3 <br/>
+					
+				
+					Linux kernel 2.6.2 <br/>
+					
+				
+					Linux kernel 2.6.1 <br/>
+					
+				
+					Linux kernel 2.6 .10<br/>
+					
+				
+					Linux kernel 2.6 <br/>
+					
+				
+					Linux kernel 2.5.69 <br/>
+					
+				
+					Linux kernel 2.5.68 <br/>
+					
+				
+					Linux kernel 2.5.67 <br/>
+					
+				
+					Linux kernel 2.5.66 <br/>
+					
+				
+					Linux kernel 2.5.65 <br/>
+					
+				
+					Linux kernel 2.5.64 <br/>
+					
+				
+					Linux kernel 2.5.63 <br/>
+					
+				
+					Linux kernel 2.5.62 <br/>
+					
+				
+					Linux kernel 2.5.61 <br/>
+					
+				
+					Linux kernel 2.5.60 <br/>
+					
+				
+					Linux kernel 2.5.59 <br/>
+					
+				
+					Linux kernel 2.5.58 <br/>
+					
+				
+					Linux kernel 2.5.57 <br/>
+					
+				
+					Linux kernel 2.5.56 <br/>
+					
+				
+					Linux kernel 2.5.55 <br/>
+					
+				
+					Linux kernel 2.5.54 <br/>
+					
+				
+					Linux kernel 2.5.53 <br/>
+					
+				
+					Linux kernel 2.5.52 <br/>
+					
+				
+					Linux kernel 2.5.51 <br/>
+					
+				
+					Linux kernel 2.5.50 <br/>
+					
+				
+					Linux kernel 2.5.49 <br/>
+					
+				
+					Linux kernel 2.5.48 <br/>
+					
+				
+					Linux kernel 2.5.47 <br/>
+					
+				
+					Linux kernel 2.5.46 <br/>
+					
+				
+					Linux kernel 2.5.45 <br/>
+					
+				
+					Linux kernel 2.5.44 <br/>
+					
+				
+					Linux kernel 2.5.43 <br/>
+					
+				
+					Linux kernel 2.5.42 <br/>
+					
+				
+					Linux kernel 2.5.41 <br/>
+					
+				
+					Linux kernel 2.5.40 <br/>
+					
+				
+					Linux kernel 2.5.39 <br/>
+					
+				
+					Linux kernel 2.5.38 <br/>
+					
+				
+					Linux kernel 2.5.37 <br/>
+					
+				
+					Linux kernel 2.5.36 <br/>
+					
+				
+					Linux kernel 2.5.35 <br/>
+					
+				
+					Linux kernel 2.5.34 <br/>
+					
+				
+					Linux kernel 2.5.33 <br/>
+					
+				
+					Linux kernel 2.5.32 <br/>
+					
+				
+					Linux kernel 2.5.31 <br/>
+					
+				
+					Linux kernel 2.5.30 <br/>
+					
+				
+					Linux kernel 2.5.29 <br/>
+					
+				
+					Linux kernel 2.5.28 <br/>
+					
+				
+					Linux kernel 2.5.27 <br/>
+					
+				
+					Linux kernel 2.5.26 <br/>
+					
+				
+					Linux kernel 2.5.25 <br/>
+					
+				
+					Linux kernel 2.5.24 <br/>
+					
+				
+					Linux kernel 2.5.23 <br/>
+					
+				
+					Linux kernel 2.5.22 <br/>
+					
+				
+					Linux kernel 2.5.21 <br/>
+					
+				
+					Linux kernel 2.5.20 <br/>
+					
+				
+					Linux kernel 2.5.19 <br/>
+					
+				
+					Linux kernel 2.5.18 <br/>
+					
+				
+					Linux kernel 2.5.17 <br/>
+					
+				
+					Linux kernel 2.5.16 <br/>
+					
+				
+					Linux kernel 2.5.15 <br/>
+					
+				
+					Linux kernel 2.5.14 <br/>
+					
+				
+					Linux kernel 2.5.13 <br/>
+					
+				
+					Linux kernel 2.5.12 <br/>
+					
+				
+					Linux kernel 2.5.11 <br/>
+					
+				
+					Linux kernel 2.5.10 <br/>
+					
+				
+					Linux kernel 2.5.9 <br/>
+					
+				
+					Linux kernel 2.5.8 <br/>
+					
+				
+					Linux kernel 2.5.7 <br/>
+					
+				
+					Linux kernel 2.5.6 <br/>
+					
+				
+					Linux kernel 2.5.5 <br/>
+					
+				
+					Linux kernel 2.5.4 <br/>
+					
+				
+					Linux kernel 2.5.3 <br/>
+					
+				
+					Linux kernel 2.5.2 <br/>
+					
+				
+					Linux kernel 2.5.1 <br/>
+					
+				
+					Linux kernel 2.5 .0<br/>
+					
+				
+					Linux kernel 2.4.37 1<br/>
+					
+				
+					Linux kernel 2.4.37 .9<br/>
+					
+				
+					Linux kernel 2.4.37 .8<br/>
+					
+				
+					Linux kernel 2.4.37 .7<br/>
+					
+				
+					Linux kernel 2.4.37 .6<br/>
+					
+				
+					Linux kernel 2.4.37 .5<br/>
+					
+				
+					Linux kernel 2.4.37 <br/>
+					
+				
+					Linux kernel 2.4.36 .8<br/>
+					
+				
+					Linux kernel 2.4.36 .7<br/>
+					
+				
+					Linux kernel 2.4.36 .5<br/>
+					
+				
+					Linux kernel 2.4.36 .4<br/>
+					
+				
+					Linux kernel 2.4.36 .1<br/>
+					
+				
+					Linux kernel 2.4.36 <br/>
+					
+				
+					Linux kernel 2.4.35 .3<br/>
+					
+				
+					Linux kernel 2.4.35 .2<br/>
+					
+				
+					Linux kernel 2.4.35 <br/>
+					
+				
+					Linux kernel 2.4.34 .2<br/>
+					
+				
+					Linux kernel 2.4.34 .1<br/>
+					
+				
+					Linux kernel 2.4.34 <br/>
+					
+				
+					Linux kernel 2.4.33 2<br/>
+					
+				
+					Linux kernel 2.4.33 .7<br/>
+					
+				
+					Linux kernel 2.4.33 .6<br/>
+					
+				
+					Linux kernel 2.4.33 .3<br/>
+					
+				
+					Linux kernel 2.4.33 .1<br/>
+					
+				
+					Linux kernel 2.4.33 <br/>
+					
+				
+					Linux kernel 2.4.32 <br/>
+					
+				
+					Linux kernel 2.4.31 <br/>
+					
+				
+					Linux kernel 2.4.30 <br/>
+					
+				
+					Linux kernel 2.4.29 <br/>
+					
+				
+					Linux kernel 2.4.28 <br/>
+					
+				
+					Linux kernel 2.4.27 <br/>
+					
+				
+					Linux kernel 2.4.26 <br/>
+					
+				
+					Linux kernel 2.4.25 <br/>
+					
+				
+					Linux kernel 2.4.24 <br/>
+					
+				
+					Linux kernel 2.4.23 <br/>
+					
+				
+					Linux kernel 2.4.22 <br/>
+					
+				
+					Linux kernel 2.4.21 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 9.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Desktop 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  3<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SuSE SUSE Linux Enterprise Server  8<br/>
+</span>
+					
+				
+					Linux kernel 2.4.20 <br/>
+					
+				
+					Linux kernel 2.4.19 <br/>
+					
+				
+					Linux kernel 2.4.18 <br/>
+					
+				
+					Linux kernel 2.4.17 <br/>
+					
+				
+					Linux kernel 2.4.16 <br/>
+					
+				
+					Linux kernel 2.4.15 <br/>
+					
+				
+					Linux kernel 2.4.14 <br/>
+					
+				
+					Linux kernel 2.4.13 <br/>
+					
+				
+					Linux kernel 2.4.12 <br/>
+					
+				
+					Linux kernel 2.4.11 <br/>
+					
+				
+					Linux kernel 2.4.10 <br/>
+					
+				
+					Linux kernel 2.4.9 <br/>
+					
+				
+					Linux kernel 2.4.8 <br/>
+					
+				
+					Linux kernel 2.4.7 <br/>
+					
+				
+					Linux kernel 2.4.6 <br/>
+					
+				
+					Linux kernel 2.4.5 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.0 <br/>
+</span>
+					
+				
+					Linux kernel 2.4.4 <br/>
+					
+				
+					Linux kernel 2.4.3 <br/>
+					
+				
+					Linux kernel 2.4.2 <br/>
+					
+				
+					Linux kernel 2.4.1 <br/>
+					
+				
+					Linux kernel 2.4 <br/>
+					
+				
+					Linux kernel 2.3.99 <br/>
+					
+				
+					Linux kernel 2.3.51 <br/>
+					
+				
+					Linux kernel 2.3.50 <br/>
+					
+				
+					Linux kernel 2.3.49 <br/>
+					
+				
+					Linux kernel 2.3.48 <br/>
+					
+				
+					Linux kernel 2.3.47 <br/>
+					
+				
+					Linux kernel 2.3.46 <br/>
+					
+				
+					Linux kernel 2.3.45 <br/>
+					
+				
+					Linux kernel 2.3.44 <br/>
+					
+				
+					Linux kernel 2.3.43 <br/>
+					
+				
+					Linux kernel 2.3.42 <br/>
+					
+				
+					Linux kernel 2.3.41 <br/>
+					
+				
+					Linux kernel 2.3.40 <br/>
+					
+				
+					Linux kernel 2.3.39 <br/>
+					
+				
+					Linux kernel 2.3.38 <br/>
+					
+				
+					Linux kernel 2.3.37 <br/>
+					
+				
+					Linux kernel 2.3.36 <br/>
+					
+				
+					Linux kernel 2.3.35 <br/>
+					
+				
+					Linux kernel 2.3.34 <br/>
+					
+				
+					Linux kernel 2.3.33 <br/>
+					
+				
+					Linux kernel 2.3.32 <br/>
+					
+				
+					Linux kernel 2.3.31 <br/>
+					
+				
+					Linux kernel 2.3.30 <br/>
+					
+				
+					Linux kernel 2.3.29 <br/>
+					
+				
+					Linux kernel 2.3.28 <br/>
+					
+				
+					Linux kernel 2.3.27 <br/>
+					
+				
+					Linux kernel 2.3.26 <br/>
+					
+				
+					Linux kernel 2.3.25 <br/>
+					
+				
+					Linux kernel 2.3.24 <br/>
+					
+				
+					Linux kernel 2.3.23 <br/>
+					
+				
+					Linux kernel 2.3.22 <br/>
+					
+				
+					Linux kernel 2.3.21 <br/>
+					
+				
+					Linux kernel 2.3.20 <br/>
+					
+				
+					Linux kernel 2.3.19 <br/>
+					
+				
+					Linux kernel 2.3.18 <br/>
+					
+				
+					Linux kernel 2.3.17 <br/>
+					
+				
+					Linux kernel 2.3.16 <br/>
+					
+				
+					Linux kernel 2.3.15 <br/>
+					
+				
+					Linux kernel 2.3.14 <br/>
+					
+				
+					Linux kernel 2.3.13 <br/>
+					
+				
+					Linux kernel 2.3.12 <br/>
+					
+				
+					Linux kernel 2.3.11 <br/>
+					
+				
+					Linux kernel 2.3.10 <br/>
+					
+				
+					Linux kernel 2.3.9 <br/>
+					
+				
+					Linux kernel 2.3.8 <br/>
+					
+				
+					Linux kernel 2.3.7 <br/>
+					
+				
+					Linux kernel 2.3.6 <br/>
+					
+				
+					Linux kernel 2.3.5 <br/>
+					
+				
+					Linux kernel 2.3.4 <br/>
+					
+				
+					Linux kernel 2.3.3 <br/>
+					
+				
+					Linux kernel 2.3.2 <br/>
+					
+				
+					Linux kernel 2.3.1 <br/>
+					
+				
+					Linux kernel 2.3 <br/>
+					
+				
+					Linux kernel 2.2.26 <br/>
+					
+				
+					Linux kernel 2.2.25 <br/>
+					
+				
+					Linux kernel 2.2.24 <br/>
+					
+				
+					Linux kernel 2.2.23 <br/>
+					
+				
+					Linux kernel 2.2.22 <br/>
+					
+				
+					Linux kernel 2.2.21 <br/>
+					
+				
+					Linux kernel 2.2.20 <br/>
+					
+				
+					Linux kernel 2.2.19 <br/>
+					
+				
+					Linux kernel 2.2.17 <br/>
+					
+				
+					Linux kernel 2.2.16 <br/>
+					
+				
+					Linux kernel 2.2.15 <br/>
+					
+				
+					Linux kernel 2.2.14 <br/>
+					
+				
+					Linux kernel 2.2.13 <br/>
+					
+				
+					Linux kernel 2.2.12 <br/>
+					
+				
+					Linux kernel 2.2.11 <br/>
+					
+				
+					Linux kernel 2.2.10 <br/>
+					
+				
+					Linux kernel 2.2.9 <br/>
+					
+				
+					Linux kernel 2.2.8 <br/>
+					
+				
+					Linux kernel 2.2.7 <br/>
+					
+				
+					Linux kernel 2.2.6 <br/>
+					
+				
+					Linux kernel 2.2.5 <br/>
+					
+				
+					Linux kernel 2.2.4 <br/>
+					
+				
+					Linux kernel 2.2.3 <br/>
+					
+				
+					Linux kernel 2.2.2 <br/>
+					
+				
+					Linux kernel 2.2.1 <br/>
+					
+				
+					Linux kernel 2.2 <br/>
+					
+				
+					Linux kernel 2.1.132 <br/>
+					
+				
+					Linux kernel 2.1.89 <br/>
+					
+				
+					Linux kernel 2.1 <br/>
+					
+				
+					Linux kernel 2.0.39 <br/>
+					
+				
+					Linux kernel 2.0.38 <br/>
+					
+				
+					Linux kernel 2.0.37 <br/>
+					
+				
+					Linux kernel 2.0.36 <br/>
+					
+				
+					Linux kernel 2.0.35 <br/>
+					
+				
+					Linux kernel 2.0.34 <br/>
+					
+				
+					Linux kernel 2.0.33 <br/>
+					
+				
+					Linux kernel 2.0.32 <br/>
+					
+				
+					Linux kernel 2.0.31 <br/>
+					
+				
+					Linux kernel 2.0.30 <br/>
+					
+				
+					Linux kernel 2.0.29 <br/>
+					
+				
+					Linux kernel 2.0.28 <br/>
+					
+				
+					Linux kernel 2.0.27 <br/>
+					
+				
+					Linux kernel 2.0.26 <br/>
+					
+				
+					Linux kernel 2.0.25 <br/>
+					
+				
+					Linux kernel 2.0.24 <br/>
+					
+				
+					Linux kernel 2.0.23 <br/>
+					
+				
+					Linux kernel 2.0.21 <br/>
+					
+				
+					Linux kernel 2.0.20 <br/>
+					
+				
+					Linux kernel 2.0.19 <br/>
+					
+				
+					Linux kernel 2.0.18 <br/>
+					
+				
+					Linux kernel 2.0.17 <br/>
+					
+				
+					Linux kernel 2.0.16 <br/>
+					
+				
+					Linux kernel 2.0.15 <br/>
+					
+				
+					Linux kernel 2.0.14 <br/>
+					
+				
+					Linux kernel 2.0.13 <br/>
+					
+				
+					Linux kernel 2.0.12 <br/>
+					
+				
+					Linux kernel 2.0.11 <br/>
+					
+				
+					Linux kernel 2.0.10 <br/>
+					
+				
+					Linux kernel 2.0.9 <br/>
+					
+				
+					Linux kernel 2.0.8 <br/>
+					
+				
+					Linux kernel 2.0.7 <br/>
+					
+				
+					Linux kernel 2.0.6 <br/>
+					
+				
+					Linux kernel 2.0.5 <br/>
+					
+				
+					Linux kernel 2.0.4 <br/>
+					
+				
+					Linux kernel 2.0.3 <br/>
+					
+				
+					Linux kernel 2.0.2 <br/>
+					
+				
+					Linux kernel 2.0.1 <br/>
+					
+				
+					Linux kernel 2.0 <br/>
+					
+				
+					Linux kernel  3.6<br/>
+					
+				
+					Linux kernel  3.5<br/>
+					
+				
+					Linux kernel  3.4.93<br/>
+					
+				
+					Linux kernel  3.4.81<br/>
+					
+				
+					Linux kernel  3.4.70<br/>
+					
+				
+					Linux kernel  3.4.67<br/>
+					
+				
+					Linux kernel  3.4.29<br/>
+					
+				
+					Linux kernel  3.4<br/>
+					
+				
+					Linux kernel  3.3<br/>
+					
+				
+					Linux kernel  3.2.65<br/>
+					
+				
+					Linux kernel  3.2.64<br/>
+					
+				
+					Linux kernel  3.2.63<br/>
+					
+				
+					Linux kernel  3.2.60<br/>
+					
+				
+					Linux kernel  3.2.55<br/>
+					
+				
+					Linux kernel  3.2.54<br/>
+					
+				
+					Linux kernel  3.2.53<br/>
+					
+				
+					Linux kernel  3.2.52<br/>
+					
+				
+					Linux kernel  3.2.50<br/>
+					
+				
+					Linux kernel  3.2.44<br/>
+					
+				
+					Linux kernel  3.2.42<br/>
+					
+				
+					Linux kernel  3.2.38<br/>
+					
+				
+					Linux kernel  3.2.2<br/>
+					
+				
+					Linux kernel  3.2<br/>
+					
+				
+					Linux kernel  3.19<br/>
+					
+				
+					Linux kernel  3.18.9<br/>
+					
+				
+					Linux kernel  3.18<br/>
+					
+				
+					Linux kernel  3.17.6<br/>
+					
+				
+					Linux kernel  3.17<br/>
+					
+				
+					Linux kernel  3.16.6<br/>
+					
+				
+					Linux kernel  3.16<br/>
+					
+				
+					Linux kernel  3.15<br/>
+					
+				
+					Linux kernel  3.14.7<br/>
+					
+				
+					Linux kernel  3.14.5<br/>
+					
+				
+					Linux kernel  3.14-4<br/>
+					
+				
+					Linux kernel  3.14-1<br/>
+					
+				
+					Linux kernel  3.14<br/>
+					
+				
+					Linux kernel  3.13.7<br/>
+					
+				
+					Linux kernel  3.13.6<br/>
+					
+				
+					Linux kernel  3.13.5<br/>
+					
+				
+					Linux kernel  3.13.4<br/>
+					
+				
+					Linux kernel  3.13.0<br/>
+					
+				
+					Linux kernel  3.13<br/>
+					
+				
+					Linux kernel  3.12.22<br/>
+					
+				
+					Linux kernel  3.12.15<br/>
+					
+				
+					Linux kernel  3.12.14<br/>
+					
+				
+					Linux kernel  3.12.12<br/>
+					
+				
+					Linux kernel  3.12.1<br/>
+					
+				
+					Linux kernel  3.12<br/>
+					
+				
+					Linux kernel  3.11.9<br/>
+					
+				
+					Linux kernel  3.11.6<br/>
+					
+				
+					Linux kernel  3.11<br/>
+					
+				
+					Linux kernel  3.10.5<br/>
+					
+				
+					Linux kernel  3.10.43<br/>
+					
+				
+					Linux kernel  3.10.31<br/>
+					
+				
+					Linux kernel  3.10.20<br/>
+					
+				
+					Linux kernel  3.10.17<br/>
+					
+				
+					Linux kernel  3.10<br/>
+					
+				
+					Linux kernel  3.1<br/>
+					
+				
+					Linux kernel  3.0.66<br/>
+					
+				
+					Linux kernel  3.0.62<br/>
+					
+				
+					Linux kernel  3.0.18<br/>
+					
+				
+					Linux kernel  3.0<br/>
+					
+				
+					Linux kernel  2.6.8.1<br/>
+					
+				
+					Linux kernel  2.6.38.6<br/>
+					
+				
+					Linux kernel  2.6.38.4<br/>
+					
+				
+					Linux kernel  2.6.38.3<br/>
+					
+				
+					Linux kernel  2.6.38.2<br/>
+					
+				
+					Linux kernel  2.6.37.2<br/>
+					
+				
+					Linux kernel  2.6.35.5<br/>
+					
+				
+					Linux kernel  2.6.35.4<br/>
+					
+				
+					Linux kernel  2.6.35.13<br/>
+					
+				
+					Linux kernel  2.6.35.1<br/>
+					
+				
+					Linux kernel  2.6.34.3<br/>
+					
+				
+					Linux kernel  2.6.34.2<br/>
+					
+				
+					Linux kernel  2.6.34.14<br/>
+					
+				
+					Linux kernel  2.6.34.13<br/>
+					
+				
+					Linux kernel  2.6.34.1<br/>
+					
+				
+					Linux kernel  2.6.33.7<br/>
+					
+				
+					Linux kernel  2.6.32.8<br/>
+					
+				
+					Linux kernel  2.6.32.7<br/>
+					
+				
+					Linux kernel  2.6.32.62<br/>
+					
+				
+					Linux kernel  2.6.32.61<br/>
+					
+				
+					Linux kernel  2.6.32.60<br/>
+					
+				
+					Linux kernel  2.6.32.6<br/>
+					
+				
+					Linux kernel  2.6.32.5<br/>
+					
+				
+					Linux kernel  2.6.32.4<br/>
+					
+				
+					Linux kernel  2.6.32.3<br/>
+					
+				
+					Linux kernel  2.6.32.28<br/>
+					
+				
+					Linux kernel  2.6.32.22<br/>
+					
+				
+					Linux kernel  2.6.32.2<br/>
+					
+				
+					Linux kernel  2.6.32.18<br/>
+					
+				
+					Linux kernel  2.6.32.17<br/>
+					
+				
+					Linux kernel  2.6.32.16<br/>
+					
+				
+					Linux kernel  2.6.32.15<br/>
+					
+				
+					Linux kernel  2.6.32.14<br/>
+					
+				
+					Linux kernel  2.6.32.13<br/>
+					
+				
+					Linux kernel  2.6.32.12<br/>
+					
+				
+					Linux kernel  2.6.32.11<br/>
+					
+				
+					Linux kernel  2.6.32.10<br/>
+					
+				
+					Linux kernel  2.6.32.1<br/>
+					
+				
+					Linux kernel  2.6.31.6<br/>
+					
+				
+					Linux kernel  2.6.31.4<br/>
+					
+				
+					Linux kernel  2.6.31.1<br/>
+					
+				
+					Linux kernel  2.6.30.5<br/>
+					
+				
+					Linux kernel  2.6.30.4<br/>
+					
+				
+					Linux kernel  2.6.30.3<br/>
+					
+				
+					Linux kernel  2.6.28.4<br/>
+					
+				
+					Linux kernel  2.6.28.10<br/>
+					
+				
+					Linux kernel  2.6.27.54<br/>
+					
+				
+					Linux kernel  2.6.27.51<br/>
+					
+				
+					Linux kernel  2.6.27.49<br/>
+					
+				
+					Linux kernel  2.6.27.26<br/>
+					
+				
+					Linux kernel  2.6.26.1<br/>
+					
+				
+					Linux kernel  2.6.25.4<br/>
+					
+				
+					Linux kernel  2.6.25.3<br/>
+					
+				
+					Linux kernel  2.6.25.2<br/>
+					
+				
+					Linux kernel  2.6.25.1<br/>
+					
+				
+					Linux kernel  2.6.24.6<br/>
+					
+				
+					Linux kernel  2.6.24.4<br/>
+					
+				
+					Linux kernel  2.6.24.3<br/>
+					
+				
+					Linux kernel  2.6.23.14<br/>
+					
+				
+					Linux kernel  2.6.23.10<br/>
+					
+				
+					Linux kernel  2.6.23.1<br/>
+					
+				
+					Linux kernel  2.6.23.09<br/>
+					
+				
+					Linux kernel  2.6.20.3<br/>
+					
+				
+					Linux kernel  2.6.20.2<br/>
+					
+				
+					Linux kernel  2.6.20.13<br/>
+					
+				
+					Linux kernel  2.6.20.11<br/>
+					
+				
+					Linux kernel  2.6.20-2<br/>
+					
+				
+					Linux kernel  2.6.18.1<br/>
+					
+				
+					Linux kernel  2.6.18-53<br/>
+					
+				
+					Linux kernel  2.6.18<br/>
+					
+				
+					Linux kernel  2.6.16.9<br/>
+					
+				
+					Linux kernel  2.6.16.7<br/>
+					
+				
+					Linux kernel  2.6.16.19<br/>
+					
+				
+					Linux kernel  2.6.16.13<br/>
+					
+				
+					Linux kernel  2.6.16.12<br/>
+					
+				
+					Linux kernel  2.6.16.11<br/>
+					
+				
+					Linux kernel  2.6.15.5<br/>
+					
+				
+					Linux kernel  2.6.15.4<br/>
+					
+				
+					Linux kernel  2.6.15.11<br/>
+					
+				
+					Linux kernel  2.6.15-27.48<br/>
+					
+				
+					Linux kernel  2.6.14.3<br/>
+					
+				
+					Linux kernel  2.6.14.2<br/>
+					
+				
+					Linux kernel  2.6.14.1<br/>
+					
+				
+					Linux kernel  2.6.13.4<br/>
+					
+				
+					Linux kernel  2.6.13.3<br/>
+					
+				
+					Linux kernel  2.6.13.2<br/>
+					
+				
+					Linux kernel  2.6.13.1<br/>
+					
+				
+					Linux kernel  2.6.12.6<br/>
+					
+				
+					Linux kernel  2.6.12.5<br/>
+					
+				
+					Linux kernel  2.6.12.4<br/>
+					
+				
+					Linux kernel  2.6.12.3<br/>
+					
+				
+					Linux kernel  2.6.12.2<br/>
+					
+				
+					Linux kernel  2.6.12.1<br/>
+					
+				
+					Linux kernel  2.6.11.8<br/>
+					
+				
+					Linux kernel  2.6.11.7<br/>
+					
+				
+					Linux kernel  2.6.11.6<br/>
+					
+				
+					Linux kernel  2.6.11.5<br/>
+					
+				
+					Linux kernel  2.6.11.4<br/>
+					
+				
+					Linux kernel  2.6.11.12<br/>
+					
+				
+					Linux kernel  2.6.11.11<br/>
+					
+				
+					Linux kernel  2.4.36.9<br/>
+					
+				
+					Linux kernel  2.4.36.6<br/>
+					
+				
+					Linux kernel  2.4.34.6<br/>
+					
+				
+					Linux kernel  2.4.34.5<br/>
+					
+				
+					Linux kernel  2.4.34.3<br/>
+					
+				
+					Linux kernel  2.4.33.5<br/>
+					
+				
+					Linux kernel  2.4.33.4<br/>
+					
+				
+					Linux kernel  2.0.40<br/>
+					
+				
+					Leif M. Wright simplestmail.cgi 2.2.18 <br/>
+					
+				
+					Leif M. Wright simplestmail.cgi 2.0.22 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Linux kernel  3.7<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any   working exploits. If you feel we are in error or if you are aware of   more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

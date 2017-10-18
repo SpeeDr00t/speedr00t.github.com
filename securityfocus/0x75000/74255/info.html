@@ -1,0 +1,642 @@
+#SpeeDr00t@Black Falcon<br>#bid74255<p><b><span style="font-size: 18pt;">GNU glibc CVE-2015-1781 Multiple Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/74255/info">info</a><br><a href="http://www.securityfocus.com/bid/74255/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/74255/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/74255/solution">solution</a><br><a href="http://www.securityfocus.com/bid/74255/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				74255
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-1781<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 21 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Sep 09 2016 06:00PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Arjun Shankar of Red Hat
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.6.z<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle Linux  0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					IBM TSSC 7.4 <br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Security Virtual Server Protection for VMware 1.1.1 <br/>
+					
+				
+					IBM Security Virtual Server Protection for VMware  1.1.0.1<br/>
+					
+				
+					IBM Security Virtual Server Protection for VMware  1.1<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7800  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-10  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412-05  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX7412  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX6116  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5208  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5108  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX5008  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004-v2  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4004  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX4002  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GX3002  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV200  4.3<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000 4.6.2 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000 4.6.1 <br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.6<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.5<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.4<br/>
+					
+				
+					IBM Security Network Intrusion Prevention System GV1000  4.3<br/>
+					
+				
+					IBM Proventia Network Enterprise Scanner  2.3<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM IB6131 8 Gb Infiniband Switch  3.4<br/>
+					
+				
+					IBM IB6131 8 Gb Infiniband Switch  3.2<br/>
+					
+				
+					IBM Flex System EN6131 40Gb Ethernet Switch 3.4 <br/>
+					
+				
+					IBM Flex System EN6131 40Gb Ethernet Switch  3.2<br/>
+					
+				
+					IBM Flex System Chassis Management Module  2PET<br/>
+					
+				
+					IBM DS8800  86.31.167.0 (R6.3)<br/>
+					
+				
+					IBM DS8800  0<br/>
+					
+				
+					IBM DS8700  87.51.14.X (R7.5) <br/>
+					
+				
+					IBM DS8700  87.41.17.X (R7.4)<br/>
+					
+				
+					IBM DS8700  76.31.143.0 (R6.3)<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.0<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.5<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.8<br/>
+					
+				
+					IBM DataPower Gateways  6.0.1.11<br/>
+					
+				
+					IBM DataPower Gateways  6.0.0.15<br/>
+					
+				
+					GNU glibc  0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					IBM TSSC 7.5 <br/>
+					
+				
+					IBM Power HMC  8.8.3.0<br/>
+					
+				
+					IBM Power HMC  8.8.2.0 SP1<br/>
+					
+				
+					IBM Power HMC  8.8.1.0 SP2<br/>
+					
+				
+					IBM IB6131 8 Gb Infiniband Switch 3.5.1000 <br/>
+					
+				
+					IBM Flex System EN6131 40Gb Ethernet Switch 3.5.1000 <br/>
+					
+				
+					IBM Flex System Chassis Management Module  2PET14c-2.5.5c<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.6<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.9<br/>
+					
+				
+					IBM DataPower Gateways  6.0.1.12<br/>
+					
+				
+					IBM DataPower Gateways  6.0.0.16<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

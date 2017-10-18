@@ -1,0 +1,648 @@
+#SpeeDr00t@Black Falcon<br>#bid75056<p><b><span style="font-size: 18pt;">PHP 'pcnt_exec()' Function Null Character Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/75056/info">info</a><br><a href="http://www.securityfocus.com/bid/75056/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/75056/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/75056/solution">solution</a><br><a href="http://www.securityfocus.com/bid/75056/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				75056
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-4026<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 14 2015 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jul 21 2017 01:07PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				yohgaki
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					PHP PHP 5.6.5 <br/>
+					
+				
+					PHP PHP 5.6.4 <br/>
+					
+				
+					PHP PHP 5.6.1 <br/>
+					
+				
+					PHP PHP 5.5.21 <br/>
+					
+				
+					PHP PHP 5.5.14 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					PHP PHP 5.5.13 <br/>
+					
+				
+					PHP PHP 5.5.12 <br/>
+					
+				
+					PHP PHP 5.5.11 <br/>
+					
+				
+					PHP PHP 5.5.10 <br/>
+					
+				
+					PHP PHP 5.5.6 <br/>
+					
+				
+					PHP PHP 5.5.5 <br/>
+					
+				
+					PHP PHP 5.5.4 <br/>
+					
+				
+					PHP PHP 5.5.3 <br/>
+					
+				
+					PHP PHP 5.5.1 <br/>
+					
+				
+					PHP PHP 5.5 <br/>
+					
+				
+					PHP PHP 5.4.37 <br/>
+					
+				
+					PHP PHP 5.4.30 <br/>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1  x86_64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 10.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux Personal 9.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					PHP PHP 5.4.29 <br/>
+					
+				
+					PHP PHP 5.4.26 <br/>
+					
+				
+					PHP PHP 5.4.25 <br/>
+					
+				
+					PHP PHP 5.4.17 <br/>
+					
+				
+					PHP PHP 5.4.14 <br/>
+					
+				
+					PHP PHP 5.4.8 <br/>
+					
+				
+					PHP PHP 5.4.7 <br/>
+					
+				
+					PHP PHP 5.4.6 <br/>
+					
+				
+					PHP PHP 5.4.4 <br/>
+					
+				
+					PHP PHP 5.4.3 <br/>
+					
+				
+					PHP PHP 5.4.2 <br/>
+					
+				
+					PHP PHP 5.4.1 <br/>
+					
+				
+					PHP PHP  5.6.8 RC1<br/>
+					
+				
+					PHP PHP  5.6.8<br/>
+					
+				
+					PHP PHP  5.6.7<br/>
+					
+				
+					PHP PHP  5.6.6<br/>
+					
+				
+					PHP PHP  5.6.3<br/>
+					
+				
+					PHP PHP  5.6.2<br/>
+					
+				
+					PHP PHP  5.6<br/>
+					
+				
+					PHP PHP  5.5.9<br/>
+					
+				
+					PHP PHP  5.5.8<br/>
+					
+				
+					PHP PHP  5.5.7<br/>
+					
+				
+					PHP PHP  5.5.24<br/>
+					
+				
+					PHP PHP  5.5.23<br/>
+					
+				
+					PHP PHP  5.5.22<br/>
+					
+				
+					PHP PHP  5.5.20<br/>
+					
+				
+					PHP PHP  5.5.2<br/>
+					
+				
+					PHP PHP  5.5.19<br/>
+					
+				
+					PHP PHP  5.5.18<br/>
+					
+				
+					PHP PHP  5.5.17<br/>
+					
+				
+					PHP PHP  5.5.16<br/>
+					
+				
+					PHP PHP  5.5.15<br/>
+					
+				
+					PHP PHP  5.5.0 Rc2<br/>
+					
+				
+					PHP PHP  5.5.0 Rc1<br/>
+					
+				
+					PHP PHP  5.4.9<br/>
+					
+				
+					PHP PHP  5.4.5<br/>
+					
+				
+					PHP PHP  5.4.40<br/>
+					
+				
+					PHP PHP  5.4.39<br/>
+					
+				
+					PHP PHP  5.4.38<br/>
+					
+				
+					PHP PHP  5.4.36<br/>
+					
+				
+					PHP PHP  5.4.35<br/>
+					
+				
+					PHP PHP  5.4.34<br/>
+					
+				
+					PHP PHP  5.4.33<br/>
+					
+				
+					PHP PHP  5.4.32<br/>
+					
+				
+					PHP PHP  5.4.31<br/>
+					
+				
+					PHP PHP  5.4.28<br/>
+					
+				
+					PHP PHP  5.4.27<br/>
+					
+				
+					PHP PHP  5.4.24<br/>
+					
+				
+					PHP PHP  5.4.23<br/>
+					
+				
+					PHP PHP  5.4.22<br/>
+					
+				
+					PHP PHP  5.4.21<br/>
+					
+				
+					PHP PHP  5.4.20<br/>
+					
+				
+					PHP PHP  5.4.19<br/>
+					
+				
+					PHP PHP  5.4.18<br/>
+					
+				
+					PHP PHP  5.4.16 Rc1<br/>
+					
+				
+					PHP PHP  5.4.16<br/>
+					
+				
+					PHP PHP  5.4.15 Rc1<br/>
+					
+				
+					PHP PHP  5.4.15<br/>
+					
+				
+					PHP PHP  5.4.14 Rc1<br/>
+					
+				
+					PHP PHP  5.4.13 Rc1<br/>
+					
+				
+					PHP PHP  5.4.13<br/>
+					
+				
+					PHP PHP  5.4.12 Rc2<br/>
+					
+				
+					PHP PHP  5.4.12 Rc1<br/>
+					
+				
+					PHP PHP  5.4.12<br/>
+					
+				
+					PHP PHP  5.4.11<br/>
+					
+				
+					PHP PHP  5.4.10<br/>
+					
+				
+					PHP PHP  5.4.0RC2<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Linux  7<br/>
+					
+				
+					Oracle Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 <br/>
+					
+				
+					IBM Flex System Manager 1.2.1 <br/>
+					
+				
+					IBM Flex System Manager 1.2 <br/>
+					
+				
+					IBM Flex System Manager 1.1 <br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.1.0.0<br/>
+					
+				
+					IBM Flex System Chassis Management Module  2PET<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac Os X  10.10.4<br/>
+					
+				
+					Apple Mac Os X  10.10.3<br/>
+					
+				
+					Apple Mac OS X  10.10.2<br/>
+					
+				
+					Apple Mac OS X  10.10.1<br/>
+					
+				
+					Apple Mac OS X  10.10<br/>
+					
+				
+					AlienVault AlienVault 5.0.4 <br/>
+					
+				
+					AlienVault AlienVault  5.1<br/>
+					
+				
+					AlienVault AlienVault  5.0<br/>
+					
+				
+					AlienVault AlienVault  4.15.2<br/>
+					
+				
+					AlienVault AlienVault  4.15.1<br/>
+					
+				
+					AlienVault AlienVault  4.15<br/>
+					
+				
+					AlienVault AlienVault  4.14<br/>
+					
+				
+					AlienVault AlienVault  4.13<br/>
+					
+				
+					AlienVault AlienVault  4.12.1<br/>
+					
+				
+					AlienVault AlienVault  4.12<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					PHP PHP  5.6.9<br/>
+					
+				
+					PHP PHP  5.5.25<br/>
+					
+				
+					PHP PHP  5.4.41<br/>
+					
+				
+					IBM Flex System Chassis Management Module  2PET14c-2.5.5c<br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+					
+				
+					AlienVault AlienVault  5.2<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>
