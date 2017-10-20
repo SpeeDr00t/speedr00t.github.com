@@ -1,0 +1,1449 @@
+#SpeeDr00t@Black Falcon<br>#bid91453<p><b><span style="font-size: 18pt;">Apache Commons FileUpload CVE-2016-3092 Denial Of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/91453/info">info</a><br><a href="http://www.securityfocus.com/bid/91453/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/91453/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/91453/solution">solution</a><br><a href="http://www.securityfocus.com/bid/91453/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				91453
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-3092<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 21 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 26 2017 08:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				TERASOLUNA Framework Development Team at the Software Engineering, Research and Development Headquarter.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Utilities Work and Asset Management  1.9.1.2.11<br/>
+					
+				
+					Oracle Utilities Framework  4.3.0.3.0<br/>
+					
+				
+					Oracle Utilities Framework  4.3.0.2.0<br/>
+					
+				
+					Oracle Utilities Framework  4.3.0.1.0<br/>
+					
+				
+					Oracle Utilities Framework  4.2.0.3.0<br/>
+					
+				
+					Oracle Utilities Framework  4.2.0.2.0<br/>
+					
+				
+					Oracle Utilities Framework  4.2.0.1.0<br/>
+					
+				
+					Oracle Utilities Framework  4.1.0.2.0<br/>
+					
+				
+					Oracle Utilities Framework  4.1.0.1.0<br/>
+					
+				
+					Oracle Utilities Framework  2.2.0.0.0<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor 3.2.1182 <br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.3.2.1162<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.3.0.1098<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.2.4.1102<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.1.6.8003<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.1.5.7958<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.1.4.7895<br/>
+					
+				
+					Oracle MySQL Enterprise Monitor  3.1.3.7856<br/>
+					
+				
+					Oracle MySQL Enterprise Backup 4.0.1 <br/>
+					
+				
+					Oracle MySQL Enterprise Backup 3.12.2 <br/>
+					
+				
+					Oracle MySQL Enterprise Backup 3.10.1 <br/>
+					
+				
+					Oracle MySQL Enterprise Backup 3.10 <br/>
+					
+				
+					Oracle Healthcare Master Person Index  4.0.1.0<br/>
+					
+				
+					Oracle Healthcare Master Person Index  3.0.0.0<br/>
+					
+				
+					Oracle Healthcare Master Person Index  2.0.1.0<br/>
+					
+				
+					Oracle Healthcare Master Person Index  2.0<br/>
+					
+				
+					Oracle Healthcare Master Person Index  1.0<br/>
+					
+				
+					Oracle Enterprise Manager Base Platform 12.1 <br/>
+					
+				
+					Oracle Enterprise Manager Base Platform  13.2.0.0<br/>
+					
+				
+					Oracle Enterprise Manager Base Platform  13.1.0.0<br/>
+					
+				
+					Oracle Communications Service Broker Engineered System Edition  6.1<br/>
+					
+				
+					Oracle Communications Service Broker Engineered System Edition  6.0<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  8.5<br/>
+					
+				
+					IBM WebSphere Service Registry and Repository  8.0<br/>
+					
+				
+					IBM Websphere Portal  8.5<br/>
+					
+				
+					IBM Websphere Portal  8.0<br/>
+					
+				
+					IBM Websphere Portal  7.0<br/>
+					
+				
+					IBM Websphere Portal  6.1<br/>
+					
+				
+					IBM WebSphere Message Broker  8.0<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.2.0.5<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.2.0<br/>
+					
+				
+					IBM WebSphere Lombardi Edition  7.2<br/>
+					
+				
+					IBM WebSphere Dashboard Framework  7.0.1 <br/>
+					
+				
+					IBM WebSphere Application Server Liberty Profile  0<br/>
+					
+				
+					IBM WebSphere Application Server Hypervisor Edition  0<br/>
+					
+				
+					IBM Websphere Application Server 8.5.5 <br/>
+					
+				
+					IBM Websphere Application Server 8.0 2<br/>
+					
+				
+					IBM Websphere Application Server 7.0 3<br/>
+					
+				
+					IBM Websphere Application Server 7.0 29<br/>
+					
+				
+					IBM Websphere Application Server 7.0 21<br/>
+					
+				
+					IBM Websphere Application Server 7.0 10<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .9<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .8<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .2<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .13<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .12<br/>
+					
+				
+					IBM Websphere Application Server 7.0 .11<br/>
+					
+				
+					IBM Websphere Application Server  9.0.0.0<br/>
+					
+				
+					IBM Websphere Application Server  9.0<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.9<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.8<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.7<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.6<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.5<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.4<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.3<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.2<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.10<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.1<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5.0<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5 Liberty Profil<br/>
+					
+				
+					IBM Websphere Application Server  8.5.5 Full Profile<br/>
+					
+				
+					IBM Websphere Application Server  8.5.0.1<br/>
+					
+				
+					IBM Websphere Application Server  8.5.0.0<br/>
+					
+				
+					IBM Websphere Application Server  8.5 Liberty Profile<br/>
+					
+				
+					IBM Websphere Application Server  8.5 Full Profile<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.9<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.8<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.7<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.6<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.5<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.4<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.3<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.12<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.11<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.10<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.1<br/>
+					
+				
+					IBM Websphere Application Server  8.0.0.0<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.7<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.6<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.5<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.41<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.4<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.39<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.37<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.35<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.34<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.33<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.32<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.31<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.27<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.25<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.24<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.23<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.22<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.19<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.18<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.17<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.16<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.15<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.14<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.1<br/>
+					
+				
+					IBM Websphere Application Server  7.0.0.0<br/>
+					
+				
+					IBM Web Experience Factory 8.0 3<br/>
+					
+				
+					IBM Web Experience Factory 8.0 1<br/>
+					
+				
+					IBM Web Experience Factory  8.5.0.1<br/>
+					
+				
+					IBM Web Experience Factory  8.5.0.0<br/>
+					
+				
+					IBM Web Experience Factory  8.0.0.2<br/>
+					
+				
+					IBM Web Experience Factory  8.0.0<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.2.10 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.2.6 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.2.5 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.2.2 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.2.1 0<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.2 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.1.1 3<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.1.1 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center 5.1 <br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.7.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.7<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.5.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.4.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.4<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.3<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.2.1.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.9<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.8<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.7<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.6<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.5<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.4<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.2<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.11<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.10<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.1<br/>
+					
+				
+					IBM Tivoli Storage Productivity Center  5.1.1.0<br/>
+					
+				
+					IBM Tivoli Storage Manager for Virtual Environments  7.1<br/>
+					
+				
+					IBM Tivoli Storage Manager for Virtual Environments  6.4<br/>
+					
+				
+					IBM Tivoli Storage Manager for Virtual Environments  6.3<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 FP7<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 FP6<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 FP4<br/>
+					
+				
+					IBM Tivoli Monitoring 6.3 <br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 FP5<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.3 <br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.2 FP9<br/>
+					
+				
+					IBM Tivoli Monitoring 6.2.2 <br/>
+					
+				
+					IBM Tivoli Enterprise portal server  -<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager  7.2.2.5<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager  7.2.2.4<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager  7.2.2.3<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager  7.2.2.2<br/>
+					
+				
+					IBM Tivoli Application Dependency Discovery Manager  7.2.2.1<br/>
+					
+				
+					IBM Support Assistant Team Server 5.0.1 <br/>
+					
+				
+					IBM Support Assistant Team Server 5.0 <br/>
+					
+				
+					IBM Support Assistant Team Server  5.0.2.2<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.6.1.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.6.0.1<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.6.0.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.4<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.3<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.2<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.1<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.2.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.1.3<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.1.0<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.0.2<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.0.1<br/>
+					
+				
+					IBM Storwize V7000 Unified  1.5.0.0<br/>
+					
+				
+					IBM Sterling Secure Proxy 3.4.3 <br/>
+					
+				
+					IBM Sterling Secure Proxy 3.4.2 <br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.3.0 iFix 1<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.2.0 iFix 8<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.2.0 iFix 7<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.2.0 iFix 6<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.2.0 iFix 5<br/>
+					
+				
+					IBM Sterling Secure Proxy  3.4.2.0 iFix 4<br/>
+					
+				
+					IBM Spectrum Control 5.2.10 <br/>
+					
+				
+					IBM Spectrum Control 5.2.9 <br/>
+					
+				
+					IBM Spectrum Control 5.2.8 <br/>
+					
+				
+					IBM Security Guardium Data Redaction 2.5.1 <br/>
+					
+				
+					IBM Rational Directory Server 5.2.1 iFix9<br/>
+					
+				
+					IBM Multi-Enterprise Integration Gateway  1.0.0.1<br/>
+					
+				
+					IBM Multi-Enterprise Integration Gateway  1.0<br/>
+					
+				
+					IBM Marketing Operations 9.1.2 <br/>
+					
+				
+					IBM Marketing Operations 9.1.1 <br/>
+					
+				
+					IBM Marketing Operations 9.1 <br/>
+					
+				
+					IBM Marketing Operations 9.0 <br/>
+					
+				
+					IBM Marketing Operations 8.6 <br/>
+					
+				
+					IBM Marketing Operations  9.1.2.1<br/>
+					
+				
+					IBM Marketing Operations  10.0<br/>
+					
+				
+					IBM Interact 9.1.2 <br/>
+					
+				
+					IBM Interact  9.1<br/>
+					
+				
+					IBM Interact  8.6<br/>
+					
+				
+					IBM Interact  10.0<br/>
+					
+				
+					IBM Integration Bus  9.0<br/>
+					
+				
+					IBM Integration Bus  10.0<br/>
+					
+				
+					IBM InfoSphere QualityStage  9.1<br/>
+					
+				
+					IBM InfoSphere QualityStage  11.5<br/>
+					
+				
+					IBM InfoSphere QualityStage  11.3<br/>
+					
+				
+					IBM Infosphere Metadata Workbench  9.1<br/>
+					
+				
+					IBM Infosphere Metadata Workbench  8.7<br/>
+					
+				
+					IBM InfoSphere Metadata Asset Manager  9.5<br/>
+					
+				
+					IBM InfoSphere Metadata Asset Manager  9.1<br/>
+					
+				
+					IBM InfoSphere Metadata Asset Manager  8.7<br/>
+					
+				
+					IBM InfoSphere Metadata Asset Manager  11.3<br/>
+					
+				
+					IBM InfoSphere Information Server Business Glossary  9.1<br/>
+					
+				
+					IBM InfoSphere Information Server Business Glossary  11.5<br/>
+					
+				
+					IBM InfoSphere Information Server Business Glossary  11.3<br/>
+					
+				
+					IBM InfoSphere Information Server Blueprint Director  9.1<br/>
+					
+				
+					IBM InfoSphere Information Server Blueprint Director  11.3<br/>
+					
+				
+					IBM InfoSphere Information Server  9.1<br/>
+					
+				
+					IBM InfoSphere Information Server  8.7<br/>
+					
+				
+					IBM InfoSphere Information Server  8.5<br/>
+					
+				
+					IBM InfoSphere Information Governance Catalog  11.5<br/>
+					
+				
+					IBM InfoSphere Information Governance Catalog  11.3<br/>
+					
+				
+					IBM InfoSphere Business Glossary  9.1<br/>
+					
+				
+					IBM i  7.3<br/>
+					
+				
+					IBM i  7.2<br/>
+					
+				
+					IBM i  7.1<br/>
+					
+				
+					IBM i  6.1<br/>
+					
+				
+					IBM Global Retention Policy and Schedule Management  6.0.3.3<br/>
+					
+				
+					IBM Forms Server 8.0.1 <br/>
+					
+				
+					IBM Forms Server  8.2<br/>
+					
+				
+					IBM Forms Server  8.1<br/>
+					
+				
+					IBM Forms Server  8.0<br/>
+					
+				
+					IBM Enterprise Content Management System Monitor 5.2 <br/>
+					
+				
+					IBM Enterprise Content Management System Monitor 5.1 <br/>
+					
+				
+					IBM Distributed Marketing 9.1.2 <br/>
+					
+				
+					IBM Distributed Marketing  9.1<br/>
+					
+				
+					IBM Distributed Marketing  9.0<br/>
+					
+				
+					IBM Distributed Marketing  8.6<br/>
+					
+				
+					IBM Distributed Marketing  10.0<br/>
+					
+				
+					IBM Disposal and Governance Management for IT  6.0.3.3<br/>
+					
+				
+					IBM Control Center  6.1.0.0iFix02<br/>
+					
+				
+					IBM Control Center  6.1.0.0iFix01<br/>
+					
+				
+					IBM Control Center  6.1.0.0<br/>
+					
+				
+					IBM Control Center  6.0.0.1 iFix05<br/>
+					
+				
+					IBM Control Center  6.0.0.1 iFix04<br/>
+					
+				
+					IBM Control Center  6.0.0.1 iFix03<br/>
+					
+				
+					IBM Control Center  6.0.0.1<br/>
+					
+				
+					IBM Control Center  6.0.0.0iFix03<br/>
+					
+				
+					IBM Control Center  6.0.0.0 iFix02<br/>
+					
+				
+					IBM Control Center  6.0.0.0 iFix01<br/>
+					
+				
+					IBM Control Center  6.0.0.0<br/>
+					
+				
+					IBM Control Center  5.4.2.1 iFix08<br/>
+					
+				
+					IBM Control Center  5.4.2.1 iFix05<br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.2.2 <br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.2.1 1<br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.2.1 <br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.1.1 <br/>
+					
+				
+					IBM Cognos Business Intelligence Server  10.2<br/>
+					
+				
+					IBM Case Manager  5.2.1.5<br/>
+					
+				
+					IBM Case Manager  5.2.1.0<br/>
+					
+				
+					IBM Case Manager  5.2.0.4<br/>
+					
+				
+					IBM Case Manager  5.2.0.0<br/>
+					
+				
+					IBM Case Manager  5.1.1.3<br/>
+					
+				
+					IBM Case Manager  5.1.1.0<br/>
+					
+				
+					IBM Campaign 9.1.2 <br/>
+					
+				
+					IBM Campaign 9.1.1 <br/>
+					
+				
+					IBM Campaign 9.1 1<br/>
+					
+				
+					IBM Campaign 9.1 0<br/>
+					
+				
+					IBM Campaign 9.1 <br/>
+					
+				
+					IBM Campaign  9.1.2.1<br/>
+					
+				
+					IBM Campaign  9.1.0.4<br/>
+					
+				
+					IBM Campaign  9.1<br/>
+					
+				
+					IBM Campaign  9.0<br/>
+					
+				
+					IBM Campaign  8.6<br/>
+					
+				
+					IBM Campaign  10.0<br/>
+					
+				
+					IBM Business Process Manager Advanced 8.5 <br/>
+					
+				
+					IBM Business Process Manager Advanced 8.0.1 <br/>
+					
+				
+					IBM Business Process Manager Advanced 7.5.1 <br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.1.3<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.1.2<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.1.1<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.1.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  8.0.0.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.1.2<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.1.1<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.1.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.0.1<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.0.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5.0<br/>
+					
+				
+					IBM Business Process Manager Advanced  7.5<br/>
+					
+				
+					IBM Bluemix Liberty for Java  3.2<br/>
+					
+				
+					IBM Bluemix Liberty for Java  2.9<br/>
+					
+				
+					IBM Bluemix Liberty for Java  2.3<br/>
+					
+				
+					IBM Bluemix Liberty for Java  2.2<br/>
+					
+				
+					IBM Bluemix Liberty for Java  2.1<br/>
+					
+				
+					IBM Bluemix Liberty for Java  2.0<br/>
+					
+				
+					IBM Bluemix Liberty for Java  1.9<br/>
+					
+				
+					IBM Bluemix Liberty for Java  1.8<br/>
+					
+				
+					IBM Bluemix Liberty for Java  1.7<br/>
+					
+				
+					IBM Bluemix Liberty for Java  1.6<br/>
+					
+				
+					IBM Bluemix Liberty for Java  1.5<br/>
+					
+				
+					IBM Bluemix Liberty for Java  1.3<br/>
+					
+				
+					IBM BigFix Remote Control  9.1.2<br/>
+					
+				
+					IBM B2B Advanced Communications  1.0.0.5_1<br/>
+					
+				
+					IBM B2B Advanced Communications  1.0.0.5<br/>
+					
+				
+					IBM B2B Advanced Communications  1.0.0.4<br/>
+					
+				
+					IBM B2B Advanced Communications  1.0.0.3<br/>
+					
+				
+					IBM B2B Advanced Communications  1.0.0.2<br/>
+					
+				
+					IBM Atlas eDiscovery Process Management  6.0.3.3<br/>
+					
+				
+					IBM Algo One Algo Risk Application 5.0 <br/>
+					
+				
+					IBM Algo One Algo Risk Application 4.9.1 <br/>
+					
+				
+					IBM Algo One Algo Risk Application  5.1.0<br/>
+					
+				
+					IBM Algo One Algo Risk Application  4.9<br/>
+					
+				
+					IBM Algo One  5.1.0<br/>
+					
+				
+					IBM Algo Credit Manager  5.2.0<br/>
+					
+				
+					IBM Algo Credit Limits  4.7.0<br/>
+					
+				
+					IBM Algo Credit Administrator 2.2 <br/>
+					
+				
+					HP Tomcat 7.0.70.01 for HP-UX  B.11.31<br/>
+					
+				
+					HP JG768AAE HP PCM+ to IMC Std Upg w/ 200-node E-LTU  0<br/>
+					
+				
+					HP JG767AAE HP IMC SmCnct WSM Vrtl Applnc SW E-LTU  0<br/>
+					
+				
+					HP JG766AAE HP IMC SmCnct Vrtl Applnc SW E-LTU  0<br/>
+					
+				
+					HP JG748AAE HP IMC Ent SW Plat w/ 50 Nodes E-LTU  0<br/>
+					
+				
+					HP JG747AAE HP IMC Std SW Plat w/ 50 Nodes E-LTU  0<br/>
+					
+				
+					HP JG660AAE HP IMC Smart Connect w/WLM VAE E-LTU  0<br/>
+					
+				
+					HP JG590AAE HP IMC Bsc WLAN Mgr SW Pltfm 50 AP E-LTU  0<br/>
+					
+				
+					HP JG550AAE HP PMM to IMC Bsc WLM Upgr w/150AP E-LTU  0<br/>
+					
+				
+					HP JG549AAE HP PCM+ to IMC Std Upgr w/200-node E-LTU  0<br/>
+					
+				
+					HP JG548AAE HP PCM+ to IMC Bsc Upgr w/50-node E-LTU  0<br/>
+					
+				
+					HP JG546AAE HP IMC Basic SW Platform w/50-node E-LTU  0<br/>
+					
+				
+					HP JF378AAE HP IMC Ent S/W Pltfrm w/200-node E-LTU  0<br/>
+					
+				
+					HP JF378A HP IMC Ent S/W Platform w/200-node Lic  0<br/>
+					
+				
+					HP JF377AAE HP IMC Std S/W Pltfrm w/100-node E-LTU  0<br/>
+					
+				
+					HP JF377A HP IMC Std S/W Platform w/100-node Lic  0<br/>
+					
+				
+					HP JF289AAE HP Enterprise Management System to Intelligent Manageme  0<br/>
+					
+				
+					HP JF288AAE HP Network Director to Intelligent Management Center  0<br/>
+					
+				
+					HP JD816A HP A-IMC Standard Edition Software DVD Media  0<br/>
+					
+				
+					HP JD815A HP IMC Std Platform w/100-node License  0<br/>
+					
+				
+					HP JD814A HP A-IMC Enterprise Edition Software DVD Media  0<br/>
+					
+				
+					HP JD808A HP IMC Ent Platform w/100-node License  0<br/>
+					
+				
+					HP JD126A HP IMC Ent S/W Platform w/100-node  0<br/>
+					
+				
+					HP JD125A HP IMC Std S/W Platform w/100-node  0<br/>
+					
+				
+					HP IceWall SSO Password Reset Option  10.0<br/>
+					
+				
+					HP IceWall Identity Manager  5.0<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Apache Tomcat 8.0.35 <br/>
+					
+				
+					Apache Tomcat 8.0.34 <br/>
+					
+				
+					Apache Tomcat 8.0.33 <br/>
+					
+				
+					Apache Tomcat 8.0.30 <br/>
+					
+				
+					Apache Tomcat 8.0.27 <br/>
+					
+				
+					Apache Tomcat 8.0.17 <br/>
+					
+				
+					Apache Tomcat 8.0.15 <br/>
+					
+				
+					Apache Tomcat 8.0.9 <br/>
+					
+				
+					Apache Tomcat 8.0.8 <br/>
+					
+				
+					Apache Tomcat 8.0.5 <br/>
+					
+				
+					Apache Tomcat 8.0.3 <br/>
+					
+				
+					Apache Tomcat 8.0.1 <br/>
+					
+				
+					Apache Tomcat 7.0.69 <br/>
+					
+				
+					Apache Tomcat 7.0.67 <br/>
+					
+				
+					Apache Tomcat 7.0.65 <br/>
+					
+				
+					Apache Tomcat 7.0.59 <br/>
+					
+				
+					Apache Tomcat 7.0.57 <br/>
+					
+				
+					Apache Tomcat 7.0.54 <br/>
+					
+				
+					Apache Tomcat 7.0.53 <br/>
+					
+				
+					Apache Tomcat 7.0.50 <br/>
+					
+				
+					Apache Tomcat 7.0.33 <br/>
+					
+				
+					Apache Tomcat 7.0.32 <br/>
+					
+				
+					Apache Tomcat 7.0.31 <br/>
+					
+				
+					Apache Tomcat 7.0.30 <br/>
+					
+				
+					Apache Tomcat 7.0.29 <br/>
+					
+				
+					Apache Tomcat 7.0.28 <br/>
+					
+				
+					Apache Tomcat 7.0.27 <br/>
+					
+				
+					Apache Tomcat 7.0.26 <br/>
+					
+				
+					Apache Tomcat 7.0.25 <br/>
+					
+				
+					Apache Tomcat 7.0.24 <br/>
+					
+				
+					Apache Tomcat 7.0.23 <br/>
+					
+				
+					Apache Tomcat 7.0.16 <br/>
+					
+				
+					Apache Tomcat 7.0.15 <br/>
+					
+				
+					Apache Tomcat 7.0.14 <br/>
+					
+				
+					Apache Tomcat 7.0.13 <br/>
+					
+				
+					Apache Tomcat 7.0.12 <br/>
+					
+				
+					Apache Tomcat 7.0.9 <br/>
+					
+				
+					Apache Tomcat 7.0.8 <br/>
+					
+				
+					Apache Tomcat 7.0.7 <br/>
+					
+				
+					Apache Tomcat 7.0.6 <br/>
+					
+				
+					Apache Tomcat 7.0.4 <br/>
+					
+				
+					Apache Tomcat 7.0.3 <br/>
+					
+				
+					Apache Tomcat 7.0.2 <br/>
+					
+				
+					Apache Tomcat 7.0.1 <br/>
+					
+				
+					Apache Tomcat  9.0.0M6<br/>
+					
+				
+					Apache Tomcat  9.0.0.M5<br/>
+					
+				
+					Apache Tomcat  9.0.0.M4<br/>
+					
+				
+					Apache Tomcat  9.0.0.M3<br/>
+					
+				
+					Apache Tomcat  9.0.0.M2<br/>
+					
+				
+					Apache Tomcat  9.0.0.M1<br/>
+					
+				
+					Apache Tomcat  8.5.2<br/>
+					
+				
+					Apache Tomcat  8.5.0<br/>
+					
+				
+					Apache Tomcat  8.0.32<br/>
+					
+				
+					Apache Tomcat  8.0.0-RC6<br/>
+					
+				
+					Apache Tomcat  8.0.0-RC3<br/>
+					
+				
+					Apache Tomcat  8.0.0 Rc5<br/>
+					
+				
+					Apache Tomcat  8.0.0 Rc2<br/>
+					
+				
+					Apache Tomcat  8.0.0 Rc10<br/>
+					
+				
+					Apache Tomcat  8.0.0 Rc1<br/>
+					
+				
+					Apache Tomcat  8.0<br/>
+					
+				
+					Apache Tomcat  7.0.68<br/>
+					
+				
+					Apache Tomcat  7.0.55<br/>
+					
+				
+					Apache Tomcat  7.0.5<br/>
+					
+				
+					Apache Tomcat  7.0.49<br/>
+					
+				
+					Apache Tomcat  7.0.48<br/>
+					
+				
+					Apache Tomcat  7.0.47<br/>
+					
+				
+					Apache Tomcat  7.0.46<br/>
+					
+				
+					Apache Tomcat  7.0.45<br/>
+					
+				
+					Apache Tomcat  7.0.44<br/>
+					
+				
+					Apache Tomcat  7.0.43<br/>
+					
+				
+					Apache Tomcat  7.0.42<br/>
+					
+				
+					Apache Tomcat  7.0.41<br/>
+					
+				
+					Apache Tomcat  7.0.40<br/>
+					
+				
+					Apache Tomcat  7.0.39<br/>
+					
+				
+					Apache Tomcat  7.0.38<br/>
+					
+				
+					Apache Tomcat  7.0.37<br/>
+					
+				
+					Apache Tomcat  7.0.36<br/>
+					
+				
+					Apache Tomcat  7.0.35<br/>
+					
+				
+					Apache Tomcat  7.0.34<br/>
+					
+				
+					Apache Tomcat  7.0.22<br/>
+					
+				
+					Apache Tomcat  7.0.21<br/>
+					
+				
+					Apache Tomcat  7.0.20<br/>
+					
+				
+					Apache Tomcat  7.0.19<br/>
+					
+				
+					Apache Tomcat  7.0.18<br/>
+					
+				
+					Apache Tomcat  7.0.11<br/>
+					
+				
+					Apache Tomcat  7.0.10<br/>
+					
+				
+					Apache Tomcat  7.0<br/>
+					
+				
+					Apache Struts  2.5.1<br/>
+					
+				
+					Apache Struts  2.5<br/>
+					
+				
+					Apache Commons FileUpload  1.3.1<br/>
+					
+				
+					Apache Commons FileUpload  1.3<br/>
+					
+				
+					Apache Commons FileUpload  1.2.2<br/>
+					
+				
+					Apache Commons FileUpload  1.2.1<br/>
+					
+				
+					Apache Commons FileUpload  1.2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Solaris  11.3 SRU11.6<br/>
+					
+				
+					IBM Case Manager 5.2.1 <br/>
+					
+				
+					IBM Case Manager 5.2 <br/>
+					
+				
+					IBM BigFix Remote Control 9.1.3 <br/>
+					
+				
+					Apache Tomcat 8.0.36 <br/>
+					
+				
+					Apache Tomcat 7.0.70 <br/>
+					
+				
+					Apache Tomcat  9.0.0M8<br/>
+					
+				
+					Apache Tomcat  8.5.3<br/>
+					
+				
+					Apache Commons FileUpload 1.3.2 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

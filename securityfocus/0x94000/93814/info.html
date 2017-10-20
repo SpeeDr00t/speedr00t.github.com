@@ -1,0 +1,871 @@
+#SpeeDr00t@Black Falcon<br>#bid93814<p><b><span style="font-size: 18pt;">ISC BIND CVE-2016-2848 Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/93814/info">info</a><br><a href="http://www.securityfocus.com/bid/93814/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/93814/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/93814/solution">solution</a><br><a href="http://www.securityfocus.com/bid/93814/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				93814
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-2848<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 20 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 07 2017 04:01AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Toshifumi Sakaguchi
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					ISC BIND 9.6 <br/>
+					
+				
+					ISC BIND 9.5.1 P3<br/>
+					
+				
+					ISC BIND 9.5.1 P1<br/>
+					
+				
+					ISC BIND 9.5 a2<br/>
+					
+				
+					ISC BIND 9.5 a1<br/>
+					
+				
+					ISC BIND 9.4.3 P3<br/>
+					
+				
+					ISC BIND 9.4.3 <br/>
+					
+				
+					ISC BIND 9.4.1 -P1<br/>
+					
+				
+					ISC BIND 9.4.1 <br/>
+					
+				
+					ISC BIND 9.4 rc2<br/>
+					
+				
+					ISC BIND 9.4 rc1<br/>
+					
+				
+					ISC BIND 9.4 b4<br/>
+					
+				
+					ISC BIND 9.4 b3<br/>
+					
+				
+					ISC BIND 9.4 b2<br/>
+					
+				
+					ISC BIND 9.4 b1<br/>
+					
+				
+					ISC BIND 9.4 a6<br/>
+					
+				
+					ISC BIND 9.4 a5<br/>
+					
+				
+					ISC BIND 9.4 a4<br/>
+					
+				
+					ISC BIND 9.4 a3<br/>
+					
+				
+					ISC BIND 9.4 a2<br/>
+					
+				
+					ISC BIND 9.4 a1<br/>
+					
+				
+					ISC BIND 9.4 <br/>
+					
+				
+					ISC BIND 9.3.6 P1<br/>
+					
+				
+					ISC BIND 9.3.6 <br/>
+					
+				
+					ISC BIND 9.3.5 <br/>
+					
+				
+					ISC BIND 9.3.4 <br/>
+					
+				
+					ISC BIND 9.3.3 rc3<br/>
+					
+				
+					ISC BIND 9.3.3 rc2<br/>
+					
+				
+					ISC BIND 9.3.3 rc1<br/>
+					
+				
+					ISC BIND 9.3.3 b1<br/>
+					
+				
+					ISC BIND 9.3.3 <br/>
+					
+				
+					ISC BIND 9.3.2 -P2<br/>
+					
+				
+					ISC BIND 9.3.2 -P1<br/>
+					
+				
+					ISC BIND 9.3.2 <br/>
+					
+				
+					ISC BIND 9.3.1 <br/>
+					
+				
+					ISC BIND 9.3 <br/>
+					
+				
+					ISC BIND 9.2.8 <br/>
+					
+				
+					ISC BIND 9.2.7 rc3<br/>
+					
+				
+					ISC BIND 9.2.7 rc2<br/>
+					
+				
+					ISC BIND 9.2.7 rc1<br/>
+					
+				
+					ISC BIND 9.2.7 b1<br/>
+					
+				
+					ISC BIND 9.2.7 <br/>
+					
+				
+					ISC BIND 9.2.6 -P2<br/>
+					
+				
+					ISC BIND 9.2.6 -P1<br/>
+					
+				
+					ISC BIND 9.2.6 <br/>
+					
+				
+					ISC BIND 9.2.5 <br/>
+					
+				
+					ISC BIND 9.2.4 <br/>
+					
+				
+					ISC BIND 9.2.3 <br/>
+					
+				
+					ISC BIND 9.2.2 <br/>
+					
+				
+					ISC BIND 9.2.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						MandrakeSoft Single Network Firewall 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO Unixware 7.1.3 <br/>
+</span>
+					
+				
+					ISC BIND 9.2 <br/>
+					
+				
+					ISC BIND 9.1.3 <br/>
+					
+				
+					ISC BIND 9.1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					ISC BIND 9.1.1 <br/>
+					
+				
+					ISC BIND 9.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenUnix 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						HP Secure OS software for Linux 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 x86<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+					
+				
+					ISC BIND  9.7.1-P2<br/>
+					
+				
+					ISC BIND  9.7.1 P1<br/>
+					
+				
+					ISC BIND  9.7.1<br/>
+					
+				
+					ISC BIND  9.7.0 P2<br/>
+					
+				
+					ISC BIND  9.7.0<br/>
+					
+				
+					ISC BIND  9.6.1-P3<br/>
+					
+				
+					ISC BIND  9.6.1-P2<br/>
+					
+				
+					ISC BIND  9.6.0-P1<br/>
+					
+				
+					ISC BIND  9.5.2-P2<br/>
+					
+				
+					ISC BIND  9.5.2-P1<br/>
+					
+				
+					ISC BIND  9.5.1b1<br/>
+					
+				
+					ISC BIND  9.5.0b2<br/>
+					
+				
+					ISC BIND  9.5.0b1<br/>
+					
+				
+					ISC BIND  9.5.0a7<br/>
+					
+				
+					ISC BIND  9.5.0a6<br/>
+					
+				
+					ISC BIND  9.5.0a5<br/>
+					
+				
+					ISC BIND  9.5.0a4<br/>
+					
+				
+					ISC BIND  9.5.0a3<br/>
+					
+				
+					ISC BIND  9.5.0-P2-W2<br/>
+					
+				
+					ISC BIND  9.5.0-P2-W1<br/>
+					
+				
+					ISC BIND  9.5.0-P2<br/>
+					
+				
+					ISC BIND  9.4.3b2<br/>
+					
+				
+					ISC BIND  9.4.3-P5<br/>
+					
+				
+					ISC BIND  9.4.3-P4<br/>
+					
+				
+					ISC BIND  9.4.3-P1<br/>
+					
+				
+					ISC BIND  9.4.2-P2-W2<br/>
+					
+				
+					ISC BIND  9.4.2-P2-W1<br/>
+					
+				
+					ISC BIND  9.4.2-P2<br/>
+					
+				
+					ISC BIND  9.3.5-P2-W2<br/>
+					
+				
+					ISC BIND  9.3.5-P2-W1<br/>
+					
+				
+					ISC BIND  9.3.5-P2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM Netezza Host Management 5.4.4 <br/>
+					
+				
+					IBM Netezza Host Management 5.4.3 <br/>
+					
+				
+					IBM Netezza Host Management  5.4.6.0<br/>
+					
+				
+					IBM AIX 7.1 <br/>
+					
+				
+					F5 BIG-IP WOM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP WOM 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP WOM 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP WOM 11.2 <br/>
+					
+				
+					F5 BIG-IP WOM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WOM 10.1 <br/>
+					
+				
+					F5 BIG-IP WOM  11.3.0<br/>
+					
+				
+					F5 BIG-IP WOM  11.2.1<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.3 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.2.4 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 10.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP PSM 11.4 <br/>
+					
+				
+					F5 BIG-IP PSM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP PSM 11.3 <br/>
+					
+				
+					F5 BIG-IP PSM 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP PSM 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP PSM 11.2 <br/>
+					
+				
+					F5 BIG-IP PSM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP PSM  11.2.1<br/>
+					
+				
+					F5 BIG-IP PEM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP PEM 11.4 <br/>
+					
+				
+					F5 BIG-IP PEM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP PEM 11.3 <br/>
+					
+				
+					F5 BIG-IP LTM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 <br/>
+					
+				
+					F5 BIG-IP LTM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP LTM 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP LTM 11.2 <br/>
+					
+				
+					F5 BIG-IP LTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP LTM  11.3.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP LTM  10.1.0<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 10.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP GTM 11.4 <br/>
+					
+				
+					F5 BIG-IP GTM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP GTM 11.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP GTM 11.2 <br/>
+					
+				
+					F5 BIG-IP GTM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP GTM  10.1.0<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.3 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP Edge Gateway 11.2 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway 10.2.4 <br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  10.1.0<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 <br/>
+					
+				
+					F5 BIG-IP ASM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP ASM 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP ASM 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP ASM  10.1.0<br/>
+					
+				
+					F5 BIG-IP APM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP APM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP APM 11.2.1 HF8<br/>
+					
+				
+					F5 BIG-IP APM 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP APM 11.2 <br/>
+					
+				
+					F5 BIG-IP APM 10.2.4 <br/>
+					
+				
+					F5 BIG-IP APM  11.4.0<br/>
+					
+				
+					F5 BIG-IP APM  11.3.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP Analytics 11.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 HF8<br/>
+					
+				
+					F5 BIG-IP Analytics 11.2 <br/>
+					
+				
+					F5 BIG-IP AFM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP AFM 11.3 HF6<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF2<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

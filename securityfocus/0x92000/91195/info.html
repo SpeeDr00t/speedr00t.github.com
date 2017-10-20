@@ -1,0 +1,829 @@
+#SpeeDr00t@Black Falcon<br>#bid91195<p><b><span style="font-size: 18pt;">libTIFF CVE-2016-5320 Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/91195/info">info</a><br><a href="http://www.securityfocus.com/bid/91195/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/91195/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/91195/solution">solution</a><br><a href="http://www.securityfocus.com/bid/91195/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				91195
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-5320<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jun 15 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 04:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Kaixiang Zhang of the Cloud Security Team, Qihoo 360
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle Linux  7.0<br/>
+					
+				
+					Oracle Linux  6.0<br/>
+					
+				
+					LibTIFF LibTIFF 4.0.3 <br/>
+					
+				
+					LibTIFF LibTIFF 4.0.2 <br/>
+					
+				
+					LibTIFF LibTIFF 3.9.4 <br/>
+					
+				
+					LibTIFF LibTIFF 3.9.3 <br/>
+					
+				
+					LibTIFF LibTIFF 3.9.2 <br/>
+					
+				
+					LibTIFF LibTIFF 3.9 <br/>
+					
+				
+					LibTIFF LibTIFF 3.8.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+					
+				
+					LibTIFF LibTIFF 3.8.1 <br/>
+					
+				
+					LibTIFF LibTIFF 3.8 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+					
+				
+					LibTIFF LibTIFF 3.7.4 <br/>
+					
+				
+					LibTIFF LibTIFF 3.7.3 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+					
+				
+					LibTIFF LibTIFF 3.7.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.1 <br/>
+</span>
+					
+				
+					LibTIFF LibTIFF 3.7.1 <br/>
+					
+				
+					LibTIFF LibTIFF 3.7 <br/>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux  -current<br/>
+</span>
+					
+				
+					LibTIFF LibTIFF 3.6.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						OpenPKG OpenPKG  Current<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Turbolinux Turbolinux Server 10.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 powerpc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 5.0 4 amd64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					LibTIFF LibTIFF 3.6 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.7 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.6 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.5 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.4 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.3 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.2 <br/>
+					
+				
+					LibTIFF LibTIFF 3.5.1 <br/>
+					
+				
+					LibTIFF LibTIFF 3.4 <br/>
+					
+				
+					LibTIFF LibTIFF  4.0.6<br/>
+					
+				
+					LibTIFF LibTIFF  4.0.5<br/>
+					
+				
+					LibTIFF LibTIFF  4.0.4<br/>
+					
+				
+					LibTIFF LibTIFF  4.0.1<br/>
+					
+				
+					LibTIFF LibTIFF  4.0<br/>
+					
+				
+					LibTIFF LibTIFF  3.9.5<br/>
+					
+				
+					LibTIFF LibTIFF  3.9.1<br/>
+					
+				
+					LibTIFF LibTIFF  3.9<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP AAM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP AAM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP AAM 12.0 <br/>
+					
+				
+					F5 BIG-IP AAM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP AAM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP AAM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP AAM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP AAM  12.1.0<br/>
+					
+				
+					F5 BIG-IP AAM  12.0.0 HF3<br/>
+					
+				
+					F5 BIG-IP AAM  12.0.0 HF2<br/>
+					
+				
+					F5 BIG-IP AAM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AAM  11.5.4<br/>
+					
+				
+					F5 BIG-IP AAM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	An attacker can exploit this issue using readily available tools.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,1842 @@
+#SpeeDr00t@Black Falcon<br>#bid90864<p><b><span style="font-size: 18pt;">Libxml2 'xmlParseName' CVE-2016-4447 Remote Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/90864/info">info</a><br><a href="http://www.securityfocus.com/bid/90864/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/90864/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/90864/solution">solution</a><br><a href="http://www.securityfocus.com/bid/90864/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				90864
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-4447<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				May 23 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 02:06AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				David Kilzer
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					XMLSoft Libxml2 2.9 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.8 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.7 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.6 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.5 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.4 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.3 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.2 <br/>
+					
+				
+					XMLSoft Libxml2 2.7.1 <br/>
+					
+				
+					XMLSoft Libxml2 2.7 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.32 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.31 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.30 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.26 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.24 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.23 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.22 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.21 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.20 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.18 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.17 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.16 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.15 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.14 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.13 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.12 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.11 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.9 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.8 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.7 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.6 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.5 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.4 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.3 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.2 <br/>
+					
+				
+					XMLSoft Libxml2 2.6.1 <br/>
+					
+				
+					XMLSoft Libxml2 2.5.11 <br/>
+					
+				
+					XMLSoft Libxml2 2.5.10 <br/>
+					
+				
+					XMLSoft Libxml2 2.5.8 <br/>
+					
+				
+					XMLSoft Libxml2 2.5.4 <br/>
+					
+				
+					XMLSoft Libxml2 2.5.1 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.30 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.29 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.28 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.27 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.26 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.24 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.23 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.22 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.21 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.20 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.19 <br/>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+					
+				
+					XMLSoft Libxml2 2.4.18 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.17 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.16 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.15 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.14 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.13 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.12 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.11 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.10 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.9 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.8 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.7 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.6 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.5 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.4 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.3 <br/>
+					
+				
+					XMLSoft Libxml2 2.4.2 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.14 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.13 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.12 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.10 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.8 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.7 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.6 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.5 <br/>
+					
+				
+					XMLSoft Libxml2 2.3.4 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.11 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.10 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.7 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.6 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.5 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.4 <br/>
+					
+				
+					XMLSoft Libxml2 2.2.3 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.14 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.10 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.9 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.5 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.4 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.3 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.1 <br/>
+					
+				
+					XMLSoft Libxml2 1.8.1 <br/>
+					
+				
+					XMLSoft Libxml2 1.7.4 <br/>
+					
+				
+					XMLSoft Libxml2 1.7 <br/>
+					
+				
+					XMLSoft Libxml2  2.9.3<br/>
+					
+				
+					XMLSoft Libxml2  2.9.2<br/>
+					
+				
+					XMLSoft Libxml2  2.9.1<br/>
+					
+				
+					XMLSoft Libxml2  2.6.29<br/>
+					
+				
+					XMLSoft Libxml2  2.6.28<br/>
+					
+				
+					XMLSoft Libxml2  2.6.27<br/>
+					
+				
+					XMLSoft Libxml2  2.6.25<br/>
+					
+				
+					XMLSoft Libxml2  2.6.0<br/>
+					
+				
+					XMLSoft Libxml2  2.5.7<br/>
+					
+				
+					XMLSoft Libxml2  2.5.0<br/>
+					
+				
+					XMLSoft Libxml2  2.4.25<br/>
+					
+				
+					XMLSoft Libxml2  2.4.1<br/>
+					
+				
+					XMLSoft Libxml2  2.3.3<br/>
+					
+				
+					XMLSoft Libxml2  2.3.2<br/>
+					
+				
+					XMLSoft Libxml2  2.3.11<br/>
+					
+				
+					XMLSoft Libxml2  2.3.1<br/>
+					
+				
+					XMLSoft Libxml2  2.3.0<br/>
+					
+				
+					XMLSoft Libxml2  2.2.9<br/>
+					
+				
+					XMLSoft Libxml2  2.2.8<br/>
+					
+				
+					XMLSoft Libxml2  2.2.2<br/>
+					
+				
+					XMLSoft Libxml2  2.2.1<br/>
+					
+				
+					XMLSoft Libxml2  2.2.0<br/>
+					
+				
+					XMLSoft Libxml2  2.1.1<br/>
+					
+				
+					XMLSoft Libxml2  2.1.0<br/>
+					
+				
+					XMLSoft Libxml2  2.0.0<br/>
+					
+				
+					XMLSoft Libxml2  1.8.7<br/>
+					
+				
+					XMLSoft Libxml2  1.8.6<br/>
+					
+				
+					XMLSoft Libxml2  1.8.16<br/>
+					
+				
+					XMLSoft Libxml2  1.8.13<br/>
+					
+				
+					XMLSoft Libxml2  1.7.3<br/>
+					
+				
+					XMLSoft Libxml2  1.7.2<br/>
+					
+				
+					XMLSoft Libxml2  1.7.1<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle Linux  7<br/>
+					
+				
+					Oracle Linux  6<br/>
+					
+				
+					McAfee Web Gateway  7.6.2.3<br/>
+					
+				
+					McAfee Web Gateway  7.6.2.2<br/>
+					
+				
+					McAfee Web Gateway  7.6.2.1<br/>
+					
+				
+					McAfee Web Gateway  7.6.2.0<br/>
+					
+				
+					McAfee Web Gateway  7.5.2.9<br/>
+					
+				
+					McAfee Web Gateway  7.5.2.8<br/>
+					
+				
+					McAfee Web Gateway  7.5.2.10<br/>
+					
+				
+					Juniper JUNOS Space  15.2R2<br/>
+					
+				
+					Juniper JUNOS Space  15.2R1<br/>
+					
+				
+					Juniper JUNOS Space  15.1R2.11<br/>
+					
+				
+					Juniper JUNOS Space  15.1F2<br/>
+					
+				
+					Juniper JUNOS Space  14.1R1.9<br/>
+					
+				
+					Juniper JUNOS Space  14.1R1<br/>
+					
+				
+					Juniper JUNOS Space  13.3<br/>
+					
+				
+					Juniper JUNOS Space  12.3<br/>
+					
+				
+					Juniper JUNOS Space  12.1<br/>
+					
+				
+					Juniper JUNOS Space  11.2<br/>
+					
+				
+					Juniper JUNOS Space  1.3<br/>
+					
+				
+					IBM Streams  4.1.1.1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 19<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 18<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 14<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Fix Pack 11<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 FP 9<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 fix pack 13<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Fix Pack 10<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.4 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.3 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 2<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Fix Pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 6<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 Appliance fix pack 4<br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 FixPack 15<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 FixPack 13<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 fix pack 11<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 9<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 8<br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0 fix pack 10<br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 FixPack 15<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 FixPack 12<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 fix pack 10<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.3<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.2<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.1<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.0<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0 fix pack 9<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0 fix pack 8<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 FP 10<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.5 JRE Update 5<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.5 FixPack 5<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.5 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0 fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 JRE Update 5<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 JRE Update 4<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 FixPack 3<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance Fi<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.3 Appliance FP<br/>
+					
+				
+					IBM Security Privileged Identity Manager  2.0<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Network Protection  5.3.2.3<br/>
+					
+				
+					IBM Security Network Protection  5.3.2.2<br/>
+					
+				
+					IBM Security Network Protection  5.3.2.1<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.9<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.8<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.7<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.6<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.5<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.4<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.3 <br/>
+					
+				
+					IBM Security Network Protection  5.3.1.2<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.1<br/>
+					
+				
+					IBM Security Identity Governance and Intelligence 5.2.1 <br/>
+					
+				
+					IBM Security Guardium  10.1<br/>
+					
+				
+					IBM Security Guardium  10<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 3<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0<br/>
+					
+				
+					IBM Security Access Manager  9.0.1.0<br/>
+					
+				
+					IBM Security Access Manager  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager  9.0<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.7 Interim Fix <br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.7 Interim Fix <br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.7 Interim Fix <br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.7 Interim Fix <br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.7<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.6<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.5<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.4<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.3<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.2<br/>
+					
+				
+					IBM Rational Systems Tester  3.3.0.1<br/>
+					
+				
+					IBM Rational Systems Tester  3.3<br/>
+					
+				
+					IBM RackSwitch G8332  7.7.23.0<br/>
+					
+				
+					IBM RackSwitch G8316  7.9.17.0<br/>
+					
+				
+					IBM RackSwitch G8264T  7.9.17.0<br/>
+					
+				
+					IBM RackSwitch G8264CS  7.8.14.0<br/>
+					
+				
+					IBM RackSwitch G8264  7.9.17.0<br/>
+					
+				
+					IBM RackSwitch G8264  7.11.7.0<br/>
+					
+				
+					IBM RackSwitch G8124/G8124-E  7.9.17.0<br/>
+					
+				
+					IBM RackSwitch G8124/G8124-E  7.11.7.0<br/>
+					
+				
+					IBM RackSwitch G8052  7.9.17.0<br/>
+					
+				
+					IBM RackSwitch G8052  7.11.7.0<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM MQ Appliance  M2001<br/>
+					
+				
+					IBM MQ Appliance  M2000<br/>
+					
+				
+					IBM Lotus Protector for Mail Security 2.8 0<br/>
+					
+				
+					IBM Lotus Protector for Mail Security  2.8.1.0<br/>
+					
+				
+					IBM Lotus Protector for Mail Security  2.8.1<br/>
+					
+				
+					IBM Integrated Management Module II (IMM2) for System X  1aoo<br/>
+					
+				
+					IBM Integrated Management Module II (IMM2) for Flex Systems  1aoo<br/>
+					
+				
+					IBM Integrated Management Module II (IMM2) for BladeCenter Systems  1aoo<br/>
+					
+				
+					IBM InfoSphere Streams 4.0.1 <br/>
+					
+				
+					IBM InfoSphere Streams 3.2.1 <br/>
+					
+				
+					IBM InfoSphere Streams  4.0.1.2<br/>
+					
+				
+					IBM InfoSphere Streams  4.0.1.1<br/>
+					
+				
+					IBM InfoSphere Streams  4.0.1.0<br/>
+					
+				
+					IBM InfoSphere Streams  4.0.0.1<br/>
+					
+				
+					IBM InfoSphere Streams  4.0.0.0<br/>
+					
+				
+					IBM InfoSphere Streams  3.2.1.5<br/>
+					
+				
+					IBM InfoSphere Streams  3.2.1.4<br/>
+					
+				
+					IBM InfoSphere Streams  3.2.1.3<br/>
+					
+				
+					IBM InfoSphere Streams  3.2.1.2<br/>
+					
+				
+					IBM InfoSphere Streams  3.2.1.1<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.8<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.7<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.6<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.5<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.4<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.3 <br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.1<br/>
+					
+				
+					IBM InfoSphere Streams  3.1.0.0<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.6<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.5<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.4<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.3<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.2<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.1<br/>
+					
+				
+					IBM InfoSphere Streams  3.0.0.0<br/>
+					
+				
+					IBM InfoSphere Streams  2.0.0.4<br/>
+					
+				
+					IBM InfoSphere Streams  1.2.1.0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM DataPower Gateways  7.5.1.1<br/>
+					
+				
+					IBM DataPower Gateways  7.5.1.0<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.2<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.0<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.8<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.6<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.5<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.4<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.3<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.2<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.0<br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.2.2 <br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.2.1 1<br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.2.1 <br/>
+					
+				
+					IBM Cognos Business Intelligence Server 10.1.1 <br/>
+					
+				
+					IBM Cognos Business Intelligence Server  10.2<br/>
+					
+				
+					HP IceWall Federation Agent  3.0<br/>
+					
+				
+					eSignal eSignal 6.0.2 <br/>
+					
+				
+					Bluecoat Security Analytics Platform  7.1<br/>
+					
+				
+					Bluecoat Security Analytics Platform  7.0<br/>
+					
+				
+					Bluecoat Security Analytics Platform  6.6<br/>
+					
+				
+					Bluecoat Proxysg  6.6<br/>
+					
+				
+					Bluecoat Proxysg  6.5<br/>
+					
+				
+					Bluecoat Norman Network Protection  5.3<br/>
+					
+				
+					Bluecoat Industrial Control Systems Network Scanner  5.3<br/>
+					
+				
+					Bluecoat Industrial Control System Protection  5.3<br/>
+					
+				
+					Bluecoat Director  6.1<br/>
+					
+				
+					Bluecoat AuthConnector  2.5<br/>
+					
+				
+					Bluecoat Advanced Secure Gateway  6.6<br/>
+					
+				
+					Apple watchOS 2.2.1 <br/>
+					
+				
+					Apple watchOS 2.0.1 <br/>
+					
+				
+					Apple watchOS 1.0.1 <br/>
+					
+				
+					Apple watchOS  2.2<br/>
+					
+				
+					Apple watchOS  2.1<br/>
+					
+				
+					Apple watchOS  2.0<br/>
+					
+				
+					Apple watchOS  1.0<br/>
+					
+				
+					Apple Watch  0<br/>
+					
+				
+					Apple Mac Os X 10.11.3 <br/>
+					
+				
+					Apple Mac Os X 10.11.2 <br/>
+					
+				
+					Apple Mac Os X 10.11.1 <br/>
+					
+				
+					Apple Mac Os X  10.11.5<br/>
+					
+				
+					Apple Mac Os X  10.11.4<br/>
+					
+				
+					Apple Mac Os X  10.11<br/>
+					
+				
+					Apple iTunes 12.3.2 <br/>
+					
+				
+					Apple iTunes 12.3.1 <br/>
+					
+				
+					Apple iTunes 11.2.1 <br/>
+					
+				
+					Apple iTunes 11.1.5 <br/>
+					
+				
+					Apple iTunes 11.1.4 <br/>
+					
+				
+					Apple iTunes 11.1.3 <br/>
+					
+				
+					Apple iTunes 11.1.2 <br/>
+					
+				
+					Apple iTunes 11.1.1 <br/>
+					
+				
+					Apple iTunes 11.0.5 <br/>
+					
+				
+					Apple iTunes 11.0.4 <br/>
+					
+				
+					Apple iTunes 11.0.2 <br/>
+					
+				
+					Apple iTunes 10.6.3 <br/>
+					
+				
+					Apple iTunes 10.6.1 <br/>
+					
+				
+					Apple iTunes 10.5.1 <br/>
+					
+				
+					Apple iTunes 10.1.2 <br/>
+					
+				
+					Apple iTunes 9.2.1 <br/>
+					
+				
+					Apple iTunes 9.0.2 <br/>
+					
+				
+					Apple iTunes 9.0.1 .8<br/>
+					
+				
+					Apple iTunes 9.0.1 <br/>
+					
+				
+					Apple iTunes 9.0 <br/>
+					
+				
+					Apple iTunes 7.3.2 <br/>
+					
+				
+					Apple iTunes 7.3.1 <br/>
+					
+				
+					Apple iTunes 7.3 <br/>
+					
+				
+					Apple iTunes 7.0.2 <br/>
+					
+				
+					Apple iTunes 6.0.5 <br/>
+					
+				
+					Apple iTunes 6.0.4 <br/>
+					
+				
+					Apple iTunes 6.0.3 <br/>
+					
+				
+					Apple iTunes 6.0.1 <br/>
+					
+				
+					Apple iTunes 6.0 <br/>
+					
+				
+					Apple iTunes 5.0 <br/>
+					
+				
+					Apple iTunes 4.8 <br/>
+					
+				
+					Apple iTunes 4.7 <br/>
+					
+				
+					Apple iTunes 4.6 <br/>
+					
+				
+					Apple iTunes 4.5 <br/>
+					
+				
+					Apple iTunes 4.2 .72<br/>
+					
+				
+					Apple iTunes  9.2<br/>
+					
+				
+					Apple iTunes  9.1.1<br/>
+					
+				
+					Apple iTunes  9.1<br/>
+					
+				
+					Apple iTunes  9.0.3<br/>
+					
+				
+					Apple iTunes  8.2<br/>
+					
+				
+					Apple iTunes  8.1<br/>
+					
+				
+					Apple iTunes  8.0.2.20<br/>
+					
+				
+					Apple iTunes  7.4<br/>
+					
+				
+					Apple iTunes  12.4<br/>
+					
+				
+					Apple iTunes  12.3<br/>
+					
+				
+					Apple iTunes  12.2<br/>
+					
+				
+					Apple iTunes  12.0.1<br/>
+					
+				
+					Apple iTunes  11.2<br/>
+					
+				
+					Apple iTunes  11.1<br/>
+					
+				
+					Apple iTunes  11.0.3<br/>
+					
+				
+					Apple iTunes  11.0.1<br/>
+					
+				
+					Apple iTunes  11.0.0.163<br/>
+					
+				
+					Apple iTunes  11.0<br/>
+					
+				
+					Apple iTunes  10.7<br/>
+					
+				
+					Apple iTunes  10.6.1.7<br/>
+					
+				
+					Apple iTunes  10.6<br/>
+					
+				
+					Apple iTunes  10.5.3<br/>
+					
+				
+					Apple iTunes  10.5.2<br/>
+					
+				
+					Apple iTunes  10.5.1.42<br/>
+					
+				
+					Apple iTunes  10.5<br/>
+					
+				
+					Apple iTunes  10.4.1.10<br/>
+					
+				
+					Apple iTunes  10.4.1<br/>
+					
+				
+					Apple iTunes  10.4.0.80<br/>
+					
+				
+					Apple iTunes  10.4<br/>
+					
+				
+					Apple iTunes  10.3.1<br/>
+					
+				
+					Apple iTunes  10.3<br/>
+					
+				
+					Apple iTunes  10.2.2.12<br/>
+					
+				
+					Apple iTunes  10.2.2<br/>
+					
+				
+					Apple iTunes  10.2<br/>
+					
+				
+					Apple iTunes  10.1.1.4<br/>
+					
+				
+					Apple iTunes  10.1.1<br/>
+					
+				
+					Apple iTunes  10.1<br/>
+					
+				
+					Apple iTunes  10.0.1<br/>
+					
+				
+					Apple iTunes  10<br/>
+					
+				
+					Apple iPod Touch  0<br/>
+					
+				
+					Apple iPhone  0<br/>
+					
+				
+					Apple iPad  0<br/>
+					
+				
+					Apple iOS 5  0<br/>
+					
+				
+					Apple iOS 4  0<br/>
+					
+				
+					Apple iOS 9.3.2 <br/>
+					
+				
+					Apple iOS 9.3.1 <br/>
+					
+				
+					Apple iOS 9.2.1 <br/>
+					
+				
+					Apple iOS 9.0.2 <br/>
+					
+				
+					Apple iOS 9.0.1 <br/>
+					
+				
+					Apple iOS 8.4.1 <br/>
+					
+				
+					Apple iOS 7.2 <br/>
+					
+				
+					Apple iOS 7.0.6 <br/>
+					
+				
+					Apple iOS 7.0.5 <br/>
+					
+				
+					Apple iOS 7.0.3 <br/>
+					
+				
+					Apple iOS 7.0.2 <br/>
+					
+				
+					Apple iOS 7.0.1 <br/>
+					
+				
+					Apple iOS 6.3.1 <br/>
+					
+				
+					Apple iOS 6.1.6 <br/>
+					
+				
+					Apple iOS 6.1.4 <br/>
+					
+				
+					Apple iOS 6.1.3 <br/>
+					
+				
+					Apple iOS 4.2.1 <br/>
+					
+				
+					Apple iOS 4.0.2 <br/>
+					
+				
+					Apple iOS 4.0.1 <br/>
+					
+				
+					Apple iOS 3.2.2 <br/>
+					
+				
+					Apple iOS 3.2.1 <br/>
+					
+				
+					Apple iOS  9.3<br/>
+					
+				
+					Apple iOS  9.2<br/>
+					
+				
+					Apple iOS  9.1<br/>
+					
+				
+					Apple iOS  9<br/>
+					
+				
+					Apple iOS  8.4<br/>
+					
+				
+					Apple iOS  8.3<br/>
+					
+				
+					Apple iOS  8.2<br/>
+					
+				
+					Apple iOS  8.1.3<br/>
+					
+				
+					Apple iOS  8.1.2<br/>
+					
+				
+					Apple iOS  8.1.1<br/>
+					
+				
+					Apple iOS  8.1<br/>
+					
+				
+					Apple iOS  8<br/>
+					
+				
+					Apple iOS  7.1.2<br/>
+					
+				
+					Apple iOS  7.1.1<br/>
+					
+				
+					Apple iOS  7.1<br/>
+					
+				
+					Apple iOS  7.0.4<br/>
+					
+				
+					Apple iOS  7<br/>
+					
+				
+					Apple iOS  6.1<br/>
+					
+				
+					Apple iOS  6.0.2<br/>
+					
+				
+					Apple iOS  6.0.1<br/>
+					
+				
+					Apple iOS  6<br/>
+					
+				
+					Apple iOS  5.1.1<br/>
+					
+				
+					Apple iOS  5.1<br/>
+					
+				
+					Apple iOS  5.0.1<br/>
+					
+				
+					Apple iOS  5<br/>
+					
+				
+					Apple iOS  4.3.5<br/>
+					
+				
+					Apple iOS  4.3.4<br/>
+					
+				
+					Apple iOS  4.3.3<br/>
+					
+				
+					Apple iOS  4.3.2<br/>
+					
+				
+					Apple iOS  4.3.1<br/>
+					
+				
+					Apple iOS  4.3<br/>
+					
+				
+					Apple iOS  4.2.9<br/>
+					
+				
+					Apple iOS  4.2.8<br/>
+					
+				
+					Apple iOS  4.2.7<br/>
+					
+				
+					Apple iOS  4.2.6<br/>
+					
+				
+					Apple iOS  4.2.5<br/>
+					
+				
+					Apple iOS  4.2.10<br/>
+					
+				
+					Apple iOS  4.2<br/>
+					
+				
+					Apple iOS  4.1<br/>
+					
+				
+					Apple iOS  4<br/>
+					
+				
+					Apple iOS  3.2<br/>
+					
+				
+					Apple iOS  3.1<br/>
+					
+				
+					Apple iOS  3.0<br/>
+					
+				
+					Apple iOS  2.1<br/>
+					
+				
+					Apple iOS  2.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					XMLSoft Libxml2  2.9.4<br/>
+					
+				
+					McAfee Web Gateway 7.7 <br/>
+					
+				
+					McAfee Web Gateway  7.6.2.4<br/>
+					
+				
+					McAfee Web Gateway  7.5.2.11<br/>
+					
+				
+					Juniper JUNOS Space  16.1R1<br/>
+					
+				
+					IBM Security Privileged Identity Manager 2.0.2 Fixpack 8<br/>
+					
+				
+					IBM Security Network Protection  5.3.2.4<br/>
+					
+				
+					IBM Security Network Protection  5.3.1.10<br/>
+					
+				
+					Apple watchOS 2.2.2 <br/>
+					
+				
+					Apple Mac Os X 10.11.6 <br/>
+					
+				
+					Apple Mac Os X  Security Update 2016<br/>
+					
+				
+					Apple iTunes 12.4.2 <br/>
+					
+				
+					Apple iOS 9.3.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

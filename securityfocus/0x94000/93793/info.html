@@ -1,0 +1,2886 @@
+#SpeeDr00t@Black Falcon<br>#bid93793<p><b><span style="font-size: 18pt;">Linux Kernel CVE-2016-5195 Local Privilege Escalation Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/93793/info">info</a><br><a href="http://www.securityfocus.com/bid/93793/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/93793/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/93793/solution">solution</a><br><a href="http://www.securityfocus.com/bid/93793/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				93793
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-5195<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Oct 19 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				May 02 2017 12:11AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Phil Oester.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare vRealize Operations 6.4 <br/>
+					
+				
+					VMWare vRealize Operations 6.0.3 <br/>
+					
+				
+					VMWare vRealize Operations  6.3.0<br/>
+					
+				
+					VMWare vRealize Operations  6.2.1<br/>
+					
+				
+					VMWare vRealize Operations  6.2.0a<br/>
+					
+				
+					VMWare vRealize Operations  6.1.0<br/>
+					
+				
+					VMWare vRealize Automation 6.2.4 <br/>
+					
+				
+					VMWare vRealize Automation  7.1<br/>
+					
+				
+					VMWare vRealize Automation  7.0<br/>
+					
+				
+					VMWare vRealize Automation  6.2.4.1<br/>
+					
+				
+					VMWare vRealize Automation  6.2<br/>
+					
+				
+					VMWare vRealize Automation  6.1<br/>
+					
+				
+					VMWare vRealize Automation  6.0<br/>
+					
+				
+					VMWare Identity Manager  2.7<br/>
+					
+				
+					VMWare Identity Manager  2.0<br/>
+					
+				
+					Virtuozzo Virtuozzo  6.0<br/>
+					
+				
+					Virtuozzo Server Bare Metal  5.0<br/>
+					
+				
+					Virtuozzo Containers for Linux  4.7<br/>
+					
+				
+					Ubuntu Ubuntu Linux  16.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  16.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS i386<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS amd64<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS<br/>
+					
+				
+					SuSE OpenStack Cloud  5<br/>
+					
+				
+					SuSE Manager Proxy  2.1<br/>
+					
+				
+					SuSE Manager  2.1<br/>
+					
+				
+					SuSE Linux Enterprise Workstation Extension  12 SP1<br/>
+					
+				
+					SuSE Linux Enterprise Software Development Kit  12 SP1<br/>
+					
+				
+					SuSE Linux Enterprise Software Development Kit  11 SP4<br/>
+					
+				
+					SuSE Linux Enterprise Server for SAP  12<br/>
+					
+				
+					SuSE Linux Enterprise Server  12-LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Server  12 SP1<br/>
+					
+				
+					SuSE Linux Enterprise Server  11-EXTRA<br/>
+					
+				
+					SuSE Linux Enterprise Server  11 SP4<br/>
+					
+				
+					SuSE Linux Enterprise Server  11 SP3 LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Server  11 SP2 LTSS<br/>
+					
+				
+					SuSE Linux Enterprise Point of Sale  11-SP3<br/>
+					
+				
+					SuSE Linux Enterprise Module for Public Cloud  12<br/>
+					
+				
+					SuSE Linux Enterprise Live Patching  12<br/>
+					
+				
+					SuSE Linux Enterprise Desktop  12 SP1<br/>
+					
+				
+					SuSE Linux Enterprise Debuginfo  11 SP4<br/>
+					
+				
+					SuSE Linux Enterprise Debuginfo  11 SP3<br/>
+					
+				
+					SuSE Linux Enterprise Debuginfo  11 SP2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  7.1<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node EUS  7.1<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Redhat Enterprise Linux Client Optional  7<br/>
+					
+				
+					Redhat Enterprise Linux  MRG 2<br/>
+					
+				
+					Redhat Enterprise Linux  7 Client<br/>
+					
+				
+					Redhat Enterprise Linux  7<br/>
+					
+				
+					Redhat Enterprise Linux  6<br/>
+					
+				
+					Redhat Enterprise Linux  5<br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.1  0<br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.0  0<br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.7  0<br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.2 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.13 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.11 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.16 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.15 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.14 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.11 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.15 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.14 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.13 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.6 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.13 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.11 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.2 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 3.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.1.7<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.1.6<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0.9<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0.8<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0.7<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.1.2<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.1.13<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.0<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.1.5<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.1.4<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					openSUSE Leap  42.1<br/>
+					
+				
+					Linux kernel 4.2.3 <br/>
+					
+				
+					Linux kernel 4.1.1 <br/>
+					
+				
+					Linux kernel 4.0.6 <br/>
+					
+				
+					Linux kernel 3.19.3 <br/>
+					
+				
+					Linux kernel 3.18.22 <br/>
+					
+				
+					Linux kernel 3.18.17 <br/>
+					
+				
+					Linux kernel 3.18.11 <br/>
+					
+				
+					Linux kernel 3.18.8 <br/>
+					
+				
+					Linux kernel 3.18.7 <br/>
+					
+				
+					Linux kernel 3.18.3 <br/>
+					
+				
+					Linux kernel 3.18.2 <br/>
+					
+				
+					Linux kernel 3.18.1 <br/>
+					
+				
+					Linux kernel 3.17.4 <br/>
+					
+				
+					Linux kernel 3.17.2 <br/>
+					
+				
+					Linux kernel 3.16.7 <br/>
+					
+				
+					Linux kernel 3.16.2 <br/>
+					
+				
+					Linux kernel 3.16.1 <br/>
+					
+				
+					Linux kernel 3.15.5 <br/>
+					
+				
+					Linux kernel 3.15.2 <br/>
+					
+				
+					Linux kernel 3.14.54 <br/>
+					
+				
+					Linux kernel 3.14.45 <br/>
+					
+				
+					Linux kernel 3.14.37 <br/>
+					
+				
+					Linux kernel 3.14.4 <br/>
+					
+				
+					Linux kernel 3.14.3 <br/>
+					
+				
+					Linux kernel 3.14.2 <br/>
+					
+				
+					Linux kernel 3.13.11 <br/>
+					
+				
+					Linux kernel 3.13.9 <br/>
+					
+				
+					Linux kernel 3.13.3 <br/>
+					
+				
+					Linux kernel 3.13.1 <br/>
+					
+				
+					Linux kernel 3.12.49 <br/>
+					
+				
+					Linux kernel 3.12.48 <br/>
+					
+				
+					Linux kernel 3.12.44 <br/>
+					
+				
+					Linux kernel 3.12.40 <br/>
+					
+				
+					Linux kernel 3.12.21 <br/>
+					
+				
+					Linux kernel 3.12.18 <br/>
+					
+				
+					Linux kernel 3.12.17 <br/>
+					
+				
+					Linux kernel 3.12.16 <br/>
+					
+				
+					Linux kernel 3.12.11 <br/>
+					
+				
+					Linux kernel 3.12.7 <br/>
+					
+				
+					Linux kernel 3.12.4 <br/>
+					
+				
+					Linux kernel 3.12.3 <br/>
+					
+				
+					Linux kernel 3.12.2 <br/>
+					
+				
+					Linux kernel 3.11.3 <br/>
+					
+				
+					Linux kernel 3.10.90 <br/>
+					
+				
+					Linux kernel 3.10.81 <br/>
+					
+				
+					Linux kernel 3.10.73 <br/>
+					
+				
+					Linux kernel 3.10.45 <br/>
+					
+				
+					Linux kernel 3.10.41 <br/>
+					
+				
+					Linux kernel 3.10.38 <br/>
+					
+				
+					Linux kernel 3.10.37 <br/>
+					
+				
+					Linux kernel 3.10.36 <br/>
+					
+				
+					Linux kernel 3.10.30 <br/>
+					
+				
+					Linux kernel 3.10.27 <br/>
+					
+				
+					Linux kernel 3.10.26 <br/>
+					
+				
+					Linux kernel 3.10.23 <br/>
+					
+				
+					Linux kernel 3.10.22 <br/>
+					
+				
+					Linux kernel 3.10.21 <br/>
+					
+				
+					Linux kernel 3.10.14 <br/>
+					
+				
+					Linux kernel 3.10.10 <br/>
+					
+				
+					Linux kernel 3.10.9 <br/>
+					
+				
+					Linux kernel 3.10.7 <br/>
+					
+				
+					Linux kernel 3.8.9 <br/>
+					
+				
+					Linux kernel 3.8.6 <br/>
+					
+				
+					Linux kernel 3.8.5 <br/>
+					
+				
+					Linux kernel 3.8.4 <br/>
+					
+				
+					Linux kernel 3.8.2 <br/>
+					
+				
+					Linux kernel 3.8.1 <br/>
+					
+				
+					Linux kernel 3.7.10 <br/>
+					
+				
+					Linux kernel 3.7.9 <br/>
+					
+				
+					Linux kernel 3.7.8 <br/>
+					
+				
+					Linux kernel 3.7.7 <br/>
+					
+				
+					Linux kernel 3.7.5 <br/>
+					
+				
+					Linux kernel 3.7.4 <br/>
+					
+				
+					Linux kernel 3.7.3 <br/>
+					
+				
+					Linux kernel 3.7.2 <br/>
+					
+				
+					Linux kernel 3.7.1 <br/>
+					
+				
+					Linux kernel 3.6.11 <br/>
+					
+				
+					Linux kernel 3.6.10 <br/>
+					
+				
+					Linux kernel 3.6.9 <br/>
+					
+				
+					Linux kernel 3.6.8 <br/>
+					
+				
+					Linux kernel 3.6.7 <br/>
+					
+				
+					Linux kernel 3.6.6 <br/>
+					
+				
+					Linux kernel 3.6.5 <br/>
+					
+				
+					Linux kernel 3.6.4 <br/>
+					
+				
+					Linux kernel 3.6.3 <br/>
+					
+				
+					Linux kernel 3.6.2 <br/>
+					
+				
+					Linux kernel 3.6.1 <br/>
+					
+				
+					Linux kernel 3.5.7 <br/>
+					
+				
+					Linux kernel 3.5.6 <br/>
+					
+				
+					Linux kernel 3.5.5 <br/>
+					
+				
+					Linux kernel 3.5.4 <br/>
+					
+				
+					Linux kernel 3.5.3 <br/>
+					
+				
+					Linux kernel 3.5.2 <br/>
+					
+				
+					Linux kernel 3.5.1 <br/>
+					
+				
+					Linux kernel 3.4.88 <br/>
+					
+				
+					Linux kernel 3.4.87 <br/>
+					
+				
+					Linux kernel 3.4.86 <br/>
+					
+				
+					Linux kernel 3.4.80 <br/>
+					
+				
+					Linux kernel 3.4.76 <br/>
+					
+				
+					Linux kernel 3.4.73 <br/>
+					
+				
+					Linux kernel 3.4.72 <br/>
+					
+				
+					Linux kernel 3.4.71 <br/>
+					
+				
+					Linux kernel 3.4.64 <br/>
+					
+				
+					Linux kernel 3.4.58 <br/>
+					
+				
+					Linux kernel 3.4.42 <br/>
+					
+				
+					Linux kernel 3.4.36 <br/>
+					
+				
+					Linux kernel 3.4.32 <br/>
+					
+				
+					Linux kernel 3.4.31 <br/>
+					
+				
+					Linux kernel 3.4.27 <br/>
+					
+				
+					Linux kernel 3.4.26 <br/>
+					
+				
+					Linux kernel 3.4.25 <br/>
+					
+				
+					Linux kernel 3.4.21 <br/>
+					
+				
+					Linux kernel 3.4.20 <br/>
+					
+				
+					Linux kernel 3.4.19 <br/>
+					
+				
+					Linux kernel 3.4.18 <br/>
+					
+				
+					Linux kernel 3.4.17 <br/>
+					
+				
+					Linux kernel 3.4.16 <br/>
+					
+				
+					Linux kernel 3.4.15 <br/>
+					
+				
+					Linux kernel 3.4.14 <br/>
+					
+				
+					Linux kernel 3.4.13 <br/>
+					
+				
+					Linux kernel 3.4.12 <br/>
+					
+				
+					Linux kernel 3.4.11 <br/>
+					
+				
+					Linux kernel 3.4.10 <br/>
+					
+				
+					Linux kernel 3.4.9 <br/>
+					
+				
+					Linux kernel 3.4.8 <br/>
+					
+				
+					Linux kernel 3.4.7 <br/>
+					
+				
+					Linux kernel 3.4.6 <br/>
+					
+				
+					Linux kernel 3.4.5 <br/>
+					
+				
+					Linux kernel 3.4.4 <br/>
+					
+				
+					Linux kernel 3.4.3 <br/>
+					
+				
+					Linux kernel 3.4.2 <br/>
+					
+				
+					Linux kernel 3.4.1 <br/>
+					
+				
+					Linux kernel 3.3.5 <br/>
+					
+				
+					Linux kernel 3.3.4 <br/>
+					
+				
+					Linux kernel 3.3.2 <br/>
+					
+				
+					Linux kernel 3.2.82 <br/>
+					
+				
+					Linux kernel 3.2.72 <br/>
+					
+				
+					Linux kernel 3.2.62 <br/>
+					
+				
+					Linux kernel 3.2.57 <br/>
+					
+				
+					Linux kernel 3.2.56 <br/>
+					
+				
+					Linux kernel 3.2.51 <br/>
+					
+				
+					Linux kernel 3.2.24 <br/>
+					
+				
+					Linux kernel 3.2.23 <br/>
+					
+				
+					Linux kernel 3.2.13 <br/>
+					
+				
+					Linux kernel 3.2.12 <br/>
+					
+				
+					Linux kernel 3.2.9 <br/>
+					
+				
+					Linux kernel 3.2.1 <br/>
+					
+				
+					Linux kernel 3.1.8 <br/>
+					
+				
+					Linux kernel 3.0.98 <br/>
+					
+				
+					Linux kernel 3.0.75 <br/>
+					
+				
+					Linux kernel 3.0.72 <br/>
+					
+				
+					Linux kernel 3.0.69 <br/>
+					
+				
+					Linux kernel 3.0.65 <br/>
+					
+				
+					Linux kernel 3.0.60 <br/>
+					
+				
+					Linux kernel 3.0.59 <br/>
+					
+				
+					Linux kernel 3.0.58 <br/>
+					
+				
+					Linux kernel 3.0.37 <br/>
+					
+				
+					Linux kernel 3.0.34 <br/>
+					
+				
+					Linux kernel 3.0.5 <br/>
+					
+				
+					Linux kernel 3.0.4 <br/>
+					
+				
+					Linux kernel 3.0.2 <br/>
+					
+				
+					Linux kernel 3.0.1 <br/>
+					
+				
+					Linux kernel 2.6.39 <br/>
+					
+				
+					Linux kernel 2.6.37 <br/>
+					
+				
+					Linux kernel 2.6.36 <br/>
+					
+				
+					Linux kernel 2.6.35 <br/>
+					
+				
+					Linux kernel 2.6.34 <br/>
+					
+				
+					Linux kernel 2.6.32 .9<br/>
+					
+				
+					Linux kernel 2.6.32 <br/>
+					
+				
+					Linux kernel 2.6.31 <br/>
+					
+				
+					Linux kernel 2.6.30 <br/>
+					
+				
+					Linux kernel 2.6.29 <br/>
+					
+				
+					Linux kernel 2.6.28 <br/>
+					
+				
+					Linux kernel 2.6.27 <br/>
+					
+				
+					Linux kernel 2.6.26 <br/>
+					
+				
+					Linux kernel 2.6.25 <br/>
+					
+				
+					Linux kernel 2.6.24 <br/>
+					
+				
+					Linux kernel 2.6.23 <br/>
+					
+				
+					Linux kernel 2.6.22 <br/>
+					
+				
+					Linux kernel  4.4.1<br/>
+					
+				
+					Linux kernel  4.4-rc5<br/>
+					
+				
+					Linux kernel  4.4-rc4<br/>
+					
+				
+					Linux kernel  4.4-rc1<br/>
+					
+				
+					Linux kernel  4.4<br/>
+					
+				
+					Linux kernel  4.3.3<br/>
+					
+				
+					Linux kernel  4.3-rc1<br/>
+					
+				
+					Linux kernel  4.2.8<br/>
+					
+				
+					Linux kernel  4.2<br/>
+					
+				
+					Linux kernel  4.1.15<br/>
+					
+				
+					Linux kernel  4.1-rc7<br/>
+					
+				
+					Linux kernel  4.1-rc6<br/>
+					
+				
+					Linux kernel  4.1-rc3<br/>
+					
+				
+					Linux kernel  4.1-rc1<br/>
+					
+				
+					Linux kernel  4.1<br/>
+					
+				
+					Linux kernel  4.0.5<br/>
+					
+				
+					Linux kernel  4.0<br/>
+					
+				
+					Linux kernel  3.9.8<br/>
+					
+				
+					Linux kernel  3.9.4<br/>
+					
+				
+					Linux kernel  3.9-rc8<br/>
+					
+				
+					Linux kernel  3.9-rc7<br/>
+					
+				
+					Linux kernel  3.9-rc3<br/>
+					
+				
+					Linux kernel  3.9<br/>
+					
+				
+					Linux kernel  3.8-rc1 <br/>
+					
+				
+					Linux kernel  3.8<br/>
+					
+				
+					Linux kernel  3.7.6<br/>
+					
+				
+					Linux kernel  3.7-rc1<br/>
+					
+				
+					Linux kernel  3.7<br/>
+					
+				
+					Linux kernel  3.6<br/>
+					
+				
+					Linux kernel  3.5<br/>
+					
+				
+					Linux kernel  3.4.93<br/>
+					
+				
+					Linux kernel  3.4.81<br/>
+					
+				
+					Linux kernel  3.4.70<br/>
+					
+				
+					Linux kernel  3.4.67<br/>
+					
+				
+					Linux kernel  3.4.29<br/>
+					
+				
+					Linux kernel  3.4<br/>
+					
+				
+					Linux kernel  3.3<br/>
+					
+				
+					Linux kernel  3.2.78<br/>
+					
+				
+					Linux kernel  3.2.65<br/>
+					
+				
+					Linux kernel  3.2.64<br/>
+					
+				
+					Linux kernel  3.2.63-2<br/>
+					
+				
+					Linux kernel  3.2.63<br/>
+					
+				
+					Linux kernel  3.2.60<br/>
+					
+				
+					Linux kernel  3.2.55<br/>
+					
+				
+					Linux kernel  3.2.54<br/>
+					
+				
+					Linux kernel  3.2.53<br/>
+					
+				
+					Linux kernel  3.2.52<br/>
+					
+				
+					Linux kernel  3.2.50<br/>
+					
+				
+					Linux kernel  3.2.44<br/>
+					
+				
+					Linux kernel  3.2.42<br/>
+					
+				
+					Linux kernel  3.2.38<br/>
+					
+				
+					Linux kernel  3.2.2<br/>
+					
+				
+					Linux kernel  3.2<br/>
+					
+				
+					Linux kernel  3.19-rc7<br/>
+					
+				
+					Linux kernel  3.19-rc2<br/>
+					
+				
+					Linux kernel  3.19-rc<br/>
+					
+				
+					Linux kernel  3.19<br/>
+					
+				
+					Linux kernel  3.18.9<br/>
+					
+				
+					Linux kernel  3.18<br/>
+					
+				
+					Linux kernel  3.17.6<br/>
+					
+				
+					Linux kernel  3.17-rc3<br/>
+					
+				
+					Linux kernel  3.17<br/>
+					
+				
+					Linux kernel  3.16.6<br/>
+					
+				
+					Linux kernel  3.16.36<br/>
+					
+				
+					Linux kernel  3.16<br/>
+					
+				
+					Linux kernel  3.15<br/>
+					
+				
+					Linux kernel  3.14.7<br/>
+					
+				
+					Linux kernel  3.14.5<br/>
+					
+				
+					Linux kernel  3.14-rc7<br/>
+					
+				
+					Linux kernel  3.14-rc4<br/>
+					
+				
+					Linux kernel  3.14-4<br/>
+					
+				
+					Linux kernel  3.14-1<br/>
+					
+				
+					Linux kernel  3.14<br/>
+					
+				
+					Linux kernel  3.13.7<br/>
+					
+				
+					Linux kernel  3.13.6<br/>
+					
+				
+					Linux kernel  3.13.5<br/>
+					
+				
+					Linux kernel  3.13.4<br/>
+					
+				
+					Linux kernel  3.13.0<br/>
+					
+				
+					Linux kernel  3.13-rc1<br/>
+					
+				
+					Linux kernel  3.13<br/>
+					
+				
+					Linux kernel  3.12.22<br/>
+					
+				
+					Linux kernel  3.12.15<br/>
+					
+				
+					Linux kernel  3.12.14<br/>
+					
+				
+					Linux kernel  3.12.12<br/>
+					
+				
+					Linux kernel  3.12.1<br/>
+					
+				
+					Linux kernel  3.12<br/>
+					
+				
+					Linux kernel  3.11.9<br/>
+					
+				
+					Linux kernel  3.11.6<br/>
+					
+				
+					Linux kernel  3.11-rc7<br/>
+					
+				
+					Linux kernel  3.11-rc4<br/>
+					
+				
+					Linux kernel  3.11-rc1<br/>
+					
+				
+					Linux kernel  3.11<br/>
+					
+				
+					Linux kernel  3.10.5<br/>
+					
+				
+					Linux kernel  3.10.43<br/>
+					
+				
+					Linux kernel  3.10.31<br/>
+					
+				
+					Linux kernel  3.10.20<br/>
+					
+				
+					Linux kernel  3.10.17<br/>
+					
+				
+					Linux kernel  3.10<br/>
+					
+				
+					Linux kernel  3.1<br/>
+					
+				
+					Linux kernel  3.0.66<br/>
+					
+				
+					Linux kernel  3.0.62<br/>
+					
+				
+					Linux kernel  3.0.18<br/>
+					
+				
+					Linux kernel  3.0-rc1<br/>
+					
+				
+					Linux kernel  3.0<br/>
+					
+				
+					Linux kernel  2.6.38.6<br/>
+					
+				
+					Linux kernel  2.6.38.4<br/>
+					
+				
+					Linux kernel  2.6.38.3<br/>
+					
+				
+					Linux kernel  2.6.38.2<br/>
+					
+				
+					Linux kernel  2.6.37.2<br/>
+					
+				
+					Linux kernel  2.6.35.5<br/>
+					
+				
+					Linux kernel  2.6.35.4<br/>
+					
+				
+					Linux kernel  2.6.35.13<br/>
+					
+				
+					Linux kernel  2.6.35.1<br/>
+					
+				
+					Linux kernel  2.6.34.3<br/>
+					
+				
+					Linux kernel  2.6.34.2<br/>
+					
+				
+					Linux kernel  2.6.34.14<br/>
+					
+				
+					Linux kernel  2.6.34.13<br/>
+					
+				
+					Linux kernel  2.6.34.1<br/>
+					
+				
+					Linux kernel  2.6.32.8<br/>
+					
+				
+					Linux kernel  2.6.32.7<br/>
+					
+				
+					Linux kernel  2.6.32.62<br/>
+					
+				
+					Linux kernel  2.6.32.61<br/>
+					
+				
+					Linux kernel  2.6.32.60<br/>
+					
+				
+					Linux kernel  2.6.32.6<br/>
+					
+				
+					Linux kernel  2.6.32.5<br/>
+					
+				
+					Linux kernel  2.6.32.4<br/>
+					
+				
+					Linux kernel  2.6.32.3<br/>
+					
+				
+					Linux kernel  2.6.32.28<br/>
+					
+				
+					Linux kernel  2.6.32.22<br/>
+					
+				
+					Linux kernel  2.6.32.2<br/>
+					
+				
+					Linux kernel  2.6.32.18<br/>
+					
+				
+					Linux kernel  2.6.32.17<br/>
+					
+				
+					Linux kernel  2.6.32.16<br/>
+					
+				
+					Linux kernel  2.6.32.15<br/>
+					
+				
+					Linux kernel  2.6.32.14<br/>
+					
+				
+					Linux kernel  2.6.32.13<br/>
+					
+				
+					Linux kernel  2.6.32.12<br/>
+					
+				
+					Linux kernel  2.6.32.11<br/>
+					
+				
+					Linux kernel  2.6.32.10<br/>
+					
+				
+					Linux kernel  2.6.32.1<br/>
+					
+				
+					Linux kernel  2.6.31.6<br/>
+					
+				
+					Linux kernel  2.6.31.4<br/>
+					
+				
+					Linux kernel  2.6.31.1<br/>
+					
+				
+					Linux kernel  2.6.30.5<br/>
+					
+				
+					Linux kernel  2.6.30.4<br/>
+					
+				
+					Linux kernel  2.6.30.3<br/>
+					
+				
+					Linux kernel  2.6.28.4<br/>
+					
+				
+					Linux kernel  2.6.27.54<br/>
+					
+				
+					Linux kernel  2.6.27.51<br/>
+					
+				
+					Linux kernel  2.6.27.49<br/>
+					
+				
+					Linux kernel  2.6.27.26<br/>
+					
+				
+					Linux kernel  2.6.26.1<br/>
+					
+				
+					Linux kernel  2.6.25.4<br/>
+					
+				
+					Linux kernel  2.6.25.3<br/>
+					
+				
+					Linux kernel  2.6.25.2<br/>
+					
+				
+					Linux kernel  2.6.25.1<br/>
+					
+				
+					Linux kernel  2.6.24.6<br/>
+					
+				
+					Linux kernel  2.6.24.4<br/>
+					
+				
+					Linux kernel  2.6.24.3<br/>
+					
+				
+					Linux kernel  2.6.23.14<br/>
+					
+				
+					Linux kernel  2.6.23.10<br/>
+					
+				
+					Linux kernel  2.6.23.1<br/>
+					
+				
+					Juniper JUNOS Space  15.2R2<br/>
+					
+				
+					Juniper JUNOS Space  15.2R1<br/>
+					
+				
+					Juniper JUNOS Space  15.1R2.11<br/>
+					
+				
+					Juniper JUNOS Space  15.1F2<br/>
+					
+				
+					Juniper JUNOS Space  14.1R1.9<br/>
+					
+				
+					Juniper JUNOS Space  14.1R1<br/>
+					
+				
+					Juniper JUNOS Space  13.3<br/>
+					
+				
+					Juniper JUNOS Space  12.3<br/>
+					
+				
+					Juniper JUNOS Space  12.1<br/>
+					
+				
+					Juniper JUNOS Space  11.2<br/>
+					
+				
+					Juniper JUNOS Space  1.3<br/>
+					
+				
+					IBM Security Guardium 10.0.1 <br/>
+					
+				
+					IBM Security Guardium  9.5<br/>
+					
+				
+					IBM Security Guardium  9.1<br/>
+					
+				
+					IBM Security Guardium  9<br/>
+					
+				
+					IBM Security Guardium  8.2<br/>
+					
+				
+					IBM Security Guardium  10.1.2<br/>
+					
+				
+					IBM Security Guardium  10.1<br/>
+					
+				
+					IBM Security Guardium  10<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					Huawei Fusioncube  V100R002C60RC1<br/>
+					
+				
+					Huawei CloudEngine 8800  V200R001C00<br/>
+					
+				
+					Huawei CloudEngine 8800  V100R006C00<br/>
+					
+				
+					Huawei CloudEngine 7800  V200R001C00<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R006C00<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V200R001C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R006C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R002C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V200R001C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R006C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R002C00<br/>
+					
+				
+					Huawei AR3200  V200R008C20<br/>
+					
+				
+					Huawei AR3200  V200R007C00<br/>
+					
+				
+					Huawei AR3200  V200R006C16<br/>
+					
+				
+					Huawei AR3200  V200R006C15<br/>
+					
+				
+					Huawei AR3200  V200R006C13<br/>
+					
+				
+					Huawei AR3200  V200R006C12<br/>
+					
+				
+					Huawei AR3200  V200R006C10<br/>
+					
+				
+					HP VSR (Comware 7)  0<br/>
+					
+				
+					HP Propel  2.20<br/>
+					
+				
+					HP Propel  2.10<br/>
+					
+				
+					HP Propel  2.01<br/>
+					
+				
+					HP Propel  1.11<br/>
+					
+				
+					HP Propel  1.01<br/>
+					
+				
+					HP MSR95X  0<br/>
+					
+				
+					HP MSR4000 (Comware 7)  0<br/>
+					
+				
+					HP MSR3000 (Comware 7)  0<br/>
+					
+				
+					HP MSR2000 (Comware 7)  0<br/>
+					
+				
+					HP MSR1000 (Comware 7)  0<br/>
+					
+				
+					HP Moonshot  0<br/>
+					
+				
+					HP HSR6800 (Comware 7)  0<br/>
+					
+				
+					HP HSR6600 (Comware 7)  0<br/>
+					
+				
+					HP Helion OpenStack  4.0<br/>
+					
+				
+					HP Helion OpenStack  3.0<br/>
+					
+				
+					HP Helion CloudSystem 9.0.2 <br/>
+					
+				
+					HP Helion CloudSystem 9.0.1 <br/>
+					
+				
+					HP Helion CloudSystem 9.0 <br/>
+					
+				
+					HP Helion CloudSystem 8.1.3 <br/>
+					
+				
+					HP Helion CloudSystem 8.1.2 <br/>
+					
+				
+					HP Helion CloudSystem  8.1<br/>
+					
+				
+					HP 7900 (Comware 7)  R2122<br/>
+					
+				
+					HP 7900 (Comware 7)  0<br/>
+					
+				
+					HP 7500 (Comware 7)  0<br/>
+					
+				
+					HP 6127XLG  0<br/>
+					
+				
+					HP 6125XLG  0<br/>
+					
+				
+					HP 5950 (Comware 7)  0<br/>
+					
+				
+					HP 5940 (Comware 7)  0<br/>
+					
+				
+					HP 5930 (Comware 7)  0<br/>
+					
+				
+					HP 5920 (Comware 7)  0<br/>
+					
+				
+					HP 5900 (Comware 7)  0<br/>
+					
+				
+					HP 5700 (Comware 7)  0<br/>
+					
+				
+					HP 5510HI  0<br/>
+					
+				
+					HP 5130HI  0<br/>
+					
+				
+					HP 5130EI (Comware 7)  0<br/>
+					
+				
+					HP 5130 (Comware 7)  R3108P03<br/>
+					
+				
+					HP 1950 (Comware 7)  0<br/>
+					
+				
+					HP 12900E  0<br/>
+					
+				
+					HP 12900 (Comware 7)  0<br/>
+					
+				
+					HP 12500 (Comware 7)  0<br/>
+					
+				
+					HP 10500 (Comware 7)  0<br/>
+					
+				
+					Google Pixel XL  0<br/>
+					
+				
+					Google Pixel C  0<br/>
+					
+				
+					Google Pixel  0<br/>
+					
+				
+					Google Nexus Player  0<br/>
+					
+				
+					Google Nexus  9<br/>
+					
+				
+					Google Nexus  6P<br/>
+					
+				
+					Google Nexus  6<br/>
+					
+				
+					Google Nexus  5X<br/>
+					
+				
+					Google Chrome OS 25.0.1364 160<br/>
+					
+				
+					Google Chrome OS  8.0.552.344<br/>
+					
+				
+					Google Chrome OS  8.0.552.343<br/>
+					
+				
+					Google Chrome OS  8.0.552.342<br/>
+					
+				
+					Google Chrome OS  53.0.2785.144<br/>
+					
+				
+					Google Chrome OS  53.0.2785.103<br/>
+					
+				
+					Google Chrome OS  52.0.2743.85<br/>
+					
+				
+					Google Chrome OS  48.0.2564.92<br/>
+					
+				
+					Google Chrome OS  48.0.2564.116<br/>
+					
+				
+					Google Chrome OS  40.0.2214.114<br/>
+					
+				
+					Google Chrome OS  37.0.2062.119<br/>
+					
+				
+					Google Chrome OS  35.0.1916.155<br/>
+					
+				
+					Google Chrome OS  33.0.1750.152<br/>
+					
+				
+					Google Chrome OS  32.0.1700.95<br/>
+					
+				
+					Google Chrome OS  28.0.1500.95<br/>
+					
+				
+					Google Chrome OS  28.0.1500.71<br/>
+					
+				
+					Google Chrome OS  26.0.1410.9<br/>
+					
+				
+					Google Chrome OS  26.0.1410.8<br/>
+					
+				
+					Google Chrome OS  26.0.1410.7<br/>
+					
+				
+					Google Chrome OS  26.0.1410.6<br/>
+					
+				
+					Google Chrome OS  26.0.1410.57<br/>
+					
+				
+					Google Chrome OS  26.0.1410.56<br/>
+					
+				
+					Google Chrome OS  26.0.1410.55<br/>
+					
+				
+					Google Chrome OS  26.0.1410.54<br/>
+					
+				
+					Google Chrome OS  26.0.1410.52<br/>
+					
+				
+					Google Chrome OS  26.0.1410.51<br/>
+					
+				
+					Google Chrome OS  26.0.1410.50<br/>
+					
+				
+					Google Chrome OS  26.0.1410.5<br/>
+					
+				
+					Google Chrome OS  26.0.1410.49<br/>
+					
+				
+					Google Chrome OS  26.0.1410.48<br/>
+					
+				
+					Google Chrome OS  26.0.1410.47<br/>
+					
+				
+					Google Chrome OS  26.0.1410.46<br/>
+					
+				
+					Google Chrome OS  26.0.1410.45<br/>
+					
+				
+					Google Chrome OS  26.0.1410.44<br/>
+					
+				
+					Google Chrome OS  26.0.1410.43<br/>
+					
+				
+					Google Chrome OS  26.0.1410.42<br/>
+					
+				
+					Google Chrome OS  26.0.1410.41<br/>
+					
+				
+					Google Chrome OS  26.0.1410.40<br/>
+					
+				
+					Google Chrome OS  26.0.1410.4<br/>
+					
+				
+					Google Chrome OS  26.0.1410.39<br/>
+					
+				
+					Google Chrome OS  26.0.1410.38<br/>
+					
+				
+					Google Chrome OS  26.0.1410.37<br/>
+					
+				
+					Google Chrome OS  26.0.1410.36<br/>
+					
+				
+					Google Chrome OS  26.0.1410.35<br/>
+					
+				
+					Google Chrome OS  26.0.1410.34<br/>
+					
+				
+					Google Chrome OS  26.0.1410.33<br/>
+					
+				
+					Google Chrome OS  26.0.1410.32<br/>
+					
+				
+					Google Chrome OS  26.0.1410.31<br/>
+					
+				
+					Google Chrome OS  26.0.1410.30<br/>
+					
+				
+					Google Chrome OS  26.0.1410.3<br/>
+					
+				
+					Google Chrome OS  26.0.1410.29<br/>
+					
+				
+					Google Chrome OS  26.0.1410.28<br/>
+					
+				
+					Google Chrome OS  26.0.1410.27<br/>
+					
+				
+					Google Chrome OS  26.0.1410.26<br/>
+					
+				
+					Google Chrome OS  26.0.1410.25<br/>
+					
+				
+					Google Chrome OS  26.0.1410.24<br/>
+					
+				
+					Google Chrome OS  26.0.1410.23<br/>
+					
+				
+					Google Chrome OS  26.0.1410.22<br/>
+					
+				
+					Google Chrome OS  26.0.1410.21<br/>
+					
+				
+					Google Chrome OS  26.0.1410.20<br/>
+					
+				
+					Google Chrome OS  26.0.1410.19<br/>
+					
+				
+					Google Chrome OS  26.0.1410.18<br/>
+					
+				
+					Google Chrome OS  26.0.1410.17<br/>
+					
+				
+					Google Chrome OS  26.0.1410.16<br/>
+					
+				
+					Google Chrome OS  26.0.1410.15<br/>
+					
+				
+					Google Chrome OS  26.0.1410.14<br/>
+					
+				
+					Google Chrome OS  26.0.1410.12<br/>
+					
+				
+					Google Chrome OS  26.0.1410.11<br/>
+					
+				
+					Google Chrome OS  26.0.1410.10<br/>
+					
+				
+					Google Chrome OS  26.0.1410.1<br/>
+					
+				
+					Google Chrome OS  26.0.1410.0<br/>
+					
+				
+					Google Chrome OS  25.0.1364.99<br/>
+					
+				
+					Google Chrome OS  25.0.1364.98<br/>
+					
+				
+					Google Chrome OS  25.0.1364.95<br/>
+					
+				
+					Google Chrome OS  25.0.1364.93<br/>
+					
+				
+					Google Chrome OS  25.0.1364.92<br/>
+					
+				
+					Google Chrome OS  25.0.1364.91<br/>
+					
+				
+					Google Chrome OS  25.0.1364.90<br/>
+					
+				
+					Google Chrome OS  25.0.1364.9<br/>
+					
+				
+					Google Chrome OS  25.0.1364.89<br/>
+					
+				
+					Google Chrome OS  25.0.1364.88<br/>
+					
+				
+					Google Chrome OS  25.0.1364.87<br/>
+					
+				
+					Google Chrome OS  25.0.1364.86<br/>
+					
+				
+					Google Chrome OS  25.0.1364.85<br/>
+					
+				
+					Google Chrome OS  25.0.1364.84<br/>
+					
+				
+					Google Chrome OS  25.0.1364.82<br/>
+					
+				
+					Google Chrome OS  25.0.1364.81<br/>
+					
+				
+					Google Chrome OS  25.0.1364.80<br/>
+					
+				
+					Google Chrome OS  25.0.1364.8<br/>
+					
+				
+					Google Chrome OS  25.0.1364.79<br/>
+					
+				
+					Google Chrome OS  25.0.1364.78<br/>
+					
+				
+					Google Chrome OS  25.0.1364.77<br/>
+					
+				
+					Google Chrome OS  25.0.1364.76<br/>
+					
+				
+					Google Chrome OS  25.0.1364.75<br/>
+					
+				
+					Google Chrome OS  25.0.1364.74<br/>
+					
+				
+					Google Chrome OS  25.0.1364.73<br/>
+					
+				
+					Google Chrome OS  25.0.1364.72<br/>
+					
+				
+					Google Chrome OS  25.0.1364.70<br/>
+					
+				
+					Google Chrome OS  25.0.1364.7<br/>
+					
+				
+					Google Chrome OS  25.0.1364.68<br/>
+					
+				
+					Google Chrome OS  25.0.1364.67<br/>
+					
+				
+					Google Chrome OS  25.0.1364.66<br/>
+					
+				
+					Google Chrome OS  25.0.1364.65<br/>
+					
+				
+					Google Chrome OS  25.0.1364.63<br/>
+					
+				
+					Google Chrome OS  25.0.1364.62<br/>
+					
+				
+					Google Chrome OS  25.0.1364.61<br/>
+					
+				
+					Google Chrome OS  25.0.1364.58<br/>
+					
+				
+					Google Chrome OS  25.0.1364.57<br/>
+					
+				
+					Google Chrome OS  25.0.1364.56<br/>
+					
+				
+					Google Chrome OS  25.0.1364.55<br/>
+					
+				
+					Google Chrome OS  25.0.1364.54<br/>
+					
+				
+					Google Chrome OS  25.0.1364.53<br/>
+					
+				
+					Google Chrome OS  25.0.1364.52<br/>
+					
+				
+					Google Chrome OS  25.0.1364.51<br/>
+					
+				
+					Google Chrome OS  25.0.1364.50<br/>
+					
+				
+					Google Chrome OS  25.0.1364.5<br/>
+					
+				
+					Google Chrome OS  25.0.1364.49<br/>
+					
+				
+					Google Chrome OS  25.0.1364.48<br/>
+					
+				
+					Google Chrome OS  25.0.1364.47<br/>
+					
+				
+					Google Chrome OS  25.0.1364.46<br/>
+					
+				
+					Google Chrome OS  25.0.1364.45<br/>
+					
+				
+					Google Chrome OS  25.0.1364.44<br/>
+					
+				
+					Google Chrome OS  25.0.1364.43<br/>
+					
+				
+					Google Chrome OS  25.0.1364.42<br/>
+					
+				
+					Google Chrome OS  25.0.1364.41<br/>
+					
+				
+					Google Chrome OS  25.0.1364.40<br/>
+					
+				
+					Google Chrome OS  25.0.1364.39<br/>
+					
+				
+					Google Chrome OS  25.0.1364.38<br/>
+					
+				
+					Google Chrome OS  25.0.1364.37<br/>
+					
+				
+					Google Chrome OS  25.0.1364.36<br/>
+					
+				
+					Google Chrome OS  25.0.1364.35<br/>
+					
+				
+					Google Chrome OS  25.0.1364.34<br/>
+					
+				
+					Google Chrome OS  25.0.1364.33<br/>
+					
+				
+					Google Chrome OS  25.0.1364.32<br/>
+					
+				
+					Google Chrome OS  25.0.1364.31<br/>
+					
+				
+					Google Chrome OS  25.0.1364.30<br/>
+					
+				
+					Google Chrome OS  25.0.1364.3<br/>
+					
+				
+					Google Chrome OS  25.0.1364.29<br/>
+					
+				
+					Google Chrome OS  25.0.1364.28<br/>
+					
+				
+					Google Chrome OS  25.0.1364.27<br/>
+					
+				
+					Google Chrome OS  25.0.1364.26<br/>
+					
+				
+					Google Chrome OS  25.0.1364.25<br/>
+					
+				
+					Google Chrome OS  25.0.1364.24<br/>
+					
+				
+					Google Chrome OS  25.0.1364.23<br/>
+					
+				
+					Google Chrome OS  25.0.1364.22<br/>
+					
+				
+					Google Chrome OS  25.0.1364.21<br/>
+					
+				
+					Google Chrome OS  25.0.1364.20<br/>
+					
+				
+					Google Chrome OS  25.0.1364.2<br/>
+					
+				
+					Google Chrome OS  25.0.1364.19<br/>
+					
+				
+					Google Chrome OS  25.0.1364.18<br/>
+					
+				
+					Google Chrome OS  25.0.1364.173<br/>
+					
+				
+					Google Chrome OS  25.0.1364.172<br/>
+					
+				
+					Google Chrome OS  25.0.1364.171<br/>
+					
+				
+					Google Chrome OS  25.0.1364.170<br/>
+					
+				
+					Google Chrome OS  25.0.1364.17<br/>
+					
+				
+					Google Chrome OS  25.0.1364.169<br/>
+					
+				
+					Google Chrome OS  25.0.1364.168<br/>
+					
+				
+					Google Chrome OS  25.0.1364.161<br/>
+					
+				
+					Google Chrome OS  25.0.1364.16<br/>
+					
+				
+					Google Chrome OS  25.0.1364.159<br/>
+					
+				
+					Google Chrome OS  25.0.1364.156<br/>
+					
+				
+					Google Chrome OS  25.0.1364.155<br/>
+					
+				
+					Google Chrome OS  25.0.1364.154<br/>
+					
+				
+					Google Chrome OS  25.0.1364.152<br/>
+					
+				
+					Google Chrome OS  25.0.1364.15<br/>
+					
+				
+					Google Chrome OS  25.0.1364.14<br/>
+					
+				
+					Google Chrome OS  25.0.1364.13<br/>
+					
+				
+					Google Chrome OS  25.0.1364.126<br/>
+					
+				
+					Google Chrome OS  25.0.1364.125<br/>
+					
+				
+					Google Chrome OS  25.0.1364.124<br/>
+					
+				
+					Google Chrome OS  25.0.1364.123<br/>
+					
+				
+					Google Chrome OS  25.0.1364.122<br/>
+					
+				
+					Google Chrome OS  25.0.1364.121<br/>
+					
+				
+					Google Chrome OS  25.0.1364.120<br/>
+					
+				
+					Google Chrome OS  25.0.1364.12<br/>
+					
+				
+					Google Chrome OS  25.0.1364.119<br/>
+					
+				
+					Google Chrome OS  25.0.1364.118<br/>
+					
+				
+					Google Chrome OS  25.0.1364.117<br/>
+					
+				
+					Google Chrome OS  25.0.1364.116<br/>
+					
+				
+					Google Chrome OS  25.0.1364.115<br/>
+					
+				
+					Google Chrome OS  25.0.1364.114<br/>
+					
+				
+					Google Chrome OS  25.0.1364.113<br/>
+					
+				
+					Google Chrome OS  25.0.1364.112<br/>
+					
+				
+					Google Chrome OS  25.0.1364.110<br/>
+					
+				
+					Google Chrome OS  25.0.1364.11<br/>
+					
+				
+					Google Chrome OS  25.0.1364.108<br/>
+					
+				
+					Google Chrome OS  25.0.1364.10<br/>
+					
+				
+					Google Chrome OS  25.0.1364.1<br/>
+					
+				
+					Google Chrome OS  25.0.1364.0<br/>
+					
+				
+					Google Chrome OS  23.0.1271.94<br/>
+					
+				
+					Google Chrome OS  21.0.1183.0<br/>
+					
+				
+					Google Chrome OS  21.0.1180.9<br/>
+					
+				
+					Google Chrome OS  21.0.1180.81<br/>
+					
+				
+					Google Chrome OS  21.0.1180.8<br/>
+					
+				
+					Google Chrome OS  21.0.1180.79<br/>
+					
+				
+					Google Chrome OS  21.0.1180.7<br/>
+					
+				
+					Google Chrome OS  21.0.1180.6<br/>
+					
+				
+					Google Chrome OS  21.0.1180.57<br/>
+					
+				
+					Google Chrome OS  21.0.1180.56<br/>
+					
+				
+					Google Chrome OS  21.0.1180.55<br/>
+					
+				
+					Google Chrome OS  21.0.1180.54<br/>
+					
+				
+					Google Chrome OS  21.0.1180.53<br/>
+					
+				
+					Google Chrome OS  21.0.1180.52<br/>
+					
+				
+					Google Chrome OS  21.0.1180.51<br/>
+					
+				
+					Google Chrome OS  21.0.1180.50<br/>
+					
+				
+					Google Chrome OS  21.0.1180.5<br/>
+					
+				
+					Google Chrome OS  21.0.1180.49<br/>
+					
+				
+					Google Chrome OS  21.0.1180.48<br/>
+					
+				
+					Google Chrome OS  21.0.1180.47<br/>
+					
+				
+					Google Chrome OS  21.0.1180.46<br/>
+					
+				
+					Google Chrome OS  21.0.1180.41<br/>
+					
+				
+					Google Chrome OS  21.0.1180.4<br/>
+					
+				
+					Google Chrome OS  21.0.1180.39<br/>
+					
+				
+					Google Chrome OS  21.0.1180.38<br/>
+					
+				
+					Google Chrome OS  21.0.1180.37<br/>
+					
+				
+					Google Chrome OS  21.0.1180.36<br/>
+					
+				
+					Google Chrome OS  21.0.1180.35<br/>
+					
+				
+					Google Chrome OS  21.0.1180.34<br/>
+					
+				
+					Google Chrome OS  21.0.1180.33<br/>
+					
+				
+					Google Chrome OS  21.0.1180.32<br/>
+					
+				
+					Google Chrome OS  21.0.1180.31<br/>
+					
+				
+					Google Chrome OS  21.0.1180.3<br/>
+					
+				
+					Google Chrome OS  21.0.1180.2<br/>
+					
+				
+					Google Chrome OS  21.0.1180.18<br/>
+					
+				
+					Google Chrome OS  21.0.1180.17<br/>
+					
+				
+					Google Chrome OS  21.0.1180.15<br/>
+					
+				
+					Google Chrome OS  21.0.1180.14<br/>
+					
+				
+					Google Chrome OS  21.0.1180.13<br/>
+					
+				
+					Google Chrome OS  21.0.1180.11<br/>
+					
+				
+					Google Chrome OS  21.0.1180.10<br/>
+					
+				
+					Google Chrome OS  21.0.1180.1<br/>
+					
+				
+					Google Chrome OS  21.0.1180.0<br/>
+					
+				
+					Google Chrome OS  20.0.1132.9<br/>
+					
+				
+					Google Chrome OS  20.0.1132.8<br/>
+					
+				
+					Google Chrome OS  20.0.1132.7<br/>
+					
+				
+					Google Chrome OS  20.0.1132.6<br/>
+					
+				
+					Google Chrome OS  20.0.1132.5<br/>
+					
+				
+					Google Chrome OS  20.0.1132.4<br/>
+					
+				
+					Google Chrome OS  20.0.1132.3<br/>
+					
+				
+					Google Chrome OS  20.0.1132.21<br/>
+					
+				
+					Google Chrome OS  20.0.1132.20<br/>
+					
+				
+					Google Chrome OS  20.0.1132.2<br/>
+					
+				
+					Google Chrome OS  20.0.1132.19<br/>
+					
+				
+					Google Chrome OS  20.0.1132.18<br/>
+					
+				
+					Google Chrome OS  20.0.1132.17<br/>
+					
+				
+					Google Chrome OS  20.0.1132.16<br/>
+					
+				
+					Google Chrome OS  20.0.1132.15<br/>
+					
+				
+					Google Chrome OS  20.0.1132.14<br/>
+					
+				
+					Google Chrome OS  20.0.1132.13<br/>
+					
+				
+					Google Chrome OS  20.0.1132.12<br/>
+					
+				
+					Google Chrome OS  20.0.1132.11<br/>
+					
+				
+					Google Chrome OS  20.0.1132.10<br/>
+					
+				
+					Google Chrome OS  20.0.1132.1<br/>
+					
+				
+					Google Chrome OS  20.0.1132.0<br/>
+					
+				
+					Google Chrome OS  0.9.134.14<br/>
+					
+				
+					Google Chrome OS  0.9.131.0<br/>
+					
+				
+					Google Chrome OS  0.9.128.3<br/>
+					
+				
+					Google Chrome OS  0.9.126.0<br/>
+					
+				
+					Google Chrome OS  0.9.110.6<br/>
+					
+				
+					Google Chrome OS  0.10.140.0<br/>
+					
+				
+					Google Android One  0<br/>
+					
+				
+					Google Android  0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					CoreOS Linux 1192.2 <br/>
+					
+				
+					CoreOS Linux 1192.1 <br/>
+					
+				
+					CoreOS Linux 1185.1 <br/>
+					
+				
+					CoreOS Linux 1185.0 <br/>
+					
+				
+					CoreOS Linux 1180.0 <br/>
+					
+				
+					CoreOS Linux 1164.1 <br/>
+					
+				
+					CoreOS Linux 1164.0 <br/>
+					
+				
+					CoreOS Linux 1153.4 <br/>
+					
+				
+					CoreOS Linux 1153.3 <br/>
+					
+				
+					Cloud Linux CloudLinuxOS  7<br/>
+					
+				
+					Cloud Linux CloudLinuxOS  6.0<br/>
+					
+				
+					Cloud Linux CloudLinuxOS  5.0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.7<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.6.1.30<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.6<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5MR2<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5.99.2<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5.1.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5.0.997<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5 MR1<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5.1.6<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5.1.131<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5(.1.6)<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5(.1.131)<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.1<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.0<br/>
+					
+				
+					Cisco Visual Quality Experience Tools Server  0<br/>
+					
+				
+					Cisco Visual Quality Experience Server  0<br/>
+					
+				
+					Cisco Videoscape Distribution Suite Video Recording  0<br/>
+					
+				
+					Cisco Videoscape Distribution Suite Service Manager  0<br/>
+					
+				
+					Cisco Video Surveillance Media Server  0<br/>
+					
+				
+					Cisco VDS-TV Vault  0<br/>
+					
+				
+					Cisco VDS-TV Streamer  0<br/>
+					
+				
+					Cisco VDS-TV Caching Nodes  0<br/>
+					
+				
+					Cisco VDS Recorder  0<br/>
+					
+				
+					Cisco Unified Communications Manager Session Management Edition  0<br/>
+					
+				
+					Cisco Unified Communications Manager  -<br/>
+					
+				
+					Cisco UCS Director  0<br/>
+					
+				
+					Cisco TelePresence Video Communication Server (VCS)  0<br/>
+					
+				
+					Cisco SPA232D Multi-Line DECT Analog Telephone Adapter (ATA)  0<br/>
+					
+				
+					Cisco SPA122 Analog Telephone Adapter (ATA) with Router  0<br/>
+					
+				
+					Cisco SPA112 2-Port Phone Adapter  0<br/>
+					
+				
+					Cisco Smart Net Total Care - OnPrem  0<br/>
+					
+				
+					Cisco SCOS (Service Control Operating System)  0<br/>
+					
+				
+					Cisco Prime Service Catalog Virtual Appliance  0<br/>
+					
+				
+					Cisco Prime Network Change and Configuration Management  0<br/>
+					
+				
+					Cisco Prime Data Center Network Manager  -<br/>
+					
+				
+					Cisco Prime Collaboration Provisioning  0<br/>
+					
+				
+					Cisco Prime Access Registrar  0<br/>
+					
+				
+					Cisco Paging Server (Informacast)  0<br/>
+					
+				
+					Cisco Paging Server  0<br/>
+					
+				
+					Cisco onePK All-in-One Virtual Machine  0<br/>
+					
+				
+					Cisco Nexus 9000 Series Fabric Switches - ACI mode  0<br/>
+					
+				
+					Cisco MXE 3500 Series Media Experience Engines  0<br/>
+					
+				
+					Cisco Jabber Guest  0<br/>
+					
+				
+					Cisco IP Interoperability and Collaboration System (IPICS)  0<br/>
+					
+				
+					Cisco Expressway series  0<br/>
+					
+				
+					Cisco Edge 340 Digital Media Player  0<br/>
+					
+				
+					Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco DX Series IP Phones  0<br/>
+					
+				
+					Cisco DCM Series D990x Digital Content Manager  0<br/>
+					
+				
+					Cisco Connected Grid Routers  0<br/>
+					
+				
+					Cisco Common Services Platform Collector  0<br/>
+					
+				
+					Cisco Cloud Object Storage  0<br/>
+					
+				
+					Cisco ATA 190 Series Analog Terminal Adaptors  0<br/>
+					
+				
+					Cisco ATA 187 Analog Telephone Adaptor  0<br/>
+					
+				
+					Cisco Application Policy Infrastructure Controller (APIC)  0<br/>
+					
+				
+					Cisco 4400 Series Digital Media Players  0<br/>
+					
+				
+					Cisco 4300 Series Digital Media Players  0<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					CentOS CentOS  5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Virtuozzo Virtuozzo  6.0 Update 11 Hotfix<br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.14 <br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.1.8<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.1.17<br/>
+					
+				
+					Linux kernel  4.8.3<br/>
+					
+				
+					Linux kernel  4.7.9<br/>
+					
+				
+					Linux kernel  4.4.26<br/>
+					
+				
+					Juniper JUNOS Space  16.1R1<br/>
+					
+				
+					IBM PowerKVM  3.1.0.2 update 3<br/>
+					
+				
+					IBM PowerKVM  2.1.1.3-65 update 13<br/>
+					
+				
+					Huawei Fusioncube  V100R002C60SPC100<br/>
+					
+				
+					Huawei CloudEngine 8800  V200R001SPH002<br/>
+					
+				
+					Huawei CloudEngine 7800  V200R001SPH002<br/>
+					
+				
+					Huawei CloudEngine 6800  V200R001SPH002<br/>
+					
+				
+					Huawei CloudEngine 12800  V200R001SPH002<br/>
+					
+				
+					Huawei AR3200  V200R008C20SPC700<br/>
+					
+				
+					HP Helion OpenStack 4.0.1 <br/>
+					
+				
+					HP Helion OpenStack 3.0.3 <br/>
+					
+				
+					HP Helion CloudSystem 10.0.1 <br/>
+					
+				
+					Google Chrome OS  54.0.2840.79<br/>
+					
+				
+					CoreOS Linux 1192.0 <br/>
+					
+				
+					CoreOS Linux 1185.2 <br/>
+					
+				
+					CoreOS Linux 1122.3 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x94000/93793/93793.c">#exploit_93793.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x94000/93793/93793_1.c">#exploit_93793_1.c</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x94000/93793/93793_2.c">#exploit_93793_2.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Reports indicate that this issue is being exploited in the wild. <br/> <br/>The following exploits are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/93793.c">/data/vulnerabilities/exploits/93793.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/93793_1.c">/data/vulnerabilities/exploits/93793_1.c</a></li>
+<li><a href="/data/vulnerabilities/exploits/93793_2.c">/data/vulnerabilities/exploits/93793_2.c</a></li>
+</ul>
+</div>
