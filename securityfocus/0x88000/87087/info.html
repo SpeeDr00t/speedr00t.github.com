@@ -1,0 +1,413 @@
+#SpeeDr00t@Black Falcon<br>#bid87087<p><b><span style="font-size: 18pt;">PHP LibGD CVE-2016-3074 Heap Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/87087/info">info</a><br><a href="http://www.securityfocus.com/bid/87087/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/87087/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/87087/solution">solution</a><br><a href="http://www.securityfocus.com/bid/87087/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				87087
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-3074<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 21 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Aug 29 2017 01:12PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Hans Jerry Illikainen for dyntopia.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					LibGD LibGD  2.1.1<br/>
+					
+				
+					Juniper Junos  16.2R1-S3<br/>
+					
+				
+					Juniper Junos  16.2R1<br/>
+					
+				
+					Juniper Junos  15.1X53-D40<br/>
+					
+				
+					Juniper Junos  15.1X53-D35<br/>
+					
+				
+					Juniper Junos  15.1X53-D30<br/>
+					
+				
+					Juniper Junos  15.1X53-D20<br/>
+					
+				
+					Juniper Junos  15.1X49-D60<br/>
+					
+				
+					Juniper Junos  15.1X49-D40<br/>
+					
+				
+					Juniper Junos  15.1X49-D30<br/>
+					
+				
+					Juniper Junos  15.1X49-D20<br/>
+					
+				
+					Juniper Junos  15.1X49-D15<br/>
+					
+				
+					Juniper Junos  15.1X49-D10<br/>
+					
+				
+					Juniper Junos  15.1R4-S8<br/>
+					
+				
+					Juniper Junos  15.1R4-S7<br/>
+					
+				
+					Juniper Junos  15.1R4<br/>
+					
+				
+					Juniper Junos  15.1R3<br/>
+					
+				
+					Juniper Junos  15.1R2<br/>
+					
+				
+					Juniper Junos  15.1R1<br/>
+					
+				
+					Juniper Junos  15.1F6-S7<br/>
+					
+				
+					Juniper Junos  15.1F6-S5<br/>
+					
+				
+					Juniper Junos  15.1F6-S4<br/>
+					
+				
+					Juniper Junos  15.1F6<br/>
+					
+				
+					Juniper Junos  15.1F5-S7<br/>
+					
+				
+					Juniper Junos  15.1F5-S5<br/>
+					
+				
+					Juniper Junos  15.1F5-S2<br/>
+					
+				
+					Juniper Junos  15.1F5<br/>
+					
+				
+					Juniper Junos  15.1F4-S2<br/>
+					
+				
+					Juniper Junos  15.1F4<br/>
+					
+				
+					Juniper Junos  15.1F3<br/>
+					
+				
+					Juniper Junos  15.1F2-S5<br/>
+					
+				
+					Juniper Junos  15.1F2-S2<br/>
+					
+				
+					Juniper Junos  15.1F2-S18<br/>
+					
+				
+					Juniper Junos  15.1F2-S16<br/>
+					
+				
+					Juniper Junos  15.1F2-S14<br/>
+					
+				
+					Juniper Junos  15.1F2<br/>
+					
+				
+					Juniper Junos  15.1F1<br/>
+					
+				
+					Juniper Junos  14.2R7.5<br/>
+					
+				
+					Juniper Junos  14.2R7-S7<br/>
+					
+				
+					Juniper Junos  14.2R7-S6<br/>
+					
+				
+					Juniper Junos  14.2R7<br/>
+					
+				
+					Juniper Junos  14.2R6.5<br/>
+					
+				
+					Juniper Junos  14.2R6-S4<br/>
+					
+				
+					Juniper Junos  14.2R6<br/>
+					
+				
+					Juniper Junos  14.2R5<br/>
+					
+				
+					Juniper Junos  14.2R4-S8<br/>
+					
+				
+					Juniper Junos  14.2R4-S1<br/>
+					
+				
+					Juniper Junos  14.2R4<br/>
+					
+				
+					Juniper Junos  14.2R3-S4<br/>
+					
+				
+					Juniper Junos  14.2R3<br/>
+					
+				
+					Juniper Junos  14.2R2.8<br/>
+					
+				
+					Juniper Junos  14.2R2<br/>
+					
+				
+					Juniper Junos  14.2R1<br/>
+					
+				
+					Juniper Junos  12.3X48-D35<br/>
+					
+				
+					Juniper Junos  12.3X48-D30.7<br/>
+					
+				
+					Juniper Junos  12.3X48-D30<br/>
+					
+				
+					Juniper Junos  12.3X48-D25<br/>
+					
+				
+					Juniper Junos  12.3X48-D20<br/>
+					
+				
+					Juniper Junos  12.3X48-D15<br/>
+					
+				
+					Juniper Junos  12.3X48-D10<br/>
+					
+				
+					Juniper Junos  12.1X46-D60<br/>
+					
+				
+					Juniper Junos  12.1X46-D55<br/>
+					
+				
+					Juniper Junos  12.1X46-D51<br/>
+					
+				
+					Juniper Junos  12.1X46-D50<br/>
+					
+				
+					Juniper Junos  12.1X46-D46<br/>
+					
+				
+					Juniper Junos  12.1X46-D45<br/>
+					
+				
+					Juniper Junos  12.1X46-D40<br/>
+					
+				
+					Juniper Junos  12.1X46-D37<br/>
+					
+				
+					Juniper Junos  12.1X46-D36<br/>
+					
+				
+					Juniper Junos  12.1X46-D35<br/>
+					
+				
+					Juniper Junos  12.1X46-D30<br/>
+					
+				
+					Juniper Junos  12.1X46-D26<br/>
+					
+				
+					Juniper JUNOS  12.1X46-D25<br/>
+					
+				
+					Juniper Junos  12.1X46-D20.5<br/>
+					
+				
+					Juniper Junos  12.1X46-D20<br/>
+					
+				
+					Juniper Junos  12.1X46-D15<br/>
+					
+				
+					Juniper Junos  12.1X46-D10<br/>
+					
+				
+					Juniper Junos  12.1X46<br/>
+					
+				
+					HP StoreEver MSL6480 Tape Library  4.90<br/>
+					
+				
+					HP StoreEver MSL6480 Tape Library  4.40<br/>
+					
+				
+					HP StoreEver MSL6480 Tape Library  4.10<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Juniper Junos  17.1R1<br/>
+					
+				
+					Juniper Junos  16.2R2<br/>
+					
+				
+					Juniper Junos  15.1X53-D47<br/>
+					
+				
+					Juniper Junos  15.1X49-D70<br/>
+					
+				
+					Juniper Junos  15.1R5<br/>
+					
+				
+					Juniper Junos  15.1F7<br/>
+					
+				
+					Juniper Junos  14.2R8<br/>
+					
+				
+					Juniper Junos  12.3X48-D40<br/>
+					
+				
+					Juniper Junos  12.1X46-D65<br/>
+					
+				
+					HP StoreEver MSL6480 Tape Library  5.10<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x88000/87087/87087.py">#exploit_87087.py</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x88000/87087/87087.py">#exploit_87087.py</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The researcher has created an exploit code to demonstrate the issue. Please see the references for more information.
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/87087.py">/data/vulnerabilities/exploits/87087.py</a></li>
+<li><a href="/data/vulnerabilities/exploits/87087.py">/data/vulnerabilities/exploits/87087.py</a></li>
+</ul>
+</div>

@@ -1,0 +1,1314 @@
+#SpeeDr00t@Black Falcon<br>#bid84314<p><b><span style="font-size: 18pt;">OpenSSH CVE-2016-3115 Remote Command Injection Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/84314/info">info</a><br><a href="http://www.securityfocus.com/bid/84314/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/84314/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/84314/solution">solution</a><br><a href="http://www.securityfocus.com/bid/84314/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				84314
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-3115<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 10 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 01:05PM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				tintinweb
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle VM Server for x86  3.2<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					OpenSSH OpenSSH 4.2 <br/>
+					
+				
+					OpenSSH OpenSSH 4.1 p1<br/>
+					
+				
+					OpenSSH OpenSSH 4.1 <br/>
+					
+				
+					OpenSSH OpenSSH 4.0 p1<br/>
+					
+				
+					OpenSSH OpenSSH 4.0 <br/>
+					
+				
+					OpenSSH OpenSSH 3.9 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.8.1 p1<br/>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Ubuntu Ubuntu Linux 4.1 ia32<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.8 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.7.2 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.7.1 p2<br/>
+					
+				
+					OpenSSH OpenSSH 3.7.1 p1<br/>
+<span class="related">
+						
+							+ 
+						
+						SCO Open Server 5.0.7 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.7.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.7 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.7 .1p2<br/>
+					
+				
+					OpenSSH OpenSSH 3.7 <br/>
+					
+				
+					OpenSSH OpenSSH 3.6.1 p2<br/>
+					
+				
+					OpenSSH OpenSSH 3.6.1 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.6.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.5 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.5 <br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-7<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-6<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-5<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-4<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-3<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-2<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1-1<br/>
+					
+				
+					OpenSSH OpenSSH 3.4 p1<br/>
+<span class="related">
+						
+							+ 
+						
+						Conectiva Linux Enterprise Edition 1.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  s/390<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mipsel<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  mips<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  m68k<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  ia-32<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  hppa<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  arm<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Debian Linux 3.0  alpha<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 5.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.7 -RELEASE<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						FreeBSD FreeBSD 4.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						IBM AIX 5.1 L<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Immunix Immunix OS  7+<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.4 <br/>
+					
+				
+					OpenSSH OpenSSH 3.3 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.3 <br/>
+					
+				
+					OpenSSH OpenSSH 3.2.3 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.2.2 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						OpenBSD OpenBSD  3.1<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.1 p1<br/>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 10 3.0 r2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 10 3.0 r1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 10 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 100 3.0 r2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 100 3.0 r1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 100 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 1000 3.0 r2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 1000 3.0 r1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 1000 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 500 3.0 r2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 500 3.0 r1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Juniper NetScreen-IDP 500 3.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux AS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux ES  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1 IA64<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Enterprise Linux WS  2.1<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.3 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux for iSeries 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux for pSeries 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 8.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Linux 5.0.7 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Sun Solaris  9<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.5 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 1.1 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 3.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0.2 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.0.2 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0.1 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.0.1 <br/>
+					
+				
+					OpenSSH OpenSSH 3.0 p1<br/>
+					
+				
+					OpenSSH OpenSSH 3.0 <br/>
+					
+				
+					OpenSSH OpenSSH 2.9.9 <br/>
+<span class="related">
+						
+							+ 
+						
+						NetBSD NetBSD 1.5.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.3 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.2 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.9 p2<br/>
+					
+				
+					OpenSSH OpenSSH 2.9 p1<br/>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.3 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3.1 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						IBM AIX 4.3 <br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.9 <br/>
+					
+				
+					OpenSSH OpenSSH 2.5.2 <br/>
+					
+				
+					OpenSSH OpenSSH 2.5.1 <br/>
+					
+				
+					OpenSSH OpenSSH 2.5 <br/>
+					
+				
+					OpenSSH OpenSSH 2.3 <br/>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 ppc<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 i386<br/>
+</span>
+<span class="related">
+						
+							-
+						
+						S.u.S.E. Linux 6.4 alpha<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.2 .0p1<br/>
+					
+				
+					OpenSSH OpenSSH 2.2 <br/>
+					
+				
+					OpenSSH OpenSSH 2.1.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 sparc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 ppc<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 i386<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 alpha<br/>
+</span>
+					
+				
+					OpenSSH OpenSSH 2.1 <br/>
+					
+				
+					OpenSSH OpenSSH 1.2.3 <br/>
+					
+				
+					OpenSSH OpenSSH 1.2.2 <br/>
+					
+				
+					OpenSSH OpenSSH  7.1p2<br/>
+					
+				
+					OpenSSH OpenSSH  7.1p1<br/>
+					
+				
+					OpenSSH OpenSSH  7.1<br/>
+					
+				
+					OpenSSH OpenSSH  7.0<br/>
+					
+				
+					OpenSSH OpenSSH  6.9p1<br/>
+					
+				
+					OpenSSH OpenSSH  6.9<br/>
+					
+				
+					OpenSSH OpenSSH  6.8<br/>
+					
+				
+					OpenSSH OpenSSH  6.6<br/>
+					
+				
+					OpenSSH OpenSSH  6.5<br/>
+					
+				
+					OpenSSH OpenSSH  6.4<br/>
+					
+				
+					OpenSSH OpenSSH  6.3<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p2<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p1<br/>
+					
+				
+					OpenSSH OpenSSH  6.2<br/>
+					
+				
+					OpenSSH OpenSSH  6.1<br/>
+					
+				
+					OpenSSH OpenSSH  6.0<br/>
+					
+				
+					OpenSSH OpenSSH  5.8 p2<br/>
+					
+				
+					OpenSSH OpenSSH  5.8<br/>
+					
+				
+					OpenSSH OpenSSH  5.7<br/>
+					
+				
+					OpenSSH OpenSSH  5.6p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.6<br/>
+					
+				
+					OpenSSH OpenSSH  5.5<br/>
+					
+				
+					OpenSSH OpenSSH  5.4<br/>
+					
+				
+					OpenSSH OpenSSH  5.3<br/>
+					
+				
+					OpenSSH OpenSSH  5.2p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.2<br/>
+					
+				
+					OpenSSH OpenSSH  5.1<br/>
+					
+				
+					OpenSSH OpenSSH  5.0p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.0<br/>
+					
+				
+					OpenSSH OpenSSH  4.9<br/>
+					
+				
+					OpenSSH OpenSSH  4.8<br/>
+					
+				
+					OpenSSH OpenSSH  4.7p1<br/>
+					
+				
+					OpenSSH OpenSSH  4.7<br/>
+					
+				
+					OpenSSH OpenSSH  4.6p1<br/>
+					
+				
+					OpenSSH OpenSSH  4.6<br/>
+					
+				
+					OpenSSH OpenSSH  4.5<br/>
+					
+				
+					OpenSSH OpenSSH  4.4.p1<br/>
+					
+				
+					OpenSSH OpenSSH  4.4<br/>
+					
+				
+					OpenSSH OpenSSH  4.3p2<br/>
+					
+				
+					OpenSSH OpenSSH  4.3p1<br/>
+					
+				
+					OpenSSH OpenSSH  4.3.0<br/>
+					
+				
+					OpenSSH OpenSSH  4.2p1<br/>
+					
+				
+					Juniper Nsmexpress  -<br/>
+					
+				
+					Juniper NSM4000  0<br/>
+					
+				
+					Juniper Nsm3000  -<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.4.0<br/>
+					
+				
+					IBM Vios  2.2.3.50<br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 3<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager  9.0<br/>
+					
+				
+					IBM Power HMC  8.5.0.0<br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM Power HMC  7.9.0.0<br/>
+					
+				
+					IBM OpenSSH for GPFS for Windows  3.5<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 <br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p12<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p11<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p10<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC2-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p30<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p29<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p28<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p27<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p26<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC4-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p3<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p2<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-BETA<br/>
+					
+				
+					FreeBSD FreeBSD  10.0<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Solaris  11.3 SRU9.4<br/>
+					
+				
+					OpenSSH OpenSSH  7.2p2<br/>
+					
+				
+					IBM OpenSSH for GPFS for Windows  3.5.0.31<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p39<br/>
+					
+				
+					FreeBSD Freebsd  10.3-RC2<br/>
+					
+				
+					FreeBSD Freebsd  10.2-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p14<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p31<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

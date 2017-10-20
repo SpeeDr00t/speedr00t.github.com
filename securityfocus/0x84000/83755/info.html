@@ -1,0 +1,2424 @@
+#SpeeDr00t@Black Falcon<br>#bid83755<p><b><span style="font-size: 18pt;">OpenSSL CVE-2016-0799 Remote Format String Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/83755/info">info</a><br><a href="http://www.securityfocus.com/bid/83755/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/83755/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/83755/solution">solution</a><br><a href="http://www.securityfocus.com/bid/83755/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				83755
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-0799<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 01 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 02 2017 01:01AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Guido Vranken
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4 LTSS<br/>
+					
+				
+					SuSE openSUSE Evergreen  11.4<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle VM Server for x86  3.2<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Secure Global Desktop  5.2<br/>
+					
+				
+					Oracle Secure Global Desktop  4.71<br/>
+					
+				
+					Oracle Secure Global Desktop  4.63<br/>
+					
+				
+					Oracle Linux  5<br/>
+					
+				
+					Oracle Communications Session Border Controller  7.3.0<br/>
+					
+				
+					Oracle Communications Session Border Controller  7.2.0<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.2 <br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1r<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1q<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1p<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1o<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1n<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1m<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1l<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1k<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1j<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1i<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					IBM WebSphere Message Broker  8<br/>
+					
+				
+					IBM WebSphere Cast Iron 6.1 <br/>
+					
+				
+					IBM WebSphere Cast Iron  6.4.0.1<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.4.0.0<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.3.0.2<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.3.0.1<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.3<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.1.0.9<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.1.0.7<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.1.0.6<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.1.0.15<br/>
+					
+				
+					IBM WebSphere Cast Iron  6.1<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.4.0<br/>
+					
+				
+					IBM Vios  2.2.3.50<br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 .3<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 .116<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 <br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  5.1.0.2<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images (and System X Edition)  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Network Manager IP Edition  3.9 Fix Pack 4<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor 4.0.1 FP2 IF 03<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor 4.0.1 FP1<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor 4.0 FP14 IF 14-07<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor 4.0 FP14 IF 14-01<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.1<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP9<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP8<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP7<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP6<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP5<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP4<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP3<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP2<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP13<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP12<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP11<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP10<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0.0 FP1<br/>
+					
+				
+					IBM Tivoli Netcool/System Service Monitor  4.0<br/>
+					
+				
+					IBM Tivoli Netcool Reporter  2.2<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.4.0.0<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0.0<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.12<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-110<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-109<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-108<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6<br/>
+					
+				
+					IBM Sterling Connect:Direct for UNIX 4.2 <br/>
+					
+				
+					IBM Sterling Connect:Direct for UNIX 4.1 <br/>
+					
+				
+					IBM Sterling Connect:Direct for Microsoft Windows  4.6.0<br/>
+					
+				
+					IBM Sterling Connect:Direct for Microsoft Windows  4.5.01<br/>
+					
+				
+					IBM Sterling Connect:Direct for Microsoft Windows  4.5.00<br/>
+					
+				
+					IBM Sterling B2B Integrator  5.2<br/>
+					
+				
+					IBM SmartCloud Provisioning 2.1 3<br/>
+					
+				
+					IBM SmartCloud Provisioning 2.1 2<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.5<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.4<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1.0.1<br/>
+					
+				
+					IBM SmartCloud Provisioning  2.1<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass 1.0.2919 <br/>
+					
+				
+					IBM Security Proventia Network Active Bypass 1.0.1876 <br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.9-34<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.4-23<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.2-9<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.0-13<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30-12<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.29-9<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.25-57<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.13-41<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.18-42<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.15-36<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.13-34<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.11-28<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  0343c3c<br/>
+					
+				
+					IBM Security Privileged Identity Manager  2.0<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3387 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3381 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3379 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3376 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3361 <br/>
+					
+				
+					IBM Security Network Controller 1.0.1768 <br/>
+					
+				
+					IBM Security Network Controller 1.0.1209 <br/>
+					
+				
+					IBM Security Network Controller 1.0.913 <br/>
+					
+				
+					IBM Security Network Controller  1.0.3394M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3394<br/>
+					
+				
+					IBM Security Network Controller  1.0.3387M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3381M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3379M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3376M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3361M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3352M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3350M<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.0<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.3<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.2<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 3<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager  9.0<br/>
+					
+				
+					IBM Rational Developer for i 9.1.1 <br/>
+					
+				
+					IBM Rational Developer for i  9.5.0.3<br/>
+					
+				
+					IBM Rational Developer for i  9.5.0.2<br/>
+					
+				
+					IBM Rational Developer for i  9.5.0.1<br/>
+					
+				
+					IBM Rational Developer for i  9.5<br/>
+					
+				
+					IBM Rational Developer for i  9.1.1.1<br/>
+					
+				
+					IBM Rational Developer for i  9.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software 9.1.1 <br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.5.0.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.5<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.1.1.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.1.0.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.1<br/>
+					
+				
+					IBM PureData System for Analytics 1.0 <br/>
+					
+				
+					IBM PureApplication System 2.1.2 <br/>
+					
+				
+					IBM PureApplication System  2.2.0.0<br/>
+					
+				
+					IBM PureApplication System  2.1.2.1<br/>
+					
+				
+					IBM PureApplication System  2.1.1.0<br/>
+					
+				
+					IBM PureApplication System  2.1.0.2<br/>
+					
+				
+					IBM PureApplication System  2.1.0.1<br/>
+					
+				
+					IBM PureApplication System  2.1<br/>
+					
+				
+					IBM PureApplication System  2.0.0.1 Interim Fix <br/>
+					
+				
+					IBM PureApplication System  2.0.0.1<br/>
+					
+				
+					IBM PureApplication System  2.0<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Netezza Host Management 5.4.3 <br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.1<br/>
+					
+				
+					IBM Lotus Protector for Mail Security 2.8 0<br/>
+					
+				
+					IBM Lotus Protector for Mail Security  2.8.1.0<br/>
+					
+				
+					IBM Integration Bus  9<br/>
+					
+				
+					IBM Integration Bus  10<br/>
+					
+				
+					IBM Integrated Management Module  YUOO<br/>
+					
+				
+					IBM InfoSphere Information Server  9.1<br/>
+					
+				
+					IBM InfoSphere Information Server  8.7<br/>
+					
+				
+					IBM InfoSphere Information Server  8.5<br/>
+					
+				
+					IBM InfoSphere Information Server  11.5<br/>
+					
+				
+					IBM InfoSphere Information Server  11.3<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.3.2.0<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.3.1.0<br/>
+					
+				
+					IBM i  7.2<br/>
+					
+				
+					IBM i  7.1<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM DataPower Gateways  7.5.1.0<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.6<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.10<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.13<br/>
+					
+				
+					IBM DataPower Gateway  7.5.1.0<br/>
+					
+				
+					IBM DataPower Gateway  7.5.0.1<br/>
+					
+				
+					IBM DataPower Gateway  7.2.0.6<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.10<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.13<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 <br/>
+					
+				
+					IBM Cognos TM1  10.2<br/>
+					
+				
+					IBM Cognos TM1  10.1.0<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 <br/>
+					
+				
+					IBM Cognos Insight 10.2.1 <br/>
+					
+				
+					IBM Cognos Insight  10.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.3 <br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.2 <br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.1 <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6 Interim Fix1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.4 interim Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.4<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interix Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interix Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interim Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5 Interim Fix<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5  Interim Fix<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.4.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.4<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.1<br/>
+					
+				
+					IBM BM Security Identity Governance and Intelligence  5.2.1<br/>
+					
+				
+					IBM Algo Audit and Compliance  2.1<br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					IBM ABYP-4TS-P-M  0<br/>
+					
+				
+					IBM ABYP-4TS-P  0<br/>
+					
+				
+					IBM ABYP-4TL-P-M  0<br/>
+					
+				
+					IBM ABYP-4TL-P  0<br/>
+					
+				
+					IBM ABYP-4T-0S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-4T-0S-0L-P  0<br/>
+					
+				
+					IBM ABYP-2T-2S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-2S-0L-P  0<br/>
+					
+				
+					IBM ABYP-2T-1S-1L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-1S-1L-P  0<br/>
+					
+				
+					IBM ABYP-2T-0S-2L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-0S-2L-P  0<br/>
+					
+				
+					IBM ABYP-10G-4SR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-4SR-1-P  0<br/>
+					
+				
+					IBM ABYP-10G-4LR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-4LR-1-P  0<br/>
+					
+				
+					IBM ABYP-10G-2SR-2LR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-2SR-2LR-1-P  0<br/>
+					
+				
+					IBM ABYP-0T-4S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-4S-0L-P  0<br/>
+					
+				
+					IBM ABYP-0T-2S-2L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-2S-2L-P  0<br/>
+					
+				
+					IBM ABYP-0T-0S-4L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-0S-4L-P  0<br/>
+					
+				
+					HP Version Control Repository Manager 7.4.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.2 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2 <br/>
+					
+				
+					HP Version Control Repository Manager  7.5.0<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.3<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.2<br/>
+					
+				
+					HP VAN SDN Controller  2.7.10 OVA<br/>
+					
+				
+					HP Systems Insight Manager 7.1.1 <br/>
+					
+				
+					HP Systems Insight Manager  7.5.0<br/>
+					
+				
+					HP Systems Insight Manager  7.4.0a<br/>
+					
+				
+					HP Systems Insight Manager  7.4<br/>
+					
+				
+					HP Systems Insight Manager  7.3.2<br/>
+					
+				
+					HP Systems Insight Manager  7.3.1<br/>
+					
+				
+					HP Systems Insight Manager  7.3.0a<br/>
+					
+				
+					HP Systems Insight Manager  7.3<br/>
+					
+				
+					HP Systems Insight Manager  7.2.2<br/>
+					
+				
+					HP Systems Insight Manager  7.2.1<br/>
+					
+				
+					HP Systems Insight Manager  7.2<br/>
+					
+				
+					HP Systems Insight Manager  7.0<br/>
+					
+				
+					HP Systems Insight Manager  6.3<br/>
+					
+				
+					HP Systems Insight Manager  6.2<br/>
+					
+				
+					HP Systems Insight Manager  6.1<br/>
+					
+				
+					HP Systems Insight Manager  6.0<br/>
+					
+				
+					HP Systems Insight Manager  5.3<br/>
+					
+				
+					HP Systems Insight Manager  5.0<br/>
+					
+				
+					HP Systems Insight Manager  4.2<br/>
+					
+				
+					HP System Management Homepage 7.5.4 <br/>
+					
+				
+					HP System Management Homepage 7.5 <br/>
+					
+				
+					HP System Management Homepage 7.4.1 <br/>
+					
+				
+					HP System Management Homepage 7.3.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.3 <br/>
+					
+				
+					HP System Management Homepage 7.2.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.1 <br/>
+					
+				
+					HP System Management Homepage 7.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.1 <br/>
+					
+				
+					HP System Management Homepage  7.4<br/>
+					
+				
+					HP System Management Homepage  7.3.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3<br/>
+					
+				
+					HP System Management Homepage  7.2.4.1<br/>
+					
+				
+					HP System Management Homepage  7.1<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP Smart Update Manager 6.4.1 <br/>
+					
+				
+					HP Smart Update Manager 6.4 <br/>
+					
+				
+					HP Smart Update Manager 6.3.1 <br/>
+					
+				
+					HP Smart Update Manager 6.2 <br/>
+					
+				
+					HP Smart Update Manager  6.3.0<br/>
+					
+				
+					HP Smart Update Manager  6.0.0<br/>
+					
+				
+					HP Server Migration Pack 7.5 <br/>
+					
+				
+					HP Oneview for VMware vCenter 7.8.1 <br/>
+					
+				
+					HP Oneview for VMware vCenter 7.8 <br/>
+					
+				
+					HP Matrix Operating Environment 7.5 <br/>
+					
+				
+					HP Matrix Operating Environment 7.4 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3.1 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2.1 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2 <br/>
+					
+				
+					HP Insight Control server provisioning 7.4.1 <br/>
+					
+				
+					HP Insight Control server provisioning  7.5.0<br/>
+					
+				
+					HP Insight Control server provisioning  7.4.0a<br/>
+					
+				
+					HP Insight Control server provisioning  7.4.0<br/>
+					
+				
+					HP Insight Control Server Deployment  0<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP Insight Control 7.5 <br/>
+					
+				
+					HP Insight Control  7.4<br/>
+					
+				
+					HP Insight Control  7.3<br/>
+					
+				
+					HP Insight Control  7.2<br/>
+					
+				
+					HP Helion OpenStack 2.1 <br/>
+					
+				
+					HP Helion CloudSystem 9.0 <br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-up Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-up Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-out Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-Up Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-Up Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-out Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-out Configurations  2.0<br/>
+					
+				
+					HP BladeSystem c-Class Virtual Connect (VC)  4.45<br/>
+					
+				
+					HP BladeSystem c-Class Virtual Connect (VC)  4.30<br/>
+					
+				
+					HP AppSystems for SAP HANA - Single Node Configurations  1.0<br/>
+					
+				
+					HP AppSystems for SAP HANA - Scale Out Configurations  1.2<br/>
+					
+				
+					HP AppSystems for SAP HANA - Scale Out Configurations  1.0<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p36<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p35<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p34<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p33<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p31<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p29<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p24<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p22<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p21<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA3-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD FreeBSD  9.0<br/>
+					
+				
+					FreeBSD Freebsd  10.2-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p12<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p11<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p10<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC2-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-PRERELEASE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELENG<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p29<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p28<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p27<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p26<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC4-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p3<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.0-RELEASE-p18<br/>
+					
+				
+					FreeBSD Freebsd  10.0-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-BETA<br/>
+					
+				
+					FreeBSD FreeBSD  10.0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Cisco Wireless Lan Controller (WLC)  0<br/>
+					
+				
+					Cisco WebEx Recording Playback Client  0<br/>
+					
+				
+					Cisco WebEx Node for MCS  0<br/>
+					
+				
+					Cisco WebEx Messenger Service  0<br/>
+					
+				
+					Cisco WebEx Meetings Server - SSL Gateway  0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.0<br/>
+					
+				
+					Cisco WebEx Meetings for WP8  0<br/>
+					
+				
+					Cisco WebEx Meetings for Android  0<br/>
+					
+				
+					Cisco WebEx Meetings Client - Hosted  0<br/>
+					
+				
+					Cisco WebEx Meetings Client  0<br/>
+					
+				
+					Cisco WebEx Meeting Center  0<br/>
+					
+				
+					Cisco WebEx Connect Client for Windows  0<br/>
+					
+				
+					Cisco Web Security Appliance (WSA)  0<br/>
+					
+				
+					Cisco Visual Quality Experience Tools Server  0<br/>
+					
+				
+					Cisco Visual Quality Experience Server  0<br/>
+					
+				
+					Cisco Virtualization Experience Media Engine  0<br/>
+					
+				
+					Cisco Virtual Wide Area Application Services (WAAS)  0<br/>
+					
+				
+					Cisco Virtual Security Gateway for Microsoft Hyper-V  0<br/>
+					
+				
+					Cisco Virtual Security Gateway  0<br/>
+					
+				
+					Cisco Videoscape Control Suite Foundation  0<br/>
+					
+				
+					Cisco Videoscape Control Suite  0<br/>
+					
+				
+					Cisco Video Surveillance PTZ IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance Media Server  0<br/>
+					
+				
+					Cisco Video Surveillance 7000 Series IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 6000 Series IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 4300E/4500E High-Definition IP Cameras  0<br/>
+					
+				
+					Cisco Video Surveillance 4000 Series IP Camera  0<br/>
+					
+				
+					Cisco Video Surveillance 3000 Series IP Cameras  0<br/>
+					
+				
+					Cisco Video Distribution Suite for Internet Streaming VDS-IS  0<br/>
+					
+				
+					Cisco VEN501 Wireless Access Points  0<br/>
+					
+				
+					Cisco Universal Small Cell Devices  0<br/>
+					
+				
+					Cisco Universal Small Cell 7000 Series Software 3.4.2 0<br/>
+					
+				
+					Cisco Universal Small Cell 5000 Series software  3.4.2.0<br/>
+					
+				
+					Cisco Unity Connection (UC)  0<br/>
+					
+				
+					Cisco Unified Workforce Optimization  0<br/>
+					
+				
+					Cisco Unified Wireless IP Phone  0<br/>
+					
+				
+					Cisco Unified IP Phone 7900 Series  0<br/>
+					
+				
+					Cisco Unified IP Conference Phone 8831 for Third-Party Call Control  0<br/>
+					
+				
+					Cisco Unified IP Conference Phone 8831  0<br/>
+					
+				
+					Cisco Unified Intelligent Contact Management Enterprise  0<br/>
+					
+				
+					Cisco Unified Contact Center Enterprise  0<br/>
+					
+				
+					Cisco Unified Communications Manager Session Management Edition (SME)  0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  0<br/>
+					
+				
+					Cisco Unified Communications Manager  -<br/>
+					
+				
+					Cisco Unified Communications for Microsoft Lync  0<br/>
+					
+				
+					Cisco Unified Communications Domain Manager  0<br/>
+					
+				
+					Cisco Unified Attendant Console Standard  0<br/>
+					
+				
+					Cisco Unified Attendant Console Premium Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Enterprise Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Department Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Business Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Advanced  0<br/>
+					
+				
+					Cisco Unified 8945 IP Phone  0<br/>
+					
+				
+					Cisco Unified 7800 Series IP Phones  0<br/>
+					
+				
+					Cisco Unified 6945 IP Phones  0<br/>
+					
+				
+					Cisco Unified 6901 IP Phones  0<br/>
+					
+				
+					Cisco UCS Central  0<br/>
+					
+				
+					Cisco TelePresence Video Communication Server (VCS)  0<br/>
+					
+				
+					Cisco TelePresence SX Series  0<br/>
+					
+				
+					Cisco TelePresence Supervisor MSE 8050  0<br/>
+					
+				
+					Cisco TelePresence Server on Virtual Machine  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 320  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 310  0<br/>
+					
+				
+					Cisco TelePresence Server 8710  0<br/>
+					
+				
+					Cisco TelePresence Server 7010  0<br/>
+					
+				
+					Cisco TelePresence Serial Gateway Series  0<br/>
+					
+				
+					Cisco TelePresence Profile Series  0<br/>
+					
+				
+					Cisco TelePresence MX Series  0<br/>
+					
+				
+					Cisco TelePresence MCU 8510  0<br/>
+					
+				
+					Cisco TelePresence MCU 8420  0<br/>
+					
+				
+					Cisco TelePresence MCU 5300  0<br/>
+					
+				
+					Cisco TelePresence MCU 4500  0<br/>
+					
+				
+					Cisco TelePresence MCU 4200  0<br/>
+					
+				
+					Cisco TelePresence ISDN Link  0<br/>
+					
+				
+					Cisco TelePresence ISDN GW MSE 8321  0<br/>
+					
+				
+					Cisco TelePresence ISDN GW 3241  0<br/>
+					
+				
+					Cisco TelePresence Integrator C Series  0<br/>
+					
+				
+					Cisco TelePresence EX Series  0<br/>
+					
+				
+					Cisco TelePresence Content Server (TCS)  0<br/>
+					
+				
+					Cisco TelePresence Conductor  0<br/>
+					
+				
+					Cisco TAPI Service Provider (TSP)  0<br/>
+					
+				
+					Cisco Tandberg Codian MSE 8320 model  0<br/>
+					
+				
+					Cisco Tandberg Codian ISDN GW 3240  0<br/>
+					
+				
+					Cisco Tandberg Codian ISDN GW 3220  0<br/>
+					
+				
+					Cisco Tandberg Codian ISDN GW 3210  0<br/>
+					
+				
+					Cisco Sx500 switches  0<br/>
+					
+				
+					Cisco Sx300 switches  0<br/>
+					
+				
+					Cisco Sx220 switches  0<br/>
+					
+				
+					Cisco StealthWatch UDP Director (formerly Flow Replicator)  0<br/>
+					
+				
+					Cisco StealthWatch Management Console (SMC)  0<br/>
+					
+				
+					Cisco StealthWatch IDentity  0<br/>
+					
+				
+					Cisco StealthWatch FlowCollector sFlow  0<br/>
+					
+				
+					Cisco StealthWatch FlowCollector NetFlow  0<br/>
+					
+				
+					Cisco Standalone rack server CIMC  0<br/>
+					
+				
+					Cisco SPA525G  0<br/>
+					
+				
+					Cisco SPA51X Series IP Phones  0<br/>
+					
+				
+					Cisco SPA50X Series IP Phones  0<br/>
+					
+				
+					Cisco SPA30X Series IP Phones  0<br/>
+					
+				
+					Cisco SPA232D Multi-Line DECT ATA  0<br/>
+					
+				
+					Cisco SPA122 ATA with Router  0<br/>
+					
+				
+					Cisco SPA112 2-Port Phone Adapter  0<br/>
+					
+				
+					Cisco Small Cell factory recovery root filesystem  2.99.4<br/>
+					
+				
+					Cisco Show and Share (SnS)  0<br/>
+					
+				
+					Cisco Services Provisioning Platform (SPP)  0<br/>
+					
+				
+					Cisco Services Analytic Platform  0<br/>
+					
+				
+					Cisco Serial Number Assessment Service (SNAS)  0<br/>
+					
+				
+					Cisco Security Manager  0<br/>
+					
+				
+					Cisco Secure Access Control Server  <br/>
+					
+				
+					Cisco SCOS (Service Control Operating System)  0<br/>
+					
+				
+					Cisco Registered Envelope Service (CRES)  0<br/>
+					
+				
+					Cisco Proactive Network Operations Center  0<br/>
+					
+				
+					Cisco Prime Security Manager  0<br/>
+					
+				
+					Cisco Prime Performance Manager  0<br/>
+					
+				
+					Cisco Prime Optical for SPs  0<br/>
+					
+				
+					Cisco Prime Network Services Controller (PNSC)  0<br/>
+					
+				
+					Cisco Prime Network Registrar (CPNR) virtual appliance  0<br/>
+					
+				
+					Cisco Prime Network  0<br/>
+					
+				
+					Cisco Prime License Manager  0<br/>
+					
+				
+					Cisco Prime LAN Management Solution  0<br/>
+					
+				
+					Cisco Prime IP Express  0<br/>
+					
+				
+					Cisco Prime Infrastructure Standalone Plug and Play Gateway  0<br/>
+					
+				
+					Cisco Prime Home  0<br/>
+					
+				
+					Cisco Prime Collaboration Provisioning  0<br/>
+					
+				
+					Cisco Prime Collaboration Deployment  0<br/>
+					
+				
+					Cisco Prime Collaboration Assurance  0<br/>
+					
+				
+					Cisco Prime Access Registrar  0<br/>
+					
+				
+					Cisco Policy Suite (CPS)  0<br/>
+					
+				
+					Cisco Physical Access Control Gateway  0<br/>
+					
+				
+					Cisco Partner Supporting Service (PSS)  1.0<br/>
+					
+				
+					Cisco Paging Server (Informacast)  0<br/>
+					
+				
+					Cisco Packet Tracer  5.3<br/>
+					
+				
+					Cisco Packet Tracer  5.2<br/>
+					
+				
+					Cisco Packaged Contact Center Enterprise  0<br/>
+					
+				
+					Cisco ONS 15454 Series Multiservice Provisioning Platforms  0<br/>
+					
+				
+					Cisco OnePK All-in-One VM  0<br/>
+					
+				
+					Cisco Nexus 9000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 7000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 6000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 5000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 4000 Series Blade Switches  0<br/>
+					
+				
+					Cisco Nexus 1000V Series Switches  0<br/>
+					
+				
+					Cisco Nexus 1000V InterCloud  0<br/>
+					
+				
+					Cisco Network Analysis Module  0<br/>
+					
+				
+					Cisco Network Admission Control (NAC)  0<br/>
+					
+				
+					Cisco NetFlow Generation Appliance (NGA)  0<br/>
+					
+				
+					Cisco NAC Server  0<br/>
+					
+				
+					Cisco NAC Guest Server  0<br/>
+					
+				
+					Cisco Multicast Manager  0<br/>
+					
+				
+					Cisco Model D9485 DAVIC QPSK  0<br/>
+					
+				
+					Cisco Mobility Services Engine  0<br/>
+					
+				
+					Cisco Mobile Wireless transport Manager (MWTM)  0<br/>
+					
+				
+					Cisco MMP server  0<br/>
+					
+				
+					Cisco MeetingPlace  <br/>
+					
+				
+					Cisco MediaSense  0<br/>
+					
+				
+					Cisco Media Services Interface  0<br/>
+					
+				
+					Cisco Media Experience Engines (MXE)  0<br/>
+					
+				
+					Cisco MDS 9000 Series Multilayer Switches  0<br/>
+					
+				
+					Cisco MATE Live  0<br/>
+					
+				
+					Cisco MATE Design  0<br/>
+					
+				
+					Cisco MATE collector  0<br/>
+					
+				
+					Cisco Local Collector Appliance (LCA)  0<br/>
+					
+				
+					Cisco Local Collector Appliance  0<br/>
+					
+				
+					Cisco JCF components  0<br/>
+					
+				
+					Cisco Jabber Software Development Kit  0<br/>
+					
+				
+					Cisco Jabber Guest  10.0(2)<br/>
+					
+				
+					Cisco Jabber for Mac  0<br/>
+					
+				
+					Cisco Jabber for iOS  0<br/>
+					
+				
+					Cisco Jabber for Android  0<br/>
+					
+				
+					Cisco IPS  0<br/>
+					
+				
+					Cisco IP Interoperability and Collaboration System (IPICS)  0<br/>
+					
+				
+					Cisco IOS XE Software  0<br/>
+					
+				
+					Cisco IOS Software  0<br/>
+					
+				
+					Cisco InTracer  0<br/>
+					
+				
+					Cisco IM and Presence Service (CUPS)  0<br/>
+					
+				
+					Cisco Identity Services Engine (ISE)  0<br/>
+					
+				
+					Cisco Hosted Collaboration Mediation Fulfillment  0<br/>
+					
+				
+					Cisco Headend System Releases  0<br/>
+					
+				
+					Cisco FireSIGHT System Software  0<br/>
+					
+				
+					Cisco Finesse  0<br/>
+					
+				
+					Cisco Expressway series  0<br/>
+					
+				
+					Cisco Enterprise Content Delivery System (ECDS)  0<br/>
+					
+				
+					Cisco Emergency Responder  <br/>
+					
+				
+					Cisco Email Security Appliance (ESA)  0<br/>
+					
+				
+					Cisco Edge 340 Digital Media Player  0<br/>
+					
+				
+					Cisco DX Series IP Phones  0<br/>
+					
+				
+					Cisco Digital Media Players (DMP) 4400 Series  0<br/>
+					
+				
+					Cisco Digital Media Players (DMP) 4300 Series  0<br/>
+					
+				
+					Cisco Digital Media Manager (DMM)  0<br/>
+					
+				
+					Cisco DCM Series 9900-Digital Content Manager  0<br/>
+					
+				
+					Cisco Content Security Management Appliance (SMA)  0<br/>
+					
+				
+					Cisco Content Security Appliance Updater Servers  0<br/>
+					
+				
+					Cisco Connected Grid Router-CGOS  0<br/>
+					
+				
+					Cisco Computer Telephony Integration Object Server (CTIOS)  0<br/>
+					
+				
+					Cisco Common Services Platform Collector  0<br/>
+					
+				
+					Cisco Cloupia Unified Infrastructure Controller  0<br/>
+					
+				
+					Cisco Cloud Object Store (COS)  0<br/>
+					
+				
+					Cisco Cisco Unified Computing System B-Series (Blade) Servers  0<br/>
+					
+				
+					Cisco Cisco Unified Computing System (Management Software)  0<br/>
+					
+				
+					Cisco Cisco Smart Care  0<br/>
+					
+				
+					Cisco Cisco IronPort Encryption Appliance (IEA)  0<br/>
+					
+				
+					Cisco Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco Cisco Clean Access Manager  0<br/>
+					
+				
+					Cisco Cisco Application Policy Infrastructure Controller  0<br/>
+					
+				
+					Cisco Cisco ACE 4710 Application Control Engine (A5)  0<br/>
+					
+				
+					Cisco ATA 187 Analog Telephone Adaptor  0<br/>
+					
+				
+					Cisco ASR 5000 Series  0<br/>
+					
+				
+					Cisco ASA Next-Generation Firewall Services  0<br/>
+					
+				
+					Cisco ASA CX and Cisco Prime Security Manager  0<br/>
+					
+				
+					Cisco Application Networking Manager (ANM)  0<br/>
+					
+				
+					Cisco AnyRes Live (CAL)  0<br/>
+					
+				
+					Cisco AnyConnect Secure Mobility Client  0<br/>
+					
+				
+					Cisco Agent for OpenFlow  0<br/>
+					
+				
+					Cisco Adaptive Security Appliance (ASA)  0<br/>
+					
+				
+					Cisco ACE 30 Application Control Engine Module  0<br/>
+					
+				
+					Cisco 910 Industrial Router  0<br/>
+					
+				
+					Cisco 8800 Series IP Phones - VPN Feature  0<br/>
+					
+				
+					Cisco 190 ATA Series Analog Terminal Adaptor  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle Solaris  11.3 SRU 6.5<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1s<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.4.0.1<br/>
+					
+				
+					IBM Tivoli Composite Application Manager for Transactions  7.3.0.1<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.12 iFix 150-13<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.12 iFix 150-12<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-114<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-113<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager  9.0.1.0<br/>
+					
+				
+					IBM PureApplication System 2.2.1 <br/>
+					
+				
+					IBM PureApplication System  2.1.2.2<br/>
+					
+				
+					IBM PureApplication System  2.0.0.1 IF 8<br/>
+					
+				
+					IBM Netezza Host Management 5.4.4 <br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.2<br/>
+					
+				
+					IBM DataPower Gateways  7.5.1.1<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.2<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.8<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.11<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.14<br/>
+					
+				
+					IBM DataPower Gateway  7.5.1.1<br/>
+					
+				
+					IBM DataPower Gateway  7.5.0.2<br/>
+					
+				
+					IBM DataPower Gateway  7.2.0.8<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.11<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.14<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 Fix Pack 6<br/>
+					
+				
+					IBM Cognos TM1  10.2.0.2 Interim Fix<br/>
+					
+				
+					IBM Cognos TM1  10.1.1.2 Interim Fix<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 FP 6<br/>
+					
+				
+					IBM Cognos Insight 10.2.1 FP 2 IF 6<br/>
+					
+				
+					IBM Cognos Insight  10.2 FP 1 IF 6<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6 Interim Fix1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 interim fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5 interim fix <br/>
+					
+				
+					IBM Algo Audit and Compliance  2.1.0.3 IF 2<br/>
+					
+				
+					HP Version Control Repository Manager  7.5.1<br/>
+					
+				
+					HP Systems Insight Manager  7.5.1<br/>
+					
+				
+					HP System Management Homepage 7.5.5 <br/>
+					
+				
+					HP Smart Update Manager 7.5.1 <br/>
+					
+				
+					HP Server Migration Pack 7.5.1 <br/>
+					
+				
+					HP Oneview for VMware vCenter 7.8.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.5.1 <br/>
+					
+				
+					HP Insight Control server provisioning  7.5.1<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP BladeSystem c-Class Virtual Connect (VC)  4.50<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p38<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA3<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p30<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

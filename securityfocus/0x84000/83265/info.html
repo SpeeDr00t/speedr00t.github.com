@@ -1,0 +1,3491 @@
+#SpeeDr00t@Black Falcon<br>#bid83265<p><b><span style="font-size: 18pt;">GNU glibc 'getaddrinfo()' Function Multiple Stack Buffer Overflow Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/83265/info">info</a><br><a href="http://www.securityfocus.com/bid/83265/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/83265/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/83265/solution">solution</a><br><a href="http://www.securityfocus.com/bid/83265/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				83265
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-7547<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 16 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 02 2017 12:02AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Google Security Team and Red Hat.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare Workstation  0<br/>
+					
+				
+					VMWare Workbench  0<br/>
+					
+				
+					VMWare vSphere Storage Appliance  0<br/>
+					
+				
+					VMWare vSphere Replication  6.1<br/>
+					
+				
+					VMWare vSphere Replication  6.0<br/>
+					
+				
+					VMWare vSphere Replication  5.8<br/>
+					
+				
+					VMWare vSphere Replication  5.1<br/>
+					
+				
+					VMWare vSphere Replication  1.0<br/>
+					
+				
+					VMWare vSphere Management Assistant  0<br/>
+					
+				
+					VMWare vSphere Data Protection  0<br/>
+					
+				
+					VMWare vSphere Big Data Extensions  0<br/>
+					
+				
+					VMWare vRealize Operations Manager  6.2<br/>
+					
+				
+					VMWare vRealize Operations Manager  6.1<br/>
+					
+				
+					VMWare vRealize Operations Manager  6.0<br/>
+					
+				
+					VMWare vRealize Log Insight  0<br/>
+					
+				
+					VMWare vRealize Infrastructure Navigator (VIN)  0<br/>
+					
+				
+					VMWare vRealize Business Standard  7.0<br/>
+					
+				
+					VMWare vRealize Business Standard  6.0<br/>
+					
+				
+					VMWare vRealize Automation Application Services  0<br/>
+					
+				
+					VMWare vRealize Automation  7.0<br/>
+					
+				
+					VMWare vRealize Automation  6.2<br/>
+					
+				
+					VMWare vRealize Automation  6.1<br/>
+					
+				
+					VMWare vRealize Automation  6.0<br/>
+					
+				
+					VMWare vFabric Postgres  0<br/>
+					
+				
+					VMWare vCloud Networking and Security 5.5.2 <br/>
+					
+				
+					VMWare vCloud Networking and Security 5.5.1 <br/>
+					
+				
+					VMWare vCloud Networking and Security  5.5.4.1<br/>
+					
+				
+					VMWare vCloud Networking and Security  5.5.3<br/>
+					
+				
+					VMWare vCloud Networking and Security  5.5<br/>
+					
+				
+					VMWare vCloud Connector  0<br/>
+					
+				
+					VMWare vCenter Support Assistant  0<br/>
+					
+				
+					VMWare vCenter Server Appliance  0<br/>
+					
+				
+					VMWare vCenter Operations Manager  5.8<br/>
+					
+				
+					VMWare vCenter Hyperic Server  5.8<br/>
+					
+				
+					VMWare Site Recovery Manager  5.5.1.6<br/>
+					
+				
+					VMWare Orchestrator Appliance 7.0 <br/>
+					
+				
+					VMWare Orchestrator Appliance 6.0 <br/>
+					
+				
+					VMWare Orchestrator Appliance 5.5 <br/>
+					
+				
+					VMWare Orchestrator Appliance  5.1<br/>
+					
+				
+					VMWare NSX for vSphere 6.1.4 <br/>
+					
+				
+					VMWare NSX for vSphere 6.0.4 <br/>
+					
+				
+					VMWare NSX for vSphere  6.1<br/>
+					
+				
+					VMWare NSX for Multi-Hypervisor 4.2.4 <br/>
+					
+				
+					VMWare NSX for Multi-Hypervisor 4.2 <br/>
+					
+				
+					VMWare NSX for Multi-Hypervisor 4.1.2 <br/>
+					
+				
+					VMWare NSX for Multi-Hypervisor 4.0.3 <br/>
+					
+				
+					VMWare Mirage  0<br/>
+					
+				
+					VMWare Identity Manager Connector  0<br/>
+					
+				
+					VMWare Identity Manager  0<br/>
+					
+				
+					VMWare Horizon DaaS Platform 6.1.4 <br/>
+					
+				
+					VMWare Horizon DaaS Platform  6.1<br/>
+					
+				
+					VMWare Fusion  -<br/>
+					
+				
+					VMWare Esxi  6.0<br/>
+					
+				
+					VMWare ESXi  5.5<br/>
+					
+				
+					VMWare Airwatch  0<br/>
+					
+				
+					VMWare Access Point  0<br/>
+					
+				
+					Unify OpenStage Xpert 6010p terminals  0<br/>
+					
+				
+					Unify OpenScape Voice  V8 R1.43.1<br/>
+					
+				
+					Unify OpenScape Voice  V8 R1.38.0<br/>
+					
+				
+					Unify OpenScape Voice  V8 R1.37.0<br/>
+					
+				
+					Unify OpenScape Voice  V8 R1.3.0<br/>
+					
+				
+					Unify OpenScape Voice  V8 R1<br/>
+					
+				
+					Unify OpenScape Voice  V7 R1.43.1<br/>
+					
+				
+					Unify OpenScape Voice  V7 R1.42.0<br/>
+					
+				
+					Unify OpenScape Voice  V7 R1<br/>
+					
+				
+					Unify OpenScape SBC  0<br/>
+					
+				
+					Unify OpenScape Office  0<br/>
+					
+				
+					Unify OpenScape Contact Center Call Director SIP Servic  0<br/>
+					
+				
+					Unify OpenScape Business  0<br/>
+					
+				
+					Unify OpenScape Branch  V8 R1<br/>
+					
+				
+					Unify OpenScape Branch  V7 R<br/>
+					
+				
+					Unify OpenScape Branch  0<br/>
+					
+				
+					Unify OpenScape 4000 Softgat  0<br/>
+					
+				
+					Unify OpenScape 4000 Assistant  0<br/>
+					
+				
+					Ubuntu Ubuntu Linux  15.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS<br/>
+					
+				
+					Trendmicro Interscan Messaging Security Virtual Appliance (IMSVA)  9.0<br/>
+					
+				
+					Trendmicro Deep Discovery Advisor  3.0 SP1<br/>
+					
+				
+					SuSE openSUSE Evergreen  11.4<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					Siemens SINEMA Remote Connect  0<br/>
+					
+				
+					Siemens SCALANCE S615  0<br/>
+					
+				
+					Siemens SCALANCE M-800  0<br/>
+					
+				
+					Siemens ROX II 2.9 <br/>
+					
+				
+					Siemens ROX II 2.3 <br/>
+					
+				
+					Siemens Basic RT  13<br/>
+					
+				
+					Siemens APE 2.0.2 <br/>
+					
+				
+					Siemens APE  2.0<br/>
+					
+				
+					Siemens APE  0<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Virtualization  3<br/>
+					
+				
+					Redhat Enterprise Linux Workstation Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  6<br/>
+					
+				
+					Redhat Enterprise Linux Server Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  7.1<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  6.6.z<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.4<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.2<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node EUS  7.1<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop Optional  6<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  6<br/>
+					
+				
+					Pulse Secure Pulse Policy Secure  5.3R1<br/>
+					
+				
+					Pulse Secure Pulse Policy Secure  5.3R0<br/>
+					
+				
+					Pulse Secure Pulse Policy Secure  5.2R5<br/>
+					
+				
+					Pulse Secure Pulse Policy Secure  5.2R0<br/>
+					
+				
+					Pulse Secure Pulse Policy Secure  5.1R7<br/>
+					
+				
+					Pulse Secure Pulse Policy Secure  5.1R0<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.2R1<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.2R0<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R7<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R6<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R5<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R4<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R3<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R2<br/>
+					
+				
+					Pulse Secure Pulse Connect Secure  8.1R0<br/>
+					
+				
+					Pexip Pexip Infinity  9.0<br/>
+					
+				
+					Pexip Pexip Infinity  8.0<br/>
+					
+				
+					Pexip Pexip Infinity  7.0<br/>
+					
+				
+					Pexip Pexip Infinity  6.0<br/>
+					
+				
+					Pexip Pexip Infinity  5.0<br/>
+					
+				
+					Pexip Pexip Infinity  4.0<br/>
+					
+				
+					Pexip Pexip Infinity  3.0<br/>
+					
+				
+					Pexip Pexip Infinity  2.0<br/>
+					
+				
+					Pexip Pexip Infinity  10.1<br/>
+					
+				
+					Pexip Pexip Infinity  1.0<br/>
+					
+				
+					Oracle Linux  6<br/>
+					
+				
+					Oracle Fujitsu M10-4S Server  XCP 2271<br/>
+					
+				
+					Oracle Fujitsu M10-4S Server  XCP 2230<br/>
+					
+				
+					Oracle Fujitsu M10-4 Server  XCP 2271<br/>
+					
+				
+					Oracle Fujitsu M10-4 Server  XCP 2230<br/>
+					
+				
+					Oracle Fujitsu M10-1 Server  XCP 2271<br/>
+					
+				
+					Oracle Fujitsu M10-1 Server  XCP 2230<br/>
+					
+				
+					Oracle Exalogic Infrastructure  2.0<br/>
+					
+				
+					Oracle Exalogic Infrastructure  1.0<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					IBM Xiv Storage System Gen3 Firmware  11.1.0 A<br/>
+					
+				
+					IBM Xiv Storage System Gen3 Firmware  11.1.0<br/>
+					
+				
+					IBM Xiv Storage System Gen3  11.2.0<br/>
+					
+				
+					IBM Workload Deployer 3.1 7<br/>
+					
+				
+					IBM Workload Deployer 3.1 6<br/>
+					
+				
+					IBM Workload Deployer 3.1 2<br/>
+					
+				
+					IBM Workload Deployer 3.1 1<br/>
+					
+				
+					IBM Workload Deployer  3.1<br/>
+					
+				
+					IBM WebSphere DataPower XC10 Appliance  2.5<br/>
+					
+				
+					IBM WebSphere DataPower XC10 Appliance  2.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images (and System X Edition)  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.0<br/>
+					
+				
+					IBM System Storage TS4500 Tape Library  1.1.1.0<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry 2.2 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  3.1.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.4.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0.4 Appliance FP<br/>
+					
+				
+					IBM SmartCloud Entry  2.3.0<br/>
+					
+				
+					IBM SmartCloud Entry  2.2.0.4 Appliance FP<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass 1.0.2919 <br/>
+					
+				
+					IBM Security Proventia Network Active Bypass 1.0.1876 <br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.9-34<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.4-23<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.4-12<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.2-9<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.0-13<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30-12<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.29-9<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.25-57<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.18-49<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.13-41<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.18-43<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.18-42<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.16-37<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.15-36<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.13-34<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.11-28<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  0343c3c<br/>
+					
+				
+					IBM Security Privileged Identity Manager 2.0.2 <br/>
+					
+				
+					IBM Security Privileged Identity Manager 2.0.1 <br/>
+					
+				
+					IBM Security Privileged Identity Manager 2.0 <br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Identity Manager 7.0.1 <br/>
+					
+				
+					IBM Security Identity Manager  7.0.0.3<br/>
+					
+				
+					IBM Security Identity Manager  7.0.0.2<br/>
+					
+				
+					IBM Security Identity Manager  7.0<br/>
+					
+				
+					IBM Security Identity Governance and Intelligence  5.2<br/>
+					
+				
+					IBM Security Guardium  10.0<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  9.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5.2.3<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5.2.2<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5.2.1<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5.2.0<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5<br/>
+					
+				
+					IBM QRadar Vulnerability Manager 7.2 <br/>
+					
+				
+					IBM QRadar SIEM 7.1 <br/>
+					
+				
+					IBM QRadar Risk Manager  7.2<br/>
+					
+				
+					IBM QRadar Incident Forensics 7.2 <br/>
+					
+				
+					IBM QRadar  7.2<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM Power HMC  7.9.0.0<br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.1<br/>
+					
+				
+					IBM MobileFirst Quality Assurance 6.0 <br/>
+					
+				
+					IBM MobileFirst Quality Assurance  6.3.0.3<br/>
+					
+				
+					IBM Lotus Protector for Mail Security 2.8 0<br/>
+					
+				
+					IBM Lotus Protector for Mail Security  2.8.1.0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM DS8800  86.31.167.0 (R6.3)<br/>
+					
+				
+					IBM DS8800  0<br/>
+					
+				
+					IBM DS8700  87.51.14.X (R7.5) <br/>
+					
+				
+					IBM DS8700  87.41.17.X (R7.4)<br/>
+					
+				
+					IBM DS8700  76.31.143.0 (R6.3)<br/>
+					
+				
+					IBM DataPower Gateway  7.2.0.3<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.8<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.11<br/>
+					
+				
+					IBM DataPower Gateway  6.0.1.14<br/>
+					
+				
+					IBM DataPower Gateway  6.0.0.18<br/>
+					
+				
+					IBM ABYP-4TS-P-M  0<br/>
+					
+				
+					IBM ABYP-4TS-P  0<br/>
+					
+				
+					IBM ABYP-4TL-P-M  0<br/>
+					
+				
+					IBM ABYP-4TL-P  0<br/>
+					
+				
+					IBM ABYP-4T-0S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-4T-0S-0L-P  0<br/>
+					
+				
+					IBM ABYP-2T-2S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-2S-0L-P  0<br/>
+					
+				
+					IBM ABYP-2T-1S-1L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-1S-1L-P  0<br/>
+					
+				
+					IBM ABYP-2T-0S-2L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-0S-2L-P  0<br/>
+					
+				
+					IBM ABYP-10G-4SR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-4SR-1-P  0<br/>
+					
+				
+					IBM ABYP-10G-4LR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-4LR-1-P  0<br/>
+					
+				
+					IBM ABYP-10G-2SR-2LR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-2SR-2LR-1-P  0<br/>
+					
+				
+					IBM ABYP-0T-4S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-4S-0L-P  0<br/>
+					
+				
+					IBM ABYP-0T-2S-2L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-2S-2L-P  0<br/>
+					
+				
+					IBM ABYP-0T-0S-4L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-0S-4L-P  0<br/>
+					
+				
+					Huawei X6800  V100R003C00<br/>
+					
+				
+					Huawei VCM V100R001  V100R002<br/>
+					
+				
+					Huawei V1300N  V100R002<br/>
+					
+				
+					Huawei UltraVR  V100R003C00<br/>
+					
+				
+					Huawei SingleCLOUD  V100R003C10<br/>
+					
+				
+					Huawei SingleCLOUD  V100R003C00<br/>
+					
+				
+					Huawei RH2288H V3  V100R003C00<br/>
+					
+				
+					Huawei RH2288A V2  V100R002C00<br/>
+					
+				
+					Huawei RH2285H V2  V100R002C00<br/>
+					
+				
+					Huawei RH1288 V3  V100R003C00SPC100<br/>
+					
+				
+					Huawei OceanStor Onebox  V100R003C10SPC100<br/>
+					
+				
+					Huawei OceanStor Onebox  V100R001C01<br/>
+					
+				
+					Huawei OceanStor N8500  V200R001C91<br/>
+					
+				
+					Huawei OceanStor N8500  V200R001C09<br/>
+					
+				
+					Huawei OceanStor HDP3500E  V100R003C00<br/>
+					
+				
+					Huawei OceanStor HDP3500E  V100R002C00<br/>
+					
+				
+					Huawei OceanStor Backup Software  V100R002C00<br/>
+					
+				
+					Huawei OceanStor 9000E  V100R002C19<br/>
+					
+				
+					Huawei OceanStor 9000  V100R001C30<br/>
+					
+				
+					Huawei OceanStor 9000  V100R001C01<br/>
+					
+				
+					Huawei ManageOne  V100R002<br/>
+					
+				
+					Huawei ManageOne  V100R001<br/>
+					
+				
+					Huawei LogCenter  V100R001C20<br/>
+					
+				
+					Huawei LogCenter  V100R001C10<br/>
+					
+				
+					Huawei GalaxEngine  V100R002C02<br/>
+					
+				
+					Huawei FusionStorage  V100R003C30<br/>
+					
+				
+					Huawei FusionStorage  V100R003C02<br/>
+					
+				
+					Huawei FusionStorage  V100R003C00<br/>
+					
+				
+					Huawei FusionSphereOpenStack OM  V100R005C10<br/>
+					
+				
+					Huawei FusionSphereOpenStack OM  V100R005C00<br/>
+					
+				
+					Huawei FusionSphere OpenStack  V100R005C10<br/>
+					
+				
+					Huawei FusionSphere OpenStack  V100R005C00<br/>
+					
+				
+					Huawei FusionManager  V100R005C10<br/>
+					
+				
+					Huawei FusionManager  V100R005C00<br/>
+					
+				
+					Huawei FusionManager  V100R003C10<br/>
+					
+				
+					Huawei FusionManager  V100R003C00<br/>
+					
+				
+					Huawei Fusioncube  V100R002C02<br/>
+					
+				
+					Huawei FusionCompute  V100R005C10<br/>
+					
+				
+					Huawei FusionCompute  V100R005C00<br/>
+					
+				
+					Huawei FusionCompute  V100R003C10<br/>
+					
+				
+					Huawei FusionCompute  V100R003C00<br/>
+					
+				
+					Huawei FusionAccess  V100R005C30SPC103<br/>
+					
+				
+					Huawei FusionAccess  V100R005C30SPC102<br/>
+					
+				
+					Huawei FusionAccess  V100R005C30SPC100<br/>
+					
+				
+					Huawei FusionAccess  V100R005C20<br/>
+					
+				
+					Huawei FusionAccess  V100R005C10<br/>
+					
+				
+					Huawei eSpace VTM  V100R002<br/>
+					
+				
+					Huawei eSpace VTM  V100R001<br/>
+					
+				
+					Huawei eSpace VCN3000  V100R002<br/>
+					
+				
+					Huawei eSpace VCN3000  V100R001<br/>
+					
+				
+					Huawei eSpace UMS  V200R002<br/>
+					
+				
+					Huawei eSpace UC  V200R003<br/>
+					
+				
+					Huawei eSpace UC  V200R002<br/>
+					
+				
+					Huawei eSpace UC  V200R001<br/>
+					
+				
+					Huawei eSpace UC  V100R002<br/>
+					
+				
+					Huawei eSpace NVR6128  V100R002<br/>
+					
+				
+					Huawei eSpace Meeting Portal  V100R001<br/>
+					
+				
+					Huawei eSpace IVS  V100R001<br/>
+					
+				
+					Huawei eSpace CC  V200R001<br/>
+					
+				
+					Huawei eSpace CC  V100R001<br/>
+					
+				
+					Huawei eSpace CAD  V100R001<br/>
+					
+				
+					Huawei eSight UC&amp;C;  V100R001C20<br/>
+					
+				
+					Huawei eSight UC&amp;C;  V100R001C01<br/>
+					
+				
+					Huawei eSight NetWork  V300R003C20<br/>
+					
+				
+					Huawei eSight NetWork  V300R003C10<br/>
+					
+				
+					Huawei eSight NetWork  V300R003C00<br/>
+					
+				
+					Huawei eSight NetWork  V200R005C00<br/>
+					
+				
+					Huawei eSapce USM  V200R003<br/>
+					
+				
+					Huawei eSapce USM  V100R001<br/>
+					
+				
+					Huawei eLog  V200R003C20<br/>
+					
+				
+					Huawei eLog  V200R003C10<br/>
+					
+				
+					Huawei E9000 Chassis  V100R001C10<br/>
+					
+				
+					Huawei E9000 Chassis  V100R001C00<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R002C00<br/>
+					
+				
+					Huawei CloudEngine 5800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 5800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 5800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 5800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 5800  V100R002C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R005C10<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R005C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R003C10<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R003C00<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R002C00<br/>
+					
+				
+					Huawei CH220 V3  V100R001C00<br/>
+					
+				
+					Huawei AR3200  V200R006C17<br/>
+					
+				
+					Huawei AR3200  V200R006C16<br/>
+					
+				
+					Huawei AR3200  V200R006C15<br/>
+					
+				
+					Huawei AR3200  V200R006C13<br/>
+					
+				
+					Huawei AR3200  V200R006C12<br/>
+					
+				
+					Huawei AR3200  V200R006C11<br/>
+					
+				
+					Huawei AR3200  V200R006C10<br/>
+					
+				
+					Huawei Agile Controller-Campus  V100R002C00<br/>
+					
+				
+					Huawei Agile Controller-Campus  V100R001C00<br/>
+					
+				
+					Huawei ACU2  V200R006C10<br/>
+					
+				
+					Huawei ACU2  V200R006C00<br/>
+					
+				
+					Huawei ACU2  V200R005C10<br/>
+					
+				
+					Huawei AC6005  V200R006C10<br/>
+					
+				
+					Huawei AC6005  V200R006C00<br/>
+					
+				
+					Huawei AC6005  V200R005C10<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.20<br/>
+					
+				
+					HP Virtualization Performance Viewer  2.10<br/>
+					
+				
+					HP Version Control Repository Manager 7.4.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.2 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2 <br/>
+					
+				
+					HP Version Control Repository Manager  7.5.0<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.3<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.2<br/>
+					
+				
+					HP Systems Insight Manager 7.1.1 <br/>
+					
+				
+					HP Systems Insight Manager  7.5.0<br/>
+					
+				
+					HP Systems Insight Manager  7.4<br/>
+					
+				
+					HP Systems Insight Manager  7.3.2<br/>
+					
+				
+					HP Systems Insight Manager  7.3.1<br/>
+					
+				
+					HP Systems Insight Manager  7.3<br/>
+					
+				
+					HP Systems Insight Manager  7.2.2<br/>
+					
+				
+					HP Systems Insight Manager  7.2.1<br/>
+					
+				
+					HP Systems Insight Manager  7.2<br/>
+					
+				
+					HP Systems Insight Manager  7.0<br/>
+					
+				
+					HP System Management Homepage 7.5.4 <br/>
+					
+				
+					HP System Management Homepage 7.5 <br/>
+					
+				
+					HP System Management Homepage 7.4.1 <br/>
+					
+				
+					HP System Management Homepage 7.3.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.3 <br/>
+					
+				
+					HP System Management Homepage 7.2.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.1 <br/>
+					
+				
+					HP System Management Homepage 7.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.1 <br/>
+					
+				
+					HP System Management Homepage  7.4<br/>
+					
+				
+					HP System Management Homepage  7.3.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3<br/>
+					
+				
+					HP System Management Homepage  7.2.4.1<br/>
+					
+				
+					HP System Management Homepage  7.1<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP StoreVirtual VSA Software  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 FC 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4730 600GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4630 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 600GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 4TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 450GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 3TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4530 2TB MDL SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 Hybrid SAN Solution  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4335 China Hybrid SAN Solution  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 FC 900GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 900GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 900GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 450GB SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 450GB China SAS Storage  12.6<br/>
+					
+				
+					HP StoreVirtual 4330 1TB MDL SAS Storage/S-Buy  12.6<br/>
+					
+				
+					HP Server Migration Pack 7.5 <br/>
+					
+				
+					HP OneView  2.0<br/>
+					
+				
+					HP OneView  1.2<br/>
+					
+				
+					HP OneView  1.1<br/>
+					
+				
+					HP Insight Control server provisioning 7.4.1 <br/>
+					
+				
+					HP Insight Control server provisioning  7.5.0<br/>
+					
+				
+					HP Insight Control server provisioning  7.4.0<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP Insight Control 7.5 <br/>
+					
+				
+					HP Insight Control  7.4<br/>
+					
+				
+					HP Insight Control  7.3<br/>
+					
+				
+					HP Insight Control  7.2<br/>
+					
+				
+					HP HPE Helion Eucalyptus  4.2.2<br/>
+					
+				
+					HP HPE Helion Eucalyptus  4.2.1<br/>
+					
+				
+					HP HPE Helion Eucalyptus  4.2.0<br/>
+					
+				
+					HP HPE Helion Eucalyptus  4.1.2<br/>
+					
+				
+					HP HPE Helion Eucalyptus  4.1.1<br/>
+					
+				
+					HP HPE Helion Eucalyptus  3.4.0<br/>
+					
+				
+					HP Helion OpenStack 2.1 <br/>
+					
+				
+					HP Helion OpenStack 2.0 <br/>
+					
+				
+					HP Helion OpenStack 1.1.1 <br/>
+					
+				
+					HP Helion Development Platform  2.0<br/>
+					
+				
+					HP Helion CloudSystem 9.0.1 <br/>
+					
+				
+					HP Helion CloudSystem 9.0 <br/>
+					
+				
+					HP Helion CloudSystem 8.1.2 <br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-up Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-up Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-out Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-out Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-Up Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-Up Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-out Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-out Configurations  2.0<br/>
+					
+				
+					HP Cloud Optimizer  3.0<br/>
+					
+				
+					HP AppSystems for SAP HANA - Single Node Configurations  1.0<br/>
+					
+				
+					HP AppSystems for SAP HANA - Scale Out Configurations  1.2<br/>
+					
+				
+					HP AppSystems for SAP HANA - Scale Out Configurations  1.0<br/>
+					
+				
+					HP 3PAR OS 3.1.3 <br/>
+					
+				
+					HP 3PAR OS  3.1.2<br/>
+					
+				
+					Google Chrome OS 25.0.1364 160<br/>
+					
+				
+					Google Chrome OS  8.0.552.344<br/>
+					
+				
+					Google Chrome OS  8.0.552.343<br/>
+					
+				
+					Google Chrome OS  8.0.552.342<br/>
+					
+				
+					Google Chrome OS  48.0.2564.92<br/>
+					
+				
+					Google Chrome OS  40.0.2214.114<br/>
+					
+				
+					Google Chrome OS  37.0.2062.119<br/>
+					
+				
+					Google Chrome OS  35.0.1916.155<br/>
+					
+				
+					Google Chrome OS  33.0.1750.152<br/>
+					
+				
+					Google Chrome OS  32.0.1700.95<br/>
+					
+				
+					Google Chrome OS  28.0.1500.95<br/>
+					
+				
+					Google Chrome OS  28.0.1500.71<br/>
+					
+				
+					Google Chrome OS  26.0.1410.9<br/>
+					
+				
+					Google Chrome OS  26.0.1410.8<br/>
+					
+				
+					Google Chrome OS  26.0.1410.7<br/>
+					
+				
+					Google Chrome OS  26.0.1410.6<br/>
+					
+				
+					Google Chrome OS  26.0.1410.57<br/>
+					
+				
+					Google Chrome OS  26.0.1410.56<br/>
+					
+				
+					Google Chrome OS  26.0.1410.55<br/>
+					
+				
+					Google Chrome OS  26.0.1410.54<br/>
+					
+				
+					Google Chrome OS  26.0.1410.52<br/>
+					
+				
+					Google Chrome OS  26.0.1410.51<br/>
+					
+				
+					Google Chrome OS  26.0.1410.50<br/>
+					
+				
+					Google Chrome OS  26.0.1410.5<br/>
+					
+				
+					Google Chrome OS  26.0.1410.49<br/>
+					
+				
+					Google Chrome OS  26.0.1410.48<br/>
+					
+				
+					Google Chrome OS  26.0.1410.47<br/>
+					
+				
+					Google Chrome OS  26.0.1410.46<br/>
+					
+				
+					Google Chrome OS  26.0.1410.45<br/>
+					
+				
+					Google Chrome OS  26.0.1410.44<br/>
+					
+				
+					Google Chrome OS  26.0.1410.43<br/>
+					
+				
+					Google Chrome OS  26.0.1410.42<br/>
+					
+				
+					Google Chrome OS  26.0.1410.41<br/>
+					
+				
+					Google Chrome OS  26.0.1410.40<br/>
+					
+				
+					Google Chrome OS  26.0.1410.4<br/>
+					
+				
+					Google Chrome OS  26.0.1410.39<br/>
+					
+				
+					Google Chrome OS  26.0.1410.38<br/>
+					
+				
+					Google Chrome OS  26.0.1410.37<br/>
+					
+				
+					Google Chrome OS  26.0.1410.36<br/>
+					
+				
+					Google Chrome OS  26.0.1410.35<br/>
+					
+				
+					Google Chrome OS  26.0.1410.34<br/>
+					
+				
+					Google Chrome OS  26.0.1410.33<br/>
+					
+				
+					Google Chrome OS  26.0.1410.32<br/>
+					
+				
+					Google Chrome OS  26.0.1410.31<br/>
+					
+				
+					Google Chrome OS  26.0.1410.30<br/>
+					
+				
+					Google Chrome OS  26.0.1410.3<br/>
+					
+				
+					Google Chrome OS  26.0.1410.29<br/>
+					
+				
+					Google Chrome OS  26.0.1410.28<br/>
+					
+				
+					Google Chrome OS  26.0.1410.27<br/>
+					
+				
+					Google Chrome OS  26.0.1410.26<br/>
+					
+				
+					Google Chrome OS  26.0.1410.25<br/>
+					
+				
+					Google Chrome OS  26.0.1410.24<br/>
+					
+				
+					Google Chrome OS  26.0.1410.23<br/>
+					
+				
+					Google Chrome OS  26.0.1410.22<br/>
+					
+				
+					Google Chrome OS  26.0.1410.21<br/>
+					
+				
+					Google Chrome OS  26.0.1410.20<br/>
+					
+				
+					Google Chrome OS  26.0.1410.19<br/>
+					
+				
+					Google Chrome OS  26.0.1410.18<br/>
+					
+				
+					Google Chrome OS  26.0.1410.17<br/>
+					
+				
+					Google Chrome OS  26.0.1410.16<br/>
+					
+				
+					Google Chrome OS  26.0.1410.15<br/>
+					
+				
+					Google Chrome OS  26.0.1410.14<br/>
+					
+				
+					Google Chrome OS  26.0.1410.12<br/>
+					
+				
+					Google Chrome OS  26.0.1410.11<br/>
+					
+				
+					Google Chrome OS  26.0.1410.10<br/>
+					
+				
+					Google Chrome OS  26.0.1410.1<br/>
+					
+				
+					Google Chrome OS  26.0.1410.0<br/>
+					
+				
+					Google Chrome OS  25.0.1364.99<br/>
+					
+				
+					Google Chrome OS  25.0.1364.98<br/>
+					
+				
+					Google Chrome OS  25.0.1364.95<br/>
+					
+				
+					Google Chrome OS  25.0.1364.93<br/>
+					
+				
+					Google Chrome OS  25.0.1364.92<br/>
+					
+				
+					Google Chrome OS  25.0.1364.91<br/>
+					
+				
+					Google Chrome OS  25.0.1364.90<br/>
+					
+				
+					Google Chrome OS  25.0.1364.9<br/>
+					
+				
+					Google Chrome OS  25.0.1364.89<br/>
+					
+				
+					Google Chrome OS  25.0.1364.88<br/>
+					
+				
+					Google Chrome OS  25.0.1364.87<br/>
+					
+				
+					Google Chrome OS  25.0.1364.86<br/>
+					
+				
+					Google Chrome OS  25.0.1364.85<br/>
+					
+				
+					Google Chrome OS  25.0.1364.84<br/>
+					
+				
+					Google Chrome OS  25.0.1364.82<br/>
+					
+				
+					Google Chrome OS  25.0.1364.81<br/>
+					
+				
+					Google Chrome OS  25.0.1364.80<br/>
+					
+				
+					Google Chrome OS  25.0.1364.8<br/>
+					
+				
+					Google Chrome OS  25.0.1364.79<br/>
+					
+				
+					Google Chrome OS  25.0.1364.78<br/>
+					
+				
+					Google Chrome OS  25.0.1364.77<br/>
+					
+				
+					Google Chrome OS  25.0.1364.76<br/>
+					
+				
+					Google Chrome OS  25.0.1364.75<br/>
+					
+				
+					Google Chrome OS  25.0.1364.74<br/>
+					
+				
+					Google Chrome OS  25.0.1364.73<br/>
+					
+				
+					Google Chrome OS  25.0.1364.72<br/>
+					
+				
+					Google Chrome OS  25.0.1364.70<br/>
+					
+				
+					Google Chrome OS  25.0.1364.7<br/>
+					
+				
+					Google Chrome OS  25.0.1364.68<br/>
+					
+				
+					Google Chrome OS  25.0.1364.67<br/>
+					
+				
+					Google Chrome OS  25.0.1364.66<br/>
+					
+				
+					Google Chrome OS  25.0.1364.65<br/>
+					
+				
+					Google Chrome OS  25.0.1364.63<br/>
+					
+				
+					Google Chrome OS  25.0.1364.62<br/>
+					
+				
+					Google Chrome OS  25.0.1364.61<br/>
+					
+				
+					Google Chrome OS  25.0.1364.58<br/>
+					
+				
+					Google Chrome OS  25.0.1364.57<br/>
+					
+				
+					Google Chrome OS  25.0.1364.56<br/>
+					
+				
+					Google Chrome OS  25.0.1364.55<br/>
+					
+				
+					Google Chrome OS  25.0.1364.54<br/>
+					
+				
+					Google Chrome OS  25.0.1364.53<br/>
+					
+				
+					Google Chrome OS  25.0.1364.52<br/>
+					
+				
+					Google Chrome OS  25.0.1364.51<br/>
+					
+				
+					Google Chrome OS  25.0.1364.50<br/>
+					
+				
+					Google Chrome OS  25.0.1364.5<br/>
+					
+				
+					Google Chrome OS  25.0.1364.49<br/>
+					
+				
+					Google Chrome OS  25.0.1364.48<br/>
+					
+				
+					Google Chrome OS  25.0.1364.47<br/>
+					
+				
+					Google Chrome OS  25.0.1364.46<br/>
+					
+				
+					Google Chrome OS  25.0.1364.45<br/>
+					
+				
+					Google Chrome OS  25.0.1364.44<br/>
+					
+				
+					Google Chrome OS  25.0.1364.43<br/>
+					
+				
+					Google Chrome OS  25.0.1364.42<br/>
+					
+				
+					Google Chrome OS  25.0.1364.41<br/>
+					
+				
+					Google Chrome OS  25.0.1364.40<br/>
+					
+				
+					Google Chrome OS  25.0.1364.39<br/>
+					
+				
+					Google Chrome OS  25.0.1364.38<br/>
+					
+				
+					Google Chrome OS  25.0.1364.37<br/>
+					
+				
+					Google Chrome OS  25.0.1364.36<br/>
+					
+				
+					Google Chrome OS  25.0.1364.35<br/>
+					
+				
+					Google Chrome OS  25.0.1364.34<br/>
+					
+				
+					Google Chrome OS  25.0.1364.33<br/>
+					
+				
+					Google Chrome OS  25.0.1364.32<br/>
+					
+				
+					Google Chrome OS  25.0.1364.31<br/>
+					
+				
+					Google Chrome OS  25.0.1364.30<br/>
+					
+				
+					Google Chrome OS  25.0.1364.3<br/>
+					
+				
+					Google Chrome OS  25.0.1364.29<br/>
+					
+				
+					Google Chrome OS  25.0.1364.28<br/>
+					
+				
+					Google Chrome OS  25.0.1364.27<br/>
+					
+				
+					Google Chrome OS  25.0.1364.26<br/>
+					
+				
+					Google Chrome OS  25.0.1364.25<br/>
+					
+				
+					Google Chrome OS  25.0.1364.24<br/>
+					
+				
+					Google Chrome OS  25.0.1364.23<br/>
+					
+				
+					Google Chrome OS  25.0.1364.22<br/>
+					
+				
+					Google Chrome OS  25.0.1364.21<br/>
+					
+				
+					Google Chrome OS  25.0.1364.20<br/>
+					
+				
+					Google Chrome OS  25.0.1364.2<br/>
+					
+				
+					Google Chrome OS  25.0.1364.19<br/>
+					
+				
+					Google Chrome OS  25.0.1364.18<br/>
+					
+				
+					Google Chrome OS  25.0.1364.173<br/>
+					
+				
+					Google Chrome OS  25.0.1364.172<br/>
+					
+				
+					Google Chrome OS  25.0.1364.171<br/>
+					
+				
+					Google Chrome OS  25.0.1364.170<br/>
+					
+				
+					Google Chrome OS  25.0.1364.17<br/>
+					
+				
+					Google Chrome OS  25.0.1364.169<br/>
+					
+				
+					Google Chrome OS  25.0.1364.168<br/>
+					
+				
+					Google Chrome OS  25.0.1364.161<br/>
+					
+				
+					Google Chrome OS  25.0.1364.16<br/>
+					
+				
+					Google Chrome OS  25.0.1364.159<br/>
+					
+				
+					Google Chrome OS  25.0.1364.156<br/>
+					
+				
+					Google Chrome OS  25.0.1364.155<br/>
+					
+				
+					Google Chrome OS  25.0.1364.154<br/>
+					
+				
+					Google Chrome OS  25.0.1364.152<br/>
+					
+				
+					Google Chrome OS  25.0.1364.15<br/>
+					
+				
+					Google Chrome OS  25.0.1364.14<br/>
+					
+				
+					Google Chrome OS  25.0.1364.13<br/>
+					
+				
+					Google Chrome OS  25.0.1364.126<br/>
+					
+				
+					Google Chrome OS  25.0.1364.125<br/>
+					
+				
+					Google Chrome OS  25.0.1364.124<br/>
+					
+				
+					Google Chrome OS  25.0.1364.123<br/>
+					
+				
+					Google Chrome OS  25.0.1364.122<br/>
+					
+				
+					Google Chrome OS  25.0.1364.121<br/>
+					
+				
+					Google Chrome OS  25.0.1364.120<br/>
+					
+				
+					Google Chrome OS  25.0.1364.12<br/>
+					
+				
+					Google Chrome OS  25.0.1364.119<br/>
+					
+				
+					Google Chrome OS  25.0.1364.118<br/>
+					
+				
+					Google Chrome OS  25.0.1364.117<br/>
+					
+				
+					Google Chrome OS  25.0.1364.116<br/>
+					
+				
+					Google Chrome OS  25.0.1364.115<br/>
+					
+				
+					Google Chrome OS  25.0.1364.114<br/>
+					
+				
+					Google Chrome OS  25.0.1364.113<br/>
+					
+				
+					Google Chrome OS  25.0.1364.112<br/>
+					
+				
+					Google Chrome OS  25.0.1364.110<br/>
+					
+				
+					Google Chrome OS  25.0.1364.11<br/>
+					
+				
+					Google Chrome OS  25.0.1364.108<br/>
+					
+				
+					Google Chrome OS  25.0.1364.10<br/>
+					
+				
+					Google Chrome OS  25.0.1364.1<br/>
+					
+				
+					Google Chrome OS  25.0.1364.0<br/>
+					
+				
+					Google Chrome OS  23.0.1271.94<br/>
+					
+				
+					Google Chrome OS  21.0.1183.0<br/>
+					
+				
+					Google Chrome OS  21.0.1180.9<br/>
+					
+				
+					Google Chrome OS  21.0.1180.81<br/>
+					
+				
+					Google Chrome OS  21.0.1180.8<br/>
+					
+				
+					Google Chrome OS  21.0.1180.79<br/>
+					
+				
+					Google Chrome OS  21.0.1180.7<br/>
+					
+				
+					Google Chrome OS  21.0.1180.6<br/>
+					
+				
+					Google Chrome OS  21.0.1180.57<br/>
+					
+				
+					Google Chrome OS  21.0.1180.56<br/>
+					
+				
+					Google Chrome OS  21.0.1180.55<br/>
+					
+				
+					Google Chrome OS  21.0.1180.54<br/>
+					
+				
+					Google Chrome OS  21.0.1180.53<br/>
+					
+				
+					Google Chrome OS  21.0.1180.52<br/>
+					
+				
+					Google Chrome OS  21.0.1180.51<br/>
+					
+				
+					Google Chrome OS  21.0.1180.50<br/>
+					
+				
+					Google Chrome OS  21.0.1180.5<br/>
+					
+				
+					Google Chrome OS  21.0.1180.49<br/>
+					
+				
+					Google Chrome OS  21.0.1180.48<br/>
+					
+				
+					Google Chrome OS  21.0.1180.47<br/>
+					
+				
+					Google Chrome OS  21.0.1180.46<br/>
+					
+				
+					Google Chrome OS  21.0.1180.41<br/>
+					
+				
+					Google Chrome OS  21.0.1180.4<br/>
+					
+				
+					Google Chrome OS  21.0.1180.39<br/>
+					
+				
+					Google Chrome OS  21.0.1180.38<br/>
+					
+				
+					Google Chrome OS  21.0.1180.37<br/>
+					
+				
+					Google Chrome OS  21.0.1180.36<br/>
+					
+				
+					Google Chrome OS  21.0.1180.35<br/>
+					
+				
+					Google Chrome OS  21.0.1180.34<br/>
+					
+				
+					Google Chrome OS  21.0.1180.33<br/>
+					
+				
+					Google Chrome OS  21.0.1180.32<br/>
+					
+				
+					Google Chrome OS  21.0.1180.31<br/>
+					
+				
+					Google Chrome OS  21.0.1180.3<br/>
+					
+				
+					Google Chrome OS  21.0.1180.2<br/>
+					
+				
+					Google Chrome OS  21.0.1180.18<br/>
+					
+				
+					Google Chrome OS  21.0.1180.17<br/>
+					
+				
+					Google Chrome OS  21.0.1180.15<br/>
+					
+				
+					Google Chrome OS  21.0.1180.14<br/>
+					
+				
+					Google Chrome OS  21.0.1180.13<br/>
+					
+				
+					Google Chrome OS  21.0.1180.11<br/>
+					
+				
+					Google Chrome OS  21.0.1180.10<br/>
+					
+				
+					Google Chrome OS  21.0.1180.1<br/>
+					
+				
+					Google Chrome OS  21.0.1180.0<br/>
+					
+				
+					Google Chrome OS  20.0.1132.9<br/>
+					
+				
+					Google Chrome OS  20.0.1132.8<br/>
+					
+				
+					Google Chrome OS  20.0.1132.7<br/>
+					
+				
+					Google Chrome OS  20.0.1132.6<br/>
+					
+				
+					Google Chrome OS  20.0.1132.5<br/>
+					
+				
+					Google Chrome OS  20.0.1132.4<br/>
+					
+				
+					Google Chrome OS  20.0.1132.3<br/>
+					
+				
+					Google Chrome OS  20.0.1132.21<br/>
+					
+				
+					Google Chrome OS  20.0.1132.20<br/>
+					
+				
+					Google Chrome OS  20.0.1132.2<br/>
+					
+				
+					Google Chrome OS  20.0.1132.19<br/>
+					
+				
+					Google Chrome OS  20.0.1132.18<br/>
+					
+				
+					Google Chrome OS  20.0.1132.17<br/>
+					
+				
+					Google Chrome OS  20.0.1132.16<br/>
+					
+				
+					Google Chrome OS  20.0.1132.15<br/>
+					
+				
+					Google Chrome OS  20.0.1132.14<br/>
+					
+				
+					Google Chrome OS  20.0.1132.13<br/>
+					
+				
+					Google Chrome OS  20.0.1132.12<br/>
+					
+				
+					Google Chrome OS  20.0.1132.11<br/>
+					
+				
+					Google Chrome OS  20.0.1132.10<br/>
+					
+				
+					Google Chrome OS  20.0.1132.1<br/>
+					
+				
+					Google Chrome OS  20.0.1132.0<br/>
+					
+				
+					Google Chrome OS  0.9.134.14<br/>
+					
+				
+					Google Chrome OS  0.9.131.0<br/>
+					
+				
+					Google Chrome OS  0.9.128.3<br/>
+					
+				
+					Google Chrome OS  0.9.126.0<br/>
+					
+				
+					Google Chrome OS  0.9.110.6<br/>
+					
+				
+					Google Chrome OS  0.10.140.0<br/>
+					
+				
+					GNU glibc 2.12.2 <br/>
+					
+				
+					GNU glibc 2.12.1 <br/>
+					
+				
+					GNU glibc 2.11.2 <br/>
+					
+				
+					GNU glibc 2.11.1 <br/>
+					
+				
+					GNU glibc 2.10.1 <br/>
+					
+				
+					GNU glibc  2.9<br/>
+					
+				
+					GNU glibc  2.22<br/>
+					
+				
+					GNU glibc  2.21<br/>
+					
+				
+					GNU glibc  2.20<br/>
+					
+				
+					GNU glibc  2.19<br/>
+					
+				
+					GNU glibc  2.18<br/>
+					
+				
+					GNU glibc  2.17<br/>
+					
+				
+					GNU glibc  2.16<br/>
+					
+				
+					GNU glibc  2.15<br/>
+					
+				
+					GNU glibc  2.14.1<br/>
+					
+				
+					GNU glibc  2.14<br/>
+					
+				
+					GNU glibc  2.13<br/>
+					
+				
+					GNU glibc  2.12<br/>
+					
+				
+					GNU glibc  2.11.3<br/>
+					
+				
+					GNU glibc  2.11<br/>
+					
+				
+					GNU glibc  2.10<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					F5 BIG-IP PEM 12.0 <br/>
+					
+				
+					F5 BIG-IP LTM 12.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 12.0 <br/>
+					
+				
+					F5 BIG-IP DNS 12.0 <br/>
+					
+				
+					F5 BIG-IP ASM 12.0 <br/>
+					
+				
+					F5 BIG-IP APM 12.0 <br/>
+					
+				
+					F5 BIG-IP Analytics 12.0 <br/>
+					
+				
+					F5 BIG-IP AFM 12.0 <br/>
+					
+				
+					F5 BIG-IP AAM 12.0 <br/>
+					
+				
+					Extremenetworks Wireless AP 3900 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3900 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3767 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3767 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3765 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3765 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3710 10.1.3 <br/>
+					
+				
+					Extremenetworks Wireless AP 3710 10.1.1 <br/>
+					
+				
+					Extremenetworks Purview Appliance  6.0<br/>
+					
+				
+					Extremenetworks NetSight Appliance  6.3.0.179<br/>
+					
+				
+					Extremenetworks NetSight Appliance  6.0<br/>
+					
+				
+					Extremenetworks NAC Appliance  6.3.0.179<br/>
+					
+				
+					Extremenetworks NAC Appliance  6.0<br/>
+					
+				
+					Extremenetworks IDS/IPS  8.3.0.350<br/>
+					
+				
+					Extremenetworks IDS/IPS  8.3.0.0<br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.3 Patch 8<br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.3 Patch 1<br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.2 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.6.4 <br/>
+					
+				
+					Extremenetworks ExtremeXOS  16.1<br/>
+					
+				
+					Extremenetworks ExtremeXOS  15.4.1.0<br/>
+					
+				
+					Extremenetworks ExtremeXOS  15.3<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Citrix Receiver for Linux  0<br/>
+					
+				
+					Citrix NetScaler Gateway  0<br/>
+					
+				
+					Citrix Linux Virtual Desktop  0<br/>
+					
+				
+					Citrix License Server VPX  11.12<br/>
+					
+				
+					Cisco Wireless LAN Controller (WLC) 8500  8.1<br/>
+					
+				
+					Cisco Wireless LAN Controller (WLC) 7500  8.1<br/>
+					
+				
+					Cisco Wireless LAN Controller (WLC) 5520  8.1<br/>
+					
+				
+					Cisco WebEx Messenger Service  0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.0<br/>
+					
+				
+					Cisco Visual Quality Experience Tools Server  0<br/>
+					
+				
+					Cisco Visual Quality Experience Server  0<br/>
+					
+				
+					Cisco Videoscape Distribution Suite Transparent Caching  0<br/>
+					
+				
+					Cisco Video Surveillance Media Server  0<br/>
+					
+				
+					Cisco Video Distribution Suite for Internet Streaming VDS-IS  0<br/>
+					
+				
+					Cisco Video Delivery System Recorder  0<br/>
+					
+				
+					Cisco Unity Connection  0<br/>
+					
+				
+					Cisco Unified IP Conference Phone 8831  0<br/>
+					
+				
+					Cisco Unified Communications Manager Session Management Edition (SME)  0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  0<br/>
+					
+				
+					Cisco Unified Communications Domain Manager  0<br/>
+					
+				
+					Cisco Unified 7800 Series IP Phones  0<br/>
+					
+				
+					Cisco UCS Invicta Series Autosupport Portal  0<br/>
+					
+				
+					Cisco UCS Invicta Series  0<br/>
+					
+				
+					Cisco UCS Director  0<br/>
+					
+				
+					Cisco UCS ADA  0<br/>
+					
+				
+					Cisco TelePresence Video Communication Server (VCS)  0<br/>
+					
+				
+					Cisco TelePresence Server on Virtual Machine  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 320  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 310  0<br/>
+					
+				
+					Cisco TelePresence Server 8710  0<br/>
+					
+				
+					Cisco TelePresence Server 7010  0<br/>
+					
+				
+					Cisco TelePresence Conductor  0<br/>
+					
+				
+					Cisco Smart Net Total Care (SNTC)  0<br/>
+					
+				
+					Cisco Smart Net Total Care  0<br/>
+					
+				
+					Cisco Secure ACS  5.0<br/>
+					
+				
+					Cisco RF Gateway 10  0<br/>
+					
+				
+					Cisco Prime Service Catalog Virtual Appliance  0<br/>
+					
+				
+					Cisco Prime Network Service Controller (PNSC)  0<br/>
+					
+				
+					Cisco Prime Network Registrar IP Address Manager (IPAM)  0<br/>
+					
+				
+					Cisco Prime Network Registrar (CPNR) virtual appliance  0<br/>
+					
+				
+					Cisco Prime License Manager  0<br/>
+					
+				
+					Cisco Prime IP Express  0<br/>
+					
+				
+					Cisco Prime Data Center Network Manager  -<br/>
+					
+				
+					Cisco Prime Collaboration Deployment  0<br/>
+					
+				
+					Cisco Prime Central for SPs  0<br/>
+					
+				
+					Cisco Prime Analytics  0<br/>
+					
+				
+					Cisco Prime Access Registrar Appliance  0<br/>
+					
+				
+					Cisco Powerkey Encryption Server (PKES)  0<br/>
+					
+				
+					Cisco Powerkey CAS Gateway (PCG)  0<br/>
+					
+				
+					Cisco Partner Supporting Service  0<br/>
+					
+				
+					Cisco Paging Server (Informacast)  0<br/>
+					
+				
+					Cisco Paging Server  0<br/>
+					
+				
+					Cisco Nexus 9000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 3200 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 3100 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 3000 Series Switches  0<br/>
+					
+				
+					Cisco Nexus 1000V InterCloud  0<br/>
+					
+				
+					Cisco Network Change and Configuration Management  0<br/>
+					
+				
+					Cisco Mobility Services Engine  0<br/>
+					
+				
+					Cisco MediaSense  0<br/>
+					
+				
+					Cisco Jabber Guest  10.0(2)<br/>
+					
+				
+					Cisco IOS-XE for Catalyst AIR-CT5760  0<br/>
+					
+				
+					Cisco IOS-XE for Catalyst 4k  0<br/>
+					
+				
+					Cisco IOS-XE for Catalyst 3k  0<br/>
+					
+				
+					Cisco Ios Xe 16.2 <br/>
+					
+				
+					Cisco Intercloud Fabric  0<br/>
+					
+				
+					Cisco IM and Presence Service (CUPS)  0<br/>
+					
+				
+					Cisco Identity Services Engine (ISE)  0<br/>
+					
+				
+					Cisco Hosted Collaboration Mediation Fulfillment  0<br/>
+					
+				
+					Cisco FireSIGHT System Software  0<br/>
+					
+				
+					Cisco FireSIGHT IPS Sensors  0<br/>
+					
+				
+					Cisco Expressway series  0<br/>
+					
+				
+					Cisco Emergency Responder  <br/>
+					
+				
+					Cisco Edge 340 Digital Media Player  0<br/>
+					
+				
+					Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco DCM Series 9900-Digital Content Manager  0<br/>
+					
+				
+					Cisco Connected Grid Routers (CGR)  0<br/>
+					
+				
+					Cisco Common Services Platform Collector  0<br/>
+					
+				
+					Cisco Cloud Web Security (CWS)  0<br/>
+					
+				
+					Cisco Cloud Object Store (COS)  0<br/>
+					
+				
+					Cisco Cisco Nexus 9000 (ACI/Fabric Switch)  0<br/>
+					
+				
+					Cisco Cisco Cloud Services  0<br/>
+					
+				
+					Cisco ASR 5000 Series  0<br/>
+					
+				
+					Cisco Application Policy Infrastructure Controller Enterprise Module  0<br/>
+					
+				
+					Cisco Advanced Malware Protection  0<br/>
+					
+				
+					Cisco Access Registrar Appliance  0<br/>
+					
+				
+					Cisco 8800 Series IP Phones - VPN Feature  0<br/>
+					
+				
+					Cisco 3G Femtocell Wireless  0<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					Bluecoat X-Series XOS  11.0<br/>
+					
+				
+					Bluecoat X-Series XOS  10.0<br/>
+					
+				
+					Bluecoat SSL Visibility  3.9<br/>
+					
+				
+					Bluecoat SSL Visibility  3.8.4FC<br/>
+					
+				
+					Bluecoat SSL Visibility  3.8<br/>
+					
+				
+					Bluecoat Security Analytics  7.1<br/>
+					
+				
+					Bluecoat Security Analytics  7.0<br/>
+					
+				
+					Bluecoat Security Analytics  6.6<br/>
+					
+				
+					Bluecoat Reporter  10.1<br/>
+					
+				
+					Bluecoat PolicyCenter S-Series  1.1<br/>
+					
+				
+					Bluecoat PacketShaper S-Series  11.5<br/>
+					
+				
+					Bluecoat PacketShaper S-Series  11.4<br/>
+					
+				
+					Bluecoat PacketShaper S-Series  11.3<br/>
+					
+				
+					Bluecoat PacketShaper S-Series  11.2<br/>
+					
+				
+					Bluecoat Norman Shark SCADA Protection  5.3<br/>
+					
+				
+					Bluecoat Norman Shark Network Protection  5.3<br/>
+					
+				
+					Bluecoat Norman Shark Industrial Control System Protection  5.3<br/>
+					
+				
+					Bluecoat Management Center  1.5<br/>
+					
+				
+					Bluecoat Malware Analysis Appliance  4.2<br/>
+					
+				
+					Bluecoat Content Analysis System  1.3<br/>
+					
+				
+					Bluecoat Content Analysis System  1.2<br/>
+					
+				
+					Blue Coat Systems Advanced Secure Gateway  6.6<br/>
+					
+				
+					Avaya Session Border Controller for Enterprise  7.0<br/>
+					
+				
+					Avaya Session Border Controller for Enterprise  6.3.0<br/>
+					
+				
+					Avaya one-X Client Enablement Services 6.2.3 <br/>
+					
+				
+					Avaya one-X Client Enablement Services 6.2.2 <br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2 SP2<br/>
+					
+				
+					Avaya one-X Client Enablement Services  6.2<br/>
+					
+				
+					Avaya IP Office  9.0<br/>
+					
+				
+					Avaya IP Office  8.1<br/>
+					
+				
+					Avaya CMS  R18<br/>
+					
+				
+					Avaya CMS  r17<br/>
+					
+				
+					Avaya Aura Utility Services  7.0<br/>
+					
+				
+					Avaya Aura System Manager  7.0<br/>
+					
+				
+					Avaya Aura Session Manager 6.3.1 <br/>
+					
+				
+					Avaya Aura Session Manager  7.0<br/>
+					
+				
+					Avaya Aura Session Manager  6.3.3<br/>
+					
+				
+					Avaya Aura Session Manager  6.3<br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.2 <br/>
+					
+				
+					Avaya Aura Experience Portal 6.0.1 <br/>
+					
+				
+					Avaya Aura Experience Portal  7.0<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP2<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0 SP1<br/>
+					
+				
+					Avaya Aura Experience Portal  6.0<br/>
+					
+				
+					Avaya Aura Conferencing  8.0 SP2<br/>
+					
+				
+					Avaya Aura Conferencing  8.0 SP1<br/>
+					
+				
+					Avaya Aura Conferencing  8.0<br/>
+					
+				
+					Avaya Aura Communication Manager Messaging  7.0<br/>
+					
+				
+					Avaya Aura Communication Manager  7.0<br/>
+					
+				
+					Avaya Aura Collaboration Environment  3.0<br/>
+					
+				
+					Avaya Aura Application Server 5300 SIP Core  3.0 SP11<br/>
+					
+				
+					Avaya Aura Application Enablement Services  7.0<br/>
+					
+				
+					Arista Extendible Operating System (EOS) 4.12.11 <br/>
+					
+				
+					Arista Extendible Operating System (EOS) 4.12.10 <br/>
+					
+				
+					Arista Extendible Operating System (EOS) 4.12.9 <br/>
+					
+				
+					Arista Extendible Operating System (EOS) 4.12.8 <br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.9<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.8<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.7<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.6<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.5<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.4FX-7500E3<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.4F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.3FX-7500E3.3<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.3FX-7500E3<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.3FX-7060X.1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.3FX-7050X-72Q<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.3F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.2F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.1FXB1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.1FXB<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.1FX-7260QX<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.1FX-7060X<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.0FXA<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.0FX1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.0FX<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.15.0F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.9M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.8M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.8.1M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.7M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.7.1M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.6M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5FX.4<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5FX.3<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5FX.2<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5FX.1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5FX<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.5.1F-SSU<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.4F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.4.2F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.4.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.3F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.3.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.2F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.11M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.10M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14.0F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.14<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.9M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.9.1M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.8M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.7M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.7.3M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.7.2M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.6F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.5F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.5.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.4.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.3.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.2.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.14M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.13M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.12M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.11M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.10M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13.1.1F<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.13<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.12.8.1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.12.7.1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.12.6.1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.12.5.2<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.11M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.11<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.10M<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.10<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.1<br/>
+					
+				
+					Arista Extendible Operating System (EOS)  4.0<br/>
+					
+				
+					Amazon Elastic Compute Cloud (EC2)  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					VMWare Esxi  6.0 ESXi600-20160240<br/>
+					
+				
+					VMWare Esxi  5.5 ESXi550-20160240<br/>
+					
+				
+					Siemens ROX II 2.9.1 <br/>
+					
+				
+					Pexip Pexip Infinity  11.1<br/>
+					
+				
+					Oracle Fujitsu M10-4S Server  XCP 2290<br/>
+					
+				
+					Oracle Fujitsu M10-4 Server  XCP 2290<br/>
+					
+				
+					Oracle Fujitsu M10-1 Server  XCP 2290<br/>
+					
+				
+					IBM Workload Deployer  3.1.0.7 IF11<br/>
+					
+				
+					IBM System Storage TS4500 Tape Library  1.2.0.3<br/>
+					
+				
+					IBM Scale Out Network Attached Storage  1.5.2.4<br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.2<br/>
+					
+				
+					IBM DataPower Gateway  7.2.0.4<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.9<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.12<br/>
+					
+				
+					IBM DataPower Gateway  6.0.1.15<br/>
+					
+				
+					IBM DataPower Gateway  6.0.0.19<br/>
+					
+				
+					Huawei X6800  V100R003C00SPC606<br/>
+					
+				
+					Huawei UltraVR  V100R003C10<br/>
+					
+				
+					Huawei RH2288H V3  V100R003C00SPC512<br/>
+					
+				
+					Huawei RH2288A V2  V100R002C00SPC705<br/>
+					
+				
+					Huawei RH2285H V2  V100R002C00SPC300<br/>
+					
+				
+					Huawei RH1288 V3  V100R003C00SPC609<br/>
+					
+				
+					Huawei OceanStor Backup Software  V100R002C00SPC201<br/>
+					
+				
+					Huawei OceanStor 9000E  V100R001C30SPC200<br/>
+					
+				
+					Huawei OceanStor 9000  V100R001C30SPC200<br/>
+					
+				
+					Huawei LogCenter  eLog V200R003C10CP00<br/>
+					
+				
+					Huawei FusionStorage DSware  V100R003C00SPC308<br/>
+					
+				
+					Huawei FusionSphereOpenStack OM  V100R005C10SPC703<br/>
+					
+				
+					Huawei FusionSphere OpenStack  V100R006C00<br/>
+					
+				
+					Huawei FusionManager  V100R005C10U1<br/>
+					
+				
+					Huawei Fusioncube  V100R002C50<br/>
+					
+				
+					Huawei FusionCompute  V100R005C10U1<br/>
+					
+				
+					Huawei FusionAccess  V100R005C30SPC105<br/>
+					
+				
+					Huawei eSight NetWork  V300R003C20SPC100.(U<br/>
+					
+				
+					Huawei eLog  V200R003C10CP0001<br/>
+					
+				
+					Huawei E9000 Chassis  V100R001C00SPC291<br/>
+					
+				
+					Huawei CloudEngine 7800  V100R006C00SPC600<br/>
+					
+				
+					Huawei CloudEngine 6800  V100R006C00SPC600<br/>
+					
+				
+					Huawei CloudEngine 5800  V100R006C00SPC600<br/>
+					
+				
+					Huawei CloudEngine 12800  V100R006C00SPC600<br/>
+					
+				
+					Huawei CH220 V3  V100R001C00SPC190<br/>
+					
+				
+					Huawei AR3200  V200R007C00SPC600<br/>
+					
+				
+					Huawei Agile Controller-Campus  V100R002C00SPC105<br/>
+					
+				
+					Huawei ACU2  V200R006C20SPC500<br/>
+					
+				
+					Huawei AC6005  V200R006C20SPC500<br/>
+					
+				
+					HP Version Control Repository Manager  7.5.1<br/>
+					
+				
+					HP Systems Insight Manager  7.5.1<br/>
+					
+				
+					HP System Management Homepage 7.5.5 <br/>
+					
+				
+					HP Server Migration Pack 7.5.1 <br/>
+					
+				
+					HP OneView 2.0.7 <br/>
+					
+				
+					HP Insight Control server provisioning  7.5.1<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP Helion OpenStack 2.1.2 <br/>
+					
+				
+					HP Helion Development Platform  2.0.2<br/>
+					
+				
+					HP Helion CloudSystem 9.0.2 <br/>
+					
+				
+					HP Helion CloudSystem 8.1.3 <br/>
+					
+				
+					HP 3PAR OS 3.2.2 MU2<br/>
+					
+				
+					HP 3PAR OS 3.2.1 MU5<br/>
+					
+				
+					Google Chrome OS  48.0.2564.116<br/>
+					
+				
+					Extremenetworks Wireless AP 3900 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3900 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3767 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3767 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3765 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3765 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3710 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3710 10.1.4 <br/>
+					
+				
+					Extremenetworks Purview Appliance 7.0.3 <br/>
+					
+				
+					Extremenetworks NetSight Appliance 7.0.3 <br/>
+					
+				
+					Extremenetworks NAC Appliance 7.0.3 <br/>
+					
+				
+					Extremenetworks IDS/IPS  8.3 MR3<br/>
+					
+				
+					Extremenetworks ExtremeXOS 22.1.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 21.1.1 Patch 5<br/>
+					
+				
+					Extremenetworks ExtremeXOS 21.1.1 Patch 1<br/>
+					
+				
+					Extremenetworks ExtremeXOS 16.2.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x84000/83265/83265.py">#exploit_83265.py</a><br><a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x84000/83265/83265.c">#exploit_83265.c</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit codes are available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/83265.py">/data/vulnerabilities/exploits/83265.py</a></li>
+<li><a href="/data/vulnerabilities/exploits/83265.c">/data/vulnerabilities/exploits/83265.c</a></li>
+</ul>
+</div>

@@ -1,0 +1,1218 @@
+#SpeeDr00t@Black Falcon<br>#bid84169<p><b><span style="font-size: 18pt;">OpenSSL 'crypto/bio/b_print.c' Denial of Service Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/84169/info">info</a><br><a href="http://www.securityfocus.com/bid/84169/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/84169/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/84169/solution">solution</a><br><a href="http://www.securityfocus.com/bid/84169/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				84169
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-2842<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 03 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Feb 02 2017 01:01AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Guido Vranken.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Server EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node EUS  7.2<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.2 <br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1r<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1q<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1p<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1o<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1n<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1m<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1l<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1k<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1j<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1i<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					IBM WebSphere Message Broker  8<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.4.0<br/>
+					
+				
+					IBM Vios  2.2.3.50<br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.4 Fp-25 Sp-02<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 .3<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 <br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.20 build 280.6<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  5.1.0.2<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images (and System X Edition)  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.20 build 280.6<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Netcool Reporter  2.2<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.12<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-110<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-109<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-108<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass 1.0.2919 <br/>
+					
+				
+					IBM Security Proventia Network Active Bypass 1.0.1876 <br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.9-34<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.4-23<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.2-9<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30.0-13<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.30-12<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.29-9<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.25-57<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  3.13-41<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.18-42<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.15-36<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.13-34<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  2.11-28<br/>
+					
+				
+					IBM Security Proventia Network Active Bypass  0343c3c<br/>
+					
+				
+					IBM Security Privileged Identity Manager  2.0<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3387 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3381 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3379 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3376 <br/>
+					
+				
+					IBM Security Network Controller 1.0.3361 <br/>
+					
+				
+					IBM Security Network Controller 1.0.1768 <br/>
+					
+				
+					IBM Security Network Controller 1.0.1209 <br/>
+					
+				
+					IBM Security Network Controller 1.0.913 <br/>
+					
+				
+					IBM Security Network Controller  1.0.3394M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3394<br/>
+					
+				
+					IBM Security Network Controller  1.0.3387M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3381M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3379M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3376M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3361M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3352M<br/>
+					
+				
+					IBM Security Network Controller  1.0.3350M<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.0<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.3<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.2<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 3<br/>
+					
+				
+					IBM Security Access Manager for Web 8.0 2<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Web  7.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile 8.0.1 <br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.1.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.5<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.4<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.3<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.2<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.1<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0.0.0<br/>
+					
+				
+					IBM Security Access Manager for Mobile  8.0<br/>
+					
+				
+					IBM Security Access Manager  9.0.1.0<br/>
+					
+				
+					IBM Security Access Manager  9.0.0.1<br/>
+					
+				
+					IBM Security Access Manager  9.0<br/>
+					
+				
+					IBM QRadar  7.2<br/>
+					
+				
+					IBM QRadar  7.1<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Netezza Host Management 5.4.3 <br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.1<br/>
+					
+				
+					IBM Integration Bus  9<br/>
+					
+				
+					IBM Integration Bus  10<br/>
+					
+				
+					IBM Initiate Master Data Service Provider Hub  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service Provider Hub  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service Patient Hub  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service Patient Hub  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  10.1<br/>
+					
+				
+					IBM Initiate Master Data Service  10.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.5<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.4<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.3<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Provider Hub  10.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Patient Hub  10.0<br/>
+					
+				
+					IBM InfoSphere Information Server  9.1<br/>
+					
+				
+					IBM InfoSphere Information Server  8.7<br/>
+					
+				
+					IBM InfoSphere Information Server  8.5<br/>
+					
+				
+					IBM InfoSphere Information Server  11.5<br/>
+					
+				
+					IBM InfoSphere Information Server  11.3<br/>
+					
+				
+					IBM General Parallel File System (GPFS)  3.5.0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Endpoint Manager for Remote Control  9.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.5.1.0<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.6<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.10<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.13<br/>
+					
+				
+					IBM DataPower Gateway  7.5.1.0<br/>
+					
+				
+					IBM DataPower Gateway  7.5.0.1<br/>
+					
+				
+					IBM DataPower Gateway  7.2.0.6<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.10<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.13<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 <br/>
+					
+				
+					IBM Cognos TM1  10.2<br/>
+					
+				
+					IBM Cognos TM1  10.1.0<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 <br/>
+					
+				
+					IBM Cognos Insight 10.2.1 <br/>
+					
+				
+					IBM Cognos Insight  10.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.3 <br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.2 <br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.1 <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6 Interim Fix1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.4 interim Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.4<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interix Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interix Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interim Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5 Interim Fix<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5  Interim Fix<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.4.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.4<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.1<br/>
+					
+				
+					IBM BM Security Identity Governance and Intelligence  5.2.1<br/>
+					
+				
+					IBM BigFix Remote Control  9.1.2<br/>
+					
+				
+					IBM AIX 7.1.2 <br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					IBM ABYP-4TS-P-M  0<br/>
+					
+				
+					IBM ABYP-4TS-P  0<br/>
+					
+				
+					IBM ABYP-4TL-P-M  0<br/>
+					
+				
+					IBM ABYP-4TL-P  0<br/>
+					
+				
+					IBM ABYP-4T-0S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-4T-0S-0L-P  0<br/>
+					
+				
+					IBM ABYP-2T-2S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-2S-0L-P  0<br/>
+					
+				
+					IBM ABYP-2T-1S-1L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-1S-1L-P  0<br/>
+					
+				
+					IBM ABYP-2T-0S-2L-P-M  0<br/>
+					
+				
+					IBM ABYP-2T-0S-2L-P  0<br/>
+					
+				
+					IBM ABYP-10G-4SR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-4SR-1-P  0<br/>
+					
+				
+					IBM ABYP-10G-4LR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-4LR-1-P  0<br/>
+					
+				
+					IBM ABYP-10G-2SR-2LR-1-P-M  0<br/>
+					
+				
+					IBM ABYP-10G-2SR-2LR-1-P  0<br/>
+					
+				
+					IBM ABYP-0T-4S-0L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-4S-0L-P  0<br/>
+					
+				
+					IBM ABYP-0T-2S-2L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-2S-2L-P  0<br/>
+					
+				
+					IBM ABYP-0T-0S-4L-P-M  0<br/>
+					
+				
+					IBM ABYP-0T-0S-4L-P  0<br/>
+					
+				
+					HP Version Control Repository Manager 7.4.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.4 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.3 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.2 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2.1 <br/>
+					
+				
+					HP Version Control Repository Manager 7.2 <br/>
+					
+				
+					HP Version Control Repository Manager  7.5.0<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.3<br/>
+					
+				
+					HP Version Control Repository Manager  7.3.2<br/>
+					
+				
+					HP VAN SDN Controller  2.7.10 OVA<br/>
+					
+				
+					HP Systems Insight Manager 7.1.1 <br/>
+					
+				
+					HP Systems Insight Manager  7.5.0<br/>
+					
+				
+					HP Systems Insight Manager  7.4.0a<br/>
+					
+				
+					HP Systems Insight Manager  7.4<br/>
+					
+				
+					HP Systems Insight Manager  7.3.2<br/>
+					
+				
+					HP Systems Insight Manager  7.3.1<br/>
+					
+				
+					HP Systems Insight Manager  7.3.0a<br/>
+					
+				
+					HP Systems Insight Manager  7.3<br/>
+					
+				
+					HP Systems Insight Manager  7.2.2<br/>
+					
+				
+					HP Systems Insight Manager  7.2.1<br/>
+					
+				
+					HP Systems Insight Manager  7.2<br/>
+					
+				
+					HP Systems Insight Manager  7.0<br/>
+					
+				
+					HP Systems Insight Manager  6.3<br/>
+					
+				
+					HP Systems Insight Manager  6.2<br/>
+					
+				
+					HP Systems Insight Manager  6.1<br/>
+					
+				
+					HP Systems Insight Manager  6.0<br/>
+					
+				
+					HP Systems Insight Manager  5.3<br/>
+					
+				
+					HP Systems Insight Manager  5.0<br/>
+					
+				
+					HP Systems Insight Manager  4.2<br/>
+					
+				
+					HP System Management Homepage 7.5.4 <br/>
+					
+				
+					HP System Management Homepage 7.5 <br/>
+					
+				
+					HP System Management Homepage 7.4.1 <br/>
+					
+				
+					HP System Management Homepage 7.3.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.3 <br/>
+					
+				
+					HP System Management Homepage 7.2.2 <br/>
+					
+				
+					HP System Management Homepage 7.2.1 <br/>
+					
+				
+					HP System Management Homepage 7.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.2 <br/>
+					
+				
+					HP System Management Homepage 7.1.1 <br/>
+					
+				
+					HP System Management Homepage  7.4<br/>
+					
+				
+					HP System Management Homepage  7.3.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3.1<br/>
+					
+				
+					HP System Management Homepage  7.3<br/>
+					
+				
+					HP System Management Homepage  7.2.4.1<br/>
+					
+				
+					HP System Management Homepage  7.1<br/>
+					
+				
+					HP System Management Homepage  7.0<br/>
+					
+				
+					HP Smart Update Manager 6.4.1 <br/>
+					
+				
+					HP Smart Update Manager 6.4 <br/>
+					
+				
+					HP Smart Update Manager 6.3.1 <br/>
+					
+				
+					HP Smart Update Manager 6.2 <br/>
+					
+				
+					HP Smart Update Manager  6.3.0<br/>
+					
+				
+					HP Smart Update Manager  6.0.0<br/>
+					
+				
+					HP Server Migration Pack 7.5 <br/>
+					
+				
+					HP Oneview for VMware vCenter 7.8.1 <br/>
+					
+				
+					HP Oneview for VMware vCenter 7.8 <br/>
+					
+				
+					HP Matrix Operating Environment 7.5 <br/>
+					
+				
+					HP Matrix Operating Environment 7.4 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3.1 <br/>
+					
+				
+					HP Matrix Operating Environment 7.3 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2.1 <br/>
+					
+				
+					HP Matrix Operating Environment 7.2 <br/>
+					
+				
+					HP Insight Control server provisioning 7.4.1 <br/>
+					
+				
+					HP Insight Control server provisioning  7.5.0<br/>
+					
+				
+					HP Insight Control server provisioning  7.4.0a<br/>
+					
+				
+					HP Insight Control server provisioning  7.4.0<br/>
+					
+				
+					HP Insight Control Server Deployment  0<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP Insight Control 7.5 <br/>
+					
+				
+					HP Insight Control  7.4<br/>
+					
+				
+					HP Insight Control  7.3<br/>
+					
+				
+					HP Insight Control  7.2<br/>
+					
+				
+					HP Helion OpenStack 2.1 <br/>
+					
+				
+					HP Helion CloudSystem 9.0 <br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-up Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-up Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 900 for SAP HANA Scale-out Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-Up Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-Up Configurations  2.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-out Configurations  3.0<br/>
+					
+				
+					HP ConvergedSystem 500 For SAP HANA Scale-out Configurations  2.0<br/>
+					
+				
+					HP BladeSystem c-Class Virtual Connect (VC)  4.45<br/>
+					
+				
+					HP BladeSystem c-Class Virtual Connect (VC)  4.30<br/>
+					
+				
+					HP AppSystems for SAP HANA - Single Node Configurations  1.0<br/>
+					
+				
+					HP AppSystems for SAP HANA - Scale Out Configurations  1.2<br/>
+					
+				
+					HP AppSystems for SAP HANA - Scale Out Configurations  1.0<br/>
+					
+				
+					Google Android 5.1.1 <br/>
+					
+				
+					Google Android 5.0.2 <br/>
+					
+				
+					Google Android 4.4.4 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					OpenSSL Project OpenSSL  1.0.2g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1s<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.5.0.12 iFix 150-13<br/>
+					
+				
+					IBM Sterling Connect:Express for UNIX  1.4.6.1 iFix 146-114<br/>
+					
+				
+					IBM Security Access Manager for Web  9.0.1.0<br/>
+					
+				
+					IBM Security Access Manager for Web  8.0.1.4<br/>
+					
+				
+					IBM QRadar SIEM/QRIF/QRM/QVM 7.2.7 Patch 1<br/>
+					
+				
+					IBM QRadar SIEM  7.1 MR2 Patch 13<br/>
+					
+				
+					IBM Netezza Host Management 5.4.4 <br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.2<br/>
+					
+				
+					IBM DataPower Gateways  7.5.1.1<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.2<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.8<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.11<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.14<br/>
+					
+				
+					IBM DataPower Gateway  7.5.1.1<br/>
+					
+				
+					IBM DataPower Gateway  7.5.0.2<br/>
+					
+				
+					IBM DataPower Gateway  7.2.0.8<br/>
+					
+				
+					IBM DataPower Gateway  7.1.0.11<br/>
+					
+				
+					IBM DataPower Gateway  7.0.0.14<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 Fix Pack 6<br/>
+					
+				
+					IBM Cognos TM1  10.2.0.2 Interim Fix<br/>
+					
+				
+					IBM Cognos TM1  10.1.1.2 Interim Fix<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 FP 6<br/>
+					
+				
+					IBM Cognos Insight 10.2.1 FP 2 IF 6<br/>
+					
+				
+					IBM Cognos Insight  10.2 FP 1 IF 6<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6 Interim Fix1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 interim fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5 interim fix <br/>
+					
+				
+					HP Version Control Repository Manager  7.5.1<br/>
+					
+				
+					HP Systems Insight Manager  7.5.1<br/>
+					
+				
+					HP System Management Homepage 7.5.5 <br/>
+					
+				
+					HP Smart Update Manager 7.5.1 <br/>
+					
+				
+					HP Server Migration Pack 7.5.1 <br/>
+					
+				
+					HP Oneview for VMware vCenter 7.8.2 <br/>
+					
+				
+					HP Matrix Operating Environment 7.5.1 <br/>
+					
+				
+					HP Insight Control server provisioning  7.5.1<br/>
+					
+				
+					HP Insight Control 7.5.1 <br/>
+					
+				
+					HP BladeSystem c-Class Virtual Connect (VC)  4.50<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>
