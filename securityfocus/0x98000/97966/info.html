@@ -1,0 +1,396 @@
+#SpeeDr00t@Black Falcon<br>#bid97966<p><b><span style="font-size: 18pt;">Minicom CVE-2017-7467 Local Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/97966/info">info</a><br><a href="http://www.securityfocus.com/bid/97966/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/97966/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/97966/solution">solution</a><br><a href="http://www.securityfocus.com/bid/97966/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				97966
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Failure to Handle Exceptional Conditions
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2017-7467<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 18 2017 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jun 07 2017 11:02AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Alexander Peslyak (Openwall)
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Redhat Enterprise Linux  7<br/>
+					
+				
+					Redhat Enterprise Linux  6<br/>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Enterprise Linux 2.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Trustix Secure Linux 2.0 <br/>
+</span>
+					
+				
+					Redhat Enterprise Linux  5<br/>
+					
+				
+					minicom minicom 2.7 <br/>
+					
+				
+					minicom minicom 1.83.1 <br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Redhat Linux  6.2<br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+					
+				
+					minicom minicom 1.83 .0<br/>
+<span class="related">
+						
+							+ 
+						
+						Caldera OpenLinux 2.4 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eDesktop 2.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						SCO eServer 2.3.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+					
+				
+					minicom minicom 1.82.1 <br/>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 4.2 <br/>
+</span>
+<span class="related">
+						
+							-
+						
+						FreeBSD FreeBSD 3.5.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 8.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.2 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Mandriva Linux Mandrake 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 7.0 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						S.u.S.E. Linux 6.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.1 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Slackware Linux 7.0 <br/>
+</span>
+					
+				
+					Gentoo Linux  <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					minicom minicom 2.7.1 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>

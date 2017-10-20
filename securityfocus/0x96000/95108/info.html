@@ -1,0 +1,982 @@
+#SpeeDr00t@Black Falcon<br>#bid95108<p><b><span style="font-size: 18pt;">PHPMailer CVE-2016-10033 Remote Code Execution Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/95108/info">info</a><br><a href="http://www.securityfocus.com/bid/95108/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/95108/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/95108/solution">solution</a><br><a href="http://www.securityfocus.com/bid/95108/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				95108
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-10033<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Dec 25 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 04:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Dawid Golunski.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					WordPress WordPress 4.6.1 <br/>
+					
+				
+					WordPress WordPress 4.5.2 <br/>
+					
+				
+					WordPress WordPress 4.5.1 <br/>
+					
+				
+					WordPress WordPress 4.5 <br/>
+					
+				
+					WordPress WordPress 4.4.1 <br/>
+					
+				
+					WordPress WordPress 4.4 <br/>
+					
+				
+					WordPress WordPress 4.2.4 <br/>
+					
+				
+					WordPress WordPress 4.2.3 <br/>
+					
+				
+					WordPress WordPress 4.2.2 <br/>
+					
+				
+					WordPress WordPress 4.2.1 <br/>
+					
+				
+					WordPress WordPress 4.1.2 <br/>
+					
+				
+					WordPress WordPress 4.1.1 <br/>
+					
+				
+					WordPress WordPress 4.1 <br/>
+					
+				
+					WordPress WordPress 3.9.2 <br/>
+					
+				
+					WordPress WordPress 3.9.1 <br/>
+					
+				
+					WordPress WordPress 3.9 <br/>
+					
+				
+					WordPress WordPress 3.8.2 <br/>
+					
+				
+					WordPress WordPress 3.8.1 <br/>
+					
+				
+					WordPress WordPress 3.7.4 <br/>
+					
+				
+					WordPress WordPress 3.7.1 <br/>
+					
+				
+					WordPress WordPress 3.6.1 <br/>
+					
+				
+					WordPress WordPress 3.6 <br/>
+					
+				
+					WordPress WordPress 3.5.2 <br/>
+					
+				
+					WordPress WordPress 3.5.1 <br/>
+					
+				
+					WordPress WordPress 3.3.2 <br/>
+					
+				
+					WordPress WordPress 3.2.2 <br/>
+					
+				
+					WordPress WordPress 3.1.4 <br/>
+					
+				
+					WordPress WordPress 3.1.3 <br/>
+					
+				
+					WordPress WordPress 3.1.2 <br/>
+					
+				
+					WordPress WordPress 3.1.1 <br/>
+					
+				
+					WordPress WordPress 3.0.5 <br/>
+					
+				
+					WordPress WordPress 3.0.4 <br/>
+					
+				
+					WordPress WordPress 3.0.3 <br/>
+					
+				
+					WordPress WordPress 3.0.2 <br/>
+					
+				
+					WordPress WordPress 2.9.2 <br/>
+					
+				
+					WordPress WordPress 2.9.1 <br/>
+					
+				
+					WordPress WordPress 2.8.6 <br/>
+					
+				
+					WordPress WordPress 2.8.5 <br/>
+					
+				
+					WordPress WordPress 2.8.4 <br/>
+					
+				
+					WordPress WordPress 2.8.3 <br/>
+					
+				
+					WordPress WordPress 2.8.2 <br/>
+					
+				
+					WordPress WordPress 2.8.1 <br/>
+					
+				
+					WordPress WordPress 2.6.5 <br/>
+					
+				
+					WordPress WordPress 2.6.2 <br/>
+					
+				
+					WordPress WordPress 2.6.1 <br/>
+					
+				
+					WordPress WordPress 2.5.1 <br/>
+					
+				
+					WordPress WordPress 2.3.3 <br/>
+					
+				
+					WordPress WordPress 2.3.2 <br/>
+					
+				
+					WordPress WordPress 2.3.1 <br/>
+					
+				
+					WordPress WordPress 2.2.3 <br/>
+					
+				
+					WordPress WordPress 2.2.2 <br/>
+					
+				
+					WordPress WordPress 2.2.1 <br/>
+					
+				
+					WordPress WordPress 2.1.3 <br/>
+					
+				
+					WordPress WordPress 2.1.2 <br/>
+					
+				
+					WordPress WordPress 2.1.1 <br/>
+					
+				
+					WordPress WordPress 2.0.11 <br/>
+					
+				
+					WordPress WordPress 2.0.10 <br/>
+					
+				
+					WordPress WordPress 2.0.7 <br/>
+					
+				
+					WordPress WordPress 2.0.6 <br/>
+					
+				
+					WordPress WordPress 2.0.5 <br/>
+					
+				
+					WordPress WordPress 2.0.4 <br/>
+					
+				
+					WordPress WordPress 2.0.3 <br/>
+					
+				
+					WordPress WordPress 2.0.2 <br/>
+					
+				
+					WordPress WordPress 2.0.1 <br/>
+					
+				
+					WordPress WordPress 2.0 <br/>
+					
+				
+					WordPress WordPress 1.5.2 <br/>
+					
+				
+					WordPress WordPress 1.5.1 <br/>
+					
+				
+					WordPress WordPress 1.3.1 <br/>
+					
+				
+					WordPress WordPress 1.2.2 <br/>
+					
+				
+					WordPress WordPress 1.2.1 <br/>
+					
+				
+					WordPress WordPress 1.2 <br/>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux 1.4 <br/>
+</span>
+<span class="related">
+						
+							+ 
+						
+						Gentoo Linux  <br/>
+</span>
+					
+				
+					WordPress WordPress  4.7<br/>
+					
+				
+					WordPress WordPress  4.6<br/>
+					
+				
+					WordPress WordPress  4.5.3<br/>
+					
+				
+					WordPress WordPress  4.4.2<br/>
+					
+				
+					WordPress WordPress  4.3.1<br/>
+					
+				
+					WordPress WordPress  4.3<br/>
+					
+				
+					WordPress WordPress  4.2<br/>
+					
+				
+					WordPress WordPress  4.0.1<br/>
+					
+				
+					WordPress WordPress  4.0<br/>
+					
+				
+					WordPress WordPress  3.9.3<br/>
+					
+				
+					WordPress WordPress  3.9<br/>
+					
+				
+					WordPress WordPress  3.8.5<br/>
+					
+				
+					WordPress WordPress  3.8.4<br/>
+					
+				
+					WordPress WordPress  3.8.3<br/>
+					
+				
+					WordPress WordPress  3.8<br/>
+					
+				
+					WordPress WordPress  3.7.5<br/>
+					
+				
+					WordPress WordPress  3.7<br/>
+					
+				
+					WordPress WordPress  3.6<br/>
+					
+				
+					WordPress WordPress  3.5.0<br/>
+					
+				
+					WordPress WordPress  3.5<br/>
+					
+				
+					WordPress WordPress  3.4.2<br/>
+					
+				
+					WordPress WordPress  3.4.1<br/>
+					
+				
+					WordPress WordPress  3.4.0<br/>
+					
+				
+					WordPress WordPress  3.4<br/>
+					
+				
+					WordPress WordPress  3.3.3<br/>
+					
+				
+					WordPress WordPress  3.3.1<br/>
+					
+				
+					WordPress WordPress  3.3<br/>
+					
+				
+					WordPress WordPress  3.2.1 <br/>
+					
+				
+					WordPress WordPress  3.2<br/>
+					
+				
+					WordPress WordPress  3.1<br/>
+					
+				
+					WordPress WordPress  3.0.6<br/>
+					
+				
+					WordPress WordPress  3.0.1<br/>
+					
+				
+					WordPress WordPress  2.9.1.1<br/>
+					
+				
+					WordPress WordPress  2.9<br/>
+					
+				
+					WordPress WordPress  2.8.5.2<br/>
+					
+				
+					WordPress WordPress  2.8.5.1<br/>
+					
+				
+					WordPress WordPress  2.8<br/>
+					
+				
+					WordPress WordPress  2.7.1<br/>
+					
+				
+					WordPress WordPress  2.7<br/>
+					
+				
+					WordPress WordPress  2.6.3<br/>
+					
+				
+					WordPress WordPress  2.6<br/>
+					
+				
+					WordPress WordPress  2.5<br/>
+					
+				
+					WordPress WordPress  2.3<br/>
+					
+				
+					WordPress WordPress  2.2.0<br/>
+					
+				
+					WordPress WordPress  2.2<br/>
+					
+				
+					WordPress WordPress  2.1<br/>
+					
+				
+					WordPress WordPress  2.0.9<br/>
+					
+				
+					WordPress WordPress  2.0.8<br/>
+					
+				
+					WordPress WordPress  1.6.2<br/>
+					
+				
+					WordPress WordPress  1.6<br/>
+					
+				
+					WordPress WordPress  1.5.1.1<br/>
+					
+				
+					WordPress WordPress  1.5<br/>
+					
+				
+					WordPress WordPress  1.4<br/>
+					
+				
+					WordPress WordPress  1.3.3<br/>
+					
+				
+					WordPress WordPress  1.3.2<br/>
+					
+				
+					WordPress WordPress  1.3<br/>
+					
+				
+					WordPress WordPress  1.2.5<br/>
+					
+				
+					WordPress WordPress  1.2.4<br/>
+					
+				
+					WordPress WordPress  1.2.3<br/>
+					
+				
+					WordPress WordPress  1.1.1<br/>
+					
+				
+					WordPress WordPress  1.0.2<br/>
+					
+				
+					WordPress WordPress  1.0.1<br/>
+					
+				
+					WordPress WordPress  0.7<br/>
+					
+				
+					PHPMailer PHPMailer 5.2.14 <br/>
+					
+				
+					PHPMailer PHPMailer 5.2.13 <br/>
+					
+				
+					PHPMailer PHPMailer 1.7.3 <br/>
+					
+				
+					PHPMailer PHPMailer 1.7.2 <br/>
+					
+				
+					PHPMailer PHPMailer 1.7.1 <br/>
+					
+				
+					PHPMailer PHPMailer 1.7 <br/>
+					
+				
+					PHPMailer PHPMailer  1.73<br/>
+<span class="related">
+						
+							+ 
+						
+						Glpi-Project Glpi 0.68.3 <br/>
+</span>
+					
+				
+					Joomla Joomla! 3.6.5 <br/>
+					
+				
+					Joomla Joomla! 3.4.7 <br/>
+					
+				
+					Joomla Joomla! 3.4.6 <br/>
+					
+				
+					Joomla Joomla! 3.4.4 <br/>
+					
+				
+					Joomla Joomla! 3.4.3 <br/>
+					
+				
+					Joomla Joomla! 3.4.2 <br/>
+					
+				
+					Joomla Joomla! 3.4.1 <br/>
+					
+				
+					Joomla Joomla! 3.4 <br/>
+					
+				
+					Joomla Joomla! 3.3.6 <br/>
+					
+				
+					Joomla Joomla! 3.3.5 <br/>
+					
+				
+					Joomla Joomla! 3.3.4 <br/>
+					
+				
+					Joomla Joomla! 3.3.3 <br/>
+					
+				
+					Joomla Joomla! 3.3.2 <br/>
+					
+				
+					Joomla Joomla! 3.3.1 <br/>
+					
+				
+					Joomla Joomla! 3.3 <br/>
+					
+				
+					Joomla Joomla! 3.2.6 <br/>
+					
+				
+					Joomla Joomla! 3.2.5 <br/>
+					
+				
+					Joomla Joomla! 3.2.4 <br/>
+					
+				
+					Joomla Joomla! 3.2.3 <br/>
+					
+				
+					Joomla Joomla! 3.2.2 <br/>
+					
+				
+					Joomla Joomla! 3.2.1 <br/>
+					
+				
+					Joomla Joomla! 3.1.6 <br/>
+					
+				
+					Joomla Joomla! 3.1.5 <br/>
+					
+				
+					Joomla Joomla! 3.1.4 <br/>
+					
+				
+					Joomla Joomla! 3.1.1 <br/>
+					
+				
+					Joomla Joomla! 3.1 <br/>
+					
+				
+					Joomla Joomla! 3.0.4 <br/>
+					
+				
+					Joomla Joomla! 3.0.3 <br/>
+					
+				
+					Joomla Joomla! 3.0.1 <br/>
+					
+				
+					Joomla Joomla! 3.0 <br/>
+					
+				
+					Joomla Joomla! 2.5.26 <br/>
+					
+				
+					Joomla Joomla! 2.5.25 <br/>
+					
+				
+					Joomla Joomla! 2.5.24 <br/>
+					
+				
+					Joomla Joomla! 2.5.19 <br/>
+					
+				
+					Joomla Joomla! 2.5.18 <br/>
+					
+				
+					Joomla Joomla! 2.5.17 <br/>
+					
+				
+					Joomla Joomla! 2.5.16 <br/>
+					
+				
+					Joomla Joomla! 2.5.15 <br/>
+					
+				
+					Joomla Joomla! 2.5.14 <br/>
+					
+				
+					Joomla Joomla! 2.5.13 <br/>
+					
+				
+					Joomla Joomla! 2.5.11 <br/>
+					
+				
+					Joomla Joomla! 2.5.10 <br/>
+					
+				
+					Joomla Joomla! 2.5.9 <br/>
+					
+				
+					Joomla Joomla! 2.5.8 <br/>
+					
+				
+					Joomla Joomla! 2.5.7 <br/>
+					
+				
+					Joomla Joomla! 2.5.6 <br/>
+					
+				
+					Joomla Joomla! 2.5.5 <br/>
+					
+				
+					Joomla Joomla! 2.5.4 <br/>
+					
+				
+					Joomla Joomla! 2.5.3 <br/>
+					
+				
+					Joomla Joomla! 2.5.2 <br/>
+					
+				
+					Joomla Joomla! 2.5.1 <br/>
+					
+				
+					Joomla Joomla! 2.5 <br/>
+					
+				
+					Joomla Joomla! 1.7.5 <br/>
+					
+				
+					Joomla Joomla! 1.7.4 <br/>
+					
+				
+					Joomla Joomla! 1.7.3 <br/>
+					
+				
+					Joomla Joomla! 1.7.2 <br/>
+					
+				
+					Joomla Joomla! 1.7.1 <br/>
+					
+				
+					Joomla Joomla! 1.7 <br/>
+					
+				
+					Joomla Joomla! 1.6.6 <br/>
+					
+				
+					Joomla Joomla! 1.6.4 <br/>
+					
+				
+					Joomla Joomla! 1.6.3 <br/>
+					
+				
+					Joomla Joomla! 1.6.2 <br/>
+					
+				
+					Joomla Joomla! 1.6.1 <br/>
+					
+				
+					Joomla Joomla! 1.6 <br/>
+					
+				
+					Joomla Joomla!  3.6.4<br/>
+					
+				
+					Joomla Joomla!  3.6.3<br/>
+					
+				
+					Joomla Joomla!  3.6.1<br/>
+					
+				
+					Joomla Joomla!  3.6.0<br/>
+					
+				
+					Joomla Joomla!  3.4.5<br/>
+					
+				
+					Joomla Joomla!  3.2<br/>
+					
+				
+					Joomla Joomla!  2.5<br/>
+					
+				
+					Joomla Joomla!  1.7<br/>
+					
+				
+					Joomla Joomla!  1.6.5<br/>
+					
+				
+					Drupal Mailjet  7.x-2.8<br/>
+					
+				
+					Drupal Mailjet  7.x-2.0<br/>
+					
+				
+					Drupal Drupal 8.2.3 <br/>
+					
+				
+					Drupal Drupal 8.2.2 <br/>
+					
+				
+					Drupal Drupal 8.2.1 <br/>
+					
+				
+					Drupal Drupal 8.2 <br/>
+					
+				
+					Drupal Drupal 8.1.10 <br/>
+					
+				
+					Drupal Drupal 8.1.9 <br/>
+					
+				
+					Drupal Drupal 8.1.8 <br/>
+					
+				
+					Drupal Drupal 8.0.4 <br/>
+					
+				
+					Drupal Drupal 8.0.3 <br/>
+					
+				
+					Drupal Drupal 8.0.2 <br/>
+					
+				
+					Drupal Drupal 8.0.1 <br/>
+					
+				
+					Drupal Drupal 8.0 <br/>
+					
+				
+					Drupal Drupal  8.1.7<br/>
+					
+				
+					Drupal Drupal  8.1.6<br/>
+					
+				
+					Drupal Drupal  8.1.5<br/>
+					
+				
+					Drupal Drupal  8.1.4<br/>
+					
+				
+					Drupal Drupal  8.1.3<br/>
+					
+				
+					Drupal Drupal  8.1.0<br/>
+					
+				
+					Drupal Drupal  8.0<br/>
+					
+				
+					Drupal Drupal  7.9<br/>
+					
+				
+					Drupal Drupal  7.8<br/>
+					
+				
+					Drupal Drupal  7.6<br/>
+					
+				
+					Drupal Drupal  7.52<br/>
+					
+				
+					Drupal Drupal  7.5<br/>
+					
+				
+					Drupal Drupal  7.44<br/>
+					
+				
+					Drupal Drupal  7.43<br/>
+					
+				
+					Drupal Drupal  7.42<br/>
+					
+				
+					Drupal Drupal  7.41<br/>
+					
+				
+					Drupal Drupal  7.40<br/>
+					
+				
+					Drupal Drupal  7.4<br/>
+					
+				
+					Drupal Drupal  7.39<br/>
+					
+				
+					Drupal Drupal  7.38<br/>
+					
+				
+					Drupal Drupal  7.37<br/>
+					
+				
+					Drupal Drupal  7.36<br/>
+					
+				
+					Drupal Drupal  7.35<br/>
+					
+				
+					Drupal Drupal  7.34<br/>
+					
+				
+					Drupal Drupal  7.33<br/>
+					
+				
+					Drupal Drupal  7.32<br/>
+					
+				
+					Drupal Drupal  7.31<br/>
+					
+				
+					Drupal Drupal  7.30<br/>
+					
+				
+					Drupal Drupal  7.3<br/>
+					
+				
+					Drupal Drupal  7.29<br/>
+					
+				
+					Drupal Drupal  7.28<br/>
+					
+				
+					Drupal Drupal  7.27<br/>
+					
+				
+					Drupal Drupal  7.26<br/>
+					
+				
+					Drupal Drupal  7.25<br/>
+					
+				
+					Drupal Drupal  7.24<br/>
+					
+				
+					Drupal Drupal  7.23<br/>
+					
+				
+					Drupal Drupal  7.22<br/>
+					
+				
+					Drupal Drupal  7.21<br/>
+					
+				
+					Drupal Drupal  7.20<br/>
+					
+				
+					Drupal Drupal  7.2<br/>
+					
+				
+					Drupal Drupal  7.19<br/>
+					
+				
+					Drupal Drupal  7.18<br/>
+					
+				
+					Drupal Drupal  7.17<br/>
+					
+				
+					Drupal Drupal  7.16<br/>
+					
+				
+					Drupal Drupal  7.15<br/>
+					
+				
+					Drupal Drupal  7.14<br/>
+					
+				
+					Drupal Drupal  7.13<br/>
+					
+				
+					Drupal Drupal  7.12<br/>
+					
+				
+					Drupal Drupal  7.11<br/>
+					
+				
+					Drupal Drupal  7.10<br/>
+					
+				
+					Drupal Drupal  7.1<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					WordPress WordPress 4.7.1 <br/>
+					
+				
+					PHPMailer PHPMailer 5.2.18 <br/>
+					
+				
+					Drupal Mailjet  7.x-2.9<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>#<a href="https://github.com/SpeeDr00t/speedr00t.github.com/blob/master/securityfocus/0x96000/95108/95108.sh.txt">#exploit_95108.sh.txt</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following exploit is available:
+	
+		<ul>
+<li><a href="/data/vulnerabilities/exploits/95108.sh.txt">/data/vulnerabilities/exploits/95108.sh.txt</a></li>
+</ul>
+</div>

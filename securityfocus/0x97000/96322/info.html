@@ -1,0 +1,384 @@
+#SpeeDr00t@Black Falcon<br>#bid96322<p><b><span style="font-size: 18pt;">BusyBox CVE-2016-2148 Heap Based Buffer Overflow Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/96322/info">info</a><br><a href="http://www.securityfocus.com/bid/96322/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/96322/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/96322/solution">solution</a><br><a href="http://www.securityfocus.com/bid/96322/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				96322
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Boundary Condition Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-2148<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Feb 09 2017 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Mar 07 2017 01:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				The vendor reported this issue.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					BusyBox BusyBox 1.20.2 <br/>
+					
+				
+					BusyBox BusyBox 1.20.1 <br/>
+					
+				
+					BusyBox BusyBox 1.19.4 <br/>
+					
+				
+					BusyBox BusyBox 1.19.3 <br/>
+					
+				
+					BusyBox BusyBox 1.19.2 <br/>
+					
+				
+					BusyBox BusyBox 1.19 <br/>
+					
+				
+					BusyBox BusyBox 1.18.4 <br/>
+					
+				
+					BusyBox BusyBox 1.18.3 <br/>
+					
+				
+					BusyBox BusyBox 1.18.2 <br/>
+					
+				
+					BusyBox BusyBox 1.18.1 <br/>
+					
+				
+					BusyBox BusyBox 1.18 <br/>
+					
+				
+					BusyBox BusyBox 1.17.12 <br/>
+					
+				
+					BusyBox BusyBox 1.17.1 <br/>
+					
+				
+					BusyBox BusyBox 1.17 <br/>
+					
+				
+					BusyBox BusyBox 1.16.2 <br/>
+					
+				
+					BusyBox BusyBox 1.16.1 <br/>
+					
+				
+					BusyBox BusyBox 1.16 <br/>
+					
+				
+					BusyBox BusyBox 1.15.3 <br/>
+					
+				
+					BusyBox BusyBox 1.15.2 <br/>
+					
+				
+					BusyBox BusyBox 1.15.1 <br/>
+					
+				
+					BusyBox BusyBox 1.14.1 <br/>
+					
+				
+					BusyBox BusyBox 1.14 <br/>
+					
+				
+					BusyBox BusyBox 1.13.4 <br/>
+					
+				
+					BusyBox BusyBox 1.13.3 <br/>
+					
+				
+					BusyBox BusyBox 1.13.2 <br/>
+					
+				
+					BusyBox BusyBox 1.12.4 <br/>
+					
+				
+					BusyBox BusyBox 1.12.3 <br/>
+					
+				
+					BusyBox BusyBox 1.12.2 <br/>
+					
+				
+					BusyBox BusyBox 1.12 <br/>
+					
+				
+					BusyBox BusyBox 1.10.4 <br/>
+					
+				
+					BusyBox BusyBox 0.60.5 <br/>
+					
+				
+					BusyBox BusyBox 0.60.4 <br/>
+					
+				
+					BusyBox BusyBox 0.60.3 <br/>
+					
+				
+					BusyBox BusyBox 0.60.2 <br/>
+					
+				
+					BusyBox BusyBox 0.60.1 <br/>
+					
+				
+					BusyBox BusyBox 0.60 <br/>
+					
+				
+					BusyBox BusyBox  1.9.2<br/>
+					
+				
+					BusyBox BusyBox  1.9.1<br/>
+					
+				
+					BusyBox BusyBox  1.9.0<br/>
+					
+				
+					BusyBox BusyBox  1.8.2<br/>
+					
+				
+					BusyBox BusyBox  1.8.1<br/>
+					
+				
+					BusyBox BusyBox  1.8.0<br/>
+					
+				
+					BusyBox BusyBox  1.7.3<br/>
+					
+				
+					BusyBox BusyBox  1.7.2<br/>
+					
+				
+					BusyBox BusyBox  1.7.1<br/>
+					
+				
+					BusyBox BusyBox  1.7.0<br/>
+					
+				
+					BusyBox BusyBox  1.6.1<br/>
+					
+				
+					BusyBox BusyBox  1.6.0<br/>
+					
+				
+					BusyBox BusyBox  1.5.1<br/>
+					
+				
+					BusyBox BusyBox  1.5.0<br/>
+					
+				
+					BusyBox BusyBox  1.4.2<br/>
+					
+				
+					BusyBox BusyBox  1.4.1<br/>
+					
+				
+					BusyBox BusyBox  1.4.0<br/>
+					
+				
+					BusyBox BusyBox  1.3.2<br/>
+					
+				
+					BusyBox BusyBox  1.3.1<br/>
+					
+				
+					BusyBox BusyBox  1.3.0<br/>
+					
+				
+					BusyBox BusyBox  1.22<br/>
+					
+				
+					BusyBox BusyBox  1.20.0<br/>
+					
+				
+					BusyBox BusyBox  1.2.2.1<br/>
+					
+				
+					BusyBox BusyBox  1.2.2<br/>
+					
+				
+					BusyBox BusyBox  1.2.1<br/>
+					
+				
+					BusyBox BusyBox  1.2.0<br/>
+					
+				
+					BusyBox BusyBox  1.18.5<br/>
+					
+				
+					BusyBox BusyBox  1.17.4<br/>
+					
+				
+					BusyBox BusyBox  1.17.3<br/>
+					
+				
+					BusyBox BusyBox  1.15.0<br/>
+					
+				
+					BusyBox BusyBox  1.14.4<br/>
+					
+				
+					BusyBox BusyBox  1.14.3<br/>
+					
+				
+					BusyBox BusyBox  1.14.2<br/>
+					
+				
+					BusyBox BusyBox  1.13.1<br/>
+					
+				
+					BusyBox BusyBox  1.13.0<br/>
+					
+				
+					BusyBox BusyBox  1.12.1<br/>
+					
+				
+					BusyBox BusyBox  1.11.3<br/>
+					
+				
+					BusyBox BusyBox  1.11.2<br/>
+					
+				
+					BusyBox BusyBox  1.11.1<br/>
+					
+				
+					BusyBox BusyBox  1.11.0<br/>
+					
+				
+					BusyBox BusyBox  1.10.3<br/>
+					
+				
+					BusyBox BusyBox  1.10.2<br/>
+					
+				
+					BusyBox BusyBox  1.10.1<br/>
+					
+				
+					BusyBox BusyBox  1.10.0<br/>
+					
+				
+					BusyBox BusyBox  1.1.3<br/>
+					
+				
+					BusyBox BusyBox  1.1.2<br/>
+					
+				
+					BusyBox BusyBox  1.1.1<br/>
+					
+				
+					BusyBox BusyBox  1.1.0<br/>
+					
+				
+					BusyBox BusyBox  1.01<br/>
+					
+				
+					BusyBox BusyBox  1.00<br/>
+					
+				
+					BusyBox BusyBox  0.52<br/>
+					
+				
+					BusyBox BusyBox  0.51<br/>
+					
+				
+					BusyBox BusyBox  0.50<br/>
+					
+				
+					BusyBox BusyBox  0.49<br/>
+					
+				
+					BusyBox BusyBox  0.43<br/>
+					
+				
+					BusyBox BusyBox  0.42<br/>
+					
+				
+					BusyBox BusyBox  0.41<br/>
+					
+				
+					BusyBox BusyBox  0.40<br/>
+					
+				
+					BusyBox BusyBox  0.39<br/>
+					
+				
+					BusyBox BusyBox  0.38<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					BusyBox BusyBox 1.25 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits.#no_exploit.
+	
+		<ul>
+</ul>
+</div>

@@ -1,0 +1,1467 @@
+#SpeeDr00t@Black Falcon<br>#bid97198<p><b><span style="font-size: 18pt;">Multiple F5 BIG-IP CVE-2016-7474 Local Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/97198/info">info</a><br><a href="http://www.securityfocus.com/bid/97198/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/97198/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/97198/solution">solution</a><br><a href="http://www.securityfocus.com/bid/97198/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				97198
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-7474<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Mar 27 2017 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Apr 04 2017 12:01AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Michael Molho of e-Xpert Solutions SA.
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					F5 BIG-IP WebSafe 12.1.1 <br/>
+					
+				
+					F5 BIG-IP WebSafe 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP WebSafe 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP WebSafe 12.1 <br/>
+					
+				
+					F5 BIG-IP WebSafe 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP WebSafe 12.0 HF3<br/>
+					
+				
+					F5 BIG-IP WebSafe 12.0 HF2<br/>
+					
+				
+					F5 BIG-IP WebSafe 12.0 HF1<br/>
+					
+				
+					F5 BIG-IP WebSafe 12.0 <br/>
+					
+				
+					F5 BIG-IP WebSafe 11.6.1 <br/>
+					
+				
+					F5 BIG-IP WebSafe 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP WebSafe 11.6 <br/>
+					
+				
+					F5 BIG-IP WebAccelerator 11.2.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.4.1 <br/>
+					
+				
+					F5 BIG-IP PSM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP PSM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP PSM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP PSM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP PSM 11.4 <br/>
+					
+				
+					F5 BIG-IP PEM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP PEM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP PEM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP PEM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP PEM 12.0 HF3<br/>
+					
+				
+					F5 BIG-IP PEM 12.0 HF2<br/>
+					
+				
+					F5 BIG-IP PEM 12.0 <br/>
+					
+				
+					F5 BIG-IP PEM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP PEM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP PEM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP PEM 11.5 <br/>
+					
+				
+					F5 BIG-IP PEM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP PEM 11.4 <br/>
+					
+				
+					F5 BIG-IP PEM  12.1.0<br/>
+					
+				
+					F5 BIG-IP PEM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP PEM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP PEM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP PEM  11.6.0<br/>
+					
+				
+					F5 BIG-IP PEM  11.5.4<br/>
+					
+				
+					F5 BIG-IP PEM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP PEM  11.4.1<br/>
+					
+				
+					F5 BIG-IP LTM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP LTM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP LTM 12.0 <br/>
+					
+				
+					F5 BIG-IP LTM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP LTM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP LTM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP LTM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP LTM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP LTM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP LTM 11.5 <br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 HF7<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP LTM 11.4 <br/>
+					
+				
+					F5 BIG-IP LTM  12.1.0<br/>
+					
+				
+					F5 BIG-IP LTM  12.0.0 HF3<br/>
+					
+				
+					F5 BIG-IP LTM  12.0.0 HF2<br/>
+					
+				
+					F5 BIG-IP LTM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP LTM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP LTM  11.6.0<br/>
+					
+				
+					F5 BIG-IP LTM  11.5.4<br/>
+					
+				
+					F5 BIG-IP LTM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP LTM  11.5<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1 HF11<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP LTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP LTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.1.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.0 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.0 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.0 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.3 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 HF7<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.5 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP Link Controller 11.4 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Link Controller  12.1.0<br/>
+					
+				
+					F5 BIG-IP Link Controller  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.6.1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.5.4<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP Link Controller  11.4.1<br/>
+					
+				
+					F5 BIG-IP GTM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP GTM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP GTM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP GTM 11.5 <br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP GTM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP GTM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP GTM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP GTM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP GTM 11.4 <br/>
+					
+				
+					F5 BIG-IP GTM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP GTM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP GTM  11.6.0<br/>
+					
+				
+					F5 BIG-IP GTM  11.5.4<br/>
+					
+				
+					F5 BIG-IP GTM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP GTM  11.4.1<br/>
+					
+				
+					F5 BIG-IP GTM  11.2.1<br/>
+					
+				
+					F5 BIG-IP Edge Gateway  11.2.1<br/>
+					
+				
+					F5 BIG-IP DNS 12.1.1 <br/>
+					
+				
+					F5 BIG-IP DNS 12.0 HF3<br/>
+					
+				
+					F5 BIG-IP DNS 12.0 HF2<br/>
+					
+				
+					F5 BIG-IP DNS 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP DNS 12.0 <br/>
+					
+				
+					F5 BIG-IP DNS  12.1.0<br/>
+					
+				
+					F5 BIG-IP DNS  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP ASM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP ASM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP ASM 12.0 <br/>
+					
+				
+					F5 BIG-IP ASM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP ASM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP ASM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP ASM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP ASM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP ASM 11.5 <br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP ASM 11.4 <br/>
+					
+				
+					F5 BIG-IP ASM  12.1.0<br/>
+					
+				
+					F5 BIG-IP ASM  12.0.0 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  12.0.0 HF2<br/>
+					
+				
+					F5 BIG-IP ASM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP ASM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP ASM  11.6.0<br/>
+					
+				
+					F5 BIG-IP ASM  11.5.4<br/>
+					
+				
+					F5 BIG-IP ASM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP ASM  11.4.1<br/>
+					
+				
+					F5 BIG-IP ASM  11.2.1<br/>
+					
+				
+					F5 BIG-IP APM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP APM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP APM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP APM 12.0 HF3<br/>
+					
+				
+					F5 BIG-IP APM 12.0 HF2<br/>
+					
+				
+					F5 BIG-IP APM 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP APM 12.0 <br/>
+					
+				
+					F5 BIG-IP APM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP APM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP APM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP APM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP APM 11.6 HF5<br/>
+					
+				
+					F5 BIG-IP APM 11.6 HF4<br/>
+					
+				
+					F5 BIG-IP APM 11.6 HF3<br/>
+					
+				
+					F5 BIG-IP APM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP APM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP APM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP APM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP APM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP APM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP APM 11.5.2 HF1<br/>
+					
+				
+					F5 BIG-IP APM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP APM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP APM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP APM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP APM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP APM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP APM  12.1.0<br/>
+					
+				
+					F5 BIG-IP APM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.6.0<br/>
+					
+				
+					F5 BIG-IP APM  11.5.4<br/>
+					
+				
+					F5 BIG-IP APM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP APM  11.5.0<br/>
+					
+				
+					F5 BIG-IP APM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP APM  11.4.1<br/>
+					
+				
+					F5 BIG-IP APM  11.4.0<br/>
+					
+				
+					F5 BIG-IP APM  11.2.1<br/>
+					
+				
+					F5 BIG-IP Analytics 12.1.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP Analytics 12.0 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.6.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP Analytics 11.6 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.3 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.2 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 HF8<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.1 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.5 HF7<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP Analytics 11.4 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.2.1 <br/>
+					
+				
+					F5 BIG-IP Analytics  12.1.0<br/>
+					
+				
+					F5 BIG-IP Analytics  12.0.0 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics  12.0.0 HF2<br/>
+					
+				
+					F5 BIG-IP Analytics  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP Analytics  11.6.0<br/>
+					
+				
+					F5 BIG-IP Analytics  11.5.4<br/>
+					
+				
+					F5 BIG-IP Analytics  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP Analytics  11.4.1<br/>
+					
+				
+					F5 BIG-IP AFM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP AFM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP AFM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP AFM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP AFM 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP AFM 12.0 <br/>
+					
+				
+					F5 BIG-IP AFM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP AFM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP AFM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP AFM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP AFM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP AFM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AFM 11.5 <br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP AFM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP AFM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP AFM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP AFM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP AFM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP AFM 11.4 <br/>
+					
+				
+					F5 BIG-IP AFM  12.1.0<br/>
+					
+				
+					F5 BIG-IP AFM  12.0.0 HF3<br/>
+					
+				
+					F5 BIG-IP AFM  12.0.0 HF2<br/>
+					
+				
+					F5 BIG-IP AFM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP AFM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP AFM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP AFM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AFM  11.5.4<br/>
+					
+				
+					F5 BIG-IP AFM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP AFM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM 12.1.1 <br/>
+					
+				
+					F5 BIG-IP AAM 12.1 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 12.1 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 12.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 12.0 build 1.14.628<br/>
+					
+				
+					F5 BIG-IP AAM 12.0 <br/>
+					
+				
+					F5 BIG-IP AAM 11.6.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.6 HF8<br/>
+					
+				
+					F5 BIG-IP AAM 11.6 HF7<br/>
+					
+				
+					F5 BIG-IP AAM 11.6 HF6<br/>
+					
+				
+					F5 BIG-IP AAM 11.6 build 6.204.442<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 build 0.1.256<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.3 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.3 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5.2 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 HF11<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 HF10<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 build 10.104.180<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.1 <br/>
+					
+				
+					F5 BIG-IP AAM 11.5 <br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF6<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF5<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF4<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF3<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 11.4.1 build 685-HF10<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF9<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF8<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF2<br/>
+					
+				
+					F5 BIG-IP AAM 11.4 HF10<br/>
+					
+				
+					F5 BIG-IP AAM  12.1.0<br/>
+					
+				
+					F5 BIG-IP AAM  12.0.0 HF3<br/>
+					
+				
+					F5 BIG-IP AAM  12.0.0 HF2<br/>
+					
+				
+					F5 BIG-IP AAM  12.0.0 HF1<br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0 HF5<br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0 HF4<br/>
+					
+				
+					F5 BIG-IP AAM  11.6.0<br/>
+					
+				
+					F5 BIG-IP AAM  11.5.4<br/>
+					
+				
+					F5 BIG-IP AAM  11.5.3 HF1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1 HF9<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1 HF8<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1 HF10<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.1<br/>
+					
+				
+					F5 BIG-IP AAM  11.4.0<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					F5 BIG-IP WebSafe 13.0 <br/>
+					
+				
+					F5 BIG-IP WebSafe 12.1.2 <br/>
+					
+				
+					F5 BIG-IP WebSafe 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP PEM 12.1.2 <br/>
+					
+				
+					F5 BIG-IP PEM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP PEM 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP LTM 12.1.2 <br/>
+					
+				
+					F5 BIG-IP LTM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP LTM 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP Link Controller 12.1.2 <br/>
+					
+				
+					F5 BIG-IP Link Controller 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP GTM 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP DNS 13.0 <br/>
+					
+				
+					F5 BIG-IP DNS 12.1.2 <br/>
+					
+				
+					F5 BIG-IP ASM 12.1.2 <br/>
+					
+				
+					F5 BIG-IP ASM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP ASM 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP ASM  12.1.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM 12.1.2 <br/>
+					
+				
+					F5 BIG-IP APM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP APM 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP Analytics 12.1.2 <br/>
+					
+				
+					F5 BIG-IP Analytics 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP Analytics 11.5.4 HF3<br/>
+					
+				
+					F5 BIG-IP AFM 12.1.2 <br/>
+					
+				
+					F5 BIG-IP AFM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 12.1.2 <br/>
+					
+				
+					F5 BIG-IP AAM 11.6.1 HF1<br/>
+					
+				
+					F5 BIG-IP AAM 11.5.4 HF3<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any working exploits. If you feel we are in error or if you are aware of more recent information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>
