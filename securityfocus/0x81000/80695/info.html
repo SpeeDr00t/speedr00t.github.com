@@ -1,0 +1,1128 @@
+#SpeeDr00t@Black Falcon<br>#bid80695<p><b><span style="font-size: 18pt;">OpenSSH CVE-2016-0777 Information Disclosure Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/80695/info">info</a><br><a href="http://www.securityfocus.com/bid/80695/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/80695/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/80695/solution">solution</a><br><a href="http://www.securityfocus.com/bid/80695/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				80695
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2016-0777<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 14 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Jan 23 2017 04:05AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Qualys Security Advisory Team
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					Ubuntu Ubuntu Linux  15.10<br/>
+					
+				
+					Ubuntu Ubuntu Linux  15.04<br/>
+					
+				
+					Ubuntu Ubuntu Linux  14.04 LTS<br/>
+					
+				
+					Ubuntu Ubuntu Linux  12.04 LTS<br/>
+					
+				
+					SuSE openSUSE Evergreen  11.4<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  13.37 x86_64<br/>
+					
+				
+					Slackware Linux  13.37<br/>
+					
+				
+					Slackware Linux  13.1 x86_64<br/>
+					
+				
+					Slackware Linux  13.1<br/>
+					
+				
+					Slackware Linux  13.0 x86_64<br/>
+					
+				
+					Slackware Linux  13.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  13.2<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Linux Workstation  7<br/>
+					
+				
+					Redhat Enterprise Linux Server  7<br/>
+					
+				
+					Redhat Enterprise Linux HPC Node  7<br/>
+					
+				
+					Redhat Enterprise Linux Desktop  7<br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.2 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 7.0 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.13 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.12 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.6 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 6.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.2 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.1 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.18 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.17 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.15 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.14 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.10 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.9 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.8 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.7 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.6 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.5 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.4 <br/>
+					
+				
+					Paloaltonetworks PAN-OS 5.0.3 <br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0.8<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0.7<br/>
+					
+				
+					Paloaltonetworks PAN-OS  7.0<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.1.2<br/>
+					
+				
+					Paloaltonetworks PAN-OS  6.0<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.1.5<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.1.4<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.0.2<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.0.16<br/>
+					
+				
+					Paloaltonetworks PAN-OS  5.0.1<br/>
+					
+				
+					Oracle Solaris  11.3<br/>
+					
+				
+					Oracle Linux  7<br/>
+					
+				
+					Oracle Enterprise Linux  7<br/>
+					
+				
+					OpenSSH OpenSSH  7.1<br/>
+					
+				
+					OpenSSH OpenSSH  7.0<br/>
+					
+				
+					OpenSSH OpenSSH  6.9p1<br/>
+					
+				
+					OpenSSH OpenSSH  6.9<br/>
+					
+				
+					OpenSSH OpenSSH  6.8<br/>
+					
+				
+					OpenSSH OpenSSH  6.6<br/>
+					
+				
+					OpenSSH OpenSSH  6.5<br/>
+					
+				
+					OpenSSH OpenSSH  6.4<br/>
+					
+				
+					OpenSSH OpenSSH  6.3<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p2<br/>
+					
+				
+					OpenSSH OpenSSH  6.2p1<br/>
+					
+				
+					OpenSSH OpenSSH  6.2<br/>
+					
+				
+					OpenSSH OpenSSH  6.1<br/>
+					
+				
+					OpenSSH OpenSSH  6.0<br/>
+					
+				
+					OpenSSH OpenSSH  5.8 p2<br/>
+					
+				
+					OpenSSH OpenSSH  5.8<br/>
+					
+				
+					OpenSSH OpenSSH  5.7<br/>
+					
+				
+					OpenSSH OpenSSH  5.6p1<br/>
+					
+				
+					OpenSSH OpenSSH  5.6<br/>
+					
+				
+					OpenSSH OpenSSH  5.5<br/>
+					
+				
+					OpenSSH OpenSSH  5.4<br/>
+					
+				
+					Juniper Nsmexpress  -<br/>
+					
+				
+					Juniper NSM4000  0<br/>
+					
+				
+					Juniper Nsm3000  -<br/>
+					
+				
+					Juniper Junos  15.1X49-D30<br/>
+					
+				
+					Juniper Junos  15.1X49-D20<br/>
+					
+				
+					Juniper Junos  15.1X49-D15<br/>
+					
+				
+					Juniper Junos  15.1X49-D10<br/>
+					
+				
+					Juniper Junos  15.1R2<br/>
+					
+				
+					Juniper Junos  15.1R1<br/>
+					
+				
+					Juniper Junos  15.1F3<br/>
+					
+				
+					Juniper Junos  15.1F2<br/>
+					
+				
+					Juniper Junos  15.1F1<br/>
+					
+				
+					Juniper Junos  14.2R5<br/>
+					
+				
+					Juniper Junos  14.2R4<br/>
+					
+				
+					Juniper Junos  14.2R3<br/>
+					
+				
+					Juniper Junos  14.2R2<br/>
+					
+				
+					Juniper Junos  14.2R1<br/>
+					
+				
+					Juniper Junos  14.1R6<br/>
+					
+				
+					Juniper Junos  14.1R5<br/>
+					
+				
+					Juniper Junos  14.1R4<br/>
+					
+				
+					Juniper Junos  14.1R3<br/>
+					
+				
+					Juniper JUNOS  14.1R2<br/>
+					
+				
+					Juniper Junos  14.1R1<br/>
+					
+				
+					Juniper Junos  13.3R6<br/>
+					
+				
+					Juniper Junos  13.3R5<br/>
+					
+				
+					Juniper Junos  13.3R4<br/>
+					
+				
+					Juniper JUNOS  13.3R3<br/>
+					
+				
+					Juniper Junos  13.3R2<br/>
+					
+				
+					Juniper Junos  13.3R1.8<br/>
+					
+				
+					Juniper Junos  13.3R1.7<br/>
+					
+				
+					Juniper Junos  13.3R1<br/>
+					
+				
+					Juniper Junos  12.3X48-D25<br/>
+					
+				
+					Juniper Junos  12.3X48-D20<br/>
+					
+				
+					Juniper Junos  12.3X48-D15<br/>
+					
+				
+					Juniper Junos  12.3X48-D10<br/>
+					
+				
+					Juniper Junos  12.3R10<br/>
+					
+				
+					Juniper Junos  12.3R1.8<br/>
+					
+				
+					Juniper Junos  12.1X47-D30<br/>
+					
+				
+					Juniper Junos  12.1X47-D25<br/>
+					
+				
+					Juniper Junos  12.1X47-D20<br/>
+					
+				
+					Juniper Junos  12.1X47-D15<br/>
+					
+				
+					Juniper Junos  12.1X47-D11<br/>
+					
+				
+					Juniper Junos  12.1X47-D10<br/>
+					
+				
+					Juniper Junos  12.1X46-D40<br/>
+					
+				
+					Juniper Junos  12.1X46-D36<br/>
+					
+				
+					Juniper Junos  12.1X46-D35<br/>
+					
+				
+					Juniper Junos  12.1X46-D30<br/>
+					
+				
+					Juniper Junos  12.1X46-D26<br/>
+					
+				
+					Juniper JUNOS  12.1X46-D25<br/>
+					
+				
+					Juniper Junos  12.1X46-D20<br/>
+					
+				
+					Juniper Junos  12.1X46-D15<br/>
+					
+				
+					Juniper Junos  12.1X46-D10<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2.1 4<br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Vios  2.2.4.0<br/>
+					
+				
+					IBM Vios  2.2.3.50<br/>
+					
+				
+					IBM Vios  2.2.3.4<br/>
+					
+				
+					IBM Vios  2.2.3.3<br/>
+					
+				
+					IBM Vios  2.2.3.2<br/>
+					
+				
+					IBM Vios  2.2.3.0<br/>
+					
+				
+					IBM Vios  2.2.2.6<br/>
+					
+				
+					IBM Vios  2.2.2.5<br/>
+					
+				
+					IBM Vios  2.2.2.4<br/>
+					
+				
+					IBM Vios  2.2.2.0<br/>
+					
+				
+					IBM Vios  2.2.1.9<br/>
+					
+				
+					IBM Vios  2.2.1.8<br/>
+					
+				
+					IBM Vios  2.2.1.3<br/>
+					
+				
+					IBM Vios  2.2.1.1<br/>
+					
+				
+					IBM Vios  2.2.1.0<br/>
+					
+				
+					IBM Vios  2.2.0.13<br/>
+					
+				
+					IBM Vios  2.2.0.12<br/>
+					
+				
+					IBM Vios  2.2.0.11<br/>
+					
+				
+					IBM Vios  2.2.0.10<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images (and System X Edition)  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.0<br/>
+					
+				
+					IBM SmartCloud Provisioning for Software Virtual Appliance  2.1<br/>
+					
+				
+					IBM PurePower Integrated Manager vHMC Appliance  1.1.0<br/>
+					
+				
+					IBM PurePower Integrated Manager Service Appliance 1.1 <br/>
+					
+				
+					IBM PurePower Integrated Manager Power VC Appliance 1.1 <br/>
+					
+				
+					IBM PurePower Integrated Manager KVM Host  0<br/>
+					
+				
+					IBM PurePower Integrated Manager Appliance 1.1 <br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM Power HMC  7.9.0.0<br/>
+					
+				
+					IBM Power HMC  7.3.0.0<br/>
+					
+				
+					IBM MQ Appliance M2000  0<br/>
+					
+				
+					IBM i  7.2<br/>
+					
+				
+					IBM i  7.1<br/>
+					
+				
+					IBM i  6.1<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 <br/>
+					
+				
+					IBM Flex System Manager 1.2.1 <br/>
+					
+				
+					IBM Flex System Manager 1.2 <br/>
+					
+				
+					IBM Flex System Manager 1.1 <br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.1.0<br/>
+					
+				
+					IBM Flex System Manager  1.2.0.0<br/>
+					
+				
+					IBM Flex System Manager  1.1.0.0<br/>
+					
+				
+					IBM Flex System Chassis Management Module (CMM)  2PET<br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					HP Virtual Customer Access System (vCAS)  15.07<br/>
+					
+				
+					HP Virtual Customer Access System (vCAS)  14.06<br/>
+					
+				
+					HP Remote Device Access (RDA)  8.1<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p31<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p29<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p24<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p22<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p21<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RC<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA3-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p2<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-BETA1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC2-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RC1-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.2-PRERELEASE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-BETA2-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.2<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELENG<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC4-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p3<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-PRERELEASE<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-BETA1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-STABLE<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p8<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p7<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p5<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p4<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  10.0-RELEASE-p18<br/>
+					
+				
+					FreeBSD Freebsd  10.0-RELEASE-p17<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p13<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p12<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC3-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC2-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0-RC1-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0<br/>
+					
+				
+					Extremenetworks Purview  0<br/>
+					
+				
+					Extremenetworks NetSight Appliance  6.0<br/>
+					
+				
+					Extremenetworks NetSight Appliance  5.1<br/>
+					
+				
+					Extremenetworks NetSight Appliance  5.0<br/>
+					
+				
+					Extremenetworks NetSight Appliance  4.4<br/>
+					
+				
+					Extremenetworks NAC Appliance  6.0<br/>
+					
+				
+					Extremenetworks NAC Appliance  5.1<br/>
+					
+				
+					Extremenetworks NAC Appliance  5.0<br/>
+					
+				
+					Extremenetworks IDS/IPS  0<br/>
+					
+				
+					Extremenetworks IdentiFi Wireless 10.11 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 21.1.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 21.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 16.2 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 16.1.2 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.2 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7 <br/>
+					
+				
+					Extremenetworks ExtremeXOS  0<br/>
+					
+				
+					Debian Linux  6.0 sparc<br/>
+					
+				
+					Debian Linux  6.0 s/390<br/>
+					
+				
+					Debian Linux  6.0 powerpc<br/>
+					
+				
+					Debian Linux  6.0 mips<br/>
+					
+				
+					Debian Linux  6.0 ia-64<br/>
+					
+				
+					Debian Linux  6.0 ia-32<br/>
+					
+				
+					Debian Linux  6.0 arm<br/>
+					
+				
+					Debian Linux  6.0 amd64<br/>
+					
+				
+					Apple Mac Os X 10.11.3 <br/>
+					
+				
+					Apple Mac Os X 10.11.2 <br/>
+					
+				
+					Apple Mac Os X 10.11.1 <br/>
+					
+				
+					Apple Mac Os X 10.10.5 <br/>
+					
+				
+					Apple Mac OS X 10.9.5 <br/>
+					
+				
+					Apple Mac Os X  10.11<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Paloaltonetworks PAN-OS 7.1.3 <br/>
+					
+				
+					OpenSSH OpenSSH  7.1p2<br/>
+					
+				
+					Juniper Junos  15.1X49-D40<br/>
+					
+				
+					Juniper Junos  15.1R3<br/>
+					
+				
+					Juniper Junos  15.1F5<br/>
+					
+				
+					Juniper Junos  14.2R6<br/>
+					
+				
+					Juniper Junos  14.1R7<br/>
+					
+				
+					Juniper Junos  13.3R9<br/>
+					
+				
+					Juniper Junos  12.3X48-D30<br/>
+					
+				
+					Juniper Junos  12.3R12<br/>
+					
+				
+					Juniper Junos  12.1X47-D35<br/>
+					
+				
+					Juniper Junos  12.1X46-D45<br/>
+					
+				
+					HP Virtual Customer Access System (vCAS)  16.05<br/>
+					
+				
+					HP Remote Device Access (RDA)  8.7<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p34<br/>
+					
+				
+					FreeBSD Freebsd  10.2-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p10<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p27<br/>
+					
+				
+					Extremenetworks Purview  7.0<br/>
+					
+				
+					Extremenetworks Purview  6.3<br/>
+					
+				
+					Extremenetworks NetSight Appliance 7.0.3 <br/>
+					
+				
+					Extremenetworks NetSight Appliance  6.3.0.179<br/>
+					
+				
+					Extremenetworks NAC Appliance 7.0.3 <br/>
+					
+				
+					Extremenetworks NAC Appliance  6.3.0.179<br/>
+					
+				
+					Extremenetworks IdentiFi Wireless 10.11.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 16.2.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.3 Patch 8<br/>
+					
+				
+					Extremenetworks ExtremeXOS 15.7.3 Patch 1<br/>
+					
+				
+					Apple Mac OS X Security Update 2016-002  0<br/>
+					
+				
+					Apple Mac Os X  10.11.4<br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	The researcher who discovered this issue has created a proof-of-concept. Please see the references for more information.
+	
+		<ul>
+</ul>
+</div>

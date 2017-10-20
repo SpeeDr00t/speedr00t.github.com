@@ -1,0 +1,1359 @@
+#SpeeDr00t@Black Falcon<br>#bid82237<p><b><span style="font-size: 18pt;">OpenSSL CVE-2015-3197 Security Bypass Vulnerability</span></b></p><br><br><a href="http://www.securityfocus.com/bid/82237/info">info</a><br><a href="http://www.securityfocus.com/bid/82237/discuss">discussion</a><br><a href="http://www.securityfocus.com/bid/82237/exploit">exploit</a><br><a href="http://www.securityfocus.com/bid/82237/solution">solution</a><br><a href="http://www.securityfocus.com/bid/82237/references">references</a><br><br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+<table border="0" cellpadding="4" cellspacing="0">
+<tr>
+<td>
+<span class="label">Bugtraq ID:</span>
+</td>
+<td>
+				82237
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Class:</span>
+</td>
+<td>
+				Design Error
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">CVE:</span>
+</td>
+<td>
+				
+					CVE-2015-3197<br/>
+</td>
+</tr>
+<tr>
+<td>
+<span class="label">Remote:</span>
+</td>
+<td>
+				Yes
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Local:</span>
+</td>
+<td>
+				No
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Published:</span>
+</td>
+<td>
+				Jan 28 2016 12:00AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Updated:</span>
+</td>
+<td>
+				Nov 24 2016 01:14AM
+			</td>
+</tr>
+<tr>
+<td>
+<span class="label">Credit:</span>
+</td>
+<td>
+				Nimrod Aviram and Sebastian Schinzel
+			</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Vulnerable:</span>
+</td>
+<td>
+				
+					SuSE SUSE Linux Enterprise Server  10 SP4 LTSS<br/>
+					
+				
+					SuSE openSUSE Evergreen  11.4<br/>
+					
+				
+					Slackware Slackware Linux  14.1<br/>
+					
+				
+					Slackware Linux  x86_64 -current<br/>
+					
+				
+					Slackware Linux  14.1 x86_64<br/>
+					
+				
+					Slackware Linux  14.0 x86_64<br/>
+					
+				
+					Slackware Linux  14.0<br/>
+					
+				
+					Slackware Linux  -current<br/>
+					
+				
+					S.u.S.E. openSUSE  13.1<br/>
+					
+				
+					Redhat Enterprise Virtualization  3<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.5<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.4<br/>
+					
+				
+					Redhat Enterprise Linux Server AUS  6.2<br/>
+					
+				
+					Oracle VM VirtualBox 5.0.14 <br/>
+					
+				
+					Oracle VM VirtualBox 5.0.13 <br/>
+					
+				
+					Oracle VM VirtualBox 5.0.12 <br/>
+					
+				
+					Oracle VM VirtualBox 5.0.11 <br/>
+					
+				
+					Oracle VM VirtualBox 5.0.10 <br/>
+					
+				
+					Oracle VM VirtualBox  5.0<br/>
+					
+				
+					Oracle VM Server for x86  3.4<br/>
+					
+				
+					Oracle VM Server for x86  3.3<br/>
+					
+				
+					Oracle VM Server for x86  3.2<br/>
+					
+				
+					Oracle Tuxedo  12.1.1.0<br/>
+					
+				
+					Oracle Switch ES1-24  1.3<br/>
+					
+				
+					Oracle Sun Network 10GE Switch 72p  1.2<br/>
+					
+				
+					Oracle Sun Blade 6000 Ethernet Switched NEM 24P 10GE  1.2<br/>
+					
+				
+					Oracle Solaris  10<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.4<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  8.3<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  16.1<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  15.2<br/>
+					
+				
+					Oracle Primavera P6 Enterprise Project Portfolio Management  15.1<br/>
+					
+				
+					Oracle PeopleSoft Enterprise PeopleTools  8.55<br/>
+					
+				
+					Oracle PeopleSoft Enterprise PeopleTools  8.54<br/>
+					
+				
+					Oracle PeopleSoft Enterprise PeopleTools  8.53<br/>
+					
+				
+					Oracle OSS Support Tools Oracle Explorer  10<br/>
+					
+				
+					Oracle JD Edwards EnterpriseOne Tools  9.2.0.5<br/>
+					
+				
+					Oracle Exalogic Infrastructure  2.0<br/>
+					
+				
+					Oracle Exalogic Infrastructure  1.0<br/>
+					
+				
+					Oracle Ethernet Switch 40G 10G 72 2.0 <br/>
+					
+				
+					Oracle Ethernet Switch 40G 10G 64 2.0 <br/>
+					
+				
+					Oracle Enterprise Session Border Controller  Ecz7.3m2p2<br/>
+					
+				
+					Oracle Enterprise Manager Ops Center 12.3.2 <br/>
+					
+				
+					Oracle Enterprise Manager Ops Center  12.2.2<br/>
+					
+				
+					Oracle Enterprise Manager Ops Center  12.1.4<br/>
+					
+				
+					Oracle Enterprise Linux  6.2<br/>
+					
+				
+					Oracle Enterprise Linux  6<br/>
+					
+				
+					Oracle Enterprise Linux  5<br/>
+					
+				
+					Oracle Communications Network Charging and Control  5.0.2.0.0<br/>
+					
+				
+					Oracle Communications Network Charging and Control  5.0.1.0.0<br/>
+					
+				
+					Oracle Communications Network Charging and Control  5.0.0.2.0<br/>
+					
+				
+					Oracle Communications Network Charging and Control  5.0.0.1.0<br/>
+					
+				
+					Oracle Communications Network Charging and Control  4.4.1.5.0<br/>
+					
+				
+					OpenSSL Project OpenSSL 1.0.2 <br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1q<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1p<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1o<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1n<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1m<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1l<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1k<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1j<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1i<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1h<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1e<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1d<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1c<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1b<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1a<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1<br/>
+					
+				
+					IBM Watson Explorer Foundational Components  9.0.0.6<br/>
+					
+				
+					IBM Watson Explorer Foundational Components  9.0.0.0<br/>
+					
+				
+					IBM Watson Explorer Foundational Components  10.0.0.2<br/>
+					
+				
+					IBM Watson Explorer Foundational Components  10.0.0.0<br/>
+					
+				
+					IBM Vios 2.2.3 <br/>
+					
+				
+					IBM Vios 2.2 <br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 .3<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment 5.1 <br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  5.1.0.2<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images System x Edition  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.19<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.0<br/>
+					
+				
+					IBM Tivoli Netcool Reporter  2.2<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.2 <br/>
+					
+				
+					IBM SmartCloud Entry 3.1 Appliance fix pack 1<br/>
+					
+				
+					IBM SmartCloud Entry 3.1 <br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM Security Network Protection 5.3.2 <br/>
+					
+				
+					IBM Security Network Protection 5.3.1 <br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.1.0<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.3<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.2<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.1<br/>
+					
+				
+					IBM Security Identity Manager Virtual Appliance  7.0.0.0<br/>
+					
+				
+					IBM Security Identity Governance and Intelligence 5.2.1 <br/>
+					
+				
+					IBM Security Guardium  10.0<br/>
+					
+				
+					IBM SDK for Node.js  1.2.0.9<br/>
+					
+				
+					IBM SDK for Node.js  1.2.0.8<br/>
+					
+				
+					IBM SDK for Node.js  1.2.0.4<br/>
+					
+				
+					IBM SDK for Node.js  1.2.0.3<br/>
+					
+				
+					IBM SDK for Node.js  1.2.0.2<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.9<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.7<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.6<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.5<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.3<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.2<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.19<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.18<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.15<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.14<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.13<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.12<br/>
+					
+				
+					IBM Real-time Compression Appliance 4.1.2 <br/>
+					
+				
+					IBM Rational Developer for i 9.1.1 <br/>
+					
+				
+					IBM Rational Developer for i  9.5.0.2<br/>
+					
+				
+					IBM Rational Developer for i  9.5.0.1<br/>
+					
+				
+					IBM Rational Developer for i  9.5<br/>
+					
+				
+					IBM Rational Developer for i  9.1.1.1<br/>
+					
+				
+					IBM Rational Developer for i  9.1<br/>
+					
+				
+					IBM Rational Developer for AIX and Linux 9.1.1 <br/>
+					
+				
+					IBM Rational Developer for AIX and Linux  9.1.1.2<br/>
+					
+				
+					IBM Rational Developer for AIX and Linux  9.1.1.1<br/>
+					
+				
+					IBM Rational Developer for AIX and Linux  9.1<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.5<br/>
+					
+				
+					IBM Rational Application Developer for WebSphere Software  9.1<br/>
+					
+				
+					IBM PureApplication System  2.2.0.0<br/>
+					
+				
+					IBM PureApplication System  2.1<br/>
+					
+				
+					IBM PureApplication System  2.0<br/>
+					
+				
+					IBM Proventia Network Enterprise Scanner  2.3<br/>
+					
+				
+					IBM PowerKVM 2.1.1 Build 65.6<br/>
+					
+				
+					IBM PowerKVM 2.1.1 Build 65.5<br/>
+					
+				
+					IBM PowerKVM 2.1.1 Build 65.4<br/>
+					
+				
+					IBM PowerKVM 2.1.1 build 57<br/>
+					
+				
+					IBM PowerKVM  3.1 Build 3<br/>
+					
+				
+					IBM PowerKVM  3.1 Build 2<br/>
+					
+				
+					IBM PowerKVM  3.1<br/>
+					
+				
+					IBM PowerKVM  2.1.1 Build 65.1<br/>
+					
+				
+					IBM PowerKVM  2.1.1 build 58<br/>
+					
+				
+					IBM PowerKVM  2.1<br/>
+					
+				
+					IBM Power HMC  8.4.0.0 <br/>
+					
+				
+					IBM Power HMC  8.3.0.0<br/>
+					
+				
+					IBM Power HMC  8.2.0.0<br/>
+					
+				
+					IBM Power HMC  8.1.0.0<br/>
+					
+				
+					IBM Power HMC  7.9.0.0<br/>
+					
+				
+					IBM Power HMC  7.3.0.0<br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.1<br/>
+					
+				
+					IBM MQ Light Client Module for Node.js 1.0.2014091001 <br/>
+					
+				
+					IBM MQ Light Client Module for Node.js 1.0.2014090801 <br/>
+					
+				
+					IBM MQ Light Client Module for Node.js 1.0.2014090800 <br/>
+					
+				
+					IBM MQ Light Client Module for Node.js  1.0.2014091000-red<br/>
+					
+				
+					IBM Initiate Master Data Service Provider Hub  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service Provider Hub  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  9.7<br/>
+					
+				
+					IBM Initiate Master Data Service  9.5<br/>
+					
+				
+					IBM Initiate Master Data Service  10.1<br/>
+					
+				
+					IBM Initiate Master Data Service  10.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.5<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.4<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.3<br/>
+					
+				
+					IBM InfoSphere Master Data Management Standard/Advanced Edition  11.0<br/>
+					
+				
+					IBM InfoSphere Master Data Management Provider Hub  10.0<br/>
+					
+				
+					IBM InfoSphere Data Explorer  8.2-4<br/>
+					
+				
+					IBM InfoSphere Data Explorer  8.2<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.3.2.0<br/>
+					
+				
+					IBM Image Construction and Composition Tool  2.3.1.0<br/>
+					
+				
+					IBM i  7.2<br/>
+					
+				
+					IBM i  7.1<br/>
+					
+				
+					IBM Flex System Manager 1.3.2 0<br/>
+					
+				
+					IBM Flex System Manager 1.2.1 <br/>
+					
+				
+					IBM Flex System Manager 1.2 <br/>
+					
+				
+					IBM Flex System Manager 1.1 <br/>
+					
+				
+					IBM Flex System Manager  1.3.4.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.3.0<br/>
+					
+				
+					IBM Flex System Manager  1.3.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0.1<br/>
+					
+				
+					IBM Flex System Manager  1.3.0<br/>
+					
+				
+					IBM Flex System Chassis Management Module  2PET<br/>
+					
+				
+					IBM DataPower Gateways 7.0 <br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.5.0.0<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.5<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.4<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.3<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.2<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.1<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.0<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.9<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.8<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.7<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.6<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.5<br/>
+					
+				
+					IBM DataPower Gateways  7.1<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.9<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.8<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.12<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.11<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.10<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 <br/>
+					
+				
+					IBM Cognos TM1  10.2<br/>
+					
+				
+					IBM Cognos TM1  10.1.0<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 <br/>
+					
+				
+					IBM Cognos Insight 10.2.1 <br/>
+					
+				
+					IBM Cognos Insight  10.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.3 <br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.2 <br/>
+					
+				
+					IBM Cloud Manager with Openstack 4.1 <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6 Interim Fix1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.4 interim Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.4<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interix Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interix Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 Interim Fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5 Interim Fix<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5  Interim Fix<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.4.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.4<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.3<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.2<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.1<br/>
+					
+				
+					IBM Cisco Directors and Switches with NX-OS  7.0<br/>
+					
+				
+					IBM Cisco Directors and Switches with NX-OS  6.0<br/>
+					
+				
+					IBM Cisco Directors and Switches with NX-OS  5.0<br/>
+					
+				
+					IBM Business Process Manager Standard 8.5.6 <br/>
+					
+				
+					IBM Business Process Manager Standard 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Standard  8.5.7<br/>
+					
+				
+					IBM Business Process Manager Express 8.5.6 <br/>
+					
+				
+					IBM Business Process Manager Express 8.5.5 <br/>
+					
+				
+					IBM Business Process Manager Express  8.5.7<br/>
+					
+				
+					IBM Aix  7.2<br/>
+					
+				
+					IBM AIX  7.1<br/>
+					
+				
+					IBM AIX  6.1<br/>
+					
+				
+					IBM AIX  5.3<br/>
+					
+				
+					Gentoo Linux  <br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p9<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p6<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p35<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p34<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p33<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p31<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p3<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p29<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p24<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p22<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p21<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p2<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p13<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p10<br/>
+					
+				
+					FreeBSD FreeBSD  9.3-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  9.3<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p8<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p11<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p10<br/>
+					
+				
+					FreeBSD Freebsd  10.2<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p9<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p6<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p5<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p28<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p27<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p26<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p25<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p23<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p19<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p17<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p16<br/>
+					
+				
+					FreeBSD FreeBSD  10.1-RELEASE-p1<br/>
+					
+				
+					FreeBSD FreeBSD  10.1<br/>
+					
+				
+					FreeBSD FreeBSD  10.0<br/>
+					
+				
+					Extremenetworks Wireless AP 3965 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3935 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3805 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3801 10.1.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.1.1 <br/>
+					
+				
+					Extremenetworks ExtremeXOS  0<br/>
+					
+				
+					Cisco WebEx Messenger Service  0<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  2.0<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5.1.6<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5.1.131<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.5<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.1<br/>
+					
+				
+					Cisco WebEx Meetings Server  1.0<br/>
+					
+				
+					Cisco Videoscape Control Suite Foundation  0<br/>
+					
+				
+					Cisco Unity Connection (UC)  0<br/>
+					
+				
+					Cisco Unified Intelligent Contact Management Enterprise  0<br/>
+					
+				
+					Cisco Unified Contact Center Express  0<br/>
+					
+				
+					Cisco Unified Contact Center Enterprise  0<br/>
+					
+				
+					Cisco Unified Communications Manager Session Management Edition (SME)  0<br/>
+					
+				
+					Cisco Unified Communications Manager (UCM)  0<br/>
+					
+				
+					Cisco Unified Attendant Console Standard  0<br/>
+					
+				
+					Cisco Unified Attendant Console Premium Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Enterprise Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Department Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Business Edition  0<br/>
+					
+				
+					Cisco Unified Attendant Console Advanced  0<br/>
+					
+				
+					Cisco Unified 8945 IP Phone  0<br/>
+					
+				
+					Cisco TelePresence Video Communication Server (VCS)  0<br/>
+					
+				
+					Cisco TelePresence TX 9000 Series  0<br/>
+					
+				
+					Cisco TelePresence System 500-37  0<br/>
+					
+				
+					Cisco TelePresence System 500-32  0<br/>
+					
+				
+					Cisco TelePresence System 3000 Series  0<br/>
+					
+				
+					Cisco TelePresence System 1300  0<br/>
+					
+				
+					Cisco TelePresence System 1100  0<br/>
+					
+				
+					Cisco TelePresence System 1000  0<br/>
+					
+				
+					Cisco TelePresence Server on Virtual Machine  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 320  0<br/>
+					
+				
+					Cisco TelePresence Server on Multiparty Media 310  0<br/>
+					
+				
+					Cisco TelePresence Server 8710   7010<br/>
+					
+				
+					Cisco TelePresence Conductor  0<br/>
+					
+				
+					Cisco TelePresence 1310  0<br/>
+					
+				
+					Cisco Registered Envelope Service (CRES)  0<br/>
+					
+				
+					Cisco Proactive Network Operations Center  0<br/>
+					
+				
+					Cisco Prime Performance Manager  0<br/>
+					
+				
+					Cisco Prime Optical for SPs  0<br/>
+					
+				
+					Cisco Prime License Manager  0<br/>
+					
+				
+					Cisco Prime Collaboration Provisioning  0<br/>
+					
+				
+					Cisco Prime Collaboration Deployment  0<br/>
+					
+				
+					Cisco ONS 15454 Series Multiservice Provisioning Platforms  0<br/>
+					
+				
+					Cisco NX-OS Nexus 9000  0<br/>
+					
+				
+					Cisco NX-OS Nexus 5000  0<br/>
+					
+				
+					Cisco Nexus 7000  0<br/>
+					
+				
+					Cisco Nexus 6000  0<br/>
+					
+				
+					Cisco Nexus 3X00  0<br/>
+					
+				
+					Cisco Nexus 3000  0<br/>
+					
+				
+					Cisco Mobility Services Engine  0<br/>
+					
+				
+					Cisco MediaSense  0<br/>
+					
+				
+					Cisco MDS 9000 Series Multilayer Switches  0<br/>
+					
+				
+					Cisco Jabber for Windows  0<br/>
+					
+				
+					Cisco Intrusion Prevention System Solutions (IPS)  0<br/>
+					
+				
+					Cisco IM and Presence Service (CUPS)  0<br/>
+					
+				
+					Cisco Expressway series  0<br/>
+					
+				
+					Cisco Emergency Responder  <br/>
+					
+				
+					Cisco Email Security Appliance  0<br/>
+					
+				
+					Cisco Edge 300 Digital Media Player  0<br/>
+					
+				
+					Cisco Computer Telephony Integration Object Server (CTIOS)  0<br/>
+					
+				
+					Cisco Cloupia Unified Infrastructure Controller  0<br/>
+					
+				
+					Cisco Cisco Unified Computing System B-Series (Blade) Servers  0<br/>
+					
+				
+					Cisco Cisco Unified 7800 series IP Phones  0<br/>
+					
+				
+					Cisco ASA Next-Generation Firewall Services  0<br/>
+					
+				
+					Cisco AnyRes Live (CAL)  0<br/>
+					
+				
+					Cisco Agent Desktop  <br/>
+					
+				
+					Cisco 8800 Series IP Phones  0<br/>
+					
+				
+					CentOS CentOS  7<br/>
+					
+				
+					CentOS CentOS  6<br/>
+					
+				
+					CentOS CentOS  5<br/>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+<div class="breakline"></div>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<span class="label">Not Vulnerable:</span>
+</td>
+<td>
+				
+					Oracle VM VirtualBox 5.0.16 <br/>
+					
+				
+					Oracle Solaris  11.3 SRU 6.5<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2g<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.2f<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1s<br/>
+					
+				
+					OpenSSL Project OpenSSL  1.0.1r<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  7.1.1.20 build 280.6<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for OS Deployment  5.1.1 build 051.07<br/>
+					
+				
+					IBM Tivoli Provisioning Manager for Images  7.1.1.20 build 280.6<br/>
+					
+				
+					IBM SmartCloud Entry  3.2 Appliance fixpac<br/>
+					
+				
+					IBM SmartCloud Entry  3.1 Appliance fixpac<br/>
+					
+				
+					IBM SDK for Node.js  1.2.0.10<br/>
+					
+				
+					IBM SDK for Node.js  1.1.0.20<br/>
+					
+				
+					IBM Real-time Compression Appliance  4.1.2.17<br/>
+					
+				
+					IBM PureApplication System 2.2.1 <br/>
+					
+				
+					IBM PureApplication System  2.1.2.2<br/>
+					
+				
+					IBM PureApplication System  2.0.0.1 IF 8<br/>
+					
+				
+					IBM PowerKVM 2.1.1 SP3<br/>
+					
+				
+					IBM PowerKVM 2.1.1 Build 65.7<br/>
+					
+				
+					IBM PowerKVM  3.1 SP1<br/>
+					
+				
+					IBM Netezza Firmware Diagnostics Tools  4.3.1.2<br/>
+					
+				
+					IBM DataPower Gateways  7.2.0.6<br/>
+					
+				
+					IBM DataPower Gateways  7.1.0.10<br/>
+					
+				
+					IBM DataPower Gateways  7.0.0.13<br/>
+					
+				
+					IBM Cognos TM1 10.2.2 Fix Pack 6<br/>
+					
+				
+					IBM Cognos TM1  10.2.0.2 Interim Fix<br/>
+					
+				
+					IBM Cognos TM1  10.1.1.2 Interim Fix<br/>
+					
+				
+					IBM Cognos Insight 10.2.2 FP 6<br/>
+					
+				
+					IBM Cognos Insight 10.2.1 FP 2 IF 6<br/>
+					
+				
+					IBM Cognos Insight  10.2 FP 1 IF 6<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.3.0.6 Interim Fix1<br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.2.0.3 interim fix <br/>
+					
+				
+					IBM Cloud Manager with Openstack  4.1.0.5 interim fix <br/>
+					
+				
+					FreeBSD FreeBSD  9.3-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  9.3-RELEASE-p36<br/>
+					
+				
+					FreeBSD Freebsd  10.2-STABLE<br/>
+					
+				
+					FreeBSD Freebsd  10.2-RELEASE-p12<br/>
+					
+				
+					FreeBSD Freebsd  10.1-RELEASE-p29<br/>
+					
+				
+					Extremenetworks Wireless AP 3965 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3965 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3935 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3935 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3865 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3825 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3805 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3805 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3801 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3801 10.1.4 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.11.1 <br/>
+					
+				
+					Extremenetworks Wireless AP 3715 10.1.4 <br/>
+</td>
+</tr>
+</table>
+</div><br><br>#<br>##no_exploit_link<br><br><br><br>#<br>#<div id="vulnerability">
+<span class="title"></span><br/><br/>
+	Currently, we are not aware of any exploits.  If you feel we are in error or if you are aware of more recent  information, #no_exploit.
+	
+		<ul>
+</ul>
+</div>
